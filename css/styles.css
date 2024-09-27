@@ -11263,7 +11263,7 @@ header.masthead .masthead-heading {
 }
 
 section#contact {
-  background: url("../assets/img/fondo-contacto.jpg");
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("../assets/img/fondo-contacto2.jpg");
   background-repeat: no-repeat;
   background-position: center;
 }
@@ -11444,11 +11444,6 @@ section#contact form#contactForm :-ms-input-placeholder {
   text-decoration: none;
  }
 
-.black{
-  color: #000;
-  text-decoration: none
-}
-
 .imagen-container {
   overflow: hidden; /* Evita que la imagen agrandada se salga del contenedor */
   width: 300px; /* Ancho del contenedor */
@@ -11553,12 +11548,13 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 
-.black{
+.fondo-movimiento{
   overflow: hidden;
-  background: url("../assets/img/fondo-cursos.jpg") repeat-x; /* Repetir el fondo en el eje x */
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../assets/img/fondo-cursos.jpg") repeat-x; /* Repetir el fondo en el eje x */
   background-size: cover;
   animation: animatedBackground 20s linear infinite; /* Movimiento continuo */
 }
+
 
 @keyframes animatedBackground {
   0% {
