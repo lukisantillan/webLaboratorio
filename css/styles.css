@@ -11108,7 +11108,7 @@ header.masthead .masthead-heading {
   position: relative;
   float: right;
   width: 100%;
-  padding: 0 20px 0 100px;
+  padding: 20px 20px 0 100px;
   text-align: left;
 }
 .timeline > li .timeline-panel:before {
@@ -11230,7 +11230,7 @@ header.masthead .masthead-heading {
     min-height: 170px;
   }
   .timeline > li .timeline-panel {
-    padding: 0 20px 20px 100px;
+    padding: 20px 20px 20px 100px;
   }
   .timeline > li .timeline-image {
     width: 100px;
@@ -11241,7 +11241,7 @@ header.masthead .masthead-heading {
     margin-top: 25px;
   }
   .timeline > li.timeline-inverted > .timeline-panel {
-    padding: 0 100px 20px 20px;
+    padding: 20px 100px 20px 20px;
   }
 }
 .team-member {
