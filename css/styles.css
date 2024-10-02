@@ -152,12 +152,12 @@ h4, .h4 {
 }
 @media (min-width: 1200px) {
   h4, .h4 {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
 }
 
 h5, .h5 {
-  font-size: 1.25rem;
+  font-size: 0.9rem;
 }
 
 h6, .h6 {
@@ -8098,6 +8098,8 @@ textarea.form-control-lg {
 .text-muted {
   --bs-text-opacity: 1;
   color: #6c757d !important;
+  font-size: 0.8rem;
+  margin-top: 10px;
 }
 
 .text-black-50 {
@@ -10867,7 +10869,7 @@ p {
 .btn-xl {
   padding: 1.25rem 2.5rem;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-weight: 700;
 }
 
@@ -10976,17 +10978,17 @@ header.masthead .masthead-heading {
 
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 17rem;
-    padding-bottom: 12.5rem;
+    padding-top: 19rem;
+    padding-bottom: 14.5rem;
   }
   header.masthead .masthead-subheading {
-    font-size: 2.25rem;
+    font-size: 1.5rem;
     font-style: italic;
     line-height: 2.25rem;
     margin-bottom: 2rem;
   }
   header.masthead .masthead-heading {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     font-weight: 700;
     line-height: 4.5rem;
     margin-bottom: 1rem;
@@ -11027,7 +11029,7 @@ header.masthead .masthead-heading {
   background-color: #fff;
 }
 #portfolio .portfolio-item .portfolio-caption .portfolio-caption-heading {
-  font-size: 19px;
+  font-size: 18px;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   margin-bottom: 0;
@@ -11108,7 +11110,7 @@ header.masthead .masthead-heading {
   position: relative;
   float: right;
   width: 100%;
-  padding: 20px 20px 0 100px;
+  padding: 20px 20px 20px 20px;
   text-align: left;
 }
 .timeline > li .timeline-panel:before {
@@ -11143,7 +11145,7 @@ header.masthead .masthead-heading {
 }
 .timeline > li.timeline-inverted > .timeline-panel {
   float: right;
-  padding: 0 20px 0 100px;
+  padding: 20px 20px 20px 20px;
   text-align: left;
 }
 .timeline > li.timeline-inverted > .timeline-panel:before {
@@ -11166,6 +11168,7 @@ header.masthead .masthead-heading {
   color: inherit;
 }
 .timeline .timeline-heading h4.subheading, .timeline .timeline-heading .subheading.h4 {
+  font-size: 1rem;
   text-transform: none;
 }
 .timeline .timeline-body > ul,
@@ -11184,7 +11187,7 @@ header.masthead .masthead-heading {
   .timeline > li .timeline-panel {
     float: left;
     width: 41%;
-    padding: 0 20px 20px 30px;
+    padding: 20px 20px 20px 20px;
     text-align: right;
   }
   .timeline > li .timeline-image {
@@ -11200,7 +11203,7 @@ header.masthead .masthead-heading {
   }
   .timeline > li.timeline-inverted > .timeline-panel {
     float: right;
-    padding: 0 30px 20px 20px;
+    padding: 20px 20px 20px 20px;
     text-align: left;
   }
 }
@@ -11209,7 +11212,7 @@ header.masthead .masthead-heading {
     min-height: 150px;
   }
   .timeline > li .timeline-panel {
-    padding: 0 20px 20px;
+    padding: 20px 20px 20px 20px;
   }
   .timeline > li .timeline-image {
     width: 150px;
@@ -11222,7 +11225,7 @@ header.masthead .masthead-heading {
     margin-top: 30px;
   }
   .timeline > li.timeline-inverted > .timeline-panel {
-    padding: 0 20px 20px;
+    padding: 20px 20px 20px 20px;
   }
 }
 @media (min-width: 1200px) {
@@ -11230,7 +11233,7 @@ header.masthead .masthead-heading {
     min-height: 170px;
   }
   .timeline > li .timeline-panel {
-    padding: 20px 20px 20px 100px;
+    padding: 20px 20px 20px 20px;
   }
   .timeline > li .timeline-image {
     width: 100px;
@@ -11241,7 +11244,7 @@ header.masthead .masthead-heading {
     margin-top: 25px;
   }
   .timeline > li.timeline-inverted > .timeline-panel {
-    padding: 20px 100px 20px 20px;
+    padding: 20px 20px 20px 20px;
   }
 }
 .team-member {
@@ -11563,4 +11566,9 @@ section#contact form#contactForm :-ms-input-placeholder {
   100% {
     background-position: -1000px 0; /* Ajusta el valor para controlar la velocidad y distancia del movimiento */
   }
+}
+
+.decoration-info {
+  text-decoration: none; 
+  color: #9c48fe;
 }
