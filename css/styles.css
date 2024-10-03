@@ -7670,6 +7670,7 @@ textarea.form-control-lg {
 }
 
 .mb-4 {
+  margin-top: 2rem;
   margin-bottom: 1.5rem !important;
 }
 
@@ -11545,7 +11546,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 /* Ajuste para las imágenes */
 #cursosYcarreras .portfolio-item .portfolio-link img {
-  height: 300px;
+  height: 315px;
   width: 100%;
   object-fit: cover;
 }
