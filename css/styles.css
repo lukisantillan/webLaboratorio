@@ -11574,6 +11574,18 @@ section#contact form#contactForm :-ms-input-placeholder {
   color: #9c48fe;
 }
 
+.name-and-title {
+  display: flex;
+}
+
+.name-and-title h5 {
+  margin-left:10px;
+  margin-top: 25px;
+}
+.name-and-title h4 {
+  margin-left:20%;
+}
+
 @media only screen and (max-width: 575px){
   .timeline > li .timeline-panel {
     position: relative;
@@ -11581,10 +11593,35 @@ section#contact form#contactForm :-ms-input-placeholder {
     width: 100%;
     padding: 20px 20px 20px 100px;
     text-align: left;
-}
+  }
 .timeline > li.timeline-inverted > .timeline-panel {
   float: right;
   padding: 20px 20px 20px 100px;
   text-align: left;
 }
+.name-and-title {
+  display:block;
 }
+.name-and-title h5 {
+  margin-left:2px;
+  margin-top: 0px;
+}
+.name-and-title h4 {
+  margin-left:0%;
+} 
+}
+
+@media only screen and (max-width: 770px){
+
+.name-and-title {
+  display:block;
+}
+.name-and-title h5 {
+  margin-left:2px;
+  margin-top: 0px;
+}
+.name-and-title h4 {
+  margin-left:0%;
+} 
+}
+
