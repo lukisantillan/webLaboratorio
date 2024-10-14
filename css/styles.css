@@ -11611,7 +11611,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 } 
 }
 
-@media only screen and (max-width: 770px){
+@media only screen and (max-width: 768px){
 
 .name-and-title {
   display:block;
