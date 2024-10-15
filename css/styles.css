@@ -10859,7 +10859,7 @@ p {
   font-weight: 400;
   font-style: italic;
   font-family: "Roboto Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 
 @media (min-width: 768px) {
@@ -11586,6 +11586,7 @@ section#contact form#contactForm :-ms-input-placeholder {
   margin-left:20%;
 }
 
+
 @media only screen and (max-width: 575px){
   .timeline > li .timeline-panel {
     position: relative;
@@ -11612,7 +11613,6 @@ section#contact form#contactForm :-ms-input-placeholder {
 }
 
 @media only screen and (max-width: 768px){
-
 .name-and-title {
   display:block;
 }
@@ -11625,3 +11625,8 @@ section#contact form#contactForm :-ms-input-placeholder {
 } 
 }
 
+hr{
+  height: 2.5px;
+  background-color: white;
+  margin-bottom: 40px;
+}
