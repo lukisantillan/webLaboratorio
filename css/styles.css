@@ -11580,7 +11580,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 .name-and-title h5 {
   margin-left:10px;
-  margin-top: 25px;
+  margin-top: 26px;
 }
 .name-and-title h4 {
   margin-left:20%;
@@ -11612,7 +11612,7 @@ section#contact form#contactForm :-ms-input-placeholder {
 } 
 }
 
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 1399px){
 .name-and-title {
   display:block;
 }
@@ -11623,6 +11623,9 @@ section#contact form#contactForm :-ms-input-placeholder {
 .name-and-title h4 {
   margin-left:0%;
 } 
+.text-muted{
+  font-size: 10px;
+}
 }
 
 hr{
