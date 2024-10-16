@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Administrador del Blog</title>
-    <link rel="stylesheet" href="../../css/styles.css"> <!-- Asegúrate de que la ruta sea correcta -->
-    <script src="https://cdn.jsdelivr.net/npm/netlify-cms-app"></script>
+  <meta charset="utf-8">
+  <title>Admin</title>
+  <script src="https://cdn.jsdelivr.net/npm/netlify-cms-app@2.14.0"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/netlify-cms-app/dist/netlify-cms.css">
 </head>
 <body>
-    <div id="nc-root"></div>
-    <script>
-        // Configuración de Netlify CMS
-        CMS.init();
-    </script>
+  <script>
+    // Inicialización de Netlify CMS
+    if (CMS) {
+      CMS.init();
+    } else {
+      console.error("CMS no está definido");
+    }
+  </script>
 </body>
 </html>
+
