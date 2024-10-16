@@ -11676,7 +11676,7 @@ hr{
 
 @media (max-width: 1024px) {
   .carousel-item img {
-    max-height: 300px; 
+    height: 300px; 
     object-position: center; 
   }
 }
@@ -11684,7 +11684,7 @@ hr{
 
 @media (max-width: 768px) {
   .carousel-item img {
-    max-height: 500px; 
+    max-height: 400px; 
     object-position: center; 
   }
 }
