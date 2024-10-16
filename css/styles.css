@@ -11660,3 +11660,31 @@ hr{
       line-height: 66px;
 }
 }
+
+.carousel {
+  width: 100%; 
+  margin-bottom: 50px;
+}
+
+.carousel-item img {
+  width: 100%; 
+  height: auto; 
+  max-height: 500px; 
+  object-fit: cover; 
+  object-position: center; 
+}
+
+@media (max-width: 1024px) {
+  .carousel-item img {
+    max-height: 300px; 
+    object-position: center; 
+  }
+}
+
+
+@media (max-width: 768px) {
+  .carousel-item img {
+    max-height: 500px; 
+    object-position: center; 
+  }
+}
