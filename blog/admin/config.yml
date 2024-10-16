@@ -3,7 +3,7 @@ backend:
   repo: 'lukisantillan/webLaboratorio' # Reemplaza con tu usuario y el nombre de tu repositorio
   branch: main # O la rama que estés usando
 
-media_folder: static/img # Carpeta donde se subirán las imágenes
+media_folder: assets/img # Carpeta donde se subirán las imágenes
 public_folder: /img # Carpeta pública para las imágenes
 
 media_library:
