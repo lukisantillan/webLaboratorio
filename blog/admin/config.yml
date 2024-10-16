@@ -1,6 +1,7 @@
 backend:
-  name: git-gateway # Usar Git Gateway para conectar al repositorio
-  branch: main # La rama donde se guardarán los cambios
+  name: github
+  repo: 'lukisantillan/webLaboratorio' # Reemplaza con tu usuario y el nombre de tu repositorio
+  branch: main # O la rama que estés usando
 
 media_folder: static/img # Carpeta donde se subirán las imágenes
 public_folder: /img # Carpeta pública para las imágenes
