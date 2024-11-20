@@ -65,3 +65,107 @@ iframe {
     border-radius: 8px; /* Esquinas redondeadas */
     box-shadow: 10px 15px 30px 10px rgba(0, 0, 0, 0.2); /* Sombra */
 }
+
+.zoom2 {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.zoom2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/img/fondoEnseñanza.jpg) repeat-x;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    
+    animation: zoomInOut 4s ease-in-out infinite;
+}
+
+.fondoWeb{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.fondoWeb::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/img/fondoWeb.jpg) repeat-x;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    
+    animation: zoomInOut 4s ease-in-out infinite;
+}
+
+.fondoJuego{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.fondoJuego::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/img/fondoJuego.jpg) repeat-x;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    
+    animation: zoomInOut 4s ease-in-out infinite;
+}
+
+.fondoIA{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.fondoIA::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/img/fondoIA.jpg) repeat-x;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    
+    animation: zoomInOut 4s ease-in-out infinite;
+}
