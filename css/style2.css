@@ -66,7 +66,7 @@ iframe {
     box-shadow: 10px 15px 30px 10px rgba(0, 0, 0, 0.2); /* Sombra */
 }
 
-.fondoEnsenanza {
+.fondoEnse {
     position: relative;
     width: 100%;
     height: 70vh;
@@ -77,14 +77,14 @@ iframe {
 }
 
 
-.fondoEnsenanza::before {
+.fondoEnse::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/img/fondoEnseñanza.jpg) repeat-x;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/img/fondoEnse.jpg) repeat-x;
     background-size: cover;
     background-position: center;
     z-index: -1;
