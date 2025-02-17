@@ -269,5 +269,93 @@ iframe {
 
 .timeline > li .timeline-image{
     background-color: #6c9abf;
-    border: 10px solid #338cad;
+    border: 8px solid #338cad;
+}
+
+.timeline > li .timeline-panel2 {
+    padding: 20px 20px 20px 20px;
+    align-items: center;
+    margin-right: 0;
+    background-color: #31b5e589;
+    border-radius: 2000px;
+    border: 5px solid #6c9abf;
+
+  }
+
+  .fondoProyectos{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.fondoProyectos::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/img/fondoProyectos.jpg) repeat-x;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    
+    animation: zoomInOut 4s ease-in-out infinite;
+}
+
+.fondoPublicaciones{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.fondoPublicaciones::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/img/fondoPublicaciones.jpg) repeat-x;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    
+    animation: zoomInOut 4s ease-in-out infinite;
+}
+
+.fondoCV{
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.fondoCV::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/img/fondoCV.jpg) repeat-x;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    
+    animation: zoomInOut 4s ease-in-out infinite;
 }
