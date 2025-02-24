@@ -359,3 +359,27 @@ iframe {
     
     animation: zoomInOut 4s ease-in-out infinite;
 }
+.iframe-video {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente si hay altura suficiente */
+    padding-bottom: 20px;
+}
+
+/* Ajustar el tamaño del video */
+.contenedor-video{
+    position: relative;
+    width: 90%;  /* Ajustamos el ancho al 90% de la pantalla */
+    max-width: 1200px;  /* Lo hacemos más grande */
+    padding-bottom: 50%; /* Mantiene la proporción 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.contenedor-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
