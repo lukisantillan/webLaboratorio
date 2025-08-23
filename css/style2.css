@@ -21,7 +21,7 @@
     background-size: cover;
     background-position: center;
     z-index: -1;
-    
+
     animation: zoomInOut 4s ease-in-out infinite;
 }
 
@@ -53,18 +53,23 @@
 }
 
 @keyframes zoomInOut {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: scale(1);
     }
+
     50% {
         transform: scale(1.1);
     }
 }
 
 iframe {
-    border: 1px solid #333 !important; 
-    border-radius: 8px; /* Esquinas redondeadas */
-    box-shadow: 10px 15px 30px 10px rgba(0, 0, 0, 0.2); /* Sombra */
+    border: 1px solid #333 !important;
+    border-radius: 8px;
+    /* Esquinas redondeadas */
+    box-shadow: 10px 15px 30px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra */
 }
 
 /* PROYECTO ENSEÑANZA*/
@@ -90,11 +95,11 @@ iframe {
     background-size: cover;
     background-position: center;
     z-index: -1;
-    
+
     animation: zoomInOut 4s ease-in-out infinite;
 }
 
-.fondoWeb{
+.fondoWeb {
     position: relative;
     width: 100%;
     height: 70vh;
@@ -116,11 +121,11 @@ iframe {
     background-size: cover;
     background-position: center;
     z-index: -1;
-    
+
     animation: zoomInOut 4s ease-in-out infinite;
 }
 
-.fondoJuego{
+.fondoJuego {
     position: relative;
     width: 100%;
     height: 70vh;
@@ -142,11 +147,11 @@ iframe {
     background-size: cover;
     background-position: center;
     z-index: -1;
-    
+
     animation: zoomInOut 4s ease-in-out infinite;
 }
 
-.fondoIA{
+.fondoIA {
     position: relative;
     width: 100%;
     height: 70vh;
@@ -168,56 +173,56 @@ iframe {
     background-size: cover;
     background-position: center;
     z-index: -1;
-    
+
     animation: zoomInOut 4s ease-in-out infinite;
 }
 
 /* IPC */
 .galeria {
     display: flex;
-    flex-wrap: wrap; 
-    gap: 10px; 
+    flex-wrap: wrap;
+    gap: 10px;
     justify-content: center;
     margin: 20px;
-  }
-  
-  
-  .item-galeria {
-    width: 400px; 
-    height: 300px; 
-    overflow: hidden; 
+}
+
+
+.item-galeria {
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
-    background-color: #f9f9f9; 
-  }
-  
-  
-  .item-galeria img {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+
+.item-galeria img {
     width: 100%;
-    height: 100%; 
-    object-fit: cover; 
-  }
+    height: 100%;
+    object-fit: cover;
+}
 
-  @media (max-width: 768px) {
+@media (max-width: 768px) {
     .galeria {
-      flex-direction: column;
-      gap: 15px;
+        flex-direction: column;
+        gap: 15px;
     }
-  
-    .item-galeria {
-      width: 100%;
-      height: auto;
-    }
-  
-    .item-galeria img {
-      height: auto;
-    }
-  }
 
-  .fondoIPC{
+    .item-galeria {
+        width: 100%;
+        height: auto;
+    }
+
+    .item-galeria img {
+        height: auto;
+    }
+}
+
+.fondoIPC {
     position: relative;
     width: 100%;
     height: 70vh;
@@ -239,11 +244,11 @@ iframe {
     background-size: cover;
     background-position: center;
     z-index: -1;
-    
+
     animation: zoomInOut 4s ease-in-out infinite;
 }
 
-.fondoJuan{
+.fondoJuan {
     position: relative;
     width: 100%;
     height: 70vh;
@@ -267,12 +272,12 @@ iframe {
     animation: zoomInOut 4s ease-in-out infinite;
 }
 
-.timeline > li .timeline-image{
+.timeline>li .timeline-image {
     background-color: #6c9abf;
     border: 8px solid #338cad;
 }
 
-.timeline > li .timeline-panel2 {
+.timeline>li .timeline-panel2 {
     padding: 20px 20px 20px 20px;
     align-items: center;
     margin-right: 0;
@@ -280,9 +285,9 @@ iframe {
     border-radius: 2000px;
     border: 5px solid #6c9abf;
 
-  }
+}
 
-  .fondoProyectos{
+.fondoProyectos {
     position: relative;
     width: 100%;
     height: 70vh;
@@ -304,11 +309,11 @@ iframe {
     background-size: cover;
     background-position: center;
     z-index: -1;
-    
+
     animation: zoomInOut 4s ease-in-out infinite;
 }
 
-.fondoPublicaciones{
+.fondoPublicaciones {
     position: relative;
     width: 100%;
     height: 70vh;
@@ -330,11 +335,11 @@ iframe {
     background-size: cover;
     background-position: center;
     z-index: -1;
-    
+
     animation: zoomInOut 4s ease-in-out infinite;
 }
 
-.fondoCV{
+.fondoCV {
     position: relative;
     width: 100%;
     height: 70vh;
@@ -356,22 +361,28 @@ iframe {
     background-size: cover;
     background-position: center;
     z-index: -1;
-    
+
     animation: zoomInOut 4s ease-in-out infinite;
 }
+
 .iframe-video {
     display: flex;
-    justify-content: center; /* Centra horizontalmente */
-    align-items: center; /* Centra verticalmente si hay altura suficiente */
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente si hay altura suficiente */
     padding-bottom: 20px;
 }
 
 /* Ajustar el tamaño del video */
-.contenedor-video{
+.contenedor-video {
     position: relative;
-    width: 90%;  /* Ajustamos el ancho al 90% de la pantalla */
-    max-width: 1200px;  /* Lo hacemos más grande */
-    padding-bottom: 50%; /* Mantiene la proporción 16:9 */
+    width: 90%;
+    /* Ajustamos el ancho al 90% de la pantalla */
+    max-width: 1200px;
+    /* Lo hacemos más grande */
+    padding-bottom: 50%;
+    /* Mantiene la proporción 16:9 */
     height: 0;
     overflow: hidden;
 }
@@ -410,6 +421,104 @@ iframe {
     background-size: cover;
     background-position: center;
     z-index: -1;
-    
+
     animation: zoomInOut 4s ease-in-out infinite;
 }
+
+.fondoDiplomatura {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header.backgroundhead {
+    padding-top: 5.5rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    color: #fbfbfb;
+    background-image: linear-gradient(to right, #1D78E5, black);
+    height: 100px;
+}
+
+header.backgroundhead .masthead-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 3.25rem;
+    margin-bottom: 2rem;
+    font-family: 'DM Mono', monospace;
+}
+
+#bordefino{
+    width: 100%;
+    height: 20px;
+    background-image: linear-gradient(to right, #1D78E5, black);
+}
+
+.card-tittle{
+    text-align: center;
+}
+.card-t{
+    text-align: center;
+}
+@media (max-width: 768px) {
+    #list-example {
+        display: none;
+    }
+
+    .card-t{
+        text-align: left;
+    }
+
+    .col-8 {
+        width: 100%;
+    }
+
+    .backgroundhead {
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
+
+    header.backgroundhead {
+        margin-top: 7rem;
+        padding-top: 10rem;
+        padding-bottom: 10rem;
+        text-align: center;
+        color: #fbfbfb;
+        background-image: linear-gradient(to right, #1D78E5, black);
+        height: 100px;
+    }
+
+    header.backgroundhead .masthead-heading {
+        font-size: 1.4rem;
+        font-weight: 700;
+        line-height: 1.7rem;
+        font-family: 'DM Mono', monospace;
+    }
+    #buttonInfo{
+        width: 250px;
+        height: 20px;
+        align-items: center;
+        padding-bottom: 50px;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    header.backgroundhead {
+        height: 200px;
+        padding-top: 22rem;
+        padding-bottom: 14.5rem;
+    }
+
+    header.backgroundhead .masthead-heading {
+        font-size: 2.5rem;
+        font-weight: 1500;
+        line-height: 4.5rem;
+        margin-bottom: 5rem;
+    }
+}
+

@@ -4980,12 +4980,12 @@ fieldset:disabled .btn {
   --bs-accordion-btn-icon-transform: rotate(-180deg);
   --bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
   --bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23e6b400'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-  --bs-accordion-btn-focus-border-color: #ffe480;
-  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(255, 200, 0, 0.25);
+  --bs-accordion-btn-focus-border-color: #090085;
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(0, 85, 255, 0.25);
   --bs-accordion-body-padding-x: 1.25rem;
   --bs-accordion-body-padding-y: 1rem;
-  --bs-accordion-active-color: #e6b400;
-  --bs-accordion-active-bg: #fffae6;
+  --bs-accordion-active-color: #000591;
+  --bs-accordion-active-bg: #e6eeff;
 }
 
 .accordion-button {
@@ -5017,7 +5017,6 @@ fieldset:disabled .btn {
 }
 
 .accordion-button:not(.collapsed)::after {
-  background-image: var(--bs-accordion-btn-active-icon);
   transform: var(--bs-accordion-btn-icon-transform);
 }
 
@@ -5473,8 +5472,8 @@ fieldset:disabled .btn {
   --bs-list-group-disabled-color: #6c757d;
   --bs-list-group-disabled-bg: #fff;
   --bs-list-group-active-color: #fff;
-  --bs-list-group-active-bg: #ffc800;
-  --bs-list-group-active-border-color: #ffc800;
+  --bs-list-group-active-bg: #1862BD;
+  --bs-list-group-active-border-color: #081E39;
   display: flex;
   flex-direction: column;
   padding-left: 0;
