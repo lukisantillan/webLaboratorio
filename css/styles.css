@@ -7665,12 +7665,12 @@ fieldset:disabled .btn {
 }
 
 .link-primary {
-  color: #ffc800 !important;
+  color: #1A6ACA !important;
 }
 
 .link-primary:hover,
 .link-primary:focus {
-  color: #cca000 !important;
+  color: #C7E0FD !important;
 }
 
 .link-secondary {

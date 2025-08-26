@@ -452,24 +452,26 @@ header.backgroundhead .masthead-heading {
     font-family: 'DM Mono', monospace;
 }
 
-#bordefino{
+#bordefino {
     width: 100%;
     height: 10px;
     background-image: linear-gradient(to right, #1D78E5, black);
 }
 
-.card-tittle{
+.card-tittle {
     text-align: center;
 }
-.card-t{
+
+.card-t {
     text-align: center;
 }
+
 @media (max-width: 768px) {
     #list-example {
         display: none;
     }
 
-    .card-t{
+    .card-t {
         text-align: left;
     }
 
@@ -484,12 +486,16 @@ header.backgroundhead .masthead-heading {
 
     header.backgroundhead {
         margin-top: 7rem;
-        padding-top: 10rem;
-        padding-bottom: 10rem;
+        padding-top: 13rem;
+        padding-bottom: 13rem;
         text-align: center;
         color: #fbfbfb;
         background-image: linear-gradient(to right, #1D78E5, black);
         height: 100px;
+    }
+
+    .masthead-subheading {
+        font-size: 12px;
     }
 
     header.backgroundhead .masthead-heading {
@@ -498,20 +504,41 @@ header.backgroundhead .masthead-heading {
         line-height: 1.7rem;
         font-family: 'DM Mono', monospace;
     }
-    #buttonInfo{
+
+    #buttonInfo {
         width: 250px;
         height: 20px;
         align-items: center;
         padding-bottom: 50px;
         font-size: 1rem;
     }
+
+    .infogrid {
+        display: grid;
+        grid-template-columns: auto(2);
+    }
+
+    .fondoDiplomatura .masthead-subheading {
+        font-size: 25px;
+        color: rgb(190, 190, 190);
+    }
+
+    .col-3 h3 {
+        font-family: "Times New Roman", Times, sans-serif;
+        color: #1354A0
+    }
+
+    .fondoDiplomatura .masthead-subheading {
+        font-size: 17px;
+        color: rgb(190, 190, 190);
+    }
 }
 
 @media (min-width: 768px) {
     header.backgroundhead {
         height: 200px;
-        padding-top: 19rem;
-        padding-bottom: 11rem;
+        padding-top: 27rem;
+        padding-bottom: 21rem;
     }
 
     header.backgroundhead .masthead-heading {
@@ -520,24 +547,33 @@ header.backgroundhead .masthead-heading {
         line-height: 4.5rem;
         margin-bottom: 1rem;
     }
+
 }
 
-#containerInfo{
-    width:100%;
-    height: 250px;
+#containerInfo {
+    width: 100%;
+    height: auto;
     background-color: #8abcf979;
 }
-.infogrid{
+
+.infogrid {
     display: grid;
     grid-template-columns: auto(2);
 }
 
-.fondoDiplomatura .masthead-subheading{
+.fondoDiplomatura .masthead-subheading {
     font-size: 25px;
     color: rgb(190, 190, 190);
 }
 
 .col-3 h3 {
-    font-family:"Times New Roman", Times, sans-serif;
+    font-family: "Times New Roman", Times, sans-serif;
     color: #1354A0
+}
+
+#informacionPlan {
+    width: 100%;
+    height: auto;
+    background-color: #8abcf979;
+    padding: 100px;
 }
