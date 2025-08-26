@@ -9,7 +9,6 @@
     justify-content: center;
 }
 
-
 .zoom::before {
     content: "";
     position: absolute;
@@ -452,6 +451,23 @@ header.backgroundhead .masthead-heading {
     font-family: 'DM Mono', monospace;
 }
 
+header.backgroundAr {
+    padding-top: 5.5rem;
+    padding-bottom: 2rem;
+    text-align: left;
+    color: #fbfbfb;
+    background-image: linear-gradient(to left, #003c85cf, rgb(0, 66, 172));
+    height: 100px;
+}
+
+header.backgroundAr .masthead-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 3.25rem;
+    margin-bottom: 2rem;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+}
+
 #bordefino {
     width: 100%;
     height: 10px;
@@ -472,7 +488,7 @@ header.backgroundhead .masthead-heading {
     }
 
     .card-t {
-        text-align: left;
+        text-align: center;
     }
 
     .col-8 {
@@ -491,6 +507,21 @@ header.backgroundhead .masthead-heading {
         text-align: center;
         color: #fbfbfb;
         background-image: linear-gradient(to right, #1D78E5, black);
+        height: 100px !important;
+    }
+
+    .backgroundAr {
+        padding-top: 200px;
+        padding-bottom: 200px;
+    }
+
+    header.backgroundAr {
+        margin-top: 7rem;
+        padding-top: 13rem;
+        padding-bottom: 13rem;
+        text-align: center;
+        color: #fbfbfb;
+        background-image: linear-gradient(to right, #1D78E5, black);
         height: 100px;
     }
 
@@ -499,6 +530,13 @@ header.backgroundhead .masthead-heading {
     }
 
     header.backgroundhead .masthead-heading {
+        font-size: 1.9rem;
+        font-weight: 700;
+        line-height: 1.9rem;
+        font-family: 'DM Mono', monospace;
+    }
+
+    header.backgroundAr .masthead-heading {
         font-size: 1.4rem;
         font-weight: 700;
         line-height: 1.7rem;
@@ -548,6 +586,19 @@ header.backgroundhead .masthead-heading {
         margin-bottom: 1rem;
     }
 
+    header.backgroundAr {
+        height: 200px;
+        padding-top: 20rem;
+        padding-bottom: 12rem;
+    }
+
+    header.backgroundAr .masthead-heading {
+        font-size: 2.5rem;
+        font-weight: 1500;
+        line-height: 4.5rem;
+        margin-bottom: 1rem;
+    }
+
 }
 
 #containerInfo {
@@ -562,7 +613,7 @@ header.backgroundhead .masthead-heading {
 }
 
 .fondoDiplomatura .masthead-subheading {
-    font-size: 25px;
+    font-size: 1.3rem;
     color: rgb(190, 190, 190);
 }
 
@@ -576,4 +627,97 @@ header.backgroundhead .masthead-heading {
     height: auto;
     background-color: #8abcf979;
     padding: 100px;
+}
+
+#lic-ia .tile {
+    /* contenedor del item */
+    display: flex;
+    flex-direction: column;
+}
+
+#lic-ia .rule {
+    display: block;
+    width: 100%;
+    background: #0b2130
+}
+
+#lic-ia .rule-top {
+    height: 1px;
+    opacity: .7;
+}
+
+#lic-ia .rule-bottom {
+    height: 6px;
+}
+
+#aranceles {
+    text-align: left;
+    align-items: left;
+    background-size: cover;
+    /* ocupa todo el ancho y alto */
+    background-position: center;
+    /* centra la imagen */
+    background-repeat: no-repeat;
+    /* evita que se repita */
+    width: 100%;
+    box-shadow: inset 0 0 120px rgba(0, 0, 0, 1.6);
+}
+
+#aranceles::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(../assets/img/fondo2iamano.jpg) repeat-x;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+
+    animation: zoomInOut 4s ease-in-out infinite;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contact-banner {
+    min-height: 160px;
+    background: url("banner-contacto.jpg") center/cover no-repeat;
+    position: relative;
+}
+
+.contact-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+}
+
+.contact-banner>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* Botón oscuro/gradiente en línea con tu sitio */
+.btn-licdia {
+    background: linear-gradient(90deg, #0b2130, #1354A0);
+    color: #fff;
+    border: 0;
+    border-radius: .375rem;
+}
+
+.btn-licdia:hover {
+    filter: brightness(.95);
+    color: #fff;
+}
+
+.zoom-hover {
+  transition: transform 0.3s ease;  /* duración y suavidad */
+}
+
+.zoom-hover:hover {
+  transform: scale(1.15); /* 1.05 = 5% más grande */
 }
