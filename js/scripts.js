@@ -127,80 +127,41 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// ===== Config =====
-const FORM_ENDPOINT = "https://formsubmit.co/licdia@unlu.edu.ar"; // destino principal
-const CC_EMAIL      = "licdia.unlu@gmail.com";                    // copia
-const SUBJECT       = "Nueva inscripción / consulta desde el sitio";
-const REDIRECT_TO   = ""; // opcional: ej. "https://tu-dominio.com/gracias.html"
-
-// ===== Lógica =====
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("form-inscripcion");    // id de tu <form>
-  const msg  = document.getElementById("insc-msg");            // contenedor de mensajes
-  const checks = document.querySelectorAll(".ingreso-check");  // checkboxes forma de ingreso
-  const expCheck = document.getElementById("ing4");            // "Experiencia laboral..."
+  const form = document.getElementById("form-inscripcion");
+  const msg  = document.getElementById("insc-msg");
+  const checks = document.querySelectorAll(".ingreso-check");
+  const exp   = document.getElementById("ing4"); // experiencia laboral
   const imgTitulo = document.getElementById("imagen_titulo");
-  const flag = document.getElementById("titulo-req-flag");     // el asterisco del label
+  const flag  = document.getElementById("titulo-req-flag");
+  const emailHidden = document.getElementById("email-hidden");
+  const correoVisible = document.querySelector("[name='postulante_email']");
 
-  function syncTituloRequirement(){
-    const exp = expCheck && expCheck.checked;
-    if (exp) {
-      imgTitulo && imgTitulo.removeAttribute("required");
-      flag && (flag.textContent = "");
+  // regla: si experiencia laboral está marcada, no pedimos título
+  function reglaTitulo(){
+    if (exp && exp.checked) {
+      imgTitulo?.removeAttribute("required");
+      flag.textContent = "";
     } else {
-      imgTitulo && imgTitulo.setAttribute("required","required");
-      flag && (flag.textContent = "*");
+      imgTitulo?.setAttribute("required","required");
+      flag.textContent = "*";
     }
   }
-  checks.forEach(c => c.addEventListener("change", syncTituloRequirement));
-  syncTituloRequirement();
+  checks.forEach(c => c.addEventListener("change", reglaTitulo));
+  reglaTitulo();
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    msg.textContent = "";
-
-    // Validar al menos un check
-    const alguno = Array.from(checks).some(c => c.checked);
-    if (!alguno) {
+  form.addEventListener("submit", (e) => {
+    // validar al menos un check
+    if (!Array.from(checks).some(c => c.checked)) {
+      e.preventDefault();
       msg.innerHTML = '<span class="text-danger">Seleccioná al menos una forma de ingreso.</span>';
       return;
     }
-    // Revalidar regla del título
-    syncTituloRequirement();
-
-    // Armar FormData (incluye archivos)
-    const fd = new FormData(form);
-
-    // Config de FormSubmit
-    fd.append("_subject", SUBJECT);
-    fd.append("_cc", CC_EMAIL);
-    fd.append("_captcha", "false");              // opcional
-    if (REDIRECT_TO) fd.append("_next", REDIRECT_TO);
-
-    // Requisito: asegurarte de tener un campo de email (FormSubmit lo prefiere)
-    // Supongo que tu input de correo se llama "postulante_email"; si no, adaptá:
-    if (!fd.get("postulante_email")) {
-      // Si tu input se llama "Correo" o "email", duplicalo a "email"
-      const fallbackEmail = fd.get("Correo") || fd.get("email") || "";
-      fd.append("email", fallbackEmail);
+    // copiar el correo al campo hidden "email"
+    if (correoVisible && emailHidden) {
+      emailHidden.value = correoVisible.value;
     }
-
-    // Enviar
-    try {
-      msg.textContent = "Enviando...";
-      const r = await fetch(FORM_ENDPOINT, {
-        method: "POST",
-        body: fd
-        // NO pongas Content-Type; fetch lo define con boundary del FormData
-      });
-      if (!r.ok) throw new Error("Error de red");
-      // FormSubmit puede redirigir; si usamos fetch, mostramos feedback manual
-      msg.innerHTML = '<span class="text-success">¡Enviado correctamente! Revisá tu correo.</span>';
-      form.reset();
-      syncTituloRequirement();
-    } catch (err) {
-      console.error(err);
-      msg.innerHTML = '<span class="text-danger">No se pudo enviar. Probá nuevamente.</span>';
-    }
+    msg.textContent = "Enviando...";
+    // FormSubmit procesa y redirige
   });
 });

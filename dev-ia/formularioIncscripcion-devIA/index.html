@@ -73,70 +73,71 @@
                 </ol>
             </nav>
 
-            <article class="container my-4" id="inscripcion">
-                <h2 class="h4 fw-bold mb-3">Formulario de Inscripción</h2>
-                <p class="mb-4">
+            <article class="container my-5">
+                <h2 class="h4 fw-bold mb-2">Formulario de Inscripción</h2>
+
+                <!-- Aviso de descarga -->
+                <div class="alert alert-info mb-4">
                     Descargá el
-                    <a class="link-primary" target="_blank" rel="noopener"
+                    <a class="alert-link" target="_blank" rel="noopener"
                         href="https://docs.google.com/document/d/1L5OT8eu-VtSOKRaJM5JSG4q4Sjmj781k">
                         Formulario de ingreso (DOCX)
-                    </a>, completalo y adjuntalo abajo.
-                </p>
+                    </a>, completalo y adjuntalo en el campo correspondiente más abajo.
+                </div>
 
-                <form id="form-inscripcion" class="card shadow-lg border-0 p-3 p-md-4" enctype="multipart/form-data">
+                <form id="form-inscripcion" action="https://formsubmit.co/licdia@unlu.edu.ar" method="POST"
+                    enctype="multipart/form-data" class="card shadow-lg border-1 p-4" target="_blank">
+
                     <div class="row g-3">
-                        <!-- Formulario de ingreso (DOCX) -->
+                        <!-- Nombre -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Nombre y apellido *</label>
+                            <input type="text" name="postulante_nombre" class="form-control" required>
+                        </div>
+
+                        <!-- Correo -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Correo electrónico *</label>
+                            <input type="email" name="postulante_email" class="form-control" required>
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">Teléfono (opcional)</label>
+                            <input type="tel" name="postulante_tel" class="form-control">
+                        </div>
+
+                        <!-- Adjuntar Formulario de Ingreso -->
                         <div class="col-12">
-                            <label class="form-label">Formulario de ingreso (DOCX) *</label>
+                            <label class="form-label">Adjuntar Formulario de Ingreso (DOCX) *</label>
                             <input type="file" name="formulario_ingreso" class="form-control" required
-                                accept=".doc,.docx">
-                        </div>
-
-                        <!-- Fotografía 4x4 -->
-                        <div class="col-12 col-md-6">
-                            <label class="form-label">Fotografía tipo 4x4 *</label>
-                            <input type="file" name="foto_4x4" class="form-control" required accept="image/*">
-                        </div>
-
-                        <!-- Currículum vitae -->
-                        <div class="col-12 col-md-6">
-                            <label class="form-label">Currículum vitae (PDF / DOCX) *</label>
-                            <input type="file" name="cv" class="form-control" required accept=".pdf,.doc,.docx">
+                                accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
                         </div>
 
                         <!-- Forma de ingreso -->
                         <div class="col-12">
-                            <label class="form-label d-block">Forma de Ingreso a la Diplomatura *</label>
-                            <div class="row gy-2">
-                                <div class="col-12 col-md-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input ingreso-check" type="checkbox" id="ing1"
-                                            name="forma_ingreso[]" value="Titulo de grado universitario" required>
-                                        <label class="form-check-label" for="ing1">Título de grado Universitario</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input ingreso-check" type="checkbox" id="ing2"
-                                            name="forma_ingreso[]" value="Titulo de pregrado universitario">
-                                        <label class="form-check-label" for="ing2">Título de pregrado
-                                            Universitario</label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input ingreso-check" type="checkbox" id="ing3"
-                                            name="forma_ingreso[]"
-                                            value="Titulo de Instituto Superior No Universitario">
-                                        <label class="form-check-label" for="ing3">Título de Instituto Superior No
-                                            Universitario</label>
-                                    </div>
-                                </div>
-                                <div class="col-12 col-md-6">
-                                    <div class="form-check">
-                                        <input class="form-check-input ingreso-check" type="checkbox" id="ing4"
-                                            name="forma_ingreso[]"
-                                            value="Experiencia laboral o formacion no universitaria">
-                                        <label class="form-check-label" for="ing4">Experiencia laboral / formación no
-                                            universitaria</label>
-                                    </div>
-                                </div>
+                            <label class="form-label d-block">Forma de Ingreso *</label>
+                            <div class="form-check">
+                                <input class="form-check-input ingreso-check" type="checkbox" id="ing1"
+                                    name="forma_ingreso[]" value="Título de grado universitario">
+                                <label class="form-check-label" for="ing1">Título de grado Universitario</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input ingreso-check" type="checkbox" id="ing2"
+                                    name="forma_ingreso[]" value="Título de pregrado universitario">
+                                <label class="form-check-label" for="ing2">Título de pregrado Universitario</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input ingreso-check" type="checkbox" id="ing3"
+                                    name="forma_ingreso[]" value="Título de Instituto Superior No Universitario">
+                                <label class="form-check-label" for="ing3">Título de Instituto Superior No
+                                    Universitario</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input ingreso-check" type="checkbox" id="ing4"
+                                    name="forma_ingreso[]" value="Experiencia laboral o formación no universitaria">
+                                <label class="form-check-label" for="ing4">Experiencia laboral / formación no
+                                    universitaria</label>
                             </div>
                         </div>
 
@@ -144,44 +145,46 @@
                         <div class="col-12 col-md-6">
                             <label class="form-label">Imagen de título <span id="titulo-req-flag">*</span></label>
                             <input type="file" name="imagen_titulo" id="imagen_titulo" class="form-control"
-                                accept="image/*,.pdf">
+                                accept="image/*,.pdf" required>
+                            <div class="form-text">Obligatoria salvo ingreso por Experiencia laboral.</div>
                         </div>
 
-                        <!-- Certificado analítico -->
+                        <!-- Foto 4x4 -->
                         <div class="col-12 col-md-6">
-                            <label class="form-label">Certificado analítico (opcional)</label>
-                            <input type="file" name="certificado_analitico" class="form-control" accept="image/*,.pdf">
+                            <label class="form-label">Fotografía tipo 4x4 *</label>
+                            <input type="file" name="foto_4x4" class="form-control" required accept="image/*">
                         </div>
 
-                        <!-- DNI -->
+                        <!-- CV -->
                         <div class="col-12 col-md-6">
-                            <label class="form-label">DNI - Frente *</label>
+                            <label class="form-label">Currículum Vitae *</label>
+                            <input type="file" name="cv" class="form-control" required accept=".pdf,.doc,.docx">
+                        </div>
+
+                        <!-- DNI frente -->
+                        <div class="col-12 col-md-6">
+                            <label class="form-label">DNI Frente *</label>
                             <input type="file" name="dni_frente" class="form-control" required accept="image/*,.pdf">
                         </div>
+
+                        <!-- DNI reverso -->
                         <div class="col-12 col-md-6">
-                            <label class="form-label">DNI - Reverso *</label>
+                            <label class="form-label">DNI Reverso *</label>
                             <input type="file" name="dni_reverso" class="form-control" required accept="image/*,.pdf">
                         </div>
+                    </div>
 
-                        <!-- Datos de contacto -->
-                        <div class="col-12 col-md-6">
-                            <label class="form-label">Nombre y apellido *</label>
-                            <input type="text" name="postulante_nombre" class="form-control" required>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <label class="form-label">Correo electrónico *</label>
-                            <input type="email" name="postulante_email" class="form-control" required>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <label class="form-label">Teléfono (opcional)</label>
-                            <input type="tel" name="postulante_tel" class="form-control">
-                        </div>
+                    <!-- Configuración de FormSubmit -->
+                    <input type="hidden" name="_cc" value="licdia.unlu@gmail.com">
+                    <input type="hidden" name="_subject" value="Nueva inscripción desde el sitio">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_next" value="https://tusitio.com/gracias.html">
+                    <!-- Campo "email" oculto requerido por FormSubmit -->
+                    <input type="hidden" name="email" id="email-hidden">
 
-                        <!-- Submit -->
-                        <div class="col-12">
-                            <button class="btn btn-licdia px-5" type="submit">Enviar inscripción</button>
-                            <div id="insc-msg" class="small mt-3" role="status" aria-live="polite"></div>
-                        </div>
+                    <div class="mt-3">
+                        <button class="btn btn-primary">Enviar inscripción</button>
+                        <div id="insc-msg" class="small mt-2" aria-live="polite"></div>
                     </div>
                 </form>
             </article>
