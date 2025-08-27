@@ -502,8 +502,8 @@ header.backgroundAr .masthead-heading {
 
     header.backgroundhead {
         margin-top: 7rem;
-        padding-top: 13rem;
-        padding-bottom: 13rem;
+        padding-top: 20rem;
+        padding-bottom: 20rem;
         text-align: center;
         color: #fbfbfb;
         background-image: linear-gradient(to right, #1D78E5, black);
@@ -720,4 +720,71 @@ a {
 
 .zoom-hover:hover {
   transform: scale(1.15); /* 1.05 = 5% más grande */
+}
+
+#infoInsc {
+    text-align: left;
+    align-items: left;
+    background-size: cover;
+    /* ocupa todo el ancho y alto */
+    background-position: center;
+    /* centra la imagen */
+    background-repeat: no-repeat;
+    /* evita que se repita */
+    width: 100%;
+    box-shadow: inset 0 0 120px rgba(0, 0, 0, 1.6);
+}
+
+#infoInsc::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(../assets/img/dedoMano.jpg) repeat-x;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+
+    animation: zoomInOut 4s ease-in-out infinite;
+}
+
+.btn-licdia {
+  background: linear-gradient(90deg,#0b2130,#1354A0);
+  color: #fff;
+  border: 0;
+  border-radius: .375rem;
+}
+.btn-licdia:hover {
+  filter: brightness(.95);
+  color: #fff;
+}
+
+#formInsc {
+    text-align: left;
+    align-items: left;
+    background-size: cover;
+    /* ocupa todo el ancho y alto */
+    background-position: center;
+    /* centra la imagen */
+    background-repeat: no-repeat;
+    /* evita que se repita */
+    width: 100%;
+    box-shadow: inset 0 0 120px rgba(0, 0, 0, 1.6);
+}
+
+#formInsc::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(../assets/img/formia.jpg) repeat-x;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+
+    animation: zoomInOut 4s ease-in-out infinite;
 }
