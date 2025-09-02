@@ -834,3 +834,20 @@ a {
 #enfoque h2 {
     color: var(--accent);
 }
+
+.iframe-videoDev {
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente si hay altura suficiente */
+    padding-bottom: 20px;
+}
+
+.contenedor-video .iframe-videoDev {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+}
