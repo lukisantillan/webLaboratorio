@@ -5321,9 +5321,9 @@ fieldset:disabled .btn {
 }
 
 .alert-primary {
-  --bs-alert-color: #997800;
-  --bs-alert-bg: #fff4cc;
-  --bs-alert-border-color: #ffefb3;
+  --bs-alert-color: #000d99;
+  --bs-alert-bg: #C7E0FD;
+  --bs-alert-border-color: #b3c6ff;
 }
 
 .alert-primary .alert-link {
