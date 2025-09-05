@@ -5361,9 +5361,9 @@ fieldset:disabled .btn {
 }
 
 .alert-warning {
-  --bs-alert-color: #997800;
-  --bs-alert-bg: #fff4cc;
-  --bs-alert-border-color: #ffefb3;
+  --bs-alert-color: #003699;
+  --bs-alert-bg: #ccddff;
+  --bs-alert-border-color: #b3cbff;
 }
 
 .alert-warning .alert-link {

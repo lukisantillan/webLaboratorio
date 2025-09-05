@@ -855,3 +855,11 @@ a {
 .inscribiteLink{
     text-align: center;
 }
+
+#pagos .bank-box{
+  background: linear-gradient(180deg, #1e293b, #0b2130);
+  color:#fff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  box-shadow: inset 0 0 40px rgba(0,0,0,.25);
+}
+#pagos .copyable{ background: rgba(255,255,255,.08); padding:.1rem .35rem; border-radius:.25rem; }

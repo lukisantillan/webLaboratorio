@@ -165,3 +165,41 @@ document.addEventListener("DOMContentLoaded", () => {
     // FormSubmit procesa y redirige
   });
 });
+
+(function () {
+  const btn = document.getElementById('btnCopyCBU');
+  if (!btn) return;
+
+  async function copyText(text) {
+    // usa Clipboard API si hay contexto seguro (https/localhost)
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text);
+    }
+    // fallback clásico
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); }
+    finally { document.body.removeChild(ta); }
+  }
+
+  btn.addEventListener('click', async (e) => {
+    const targetSel = e.currentTarget.dataset.target;
+    const el = document.querySelector(targetSel);
+    const text = (el?.dataset.copy || el?.textContent || '').trim();
+
+    try {
+      await copyText(text);
+      btn.textContent = 'Copiado ✓';
+      setTimeout(() => (btn.textContent = 'Copiar CBU'), 1500);
+    } catch (err) {
+      console.error(err);
+      alert('No se pudo copiar automáticamente. Seleccioná y copiá manualmente.');
+    }
+  });
+})();
+
+
