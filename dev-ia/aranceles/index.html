@@ -192,7 +192,7 @@
                 Inscribite ahora <span aria-hidden="true">↓</span>
             </h2>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9NAoYT4RmbAijKZj_46ah7hr3fz-A5hnvp05g-lPIJ37NVw/viewform?usp=header"
-                target="_blank" rel="noopener" class="btn btn-primary px-4 py-2" onclick="fbq('track', 'Lead');">
+                target="_blank" rel="noopener" class="btn btn-primary px-4 py-2" onclick="fbq('track', 'Lead');" id="buttonInfo">
                 Ir al formulario de inscripción
             </a>
         </div>
@@ -293,5 +293,14 @@
     <script>
         AOS.init();
     </script>
+        <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var btn = document.getElementById('buttonInfo');
+            if (!btn) return;
 
+            btn.addEventListener('click', function () {
+                fbq('trackCustom', 'ClickFormulario');
+            });
+        });
+    </script>
 </body>
