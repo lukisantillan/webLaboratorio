@@ -25,20 +25,23 @@
         !function (f, b, e, v, n, t, s) {
             if (f.fbq) return; n = f.fbq = function () {
                 n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                n.callMethod.apply(n, arguments) : n.queue.push(arguments)
             };
-            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            if (!f._fbq) n = f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
             n.queue = []; t = b.createElement(e); t.async = !0;
             t.src = v; s = b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t, s)
-        }(window, document, 'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1493410068477893');
-        fbq('track', 'PageView');
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', '1493410068477893');   // 👈 tu Pixel ID
+        fbq('track', 'PageView');          // 👈 registra la visita
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=1493410068477893&ev=PageView&noscript=1" /></noscript>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1493410068477893&ev=PageView&noscript=1" />
+    </noscript>
     <!-- End Meta Pixel Code -->
+
 </head>
 
 <body id="page-top">
@@ -153,7 +156,8 @@
                     Inscribite ahora <span aria-hidden="true">↓</span>
                 </h2>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSc9NAoYT4RmbAijKZj_46ah7hr3fz-A5hnvp05g-lPIJ37NVw/viewform?usp=header"
-                    target="_blank" rel="noopener" class="btn btn-primary px-4 py-2 " onclick="fbq('track', 'Lead');" id="buttonInfo">
+                    target="_blank" rel="noopener" class="btn btn-primary px-4 py-2 " onclick="fbq('track', 'Lead');"
+                    id="buttonInfo">
                     Ir al formulario de inscripción
                 </a>
             </div>
@@ -258,9 +262,11 @@
         document.addEventListener('DOMContentLoaded', function () {
             var btn = document.getElementById('buttonInfo');
             if (!btn) return;
-
+            // Evento estándar (ideal para campañas de leads):
             btn.addEventListener('click', function () {
-                fbq('trackCustom', 'ClickFormulario');
+                fbq('track', 'Lead');                 // estándar
+                // o si prefieres personalizado:
+                // fbq('trackCustom', 'ClickFormulario');
             });
         });
     </script>
