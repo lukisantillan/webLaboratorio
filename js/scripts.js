@@ -251,3 +251,19 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const banner = document.getElementById("cookieBanner");
+  const acceptBtn = document.getElementById("acceptCookies");
+
+  // Ocultar si ya aceptó
+  if (localStorage.getItem("cookiesAccepted") === "true") {
+    banner.style.display = "none";
+  }
+
+  // Al hacer clic en "Aceptar"
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("cookiesAccepted", "true");
+    banner.style.display = "none";
+  });
+});
+
