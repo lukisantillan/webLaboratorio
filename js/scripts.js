@@ -205,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // ===== CONFIGURACIÓN =====
 const DEADLINE_ISO = '2025-09-25T23:59:59-03:00'; // fecha límite inscripción
-const FORM_URL = 'https://docs.google.com/forms/d/1FAIpQLSc9NAoYT4RmbAijKZj_46ah7hr3fz-A5hnvp05g-lPIJ37NVw/viewform';
+const FORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSc9NAoYT4RmbAijKZj_46ah7hr3fz-A5hnvp05g-lPIJ37NVw/viewform';
 
 // ===== INICIO =====
 document.addEventListener('DOMContentLoaded', () => {
