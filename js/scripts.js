@@ -203,3 +203,51 @@ document.addEventListener("DOMContentLoaded", () => {
 })();
 
 
+// ===== CONFIGURACIÓN =====
+const DEADLINE_ISO = '2025-09-25T23:59:59-03:00'; // fecha límite inscripción
+const FORM_URL = 'https://docs.google.com/forms/d/1FAIpQLSc9NAoYT4RmbAijKZj_46ah7hr3fz-A5hnvp05g-lPIJ37NVw/viewform';
+
+// ===== INICIO =====
+document.addEventListener('DOMContentLoaded', () => {
+  const cta = document.getElementById('ctaInscripcion');
+  if (cta) cta.href = FORM_URL;
+
+  const $d = document.getElementById('cd-d');
+  const $h = document.getElementById('cd-h');
+  const $m = document.getElementById('cd-m');
+  const $s = document.getElementById('cd-s');
+  const $expired = document.getElementById('cd-expired');
+  const deadline = new Date(DEADLINE_ISO).getTime();
+
+  function update() {
+    const now = Date.now();
+    const diff = deadline - now;
+
+    if (diff <= 0) {
+      clearInterval(t);
+      [$d,$h,$m,$s].forEach(el => el.textContent = '00');
+      $expired.classList.remove('d-none');
+      if (cta) cta.classList.add('disabled');
+      return;
+    }
+    const days  = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+    const mins  = Math.floor((diff % (1000*60*60)) / (1000*60));
+    const secs  = Math.floor((diff % (1000*60)) / 1000);
+
+    $d.textContent = days;
+    $h.textContent = String(hours).padStart(2,'0');
+    $m.textContent = String(mins).padStart(2,'0');
+    $s.textContent = String(secs).padStart(2,'0');
+  }
+
+  const t = setInterval(update, 1000);
+  update();
+
+  // Mostrar modal SIEMPRE al cargar la página
+  const modalEl = document.getElementById('modalInscripcion');
+  if (modalEl) {
+    new bootstrap.Modal(modalEl, {backdrop:'static'}).show();
+  }
+});
+

@@ -780,5 +780,55 @@
             });
         });
     </script>
+    <!-- Modal: Cuenta regresiva inscripción -->
+<div class="modal fade" id="modalInscripcion" tabindex="-1" aria-labelledby="modalInscripcionLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
+      <!-- Header con degradado -->
+      <div class="modal-header modal-hero text-white">
+        <h5 class="modal-title fw-bold" id="modalInscripcionLabel">
+          Inscripción: ¡últimos días!
+        </h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+
+      <div class="modal-body p-4">
+        <p class="mb-3">Queda para inscribirse:</p>
+
+        <!-- Contador -->
+        <div class="countdown d-flex gap-3 flex-wrap">
+          <div class="cd-box">
+            <span id="cd-d" class="cd-num">--</span>
+            <small>días</small>
+          </div>
+          <div class="cd-box">
+            <span id="cd-h" class="cd-num">--</span>
+            <small>hs</small>
+          </div>
+          <div class="cd-box">
+            <span id="cd-m" class="cd-num">--</span>
+            <small>min</small>
+          </div>
+          <div class="cd-box">
+            <span id="cd-s" class="cd-num">--</span>
+            <small>seg</small>
+          </div>
+        </div>
+
+        <!-- Mensaje al vencer -->
+        <div id="cd-expired" class="alert alert-warning mt-3 d-none mb-0">
+          La inscripción ha finalizado.
+        </div>
+      </div>
+
+      <div class="modal-footer d-flex justify-content-between">
+        <a id="ctaInscripcion" href="https://docs.google.com/forms/d/e/1FAIpQLSc9NAoYT4RmbAijKZj_46ah7hr3fz-A5hnvp05g-lPIJ37NVw/viewform?usp=header"
+           target="_blank" rel="noopener"
+           class="btn btn-primary px-4">Inscribirme ahora</a>
+        <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Más tarde</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
