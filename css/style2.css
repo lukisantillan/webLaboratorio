@@ -880,3 +880,15 @@ a {
   display:block; color:var(--accent);
 }
 #modalInscripcion small{ color:#6b7280; }
+
+/* Hace que un bloque ocupe todo el ancho del viewport */
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* Opcional: bordes redondeados solo en desktop */
+@media (min-width: 992px) {
+  #informacionPlan .card { border-radius: 1rem; }
+}
