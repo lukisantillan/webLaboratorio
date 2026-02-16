@@ -434,6 +434,16 @@ iframe {
     justify-content: center;
 }
 
+.fondoBlockchain {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 header.backgroundhead {
     padding-top: 5.5rem;
     padding-bottom: 2rem;
@@ -466,6 +476,15 @@ header.backgroundAr .masthead-heading {
     line-height: 3.25rem;
     margin-bottom: 2rem;
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+}
+
+/* Blockchain - gradiente púrpura/índigo */
+header.backgroundhead.fondoBlockchain {
+    background-image: linear-gradient(to right, #6B21A8, #1e1b4b);
+}
+
+header.backgroundAr.fondoBlockchain {
+    background-image: linear-gradient(to left, #581c87cf, rgb(107, 33, 168));
 }
 
 #bordefino {
@@ -523,6 +542,14 @@ header.backgroundAr .masthead-heading {
         color: #fbfbfb;
         background-image: linear-gradient(to right, #1D78E5, black);
         height: 100px;
+    }
+
+    header.backgroundhead.fondoBlockchain {
+        background-image: linear-gradient(to right, #6B21A8, #1e1b4b);
+    }
+
+    header.backgroundAr.fondoBlockchain {
+        background-image: linear-gradient(to right, #6B21A8, #1e1b4b);
     }
 
     .masthead-subheading {
