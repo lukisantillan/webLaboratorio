@@ -129,6 +129,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("form-inscripcion");
+  if (!form) return;
+
   const msg  = document.getElementById("insc-msg");
   const checks = document.querySelectorAll(".ingreso-check");
   const exp   = document.getElementById("ing4"); // experiencia laboral
@@ -141,10 +143,10 @@ document.addEventListener("DOMContentLoaded", () => {
   function reglaTitulo(){
     if (exp && exp.checked) {
       imgTitulo?.removeAttribute("required");
-      flag.textContent = "";
+      if (flag) flag.textContent = "";
     } else {
       imgTitulo?.setAttribute("required","required");
-      flag.textContent = "*";
+      if (flag) flag.textContent = "*";
     }
   }
   checks.forEach(c => c.addEventListener("change", reglaTitulo));
@@ -219,6 +221,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const $expired = document.getElementById('cd-expired');
   const deadline = new Date(DEADLINE_ISO).getTime();
 
+  // Only run countdown if all elements are present
+  if (!$d || !$h || !$m || !$s || !$expired) return;
+
   function update() {
     const now = Date.now();
     const diff = deadline - now;
@@ -254,6 +259,8 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener("DOMContentLoaded", () => {
   const banner = document.getElementById("cookieBanner");
   const acceptBtn = document.getElementById("acceptCookies");
+
+  if (!banner || !acceptBtn) return;
 
   // Ocultar si ya aceptó
   if (localStorage.getItem("cookiesAccepted") === "true") {
