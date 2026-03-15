@@ -313,33 +313,33 @@ header.backgroundAr.fondoBlockchain {
     }
 
     .backgroundhead {
-        padding-top: 200px;
-        padding-bottom: 200px;
+        padding-top: 6rem;
+        padding-bottom: 4rem;
     }
 
     header.backgroundhead {
-        margin-top: 7rem;
-        padding-top: 20rem;
-        padding-bottom: 20rem;
+        margin-top: 4rem;
+        padding-top: 7rem;
+        padding-bottom: 4rem;
         text-align: center;
         color: #fbfbfb;
         background-image: linear-gradient(to right, #1D78E5, black);
-        height: 100px !important;
+        height: auto;
     }
 
     .backgroundAr {
-        padding-top: 200px;
-        padding-bottom: 200px;
+        padding-top: 5rem;
+        padding-bottom: 3rem;
     }
 
     header.backgroundAr {
-        margin-top: 7rem;
-        padding-top: 13rem;
-        padding-bottom: 13rem;
+        margin-top: 4rem;
+        padding-top: 6rem;
+        padding-bottom: 3rem;
         text-align: center;
         color: #fbfbfb;
         background-image: linear-gradient(to right, #1D78E5, black);
-        height: 100px;
+        height: auto;
     }
 
     header.backgroundhead.fondoDiplomatura {
@@ -385,21 +385,29 @@ header.backgroundAr.fondoBlockchain {
     }
 
     #buttonInfo {
-        width: 250px;
-        height: 20px;
+        width: auto;
+        min-height: 48px;
         align-items: center;
-        padding-bottom: 50px;
-        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    #informacionPlan {
+        padding: 1.5rem;
     }
 
     .infogrid {
         display: grid;
-        grid-template-columns: repeat(2, auto);
+        grid-template-columns: 1fr;
     }
 
     .fondoDiplomatura .masthead-subheading {
-        font-size: 25px;
+        font-size: 1rem;
         color: rgb(190, 190, 190);
+    }
+
+    .masthead-subheading {
+        font-size: 0.85rem;
     }
 
     .col-3 h3 {
