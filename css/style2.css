@@ -550,6 +550,12 @@ header.backgroundAr.fondoBlockchain {
     color: #581c87;
 }
 
+.blockchain-theme #aranceles::before {
+    background: linear-gradient(rgba(30,27,75,0.6), rgba(107,33,168,0.7)), url(../assets/img/blockchain-hero.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 #aranceles {
     text-align: left;
     align-items: left;
