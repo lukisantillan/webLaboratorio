@@ -517,6 +517,11 @@ header.backgroundAr.fondoBlockchain {
 
 .blockchain-theme #containerInfo {
     border-color: #6b21a8 !important;
+    background-color: #e9d5f5cc;
+}
+
+.blockchain-theme #informacionPlan {
+    background-color: #e9d5f5cc;
 }
 
 .blockchain-theme .accordion-button:not(.collapsed) {
