@@ -272,15 +272,15 @@ header.backgroundAr.fondoDiplomatura {
     background-position: center;
 }
 
-/* Blockchain - gradiente púrpura/índigo */
+/* Blockchain - gradiente púrpura/índigo (#261951, #391B67, #4C1C7F) */
 header.backgroundhead.fondoBlockchain {
-    background-image: linear-gradient(to right, rgba(107,33,168,0.7), rgba(30,27,75,0.8)), url('../assets/img/blockchain-hero.jpg');
+    background-image: linear-gradient(to right, rgba(76,28,127,0.7), rgba(38,25,81,0.8)), url('../assets/img/blockchain-hero.jpg');
     background-size: cover;
     background-position: center;
 }
 
 header.backgroundAr.fondoBlockchain {
-    background-image: linear-gradient(to left, rgba(88,28,135,0.8), rgba(107,33,168,0.8)), url('../assets/img/blockchain-hero.jpg');
+    background-image: linear-gradient(to left, rgba(57,27,103,0.8), rgba(76,28,127,0.8)), url('../assets/img/blockchain-hero.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -355,13 +355,13 @@ header.backgroundAr.fondoBlockchain {
     }
 
     header.backgroundhead.fondoBlockchain {
-        background-image: linear-gradient(to right, rgba(107,33,168,0.7), rgba(30,27,75,0.8)), url('../assets/img/blockchain-hero.jpg');
+        background-image: linear-gradient(to right, rgba(76,28,127,0.7), rgba(38,25,81,0.8)), url('../assets/img/blockchain-hero.jpg');
         background-size: cover;
         background-position: center;
     }
 
     header.backgroundAr.fondoBlockchain {
-        background-image: linear-gradient(to right, rgba(107,33,168,0.7), rgba(30,27,75,0.8)), url('../assets/img/blockchain-hero.jpg');
+        background-image: linear-gradient(to right, rgba(76,28,127,0.7), rgba(38,25,81,0.8)), url('../assets/img/blockchain-hero.jpg');
         background-size: cover;
         background-position: center;
     }
@@ -491,67 +491,67 @@ header.backgroundAr.fondoBlockchain {
     height: 6px;
 }
 
-/* Blockchain theme - purple overrides */
+/* Blockchain theme - purple overrides (#261951, #391B67, #4C1C7F) */
 .blockchain-theme #lic-ia .rule {
-    background: #6b21a8;
+    background: #4C1C7F;
 }
 
 .blockchain-theme .btn-primary {
-    background-color: #6b21a8;
-    border-color: #6b21a8;
+    background-color: #4C1C7F;
+    border-color: #4C1C7F;
 }
 
 .blockchain-theme .btn-primary:hover,
 .blockchain-theme .btn-primary:focus {
-    background-color: #581c87;
-    border-color: #581c87;
+    background-color: #391B67;
+    border-color: #391B67;
 }
 
 .blockchain-theme #lic-ia a {
-    color: #6b21a8;
+    color: #4C1C7F;
 }
 
 .blockchain-theme #lic-ia a:hover {
-    color: #581c87;
+    color: #391B67;
 }
 
 .blockchain-theme #containerInfo {
-    border-color: #6b21a8 !important;
-    background-color: #e9d5f5cc;
+    border-color: #4C1C7F !important;
+    background-color: rgba(76,28,127,0.12);
 }
 
 .blockchain-theme #informacionPlan {
-    background-color: #e9d5f5cc;
+    background-color: rgba(76,28,127,0.12);
 }
 
 .blockchain-theme .accordion-button:not(.collapsed) {
-    color: #6b21a8;
-    background-color: #f3e8ff;
+    color: #4C1C7F;
+    background-color: rgba(76,28,127,0.08);
 }
 
 .blockchain-theme .accordion-button:focus {
-    border-color: #c084fc;
-    box-shadow: 0 0 0 0.25rem rgba(107,33,168,0.25);
+    border-color: #4C1C7F;
+    box-shadow: 0 0 0 0.25rem rgba(76,28,127,0.25);
 }
 
 .blockchain-theme .alert-link {
-    color: #6b21a8;
+    color: #4C1C7F;
 }
 
 .blockchain-theme .breadcrumb-item a {
-    color: #6b21a8;
+    color: #4C1C7F;
 }
 
 .blockchain-theme a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-info) {
-    color: #6b21a8;
+    color: #4C1C7F;
 }
 
 .blockchain-theme a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-info):hover {
-    color: #581c87;
+    color: #391B67;
 }
 
 .blockchain-theme #aranceles::before {
-    background: linear-gradient(rgba(30,27,75,0.6), rgba(107,33,168,0.7)), url(../assets/img/blockchain-hero.jpg) no-repeat;
+    background: linear-gradient(rgba(38,25,81,0.6), rgba(76,28,127,0.7)), url(../assets/img/blockchain-hero.jpg) no-repeat;
     background-size: cover;
     background-position: center;
 }
