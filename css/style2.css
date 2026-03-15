@@ -491,6 +491,34 @@ header.backgroundAr.fondoBlockchain {
     height: 6px;
 }
 
+/* Blockchain theme - purple overrides */
+.blockchain-theme #lic-ia .rule {
+    background: #6b21a8;
+}
+
+.blockchain-theme .btn-primary {
+    background-color: #6b21a8;
+    border-color: #6b21a8;
+}
+
+.blockchain-theme .btn-primary:hover,
+.blockchain-theme .btn-primary:focus {
+    background-color: #581c87;
+    border-color: #581c87;
+}
+
+.blockchain-theme #lic-ia a {
+    color: #6b21a8;
+}
+
+.blockchain-theme #lic-ia a:hover {
+    color: #581c87;
+}
+
+.blockchain-theme #containerInfo {
+    border-color: #6b21a8 !important;
+}
+
 #aranceles {
     text-align: left;
     align-items: left;
