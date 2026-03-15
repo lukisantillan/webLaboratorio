@@ -519,6 +519,32 @@ header.backgroundAr.fondoBlockchain {
     border-color: #6b21a8 !important;
 }
 
+.blockchain-theme .accordion-button:not(.collapsed) {
+    color: #6b21a8;
+    background-color: #f3e8ff;
+}
+
+.blockchain-theme .accordion-button:focus {
+    border-color: #c084fc;
+    box-shadow: 0 0 0 0.25rem rgba(107,33,168,0.25);
+}
+
+.blockchain-theme .alert-link {
+    color: #6b21a8;
+}
+
+.blockchain-theme .breadcrumb-item a {
+    color: #6b21a8;
+}
+
+.blockchain-theme a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-info) {
+    color: #6b21a8;
+}
+
+.blockchain-theme a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-info):hover {
+    color: #581c87;
+}
+
 #aranceles {
     text-align: left;
     align-items: left;
