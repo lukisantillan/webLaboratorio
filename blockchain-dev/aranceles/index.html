@@ -22,8 +22,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- AOS ANIMACIONES -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Poppins para títulos -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap" rel="stylesheet">
 
     <style>
+        .masthead-heading {
+            font-family: 'Poppins', sans-serif !important;
+            font-weight: 700 !important;
+        }
         .arancel-hero {
             background: linear-gradient(135deg, #1a0d30 0%, #4C1C7F 50%, #261951 100%);
             border-radius: 16px;
@@ -92,16 +98,16 @@
             height: 100%;
         }
         .bank-box {
-            background: #f0fff8;
-            border: 2px solid #c3e6cb;
-            border-left: 5px solid #198754;
+            background: #f8f5ff;
+            border: 2px solid rgba(76,28,127,0.25);
+            border-left: 5px solid #4C1C7F;
             border-radius: 10px;
             font-family: 'Courier New', monospace;
             font-size: 0.9rem;
         }
         .copy-btn {
             cursor: pointer;
-            color: #198754;
+            color: #4C1C7F;
             margin-left: 0.4rem;
             background: none;
             border: none;
@@ -110,12 +116,12 @@
             font-size: 0.8rem;
             transition: color 0.2s;
         }
-        .copy-btn:hover { color: #0f5132; }
+        .copy-btn:hover { color: #391B67; }
         .step-circle {
             width: 34px;
             height: 34px;
             border-radius: 50%;
-            background: #198754;
+            background: #4C1C7F;
             color: white;
             display: flex;
             align-items: center;
@@ -145,14 +151,15 @@
         /* Item 15: banco text visible on dark pagos background */
         .blockchain-theme #pagos .bank-box p,
         .blockchain-theme #pagos .bank-box span,
-        .blockchain-theme #pagos .bank-box strong,
+        .blockchain-theme #pagos .bank-box strong {
+            color: #e8d5ff !important;
+        }
         .blockchain-theme #pagos .bank-box hr {
-            color: #d4b8ff !important;
-            border-color: rgba(212,184,255,0.2) !important;
+            border-color: rgba(212,184,255,0.25) !important;
         }
         .blockchain-theme #pagos .bank-box {
             border-color: rgba(212,184,255,0.3) !important;
-            border-left-color: #a855f7 !important;
+            border-left-color: #d4b8ff !important;
         }
     </style>
 
