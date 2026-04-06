@@ -37,6 +37,12 @@
     <link href="../css/style2.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- AOS ANIMACIONES -->
+    <!-- Item 22: fondo azul en sección contact -->
+    <style>
+        section#contact {
+            background: linear-gradient(135deg, #0d1f5c 0%, #1a4aad 100%) !important;
+        }
+    </style>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Meta Pixel Code -->
     <script>
@@ -60,6 +66,34 @@
     </noscript>
     <!-- End Meta Pixel Code -->
     <script type="text/javascript" async="async" src="https://hub.fromdoppler.com/public/dhtrack.js"></script>
+
+    <!-- Meta Conversions API -->
+    <script>
+    (function() {
+        var pid = '1493410068477893';
+        var token = 'EAATAhGngOTsBREBB1wcWrcRRH23ybLn9WCLlBMy8KKmKpPPZCVNZASsPJAuRRa1woZAig6KNbiEKRc5Y4NI0ayxjXmxY4RfU6TRi1QRD1syZB2mQ25G6J4J2J5laT6X0j09QklaLeIJyLfKQuPDhZA7wynA1PGysxSiDFvkZAJ5UYds6OpZArWuDgI63cXVNgZDZD';
+        var path = window.location.pathname;
+        var eventName = path.indexOf('gracias-diplomado') > -1 ? 'CompleteRegistration'
+                      : path.indexOf('gracias') > -1 ? 'Lead'
+                      : 'PageView';
+        var eventId = 'capi_' + Date.now() + '_' + Math.random().toString(36).slice(2, 9);
+        fetch('https://graph.facebook.com/v19.0/' + pid + '/events?access_token=' + token, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                data: [{
+                    event_name: eventName,
+                    event_time: Math.floor(Date.now() / 1000),
+                    event_id: eventId,
+                    event_source_url: window.location.href,
+                    action_source: 'website',
+                    user_data: {}
+                }]
+            })
+        }).catch(function(){});
+    })();
+    </script>
+    <!-- End Meta Conversions API -->
 </head>
 
 <body id="page-top">
@@ -100,7 +134,7 @@
             </div>
             <a class="btn btn-primary btn-xl text-uppercase"
                 href="#contact"
-                id="buttonInfo" onclick="fbq('track', 'Lead');"> Pre-registro 2da cohorte 2026 </a>
+                id="buttonInfo" onclick="fbq('track', 'Lead');"> Registro a pre-charla </a>
         </div>
     </header>
 
@@ -122,7 +156,7 @@
     
             <div class="col-12 col-md-4">
                 <p class="mb-2"><span class="fw-semibold text-uppercase">Modalidad:</span> Virtual</p>
-                <p class="mb-0"><span class="fw-semibold text-uppercase">Estado:</span> Inscripción abierta hasta el 20/07 - Cupos limitados</p>
+                <p class="mb-0"><span class="fw-semibold text-uppercase">Estado:</span> Próximamente — dejá tus datos y te notificamos cuando abramos la inscripción</p>
             </div>
 
     
@@ -137,13 +171,13 @@
                     <p class="mb-2"><span class="fw-semibold text-uppercase">Charla informativa (2025): </span> <a
                             href="https://drive.google.com/file/d/1RqMK20wWeMGIJ94PuXWRi4JieTezMjaa/view?usp=sharing"
                             class="text-decoration-underline" target="_blank"> Video de la charla. </a></p>
-                    <p class="mb-2"><span class="fw-semibold text-uppercase">Nueva charla 2026: </span> 20 de junio de 2026. <a href="#contact" class="text-decoration-underline">Pre anotate</a></p>
+                    <p class="mb-2"><span class="fw-semibold text-uppercase">Nueva charla 2026: </span> Miércoles 10 de junio de 2026. <a href="#contact" class="text-decoration-underline">Preregistro charla</a></p>
                     <p class="mb-0"><span class="fw-semibold text-uppercase">Tipo de titulo: </span> Diplomatura de
                         Posgrado
                         Universitario </p>
                 </div>
                 <div class="mt-5">
-                    <a class="btn btn-primary px-4" href="#consulta">Formulario de consulta</a>
+                    <a class="btn btn-primary px-4" href="#contact">Preregistro charla</a>
                 </div>
             </div>
         </div>
@@ -203,16 +237,16 @@
 
                 <div class="col-12 col-lg-6">
                     <p class="fw-semibold mb-3">
-                        Abrimos la inscripción para la segunda cohorte de la
-                        Diplomatura de Posgrado en Desarrollo de Soluciones de Inteligencia Artificial Generativa en
-                        la Nube. Inicio septiembre 2026.
+                        Anotate para la charla informativa gratuita sobre la
+                        Diplomatura de Posgrado en Desarrollo de Soluciones de IA Generativa en la Nube.
+                        Charla: Miércoles 10 de junio de 2026.
                     </p>
 
 
                     <a href="#contact"
                         rel="noopener" class="btn btn-primary px-4 py-2"
                         onclick="fbq('track', 'Lead'); ">
-                        Pre-registro charla informativa
+                        Preregistro charla informativa
                     </a>
                 </div>
             </div>
@@ -221,8 +255,10 @@
 
     <div class=”container mt-5 mb-5” id=”informacion”>
         <div class=”row justify-content-center”>
-            <h2 class=”card-t card-title”> Información </h2>
-            <hr>
+            <div class=”col-12 text-center”>
+                <h2 class=”card-t card-title”> Información </h2>
+                <hr>
+            </div>
             <div class=”col-12 col-lg-10 mt-4”>
                 <p>
                     La Inteligencia Artificial Generativa se ha convertido en un eje central de innovación
@@ -285,6 +321,63 @@
             </div>
         </div>
     </div>
+    <!-- ¿PARA QUIÉN VA DIRIGIDO? (item 23) -->
+    <section class="py-5 bg-light" id="para-quien" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <div class="text-center mb-4">
+                <h2 class="section-heading text-uppercase">¿Para quién va dirigido?</h2>
+                <p class="text-muted">La diplomatura está pensada para profesionales y graduados que quieran dominar la IA generativa en contextos reales.</p>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-laptop-code fa-2x mb-3" style="color:#1a4aad;"></i>
+                            <h5 class="fw-bold">Desarrolladores e Ingenieros IT</h5>
+                            <p class="text-muted small mb-0">Que quieran incorporar IA generativa y LLMs a sus proyectos y productos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-chart-bar fa-2x mb-3" style="color:#1a4aad;"></i>
+                            <h5 class="fw-bold">Data Scientists y Analistas</h5>
+                            <p class="text-muted small mb-0">Con experiencia en datos que buscan dar el salto a modelos generativos y despliegue en cloud.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-cloud fa-2x mb-3" style="color:#1a4aad;"></i>
+                            <h5 class="fw-bold">DevOps y profesionales Cloud</h5>
+                            <p class="text-muted small mb-0">Que quieran especializarse en infraestructura para desplegar modelos de IA a escala.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-lightbulb fa-2x mb-3" style="color:#1a4aad;"></i>
+                            <h5 class="fw-bold">Emprendedores e Innovadores</h5>
+                            <p class="text-muted small mb-0">Que buscan integrar IA generativa en sus productos, procesos o modelos de negocio.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card border-0 shadow-sm h-100">
+                        <div class="card-body text-center p-4">
+                            <i class="fas fa-graduation-cap fa-2x mb-3" style="color:#1a4aad;"></i>
+                            <h5 class="fw-bold">Graduados que buscan especialización</h5>
+                            <p class="text-muted small mb-0">Con título universitario o terciario que quieran una formación de posgrado aplicada y reconocida.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <br>
     <div class="icons mb-5">
         <div class="container text-center">
@@ -648,9 +741,10 @@
 
                         <p class="text-muted">
                             Dr. en Ciencias Informáticas (UNLP). <br>
-                            Senior Cloud Architect en Caylent (USA). <br>
-                            Profesor en UNLu. <br>
-                            Especialista en despliegue de infraestructura en cloud. <br>
+                            Senior Cloud Architect en Caylent Inc. (USA). <br>
+                            Docente e investigador en UNLu. <br>
+                            Especialista en despliegue de soluciones de IA en AWS. <br>
+                            Director de la 1ra cohorte 2025 con 25 estudiantes.
                         </p>
                     </div>
                 </div>
@@ -682,6 +776,63 @@
         </div>
     </section>
 <!-- terminacion de cuerpo -->
+
+<!-- EXPERIENCIA 2025 (item 30) -->
+    <section class="py-5" id="experiencia-2025" style="background: linear-gradient(135deg, #0d1f5c 0%, #1a4aad 100%); color:#fff;" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-heading text-uppercase" style="color:#fff;">1ra Cohorte 2025 — Resultados</h2>
+                <p style="color:#a8c5e0;">La primera cohorte ya está en curso. Estos son los números.</p>
+            </div>
+            <div class="row g-4 justify-content-center text-center">
+                <div class="col-6 col-md-3">
+                    <div class="display-4 fw-bold" style="color:#ffc107;">25</div>
+                    <p class="mt-2 mb-0" style="color:#a8c5e0;">Estudiantes activos</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="display-4 fw-bold" style="color:#ffc107;">4</div>
+                    <p class="mt-2 mb-0" style="color:#a8c5e0;">Módulos dictados</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="display-4 fw-bold" style="color:#ffc107;">100%</div>
+                    <p class="mt-2 mb-0" style="color:#a8c5e0;">Virtual y asincrónico</p>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="display-4 fw-bold" style="color:#ffc107;">UNLu</div>
+                    <p class="mt-2 mb-0" style="color:#a8c5e0;">Aval universitario oficial</p>
+                </div>
+            </div>
+            <div class="row g-4 mt-3 justify-content-center">
+                <div class="col-12 col-md-4">
+                    <div class="card border-0 h-100" style="background:rgba(255,255,255,0.1); border-radius:1rem;">
+                        <div class="card-body p-4">
+                            <p class="mb-2" style="color:#ffc107;"><i class="fas fa-quote-left me-2"></i></p>
+                            <p class="mb-3" style="color:#fff;">"La diplomatura me dio las herramientas para implementar soluciones de IA en mi empresa. La calidad docente es excelente."</p>
+                            <p class="mb-0 fw-semibold" style="color:#a8c5e0;">— Estudiante cohorte 2025, desarrollador backend</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card border-0 h-100" style="background:rgba(255,255,255,0.1); border-radius:1rem;">
+                        <div class="card-body p-4">
+                            <p class="mb-2" style="color:#ffc107;"><i class="fas fa-quote-left me-2"></i></p>
+                            <p class="mb-3" style="color:#fff;">"Pude pasar de usar IA como usuario a construir mis propios agentes y pipelines en cloud. Un salto enorme en mi perfil profesional."</p>
+                            <p class="mb-0 fw-semibold" style="color:#a8c5e0;">— Estudiante cohorte 2025, data analyst</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="card border-0 h-100" style="background:rgba(255,255,255,0.1); border-radius:1rem;">
+                        <div class="card-body p-4">
+                            <p class="mb-2" style="color:#ffc107;"><i class="fas fa-quote-left me-2"></i></p>
+                            <p class="mb-3" style="color:#fff;">"El nivel práctico es muy alto. Cada módulo termina con un proyecto real. Aprendí más en 4 meses que en años de cursos online."</p>
+                            <p class="mb-0 fw-semibold" style="color:#a8c5e0;">— Estudiante cohorte 2025, ingeniero cloud</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 <!-- RESPALDO INSTITUCIONAL -->
     <section class="py-4 bg-light">
@@ -1015,8 +1166,8 @@
     <section class="page-section" id="contact">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase"> Pre-registro 2da Cohorte 2026 </h2>
-                <h3 class="section-subheading text-muted mb-4">Charla informativa: 20 de junio de 2026 - Anotate y te avisamos con el link de acceso</h3>
+                <h2 class="section-heading text-uppercase"> Preregistro Charla Informativa 2026 </h2>
+                <h3 class="section-subheading text-muted mb-4">Miércoles 10 de junio de 2026 — Anotate y te avisamos con el link de acceso</h3>
             </div>
 
             <div class="container my-3">
@@ -1163,9 +1314,9 @@
                         body: data,
                         headers: { 'Accept': 'application/json' }
                     }).then(function () {
-                        window.location.href = 'gracias/';
+                        window.location.href = 'gracias-charla/';
                     }).catch(function () {
-                        window.location.href = 'gracias/';
+                        window.location.href = 'gracias-charla/';
                     });
                 });
             }

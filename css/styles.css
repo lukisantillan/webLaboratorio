@@ -13435,18 +13435,12 @@ section#contact form#contactForm :-ms-input-placeholder {
 
 /* Ajuste para la visualización de los títulos */
 #cursosYcarreras .portfolio-item .portfolio-caption .portfolio-caption-heading {
-  font-size: 19px;
+  font-size: 15px;
   font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   margin-bottom: 0;
   white-space: normal;
-  /* Permitir que el texto se divida en varias líneas */
-  overflow: hidden;
-  text-overflow: ellipsis;
   line-height: 1.4;
-  /* Aumentar el espacio entre líneas */
-  max-height: 3.2rem;
-  /* Limitar la altura máxima si hay demasiadas líneas */
 }
 
 #cursosYcarreras .portfolio-item .portfolio-caption .portfolio-caption-subheading {

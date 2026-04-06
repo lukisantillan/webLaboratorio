@@ -38,6 +38,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- AOS ANIMACIONES -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Poppins bold para títulos -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        /* Item 11: Poppins bold en títulos */
+        .blockchain-theme h1.masthead-heading,
+        .blockchain-theme h2.section-heading,
+        .blockchain-theme .card-t,
+        .blockchain-theme #cta-inscripcion h2,
+        .blockchain-theme h2.display-5 {
+            font-family: 'Poppins', sans-serif !important;
+            font-weight: 700 !important;
+        }
+        /* Item 12: link visible en barra morada */
+        .blockchain-theme .alert a.text-white {
+            color: #ffffff !important;
+        }
+    </style>
     <!-- Meta Pixel Code -->
     <script>
         !function (f, b, e, v, n, t, s) {
@@ -51,15 +68,43 @@
             s.parentNode.insertBefore(t, s)
         }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
 
-        fbq('init', '1493410068477893');
+        fbq('init', '1845986945991192');
         fbq('track', 'PageView');
     </script>
     <noscript>
         <img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=1493410068477893&ev=PageView&noscript=1" />
+            src="https://www.facebook.com/tr?id=1845986945991192&ev=PageView&noscript=1" />
     </noscript>
     <!-- End Meta Pixel Code -->
     <script type="text/javascript" async="async" src="https://hub.fromdoppler.com/public/dhtrack.js"></script>
+
+    <!-- Meta Conversions API -->
+    <script>
+    (function() {
+        var pid = '1845986945991192';
+        var token = 'EAATAhGngOTsBREBB1wcWrcRRH23ybLn9WCLlBMy8KKmKpPPZCVNZASsPJAuRRa1woZAig6KNbiEKRc5Y4NI0ayxjXmxY4RfU6TRi1QRD1syZB2mQ25G6J4J2J5laT6X0j09QklaLeIJyLfKQuPDhZA7wynA1PGysxSiDFvkZAJ5UYds6OpZArWuDgI63cXVNgZDZD';
+        var path = window.location.pathname;
+        var eventName = path.indexOf('gracias-diplomado') > -1 ? 'CompleteRegistration'
+                      : path.indexOf('gracias') > -1 ? 'Lead'
+                      : 'PageView';
+        var eventId = 'capi_' + Date.now() + '_' + Math.random().toString(36).slice(2, 9);
+        fetch('https://graph.facebook.com/v19.0/' + pid + '/events?access_token=' + token, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                data: [{
+                    event_name: eventName,
+                    event_time: Math.floor(Date.now() / 1000),
+                    event_id: eventId,
+                    event_source_url: window.location.href,
+                    action_source: 'website',
+                    user_data: {}
+                }]
+            })
+        }).catch(function(){});
+    })();
+    </script>
+    <!-- End Meta Conversions API -->
 </head>
 
 <body id="page-top" class="blockchain-theme">
@@ -121,7 +166,7 @@
 
             <div class="col-12 col-md-4 d-flex flex-column gap-2">
                 <div>
-                    <p class="mb-2"><span class="fw-semibold text-uppercase">Charla informativa: </span> 20 de abril de 2026.</p>
+                    <p class="mb-2"><span class="fw-semibold text-uppercase">Charla informativa: </span> 7 de mayo de 2026.</p>
                     <div class="mb-2">
                         <a href="#contact" class="btn btn-dark px-3 py-2" onclick="fbq('track', 'Lead');">
                             Pre-registro charla informativa
@@ -196,14 +241,14 @@
 
                 <div class="col-12 col-lg-6">
                     <h2 class="display-5 display-md-4 fw-bold m-0 d-flex align-items-center">
-                        Inscribite ahora <span class="ms-3" aria-hidden="true">→</span>
+                        Inscribíte ahora a la charla informativa <span class="ms-3" aria-hidden="true">→</span>
                     </h2>
                 </div>
 
 
                 <div class="col-12 col-lg-6">
                     <p class="fw-semibold mb-3">
-                        Para avanzar con tu inscripción, completá el formulario oficial de la
+                        Dejá tus datos para participar de la charla informativa gratuita sobre la
                         Diplomatura de Posgrado en Innovación y Desarrollo de Aplicaciones basadas en
                         Blockchain.
                     </p>
@@ -473,9 +518,10 @@
                         </div>
                         <p class="text-muted">
                             Dr. en Ciencias Informáticas (UNLP). <br>
-                            Senior Cloud Architect en Caylent (USA). <br>
-                            Profesor en UNLu. <br>
-                            Especialista en despliegue de infraestructura en cloud. <br>
+                            Senior Cloud Architect en Caylent Inc. (USA). <br>
+                            Docente e investigador en UNLu. <br>
+                            Referente en arquitecturas cloud, DevOps e infraestructura descentralizada. <br>
+                            Experiencia internacional en proyectos blockchain sobre AWS.
                         </p>
                     </div>
                 </div>
@@ -492,6 +538,7 @@
                             Director de LICDIA-UNLu. <br>
                             Magister en Inteligencia de datos orientada a Big Data (UNLP). <br>
                             Profesor en UNLu, ITBA y UNTREF. <br>
+                            Investigador activo en tecnologías descentralizadas y Web3.
                         </p>
                     </div>
                 </div>
@@ -506,6 +553,7 @@
                             Dr. en Historia (UBA). <br>
                             Becario Doctoral CONICET. <br>
                             Investigador en UNGS. <br>
+                            Especialista en economía de las criptomonedas, historia del dinero digital y marcos regulatorios de blockchain en América Latina.
                         </p>
                     </div>
                 </div>
@@ -514,9 +562,10 @@
                         <img class="mx-auto rounded-circle" src="../assets/img/team/prados.jpg" alt="APU Nehuén Prados" />
                         <h4>APU Nehuén Prados</h4>
                         <p class="text-muted">
-                            Analista Programador Universitario. <br>
-                            Developer & DevOps. <br>
-                            Especialista en sistemas, backend y arquitecturas descentralizadas. <br>
+                            Analista Programador Universitario (UNLu). <br>
+                            Developer, DevOps y arquitecto de sistemas distribuidos. <br>
+                            Especialista en contratos inteligentes, DApps y protocolos Web3. <br>
+                            Experiencia en despliegue de nodos blockchain y ecosistema Ethereum/Solidity.
                         </p>
                     </div>
                 </div>
@@ -526,8 +575,9 @@
                         <h4>Deiller Guevara</h4>
                         <p class="text-muted">
                             Analista en Finanzas (UADE). <br>
-                            Operador Bursátil de Derivados. <br>
-                            NOR XI - A3 Mercados. <br>
+                            Operador Bursátil de Derivados certificado NOR XI — A3 Mercados. <br>
+                            Especialista en DeFi, stablecoins, exchanges descentralizados y criptoeconomía. <br>
+                            Formador de profesionales en finanzas descentralizadas y mercados cripto.
                         </p>
                     </div>
                 </div>
@@ -869,7 +919,7 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase"> Pre-registro Charla Informativa </h2>
-                <h3 class="section-subheading text-muted mb-4">20 de abril de 2026 - Anotate y te avisamos con el link de acceso</h3>
+                <h3 class="section-subheading text-muted mb-4">Miércoles 7 de mayo de 2026 — Anotate y te avisamos con el link de acceso</h3>
             </div>
 
             <div class="container my-3">
@@ -1016,9 +1066,9 @@
                         body: data,
                         headers: { 'Accept': 'application/json' }
                     }).then(function () {
-                        window.location.href = 'gracias/';
+                        window.location.href = 'gracias-charla/';
                     }).catch(function () {
-                        window.location.href = 'gracias/';
+                        window.location.href = 'gracias-charla/';
                     });
                 });
             }

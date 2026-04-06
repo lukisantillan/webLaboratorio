@@ -25,15 +25,15 @@
 
     <style>
         .arancel-hero {
-            background: linear-gradient(135deg, #0a0a1a 0%, #1b2a4a 50%, #0d2137 100%);
+            background: linear-gradient(135deg, #1a0d30 0%, #4C1C7F 50%, #261951 100%);
             border-radius: 16px;
             padding: 2rem;
             color: white;
             margin-bottom: 1.5rem;
         }
         .price-card {
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(255,255,255,0.18);
+            background: rgba(212,184,255,0.08);
+            border: 1px solid rgba(212,184,255,0.18);
             border-radius: 14px;
             padding: 1.4rem 1rem;
             text-align: center;
@@ -42,7 +42,7 @@
         .price-amount {
             font-size: 2rem;
             font-weight: 800;
-            color: #a8edea;
+            color: #d4b8ff;
             letter-spacing: -0.03em;
         }
         .price-label {
@@ -58,8 +58,8 @@
             margin-top: 0.3rem;
         }
         .total-hero {
-            background: linear-gradient(90deg, #43e97b, #38f9d7);
-            color: #0a1a10;
+            background: linear-gradient(90deg, #d4b8ff, #a855f7);
+            color: #1a0d30;
             font-weight: 800;
             font-size: 1.5rem;
             border-radius: 50px;
@@ -76,12 +76,12 @@
             margin-top: 0.75rem;
         }
         .cuota-pill {
-            background: rgba(168,237,234,0.12);
-            border: 1px solid rgba(168,237,234,0.3);
+            background: rgba(212,184,255,0.12);
+            border: 1px solid rgba(212,184,255,0.3);
             border-radius: 20px;
             padding: 0.2rem 0.7rem;
             font-size: 0.72rem;
-            color: #c9f0ee;
+            color: #e0d0f5;
         }
         .separator-icon {
             font-size: 1.5rem;
@@ -142,6 +142,18 @@
             background: #e9ecef;
             border-radius: 2px;
         }
+        /* Item 15: banco text visible on dark pagos background */
+        .blockchain-theme #pagos .bank-box p,
+        .blockchain-theme #pagos .bank-box span,
+        .blockchain-theme #pagos .bank-box strong,
+        .blockchain-theme #pagos .bank-box hr {
+            color: #d4b8ff !important;
+            border-color: rgba(212,184,255,0.2) !important;
+        }
+        .blockchain-theme #pagos .bank-box {
+            border-color: rgba(212,184,255,0.3) !important;
+            border-left-color: #a855f7 !important;
+        }
     </style>
 
     <!-- Meta Pixel Code -->
@@ -156,15 +168,43 @@
             t.src = v; s = b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t, s)
         }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '1493410068477893');
+        fbq('init', '1845986945991192');
         fbq('track', 'PageView');
     </script>
     <noscript>
         <img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=1493410068477893&ev=PageView&noscript=1" />
+            src="https://www.facebook.com/tr?id=1845986945991192&ev=PageView&noscript=1" />
     </noscript>
     <!-- End Meta Pixel Code -->
     <script type="text/javascript" async="async" src="https://hub.fromdoppler.com/public/dhtrack.js"></script>
+
+    <!-- Meta Conversions API -->
+    <script>
+    (function() {
+        var pid = '1845986945991192';
+        var token = 'EAATAhGngOTsBREBB1wcWrcRRH23ybLn9WCLlBMy8KKmKpPPZCVNZASsPJAuRRa1woZAig6KNbiEKRc5Y4NI0ayxjXmxY4RfU6TRi1QRD1syZB2mQ25G6J4J2J5laT6X0j09QklaLeIJyLfKQuPDhZA7wynA1PGysxSiDFvkZAJ5UYds6OpZArWuDgI63cXVNgZDZD';
+        var path = window.location.pathname;
+        var eventName = path.indexOf('gracias-diplomado') > -1 ? 'CompleteRegistration'
+                      : path.indexOf('gracias') > -1 ? 'Lead'
+                      : 'PageView';
+        var eventId = 'capi_' + Date.now() + '_' + Math.random().toString(36).slice(2, 9);
+        fetch('https://graph.facebook.com/v19.0/' + pid + '/events?access_token=' + token, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                data: [{
+                    event_name: eventName,
+                    event_time: Math.floor(Date.now() / 1000),
+                    event_id: eventId,
+                    event_source_url: window.location.href,
+                    action_source: 'website',
+                    user_data: {}
+                }]
+            })
+        }).catch(function(){});
+    })();
+    </script>
+    <!-- End Meta Conversions API -->
 </head>
 
 <body id="page-top" class="blockchain-theme">

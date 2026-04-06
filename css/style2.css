@@ -295,6 +295,10 @@ header.backgroundAr.fondoBlockchain {
     background-image: linear-gradient(to right, #1D78E5, black);
 }
 
+.blockchain-theme #bordefino {
+    background-image: linear-gradient(to right, #4C1C7F, #261951);
+}
+
 .card-tittle {
     text-align: center;
 }
@@ -551,21 +555,108 @@ header.backgroundAr.fondoBlockchain {
 }
 
 .blockchain-theme .breadcrumb-item a {
-    color: #4C1C7F;
+    color: #4C1C7F !important;
 }
 
 .blockchain-theme a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-info) {
-    color: #4C1C7F;
+    color: #4C1C7F !important;
 }
 
 .blockchain-theme a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-info):hover {
-    color: #391B67;
+    color: #391B67 !important;
 }
 
 .blockchain-theme #aranceles::before {
-    background: linear-gradient(rgba(38,25,81,0.6), rgba(76,28,127,0.7)), url(../assets/img/blockchain-hero.jpg) no-repeat;
+    background: linear-gradient(rgba(38,25,81,0.6), rgba(76,28,127,0.7)), url(../assets/img/blockchain-aranceles.jpg) no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+/* --- Blockchain: timeline (cuerpo docente) --- */
+.blockchain-theme .timeline>li .timeline-image {
+    background-color: #391B67;
+    border-color: #4C1C7F;
+}
+
+.blockchain-theme .timeline>li .timeline-panel2 {
+    background-color: rgba(76,28,127,0.35);
+    border-color: #391B67;
+}
+
+/* --- Blockchain: Bootstrap utility overrides --- */
+.blockchain-theme .text-info {
+    color: #4C1C7F !important;
+}
+
+.blockchain-theme .text-primary {
+    color: #4C1C7F !important;
+}
+
+.blockchain-theme .link-primary {
+    color: #4C1C7F !important;
+}
+
+.blockchain-theme .link-primary:hover {
+    color: #391B67 !important;
+}
+
+/* --- Blockchain: btn-licdia --- */
+.blockchain-theme .btn-licdia {
+    background: linear-gradient(90deg, #261951, #4C1C7F);
+}
+
+/* --- Blockchain: enfoque section --- */
+.blockchain-theme .enfoque-hero {
+    background: linear-gradient(90deg, rgba(38,25,81,0.85), rgba(76,28,127,0.46)),
+        url("../assets/img/pc.jpg") center/cover no-repeat;
+}
+
+/* --- Blockchain: icon dots --- */
+.blockchain-theme .icon-dot {
+    background: #4C1C7F;
+}
+
+/* --- Blockchain: CSS variables override --- */
+.blockchain-theme {
+    --accent: #261951;
+    --accent2: #4C1C7F;
+}
+
+/* --- Blockchain: links dentro del contenido (no navbar/footer/botones) --- */
+.blockchain-theme main a:not(.btn),
+.blockchain-theme article a:not(.btn),
+.blockchain-theme section a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP),
+.blockchain-theme .breadcrumb-item a,
+.blockchain-theme .container a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP) {
+    color: #4C1C7F !important;
+}
+
+.blockchain-theme main a:not(.btn):hover,
+.blockchain-theme article a:not(.btn):hover,
+.blockchain-theme section a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):hover,
+.blockchain-theme .breadcrumb-item a:hover,
+.blockchain-theme .container a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):hover {
+    color: #391B67 !important;
+}
+
+/* --- Blockchain: modal hero --- */
+.blockchain-theme #modalInscripcion .modal-hero {
+    background: linear-gradient(90deg, #4C1C7F, #261951);
+}
+
+/* --- Blockchain: pagos section --- */
+.blockchain-theme #pagos {
+    background: linear-gradient(180deg, #261951, #391B67) !important;
+}
+
+/* --- Blockchain: arancel hero (aranceles page) --- */
+.blockchain-theme .arancel-hero {
+    background: linear-gradient(135deg, #0a0a1a 0%, #261951 50%, #1a0d30 100%) !important;
+}
+
+/* --- Blockchain: bank box inside pagos --- */
+.blockchain-theme #pagos .bank-box {
+    background: linear-gradient(180deg, #261951, #1a0d30) !important;
 }
 
 #aranceles {
@@ -588,7 +679,7 @@ header.backgroundAr.fondoBlockchain {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url(../assets/img/fondo2iamano.jpg) repeat-x;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url(../assets/img/aranceles-ia.png) no-repeat;
     background-size: cover;
     background-position: center;
     z-index: -1;
@@ -794,5 +885,4 @@ a {
 
 /* Opcional: bordes redondeados solo en desktop */
 @media (min-width: 992px) {
-  #informacionPlan .card { border-radius: 1rem; }
-}
+  #informacionPlan .ca
