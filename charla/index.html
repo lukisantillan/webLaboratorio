@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Inscripciones abiertas - Diplomaturas de Posgrado LICDIA UNLu - IA Generativa y Blockchain. Cupos limitados, cierre 30 de junio." />
+    <meta name="description" content="Inscripción exclusiva para asistentes - Diplomaturas de Posgrado LICDIA UNLu - IA Generativa y Blockchain. Cupos limitados, cierre 28 de mayo." />
     <meta name="author" content="LICDIA - UNLu" />
     <meta name="robots" content="noindex, nofollow" />
     <title>Inscribite — Diplomaturas LICDIA UNLu 2026</title>
@@ -172,28 +172,70 @@
             border-radius: 2rem;
             margin-bottom: 1rem;
         }
-        .exclusive-section .form-control,
-        .exclusive-section .form-select {
-            border-radius: .5rem;
-            border: none;
-            padding: .75rem 1rem;
+
+        /* ─── exclusive form cards ─── */
+        .excl-card {
+            border-radius: 1rem;
+            overflow: hidden;
+            height: 100%;
         }
-        .exclusive-section .btn-submit {
-            background: #ffc107;
-            color: #1a2f4a;
+        .excl-card-ia {
+            background: linear-gradient(160deg, #1C2E54, #193d76);
+            border: 1px solid rgba(26,99,192,0.35);
+        }
+        .excl-card-bc {
+            background: linear-gradient(160deg, #261951, #391b67);
+            border: 1px solid rgba(76,28,127,0.35);
+        }
+        .excl-card .excl-header {
+            padding: 1.25rem 1.5rem;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
             font-size: 1rem;
             text-transform: uppercase;
-            letter-spacing: .08em;
-            padding: .85rem 2.5rem;
+            letter-spacing: .05em;
+            color: #fff;
+        }
+        .excl-card-ia .excl-header { background: rgba(26,99,192,0.35); border-bottom: 2px solid #1a63c0; }
+        .excl-card-bc .excl-header { background: rgba(76,28,127,0.35); border-bottom: 2px solid #4c1c7f; }
+        .excl-card .excl-body { padding: 1.5rem; }
+        .excl-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .excl-price-detail { font-size: .82rem; color: rgba(255,255,255,0.65); margin-bottom: 1.25rem; }
+        .excl-card .form-control {
+            border-radius: .5rem;
+            border: none;
+            padding: .75rem 1rem;
+        }
+        .btn-submit-ia {
+            background: #1a63c0;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: .95rem;
+            text-transform: uppercase;
+            letter-spacing: .06em;
             border: none;
             border-radius: .5rem;
-            width: 100%;
         }
-        .exclusive-section .btn-submit:hover {
-            background: #ffca2c;
+        .btn-submit-ia:hover { background: #193d76; color: #fff; }
+        .btn-submit-bc {
+            background: #4c1c7f;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: .95rem;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            border: none;
+            border-radius: .5rem;
         }
+        .btn-submit-bc:hover { background: #391b67; color: #fff; }
+        .excl-success { display: none; }
 
         /* ─── countdown timer ─── */
         #countdown { font-family: 'Montserrat', sans-serif; }
@@ -226,8 +268,6 @@
         }
         .charla-footer a { color: #a8c5e0; text-decoration: none; }
 
-        /* ─── success alert ─── */
-        #form-success { display: none; }
     </style>
 </head>
 
@@ -248,10 +288,13 @@
     <section class="charla-hero">
         <div class="container">
             <span class="countdown-chip mb-4">
-                <i class="fas fa-clock"></i>&nbsp;Inscripciones cierran el 30 de junio
+                <i class="fas fa-clock"></i>&nbsp;Inscripciones exclusivas cierran el 28 de mayo
             </span>
-            <h1 class="mt-3">¡Cupos limitados!</h1>
+            <h1 class="mt-3">¡Inscripción Exclusiva!</h1>
             <p class="subtitle">Diplomaturas de Posgrado 2026 — Universidad Nacional de Luján</p>
+            <p class="mt-2" style="color:#ffc107;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.04em;">
+                Inscripciones generales abren: 29 de mayo
+            </p>
 
             <!-- Contador regresivo -->
             <div id="countdown" class="mt-4">
@@ -269,13 +312,13 @@
     <section class="fechas-banner">
         <div class="container">
             <div class="row justify-content-center text-center g-0">
-                <div class="col-6 col-md-3 fecha-item">
-                    <div class="label">Inscripciones abren</div>
-                    <div class="value">1 de junio</div>
-                </div>
                 <div class="col-6 col-md-3 fecha-item cierre">
-                    <div class="label">Cierre de inscripciones</div>
-                    <div class="value">30 de junio</div>
+                    <div class="label">Cierre inscripción exclusiva</div>
+                    <div class="value">28 de mayo</div>
+                </div>
+                <div class="col-6 col-md-3 fecha-item">
+                    <div class="label">Inscripciones generales</div>
+                    <div class="value">29 de mayo</div>
                 </div>
                 <div class="col-6 col-md-3 fecha-item">
                     <div class="label">Inicio de cursada</div>
@@ -376,51 +419,88 @@
     ═══════════════════════════════════════════════════ -->
     <section class="exclusive-section" id="exclusiva">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-12 col-lg-7 text-center mb-4">
-                    <span class="exclusive-badge"><i class="fas fa-star me-1"></i>Solo para asistentes de la charla</span>
-                    <h2>Registro Exclusivo</h2>
-                    <p style="color:#a8c5e0;">Dejá tus datos y te contactamos con prioridad de cupo y beneficios especiales para quienes asistieron hoy.</p>
-                </div>
-                <div class="col-12 col-lg-7">
+            <div class="text-center mb-5">
+                <span class="exclusive-badge"><i class="fas fa-star me-1"></i>Solo para asistentes de la charla</span>
+                <h2>¡Inscripción Exclusiva!</h2>
+                <p style="color:#a8c5e0;" class="mb-0">Reservá tu lugar con prioridad de cupo. Precio y condiciones especiales para quienes asistieron hoy.</p>
+            </div>
 
-                    <!-- formulario exclusivo -->
-                    <form id="formExclusivo" class="row g-3">
-                        <div class="col-12 col-md-6">
-                            <input type="text" class="form-control" name="Nombre y Apellido"
-                                   placeholder="Nombre y apellido *" required>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <input type="email" class="form-control" name="Correo"
-                                   placeholder="Correo electrónico *" required>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <input type="tel" class="form-control" name="Teléfono"
-                                   placeholder="WhatsApp / Teléfono">
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <select class="form-select" name="Diplomatura de interés" required>
-                                <option value="" disabled selected>¿Cuál te interesa?</option>
-                                <option value="IA Generativa en la Nube">IA Generativa en la Nube</option>
-                                <option value="Innovación con Blockchain">Innovación con Blockchain</option>
-                                <option value="Ambas">Ambas</option>
-                            </select>
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-submit" id="btnSubmit">
-                                <i class="fas fa-paper-plane me-2"></i>Quiero que me contacten
-                            </button>
-                        </div>
-                    </form>
+            <div class="row g-4 justify-content-center">
 
-                    <!-- Éxito -->
-                    <div id="form-success" class="text-center mt-4">
-                        <i class="fas fa-check-circle fa-3x" style="color:#ffc107;"></i>
-                        <h4 class="mt-3" style="color:#fff;">¡Listo! Te contactamos pronto.</h4>
-                        <p style="color:#a8c5e0;">Revisá también tu correo. Te enviamos la información de la diplomatura que elegiste.</p>
+                <!-- IA Generativa -->
+                <div class="col-12 col-md-6 col-lg-5">
+                    <div class="excl-card excl-card-ia">
+                        <div class="excl-header">
+                            <i class="fas fa-brain me-2"></i>IA Generativa en la Nube
+                        </div>
+                        <div class="excl-body">
+                            <div class="excl-price">$1.000.000</div>
+                            <div class="excl-price-detail">Matrícula $200.000 + 4 cuotas de $200.000</div>
+                            <form id="formIA" class="row g-2">
+                                <div class="col-12">
+                                    <input type="text" class="form-control" name="Nombre y Apellido"
+                                           placeholder="Nombre y apellido *" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="email" class="form-control" name="Correo"
+                                           placeholder="Correo electrónico *" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="tel" class="form-control" name="Teléfono"
+                                           placeholder="WhatsApp / Teléfono">
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-submit-ia w-100 py-3" id="btnIA">
+                                        <i class="fas fa-paper-plane me-2"></i>Inscribirme en IA
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="excl-success text-center mt-3" id="successIA">
+                                <i class="fas fa-check-circle fa-2x" style="color:#a8d8ff;"></i>
+                                <p class="mt-2 mb-0" style="color:#fff;font-weight:600;">¡Listo! Te reservamos el lugar.</p>
+                                <p style="color:rgba(255,255,255,0.7);font-size:.85rem;" class="mt-1">Revisá tu correo — te enviamos los detalles.</p>
+                            </div>
+                        </div>
                     </div>
-
                 </div>
+
+                <!-- Blockchain -->
+                <div class="col-12 col-md-6 col-lg-5">
+                    <div class="excl-card excl-card-bc">
+                        <div class="excl-header">
+                            <i class="fas fa-link me-2"></i>Innovación con Blockchain
+                        </div>
+                        <div class="excl-body">
+                            <div class="excl-price">$850.000</div>
+                            <div class="excl-price-detail">Matrícula $170.000 + 4 cuotas de $170.000</div>
+                            <form id="formBC" class="row g-2">
+                                <div class="col-12">
+                                    <input type="text" class="form-control" name="Nombre y Apellido"
+                                           placeholder="Nombre y apellido *" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="email" class="form-control" name="Correo"
+                                           placeholder="Correo electrónico *" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="tel" class="form-control" name="Teléfono"
+                                           placeholder="WhatsApp / Teléfono">
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-submit-bc w-100 py-3" id="btnBC">
+                                        <i class="fas fa-paper-plane me-2"></i>Inscribirme en Blockchain
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="excl-success text-center mt-3" id="successBC">
+                                <i class="fas fa-check-circle fa-2x" style="color:#d4b8ff;"></i>
+                                <p class="mt-2 mb-0" style="color:#fff;font-weight:600;">¡Listo! Te reservamos el lugar.</p>
+                                <p style="color:rgba(255,255,255,0.7);font-size:.85rem;" class="mt-1">Revisá tu correo — te enviamos los detalles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -461,7 +541,7 @@
     <script>
         // ─── Countdown ───────────────────────────────────────
         (function() {
-            var deadline = new Date('2026-06-30T23:59:59-03:00');
+            var deadline = new Date('2026-05-28T23:59:59-03:00');
             function tick() {
                 var now  = new Date();
                 var diff = Math.max(0, deadline - now);
@@ -478,16 +558,14 @@
             setInterval(tick, 1000);
         })();
 
-        // ─── Formulario exclusivo ─────────────────────────────
-        document.getElementById('formExclusivo').addEventListener('submit', function(e) {
+        // ─── Formulario IA ────────────────────────────────────
+        document.getElementById('formIA').addEventListener('submit', function(e) {
             e.preventDefault();
-            var btn = document.getElementById('btnSubmit');
+            var btn = document.getElementById('btnIA');
             btn.disabled = true;
             btn.textContent = 'Enviando...';
-
             var data = new FormData(this);
-            data.append('Origen', 'Charla exclusiva QR');
-
+            data.append('Origen', 'Inscripción exclusiva IA');
             fetch('https://formsubmit.co/ajax/licdia@unlu.edu.ar', {
                 method: 'POST',
                 headers: { 'Accept': 'application/json' },
@@ -495,13 +573,39 @@
             })
             .then(function(r) { return r.json(); })
             .then(function() {
-                document.getElementById('formExclusivo').style.display = 'none';
-                document.getElementById('form-success').style.display  = 'block';
-                if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'charla-exclusiva' });
+                document.getElementById('formIA').style.display = 'none';
+                document.getElementById('successIA').style.display = 'block';
+                if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'charla-exclusiva-ia' });
             })
             .catch(function() {
                 btn.disabled = false;
-                btn.textContent = 'Quiero que me contacten';
+                btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Inscribirme en IA';
+                alert('Error al enviar. Intentá de nuevo o escribinos por WhatsApp.');
+            });
+        });
+
+        // ─── Formulario Blockchain ────────────────────────────
+        document.getElementById('formBC').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var btn = document.getElementById('btnBC');
+            btn.disabled = true;
+            btn.textContent = 'Enviando...';
+            var data = new FormData(this);
+            data.append('Origen', 'Inscripción exclusiva Blockchain');
+            fetch('https://formsubmit.co/ajax/licdia@unlu.edu.ar', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: data
+            })
+            .then(function(r) { return r.json(); })
+            .then(function() {
+                document.getElementById('formBC').style.display = 'none';
+                document.getElementById('successBC').style.display = 'block';
+                if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'charla-exclusiva-bc' });
+            })
+            .catch(function() {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Inscribirme en Blockchain';
                 alert('Error al enviar. Intentá de nuevo o escribinos por WhatsApp.');
             });
         });
