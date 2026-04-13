@@ -180,15 +180,98 @@
         </div>
     </div>
 
-    <section class="py-5 bg-light text-center" data-aos="fade-up" data-aos-duration="1500">
+    <section class="py-5 bg-light" id="inscripcion" data-aos="fade-up" data-aos-duration="1500">
         <div class="container">
-            <h2 class="h3 fw-bold mb-3">¿Tenés dudas o querés pre-inscribirte?</h2>
-            <p class="text-muted mb-4">Completá el formulario en la página principal y te contactamos.</p>
-            <a href="../#contact" class="btn btn-primary btn-lg px-5 py-2" onclick="if(typeof fbq!=='undefined')fbq('track','Lead');">
-                <i class="fas fa-envelope me-2"></i>Ir al formulario
-            </a>
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-3 p-md-4">
+                            <h3 class="h4 fw-bold mb-3 text-center">Formulario de inscripción a la Diplomatura</h3>
+                            <p class="text-muted text-center small mb-4">Completá tus datos y el equipo de la Diplomatura se pondrá en contacto para confirmar la recepción y los pasos siguientes.</p>
+
+                            <form id="formInscripcion" class="row g-3">
+                                <div class="col-12">
+                                    <label for="nombre" class="form-label">Nombre y apellido *</label>
+                                    <input type="text" class="form-control" id="nombre" name="Nombre y Apellido" required placeholder="Ej: Ana García">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="email" class="form-label">Correo electrónico *</label>
+                                    <input type="email" class="form-control" id="email" name="Correo" required placeholder="tuemail@ejemplo.com">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="tel" class="form-label">Teléfono / WhatsApp *</label>
+                                    <input type="tel" class="form-control" id="tel" name="Teléfono" required placeholder="+54 9 11 1234 5678">
+                                </div>
+                                <div class="col-12">
+                                    <label for="perfil" class="form-label">Perfil profesional *</label>
+                                    <select class="form-select" id="perfil" name="Perfil profesional" required>
+                                        <option value="" selected disabled>Seleccioná tu perfil</option>
+                                        <option value="Desarrollador / Ingeniero IT">Desarrollador / Ingeniero IT</option>
+                                        <option value="Data Scientist / Analista de datos">Data Scientist / Analista de datos</option>
+                                        <option value="Docente / Investigador">Docente / Investigador</option>
+                                        <option value="Emprendedor / Startup">Emprendedor / Startup</option>
+                                        <option value="Profesional de otra área">Profesional de otra área</option>
+                                        <option value="Otro">Otro</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="titulo" class="form-label">¿Posee título universitario o terciario? *</label>
+                                    <select class="form-select" id="titulo" name="Posee título" required>
+                                        <option value="" selected disabled>Seleccioná una opción</option>
+                                        <option value="Sí, título de grado universitario">Sí, título de grado universitario</option>
+                                        <option value="Sí, título de pregrado universitario">Sí, título de pregrado universitario</option>
+                                        <option value="Sí, título de instituto superior no universitario">Sí, título de instituto superior no universitario</option>
+                                        <option value="No, ingreso por experiencia laboral">No, ingreso por experiencia laboral</option>
+                                    </select>
+                                </div>
+                                <div class="col-12 d-flex">
+                                    <button class="btn btn-licdia mx-auto px-5">Inscribirme en la Diplomatura</button>
+                                </div>
+                                <p class="text-muted small mb-0 mt-1">* Campos obligatorios</p>
+                            </form>
+
+                            <div class="text-center mt-3" id="successInscripcion" style="display:none;">
+                                <i class="fas fa-check-circle fa-3x text-success"></i>
+                                <p class="mt-2 fw-bold">¡Inscripción enviada! Te contactaremos pronto.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
+    <script>
+    (function() {
+        var form = document.getElementById('formInscripcion');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var btn = form.querySelector('button');
+                btn.disabled = true;
+                btn.textContent = 'Enviando...';
+                var data = new FormData(form);
+                data.append('Origen', 'Inscripción Diplomatura IA');
+                fetch('https://n8n.181.229.77.252.sslip.io:20001/webhook/licdia-inscripcion', {
+                    method: 'POST',
+                    body: data,
+                    headers: { 'Accept': 'application/json' }
+                })
+                .then(function(r) { return r.json(); })
+                .then(function() {
+                    form.style.display = 'none';
+                    document.getElementById('successInscripcion').style.display = 'block';
+                    if (typeof fbq !== 'undefined') fbq('track', 'CompleteRegistration', { content_name: 'inscripcion-ia' });
+                })
+                .catch(function() {
+                    btn.disabled = false;
+                    btn.textContent = 'Inscribirme en la Diplomatura';
+                    alert('Error al enviar. Intentá de nuevo o contactanos por WhatsApp.');
+                });
+            });
+        }
+    })();
+    </script>
 
     <div class="container text-center my-4">
         <a href="../" class="btn btn-outline-dark btn-lg px-4 py-2">
