@@ -558,11 +558,11 @@ header.backgroundAr.fondoBlockchain {
     color: #4C1C7F !important;
 }
 
-.blockchain-theme a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-info) {
+.blockchain-theme a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-info):not(.text-white) {
     color: #4C1C7F !important;
 }
 
-.blockchain-theme a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-info):hover {
+.blockchain-theme a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-info):not(.text-white):hover {
     color: #391B67 !important;
 }
 
