@@ -623,19 +623,19 @@ header.backgroundAr.fondoBlockchain {
 }
 
 /* --- Blockchain: links dentro del contenido (no navbar/footer/botones) --- */
-.blockchain-theme main a:not(.btn),
-.blockchain-theme article a:not(.btn),
-.blockchain-theme section a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP),
-.blockchain-theme .breadcrumb-item a,
-.blockchain-theme .container a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP) {
+.blockchain-theme main a:not(.btn):not(.text-white),
+.blockchain-theme article a:not(.btn):not(.text-white),
+.blockchain-theme section a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-white),
+.blockchain-theme .breadcrumb-item a:not(.text-white),
+.blockchain-theme .container a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-white) {
     color: #4C1C7F !important;
 }
 
-.blockchain-theme main a:not(.btn):hover,
-.blockchain-theme article a:not(.btn):hover,
-.blockchain-theme section a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):hover,
-.blockchain-theme .breadcrumb-item a:hover,
-.blockchain-theme .container a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):hover {
+.blockchain-theme main a:not(.btn):not(.text-white):hover,
+.blockchain-theme article a:not(.btn):not(.text-white):hover,
+.blockchain-theme section a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-white):hover,
+.blockchain-theme .breadcrumb-item a:not(.text-white):hover,
+.blockchain-theme .container a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-white):hover {
     color: #391B67 !important;
 }
 
