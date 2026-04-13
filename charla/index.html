@@ -295,6 +295,9 @@
             <p class="mt-2" style="color:#ffc107;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.04em;">
                 Inscripciones generales abren: 29 de mayo
             </p>
+            <a href="#exclusiva" class="btn btn-lg mt-3 px-5 py-3" style="background:#ffc107;color:#0d1b2a;font-weight:800;font-size:1.15rem;border-radius:50px;letter-spacing:.03em;">
+                <i class="fas fa-arrow-right me-2"></i>Inscribite ahora
+            </a>
 
             <!-- Contador regresivo -->
             <div id="countdown" class="mt-4">
@@ -332,10 +335,8 @@
         </div>
     </section>
 
-    <!-- ═══════════════════════════════════════════════════
-         CARDS DE DIPLOMATURAS
-    ═══════════════════════════════════════════════════ -->
-    <section class="py-5 bg-white" id="diplomaturas">
+    <!-- Cards de diplomaturas removed — users go directly to exclusive inscription forms -->
+    <section class="d-none" id="diplomaturas">
         <div class="container">
             <div class="text-center mb-5">
                 <h2 class="section-heading text-uppercase">Elegí tu Diplomatura</h2>
@@ -566,7 +567,7 @@
             btn.textContent = 'Enviando...';
             var data = new FormData(this);
             data.append('Origen', 'Inscripción exclusiva IA');
-            fetch('https://formsubmit.co/ajax/licdia@unlu.edu.ar', {
+            fetch('https://n8n.181.229.77.252.sslip.io:20001/webhook/licdia-inscripcion', {
                 method: 'POST',
                 headers: { 'Accept': 'application/json' },
                 body: data
@@ -592,7 +593,7 @@
             btn.textContent = 'Enviando...';
             var data = new FormData(this);
             data.append('Origen', 'Inscripción exclusiva Blockchain');
-            fetch('https://formsubmit.co/ajax/licdia@unlu.edu.ar', {
+            fetch('https://n8n.181.229.77.252.sslip.io:20001/webhook/licdia-inscripcion', {
                 method: 'POST',
                 headers: { 'Accept': 'application/json' },
                 body: data

@@ -265,7 +265,7 @@ header.backgroundAr .masthead-heading {
 
 /* Dev-IA - gradiente azul */
 header.backgroundhead.fondoDiplomatura {
-    background-image: linear-gradient(to right, rgba(29,120,229,0.7), rgba(0,0,0,0.8)), url('../assets/img/fondoIA.jpg');
+    background-image: linear-gradient(to right, rgba(28,46,84,0.75), rgba(25,61,118,0.8)), url('../assets/img/hero-ia-2cohorte.jpg');
     background-size: cover;
     background-position: center;
 }

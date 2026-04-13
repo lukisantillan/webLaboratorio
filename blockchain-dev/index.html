@@ -1058,10 +1058,11 @@
                 formCharla.addEventListener('submit', function (e) {
                     e.preventDefault();
                     var data = new FormData(formCharla);
+                    data.append('Origen', 'Inscripción general Blockchain');
                     var submitBtn = formCharla.querySelector('button');
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'Enviando...';
-                    fetch('https://formsubmit.co/ajax/licdia@unlu.edu.ar', {
+                    fetch('https://n8n.181.229.77.252.sslip.io:20001/webhook/licdia-inscripcion', {
                         method: 'POST',
                         body: data,
                         headers: { 'Accept': 'application/json' }
