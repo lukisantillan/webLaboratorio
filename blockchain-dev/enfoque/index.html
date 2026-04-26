@@ -36,33 +36,6 @@
             src="https://www.facebook.com/tr?id=1845986945991192&ev=PageView&noscript=1" />
     </noscript>
 
-    <!-- Meta Conversions API -->
-    <script>
-    (function() {
-        var pid = '1845986945991192';
-        var token = 'EAATAhGngOTsBREBB1wcWrcRRH23ybLn9WCLlBMy8KKmKpPPZCVNZASsPJAuRRa1woZAig6KNbiEKRc5Y4NI0ayxjXmxY4RfU6TRi1QRD1syZB2mQ25G6J4J2J5laT6X0j09QklaLeIJyLfKQuPDhZA7wynA1PGysxSiDFvkZAJ5UYds6OpZArWuDgI63cXVNgZDZD';
-        var path = window.location.pathname;
-        var eventName = path.indexOf('gracias-diplomado') > -1 ? 'CompleteRegistration'
-                      : path.indexOf('gracias') > -1 ? 'Lead'
-                      : 'PageView';
-        var eventId = 'capi_' + Date.now() + '_' + Math.random().toString(36).slice(2, 9);
-        fetch('https://graph.facebook.com/v19.0/' + pid + '/events?access_token=' + token, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                data: [{
-                    event_name: eventName,
-                    event_time: Math.floor(Date.now() / 1000),
-                    event_id: eventId,
-                    event_source_url: window.location.href,
-                    action_source: 'website',
-                    user_data: {}
-                }]
-            })
-        }).catch(function(){});
-    })();
-    </script>
-    <!-- End Meta Conversions API -->
 </head>
 
 <body id="page-top" class="blockchain-theme">

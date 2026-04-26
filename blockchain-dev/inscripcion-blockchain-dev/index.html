@@ -45,33 +45,6 @@
     <!-- End Meta Pixel Code -->
     <script type="text/javascript" async="async" src="https://hub.fromdoppler.com/public/dhtrack.js"></script>
 
-    <!-- Meta Conversions API -->
-    <script>
-    (function() {
-        var pid = '1845986945991192';
-        var token = 'EAATAhGngOTsBREBB1wcWrcRRH23ybLn9WCLlBMy8KKmKpPPZCVNZASsPJAuRRa1woZAig6KNbiEKRc5Y4NI0ayxjXmxY4RfU6TRi1QRD1syZB2mQ25G6J4J2J5laT6X0j09QklaLeIJyLfKQuPDhZA7wynA1PGysxSiDFvkZAJ5UYds6OpZArWuDgI63cXVNgZDZD';
-        var path = window.location.pathname;
-        var eventName = path.indexOf('gracias-diplomado') > -1 ? 'CompleteRegistration'
-                      : path.indexOf('gracias') > -1 ? 'Lead'
-                      : 'PageView';
-        var eventId = 'capi_' + Date.now() + '_' + Math.random().toString(36).slice(2, 9);
-        fetch('https://graph.facebook.com/v19.0/' + pid + '/events?access_token=' + token, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                data: [{
-                    event_name: eventName,
-                    event_time: Math.floor(Date.now() / 1000),
-                    event_id: eventId,
-                    event_source_url: window.location.href,
-                    action_source: 'website',
-                    user_data: {}
-                }]
-            })
-        }).catch(function(){});
-    })();
-    </script>
-    <!-- End Meta Conversions API -->
 </head>
 
 <body id="page-top" class="blockchain-theme">
@@ -191,7 +164,13 @@
                             <h3 class="h4 fw-bold mb-3 text-center">Formulario de inscripción a la Diplomatura</h3>
                             <p class="text-muted text-center small mb-4">Completá tus datos y el equipo de la Diplomatura se pondrá en contacto para confirmar la recepción y los pasos siguientes.</p>
 
-                            <form id="formInscripcion" class="row g-3">
+                            <div class="alert alert-warning text-center mb-4" role="alert">
+                                <i class="fas fa-lock me-2"></i>
+                                <strong>Inscripción próximamente.</strong> El formulario aún no está habilitado. Te avisamos por mail cuando se abra — completá la pre-inscripción a la charla informativa en la <a href="../" class="alert-link">página principal</a>.
+                            </div>
+
+                            <form id="formInscripcion" class="row g-3" aria-disabled="true">
+                                <fieldset disabled style="opacity:0.55;pointer-events:none;" class="row g-3 m-0 p-0 border-0">
                                 <div class="col-12">
                                     <label for="nombre" class="form-label">Nombre y apellido *</label>
                                     <input type="text" class="form-control" id="nombre" name="Nombre y Apellido" required placeholder="Ej: Ana García">
@@ -227,9 +206,12 @@
                                     </select>
                                 </div>
                                 <div class="col-12 d-flex">
-                                    <button class="btn btn-licdia mx-auto px-5">Inscribirme en la Diplomatura</button>
+                                    <button type="button" class="btn btn-licdia mx-auto px-5" disabled aria-disabled="true">
+                                        <i class="fas fa-lock me-2"></i>Inscripción próximamente
+                                    </button>
                                 </div>
                                 <p class="text-muted small mb-0 mt-1">* Campos obligatorios</p>
+                                </fieldset>
                             </form>
 
                             <div class="text-center mt-3" id="successInscripcion" style="display:none;">
@@ -244,32 +226,34 @@
     </section>
 
     <script>
+    // Inscripción todavía no habilitada — el form está en modo lectura/disabled.
+    // Cuando se reactive: descomentar este bloque, cambiar el botón a type="submit",
+    // quitar el <fieldset disabled> envolvente y el banner alert-warning.
+    // Recordá que el evento Lead se dispara al redirigir a ../gracias-diplomado/, NO acá.
     (function() {
         var form = document.getElementById('formInscripcion');
         if (form) {
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
+                /*
                 var btn = form.querySelector('button');
                 btn.disabled = true;
                 btn.textContent = 'Enviando...';
                 var data = new FormData(form);
                 data.append('Origen', 'Inscripción Diplomatura Blockchain');
-                fetch('https://n8n.181.229.77.252.sslip.io:20001/webhook/licdia-inscripcion', {
+                fetch('https://lamb-texture-chef-cuts.trycloudflare.com/webhook/licdia-inscripcion', {
                     method: 'POST',
                     body: data,
                     headers: { 'Accept': 'application/json' }
                 })
                 .then(function(r) { return r.json(); })
                 .then(function() {
-                    form.style.display = 'none';
-                    document.getElementById('successInscripcion').style.display = 'block';
-                    if (typeof fbq !== 'undefined') fbq('track', 'CompleteRegistration', { content_name: 'inscripcion-blockchain' });
+                    window.location.href = '../gracias-diplomado/';
                 })
                 .catch(function() {
-                    btn.disabled = false;
-                    btn.textContent = 'Inscribirme en la Diplomatura';
-                    alert('Error al enviar. Intentá de nuevo o contactanos por WhatsApp.');
+                    window.location.href = '../gracias-diplomado/';
                 });
+                */
             });
         }
     })();

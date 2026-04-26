@@ -362,15 +362,5 @@
         AOS.init();
     </script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var btn = document.getElementById('buttonInfo');
-            if (!btn) return;
-            // Evento estándar (ideal para campañas de leads):
-            btn.addEventListener('click', function () {
-                fbq('track', 'Lead');                 // estándar
-                // o si prefieres personalizado:
-                // fbq('trackCustom', 'ClickFormulario');
-            });
-        });
     </script>
 </body>
