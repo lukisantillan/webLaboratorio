@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Inscripción exclusiva para asistentes - Diplomaturas de Posgrado LICDIA UNLu - IA Generativa y Blockchain. Cupos limitados, cierre 28 de mayo." />
+    <meta name="author" content="LICDIA - UNLu" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Inscribite — Diplomaturas LICDIA UNLu 2026</title>
+
+    <link rel="icon" type="image/x-icon" href="../assets/img/logo.ico" />
+    <script defer src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" />
+    <link href="../css/styles.css" rel="stylesheet" />
+    <link href="../css/style2.css" rel="stylesheet" />
+
+    <!-- Meta Pixel -->
+    <script>
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
+        }(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init','1493410068477893');
+        fbq('track','PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=1493410068477893&ev=PageView&noscript=1"/></noscript>
+    <script type="text/javascript" async src="https://hub.fromdoppler.com/public/dhtrack.js"></script>
+
+    <style>
+        /* ─── countdown chip ─── */
+        .countdown-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: #dc3545;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: .95rem;
+            padding: .45rem 1rem;
+            border-radius: 2rem;
+            letter-spacing: .03em;
+        }
+
+        /* ─── hero ─── */
+        .charla-hero {
+            background: linear-gradient(135deg, #0d1b2a 0%, #1a2f4a 60%, #0f2540 100%);
+            padding: 7rem 0 4rem;
+            color: #fff;
+            text-align: center;
+        }
+        .charla-hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+        }
+        .charla-hero .subtitle {
+            font-family: 'Roboto Slab', serif;
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            color: #a8c5e0;
+            margin-top: .5rem;
+        }
+
+        /* ─── fechas banner ─── */
+        .fechas-banner {
+            background: #f8f9fa;
+            border-top: 4px solid #ffc107;
+            padding: 2rem 0;
+        }
+        .fecha-item {
+            text-align: center;
+            padding: 1rem;
+        }
+        .fecha-item .label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: .75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            color: #6c757d;
+        }
+        .fecha-item .value {
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #1a2f4a;
+            margin-top: .25rem;
+        }
+        .fecha-item.cierre .value {
+            color: #dc3545;
+        }
+
+        /* ─── diploma cards ─── */
+        .diploma-card {
+            border: none;
+            border-radius: 1rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,.1);
+            overflow: hidden;
+            height: 100%;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .diploma-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 40px rgba(0,0,0,.15);
+        }
+        .diploma-card .card-header {
+            padding: 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            color: #fff;
+            border: none;
+        }
+        .card-header-ia   { background: linear-gradient(135deg, #1a3a5c, #2e6da4); }
+        .card-header-bc   { background: linear-gradient(135deg, #2c1654, #6f42c1); }
+        .diploma-card .card-body { padding: 1.75rem; }
+        .diploma-card .price-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #1a2f4a;
+        }
+        .diploma-card .price-detail {
+            font-size: .85rem;
+            color: #6c757d;
+        }
+        .diploma-card .btn-inscribir {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: .9rem;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            padding: .75rem 1.75rem;
+            border-radius: .5rem;
+            width: 100%;
+        }
+        .btn-ia   { background: #2e6da4; color: #fff; border: none; }
+        .btn-ia:hover   { background: #1a3a5c; color: #fff; }
+        .btn-bc   { background: #6f42c1; color: #fff; border: none; }
+        .btn-bc:hover   { background: #2c1654; color: #fff; }
+
+        /* ─── exclusive section ─── */
+        .exclusive-section {
+            background: linear-gradient(135deg, #1a2f4a, #0d1b2a);
+            color: #fff;
+            padding: 3.5rem 0;
+        }
+        .exclusive-section h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            text-transform: uppercase;
+        }
+        .exclusive-badge {
+            display: inline-block;
+            background: #ffc107;
+            color: #1a2f4a;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: .8rem;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            padding: .3rem .9rem;
+            border-radius: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ─── exclusive form cards ─── */
+        .excl-card {
+            border-radius: 1rem;
+            overflow: hidden;
+            height: 100%;
+        }
+        .excl-card-ia {
+            background: linear-gradient(160deg, #1C2E54, #193d76);
+            border: 1px solid rgba(26,99,192,0.35);
+        }
+        .excl-card-bc {
+            background: linear-gradient(160deg, #261951, #391b67);
+            border: 1px solid rgba(76,28,127,0.35);
+        }
+        .excl-card .excl-header {
+            padding: 1.25rem 1.5rem;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            color: #fff;
+        }
+        .excl-card-ia .excl-header { background: rgba(26,99,192,0.35); border-bottom: 2px solid #1a63c0; }
+        .excl-card-bc .excl-header { background: rgba(76,28,127,0.35); border-bottom: 2px solid #4c1c7f; }
+        .excl-card .excl-body { padding: 1.5rem; }
+        .excl-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .excl-price-detail { font-size: .82rem; color: rgba(255,255,255,0.65); margin-bottom: 1.25rem; }
+        .excl-card .form-control {
+            border-radius: .5rem;
+            border: none;
+            padding: .75rem 1rem;
+        }
+        .btn-submit-ia {
+            background: #1a63c0;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: .95rem;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            border: none;
+            border-radius: .5rem;
+        }
+        .btn-submit-ia:hover { background: #193d76; color: #fff; }
+        .btn-submit-bc {
+            background: #4c1c7f;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: .95rem;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            border: none;
+            border-radius: .5rem;
+        }
+        .btn-submit-bc:hover { background: #391b67; color: #fff; }
+        .excl-success { display: none; }
+
+        /* ─── countdown timer ─── */
+        #countdown { font-family: 'Montserrat', sans-serif; }
+        #countdown .cd-block {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0 .6rem;
+        }
+        #countdown .cd-num {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #ffc107;
+            line-height: 1;
+        }
+        #countdown .cd-label {
+            font-size: .65rem;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            color: #a8c5e0;
+        }
+
+        /* ─── footer ─── */
+        .charla-footer {
+            background: #0d1b2a;
+            color: #6c8ea8;
+            font-size: .85rem;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+        .charla-footer a { color: #a8c5e0; text-decoration: none; }
+
+    </style>
+</head>
+
+<body id="page-top">
+
+    <!-- Navbar mínima -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand efect" href="../"><img src="../assets/img/logo.ico" alt="LICDIA" /></a>
+            <a class="navbar-brand efect" href="../"><img src="../assets/img/depto.ico" alt="Depto. Cs. Básicas" /></a>
+            <a class="navbar-brand efect" href="../"><img src="../assets/img/unlu.ico" alt="UNLu" /></a>
+        </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════════ -->
+    <section class="charla-hero">
+        <div class="container">
+            <span class="countdown-chip mb-4">
+                <i class="fas fa-clock"></i>&nbsp;Inscripciones exclusivas cierran el 28 de mayo
+            </span>
+            <h1 class="mt-3">¡Inscripción Exclusiva!</h1>
+            <p class="subtitle">Diplomaturas de Posgrado 2026 — Universidad Nacional de Luján</p>
+            <p class="mt-2" style="color:#ffc107;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.04em;">
+                Inscripciones generales abren: 29 de mayo
+            </p>
+            <a href="#exclusiva" class="btn btn-lg mt-3 px-5 py-3" style="background:#ffc107;color:#0d1b2a;font-weight:800;font-size:1.15rem;border-radius:50px;letter-spacing:.03em;">
+                <i class="fas fa-arrow-right me-2"></i>Inscribite ahora
+            </a>
+
+            <!-- Contador regresivo -->
+            <div id="countdown" class="mt-4">
+                <div class="cd-block"><span class="cd-num" id="cd-days">--</span><span class="cd-label">días</span></div>
+                <div class="cd-block"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">horas</span></div>
+                <div class="cd-block"><span class="cd-num" id="cd-minutes">--</span><span class="cd-label">min</span></div>
+                <div class="cd-block"><span class="cd-num" id="cd-seconds">--</span><span class="cd-label">seg</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         FECHAS CLAVE
+    ═══════════════════════════════════════════════════ -->
+    <section class="fechas-banner">
+        <div class="container">
+            <div class="row justify-content-center text-center g-0">
+                <div class="col-6 col-md-3 fecha-item cierre">
+                    <div class="label">Cierre inscripción exclusiva</div>
+                    <div class="value">28 de mayo</div>
+                </div>
+                <div class="col-6 col-md-3 fecha-item">
+                    <div class="label">Inscripciones generales</div>
+                    <div class="value">29 de mayo</div>
+                </div>
+                <div class="col-6 col-md-3 fecha-item">
+                    <div class="label">Inicio de cursada</div>
+                    <div class="value">Agosto 2026</div>
+                </div>
+                <div class="col-6 col-md-3 fecha-item">
+                    <div class="label">Modalidad</div>
+                    <div class="value">100% virtual</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cards de diplomaturas removed — users go directly to exclusive inscription forms -->
+    <section class="d-none" id="diplomaturas">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-heading text-uppercase">Elegí tu Diplomatura</h2>
+                <p class="text-muted">Dos propuestas de posgrado 100% virtuales, con cupos limitados.</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+
+                <!-- IA Generativa -->
+                <div class="col-12 col-md-6 col-lg-5">
+                    <div class="diploma-card card">
+                        <div class="card-header card-header-ia">
+                            <i class="fas fa-brain me-2"></i>IA Generativa en la Nube
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <p class="text-muted mb-3">
+                                Desarrollá soluciones con modelos de lenguaje, deep learning y despliegue en cloud.
+                                Segunda cohorte — nivel posgrado universitario.
+                            </p>
+                            <ul class="list-unstyled text-muted small mb-4">
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Machine Learning &amp; Deep Learning</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>LLMs, NLP y Agentes IA</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Despliegue en AWS / Cloud</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>4 cursos independientes</li>
+                            </ul>
+                            <div class="mt-auto">
+                                <div class="price-tag mb-1">$1.000.000</div>
+                                <div class="price-detail mb-3">Matrícula $200.000 + 4 cuotas de $200.000</div>
+                                <a href="../dev-ia/inscripcion-dev-ia/"
+                                   class="btn btn-inscribir btn-ia"
+                                   onclick="if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:'charla-ia'});">
+                                    <i class="fas fa-arrow-right me-2"></i>Inscribirme en IA
+                                </a>
+                                <a href="../dev-ia/" class="btn btn-link btn-sm d-block text-center mt-2 text-muted">
+                                    Ver detalles del programa
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blockchain -->
+                <div class="col-12 col-md-6 col-lg-5">
+                    <div class="diploma-card card">
+                        <div class="card-header card-header-bc">
+                            <i class="fas fa-link me-2"></i>Innovación con Blockchain
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <p class="text-muted mb-3">
+                                Dominá el desarrollo de contratos inteligentes, DApps y soluciones
+                                descentralizadas para el mundo real. Nivel posgrado universitario.
+                            </p>
+                            <ul class="list-unstyled text-muted small mb-4">
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Fundamentos de Blockchain</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>Smart Contracts con Solidity</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>DApps y Web3</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i>4 cursos independientes</li>
+                            </ul>
+                            <div class="mt-auto">
+                                <div class="price-tag mb-1">$850.000</div>
+                                <div class="price-detail mb-3">Matrícula $170.000 + 4 cuotas de $170.000</div>
+                                <a href="../blockchain-dev/inscripcion-blockchain-dev/"
+                                   class="btn btn-inscribir btn-bc"
+                                   onclick="if(typeof fbq!=='undefined')fbq('track','Lead',{content_name:'charla-bc'});">
+                                    <i class="fas fa-arrow-right me-2"></i>Inscribirme en Blockchain
+                                </a>
+                                <a href="../blockchain-dev/" class="btn btn-link btn-sm d-block text-center mt-2 text-muted">
+                                    Ver detalles del programa
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         INSCRIPCIÓN EXCLUSIVA PARA ASISTENTES
+    ═══════════════════════════════════════════════════ -->
+    <section class="exclusive-section" id="exclusiva">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="exclusive-badge"><i class="fas fa-star me-1"></i>Solo para asistentes de la charla</span>
+                <h2>¡Inscripción Exclusiva!</h2>
+                <p style="color:#a8c5e0;" class="mb-0">Reservá tu lugar con prioridad de cupo. Precio y condiciones especiales para quienes asistieron hoy.</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+
+                <!-- IA Generativa -->
+                <div class="col-12 col-md-6 col-lg-5">
+                    <div class="excl-card excl-card-ia">
+                        <div class="excl-header">
+                            <i class="fas fa-brain me-2"></i>IA Generativa en la Nube
+                        </div>
+                        <div class="excl-body">
+                            <div class="excl-price">$1.000.000</div>
+                            <div class="excl-price-detail">Matrícula $200.000 + 4 cuotas de $200.000</div>
+                            <form id="formIA" class="row g-2">
+                                <div class="col-12">
+                                    <input type="text" class="form-control" name="Nombre y Apellido"
+                                           placeholder="Nombre y apellido *" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="email" class="form-control" name="Correo"
+                                           placeholder="Correo electrónico *" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="tel" class="form-control" name="Teléfono"
+                                           placeholder="WhatsApp / Teléfono">
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-submit-ia w-100 py-3" id="btnIA">
+                                        <i class="fas fa-paper-plane me-2"></i>Inscribirme en IA
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="excl-success text-center mt-3" id="successIA">
+                                <i class="fas fa-check-circle fa-2x" style="color:#a8d8ff;"></i>
+                                <p class="mt-2 mb-0" style="color:#fff;font-weight:600;">¡Listo! Te reservamos el lugar.</p>
+                                <p style="color:rgba(255,255,255,0.7);font-size:.85rem;" class="mt-1">Revisá tu correo — te enviamos los detalles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blockchain -->
+                <div class="col-12 col-md-6 col-lg-5">
+                    <div class="excl-card excl-card-bc">
+                        <div class="excl-header">
+                            <i class="fas fa-link me-2"></i>Innovación con Blockchain
+                        </div>
+                        <div class="excl-body">
+                            <div class="excl-price">$850.000</div>
+                            <div class="excl-price-detail">Matrícula $170.000 + 4 cuotas de $170.000</div>
+                            <form id="formBC" class="row g-2">
+                                <div class="col-12">
+                                    <input type="text" class="form-control" name="Nombre y Apellido"
+                                           placeholder="Nombre y apellido *" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="email" class="form-control" name="Correo"
+                                           placeholder="Correo electrónico *" required>
+                                </div>
+                                <div class="col-12">
+                                    <input type="tel" class="form-control" name="Teléfono"
+                                           placeholder="WhatsApp / Teléfono">
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-submit-bc w-100 py-3" id="btnBC">
+                                        <i class="fas fa-paper-plane me-2"></i>Inscribirme en Blockchain
+                                    </button>
+                                </div>
+                            </form>
+                            <div class="excl-success text-center mt-3" id="successBC">
+                                <i class="fas fa-check-circle fa-2x" style="color:#d4b8ff;"></i>
+                                <p class="mt-2 mb-0" style="color:#fff;font-weight:600;">¡Listo! Te reservamos el lugar.</p>
+                                <p style="color:rgba(255,255,255,0.7);font-size:.85rem;" class="mt-1">Revisá tu correo — te enviamos los detalles.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════════════════ -->
+    <footer class="charla-footer">
+        <div class="container">
+            <p class="mb-1">
+                <strong>LICDIA</strong> — Laboratorio de Investigación en Ciencia de Datos e Inteligencia Artificial<br>
+                Departamento de Ciencias Básicas · Universidad Nacional de Luján
+            </p>
+            <p class="mb-0">
+                <a href="mailto:licdia@unlu.edu.ar"><i class="fas fa-envelope me-1"></i>licdia@unlu.edu.ar</a>
+                &nbsp;·&nbsp;
+                <a href="https://api.whatsapp.com/send?phone=%2B541123953895&text=Hola,%20vi%20la%20charla%20y%20quiero%20info%20sobre%20las%20diplomaturas..."
+                   target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp me-1"></i>WhatsApp
+                </a>
+                &nbsp;·&nbsp;
+                <a href="../">Volver al sitio</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp flotante -->
+    <a href="https://api.whatsapp.com/send?phone=%2B541123953895&text=Hola,%20vi%20la%20charla%20y%20quiero%20info%20sobre%20las%20diplomaturas..."
+       class="btn btn-success rounded-circle shadow"
+       style="position:fixed;bottom:1.5rem;right:1.5rem;width:56px;height:56px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;z-index:9999;"
+       target="_blank" rel="noopener" aria-label="WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // ─── Countdown ───────────────────────────────────────
+        (function() {
+            var deadline = new Date('2026-05-28T23:59:59-03:00');
+            function tick() {
+                var now  = new Date();
+                var diff = Math.max(0, deadline - now);
+                var days = Math.floor(diff / 86400000);
+                var hrs  = Math.floor((diff % 86400000) / 3600000);
+                var mins = Math.floor((diff % 3600000) / 60000);
+                var secs = Math.floor((diff % 60000) / 1000);
+                document.getElementById('cd-days').textContent    = String(days).padStart(2,'0');
+                document.getElementById('cd-hours').textContent   = String(hrs).padStart(2,'0');
+                document.getElementById('cd-minutes').textContent = String(mins).padStart(2,'0');
+                document.getElementById('cd-seconds').textContent = String(secs).padStart(2,'0');
+            }
+            tick();
+            setInterval(tick, 1000);
+        })();
+
+        // ─── Formulario IA ────────────────────────────────────
+        document.getElementById('formIA').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var btn = document.getElementById('btnIA');
+            btn.disabled = true;
+            btn.textContent = 'Enviando...';
+            var data = new FormData(this);
+            data.append('Origen', 'Pre-registro charla exclusiva IA');
+            fetch('https://lamb-texture-chef-cuts.trycloudflare.com/webhook/licdia-inscripcion', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: data
+            })
+            .then(function(r) { return r.json(); })
+            .then(function() {
+                document.getElementById('formIA').style.display = 'none';
+                document.getElementById('successIA').style.display = 'block';
+                if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'charla-exclusiva-ia' });
+            })
+            .catch(function() {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Inscribirme en IA';
+                alert('Error al enviar. Intentá de nuevo o escribinos por WhatsApp.');
+            });
+        });
+
+        // ─── Formulario Blockchain ────────────────────────────
+        document.getElementById('formBC').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var btn = document.getElementById('btnBC');
+            btn.disabled = true;
+            btn.textContent = 'Enviando...';
+            var data = new FormData(this);
+            data.append('Origen', 'Pre-registro charla exclusiva Blockchain');
+            fetch('https://lamb-texture-chef-cuts.trycloudflare.com/webhook/licdia-inscripcion', {
+                method: 'POST',
+                headers: { 'Accept': 'application/json' },
+                body: data
+            })
+            .then(function(r) { return r.json(); })
+            .then(function() {
+                document.getElementById('formBC').style.display = 'none';
+                document.getElementById('successBC').style.display = 'block';
+                if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'charla-exclusiva-bc' });
+            })
+            .catch(function() {
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Inscribirme en Blockchain';
+                alert('Error al enviar. Intentá de nuevo o escribinos por WhatsApp.');
+            });
+        });
+    </script>
+
+</body>
+</html>
