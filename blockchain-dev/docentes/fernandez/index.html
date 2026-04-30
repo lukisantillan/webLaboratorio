@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Mg. Juan Manuel Fernández, Coordinador Académico de la Diplomatura en Blockchain LICDIA-UNLu. Director de LICDIA-UNLu, Magister en Inteligencia de Datos (UNLP), Profesor Adjunto Ordinario UNLu, Profesor Asociado ITBA, Profesor Titular Posgrado UNTREF. Investigador en NLP, LLMs y aprendizaje automático." />
+    <meta name="author" content="LICDIA - UNLu" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Mg. Juan M. Fernández — Coordinador Académico — Diplomatura Blockchain LICDIA-UNLu" />
+    <meta property="og:description" content="Director de LICDIA-UNLu. Magister en Inteligencia de Datos orientada a Big Data (UNLP). Profesor Adjunto Ordinario UNLu, Profesor Asociado ITBA, Profesor Titular de Posgrado UNTREF. Investigador en NLP, LLMs y aprendizaje automático aplicado a datos públicos." />
+    <meta property="og:image" content="https://licdia.unlu.edu.ar/assets/img/team/1.jpg" />
+    <meta property="og:url" content="https://licdia.unlu.edu.ar/blockchain-dev/docentes/fernandez/" />
+    <meta property="og:locale" content="es_AR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mg. Juan M. Fernández — Coordinador Académico — Diplomatura Blockchain LICDIA-UNLu" />
+    <meta name="twitter:description" content="Director de LICDIA-UNLu, Magister en Inteligencia de Datos (UNLP). Profesor en UNLu, ITBA y UNTREF. Investigador en NLP, LLMs y ML aplicada. Líder del proyecto UNLu en la supercomputadora Clementina XXI." />
+    <meta name="twitter:image" content="https://licdia.unlu.edu.ar/assets/img/team/1.jpg" />
+    <link rel="canonical" href="https://licdia.unlu.edu.ar/blockchain-dev/docentes/fernandez/" />
+    <title>Mg. Juan M. Fernández — Coordinador Académico — Diplomatura Blockchain LICDIA-UNLu</title>
+    <link rel="icon" type="image/x-icon" href="../../../assets/img/logo.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="../../../css/styles.css" rel="stylesheet" />
+    <link href="../../../css/style2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        :root {
+            --brand: #4C1C7F;
+            --brand-dark: #261951;
+            --brand-soft: #F3EBFB;
+        }
+
+        .docente-card {
+            background: #fff;
+            border: 1px solid #ece7f3;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 4px 24px rgba(76, 28, 127, 0.08);
+        }
+
+        .docente-photo-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-bottom: 1.5rem;
+        }
+
+        .docente-photo {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 50%;
+            border: 4px solid var(--brand-soft);
+            box-shadow: 0 8px 32px rgba(76, 28, 127, 0.22);
+        }
+
+        .docente-name {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--brand-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .docente-role {
+            font-size: 1.1rem;
+            color: var(--brand);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .docente-bio p {
+            color: #3a3a3a;
+            font-size: 0.98rem;
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .badge-area {
+            display: inline-block;
+            background: var(--brand-soft);
+            color: var(--brand-dark);
+            border: 1px solid #d6c8ee;
+            border-radius: 999px;
+            padding: 0.35rem 1rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin: 0.25rem;
+            transition: background 0.2s ease, color 0.2s ease;
+            cursor: default;
+        }
+
+        .badge-area:hover {
+            background: var(--brand);
+            color: #fff;
+            border-color: var(--brand);
+        }
+
+        .course-item {
+            background: var(--brand-soft);
+            border-left: 4px solid var(--brand);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .course-item strong {
+            color: var(--brand-dark);
+        }
+
+        .cta-inscribite {
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            margin-top: 2.5rem;
+            box-shadow: 0 12px 30px rgba(76, 28, 127, 0.25);
+        }
+
+        .cta-inscribite h3 {
+            color: white;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-inscribite p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-cta {
+            background: #fff;
+            color: var(--brand-dark);
+            font-weight: 700;
+            padding: 0.85rem 2.5rem;
+            border-radius: 999px;
+            border: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            color: var(--brand-dark);
+        }
+
+        .section-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--brand);
+            margin-bottom: 0.75rem;
+        }
+
+        .divider-brand {
+            border: none;
+            height: 3px;
+            background: linear-gradient(90deg, var(--brand) 0%, var(--brand-soft) 100%);
+            border-radius: 2px;
+            margin: 1.5rem 0;
+        }
+
+        .external-link-row a {
+            color: var(--brand);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.92rem;
+            margin-right: 1.5rem;
+        }
+
+        .external-link-row a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mg. Juan M. Fernández",
+      "jobTitle": "Coordinador Académico — Diplomatura Blockchain LICDIA-UNLu",
+      "description": "Director del LICDIA-UNLu. Magister en Inteligencia de Datos orientada a Big Data (UNLP, 2023). Profesor Adjunto Ordinario UNLu, Profesor Asociado ITBA, Profesor Titular de Posgrado UNTREF. Investigador en NLP, LLMs, RAG y aprendizaje automático aplicado a datos públicos. Investigador Principal del proyecto UNLu seleccionado para la supercomputadora Clementina XXI.",
+      "image": "https://licdia.unlu.edu.ar/assets/img/team/1.jpg",
+      "url": "https://licdia.unlu.edu.ar/blockchain-dev/docentes/fernandez/",
+      "email": "jmfernandez@unlu.edu.ar",
+      "worksFor": [
+        { "@type": "Organization", "name": "Universidad Nacional de Luján", "url": "https://www.unlu.edu.ar/" },
+        { "@type": "Organization", "name": "Instituto Tecnológico de Buenos Aires (ITBA)", "url": "https://www.itba.edu.ar/" },
+        { "@type": "Organization", "name": "Universidad Nacional de Tres de Febrero (UNTREF)", "url": "https://www.untref.edu.ar/" }
+      ],
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "Universidad Nacional de Luján" },
+        { "@type": "CollegeOrUniversity", "name": "Universidad Nacional de La Plata" }
+      ],
+      "knowsAbout": ["Aprendizaje automático", "NLP", "LLMs", "RAG", "Ciencia de datos", "HPC", "Blockchain", "Web3", "Big Data"],
+      "sameAs": [
+        "https://github.com/jumafernandez",
+        "https://scholar.google.es/citations?user=F-tP5OIAAAAJ",
+        "https://www.linkedin.com/in/jumafernandez/"
+      ]
+    }
+    </script>
+</head>
+
+<body id="page-top" class="blockchain-theme">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand efect" href="../../"><img src="../../../assets/img/logo.ico" alt="LICDIA" /></a>
+            <a class="navbar-brand efect" href="../../"><img src="../../../assets/img/depto.ico" alt="Departamento" /></a>
+            <a class="navbar-brand efect" href="../../"><img src="../../../assets/img/unlu.ico" alt="UNLu" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../../">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../#informacionPlan">Plan de estudios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../plan-de-estudios/#cronograma">Cronograma</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../por-que-elegirnos/">Por qué elegirnos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../aranceles/">Aranceles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../#contact">Pre-registro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../">LICDIA</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="backgroundAr fondoBlockchain" data-aos="flip-up" data-aos-delay="100" data-aos-duration="1500">
+        <div class="container">
+            <div class="masthead-heading">Mg. Juan M. Fernández - Cuerpo docente</div>
+        </div>
+    </header>
+
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+
+            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+                aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="../../#team">Cuerpo docente</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Mg. Juan M. Fernández</li>
+                </ol>
+            </nav>
+
+            <div class="col-md-10">
+
+                <!-- Profile card -->
+                <div class="docente-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="row align-items-start">
+
+                        <!-- Photo column -->
+                        <div class="col-12 col-md-3 docente-photo-wrap" data-aos="fade-right" data-aos-delay="200">
+                            <img class="docente-photo" src="../../../assets/img/team/1.jpg"
+                                alt="Mg. Juan M. Fernández - Coordinador Académico Diplomatura en Blockchain UNLu" />
+                        </div>
+
+                        <!-- Info column -->
+                        <div class="col-12 col-md-9" data-aos="fade-left" data-aos-delay="250">
+                            <p class="section-label"><i class="fas fa-user-tie me-1"></i>Perfil docente</p>
+                            <h1 class="docente-name">Mg. Juan Manuel Fernández</h1>
+                            <p class="docente-role"><i class="fas fa-graduation-cap me-1"></i>Coordinador Académico — Diplomatura en Blockchain</p>
+
+                            <div class="docente-bio">
+                                <p>
+                                    Es el <strong>Director del LICDIA</strong> (Laboratorio de Investigación en Ciencia de Datos e Inteligencia Artificial) de la Universidad Nacional de Luján, el espacio institucional que alberga y respalda esta diplomatura. Desde ese rol conduce la agenda de investigación del laboratorio, articula con la industria y define las líneas de formación de posgrado de la UNLu en ciencia de datos e IA.
+                                </p>
+                                <p>
+                                    <strong>Egresado de la propia UNLu</strong>: Analista Programador Universitario (2009) y Licenciado en Sistemas de Información (2012). En 2023 obtuvo la <strong>Maestría en Inteligencia de Datos orientada a Big Data</strong> en la Universidad Nacional de La Plata (UNLP), cerrando una trayectoria académica de más de quince años de continuidad en el sistema universitario público argentino.
+                                </p>
+                                <p>
+                                    Se desempeña simultáneamente como <strong>Profesor Adjunto Ordinario</strong> en la División Computación de UNLu (Aprendizaje Automático, Inteligencia Artificial, Programación), <strong>Profesor Instructor homologado a Profesor Asociado</strong> en el Departamento de Sistemas Digitales y Datos del <strong>ITBA</strong> (Ciencia de Datos Aplicada, Visualización de la Información — para Ingeniería en Informática, Lic. en Data Science y Lic. en Negocios y Tecnología) y <strong>Profesor Titular de Posgrado</strong> en la Maestría en Generación y Análisis de Información Estadística de <strong>UNTREF</strong> (Sistemas de Información y Bases de Datos; Análisis de Opinión Pública en Redes Sociales con NLP). Esta inserción simultánea en tres instituciones de perfil muy distinto — universidad pública de la PBA, instituto tecnológico privado de élite y universidad pública metropolitana — refleja su capacidad de comunicar tecnología compleja a audiencias diversas.
+                                </p>
+                                <p>
+                                    En paralelo cursa el <strong>Doctorado en Ciencias de la Computación en la Universidad Nacional de San Luis (UNSL)</strong>, con plan tesis sobre estrategias de balanceo de clases basadas en etiquetado automático de palabras y recuperación de información para clasificación automática de textos. Director de doctorado: Dr. Marcelo L. Errecalde.
+                                </p>
+                                <p>
+                                    Su línea de investigación principal se concentra en <strong>aprendizaje automático aplicado, NLP y modelos de lenguaje grandes (LLMs)</strong>: fine-tuning de LLMs abiertos sobre HPC, RAG aplicada a información académica, agentes LLM para CLI/Docker, clasificación automática de correos, IA aplicada a datos espaciales y ambientales. En 2025 fue presentado en <em>CACIC, WICC</em> y publicó como editor el volumen <strong>Springer CCIS Computer Science – CACIC 2023</strong> (ISBN 978-3-031-62245-8). Es <strong>Investigador Principal del proyecto UNLu seleccionado en la convocatoria IPAC para la supercomputadora <span style="white-space:nowrap;">Clementina XXI</span></strong>.
+                                </p>
+                                <p>
+                                    Su perfil de Google Scholar registra <strong>~167 citas y un índice h de 7</strong>, con producción acumulada de más de 30 artículos en CACIC, JCC-BD&amp;ET, WICC, JAIIO, CLABES, INPEAU y revistas indexadas (RAN, Razón Crítica, Cuadernos de Extensión Universitaria). Coautor recurrente de Marcelo L. Errecalde, David Petrocelli, Diego Lanson, Rocío Matuk y María G. Oloriz. Mantiene actividad de código abierto sostenida en GitHub (<code>jumafernandez</code>): repos de docencia (UNLu, ITBA, UNTREF, CoderHouse), investigación (clasificación de correos, datos espaciales, abandono universitario) e ingeniería de prompts.
+                                </p>
+                                <p>
+                                    Tiene una intensa <strong>actividad de dirección de tesis</strong>: 8 trabajos finales en curso o concluidos como Director — entre ellos una Maestría en Inteligencia de Datos (UNLP) sobre adaptación eficiente de LLMs abiertos, una Maestría en Calidad Industrial (UNSAM) sobre IA para certificaciones ISO, un TFI defendido en 2025 sobre fundamentos matemáticos de redes neuronales, y tesinas de grado UNLu sobre abandono estudiantil con ML, QA en correos electrónicos y modelado de procesos en laboratorios bio-analíticos. Actúa además como <strong>Jurado de tesis de grado y posgrado</strong> en UNLu, UNaM, UNTREF y UNPA.
+                                </p>
+                                <p>
+                                    En la <strong>gestión académica</strong> de la UNLu es Director del LICDIA y Director de la Diplomatura de Posgrado en Desarrollo de Soluciones de IA Generativa en la Nube (Res. HCS-LUJ:0000209-25, 2025). Fue Secretario Académico del Departamento de Ciencias Básicas (2020-2024), Coordinador de la Licenciatura en Sistemas de Información (2022-2025) y Representante UNLu en RedUNCI (2022-2025). Integra las Comisiones Académicas de la Maestría en Ciencia de Datos y de la Especialización en Bioinformática. Editó el volumen oficial de actas del CACIC 2023 y co-editó el correspondiente CCIS de Springer junto a Patricia Pesado y Walter Panessi.
+                                </p>
+                                <p>
+                                    Como <strong>Coordinador Académico de esta diplomatura</strong>, su rol es articular el cuerpo docente, el plan de estudios y la inserción del programa dentro de las líneas de posgrado del LICDIA. La perspectiva de ciencia de datos que aporta se traduce en el tratamiento del <strong>análisis on-chain</strong>, el procesamiento de grandes volúmenes de transacciones y la lectura crítica de las arquitecturas descentralizadas como sistemas de información distribuidos.
+                                </p>
+                            </div>
+
+                            <hr class="divider-brand">
+
+                            <!-- External links -->
+                            <div class="external-link-row mb-3 d-flex flex-wrap gap-3">
+                                <a href="https://licdia.unlu.edu.ar/director/" target="_blank" rel="noopener">
+                                    <i class="fas fa-external-link-alt me-1"></i>Perfil en LICDIA-UNLu
+                                </a>
+                                <a href="https://scholar.google.es/citations?user=F-tP5OIAAAAJ" target="_blank" rel="noopener">
+                                    <i class="fas fa-graduation-cap me-1"></i>Google Scholar
+                                </a>
+                                <a href="https://orcid.org/0000-0001-9291-3066" target="_blank" rel="noopener">
+                                    <i class="fab fa-orcid me-1"></i>ORCID
+                                </a>
+                                <a href="https://github.com/jumafernandez" target="_blank" rel="noopener">
+                                    <i class="fab fa-github me-1"></i>GitHub
+                                </a>
+                                <a href="https://www.linkedin.com/in/jumafernandez/" target="_blank" rel="noopener">
+                                    <i class="fab fa-linkedin me-1"></i>LinkedIn
+                                </a>
+                                <a href="mailto:jmfernandez@unlu.edu.ar">
+                                    <i class="fas fa-envelope me-1"></i>Contacto
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Areas de especialidad -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="300">
+                    <p class="section-label"><i class="fas fa-tags me-1"></i>Áreas de especialidad</p>
+                    <div>
+                        <span class="badge-area">Aprendizaje automático</span>
+                        <span class="badge-area">NLP</span>
+                        <span class="badge-area">LLMs</span>
+                        <span class="badge-area">RAG</span>
+                        <span class="badge-area">Fine-tuning de LLMs abiertos</span>
+                        <span class="badge-area">HPC / Clementina XXI</span>
+                        <span class="badge-area">Ciencia de datos</span>
+                        <span class="badge-area">Big Data</span>
+                        <span class="badge-area">Análisis de opinión pública</span>
+                        <span class="badge-area">Análisis on-chain</span>
+                        <span class="badge-area">Bases de datos</span>
+                        <span class="badge-area">Visualización de la información</span>
+                        <span class="badge-area">Dirección académica</span>
+                        <span class="badge-area">Gestión universitaria</span>
+                    </div>
+                </div>
+
+                <!-- Que ensena en la diplomatura -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="350">
+                    <p class="section-label"><i class="fas fa-chalkboard-teacher me-1"></i>¿Qué enseña en la diplomatura?</p>
+
+                    <div class="course-item">
+                        <strong>Módulo 1 — Fundamentos de Blockchain, Frameworks y Herramientas para la Creación de DApps</strong>
+                        <p class="mb-0 mt-1" style="font-size:0.92rem; color:#4a4a4a;">
+                            <em>Docente Responsable.</em> Como Coordinador Académico, conduce el módulo introductorio: principios de descentralización, estructura de bloques y cadenas, algoritmos de consenso (PoW, PoS, PoA, dPoS, BFT) y trade-offs, casos de uso y aplicaciones actuales, frameworks y herramientas para desarrollo Web3/DApp, Ethereum y Solidity, Hardhat. Su formación en ciencia de datos y NLP permite además abordar el <strong>análisis de datos on-chain</strong> como parte de la introducción práctica al ecosistema.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Trayectoria docente -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="360">
+                    <p class="section-label"><i class="fas fa-university me-1"></i>Trayectoria docente actual</p>
+                    <div class="course-item">
+                        <p class="mb-0" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            <strong>Universidad Nacional de Luján</strong> · Profesor Adjunto Ordinario, División Computación, Depto. Ciencias Básicas — Adjunto Ordinario desde 2023 (Asociado desde 2018).<br>
+                            <em>Grado:</em> Aprendizaje Automático, Inteligencia Artificial, Introducción a la Programación, Programación Estructurada — Lic. en Sistemas de Información y Analista Universitario en Ciencia de Datos.<br>
+                            <em>Posgrado:</em> Programación y Tópicos de Computación — Especialización en Bioinformática y Especialización en Matemática Aplicada.<br><br>
+                            <strong>Instituto Tecnológico de Buenos Aires (ITBA)</strong> · Profesor Instructor (homologado a Profesor Asociado), Depto. de Sistemas Digitales y Datos — desde 2025.<br>
+                            <em>Materias:</em> Ciencia de Datos Aplicada (Ing. Informática + Lic. en Negocios y Tecnología) y Visualización de la Información (Lic. en Data Science). Mail institucional: <code>jmfernandez@itba.edu.ar</code>.<br><br>
+                            <strong>Universidad Nacional de Tres de Febrero (UNTREF)</strong> · Profesor Titular de Posgrado, Maestría en Generación y Análisis de Información Estadística — desde 2024.<br>
+                            <em>Materias:</em> Sistemas de Información y Bases de Datos; Ciencia de Datos: captura, análisis y visualización; Análisis de Opinión Pública en Redes Sociales y NLP.<br><br>
+                            <strong>CoderHouse</strong> · Profesor de Data Science I, II y III + cursos avanzados (Power BI, Inteligencia Artificial). Curso de <em>Prompt Engineering para programadores</em> (Carreras Intensivas).<br><br>
+                            <strong>Sociedad Argentina de Estadística</strong> · Profesor de <em>"Textual Machine Learning: Representaciones modernas y modelado del lenguaje"</em>, 2025. Mini-curso <em>"Aprendizaje Automático con datos textuales en Python"</em> en el Coloquio Argentino de Estadística 2024.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Gestión académica -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="370">
+                    <p class="section-label"><i class="fas fa-sitemap me-1"></i>Gestión académica</p>
+                    <div class="course-item">
+                        <p class="mb-0" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            <strong>Director</strong> · Laboratorio de Investigación en Ciencia de Datos e Inteligencia Artificial (LICDIA), UNLu — Res. HCS-LUJ:0000493-24, desde 2024.<br>
+                            <strong>Director</strong> · Diplomatura de Posgrado en Desarrollo de Soluciones de IA Generativa en la Nube, UNLu — Res. HCS-LUJ:0000209-25, desde 2025.<br>
+                            <strong>Coordinador Académico</strong> · Diplomatura de Posgrado en Innovación y Desarrollo de Aplicaciones basadas en Blockchain — LICDIA-UNLu, 2026.<br>
+                            <strong>Director</strong> · Grupo de Investigación en Ciencia de Datos e IA (GICiDIA), Depto. Cs. Básicas, UNLu — Disp. CDD-CB Nº 563/23.<br>
+                            <strong>Coordinador</strong> · Licenciatura en Sistemas de Información, UNLu — Res. HCS 076/22, 2022 a mayo 2025.<br>
+                            <strong>Secretario Académico</strong> · Departamento de Ciencias Básicas, UNLu — Disp. DD-CB Nº 047/21, 2020-2021 y 2022-2024.<br>
+                            <strong>Representante UNLu</strong> · Red de Universidades Nacionales con Carreras de Informática (RedUNCI) — 2022 a mayo 2025.<br>
+                            <strong>Comisión Académica</strong> · Maestría en Ciencia de Datos, UNLu — Res. HCS-LUJ:0000794/23, desde 2023.<br>
+                            <strong>Comisión Académica</strong> · Especialización en Bioinformática, UNLu — Res. HCS-LUJ:0000718-22, desde 2022.<br>
+                            <strong>Editor</strong> · <em>Computer Science – CACIC 2023</em>, Springer CCIS, 2024 (ISBN 978-3-031-62245-8) junto a P. Pesado y W. Panessi. Editor del libro de actas oficial del XXIX CACIC 2023 alojado en UNLu.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Dirección de tesis -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="375">
+                    <p class="section-label"><i class="fas fa-user-graduate me-1"></i>Dirección de tesis</p>
+                    <div class="course-item">
+                        <strong>Maestrías</strong>
+                        <p class="mb-0 mt-2" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            <strong>Camilo Malek</strong> · <em>"Estrategias de adaptación eficiente para modelos de lenguaje abiertos"</em> · Maestría en Inteligencia de Datos orientada a Big Data, UNLP · Director · en ejecución.<br>
+                            <strong>David Torena</strong> · <em>"Gestión de Documentación de Calidad Automatizada Basada en IA para organizaciones certificadas ISO, utilizando LLMs"</em> · Maestría en Calidad Industrial, UNSAM · Director · en ejecución.<br>
+                            <strong>Franco Meretta</strong> · <em>"Contabilidad Digital: automatización de procesos contables para PyMEs de San Andrés de Giles mediante IA"</em> · Maestría en Gestión Empresaria, UNLu · Director · 2026.
+                        </p>
+                    </div>
+                    <div class="course-item">
+                        <strong>Especializaciones</strong>
+                        <p class="mb-0 mt-2" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            <strong>Christian Toledo</strong> · <em>"Fundamentos Matemáticos de las Redes Neuronales Artificiales: Enfoque a partir de la Regresión Lineal y Optimización"</em> · TFI Especialización en Matemática Aplicada, UNLu · Director · defendido en 2025 (aprobado).<br>
+                            <strong>Mario Perelló</strong> · <em>"Impacto de los Sistemas Automáticos para la toma de reclamos en las Distribuidoras Eléctricas"</em> · TFI Especialización en Gestión de la Tecnología y la Innovación, UNLu · Director · en ejecución.
+                        </p>
+                    </div>
+                    <div class="course-item">
+                        <strong>Tesinas de grado (Lic. en Sistemas de Información, UNLu)</strong>
+                        <p class="mb-0 mt-2" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            <strong>Angel Galloso</strong> · <em>"Aplicación de técnicas de aprendizaje automático para el análisis del abandono estudiantil en la UNLu"</em> · Director · en ejecución.<br>
+                            <strong>Matías Rolón</strong> · <em>"Generación de un modelo de question-answering en correos electrónicos sobre consultas académicas"</em> · Director · en ejecución.<br>
+                            <strong>Víctor Villarreal</strong> · <em>"Mejoras de procesos de servicios bio-analíticos, médicos y farmacológicos de un laboratorio: enfoque basado en modelado y simulación"</em> · Director · en ejecución.
+                        </p>
+                    </div>
+                    <div class="course-item">
+                        <strong>Pasantías de investigación / extensión</strong>
+                        <p class="mb-0 mt-2" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            <strong>Lucas Santillán</strong> — Pasantía Interna Rentada de Extensión, Proyecto "Enseñanza de programación en escuelas secundarias" (UNLu). Director. Finalizada 2024.<br>
+                            <strong>Angel Gallozo</strong> — Pasantía Interna Rentada de Investigación, Proyecto "Generación de herramientas de extracción de información ambiental — Municipio de Luján". Director. Finalizada 2024.
+                        </p>
+                    </div>
+                    <div class="course-item">
+                        <p class="mb-0" style="font-size:0.92rem; color:#4a4a4a;">
+                            Actúa además como <strong>Jurado de tesis de grado y posgrado</strong> en UNLu, Universidad Nacional de Misiones (UNaM), UNTREF y Universidad Nacional de la Patagonia Austral (UNPA).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Investigación -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="380">
+                    <p class="section-label"><i class="fas fa-microscope me-1"></i>Proyectos de investigación dirigidos</p>
+                    <div class="course-item">
+                        <strong>Vigentes — como Director</strong>
+                        <p class="mb-0 mt-2" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            <strong>Clementina XXI — Convocatoria IPAC</strong> · <em>Fine-tuning y adaptación de modelos de lenguaje abiertos en infraestructura HPC para aplicaciones de dominio específico</em> · Investigador Principal · UNLu en consorcio con UNSL y UNaM · 2025-2026.<br>
+                            <strong>PI²+ A UNLu</strong> · <em>Modelos de lenguaje a gran escala sobre infraestructura cloud para soluciones de IA Generativa</em> · Director · Disp. PCD-CBLUJ:000083-25 · enero 2025 – enero 2028.<br>
+                            <strong>Proyecto Multidisciplinario UNLu 2023</strong> · <em>Generación de herramientas de extracción de información ambiental mediante ML, a partir de bases de datos textuales — Municipio de Luján</em> · Director · Res. Rector N°388/23 · diciembre 2023 – diciembre 2026.<br>
+                            <strong>Proyecto FITBA 2023</strong> (Fondo de Innovación Tecnológica de Buenos Aires) · <em>Base de datos espaciales del Municipio de Luján</em> · Director · RESO-2023-506-GDEBA-MPCEITGP · 2023-2024.
+                        </p>
+                    </div>
+                    <div class="course-item">
+                        <strong>Vigentes — como Co-Director / Integrante</strong>
+                        <p class="mb-0 mt-2" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            <strong>PI²+ A UNLu</strong> · <em>Descubrimiento de patrones de comportamiento vinculados al abandono en la UNLu mediante ML</em> · Co-Director · Disp. PCDD-CBLUJ:027-23 · enero 2023 – enero 2025.<br>
+                            <strong>Proyecto Sadosky / MinCyT 2023</strong> · <em>Sistema para obtención automática de datos del IPC de la Provincia de Buenos Aires</em> · Integrante · joint Dirección Provincial de Estadística PBA + Fundación Manuel Sadosky · enero 2024 – enero 2025.
+                        </p>
+                    </div>
+                    <div class="course-item">
+                        <strong>Proyectos de extensión</strong>
+                        <p class="mb-0 mt-2" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            <strong>Director</strong> · <em>Enseñanza de programación en escuelas secundarias de la zona de influencia de la UNLu</em> · Res. HCS Nº752/23 · octubre 2023 – octubre 2026.<br>
+                            <strong>Co-Director</strong> · <em>Sistemas de Información Ambiental Integrada para el Partido de Luján — 2da parte: integración con bases de datos espaciales</em> · Res. HCS Nº752/23 · octubre 2023 – octubre 2026.<br>
+                            <strong>Co-Director</strong> · <em>Sistema de Alerta Temprana (SAT) de riesgo de abandono escolar en las Escuelas de Mercedes</em> · UNLu · julio 2025 – julio 2028.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Producción científica -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="390">
+                    <p class="section-label"><i class="fas fa-book me-1"></i>Producción científica seleccionada</p>
+                    <div class="course-item">
+                        <p class="mb-0" style="font-size:0.92rem; color:#4a4a4a;">
+                            Su perfil de <a href="https://scholar.google.es/citations?user=F-tP5OIAAAAJ" target="_blank" rel="noopener">Google Scholar</a> registra <strong>~167 citas, índice h = 7, índice i10 = 3</strong>, con más de 30 publicaciones en CACIC, JCC-BD&amp;ET, WICC, JAIIO, CLABES, INPEAU y revistas indexadas. ORCID: <a href="https://orcid.org/0000-0001-9291-3066" target="_blank" rel="noopener">0000-0001-9291-3066</a>.
+                        </p>
+                    </div>
+                    <div class="course-item">
+                        <strong>Aprendizaje automático, NLP y LLMs (2021-2025)</strong>
+                        <p class="mb-0 mt-2" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            Robles, R. M.; <strong>Fernández, J. M.</strong> (2025). <em>"Agente basado en LLM para la ejecución de comandos CLI a partir de lenguaje natural"</em>. XXXI CACIC, Río Negro.<br>
+                            Guerra, F.; Monti, K.; <strong>Fernández, J. M.</strong> (2025). <em>"Sistema RAG para el acceso a información académica"</em>. XXXI CACIC, Río Negro.<br>
+                            <strong>Fernández, J. M.</strong>; Petrocelli, D. M.; Matuk, R.; Lanson, D.; Zamudio, E.; Cagnina, L. C.; Errecalde, M. L. (2025). <em>"Fine-tuning y adaptación de LLMs abiertos en HPC para aplicaciones de dominio específico"</em>. XXVII WICC, Mendoza.<br>
+                            <strong>Fernández, J. M.</strong>; Lanson, D.; Iglesias, A.; Cagnina, L.; Errecalde, M. L. (2024). <em>"Generación de herramientas de explotación de información ambiental desde bases textuales con IA"</em>. XXVI WICC, Puerto Madryn.<br>
+                            <strong>Fernández, J. M.</strong>; Errecalde, M. L. (2023). <em>"Instance retrieval from non-labeled data as a strategy for automatic classification of imbalanced e-mail datasets"</em>. CACIC 2022, La Rioja. ISBN 978-987-1364-31-2.<br>
+                            <strong>Fernández, J. M.</strong>; Errecalde, M. L. (2022). <em>"Multi-class e-mail classification with a semi-supervised approach based on automatic feature selection and information retrieval"</em>. JCC-BD&amp;ET 2022, pp. 75-90, Springer CCIS.<br>
+                            <strong>Fernández, J. M.</strong>; Cavasin, N.; Errecalde, M. L. (2021). <em>"Classic and recent (neural) approaches to automatic text classification: a comparative study with e-mails in Spanish"</em>. JCC-BD&amp;ET 2021. ISBN 978-950-34-2016-4.<br>
+                            Banchero, S.; <strong>Fernández, J. M.</strong>; Tonin Monzón, F.; Giordano, L. A.; Marrone, A.; et al. (2020). <em>"Modelos para aprendizaje automático en tiempo real sobre entornos de Big Data"</em>. XXII WICC, El Calafate.
+                        </p>
+                    </div>
+                    <div class="course-item">
+                        <strong>Educación universitaria, abandono y bimodalidad</strong>
+                        <p class="mb-0 mt-2" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            <strong>Fernández, J. M.</strong>; Oloriz, M. G. (2024). <em>"Efectos de la incorporación de la bimodalidad en estudiantes en situación de discapacidad — UNLu, cohortes 2018-2022"</em>. Razón Crítica (Univ. Konrad Lorenz, Colombia), pp. 1-18. ISSN 2500-7807.<br>
+                            <strong>Fernández, J. M.</strong>; Matuk, R.; Rodríguez, M.; Quiroga, M. (2022). <em>"Aplicación del modelo Flipped Learning para el aprendizaje de programación — UNLu"</em>. TE&amp;ET 2022.<br>
+                            Oloriz, M. G.; Rissi, M.; <strong>Fernández, J. M.</strong>; Masón, M. R. (2023). <em>"Automatización de la certificación de títulos universitarios en Argentina como garantía del derecho al acceso a la información pública"</em>. RAN — Revista Academia &amp; Negocios, vol. 8, núm. 2, pp. 155-162.<br>
+                            <strong>Fernández, J. M.</strong>; Oloriz, M. G.; Puggioni, N. A. (2021). <em>"Efectos de la modalidad remota en el desempeño académico según campo disciplinar"</em>. XI CLABES.<br>
+                            Oloriz, M. G.; <strong>Fernández, J. M.</strong> (2020). <em>"El rendimiento académico de los estudiantes en situación de discapacidad"</em>. Revista RETOS XXI, vol. 4, núm. 1.<br>
+                            Oloriz, M. G.; <strong>Fernández, J. M.</strong> (2013). <em>"Relación entre las características del estudiante al iniciar estudios superiores y el abandono en UNLu (2000-2010)"</em>. III CLABES. <strong>33 citas</strong> — su trabajo más citado.
+                        </p>
+                    </div>
+                    <div class="course-item">
+                        <strong>Edición / extensión universitaria</strong>
+                        <p class="mb-0 mt-2" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            Pesado, P.; <strong>Fernández, J. M.</strong>; Panessi, W. (eds.) (2024). <em>Computer Science – CACIC 2023</em>. Springer (Cham). ISBN 978-3-031-62245-8.<br>
+                            <strong>Fernández, J. M.</strong> (ed.) (2024). <em>Libro de actas — XXIX CACIC 2023</em>. UNLu.<br>
+                            (2024). <em>"University Extension Products and Processes in the Field of Environmental Management — SIAI Luján"</em>. Cuadernos de Extensión Universitaria. DOI: <a href="https://doi.org/10.19137/cuadex-2024-08-0201" target="_blank" rel="noopener">10.19137/cuadex-2024-08-0201</a>.<br>
+                            <strong>Fernández, J. M.</strong> (2013). <em>"Prototipo de sistema workflow para circuito de aprobación de programas curriculares — UNLu"</em>. VII Simposio Argentino de Informática en el Estado, JAIIO 42 (SADIO).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Formación académica -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="400">
+                    <p class="section-label"><i class="fas fa-graduation-cap me-1"></i>Formación académica</p>
+                    <div class="course-item">
+                        <p class="mb-0" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            <strong>Doctorado en Ciencias de la Computación</strong> · Universidad Nacional de San Luis (UNSL) · <em>en curso</em>.<br>
+                            <em>Línea de tesis:</em> Estrategias de balanceo de clases basadas en etiquetado automático de palabras y recuperación de información para clasificación automática de textos. Director: Dr. Marcelo L. Errecalde.<br><br>
+                            <strong>Magíster en Inteligencia de Datos orientada a Big Data</strong> · Universidad Nacional de La Plata (UNLP) — 2023.<br>
+                            <em>Tesis:</em> "Clasificación automática de correos electrónicos". Director: Dr. Marcelo L. Errecalde (UNSL).<br><br>
+                            <strong>Licenciado en Sistemas de Información</strong> · Universidad Nacional de Luján — 2012.<br>
+                            <strong>Analista Programador Universitario</strong> · Universidad Nacional de Luján — 2009.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="cta-inscribite" data-aos="fade-up" data-aos-delay="400">
+                    <h3>¿Querés sumarte a la próxima cohorte?</h3>
+                    <p>Formarte con el equipo que hace investigación activa en tecnologías descentralizadas.</p>
+                    <a href="../../inscripcion-blockchain-dev/" class="btn-cta">
+                        <i class="fas fa-rocket me-2"></i>Inscribite hoy
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center my-4">
+        <a href="../../#team" class="btn btn-outline-dark btn-lg px-4 py-2">
+            <i class="fas fa-arrow-left me-2"></i>Volver al cuerpo docente
+        </a>
+    </div>
+
+    <footer class="footer bg-dark text-white py-4 mt-2">
+        <div class="container text-center small">
+            <p class="mb-2">
+                Copyright &copy; 2026 | Laboratorio de Investigación en Ciencia de Datos &amp; Inteligencia
+                Artificial de la Universidad de Luján
+                <a href="https://resoluciones.unlu.edu.ar/documento.frame.php?cod=128241" target="_blank"
+                    class="text-decoration-none text-info">[Disposición del Grupo de Investigación]</a>
+                <a href="https://drive.google.com/file/d/1AddV4FMq70bOO4REUgAVppe5i4Vw9h_W/view" target="_blank"
+                    class="text-decoration-none text-info">[Resolución del Laboratorio]</a>
+                - Argentina. Todos los derechos reservados.
+            </p>
+            <p class="mb-0">
+                Desarrollada por
+                <a href="https://www.linkedin.com/in/lucas-santill%C3%A1n-a50166263/" target="_blank" rel="noopener"
+                    class="fw-bold text-decoration-none text-info">Lucas Santillan</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/scripts.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
+    <a href="https://api.whatsapp.com/send?phone=%2B541123953895&text=Hola,%20queria%20información%20sobre%20la%20diplomatura%20en%20Blockchain%20..."
+        class="botonWPP" target="_blank" rel="noopener" aria-label="Consultá por WhatsApp sobre la Diplomatura en Blockchain">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>

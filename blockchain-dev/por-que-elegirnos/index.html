@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Por qué elegir la Diplomatura en Blockchain de LICDIA-UNLu: perfil integral (dev + infraestructura + finanzas), docentes activos en la industria, formación hands-on y título universitario nacional." />
+    <meta name="author" content="LICDIA - UNLu" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="¿Por qué elegirnos? — Diplomatura Blockchain LICDIA-UNLu" />
+    <meta property="og:description" content="Formación integral en blockchain: desarrollo de DApps, infraestructura cloud y criptoeconomía. Docentes con trayectoria real en la industria. Título de posgrado universitario nacional." />
+    <meta property="og:image" content="https://licdia.unlu.edu.ar/assets/img/og-blockchain.jpg" />
+    <meta property="og:url" content="https://licdia.unlu.edu.ar/blockchain-dev/por-que-elegirnos/" />
+    <meta property="og:locale" content="es_AR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="¿Por qué elegirnos? — Diplomatura Blockchain LICDIA-UNLu" />
+    <meta name="twitter:description" content="Formación integral en blockchain con docentes activos en la industria. Perfil dev + infraestructura + finanzas. Título de posgrado universitario nacional — UNLu." />
+    <meta name="twitter:image" content="https://licdia.unlu.edu.ar/assets/img/og-blockchain.jpg" />
+    <link rel="canonical" href="https://licdia.unlu.edu.ar/blockchain-dev/por-que-elegirnos/" />
+    <title>¿Por qué elegirnos? — Diplomatura Blockchain LICDIA-UNLu</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/img/logo.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="../../css/styles.css" rel="stylesheet" />
+    <link href="../../css/style2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        :root {
+            --brand: #4C1C7F;
+            --brand-dark: #261951;
+            --brand-soft: #F3EBFB;
+        }
+
+        /* ── QA Cards (numbered questions) ────────────────────────────── */
+        .qa-card {
+            background: #fff;
+            border-left: 5px solid var(--brand);
+            border-radius: 8px;
+            padding: 1.75rem 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(76, 28, 127, 0.07);
+            transition: box-shadow 0.25s ease, transform 0.25s ease;
+        }
+        .qa-card:hover {
+            box-shadow: 0 8px 24px rgba(76, 28, 127, 0.14);
+            transform: translateY(-2px);
+        }
+        .qa-card h3 {
+            color: var(--brand);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+        .qa-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--brand);
+            color: #fff;
+            border-radius: 50%;
+            font-weight: 900;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* ── Feature Cards (Lo que nos hace distintos) ─────────────────── */
+        .licdia-card {
+            background: #fff;
+            border: 1px solid #ece7f3;
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .licdia-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--brand) 0%, var(--brand-dark) 100%);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        .licdia-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(76, 28, 127, 0.18);
+            border-color: var(--brand-soft);
+        }
+        .licdia-card:hover::before {
+            opacity: 1;
+        }
+        .licdia-icon-wrap {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: var(--brand-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            transition: background 0.25s ease;
+        }
+        .licdia-card:hover .licdia-icon-wrap {
+            background: var(--brand);
+        }
+        .licdia-icon-wrap i {
+            font-size: 2rem;
+            color: var(--brand);
+            transition: color 0.25s ease;
+        }
+        .licdia-card:hover .licdia-icon-wrap i {
+            color: #fff;
+        }
+        .licdia-card-title {
+            font-weight: 700;
+            color: var(--brand-dark);
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+        .licdia-card p {
+            color: #4a4a4a;
+            font-size: 0.93rem;
+            line-height: 1.55;
+            margin-bottom: 0;
+        }
+
+        /* ── Quote Cards (Soundbites) ──────────────────────────────────── */
+        .quote-card {
+            background: #fff;
+            border: 1px solid #ece7f3;
+            border-radius: 12px;
+            padding: 1.75rem 1.5rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            transition: box-shadow 0.25s ease, transform 0.25s ease;
+        }
+        .quote-card::before {
+            content: '\201C';
+            position: absolute;
+            top: -0.25rem;
+            left: 1rem;
+            font-size: 5rem;
+            line-height: 1;
+            color: var(--brand);
+            opacity: 0.12;
+            font-family: Georgia, serif;
+            font-weight: 900;
+        }
+        .quote-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 32px rgba(76, 28, 127, 0.13);
+        }
+        .quote-card blockquote {
+            margin: 0;
+            font-style: italic;
+            color: #2c2c2c;
+            font-size: 0.97rem;
+            line-height: 1.65;
+            position: relative;
+            z-index: 1;
+        }
+        .quote-card .quote-accent {
+            display: block;
+            width: 32px;
+            height: 3px;
+            background: var(--brand);
+            border-radius: 999px;
+            margin-top: 1.1rem;
+        }
+
+        /* ── Hook section ──────────────────────────────────────────────── */
+        .hook-card {
+            background: var(--brand-soft);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            border-left: 4px solid var(--brand);
+        }
+        .hook-card p {
+            margin-bottom: 0;
+            color: #2c2c2c;
+            font-size: 1.05rem;
+            line-height: 1.65;
+        }
+
+        /* ── CTA gradient block ────────────────────────────────────────── */
+        .cta-inscribite {
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            margin-top: 2.5rem;
+            box-shadow: 0 12px 30px rgba(76, 28, 127, 0.25);
+        }
+        .cta-inscribite h3 {
+            color: white;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .cta-inscribite p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        .cta-inscribite .btn-cta {
+            background: #fff;
+            color: var(--brand-dark);
+            font-weight: 700;
+            padding: 0.85rem 2.5rem;
+            border-radius: 999px;
+            border: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .cta-inscribite .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            color: var(--brand-dark);
+        }
+
+        /* ── Section label ─────────────────────────────────────────────── */
+        .section-label {
+            display: inline-block;
+            background: var(--brand-soft);
+            color: var(--brand);
+            font-weight: 700;
+            font-size: 0.78rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            padding: 0.3rem 0.85rem;
+            border-radius: 999px;
+            margin-bottom: 0.75rem;
+        }
+
+        /* ── Disclaimer ────────────────────────────────────────────────── */
+        .page-disclaimer {
+            color: #6c757d;
+            font-style: italic;
+            border-top: 1px dashed #d9d3e6;
+            padding-top: 1.25rem;
+            margin-top: 2rem;
+            font-size: 0.92rem;
+        }
+    </style>
+
+    <!-- Facebook Pixel -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) n = f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1845986945991192');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1845986945991192&ev=PageView&noscript=1" />
+    </noscript>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Diplomatura de Posgrado en Innovación y Desarrollo de Aplicaciones basadas en Blockchain",
+      "description": "Formación integral en blockchain que combina desarrollo de DApps, infraestructura cloud descentralizada y criptoeconomía. Dictada por docentes con trayectoria activa en la industria. Modalidad a distancia, 160 horas, inicio agosto 2026.",
+      "provider": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universidad Nacional de Luján",
+        "sameAs": "https://www.unlu.edu.ar/"
+      },
+      "educationalCredentialAwarded": "Diplomatura de Posgrado Universitario",
+      "courseMode": "online",
+      "inLanguage": "es",
+      "timeRequired": "PT160H",
+      "url": "https://licdia.unlu.edu.ar/blockchain-dev/por-que-elegirnos/",
+      "image": "https://licdia.unlu.edu.ar/assets/img/og-blockchain.jpg",
+      "teaches": ["Blockchain", "Smart contracts", "DApps", "Solidity", "DeFi", "Infraestructura cloud", "Criptoeconomía", "Web3"],
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "startDate": "2026-08-01",
+        "courseSchedule": {
+          "@type": "Schedule",
+          "byDay": ["Tuesday", "Thursday"],
+          "startTime": "19:00",
+          "endTime": "21:00"
+        },
+        "inLanguage": "es"
+      }
+    }
+    </script>
+</head>
+
+<body id="page-top" class="blockchain-theme">
+
+    <!-- ── Navbar ───────────────────────────────────────────────────────── -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand efect" href="../"><img src="../../assets/img/logo.ico" alt="Logo LICDIA" /></a>
+            <a class="navbar-brand efect" href="../"><img src="../../assets/img/depto.ico" alt="Departamento UNLu" /></a>
+            <a class="navbar-brand efect" href="../"><img src="../../assets/img/unlu.ico" alt="Universidad Nacional de Luján" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Abrir menú de navegación">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../#informacionPlan">Plan de estudios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../plan-de-estudios/#cronograma">Cronograma</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../aranceles/">Aranceles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../#contact">Pre-registro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../">LICDIA</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ── Hero ─────────────────────────────────────────────────────────── -->
+    <header class="backgroundAr fondoBlockchain" data-aos="flip-up" data-aos-delay="100" data-aos-duration="1500">
+        <div class="container">
+            <div class="masthead-heading">¿Por qué elegirnos?</div>
+        </div>
+    </header>
+
+    <!-- ── Main content ─────────────────────────────────────────────────── -->
+    <main>
+        <div class="container mt-5 mb-5">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+
+                    <!-- Breadcrumb -->
+                    <nav aria-label="breadcrumb" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="../">Inicio</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">¿Por qué elegirnos?</li>
+                        </ol>
+                    </nav>
+
+                    <!-- ── Section 1: Intro hook ────────────────────────────────── -->
+                    <section aria-labelledby="intro-heading" class="mb-5" data-aos="fade-up">
+                        <h2 id="intro-heading" class="card-t card-title">¿Qué nos diferencia?</h2>
+                        <hr>
+                        <div class="hook-card mt-3">
+                            <p>
+                                Blockchain hoy es <strong>infraestructura de producción</strong>: sistemas financieros, identidad digital,
+                                cadenas de suministro, tokenización de activos. Argentina está entre los mercados de adopción tecnológica
+                                más acelerada del mundo — y la demanda de profesionales formados sigue superando ampliamente la oferta.
+                                Esta página explica qué hace distinta a esta diplomatura y por qué importa.
+                            </p>
+                        </div>
+                    </section>
+
+                    <!-- ── Section 2: Las 4 preguntas ──────────────────────────── -->
+                    <section aria-labelledby="preguntas-heading" class="mb-5">
+                        <span class="section-label">Las cuatro preguntas</span>
+                        <h2 id="preguntas-heading" class="card-t card-title">Lo que todo el mundo pregunta</h2>
+                        <hr>
+
+                        <!-- Q1 -->
+                        <div class="qa-card" data-aos="fade-up" data-aos-delay="100">
+                            <h3><span class="qa-num">1</span>¿Por qué blockchain es relevante hoy?</h3>
+                            <p class="mb-2">
+                                Blockchain dejó de ser una promesa especulativa: hoy es infraestructura crítica para sistemas financieros,
+                                identidad digital, cadenas de suministro y tokenización de activos. Argentina y Latinoamérica están entre
+                                los mercados de <strong>adopción tecnológica más acelerada del mundo</strong> — fintech, pagos digitales,
+                                stablecoins, banca móvil, tokenización — pero la brecha entre esa demanda y los perfiles formados
+                                sigue siendo enorme.
+                            </p>
+                            <p class="mb-0">
+                                Blockchain hoy es producción. Hay empresas con iniciativas reales, reguladores construyendo marcos,
+                                y escasez de talento técnico calificado. <strong>Formarse ahora es entrar al mercado con ventaja.</strong>
+                            </p>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="qa-card" data-aos="fade-up" data-aos-delay="150">
+                            <h3><span class="qa-num">2</span>¿Qué se lleva alguien que lo hace?</h3>
+                            <p class="mb-2">
+                                Capacidad real para <strong>diseñar, desarrollar, desplegar y operar</strong> aplicaciones descentralizadas
+                                en producción. No solo Solidity y smart contracts: arquitectura cloud, infraestructura como código, CI/CD,
+                                escalabilidad Layer 1 y Layer 2, fundamentos financieros y criptoeconomía.
+                            </p>
+                            <p class="mb-2">
+                                Quien termina la cursada se lleva un <strong>proyecto integrador propio</strong>, criterio profesional
+                                para tomar decisiones técnicas, y el vocabulario para participar en cualquier mesa —
+                                técnica, financiera o de negocio.
+                            </p>
+                            <p class="mb-0">
+                                Un punto clave: <strong>la estrategia no es un módulo aparte, está integrada en el contenido</strong>.
+                                Tokenomics y modelo de negocio se trabajan en el módulo de Finanzas/DeFi; el business case, en el de DApps;
+                                la selección de casos de uso, en Fundamentos.
+                                No formamos a un programador que necesita un manager para decidir,
+                                ni a un manager que necesita un programador para ejecutar.
+                            </p>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="qa-card" data-aos="fade-up" data-aos-delay="200">
+                            <h3><span class="qa-num">3</span>¿Para quién es?</h3>
+                            <p class="mb-2">Para quienes quieren <strong>construir</strong>, no solo invertir. En particular:</p>
+                            <ul class="mb-2">
+                                <li>Desarrolladores que quieren dar el salto a Web3, y perfiles cloud / DevOps que necesitan integrar blockchain a sus arquitecturas.</li>
+                                <li>Perfiles financieros que quieren entender DeFi desde la lógica del protocolo, no desde el marketing.</li>
+                                <li>Emprendedores y consultores que evalúan proyectos sobre blockchain.</li>
+                            </ul>
+                            <p class="mb-0">
+                                El foco es <strong>integrar blockchain a sistemas reales y desplegar en producción</strong>:
+                                DApps con Solidity, smart contracts sobre Ethereum y Layer 2, infraestructura cloud descentralizada
+                                con IaC y CI/CD, protocolos DeFi, NFTs y tokenización.
+                                <span class="text-muted"><em>Si el único interés es comprar y vender cripto, esta diplomatura no es la opción adecuada.</em></span>
+                            </p>
+                        </div>
+
+                        <!-- Q4 -->
+                        <div class="qa-card" data-aos="fade-up" data-aos-delay="250">
+                            <h3><span class="qa-num">4</span>¿Qué la hace distinta de otras propuestas?</h3>
+                            <p class="mb-2">Cuatro diferencias concretas frente al resto de la oferta:</p>
+                            <ol class="mb-0">
+                                <li class="mb-2">
+                                    <strong>Enfoque integral:</strong> desarrollo de DApps, infraestructura cloud descentralizada y
+                                    finanzas Web3/DeFi en una sola cursada — porque en producción nunca van por separado.
+                                    La mayoría de los programas se especializa en un solo eje y deja los otros dos como lectura recomendada.
+                                </li>
+                                <li class="mb-2">
+                                    <strong>Docentes que están en el campo:</strong> arquitectos cloud con proyectos blockchain en producción
+                                    internacional, traders de derivados certificados, investigadores CONICET y desarrolladores Web3 activos
+                                    en el ecosistema. La dirección académica combina entre 10 y 15 años de experiencia docente
+                                    con un período equivalente de trayectoria en la industria.
+                                </li>
+                                <li class="mb-2">
+                                    <strong>Práctica desde la primera unidad:</strong> más profunda que un bootcamp, más aplicada que un
+                                    posgrado tradicional. Se escribe código, se despliegan contratos, se levanta infraestructura.
+                                    Si no lo podés ejecutar en una terminal, no lo entendiste.
+                                </li>
+                                <li>
+                                    <strong>Título universitario nacional:</strong> certificado de posgrado emitido por la Universidad
+                                    Nacional de Luján (UNLu), universidad pública nacional — no una certificación privada de plataforma.
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <!-- ── Section 3: Feature cards ────────────────────────────── -->
+                    <section aria-labelledby="distintos-heading" class="mb-5">
+                        <span class="section-label">Nuestros diferenciales</span>
+                        <h2 id="distintos-heading" class="card-t card-title">Lo que nos hace distintos</h2>
+                        <hr>
+
+                        <div class="row g-4 mt-2">
+
+                            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                                <div class="licdia-card">
+                                    <div class="licdia-icon-wrap">
+                                        <i class="fas fa-layer-group"></i>
+                                    </div>
+                                    <h5 class="licdia-card-title">Integración de perfiles</h5>
+                                    <p>
+                                        Dev, cloud architect y perfil financiero en la misma aula, trabajando sobre el mismo problema.
+                                        Porque en un proyecto blockchain real los tres tienen que entenderse — y acá practican eso desde el día uno.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                                <div class="licdia-card">
+                                    <div class="licdia-icon-wrap">
+                                        <i class="fas fa-hard-hat"></i>
+                                    </div>
+                                    <h5 class="licdia-card-title">Docentes en el campo</h5>
+                                    <p>
+                                        No docentes que "conocen" blockchain — docentes que trabajan con blockchain en producción.
+                                        Arquitectos cloud, traders de derivados, investigadores CONICET y developers Web3 activos en el ecosistema.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                                <div class="licdia-card">
+                                    <div class="licdia-icon-wrap">
+                                        <i class="fas fa-terminal"></i>
+                                    </div>
+                                    <h5 class="licdia-card-title">Hands-on desde la primera unidad</h5>
+                                    <p>
+                                        Escribís código, desplegás contratos, levantás infraestructura, analizás criptoeconomía.
+                                        Cada unidad cierra con un entregable concreto; la cursada cierra con un proyecto integrador end-to-end.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                                <div class="licdia-card">
+                                    <div class="licdia-icon-wrap">
+                                        <i class="fas fa-university"></i>
+                                    </div>
+                                    <h5 class="licdia-card-title">Título de posgrado universitario nacional</h5>
+                                    <p>
+                                        Emitido por la Universidad Nacional de Luján (UNLu), universidad pública nacional argentina.
+                                        Un título con respaldo institucional real, no una certificación de plataforma privada.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- ── Section 4: Soundbite quotes ─────────────────────────── -->
+                    <section aria-labelledby="voces-heading" class="mb-5">
+                        <span class="section-label">En palabras del equipo</span>
+                        <h2 id="voces-heading" class="card-t card-title">Cómo lo decimos nosotros</h2>
+                        <hr>
+
+                        <div class="row g-4 mt-2">
+
+                            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                                <div class="quote-card">
+                                    <blockquote>
+                                        Argentina tiene una de las tasas de adopción cripto más altas del mundo,
+                                        pero formamos a una fracción mínima de los profesionales que necesitamos.
+                                        Esa brecha es la oportunidad.
+                                    </blockquote>
+                                    <span class="quote-accent"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                                <div class="quote-card">
+                                    <blockquote>
+                                        Esta diplomatura no enseña a especular. Enseña a construir.
+                                    </blockquote>
+                                    <span class="quote-accent"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                                <div class="quote-card">
+                                    <blockquote>
+                                        La estrategia la enseñamos desde el código: tokenomics en el módulo de DeFi,
+                                        business case en el de DApps. El que sale construye y argumenta.
+                                    </blockquote>
+                                    <span class="quote-accent"></span>
+                                </div>
+                            </div>
+
+                            <div class="col-12 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                                <div class="quote-card">
+                                    <blockquote>
+                                        En LICDIA juntamos al desarrollador, al arquitecto cloud y al financiero en la misma aula.
+                                        Porque en un proyecto blockchain real los tres tienen que entenderse.
+                                    </blockquote>
+                                    <span class="quote-accent"></span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+
+                    <!-- ── CTA ──────────────────────────────────────────────────── -->
+                    <div class="cta-inscribite" data-aos="fade-up" data-aos-delay="100">
+                        <h3>¿Listo para construir?</h3>
+                        <p>Da el próximo paso e inscribite en la Diplomatura en Blockchain — cohorte 2026.</p>
+                        <a href="../inscripcion-blockchain-dev/" class="btn-cta">
+                            <i class="fas fa-rocket me-2"></i>Inscribite hoy
+                        </a>
+                    </div>
+
+                    <!-- Disclaimer -->
+                    <p class="page-disclaimer text-center mb-0">
+                        <i class="fas fa-info-circle me-1"></i>
+                        Propuesta académica sujeta a las resoluciones del Laboratorio de Investigación en Ciencia de Datos e Inteligencia Artificial (LICDIA), Universidad Nacional de Luján.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- ── Back button ───────────────────────────────────────────────────── -->
+    <div class="container text-center my-4">
+        <a href="../" class="btn btn-outline-dark btn-lg px-4 py-2">
+            <i class="fas fa-arrow-left me-2"></i>Volver
+        </a>
+    </div>
+
+    <!-- ── Footer ───────────────────────────────────────────────────────── -->
+    <footer class="footer bg-dark text-white py-4 mt-2">
+        <div class="container text-center small">
+            <p class="mb-2">
+                Copyright &copy; 2026 | Laboratorio de Investigación en Ciencia de Datos &amp; Inteligencia
+                Artificial de la Universidad de Luján
+                <a href="https://resoluciones.unlu.edu.ar/documento.frame.php?cod=128241" target="_blank"
+                    class="text-decoration-none text-info">[Disposición del Grupo de Investigación]</a>
+                <a href="https://drive.google.com/file/d/1AddV4FMq70bOO4REUgAVppe5i4Vw9h_W/view" target="_blank"
+                    class="text-decoration-none text-info">[Resolución del Laboratorio]</a>
+                - Argentina. Todos los derechos reservados.
+            </p>
+            <p class="mb-0">
+                Desarrollada por
+                <a href="https://www.linkedin.com/in/lucas-santill%C3%A1n-a50166263/" target="_blank" rel="noopener"
+                    class="fw-bold text-decoration-none text-info">Lucas Santillan</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/scripts.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
+
+    <!-- WhatsApp floating button -->
+    <a href="https://api.whatsapp.com/send?phone=%2B541123953895&text=Hola,%20queria%20información%20sobre%20la%20diplomatura%20en%20Blockchain%20..."
+        class="botonWPP" target="_blank" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>

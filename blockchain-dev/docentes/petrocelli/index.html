@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Dr. David Petrocelli, Director de la Diplomatura en Blockchain LICDIA-UNLu. Doctor en Ciencias Informáticas (UNLP), Senior Cloud Architect en Caylent Inc. (USA), AWS Community Builder." />
+    <meta name="author" content="LICDIA - UNLu" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Dr. David Petrocelli — Director — Diplomatura Blockchain LICDIA-UNLu" />
+    <meta property="og:description" content="Doctor en Ciencias Informáticas (UNLP, promedio 9.58), Senior Cloud Architect en Caylent Inc. (USA), más de 14 años de docencia universitaria y 11 en cloud y DevOps a escala empresarial." />
+    <meta property="og:image" content="https://licdia.unlu.edu.ar/assets/img/team/petrocelli.jpg" />
+    <meta property="og:url" content="https://licdia.unlu.edu.ar/blockchain-dev/docentes/petrocelli/" />
+    <meta property="og:locale" content="es_AR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Dr. David Petrocelli — Director — Diplomatura Blockchain LICDIA-UNLu" />
+    <meta name="twitter:description" content="Doctor en Ciencias Informáticas (UNLP), Senior Cloud Architect en Caylent Inc. (USA), AWS Community Builder. Director de la Diplomatura en Blockchain de la UNLu." />
+    <meta name="twitter:image" content="https://licdia.unlu.edu.ar/assets/img/team/petrocelli.jpg" />
+    <link rel="canonical" href="https://licdia.unlu.edu.ar/blockchain-dev/docentes/petrocelli/" />
+    <title>Dr. David Petrocelli — Director — Diplomatura Blockchain LICDIA-UNLu</title>
+    <link rel="icon" type="image/x-icon" href="../../../assets/img/logo.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="../../../css/styles.css" rel="stylesheet" />
+    <link href="../../../css/style2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        :root {
+            --brand: #4C1C7F;
+            --brand-dark: #261951;
+            --brand-soft: #F3EBFB;
+        }
+
+        /* ---- Profile card ---- */
+        .docente-card {
+            background: #fff;
+            border: 1px solid #ece7f3;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 4px 24px rgba(76, 28, 127, 0.08);
+        }
+
+        .docente-photo-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-bottom: 1.5rem;
+        }
+
+        .docente-photo {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--brand-soft);
+            box-shadow: 0 8px 32px rgba(76, 28, 127, 0.22);
+        }
+
+        .docente-name {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--brand-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .docente-role {
+            font-size: 1.1rem;
+            color: var(--brand);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .docente-bio p {
+            color: #3a3a3a;
+            font-size: 0.98rem;
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        /* ---- Specialty badges ---- */
+        .badge-area {
+            display: inline-block;
+            background: var(--brand-soft);
+            color: var(--brand-dark);
+            border: 1px solid #d6c8ee;
+            border-radius: 999px;
+            padding: 0.35rem 1rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin: 0.25rem;
+            transition: background 0.2s ease, color 0.2s ease;
+            cursor: default;
+        }
+
+        .badge-area:hover {
+            background: var(--brand);
+            color: #fff;
+            border-color: var(--brand);
+        }
+
+        /* ---- Courses section ---- */
+        .course-item {
+            background: var(--brand-soft);
+            border-left: 4px solid var(--brand);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .course-item strong {
+            color: var(--brand-dark);
+        }
+
+        /* ---- CTA ---- */
+        .cta-inscribite {
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            margin-top: 2.5rem;
+            box-shadow: 0 12px 30px rgba(76, 28, 127, 0.25);
+        }
+
+        .cta-inscribite h3 {
+            color: white;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-inscribite p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-cta {
+            background: #fff;
+            color: var(--brand-dark);
+            font-weight: 700;
+            padding: 0.85rem 2.5rem;
+            border-radius: 999px;
+            border: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            color: var(--brand-dark);
+        }
+
+        .section-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--brand);
+            margin-bottom: 0.75rem;
+        }
+
+        .divider-brand {
+            border: none;
+            height: 3px;
+            background: linear-gradient(90deg, var(--brand) 0%, var(--brand-soft) 100%);
+            border-radius: 2px;
+            margin: 1.5rem 0;
+        }
+
+        .external-link-row a {
+            color: var(--brand);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.92rem;
+        }
+
+        .external-link-row a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Dr. David Petrocelli",
+      "jobTitle": "Director — Diplomatura Blockchain LICDIA-UNLu",
+      "description": "Doctor en Ciencias Informáticas (UNLP). Senior Cloud Architect en Caylent Inc. (USA). Más de 14 años de docencia universitaria y 11 años de experiencia en cloud y DevOps a escala empresarial. AWS Community Builder en AI Engineering.",
+      "image": "https://licdia.unlu.edu.ar/assets/img/team/petrocelli.jpg",
+      "url": "https://licdia.unlu.edu.ar/blockchain-dev/docentes/petrocelli/",
+      "worksFor": [
+        { "@type": "Organization", "name": "Universidad Nacional de Luján", "url": "https://www.unlu.edu.ar/" },
+        { "@type": "Organization", "name": "Caylent Inc.", "url": "https://caylent.com/" }
+      ],
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidad Nacional de La Plata" },
+      "knowsAbout": ["Blockchain", "Cloud architecture", "AWS", "DevOps", "Infraestructura descentralizada", "Ciencias Informáticas"]
+    }
+    </script>
+</head>
+
+<body id="page-top" class="blockchain-theme">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand efect" href="../../"><img src="../../../assets/img/logo.ico" alt="LICDIA" /></a>
+            <a class="navbar-brand efect" href="../../"><img src="../../../assets/img/depto.ico" alt="Departamento" /></a>
+            <a class="navbar-brand efect" href="../../"><img src="../../../assets/img/unlu.ico" alt="UNLu" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../../">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../#informacionPlan">Plan de estudios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../plan-de-estudios/#cronograma">Cronograma</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../por-que-elegirnos/">Por qué elegirnos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../aranceles/">Aranceles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../#contact">Pre-registro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../">LICDIA</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="backgroundAr fondoBlockchain" data-aos="flip-up" data-aos-delay="100" data-aos-duration="1500">
+        <div class="container">
+            <div class="masthead-heading">Dr. David Petrocelli - Director Diplomatura Blockchain</div>
+        </div>
+    </header>
+
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+
+            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+                aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="../../#team">Cuerpo docente</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Dr. David Petrocelli</li>
+                </ol>
+            </nav>
+
+            <div class="col-md-10">
+
+                <!-- Profile card -->
+                <div class="docente-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="row align-items-start">
+
+                        <!-- Photo column -->
+                        <div class="col-12 col-md-3 docente-photo-wrap" data-aos="fade-right" data-aos-delay="200">
+                            <img class="docente-photo" src="../../../assets/img/team/petrocelli.jpg"
+                                alt="Dr. David Petrocelli - Director de la Diplomatura en Blockchain UNLu" />
+                        </div>
+
+                        <!-- Info column -->
+                        <div class="col-12 col-md-9" data-aos="fade-left" data-aos-delay="250">
+                            <p class="section-label"><i class="fas fa-user-tie me-1"></i>Perfil docente</p>
+                            <h1 class="docente-name">Dr. David Petrocelli</h1>
+                            <p class="docente-role"><i class="fas fa-star me-1"></i>Director y docente — Diplomatura en Blockchain</p>
+
+                            <div class="docente-bio">
+                                <p>
+                                    Doctor en Ciencias Informáticas por la <strong>Universidad Nacional de La Plata</strong> (2015-2021, promedio 9,58, sin aplazos), con tesis dirigida por el Dr. Armando E. De Giusti, referente argentino en cómputo de alto desempeño. Licenciado en Sistemas de Información por la <strong>Universidad Nacional de Luján</strong> (2008-2014, promedio 8,54, Diploma de Honor).
+                                </p>
+                                <p>
+                                    <strong>Profesor Adjunto Ordinario UNLu</strong> desde 2022, con concursos ganados en los Departamentos de Tecnología (División Ingeniería Básica) y de Ciencias Básicas (División Computación, vigencia 2023-2029).
+                                </p>
+                                <p>
+                                    En 2025 fue designado <strong>Responsable Académico</strong> de la Diplomatura de Posgrado en IA Generativa en la Nube. Su carrera docente arranca en 2012 como Ayudante de Segunda y suma más de catorce años continuos en aula.
+                                </p>
+                                <p>
+                                    En grado dicta <strong>Sistemas Distribuidos y Programación Paralela</strong> (Tecnología) y el <strong>Seminario de Integración Profesional</strong> (Ciencias Básicas) en la Licenciatura en Sistemas.
+                                </p>
+                                <p>
+                                    La asignatura de Sistemas Distribuidos cierra con un Trabajo Final Integrador donde los estudiantes construyen una red blockchain distribuida desde cero — mineros CPU/GPU en CUDA, colas asíncronas con RabbitMQ, persistencia con Redis y despliegue automatizado sobre Kubernetes con OpenTofu.
+                                </p>
+                                <p>
+                                    Tiene a cargo además <strong>cinco cursos de posgrado</strong> distintos:
+                                </p>
+                                <ul style="font-size:0.95rem; color:#3a3a3a; line-height:1.8;">
+                                    <li><em>Infraestructura Tecnológica para IA</em> (2025)</li>
+                                    <li><em>Aplicaciones de Software Estadístico II — SIG</em>, en la Maestría en Generación y Análisis de Información Estadística (2025)</li>
+                                    <li><em>Diseño de Pipelines Bioinformáticos Escalables</em> (2025)</li>
+                                    <li><em>Procesamiento Masivo de Datos</em> (2024)</li>
+                                    <li><em>Despliegue Automatizado y Procesamiento en el Cloud</em> (2022)</li>
+                                </ul>
+                                <p>
+                                    En la industria se desempeña como <strong>Senior Cloud Architect en Caylent Inc.</strong> (USA, remoto) desde noviembre de 2023, dentro del Cloud Architecture &amp; Engineering Team.
+                                </p>
+                                <p>
+                                    Brinda guía técnica sobre AWS, IaC (Terraform, CloudFormation, AWS CDK), DevOps/GitOps, modernización de aplicaciones con ECS/EKS y CI/CD a clientes empresariales norteamericanos en proyectos de migración y modernización cloud.
+                                </p>
+                                <p>
+                                    Previamente fue <strong>Team Leader DevOps en CloudHesive LATAM</strong> (marzo 2021 – octubre 2023), donde coordinó un equipo de 5 a 10 ingenieros DevOps, definió la hoja de ruta del área y lideró la adopción del AWS Well-Architected Framework. En 2021 obtuvo el <em>Premio al Trabajo en Equipo</em> de la compañía.
+                                </p>
+                                <p>
+                                    Antes ocupó por casi seis años el cargo de <strong>Asistente IT en la Gerencia de Infraestructura Informática del Banco Central de la República Argentina</strong> (julio 2015 – febrero 2021), responsable de plataformas de virtualización, sistemas operativos, monitoreo con Nagios XI, entornos CI/CD con Jenkins y administración de recursos cloud en Azure.
+                                </p>
+                                <p>
+                                    Inició su carrera profesional en 2013 como <strong>Asesor Técnico IT en el Ministerio de Planificación Federal</strong>, en proyectos de streaming y broadcasting del plan Argentina Conectada.
+                                </p>
+                                <p>
+                                    En total, más de <strong>doce años continuos en infraestructura productiva en cloud</strong>, con experiencia en organismos públicos argentinos, consultoras regionales y firmas internacionales especializadas en AWS.
+                                </p>
+                                <p>
+                                    Es investigador categorizado V en Ingeniería (2016) e integra el <strong>GICiDIA</strong> — Grupo de Investigación en Ciencia de Datos e Inteligencia Artificial UNLu. Dirige proyectos de investigación sobre infraestructura reproducible para IA híbrida y un sistema institucional de gestión de asignaturas. Su línea doctoral —plataformas distribuidas de bajo costo sobre ARM y cloud— atraviesa cinco publicaciones en CACIC, JCC-BD&amp;ET y Euro-Par.
+                                </p>
+                                <p>
+                                    Forma parte del programa <strong>AWS Community Builders</strong> en la categoría AI Engineering. Escribe sobre arquitectura de plataformas, agentes de IA en producción y operaciones cloud en su blog <a href="https://dpetrocelli.dev/" target="_blank" rel="noopener">dpetrocelli.dev</a>, con producción sostenida en 2025-2026 alrededor de Amazon Bedrock AgentCore, Strands SDK y orquestación de agentes con Claude (subagents, skills, MCP servers). Asistió como miembro de la comunidad al <strong>AWS Community Day Argentina 2025</strong> (Córdoba, septiembre 2025).
+                                </p>
+                                <p>
+                                    En la <strong>Universidad Nacional de Quilmes</strong> dicta el curso <em>Desarrollo de Contratos Inteligentes y dApps</em> dentro del Diploma de Extensión Universitaria en <em>Transparencia y Gestión de Credenciales Digitales: Blockchain y Gestión Académica Universitaria</em>, aprobado por <a href="../../../assets/credenciales/UNQ-RCS-107-26-DEU-Blockchain.pdf" target="_blank" rel="noopener"><strong>Resolución (CS) Nº 107/26</strong></a> del Consejo Superior de la UNQ.
+                                </p>
+                            </div>
+
+                            <hr class="divider-brand">
+
+                            <!-- External links -->
+                            <div class="external-link-row mb-3 d-flex flex-wrap gap-3">
+                                <a href="https://www.linkedin.com/in/david-petrocelli-8b77b653/" target="_blank" rel="noopener">
+                                    <i class="fab fa-linkedin me-1"></i>LinkedIn
+                                </a>
+                                <a href="https://github.com/dpetrocelli" target="_blank" rel="noopener">
+                                    <i class="fab fa-github me-1"></i>GitHub
+                                </a>
+                                <a href="https://dpetrocelli.dev/" target="_blank" rel="noopener">
+                                    <i class="fas fa-blog me-1"></i>Blog técnico
+                                </a>
+                                <a href="https://caylent.com" target="_blank" rel="noopener">
+                                    <i class="fas fa-external-link-alt me-1"></i>Caylent Inc.
+                                </a>
+                                <a href="mailto:dmpetrocelli@gmail.com">
+                                    <i class="fas fa-envelope me-1"></i>Contacto
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Areas de especialidad -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="300">
+                    <p class="section-label"><i class="fas fa-tags me-1"></i>Áreas de especialidad</p>
+                    <div>
+                        <span class="badge-area">AWS</span>
+                        <span class="badge-area">Cloud Architecture</span>
+                        <span class="badge-area">Amazon Bedrock / GenAI</span>
+                        <span class="badge-area">Agentes de IA en producción</span>
+                        <span class="badge-area">FinOps</span>
+                        <span class="badge-area">Gobernanza multi-cuenta</span>
+                        <span class="badge-area">DevOps / GitOps</span>
+                        <span class="badge-area">Infraestructura como Código</span>
+                        <span class="badge-area">Terraform / CDK</span>
+                        <span class="badge-area">Kubernetes / EKS</span>
+                        <span class="badge-area">Service Mesh (Istio / Calico)</span>
+                        <span class="badge-area">Microservicios</span>
+                        <span class="badge-area">Serverless / Event-driven</span>
+                        <span class="badge-area">Blockchain en AWS</span>
+                        <span class="badge-area">Nodos Ethereum</span>
+                        <span class="badge-area">Redes Layer 1 / Layer 2</span>
+                        <span class="badge-area">Sistemas distribuidos</span>
+                        <span class="badge-area">HPC sobre ARM</span>
+                        <span class="badge-area">IoT</span>
+                    </div>
+                </div>
+
+                <!-- Que ensena en la diplomatura -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="350">
+                    <p class="section-label"><i class="fas fa-chalkboard-teacher me-1"></i>¿Qué enseña en la diplomatura?</p>
+
+                    <div class="course-item">
+                        <strong>Módulo 3 — Automatización de Infraestructura &amp; Arquitectura Tecnológica para Blockchain</strong>
+                        <p class="mb-0 mt-1" style="font-size:0.92rem; color:#4a4a4a;">
+                            <em>Docente Responsable.</em> Es el referente natural de este módulo. Cubre el despliegue de nodos blockchain sobre AWS, automatización con Terraform y CloudFormation, CI/CD para redes descentralizadas, gobernanza multi-cuenta con Control Tower y arquitecturas cloud que soportan cargas Web3 en producción. La experiencia directa en Caylent con clientes empresariales es el diferencial concreto que aporta.
+                        </p>
+                    </div>
+
+                    <div class="course-item">
+                        <strong>Módulo 4 — Desarrollo de Aplicaciones y DApps Blockchain</strong>
+                        <p class="mb-0 mt-1" style="font-size:0.92rem; color:#4a4a4a;">
+                            <em>Docente Responsable.</em> Coordina el cierre técnico de la diplomatura: integración de contratos inteligentes con infraestructura productiva, patrones de arquitectura para DApps end-to-end, conexión entre la capa de aplicación (ethers.js, wagmi) y los nodos desplegados, prácticas de testing con Hardhat/Foundry y observabilidad on-chain. Su perfil de arquitecto cloud da el marco para llevar las DApps de prototipo a entornos productivos.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Doctorado -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="370">
+                    <p class="section-label"><i class="fas fa-graduation-cap me-1"></i>Doctorado en Ciencias Informáticas</p>
+                    <div class="course-item">
+                        <strong>Universidad Nacional de La Plata · 2015 – 2021 · Promedio 9,58 (sin aplazos)</strong>
+                        <p class="mb-0 mt-2" style="font-size:0.92rem; color:#4a4a4a;">
+                            Tesis: <em>"Plataforma colaborativa, distribuida, escalable y de bajo costo basada en microservicios, contenedores, dispositivos móviles y servicios en la Nube para tareas de cómputo intensivo"</em>.
+                            <br>
+                            Director: Dr. Armando E. De Giusti (UNLP-CONICET).
+                            <br>
+                            La tesis investiga cómo aprovechar dispositivos ARM (móviles + edge) orquestados sobre cloud para constituir plataformas distribuidas de bajo costo aptas para cargas intensivas — la misma línea que después aplica al despliegue de nodos blockchain.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Grado -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="375">
+                    <p class="section-label"><i class="fas fa-user-graduate me-1"></i>Licenciatura en Sistemas de Información</p>
+                    <div class="course-item">
+                        <strong>Universidad Nacional de Luján · 2008 – 2014 · Promedio 8,54 (sin aplazos) · Diploma de Honor</strong>
+                        <p class="mb-0 mt-2" style="font-size:0.92rem; color:#4a4a4a;">
+                            Tesis de grado: <em>"Sistema P2P basado en recursos compartidos geolocalizados y Streaming en tiempo real sobre Internet"</em>.
+                            <br>
+                            El trabajo final ya planteaba los temas que después estructuraron toda su carrera: redes peer-to-peer, geolocalización de recursos y entrega distribuida de contenido en tiempo real — la base conceptual de lo que hoy resuelve con blockchain y arquitecturas cloud.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Trayectoria UNLu -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="380">
+                    <p class="section-label"><i class="fas fa-university me-1"></i>Trayectoria académica en UNLu</p>
+                    <div class="course-item">
+                        <strong>Más de 14 años de docencia continua (2012 – actualidad)</strong>
+                        <p class="mb-0 mt-2" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            <strong>2026</strong> — Profesor Adjunto interino, Cs. Básicas (cargo vigente). Director de la Diplomatura en Blockchain.<br>
+                            <strong>2025</strong> — Designación como <strong>Responsable Académico de la Diplomatura de Posgrado en IA Generativa en la Nube</strong>.<br>
+                            <strong>2024</strong> — Integrante del <strong>GICiDIA</strong> — Grupo de Investigación en Ciencia de Datos e IA (CD-CB Nº 563/23).<br>
+                            <strong>2023</strong> — Profesor Adjunto Ordinario (concurso ganado, Depto. Ciencias Básicas, Div. Computación, vigencia 2023-2029).<br>
+                            <strong>2022</strong> — Profesor Adjunto Ordinario (concurso ganado, Depto. Tecnología, Res. HCS 839/18).<br>
+                            <strong>2018</strong> — Ingreso formal a Carrera Docente (División Ingeniería Básica, Depto. Tecnología).<br>
+                            <strong>2014</strong> — Diploma de grado, Licenciatura en Sistemas de Información, promedio 8,54 + Diploma de Honor UNLu.<br>
+                            <strong>2012</strong> — Primer cargo docente como Ayudante de Segunda en Cs. Básicas (CD-CB Nº 311/12).
+                        </p>
+                        <p class="mt-3 mb-2" style="font-size:0.92rem; color:#4a4a4a;">
+                            <strong>Asignaturas de grado que dicta:</strong>
+                        </p>
+                        <ul style="font-size:0.92rem; color:#4a4a4a; line-height:1.7; padding-left:1.25rem;">
+                            <li><em>Sistemas Distribuidos y Programación Paralela</em> — Tecnología, Prof. Adjunto desde 2022.</li>
+                            <li><em>Seminario de Integración Profesional / Práctica Profesional</em> — Cs. Básicas, Prof. Adjunto desde 2022.</li>
+                        </ul>
+                        <p class="mt-3 mb-2" style="font-size:0.92rem; color:#4a4a4a;">
+                            <strong>Cursos de posgrado dictados:</strong>
+                        </p>
+                        <ul style="font-size:0.92rem; color:#4a4a4a; line-height:1.7; padding-left:1.25rem; margin-bottom:0;">
+                            <li><em>Infraestructura Tecnológica para Inteligencia Artificial</em> · Noviembre 2025 · 40 hs.</li>
+                            <li><em>Aplicaciones de Software Estadístico II — Sistemas de Información Geográfica (Python + GIS)</em> · Maestría en Generación y Análisis de Información Estadística, <strong>UNTREF</strong> · Noviembre 2025 · 32 hs.</li>
+                            <li><em>Diseño de Pipelines Bioinformáticos Escalables: Automatización, Contenedores y Nube</em> · Septiembre 2025 · 32 hs.</li>
+                            <li><em>Procesamiento Masivo de Datos</em> · Septiembre–Octubre 2024 · 36 hs.</li>
+                            <li><em>Despliegue Automatizado y Procesamiento en el Cloud</em> · Septiembre–Octubre 2022 · 32 hs.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Diplomaturas dirigidas -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="385">
+                    <p class="section-label"><i class="fas fa-medal me-1"></i>Diplomaturas y diplomados de posgrado / extensión</p>
+                    <div class="course-item">
+                        <ul style="font-size:0.92rem; color:#4a4a4a; line-height:1.7; padding-left:1.25rem; margin-bottom:0;">
+                            <li>
+                                <strong>Diplomatura de Posgrado en Innovación y Desarrollo de Aplicaciones basadas en Blockchain</strong> (presentada 2024, dictado 2026).
+                                <ul style="margin-top:0.25rem;">
+                                    <li>Carácter: <strong>Director</strong></li>
+                                    <li>Diseño de programas de asignaturas</li>
+                                    <li>Docente</li>
+                                </ul>
+                            </li>
+                            <li class="mt-2">
+                                <strong>Diplomatura de Posgrado en Desarrollo de Soluciones de IA Generativa en la Nube</strong> (presentada 2024, en dictado 2025 con 22 alumnos).
+                                <ul style="margin-top:0.25rem;">
+                                    <li>Carácter: <strong>Coordinador Académico</strong></li>
+                                    <li>Diseño de programas de asignaturas</li>
+                                    <li>Docente</li>
+                                </ul>
+                            </li>
+                            <li class="mt-2">
+                                <strong>Diploma de Extensión Universitaria en Transparencia y Gestión de Credenciales Digitales: Blockchain y Gestión Académica Universitaria</strong> — <strong>UNQ</strong> (aprobado por <a href="../../../assets/credenciales/UNQ-RCS-107-26-DEU-Blockchain.pdf" target="_blank" rel="noopener">RCS Nº 107/26</a>).
+                                <ul style="margin-top:0.25rem;">
+                                    <li>Carácter: <strong>Docente</strong> del curso <em>Desarrollo de Contratos Inteligentes y dApps</em> (16 hs.)</li>
+                                    <li>Co-dictado con Ciro Edgardo Romero</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Investigación -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="390">
+                    <p class="section-label"><i class="fas fa-microscope me-1"></i>Investigación</p>
+                    <div class="course-item">
+                        <strong>Proyectos de investigación UNLu</strong>
+                        <p class="mb-0 mt-2" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            <strong>2025 (en evaluación)</strong> · "Infraestructura reproducible y escalable para el ciclo de vida de modelos de IA en entornos híbridos de cloud" — <strong>Director</strong> (Codir.: J. M. Fernández).<br>
+                            <strong>2024 – actualidad</strong> · GICiDIA — Grupo de Investigación en Ciencia de Datos e Inteligencia Artificial (CD-CB Nº 563/23) — Investigador / Desarrollador.<br>
+                            <strong>2023 – actualidad</strong> · "Diseño y desarrollo de un sistema informático para la gestión interna en asignaturas de la UNLu" (CD-T Nº 483/23) — <strong>Director</strong>.<br>
+                            <strong>2017 – 2020</strong> · "Accesibilidad de la información en Sitios Web Argentinos" (CD-CB Nº 129/17) — Investigador.<br>
+                            <strong>2015</strong> · "Generación semi automática de casos de prueba a partir de escenarios" (CD-CB Nº 027/15) — Docente Facilitador.<br>
+                            <strong>2012 – 2013</strong> · "Internet de las Cosas" (CD-CB Nº 258/12) — Investigador / Integrador.<br>
+                            <em>Categoría de Investigador V (Comisión Regional de Categorización - Bonaerense Tandil, exp. 688/2015, 2016).</em>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Dirección de tesis -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="395">
+                    <p class="section-label"><i class="fas fa-user-graduate me-1"></i>Dirección de tesinas de grado</p>
+                    <div class="course-item">
+                        <ul style="font-size:0.92rem; color:#4a4a4a; line-height:1.7; padding-left:1.25rem; margin-bottom:0;">
+                            <li>
+                                <strong>2025 – actualidad</strong> · <em>"Certificación de logros académicos con blockchain: Diseño de un prototipo descentralizado basado en NFTs"</em>.
+                                <ul style="margin-top:0.25rem;">
+                                    <li>Tesista: Leonardo Duville (UNLu, Lic. en Sistemas)</li>
+                                    <li>Director: David Petrocelli · Codirector: Gabriel Tolosa</li>
+                                    <li><span style="color:#6a6a6a;">Arquitectura ERC-721 + IPFS + wallets, validación de prototipo y métricas de desempeño.</span></li>
+                                </ul>
+                            </li>
+                            <li class="mt-2">
+                                <strong>2026 (en formalización)</strong> · <em>"Verificación formal con TLA+ de sagas orquestadas en arquitecturas de microservicios"</em>.
+                                <ul style="margin-top:0.25rem;">
+                                    <li>Tesista: Sebastián Juárez (UNLu, Lic. en Sistemas)</li>
+                                    <li>Director: David Petrocelli</li>
+                                    <li><span style="color:#6a6a6a;">Modelado y verificación de invariantes de consistencia con TLA+/TLC sobre el patrón Saga (orquestación), aplicado a un caso de referencia de microservicios. Línea metodológica anclada en el uso industrial de TLA+ por AWS (DynamoDB, S3, EBS, Aurora).</span></li>
+                                </ul>
+                            </li>
+                            <li class="mt-2">
+                                <strong>2026 (en formalización)</strong> · <em>"Migración de infraestructura on-premise a la nube: marco metodológico de escalabilidad elástica"</em>.
+                                <ul style="margin-top:0.25rem;">
+                                    <li>Tesista: Lucas Latessa (UNLu, Lic. en Sistemas)</li>
+                                    <li>Director: David Petrocelli</li>
+                                    <li><span style="color:#6a6a6a;">Análisis técnico comparativo on-premise vs cloud para sistemas de alta demanda, con foco en estrategias de escalado elástico (reactivo, predictivo y programado) sobre cargas con picos y estacionalidad.</span></li>
+                                </ul>
+                            </li>
+                            <li class="mt-2">
+                                <strong>2026 (en formalización)</strong> · <em>"Análisis del uso de WebAssembly para el desarrollo de sistemas IoT y embebidos"</em>.
+                                <ul style="margin-top:0.25rem;">
+                                    <li>Tesista: Thiago Puyelli (UNLu, Lic. en Sistemas)</li>
+                                    <li>Director: David Petrocelli</li>
+                                    <li><span style="color:#6a6a6a;">Evaluación experimental de runtimes WASM (WAMR, wasm3, Wasmtime) sobre dispositivos IoT con recursos limitados, comparados contra implementaciones nativas (C/Rust no_std). Línea alineada con la Bytecode Alliance y el estándar WASI.</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Jurado de tesis de posgrado -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="397">
+                    <p class="section-label"><i class="fas fa-balance-scale me-1"></i>Jurado de tesis de posgrado</p>
+                    <div class="course-item">
+                        <p class="mb-2" style="font-size:0.92rem; color:#4a4a4a;">
+                            <strong>2026</strong> · <em>"Fundamentos Matemáticos de las Redes Neuronales Artificiales — Enfoque a partir de la Regresión Lineal y Optimización"</em>.<br>
+                            Autor: Christian Toledo. Trabajo Final Integrador de la <strong>Especialización en Matemática Aplicada</strong> (UNLu, Depto. Ciencias Básicas). Director: Mg. Juan Manuel Fernández. Rol: <strong>Evaluador</strong>. Dictamen: aprobado.
+                        </p>
+                    </div>
+                    <div class="course-item">
+                        <p class="mb-0" style="font-size:0.92rem; color:#4a4a4a;">
+                            <em>"La nueva revolución industrial: La transformación digital 4.0. Hacia un nuevo modelo de negocio: Cloud Computing"</em>.<br>
+                            Autora: Silvina Burgat. Tesis de <strong>Maestría en Generación y Análisis de Información Estadística</strong> (Universidad Nacional de Tres de Febrero — UNTREF). Director: Luis Alberto Trajtenberg. Rol: <strong>Evaluador</strong>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Publicaciones -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="400">
+                    <p class="section-label"><i class="fas fa-book me-1"></i>Publicaciones científicas</p>
+                    <div class="course-item">
+                        <p class="mb-2" style="font-size:0.92rem; color:#4a4a4a;">
+                            <strong>Petrocelli, D.; De Giusti, A. E.; Naiouf, M.</strong> (2021). <em>"Collaborative, distributed, scalable and low-cost platform based on microservices, containers, mobile devices and Cloud services to solve compute-intensive tasks"</em>. Euro-Par 2021 PhD Symposium (Parallel and Distributed Processing), Lisboa, Portugal.
+                        </p>
+                        <p class="mb-2" style="font-size:0.92rem; color:#4a4a4a;">
+                            <strong>Petrocelli, D.; De Giusti, A. E.; Naiouf, M.</strong> (2020). <em>"Plataforma colaborativa, elástica, de bajo costo y consumo basada en recursos de la Nube, contenedores y móviles para HPC"</em>. 7ª Conferencia Iberoamericana de Computação Aplicada, Lisboa, Portugal.
+                        </p>
+                        <p class="mb-2" style="font-size:0.92rem; color:#4a4a4a;">
+                            <strong>Petrocelli, D.; De Giusti, A. E.; Naiouf, M.</strong> (2020). <em>"Collaborative, distributed and scalable platform based on mobile, cloud, micro services and containers for intensive computing tasks"</em>. Short Papers of the 8th Conference on Cloud Computing, Big Data &amp; Emerging Topics (JCC-BD&amp;ET 2020).
+                        </p>
+                        <p class="mb-2" style="font-size:0.92rem; color:#4a4a4a;">
+                            <strong>Petrocelli, D.; De Giusti, A. E.; Naiouf, M.</strong> (2019). <em>"Hybrid Elastic ARM&amp;Cloud HPC Collaborative Platform for Generic Tasks"</em>. VII Conference Cloud Computing &amp; Big Data, La Plata. ISBN: 978-3-030-27713-0, pp. 16-27.
+                        </p>
+                        <p class="mb-0" style="font-size:0.92rem; color:#4a4a4a;">
+                            <strong>Petrocelli, D.; De Giusti, A. E.; Naiouf, M.</strong> (2017). <em>"Procesamiento distribuido y paralelo de bajo costo basado en Cloud &amp; móvil"</em>. CACIC 2017 — XXIII Congreso Argentino de Ciencias de la Computación, XVIII Workshop de Procesamiento Distribuido y Paralelo (WPDP), pp. 216-225.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Certificaciones -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="410">
+                    <p class="section-label"><i class="fas fa-certificate me-1"></i>Certificaciones técnicas</p>
+                    <div>
+                        <span class="badge-area">AWS Certified Developer — Associate</span>
+                        <span class="badge-area">AWS Knowledge: EKS</span>
+                        <span class="badge-area">AWS Knowledge: Serverless</span>
+                        <span class="badge-area">AWS Knowledge: Networking Core</span>
+                        <span class="badge-area">AWS Knowledge: Compute</span>
+                        <span class="badge-area">HashiCorp Certified — Terraform Associate</span>
+                        <span class="badge-area">Tigera Certified Calico Operator — AWS Expert</span>
+                        <span class="badge-area">Tigera Certified Calico Operator — Level 1</span>
+                    </div>
+                </div>
+
+                <!-- Open source / GitHub -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="412">
+                    <p class="section-label"><i class="fab fa-github me-1"></i>Repositorios públicos y herramientas — <a href="https://github.com/dpetrocelli" target="_blank" rel="noopener" style="text-transform:none; letter-spacing:normal;">github.com/dpetrocelli</a></p>
+                    <div class="course-item">
+                        <p class="mb-2" style="font-size:0.92rem; color:#4a4a4a;">
+                            Mantiene <strong>más de 45 repositorios públicos</strong> activos: una mitad es material de cátedra UNLu / UNTREF (Sistemas Distribuidos, Seminario de Integración, Software Application II), y la otra mitad es trabajo personal de ingeniería sobre infraestructura, agentes IA y bioinformática.
+                        </p>
+                        <p class="mb-2 mt-3" style="font-size:0.92rem; color:#4a4a4a;"><strong>Herramientas y proyectos personales recientes</strong> (2025-2026):</p>
+                        <ul style="font-size:0.92rem; color:#4a4a4a; line-height:1.8; padding-left:1.25rem; margin-bottom:0;">
+                            <li><a href="https://github.com/dpetrocelli/dpetrocelli-cloudgpu-automation" target="_blank" rel="noopener"><code>cloudgpu-automation</code></a> — CLI en Python para gestión de instancias GPU sobre Vast.ai (provisioning, costos, ciclo de vida).</li>
+                            <li><code>defense-in-depth-agent-ip</code> — agente en Python sobre defensa en profundidad para IPs (febrero 2026).</li>
+                            <li><a href="https://github.com/dpetrocelli/bio-nf-core" target="_blank" rel="noopener"><code>bio-nf-core</code></a> — pipeline bioinformático sobre Nextflow.</li>
+                            <li><code>k8s-stack</code> — stack reproducible de Kubernetes con shell scripting.</li>
+                            <li><code>terraform-source-example-demo</code> — patrones de IaC en HCL/Terraform.</li>
+                            <li><code>ia_distributed_infra_mod2</code> — material del módulo 2 sobre Infraestructura Distribuida (Docker + Git).</li>
+                        </ul>
+                        <p class="mb-0 mt-3" style="font-size:0.92rem; color:#4a4a4a;"><strong>Repositorios de cátedra activos:</strong> <code>sd2026</code>, <code>sip2026</code>, <code>unlu2025</code>, <code>unlu2024</code>, <code>software-application-ii-untref-presentation</code>, <code>classrepo</code>, <code>exercise-01-node-registry</code> (template FastAPI + Postgres + Docker Compose para alumnos).</p>
+                    </div>
+                </div>
+
+                <!-- Producción reciente / Blog -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="415">
+                    <p class="section-label"><i class="fas fa-pen-nib me-1"></i>Producción de divulgación reciente — <a href="https://dpetrocelli.dev/" target="_blank" rel="noopener" style="text-transform:none; letter-spacing:normal;">dpetrocelli.dev</a></p>
+                    <div class="course-item">
+                        <p class="mb-0" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            <strong>Marzo 2026</strong> · <em>"How Spotify Uses Data to Build the Product 713M Users Actually Want"</em> — pipelines de datos, ML y A/B testing a escala hyperscaler.<br>
+                            <strong>Marzo 2026</strong> · <em>"How Netflix Turns 2 Trillion Daily Events Into Architectural Decisions"</em> — procesamiento masivo de eventos y decisiones arquitectónicas data-driven.<br>
+                            <strong>Diciembre 2025</strong> · <em>"Building Production AI Agents with Strands SDK and Amazon Bedrock AgentCore"</em> — playbook de agentes IA productivos con AWS.<br>
+                            <strong>Diciembre 2025</strong> · <em>"Amazon Bedrock: From Zero to Production in 30 Minutes"</em> — onboarding práctico a Bedrock.<br>
+                            <strong>Octubre 2025</strong> · <em>"Claude Agent Orchestration: Subagents, Skills, MCP Servers &amp; More"</em> — orquestación multi-agente con Claude Code y MCP.<br>
+                            <strong>Septiembre 2025</strong> · <em>"My First AWS Community Day Experience"</em> — crónica del AWS Community Day Argentina 2025 (Córdoba).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Reconocimientos -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="420">
+                    <p class="section-label"><i class="fas fa-award me-1"></i>Reconocimientos y distinciones</p>
+                    <div>
+                        <span class="badge-area">AWS Community Builder — AI Engineering</span>
+                        <span class="badge-area">Premio al Trabajo en Equipo · CloudHesive (2021)</span>
+                        <span class="badge-area">Finalista · #Potenciate Tecnológico CABA (2017)</span>
+                        <span class="badge-area">Investigador Categorizado V — Ingeniería (2016)</span>
+                        <span class="badge-area">2do Premio · Concurso Proyectos IoT UNLP-AUGM (2016)</span>
+                        <span class="badge-area">Diploma de Honor — UNLu (2014)</span>
+                        <span class="badge-area">Arctic Code Vault Contributor (GitHub)</span>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="cta-inscribite" data-aos="fade-up" data-aos-delay="400">
+                    <h3>¿Querés sumarte a la próxima cohorte?</h3>
+                    <p>Formarte con profesionales con experiencia real en la industria internacional.</p>
+                    <a href="../../inscripcion-blockchain-dev/" class="btn-cta">
+                        <i class="fas fa-rocket me-2"></i>Inscribite hoy
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center my-4">
+        <a href="../../#team" class="btn btn-outline-dark btn-lg px-4 py-2">
+            <i class="fas fa-arrow-left me-2"></i>Volver al cuerpo docente
+        </a>
+    </div>
+
+    <footer class="footer bg-dark text-white py-4 mt-2">
+        <div class="container text-center small">
+            <p class="mb-2">
+                Copyright &copy; 2026 | Laboratorio de Investigación en Ciencia de Datos &amp; Inteligencia
+                Artificial de la Universidad de Luján
+                <a href="https://resoluciones.unlu.edu.ar/documento.frame.php?cod=128241" target="_blank"
+                    class="text-decoration-none text-info">[Disposición del Grupo de Investigación]</a>
+                <a href="https://drive.google.com/file/d/1AddV4FMq70bOO4REUgAVppe5i4Vw9h_W/view" target="_blank"
+                    class="text-decoration-none text-info">[Resolución del Laboratorio]</a>
+                - Argentina. Todos los derechos reservados.
+            </p>
+            <p class="mb-0">
+                Desarrollada por
+                <a href="https://www.linkedin.com/in/lucas-santill%C3%A1n-a50166263/" target="_blank" rel="noopener"
+                    class="fw-bold text-decoration-none text-info">Lucas Santillan</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/scripts.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
+    <a href="https://api.whatsapp.com/send?phone=%2B541123953895&text=Hola,%20queria%20información%20sobre%20la%20diplomatura%20en%20Blockchain%20..."
+        class="botonWPP" target="_blank" rel="noopener" aria-label="Consultá por WhatsApp sobre la Diplomatura en Blockchain">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>

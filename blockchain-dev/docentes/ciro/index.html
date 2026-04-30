@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Ciro Edgardo Romero, Docente Invitado de la Diplomatura en Blockchain LICDIA-UNLu. Líder de I+D+i en C&S Informática, Especialista en IoT (UBA-FIUBA), docente UNQ y FIUBA, investigador en blockchain aplicada a IoT, ZKP y sistemas distribuidos." />
+    <meta name="author" content="LICDIA - UNLu" />
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="Ciro Edgardo Romero — Docente Invitado — Diplomatura Blockchain LICDIA-UNLu" />
+    <meta property="og:description" content="Líder de I+D+i en C&S Informática. Especialista en Internet de las Cosas (UBA-FIUBA). Docente en UNQ y Lab. de Sistemas Embebidos FIUBA. Investigador en blockchain + IoT, Zero Knowledge Proof y redes IOTA." />
+    <meta property="og:image" content="https://licdia.unlu.edu.ar/assets/img/team/ciro.jpg" />
+    <meta property="og:url" content="https://licdia.unlu.edu.ar/blockchain-dev/docentes/ciro/" />
+    <meta property="og:locale" content="es_AR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ciro Edgardo Romero — Docente Invitado — Diplomatura Blockchain LICDIA-UNLu" />
+    <meta name="twitter:description" content="Líder de I+D+i en C&S Informática. Especialista en IoT (UBA). Investigador en blockchain aplicada a IoT, ZKP, IOTA y sistemas distribuidos descentralizados." />
+    <meta name="twitter:image" content="https://licdia.unlu.edu.ar/assets/img/team/ciro.jpg" />
+    <link rel="canonical" href="https://licdia.unlu.edu.ar/blockchain-dev/docentes/ciro/" />
+    <title>Ciro Edgardo Romero — Docente Invitado — Diplomatura Blockchain LICDIA-UNLu</title>
+    <link rel="icon" type="image/x-icon" href="../../../assets/img/logo.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="../../../css/styles.css" rel="stylesheet" />
+    <link href="../../../css/style2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        :root {
+            --brand: #4C1C7F;
+            --brand-dark: #261951;
+            --brand-soft: #F3EBFB;
+        }
+
+        .docente-card {
+            background: #fff;
+            border: 1px solid #ece7f3;
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 4px 24px rgba(76, 28, 127, 0.08);
+        }
+
+        .docente-photo-wrap {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-bottom: 1.5rem;
+        }
+
+        .docente-photo {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            object-position: center top;
+            border-radius: 50%;
+            border: 4px solid var(--brand-soft);
+            box-shadow: 0 8px 32px rgba(76, 28, 127, 0.22);
+        }
+
+        .docente-name {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--brand-dark);
+            margin-bottom: 0.25rem;
+        }
+
+        .docente-role {
+            font-size: 1.1rem;
+            color: var(--brand);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .docente-bio p {
+            color: #3a3a3a;
+            font-size: 0.98rem;
+            line-height: 1.75;
+            margin-bottom: 1rem;
+        }
+
+        .badge-area {
+            display: inline-block;
+            background: var(--brand-soft);
+            color: var(--brand-dark);
+            border: 1px solid #d6c8ee;
+            border-radius: 999px;
+            padding: 0.35rem 1rem;
+            font-size: 0.82rem;
+            font-weight: 600;
+            margin: 0.25rem;
+            transition: background 0.2s ease, color 0.2s ease;
+            cursor: default;
+        }
+
+        .badge-area:hover {
+            background: var(--brand);
+            color: #fff;
+            border-color: var(--brand);
+        }
+
+        .course-item {
+            background: var(--brand-soft);
+            border-left: 4px solid var(--brand);
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .course-item strong {
+            color: var(--brand-dark);
+        }
+
+        .cta-inscribite {
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            margin-top: 2.5rem;
+            box-shadow: 0 12px 30px rgba(76, 28, 127, 0.25);
+        }
+
+        .cta-inscribite h3 {
+            color: white;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-inscribite p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-cta {
+            background: #fff;
+            color: var(--brand-dark);
+            font-weight: 700;
+            padding: 0.85rem 2.5rem;
+            border-radius: 999px;
+            border: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            color: var(--brand-dark);
+        }
+
+        .section-label {
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--brand);
+            margin-bottom: 0.75rem;
+        }
+
+        .divider-brand {
+            border: none;
+            height: 3px;
+            background: linear-gradient(90deg, var(--brand) 0%, var(--brand-soft) 100%);
+            border-radius: 2px;
+            margin: 1.5rem 0;
+        }
+
+        .external-link-row a {
+            color: var(--brand);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 0.92rem;
+            margin-right: 1.5rem;
+        }
+
+        .external-link-row a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ciro Edgardo Romero",
+      "jobTitle": "Docente Invitado — Diplomatura Blockchain LICDIA-UNLu",
+      "description": "Líder de I+D+i en C&S Informática S.A. Especialista en Internet de las Cosas (UBA-FIUBA). Docente en la Universidad Nacional de Quilmes y en el Laboratorio de Sistemas Embebidos de FIUBA. Investigador en blockchain aplicada a IoT, Zero Knowledge Proof y redes distribuidas (IOTA, ESP32).",
+      "image": "https://licdia.unlu.edu.ar/assets/img/team/ciro.jpg",
+      "url": "https://licdia.unlu.edu.ar/blockchain-dev/docentes/ciro/",
+      "worksFor": [
+        { "@type": "Organization", "name": "C&S Informática S.A." },
+        { "@type": "Organization", "name": "Universidad Nacional de Luján", "url": "https://www.unlu.edu.ar/" }
+      ],
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidad de Buenos Aires - Facultad de Ingeniería" },
+      "knowsAbout": ["Blockchain", "IoT", "Zero Knowledge Proof", "IOTA", "ESP32", "Sistemas embebidos", "Sistemas distribuidos", "Investigación y desarrollo"]
+    }
+    </script>
+</head>
+
+<body id="page-top" class="blockchain-theme">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand efect" href="../../"><img src="../../../assets/img/logo.ico" alt="LICDIA" /></a>
+            <a class="navbar-brand efect" href="../../"><img src="../../../assets/img/depto.ico" alt="Departamento" /></a>
+            <a class="navbar-brand efect" href="../../"><img src="../../../assets/img/unlu.ico" alt="UNLu" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../../">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../#informacionPlan">Plan de estudios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../plan-de-estudios/#cronograma">Cronograma</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../por-que-elegirnos/">Por qué elegirnos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../aranceles/">Aranceles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../#contact">Pre-registro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../../">LICDIA</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="backgroundAr fondoBlockchain" data-aos="flip-up" data-aos-delay="100" data-aos-duration="1500">
+        <div class="container">
+            <div class="masthead-heading">Ciro Edgardo Romero - Docente Invitado</div>
+        </div>
+    </header>
+
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+
+            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+                aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="../../#team">Cuerpo docente</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Ciro Edgardo Romero</li>
+                </ol>
+            </nav>
+
+            <div class="col-md-10">
+
+                <!-- Profile card -->
+                <div class="docente-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="row align-items-start">
+
+                        <!-- Photo column -->
+                        <div class="col-12 col-md-3 docente-photo-wrap" data-aos="fade-right" data-aos-delay="200">
+                            <img class="docente-photo" src="../../../assets/img/team/ciro.jpg"
+                                onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Ciro+Romero&background=4C1C7F&color=fff&size=400&bold=true&font-size=0.4';"
+                                alt="Ciro Edgardo Romero - Docente Invitado Diplomatura en Blockchain UNLu" />
+                        </div>
+
+                        <!-- Info column -->
+                        <div class="col-12 col-md-9" data-aos="fade-left" data-aos-delay="250">
+                            <p class="section-label"><i class="fas fa-user-tie me-1"></i>Perfil docente</p>
+                            <h1 class="docente-name">Ciro Edgardo Romero</h1>
+                            <p class="docente-role"><i class="fas fa-handshake me-1"></i>Docente Invitado — Blockchain aplicada a IoT y sistemas distribuidos</p>
+
+                            <div class="docente-bio">
+                                <p>
+                                    <strong>Especialista en Internet de las Cosas</strong> por la Facultad de Ingeniería de la Universidad de Buenos Aires (UBA-FIUBA), con proyecto final sobre <em>"Sistemas de logística inteligente"</em>. Tecnicatura Superior en Automatización y Robótica (UTN — Instituto Nacional Superior del Profesorado Técnico). Cursa una Micromaestría en Inteligencia Artificial para la Gestión con doble titulación internacional (UNCuyo / Universidad Politécnica de Madrid) y el Profesorado Universitario en CAECE.
+                                </p>
+                                <p>
+                                    Se desempeña como <strong>Líder de I+D+i en C&amp;S Informática S.A.</strong> desde 2021, gestionando equipos rotativos de 4 a 12 personas y la cartera de proyectos de innovación tecnológica de la compañía. Antes ocupó posiciones de Investigador y Desarrollador, Tester y Soporte IT, completando una década de trabajo continuo en la industria del software.
+                                </p>
+                                <p>
+                                    En paralelo construye una sólida carrera docente: <strong>Profesor Instructor en la Licenciatura en Informática de la Universidad Nacional de Quilmes (UNQ)</strong> desde 2023, y <strong>docente en el Laboratorio de Sistemas Embebidos de la FIUBA</strong> dentro de la Especialización de Posgrado en Internet de las Cosas desde 2024. Fue Profesor Terciario en el Instituto ORT Argentina (carrera de Analista de Sistemas, 2023-2025) y capacitador en Educación IT en cursos de Python, IoT con NodeMCU y domótica.
+                                </p>
+                                <p>
+                                    Su <strong>línea de investigación articula blockchain, IoT y sistemas distribuidos</strong> con resultados publicados en JAIIO, CASE y Elektron: análisis de la placa ESP32 para sistemas IoT descentralizados, desarrollo de nodos sobre la red <em>IOTA</em>, registro inmutable de variables ambientales y un caso de uso en logística para el protocolo criptográfico <em>Zero Knowledge Proof</em>. Es esa intersección — dispositivos físicos confiables sobre redes blockchain — la que aporta como Docente Invitado a esta diplomatura.
+                                </p>
+                                <p>
+                                    Es <strong>Certified ScrumMaster (CSM)</strong> e integra la Comisión de Jóvenes Profesionales en AADECA. Participó como expositor y tallerista en múltiples ediciones del Simposio Argentino de Sistemas Embebidos (SASE 2015–2024) y en el XVI Congreso Internacional en Innovación Tecnológica Informática 2018.
+                                </p>
+                            </div>
+
+                            <hr class="divider-brand">
+
+                            <!-- External links -->
+                            <div class="external-link-row mb-3">
+                                <a href="mailto:ciror00@gmail.com">
+                                    <i class="fas fa-envelope me-1"></i>Contacto
+                                </a>
+                                <a href="https://revistas.unlp.edu.ar/JAIIO/article/view/19440/19451" target="_blank" rel="noopener">
+                                    <i class="fas fa-file-alt me-1"></i>Paper ZKP en logística (JAIIO)
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Areas de especialidad -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="300">
+                    <p class="section-label"><i class="fas fa-tags me-1"></i>Áreas de especialidad</p>
+                    <div>
+                        <span class="badge-area">Blockchain + IoT</span>
+                        <span class="badge-area">Zero Knowledge Proof</span>
+                        <span class="badge-area">Red IOTA</span>
+                        <span class="badge-area">Sistemas distribuidos descentralizados</span>
+                        <span class="badge-area">ESP32 / ESP8266 / STM32</span>
+                        <span class="badge-area">Sistemas embebidos</span>
+                        <span class="badge-area">Internet de las Cosas</span>
+                        <span class="badge-area">Logística inteligente</span>
+                        <span class="badge-area">I+D+i</span>
+                        <span class="badge-area">Metodologías ágiles</span>
+                        <span class="badge-area">Scrum (CSM)</span>
+                        <span class="badge-area">Python / Flask</span>
+                        <span class="badge-area">C / C++ embebido</span>
+                        <span class="badge-area">Micropython</span>
+                        <span class="badge-area">Nanotecnología y computación cuántica</span>
+                    </div>
+                </div>
+
+                <!-- Que ensena en la diplomatura -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="350">
+                    <p class="section-label"><i class="fas fa-chalkboard-teacher me-1"></i>¿Qué aporta a la diplomatura?</p>
+
+                    <div class="course-item">
+                        <strong>Módulo 1 — Fundamentos de Blockchain, Frameworks y Herramientas para DApps</strong>
+                        <p class="mb-0 mt-1" style="font-size:0.92rem; color:#4a4a4a;">
+                            <em>Docente Invitado.</em> Participa dentro del bloque <strong>"Casos de uso y aplicaciones actuales"</strong> del Módulo 1, que conduce el Mg. Juan M. Fernández. Aporta su línea de investigación sobre <strong>blockchain aplicada a IoT, Zero Knowledge Proof y redes descentralizadas</strong>: cómo se integra una red blockchain con dispositivos físicos (ESP32, sensores, gateways), qué patrones existen para garantizar trazabilidad e inmutabilidad de datos del mundo real, y cuándo conviene salir de Ethereum hacia DAGs como IOTA. Comparte casos concretos de su trabajo publicado: trazabilidad logística con Zero Knowledge Proof, nodos experimentales de registro ambiental y análisis de la capacidad real de microcontroladores para participar de redes descentralizadas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Trayectoria docente -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="370">
+                    <p class="section-label"><i class="fas fa-university me-1"></i>Trayectoria docente</p>
+                    <div class="course-item">
+                        <p class="mb-0" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            <strong>2024 – actualidad</strong> · Docente — <em>Laboratorio de Sistemas Embebidos, FIUBA</em>. Especialización de Posgrado en Internet de las Cosas.<br>
+                            <strong>2023 – actualidad</strong> · Profesor Instructor — <em>Universidad Nacional de Quilmes</em>. Licenciatura en Informática.<br>
+                            <strong>2023 – 2025</strong> · Profesor Terciario — <em>Instituto Terciario ORT Argentina</em>. Carrera de Analista de Sistemas.<br>
+                            <strong>2019 – 2020</strong> · Capacitador — <em>Educación IT</em>. Cursos: Introducción a la programación con Python, Desarrollador IoT con NodeMCU, Domótica.<br>
+                            <strong>2026</strong> · Docente Invitado — <em>Diplomatura de Posgrado en Innovación y Desarrollo de Aplicaciones basadas en Blockchain (LICDIA-UNLu)</em>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Trayectoria profesional -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="375">
+                    <p class="section-label"><i class="fas fa-briefcase me-1"></i>Trayectoria profesional</p>
+                    <div class="course-item">
+                        <p class="mb-0" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            <strong>2021 – actualidad</strong> · Líder de I+D+i — <em>C&amp;S Informática S.A.</em> Gestión de proyectos de investigación, desarrollo e innovación con metodologías ágiles. Equipos rotativos de 4 a 12 personas. Análisis de viabilidad técnica y económica. Gestión de presupuesto.<br>
+                            <strong>2018 – 2021</strong> · Investigador y Desarrollador — <em>C&amp;S Informática S.A.</em> Incorporación de nuevas tecnologías para concebir, elaborar e implementar sistemas para la empresa y sus clientes.<br>
+                            <strong>2016 – 2018</strong> · Tester — <em>C&amp;S Informática S.A.</em> Cliente: Secretaría Legal y Técnica (Presidencia de la Nación). Pruebas funcionales, unitarias, smoke test y automatización.<br>
+                            <strong>2016</strong> · Analista Back Office — <em>Conexia S.A.</em> Mesa de ayuda de segundo nivel y coordinación de proveedores.<br>
+                            <strong>2015 – 2016</strong> · Técnico IT — <em>Healthy S.A.</em> Proyección, instalación y mantenimiento de infraestructura.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Educación -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="380">
+                    <p class="section-label"><i class="fas fa-graduation-cap me-1"></i>Formación académica</p>
+                    <div class="course-item">
+                        <p class="mb-0" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            <strong>Especialización en Internet de las Cosas</strong> · Universidad de Buenos Aires — Facultad de Ingeniería <em>(terminada)</em>. Proyecto final: <em>"Sistemas de logística inteligente"</em>.<br>
+                            <strong>Tecnicatura Superior en Automatización y Robótica</strong> · UTN — Instituto Nacional Superior del Profesorado Técnico <em>(terminada)</em>.<br>
+                            <strong>Micromaestría en Inteligencia Artificial para la Gestión</strong> · Universidad Nacional de Cuyo &amp; Universidad Politécnica de Madrid <em>(en curso, doble titulación internacional)</em>.<br>
+                            <strong>Profesorado Universitario</strong> · Universidad CAECE <em>(en curso)</em>.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Formación complementaria -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="385">
+                    <p class="section-label"><i class="fas fa-certificate me-1"></i>Formación complementaria</p>
+                    <div class="course-item">
+                        <p class="mb-0" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            Diplomatura en Innovación Abierta · Sec. de Economía del Conocimiento &amp; UTN.<br>
+                            Python Instructor LATAM — <em>Programming Essentials in Python</em> · Cisco Networking Academy.<br>
+                            Desarrollo Web: PHP + MySQL · UTN-FRRe (Resistencia, Chaco).<br>
+                            Product Manager · Coder House.<br>
+                            Product Discovery · Kleer.<br>
+                            Gestión Ágil de Proyectos (PMI-ACP) · UTN.<br>
+                            Nanotecnología y Computación Cuántica · ESBA.<br>
+                            Programa Nano U · Fundación Argentina de Nanotecnología.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Producción científica -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="390">
+                    <p class="section-label"><i class="fas fa-book me-1"></i>Producción científica</p>
+                    <div class="course-item">
+                        <p class="mb-2" style="font-size:0.92rem; color:#4a4a4a;">
+                            <strong>Romero, C. E.</strong> <em>"Caso de uso en logística para el protocolo criptográfico Zero Knowledge Proof"</em>. JAIIO — Revistas UNLP. <a href="https://revistas.unlp.edu.ar/JAIIO/article/view/19440/19451" target="_blank" rel="noopener">Acceso al artículo</a>.
+                        </p>
+                        <p class="mb-2" style="font-size:0.92rem; color:#4a4a4a;">
+                            <strong>Romero, C. E.</strong> et al. (2022). <em>"Detection of corpora lutea in ovary stained tissue with Deep Learning"</em>. IEEE Biennial Congress of Argentina (ARGENCON), pp. 1-6.
+                        </p>
+                        <p class="mb-2" style="font-size:0.92rem; color:#4a4a4a;">
+                            <strong>Romero, C. E.</strong> <em>"Análisis de la capacidad de la placa ESP32 para integrar sistemas IoT descentralizados"</em>. Revista Elektron, Vol. 6, Nº 1, pp. 41-45.
+                        </p>
+                        <p class="mb-2" style="font-size:0.92rem; color:#4a4a4a;">
+                            <strong>Romero, C. E.</strong> <em>"GotenJS: Framework para generar la estructura base de una aplicación web"</em>. 50JAIIO — ASSE, ISSN 2451-7593, pp. 27-36.
+                        </p>
+                        <p class="mb-2" style="font-size:0.92rem; color:#4a4a4a;">
+                            <strong>Romero, C. E.</strong> <em>"Contenedor inteligente para sistemas de logística"</em>. CASE 2021, ISBN 978-987-46297-8-4, pp. 117-119.
+                        </p>
+                        <p class="mb-2" style="font-size:0.92rem; color:#4a4a4a;">
+                            <strong>Romero, C. E.</strong> <em>"Desarrollo de sistemas distribuidos con ESP32 integrada en la red IOTA"</em>. CASE 2021, ISBN 978-987-46297-8-4, pp. 106-108.
+                        </p>
+                        <p class="mb-0" style="font-size:0.92rem; color:#4a4a4a;">
+                            <strong>Romero, C. E.</strong> <em>"Nodo experimental de registro e inmutabilidad de variables ambientales"</em>. 49JAIIO — SIIIO, ISSN 2618-3277, pp. 10-19.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Congresos -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="395">
+                    <p class="section-label"><i class="fas fa-microphone me-1"></i>Participación en congresos</p>
+                    <div class="course-item">
+                        <p class="mb-2" style="font-size:0.92rem; color:#4a4a4a;">
+                            <strong>SASE — Simposio Argentino de Sistemas Embebidos</strong>
+                        </p>
+                        <p class="mb-0" style="font-size:0.92rem; color:#4a4a4a; line-height:1.85;">
+                            <strong>2024</strong> — Workshop de ROS y Sistemas de Visión Embebida (UNT, Tucumán).<br>
+                            <strong>2019</strong> — Programación de placa CIAA con C/C++ (UNR FCEIA, Rosario).<br>
+                            <strong>2018</strong> — Open-IoT y Patentes de Sistemas Embebidos (UTN FRC, Córdoba).<br>
+                            <strong>2017</strong> — Programando la CIAA con Micropython (FIUBA, CABA).<br>
+                            <strong>2016</strong> — Intel Galileo y Programando la CIAA en Java (FIUBA, CABA).<br>
+                            <strong>2015</strong> — Modelos de software en la programación de microcontroladores (UBA, CABA).<br>
+                            <strong>2018</strong> — XVI Congreso Internacional en Innovación Tecnológica Informática (Palais Rouge, CABA).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Stack técnico -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="400">
+                    <p class="section-label"><i class="fas fa-microchip me-1"></i>Stack técnico</p>
+                    <div>
+                        <span class="badge-area">Flask (Python) · API REST</span>
+                        <span class="badge-area">Laravel 7 (PHP)</span>
+                        <span class="badge-area">VueJS</span>
+                        <span class="badge-area">C / C++ embebido</span>
+                        <span class="badge-area">Micropython</span>
+                        <span class="badge-area">Wiring (Arduino Framework)</span>
+                        <span class="badge-area">SQL DDL / DML</span>
+                        <span class="badge-area">Git</span>
+                        <span class="badge-area">STM32 (Nucleo-144)</span>
+                        <span class="badge-area">ESP8266 (NodeMCU)</span>
+                        <span class="badge-area">ESP32 (DEVKIT DOIT / Heltec / Wemos-Lolin)</span>
+                        <span class="badge-area">Raspberry Pi 2/3/4</span>
+                    </div>
+                </div>
+
+                <!-- Certificaciones -->
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="410">
+                    <p class="section-label"><i class="fas fa-award me-1"></i>Certificaciones</p>
+                    <div>
+                        <span class="badge-area">Certified ScrumMaster (CSM) — ID 001335145</span>
+                        <span class="badge-area">Green Digital Skill — ID 9621578888CR</span>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="cta-inscribite" data-aos="fade-up" data-aos-delay="420">
+                    <h3>¿Querés sumarte a la próxima cohorte?</h3>
+                    <p>Aprendé blockchain con un cuerpo docente que combina industria internacional, investigación activa y experiencia real en IoT, ZKP y redes descentralizadas.</p>
+                    <a href="../../inscripcion-blockchain-dev/" class="btn-cta">
+                        <i class="fas fa-rocket me-2"></i>Inscribite hoy
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center my-4">
+        <a href="../../#team" class="btn btn-outline-dark btn-lg px-4 py-2">
+            <i class="fas fa-arrow-left me-2"></i>Volver al cuerpo docente
+        </a>
+    </div>
+
+    <footer class="footer bg-dark text-white py-4 mt-2">
+        <div class="container text-center small">
+            <p class="mb-2">
+                Copyright &copy; 2026 | Laboratorio de Investigación en Ciencia de Datos &amp; Inteligencia
+                Artificial de la Universidad de Luján
+                <a href="https://resoluciones.unlu.edu.ar/documento.frame.php?cod=128241" target="_blank"
+                    class="text-decoration-none text-info">[Disposición del Grupo de Investigación]</a>
+                <a href="https://drive.google.com/file/d/1AddV4FMq70bOO4REUgAVppe5i4Vw9h_W/view" target="_blank"
+                    class="text-decoration-none text-info">[Resolución del Laboratorio]</a>
+                - Argentina. Todos los derechos reservados.
+            </p>
+            <p class="mb-0">
+                Desarrollada por
+                <a href="https://www.linkedin.com/in/lucas-santill%C3%A1n-a50166263/" target="_blank" rel="noopener"
+                    class="fw-bold text-decoration-none text-info">Lucas Santillan</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/scripts.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
+    <a href="https://api.whatsapp.com/send?phone=%2B541123953895&text=Hola,%20queria%20información%20sobre%20la%20diplomatura%20en%20Blockchain%20..."
+        class="botonWPP" target="_blank" rel="noopener" aria-label="Consultá por WhatsApp sobre la Diplomatura en Blockchain">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>
