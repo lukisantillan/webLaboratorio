@@ -52,6 +52,102 @@
         section#contact {
             background: linear-gradient(135deg, #1C2E54 0%, #193d76 60%, #1a63c0 100%) !important;
         }
+
+        /* Plan de estudios — estilo unificado con /plan-de-estudios/ */
+        .plan-card {
+            background: #fff;
+            border: 1px solid #d0daea;
+            border-radius: 14px;
+            margin-bottom: 1rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .plan-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #1354A0 0%, #1C2E54 100%);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        .plan-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 36px rgba(28, 46, 84, 0.16);
+            border-color: #E8EDF5;
+        }
+        .plan-card:hover::before { opacity: 1; }
+        .plan-card .accordion-item {
+            border: none;
+            border-radius: 0;
+            background: transparent;
+        }
+        .plan-card .accordion-button {
+            background: transparent;
+            color: #1C2E54;
+            font-weight: 700;
+            border-radius: 0 !important;
+            box-shadow: none;
+        }
+        .plan-card .accordion-button:not(.collapsed) {
+            background: rgba(28, 46, 84, 0.08);
+            color: #1C2E54;
+            box-shadow: none;
+        }
+        .plan-card .accordion-button:focus {
+            box-shadow: 0 0 0 2px rgba(19, 84, 160, 0.3);
+        }
+        .plan-icon-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #1354A0;
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 800;
+            flex-shrink: 0;
+            margin-right: 0.75rem;
+            transition: background 0.25s ease;
+        }
+        .plan-card:hover .plan-icon-wrap { background: #1C2E54; }
+        .lente-estrategica {
+            background: rgba(28, 46, 84, 0.08);
+            border-left: 4px solid #1354A0;
+            border-radius: 8px;
+            padding: 0.85rem 1.1rem;
+            margin: 1rem 0 1rem;
+            font-size: 0.95rem;
+            color: #1C2E54;
+        }
+        .lente-estrategica .pin { display: inline-block; margin-right: 0.4rem; }
+        .lente-estrategica strong { color: #1354A0; font-weight: 800; }
+        .lente-estrategica em { color: #1C2E54; font-style: italic; }
+        .estrategia-block {
+            background: #fff;
+            border-left: 4px solid #1354A0;
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 16px rgba(28, 46, 84, 0.08);
+        }
+        .estrategia-block h5 {
+            color: #1C2E54;
+            font-weight: 800;
+            margin-bottom: 0.6rem;
+        }
+        .estrategia-block p {
+            color: #3a3a3a;
+            font-size: 0.97rem;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+        .estrategia-block strong { color: #1354A0; }
     </style>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Meta Pixel Code -->
@@ -95,6 +191,8 @@
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#masthead">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#informacionPlan">Plan de estudios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="plan-de-estudios/#cronograma">Cronograma</a></li>
+                    <li class="nav-item"><a class="nav-link" href="por-que-elegirnos/">Por qué elegirnos</a></li>
                     <li class="nav-item"><a class="nav-link" href="aranceles/">Aranceles</a></li>
                     <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Pre-registro</a></li>
@@ -386,129 +484,156 @@
                     <div class="col-12 col-lg-10 px-0">
                         <div class="card border-0 rounded-0 shadow-sm">
                             <div class="card-body p-3 p-md-4">
-                                <div class="accordion" id="accordionPanelsStayOpenExample">
+                                <div id="accordionPlanIA">
 
                                     <!-- Item 1 -->
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                                                aria-controls="panelsStayOpen-collapseOne">
-                                                (1) Introducción a la Inteligencia Artificial
-                                            </button>
-                                        </h2>
-                                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-                                            <div class="accordion-body">
-                                                <p>
-                                                    Fundamentos de la IA y sus aplicaciones en diversos sectores.
-                                                    Aprendizaje automático (Machine Learning) y sus algoritmos básicos.
-                                                    Visión general de técnicas avanzadas como el procesamiento del
-                                                    lenguaje natural (NLP) y visión por computadora.
-                                                    Aspectos éticos y responsabilidad en el desarrollo y uso de sistemas
-                                                    de IA.
-                                                </p>
-                                                <a href="https://drive.google.com/file/d/1sS7_cLYEcBNGjHo6Ybm6uHM-EMGf7Lkh/view?usp=sharing"
-                                                    class="alert-link text-decoration-underline" target="_blank">
-                                                    Accede al programa
-                                                </a>
+                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="100">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                                    aria-controls="panelsStayOpen-collapseOne">
+                                                    <span class="plan-icon-wrap" aria-hidden="true">1</span>
+                                                    Introducción a la Inteligencia Artificial
+                                                </button>
+                                            </h2>
+                                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                                                <div class="accordion-body">
+                                                    <p>
+                                                        Fundamentos de la IA y sus aplicaciones en diversos sectores.
+                                                        Aprendizaje automático (Machine Learning) y sus algoritmos básicos.
+                                                        Visión general de técnicas avanzadas como el procesamiento del
+                                                        lenguaje natural (NLP) y visión por computadora.
+                                                        Aspectos éticos y responsabilidad en el desarrollo y uso de sistemas
+                                                        de IA.
+                                                    </p>
+                                                    <div class="lente-estrategica">
+                                                        <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica:</strong> <em>selección de paradigma</em> — cuándo conviene ML clásico, cuándo deep learning, cuándo LLM, según el problema y los datos disponibles.
+                                                    </div>
+                                                    <a href="https://drive.google.com/file/d/1sS7_cLYEcBNGjHo6Ybm6uHM-EMGf7Lkh/view?usp=sharing"
+                                                        class="alert-link text-decoration-underline" target="_blank">
+                                                        Accede al programa
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- Item 2 -->
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo"
-                                                aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                                                (2) Infraestructura Tecnológica para Inteligencia Artificial
-                                            </button>
-                                        </h2>
-                                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-                                            <div class="accordion-body">
-                                                <p>
-                                                    Conceptos básicos de la nube y sus servicios para IA
-                                                    (almacenamiento,
-                                                    cómputo, bases de datos). Infraestructura como código (IaC) y
-                                                    canalizaciones
-                                                    CI/CD, para despliegue de modelos de IA en entornos cloud multinube.
-                                                    Arquitectura y orquestadores de contenedores como plataformas
-                                                    escalables
-                                                    y especializadas en IA en la nube. Despliegue e implementación de
-                                                    soluciones
-                                                    de inteligencia artificial.
-                                                </p>
-                                                <a href="https://drive.google.com/file/d/1bfIIrrIx5K1Q0FVPYH0uwAHGYBkBOwok/view?usp=sharing"
-                                                    class="alert-link text-decoration-underline" target="_blank">
-                                                    Accede al programa
-                                                </a>
+                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="200">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo"
+                                                    aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                                    <span class="plan-icon-wrap" aria-hidden="true">2</span>
+                                                    Infraestructura Tecnológica para Inteligencia Artificial
+                                                </button>
+                                            </h2>
+                                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                                                <div class="accordion-body">
+                                                    <p>
+                                                        Conceptos básicos de la nube y sus servicios para IA
+                                                        (almacenamiento, cómputo, bases de datos). Infraestructura como
+                                                        código (IaC) y canalizaciones CI/CD, para despliegue de modelos
+                                                        de IA en entornos cloud multinube. Arquitectura y orquestadores
+                                                        de contenedores como plataformas escalables y especializadas en
+                                                        IA en la nube. Despliegue e implementación de soluciones de
+                                                        inteligencia artificial.
+                                                    </p>
+                                                    <div class="lente-estrategica">
+                                                        <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica:</strong> <em>trade-offs cloud para IA</em> — managed services vs self-hosted, GPU vs CPU, costo de training vs costo de inference, cuándo serverless conviene.
+                                                    </div>
+                                                    <a href="https://drive.google.com/file/d/1bfIIrrIx5K1Q0FVPYH0uwAHGYBkBOwok/view?usp=sharing"
+                                                        class="alert-link text-decoration-underline" target="_blank">
+                                                        Accede al programa
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- Item 3 -->
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree"
-                                                aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                                                (3) Aprendizaje Profundo y Redes Neuronales
-                                            </button>
-                                        </h2>
-                                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-                                            <div class="accordion-body">
-                                                <p>
-                                                    Introducción al aprendizaje profundo. Arquitecturas básicas de redes
-                                                    neuronales.
-                                                    Funciones de activación y regularización. Redes neuronales
-                                                    convolucionales (CNN),
-                                                    recurrentes (RNN) y LSTM. Transferencia de aprendizaje y
-                                                    fine-tuning.
-                                                    Optimización de hiperparámetros. Técnicas de interpretación de
-                                                    modelos.
-                                                    Aplicaciones en visión por computadora y PLN. Modelos avanzados.
-                                                </p>
-                                                <a href="https://drive.google.com/file/d/1q2hi-5EkrolQrsPnIh8hhG6w145UDQbE/view?usp=sharing"
-                                                    class="alert-link text-decoration-underline" target="_blank">
-                                                    Accede al programa
-                                                </a>
+                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="300">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree"
+                                                    aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                                    <span class="plan-icon-wrap" aria-hidden="true">3</span>
+                                                    Aprendizaje Profundo y Redes Neuronales
+                                                </button>
+                                            </h2>
+                                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                                                <div class="accordion-body">
+                                                    <p>
+                                                        Introducción al aprendizaje profundo. Arquitecturas básicas de
+                                                        redes neuronales. Funciones de activación y regularización.
+                                                        Redes neuronales convolucionales (CNN), recurrentes (RNN) y LSTM.
+                                                        Transferencia de aprendizaje y fine-tuning. Optimización de
+                                                        hiperparámetros. Técnicas de interpretación de modelos.
+                                                        Aplicaciones en visión por computadora y PLN. Modelos avanzados.
+                                                    </p>
+                                                    <div class="lente-estrategica">
+                                                        <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica:</strong> <em>elección de arquitectura</em> — CNN / RNN / Transformer / VAE según naturaleza del dato (imagen, secuencia, texto) y métricas de éxito.
+                                                    </div>
+                                                    <a href="https://drive.google.com/file/d/1q2hi-5EkrolQrsPnIh8hhG6w145UDQbE/view?usp=sharing"
+                                                        class="alert-link text-decoration-underline" target="_blank">
+                                                        Accede al programa
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- Item 4 -->
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour"
-                                                aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
-                                                (4) Inteligencia Artificial Generativa
-                                            </button>
-                                        </h2>
-                                        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
-                                            <div class="accordion-body">
-                                                <p>
-                                                    Introducción al modelado generativo aplicado a la generación de
-                                                    texto e imágenes.
-                                                    Modelos básicos de generación de contenidos. Redes neuronales para
-                                                    generación
-                                                    de secuencias. Mecanismos de atención. Modelos de lenguaje
-                                                    condicionados y no
-                                                    condicionados. Diferentes modelos y frameworks de generación de
-                                                    modelos y
-                                                    contenidos. Evaluación automática de la calidad y coherencia.
-                                                    Transferencia de
-                                                    estilo en la generación de contenido.
-                                                </p>
-                                                <a href="https://drive.google.com/file/d/1TtyIz94_LZeVElrr5kvSN8FNaogTOK1u/view?usp=sharing"
-                                                    class="alert-link text-decoration-underline" target="_blank">
-                                                    Accede al programa
-                                                </a>
+                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="400">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour"
+                                                    aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                                                    <span class="plan-icon-wrap" aria-hidden="true">4</span>
+                                                    Inteligencia Artificial Generativa
+                                                </button>
+                                            </h2>
+                                            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+                                                <div class="accordion-body">
+                                                    <p>
+                                                        Introducción al modelado generativo aplicado a la generación de
+                                                        texto e imágenes. Modelos básicos de generación de contenidos.
+                                                        Redes neuronales para generación de secuencias. Mecanismos de
+                                                        atención. Modelos de lenguaje condicionados y no condicionados.
+                                                        Diferentes modelos y frameworks de generación de modelos y
+                                                        contenidos. Evaluación automática de la calidad y coherencia.
+                                                        Transferencia de estilo en la generación de contenido.
+                                                    </p>
+                                                    <div class="lente-estrategica">
+                                                        <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica:</strong> <em>RAG vs fine-tuning vs prompt engineering</em> — cuándo cada estrategia es la correcta, costos comparativos y lock-in con proveedores.
+                                                    </div>
+                                                    <a href="https://drive.google.com/file/d/1TtyIz94_LZeVElrr5kvSN8FNaogTOK1u/view?usp=sharing"
+                                                        class="alert-link text-decoration-underline" target="_blank">
+                                                        Accede al programa
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                 </div><!-- /accordion -->
+
+                                <div class="estrategia-block" data-aos="fade-up" data-aos-delay="500">
+                                    <h5>¿Y la estrategia?</h5>
+                                    <p>
+                                        Está distribuida en los 4 módulos, no aislada en una capa para directivos. La <strong>selección de paradigma</strong> vive en los fundamentos, los <strong>trade-offs de infra</strong> en el módulo 2, la <strong>elección de arquitectura</strong> en el de Deep Learning, la <strong>decisión RAG/fine-tuning/prompt</strong> en el de IA Generativa. Lo que en otros programas son slides, acá son decisiones que el alumno toma mientras construye.
+                                    </p>
+                                </div>
+
+                                <div class="text-center mt-4">
+                                    <a href="plan-de-estudios/#cronograma" class="btn btn-outline-dark btn-lg px-4 py-2">
+                                        <i class="far fa-calendar-alt me-2"></i>Ver cronograma clase por clase
+                                    </a>
+                                </div>
                             </div><!-- /card-body -->
                         </div><!-- /card -->
                     </div><!-- /col -->
@@ -654,11 +779,11 @@
             <div class="row">
                 <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1500">
                     <div class="team-member">
-                        <a href="https://licdia.unlu.edu.ar/director/" target="_blank">
-                            <img class="mx-auto rounded-circle" src="../assets/img/team/1.jpg" alt="..." />
+                        <a href="docentes/fernandez/">
+                            <img class="mx-auto rounded-circle" src="../assets/img/team/1.jpg" alt="Mg. Juan M. Fernández" />
                         </a>
                         <div>
-                            <h4>Mg. Juan M. Fernández</h4>
+                            <h4><a href="docentes/fernandez/" class="text-decoration-none text-dark">Mg. Juan M. Fernández</a></h4>
                             <h5 class="h5" style="color: #6c757d;">(Director)</h5>
                         </div>
                         <p class="text-muted">
@@ -672,9 +797,11 @@
                 </div>
                 <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1500">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="../assets/img/team/24.jpg" alt="..." />
+                        <a href="docentes/petrocelli/">
+                            <img class="mx-auto rounded-circle" src="../assets/img/team/24.jpg" alt="Dr. David Petrocelli" />
+                        </a>
                         <div>
-                            <h4>Dr. David Petrocelli</h4>
+                            <h4><a href="docentes/petrocelli/" class="text-decoration-none text-dark">Dr. David Petrocelli</a></h4>
                             <h5 class="h5" style="color: #6c757d;">(Coordinador Academico)</h5>
                         </div>
 
@@ -689,8 +816,10 @@
                 </div>
                 <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1500">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="../assets/img/team/2.jpg" alt="..." />
-                        <h4>Dra. Rosana Matuk</h4>
+                        <a href="docentes/matuk/">
+                            <img class="mx-auto rounded-circle" src="../assets/img/team/2.jpg" alt="Dra. Rosana Matuk" />
+                        </a>
+                        <h4><a href="docentes/matuk/" class="text-decoration-none text-dark">Dra. Rosana Matuk</a></h4>
                         <p class="text-muted">
                             Dra. en Ciencias de la Computación <br>
                             Profesora en UNLu y UNSaM. <br>
@@ -702,8 +831,10 @@
                 </div>
                 <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1500">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="../assets/img/team/gasch.jpg" alt="..." />
-                        <h4>Mg. Diego Gasch</h4>
+                        <a href="docentes/gasch/">
+                            <img class="mx-auto rounded-circle" src="../assets/img/team/gasch.jpg" alt="Mg. Diego Gasch" />
+                        </a>
+                        <h4><a href="docentes/gasch/" class="text-decoration-none text-dark">Mg. Diego Gasch</a></h4>
                         <p class="text-muted">
                             Magister en Data Science <br>(Universidad Austral). <br>
                             Docente en UNLu e ITBA. <br>
@@ -716,59 +847,132 @@
     </section>
 <!-- terminacion de cuerpo -->
 
-<!-- EXPERIENCIA 2025 (item 30) -->
+<!-- EXPERIENCIA 2025 (item 30) — Cohorte en tramo final -->
     <section class="py-5" id="experiencia-2025" style="background: linear-gradient(135deg, #1C2E54 0%, #193d76 60%, #1a63c0 100%); color:#fff;" data-aos="fade-up" data-aos-duration="1000">
         <div class="container">
             <div class="text-center mb-5">
-                <h2 class="section-heading text-uppercase" style="color:#fff;">1ra Cohorte 2025 — Resultados</h2>
-                <p style="color:#a8c5e0;">La primera cohorte ya está en curso. Estos son los números.</p>
+                <span class="d-inline-block mb-3" style="background:#ffc107; color:#1C2E54; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; font-size:0.78rem; padding:0.4rem 1rem; border-radius:999px;">
+                    <i class="fas fa-hourglass-half me-1"></i>Cohorte 2025 · En el tramo final
+                </span>
+                <h2 class="section-heading text-uppercase" style="color:#fff;">1ra Cohorte 2025 — En curso</h2>
+                <p class="lead" style="color:#a8c5e0; max-width:720px; margin:0 auto;">La primera cohorte está terminando la diplomatura. <strong style="color:#fff;">12 alumnos</strong> ya están preparando la defensa de su proyecto integrador final. Mientras tanto, abrimos inscripciones para la 2da cohorte 2026.</p>
             </div>
+
+            <!-- Stats con ícono y mejor jerarquía -->
             <div class="row g-4 justify-content-center text-center">
                 <div class="col-6 col-md-3">
-                    <div class="display-4 fw-bold" style="color:#ffc107;">25</div>
-                    <p class="mt-2 mb-0" style="color:#a8c5e0;">Estudiantes activos</p>
+                    <div style="background:rgba(255,255,255,0.08); border-radius:1rem; padding:1.5rem 1rem; height:100%;">
+                        <i class="fas fa-user-check fa-2x mb-2" style="color:#ffc107;"></i>
+                        <div class="display-4 fw-bold" style="color:#ffc107;">20</div>
+                        <p class="mt-2 mb-0 fw-semibold" style="color:#fff;">Inscriptos</p>
+                        <p class="mb-0" style="color:#a8c5e0; font-size:0.85rem;">en la 1ra cohorte</p>
+                    </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="display-4 fw-bold" style="color:#ffc107;">4</div>
-                    <p class="mt-2 mb-0" style="color:#a8c5e0;">Módulos dictados</p>
+                    <div style="background:rgba(255,255,255,0.08); border-radius:1rem; padding:1.5rem 1rem; height:100%;">
+                        <i class="fas fa-flag-checkered fa-2x mb-2" style="color:#ffc107;"></i>
+                        <div class="display-4 fw-bold" style="color:#ffc107;">12</div>
+                        <p class="mt-2 mb-0 fw-semibold" style="color:#fff;">En trabajo final</p>
+                        <p class="mb-0" style="color:#a8c5e0; font-size:0.85rem;">preparando defensa</p>
+                    </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="display-4 fw-bold" style="color:#ffc107;">100%</div>
-                    <p class="mt-2 mb-0" style="color:#a8c5e0;">Virtual y asincrónico</p>
+                    <div style="background:rgba(255,255,255,0.08); border-radius:1rem; padding:1.5rem 1rem; height:100%;">
+                        <i class="fas fa-clock fa-2x mb-2" style="color:#ffc107;"></i>
+                        <div class="display-4 fw-bold" style="color:#ffc107;">160 hs</div>
+                        <p class="mt-2 mb-0 fw-semibold" style="color:#fff;">Carga horaria</p>
+                        <p class="mb-0" style="color:#a8c5e0; font-size:0.85rem;">4 cursos × 40 hs</p>
+                    </div>
                 </div>
                 <div class="col-6 col-md-3">
-                    <div class="display-4 fw-bold" style="color:#ffc107;">UNLu</div>
-                    <p class="mt-2 mb-0" style="color:#a8c5e0;">Aval universitario oficial</p>
+                    <div style="background:rgba(255,255,255,0.08); border-radius:1rem; padding:1.5rem 1rem; height:100%;">
+                        <i class="fas fa-university fa-2x mb-2" style="color:#ffc107;"></i>
+                        <div class="display-4 fw-bold" style="color:#ffc107;">UNLu</div>
+                        <p class="mt-2 mb-0 fw-semibold" style="color:#fff;">Título oficial</p>
+                        <p class="mb-0" style="color:#a8c5e0; font-size:0.85rem;">posgrado universitario</p>
+                    </div>
                 </div>
             </div>
-            <div class="row g-4 mt-3 justify-content-center">
+
+            <!-- Highlights de la cohorte -->
+            <div class="row g-3 mt-4 justify-content-center">
+                <div class="col-12 col-lg-10">
+                    <div class="row g-3 text-center">
+                        <div class="col-6 col-md-3">
+                            <div class="d-flex align-items-center justify-content-center gap-2" style="background:rgba(255,255,255,0.06); border-radius:0.6rem; padding:0.75rem 0.5rem;">
+                                <i class="fas fa-check-circle" style="color:#ffc107;"></i>
+                                <span style="color:#fff; font-size:0.92rem;">4 cursos completos cursados</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="d-flex align-items-center justify-content-center gap-2" style="background:rgba(255,255,255,0.06); border-radius:0.6rem; padding:0.75rem 0.5rem;">
+                                <i class="fas fa-globe-americas" style="color:#ffc107;"></i>
+                                <span style="color:#fff; font-size:0.92rem;">Alumnos en toda Latinoamérica</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="d-flex align-items-center justify-content-center gap-2" style="background:rgba(255,255,255,0.06); border-radius:0.6rem; padding:0.75rem 0.5rem;">
+                                <i class="fas fa-code-branch" style="color:#ffc107;"></i>
+                                <span style="color:#fff; font-size:0.92rem;">Notebooks y repos entregados</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <div class="d-flex align-items-center justify-content-center gap-2" style="background:rgba(255,255,255,0.06); border-radius:0.6rem; padding:0.75rem 0.5rem;">
+                                <i class="fas fa-redo-alt" style="color:#ffc107;"></i>
+                                <span style="color:#fff; font-size:0.92rem;">2da cohorte 2026 abierta</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonios -->
+            <div class="text-center mt-5 mb-4">
+                <h3 class="h4" style="color:#fff;">Lo que dicen los alumnos</h3>
+                <p style="color:#a8c5e0; font-size:0.9rem;">Voces de la 1ra cohorte 2025 durante la cursada</p>
+            </div>
+            <div class="row g-4 justify-content-center">
                 <div class="col-12 col-md-4">
                     <div class="card border-0 h-100" style="background:rgba(255,255,255,0.1); border-radius:1rem;">
                         <div class="card-body p-4">
-                            <p class="mb-2" style="color:#ffc107;"><i class="fas fa-quote-left me-2"></i></p>
-                            <p class="mb-3" style="color:#fff;">"La diplomatura me dio las herramientas para implementar soluciones de IA en mi empresa. La calidad docente es excelente."</p>
-                            <p class="mb-0 fw-semibold" style="color:#a8c5e0;">— Estudiante cohorte 2025, desarrollador backend</p>
+                            <p class="mb-3" style="color:#ffc107; font-size:1.5rem; line-height:1;"><i class="fas fa-quote-left"></i></p>
+                            <p class="mb-3" style="color:#fff; font-size:0.97rem; line-height:1.6;">La diplomatura me dio las herramientas para implementar soluciones de IA en mi empresa. La calidad docente es excelente y el acompañamiento permanente.</p>
+                            <hr style="border-color:rgba(255,255,255,0.15);">
+                            <p class="mb-0 fw-semibold" style="color:#fff;">Alumno/a · Cohorte 2025</p>
+                            <p class="mb-0" style="color:#a8c5e0; font-size:0.85rem;">Backend Developer</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="card border-0 h-100" style="background:rgba(255,255,255,0.1); border-radius:1rem;">
                         <div class="card-body p-4">
-                            <p class="mb-2" style="color:#ffc107;"><i class="fas fa-quote-left me-2"></i></p>
-                            <p class="mb-3" style="color:#fff;">"Pude pasar de usar IA como usuario a construir mis propios agentes y pipelines en cloud. Un salto enorme en mi perfil profesional."</p>
-                            <p class="mb-0 fw-semibold" style="color:#a8c5e0;">— Estudiante cohorte 2025, data analyst</p>
+                            <p class="mb-3" style="color:#ffc107; font-size:1.5rem; line-height:1;"><i class="fas fa-quote-left"></i></p>
+                            <p class="mb-3" style="color:#fff; font-size:0.97rem; line-height:1.6;">Pasé de usar IA como usuario a construir mis propios agentes y pipelines en cloud. Un salto enorme en mi perfil profesional.</p>
+                            <hr style="border-color:rgba(255,255,255,0.15);">
+                            <p class="mb-0 fw-semibold" style="color:#fff;">Alumno/a · Cohorte 2025</p>
+                            <p class="mb-0" style="color:#a8c5e0; font-size:0.85rem;">Data Analyst</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-12 col-md-4">
                     <div class="card border-0 h-100" style="background:rgba(255,255,255,0.1); border-radius:1rem;">
                         <div class="card-body p-4">
-                            <p class="mb-2" style="color:#ffc107;"><i class="fas fa-quote-left me-2"></i></p>
-                            <p class="mb-3" style="color:#fff;">"El nivel práctico es muy alto. Cada módulo termina con un proyecto real. Aprendí más en 4 meses que en años de cursos online."</p>
-                            <p class="mb-0 fw-semibold" style="color:#a8c5e0;">— Estudiante cohorte 2025, ingeniero cloud</p>
+                            <p class="mb-3" style="color:#ffc107; font-size:1.5rem; line-height:1;"><i class="fas fa-quote-left"></i></p>
+                            <p class="mb-3" style="color:#fff; font-size:0.97rem; line-height:1.6;">El nivel práctico es muy alto. Cada módulo termina con un proyecto real. Aprendí más en 4 meses que en años de cursos online.</p>
+                            <hr style="border-color:rgba(255,255,255,0.15);">
+                            <p class="mb-0 fw-semibold" style="color:#fff;">Alumno/a · Cohorte 2025</p>
+                            <p class="mb-0" style="color:#a8c5e0; font-size:0.85rem;">Cloud Engineer</p>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center mt-5">
+                <p class="mb-3" style="color:#fff; font-size:1.05rem;">La 2da cohorte arranca en <strong style="color:#ffc107;">agosto 2026</strong>. No te quedes afuera.</p>
+                <a href="#contact" class="btn btn-lg" style="background:#ffc107; color:#1C2E54; font-weight:700; padding:0.85rem 2.5rem; border-radius:999px;">
+                    <i class="fas fa-rocket me-2"></i>Pre-registrate a la charla informativa
+                </a>
             </div>
         </div>
     </section>
@@ -1009,12 +1213,14 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                                    ¿Necesito conocimientos previos en IA?
+                                    ¿Necesito conocimientos previos en IA? ¿Hace falta saber Python?
                                 </button>
                             </h2>
                             <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    La diplomatura arranca desde los fundamentos. Es ideal para profesionales de tecnología o áreas afines. Se requiere manejo básico de Python (estructuras de datos, funciones e importar librerías).
+                                    <p class="mb-3">No hace falta saber IA — la diplomatura arranca desde cero: qué es machine learning, cómo funcionan las redes neuronales, qué es un LLM y qué problema resuelve cada técnica.</p>
+                                    <p class="mb-3">Lo que sí recomendamos es <strong>manejo básico de Python</strong> (estructuras de datos, funciones, importar librerías como pandas/numpy) y comodidad para trabajar con notebooks Jupyter/Colab — <strong>no esperamos que sepas PyTorch o LangChain, te lo enseñamos</strong>.</p>
+                                    <p class="mb-0">Si venís de áreas no-técnicas pero con bases sólidas de programación, vas a poder seguir el contenido. Los módulos prácticos (Curso 3 de Deep Learning y Curso 4 de Gen AI) requieren más esfuerzo pero la curva es manejable con dedicación.</p>
                                 </div>
                             </div>
                         </div>
@@ -1027,7 +1233,9 @@
                             </h2>
                             <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Sí. Las clases son en vivo por videoconferencia los martes y jueves de 19 a 21 hs. Quedan grabadas para quienes no puedan asistir en el momento.
+                                    <p class="mb-3">Sí. Las clases son <strong>en vivo por videoconferencia los martes y jueves de 19 a 21 hs (ARG)</strong>.</p>
+                                    <p class="mb-3">Cada clase queda grabada y disponible <strong>de forma permanente</strong> en el aula virtual para que la revises cuando quieras — útil si trabajás full-time o estás en otra zona horaria.</p>
+                                    <p class="mb-0">Además contás con un canal de consulta permanente con docentes y pares para resolver dudas entre clases — no estás solo entre clase y clase.</p>
                                 </div>
                             </div>
                         </div>
@@ -1040,7 +1248,9 @@
                             </h2>
                             <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Diplomatura de Posgrado Universitario en Desarrollo de Soluciones de Inteligencia Artificial Generativa en la Nube, emitida por la Universidad Nacional de Luján. Cada curso aprobado otorga además un certificado individual.
+                                    <p class="mb-3">La <strong>Diplomatura de Posgrado Universitario en Desarrollo de Soluciones de Inteligencia Artificial Generativa en la Nube</strong>, emitida por la <strong>Universidad Nacional de Luján</strong> — universidad pública nacional con validez oficial en todo el país.</p>
+                                    <p class="mb-3">No es una certificación privada de plataforma: es un título universitario que podés mostrar en tu CV y LinkedIn, y que <strong>sirve como antecedente formal</strong> para futuras maestrías o doctorados.</p>
+                                    <p class="mb-0">Cada uno de los 4 cursos aprobados otorga además un certificado individual de posgrado universitario.</p>
                                 </div>
                             </div>
                         </div>
@@ -1053,7 +1263,15 @@
                             </h2>
                             <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Sí. Cada uno de los 4 cursos de posgrado puede cursarse de forma independiente. Si completás los 4, obtenés la Diplomatura.
+                                    <p class="mb-2">Sí. La diplomatura está compuesta por <strong>4 cursos de posgrado de 40 hs cada uno</strong> que pueden cursarse de forma independiente:</p>
+                                    <ol class="mb-3">
+                                        <li>Introducción a la Inteligencia Artificial</li>
+                                        <li>Infraestructura Tecnológica para IA</li>
+                                        <li>Aprendizaje Profundo y Redes Neuronales</li>
+                                        <li>Inteligencia Artificial Generativa</li>
+                                    </ol>
+                                    <p class="mb-3">Cada curso individual otorga su propio <strong>certificado de posgrado universitario</strong>. Si completás los 4, obtenés el <strong>título de Diplomatura</strong> completo, que incluye el proyecto integrador end-to-end.</p>
+                                    <p class="mb-0">Si recién arrancás, podés empezar por el Curso 1 (Introducción a la IA) y decidir después si seguís con los demás — los cursos están diseñados en secuencia pero cada uno cierra por sí solo.</p>
                                 </div>
                             </div>
                         </div>
@@ -1066,7 +1284,14 @@
                             </h2>
                             <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    El pago se realiza por transferencia bancaria. Matrícula de $200.000 + 4 cuotas de $200.000 (una por cada curso). Para más detalles, consultá la sección de <a href="aranceles/">Aranceles</a>.
+                                    <p class="mb-2">Tres opciones, todas a través de la UNLu:</p>
+                                    <ol class="mb-3">
+                                        <li><strong>Pago electrónico 24 hs</strong> vía Pago Mis Cuentas (con DNI y clave).</li>
+                                        <li><strong>Cajero automático</strong> — Pago Mis Cuentas → Establecimientos Educativos → "Universidad Nac. Luján".</li>
+                                        <li><strong>Transferencia bancaria</strong> directa con CUIT/CBU de la universidad.</li>
+                                    </ol>
+                                    <p class="mb-3">Estructura: <strong>matrícula de $200.000 + 4 cuotas de $200.000</strong> (una por cada curso). Vencimiento día 15 de cada mes.</p>
+                                    <p class="mb-0">Para datos bancarios, comprobante y resolución oficial, consultá la sección de <a href="aranceles/">Aranceles</a>.</p>
                                 </div>
                             </div>
                         </div>
@@ -1079,12 +1304,176 @@
                             </h2>
                             <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    El 20 de junio de 2026. Completá el formulario de pre-registro y te enviamos el link de acceso. También podés ver el <a href="https://drive.google.com/file/d/1RqMK20wWeMGIJ94PuXWRi4JieTezMjaa/view?usp=sharing" target="_blank">video de la charla 2025</a>.
+                                    <p class="mb-3">El <strong>miércoles 10 de junio de 2026</strong>, encuentro virtual de aproximadamente <strong>1 hora</strong>.</p>
+                                    <p class="mb-3">El director cuenta el plan de estudios, los proyectos integradores que vas a construir, la salida laboral del sector y respondemos en vivo todas las dudas.</p>
+                                    <p class="mb-3">También podés ver el <a href="https://drive.google.com/file/d/1RqMK20wWeMGIJ94PuXWRi4JieTezMjaa/view?usp=sharing" target="_blank">video de la charla 2025</a> mientras esperás la próxima.</p>
+                                    <p class="mb-0">Completá el formulario de pre-registro y te enviamos el link de acceso unos días antes.</p>
                                     <div class="mt-3">
                                         <a href="#contact" class="btn btn-dark btn-lg px-4 py-2">
                                             Pre-registro charla informativa
                                         </a>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                    ¿Cuándo empieza la cursada?
+                                </button>
+                            </h2>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="mb-3">La 2da cohorte arranca en <strong>agosto de 2026</strong>.</p>
+                                    <p class="mb-3">Las inscripciones cierran a fines de julio o cuando se completa el cupo (lo que pase primero — recordá que son <strong>máximo 30 alumnos por cohorte</strong>).</p>
+                                    <p class="mb-0">La forma más segura de no quedarte afuera es <a href="#contact">pre-registrarte</a> a la charla informativa: te avisamos primeros cuando se abre la inscripción formal.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                                    ¿Hay límite de cupos?
+                                </button>
+                            </h2>
+                            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="mb-3">Sí. Trabajamos con cohortes de <strong>máximo 30 alumnos</strong> para mantener una relación cercana entre docentes y estudiantes — los docentes pueden dar feedback real al código, a los notebooks y al proyecto integrador de cada alumno, no solo dictar clase magistral.</p>
+                                    <p class="mb-3">Los lugares se asignan <strong>por orden de inscripción</strong> una vez completada la matrícula. Cuando se completa el cupo, el resto pasa a <strong>lista de espera</strong> para la próxima cohorte.</p>
+                                    <p class="mb-0">Para asegurar tu lugar: <a href="#contact">pre-registrate</a> cuanto antes y participá de la charla informativa — los pre-registrados son los primeros en enterarse cuando se abre la inscripción formal.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">
+                                    ¿Necesito una computadora especial? ¿GPU?
+                                </button>
+                            </h2>
+                            <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="mb-3">No, una notebook común alcanza — i5/Ryzen 5 o superior, 8 GB de RAM y conexión estable a internet. <strong>No necesitás GPU local</strong>.</p>
+                                    <p class="mb-2">Trabajamos con <strong>herramientas open source y servicios cloud free tier</strong>:</p>
+                                    <ul class="mb-3">
+                                        <li><strong>Python, Jupyter, Google Colab</strong> — Colab da GPU gratuita para entrenar modelos.</li>
+                                        <li><strong>PyTorch, scikit-learn, Hugging Face Transformers</strong> — frameworks estándar de la industria.</li>
+                                        <li><strong>AWS Free Tier + créditos para estudiantes</strong> — para SageMaker, Bedrock y EC2 con GPU.</li>
+                                        <li><strong>OpenAI / Anthropic API</strong> — el alumno usa créditos free o de bajo costo.</li>
+                                        <li><strong>LangChain, LlamaIndex, Pinecone, Chroma</strong> — frameworks para RAG y agentes.</li>
+                                        <li><strong>Docker, Terraform, GitHub Actions</strong> — para Curso 2 (infraestructura).</li>
+                                    </ul>
+                                    <p class="mb-0">Todo el software es gratuito y multiplataforma (Linux, macOS, Windows). Para entrenamientos pesados usamos GPU cloud — no necesitás nada en tu máquina.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">
+                                    ¿Quiénes son los docentes?
+                                </button>
+                            </h2>
+                            <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="mb-3">Un equipo con trayectoria activa en industria, academia y producción a escala latinoamericana.</p>
+                                    <p class="mb-3">La dirección está a cargo del <strong><a href="docentes/fernandez/">Mg. Juan Manuel Fernández</a></strong> (Director de LICDIA-UNLu, Magister en Inteligencia de Datos UNLP, profesor en UNLu, ITBA y UNTREF, especialista en LLMs) y la coordinación académica del <strong><a href="docentes/petrocelli/">Dr. David Petrocelli</a></strong> (Senior Cloud Architect en Caylent USA, doctor en Ciencias Informáticas UNLP, especialista en MLOps y AWS).</p>
+                                    <p class="mb-3">Completan el cuerpo docente la <strong><a href="docentes/matuk/">Dra. Rosana Matuk</a></strong> (especialista en redes neuronales, profesora UNLu y UNSaM, coordinadora de la Carrera de Analista en Ciencias de Datos UNLu) y el <strong><a href="docentes/gasch/">Mg. Diego Gasch</a></strong> (Magister en Data Science Universidad Austral, Data Science Technical Leader en Mercado Libre, especialista en LLMs y RAG en producción).</p>
+                                    <p class="mb-0">Hacé click en cada nombre para ver el perfil completo, o mirá la <a href="#team">sección Cuerpo docente</a> más arriba.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq11">
+                                    ¿Qué salida laboral tiene?
+                                </button>
+                            </h2>
+                            <div id="faq11" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="mb-3">El sector IA en Argentina y Latinoamérica está entre los de <strong>mayor demanda y mejor remuneración</strong> del mercado tech.</p>
+                                    <p class="mb-3">Empresas como <strong>Mercado Libre, Globant, Despegar, Auravant, Ualá, Modo, Faraday</strong> y muchísimas startups locales tienen equipos dedicados a IA Generativa, y muchísimos profesionales argentinos trabajan <strong>en remoto para empresas internacionales</strong> (OpenAI, Anthropic, Hugging Face, Cohere, AWS, Google) cobrando en USD.</p>
+                                    <p class="mb-3">Tu proyecto integrador es la pieza concreta que te diferencia en una entrevista.</p>
+                                    <p class="mb-2">Roles típicos para egresados de la diplomatura:</p>
+                                    <ul class="mt-2 mb-2">
+                                        <li><strong>AI / ML Engineer</strong> — diseño y deploy de modelos en producción.</li>
+                                        <li><strong>LLM / Generative AI Engineer</strong> — RAG, fine-tuning, agentes con tool use.</li>
+                                        <li><strong>MLOps Engineer</strong> — infra cloud, CI/CD para modelos, monitoreo.</li>
+                                        <li><strong>Data Scientist con foco en IA Generativa</strong>.</li>
+                                        <li><strong>AI Product Manager</strong> — perfil técnico que diseña features con IA.</li>
+                                        <li><strong>AI Consultant</strong> — implementación de IA en empresas tradicionales.</li>
+                                        <li><strong>Founder / Builder</strong> de productos basados en IA.</li>
+                                    </ul>
+                                    <p class="mb-0">Los rangos salariales del sector son significativamente superiores al promedio del tech tradicional, especialmente en modalidad remota internacional con pago en USD.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq12">
+                                    ¿Cuál es la carga horaria total?
+                                </button>
+                            </h2>
+                            <div id="faq12" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="mb-3">La diplomatura tiene una carga horaria total de <strong>160 horas distribuidas en 4 meses</strong> (4 cursos de 40 hs cada uno).</p>
+                                    <p class="mb-3">Las clases en vivo son los <strong>martes y jueves de 19 a 21 hs</strong> (4 hs semanales en clase). El resto se distribuye en notebooks prácticos, lecturas, ejercicios entregables y desarrollo del proyecto integrador.</p>
+                                    <p class="mb-0">Esperá dedicarle entre <strong>8 y 12 hs semanales</strong> en total — un compromiso pensado para que puedas mantener tu trabajo full-time mientras cursás.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq13">
+                                    ¿Hay un trabajo final o proyecto integrador?
+                                </button>
+                            </h2>
+                            <div id="faq13" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="mb-3">Sí, y es uno de los pilares de la diplomatura.</p>
+                                    <p class="mb-3">La cursada cierra con un <strong>proyecto integrador propio aplicado a un caso real</strong>: construís una solución <em>end-to-end</em> con modelos entrenados, sistema RAG o agente desplegado en cloud, infraestructura levantada con IaC, evaluación rigurosa de métricas y documentación técnica completa.</p>
+                                    <p class="mb-3">Lo defendés frente a docentes y compañeros al final, y queda como pieza de portfolio que podés mostrar a empleadores o usar como base de tu propio emprendimiento.</p>
+                                    <p class="mb-0">Mirá el <a href="plan-de-estudios/#cronograma">cronograma clase por clase</a> para ver el tipo de entregables que vas a producir.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq14">
+                                    ¿Cómo es la evaluación?
+                                </button>
+                            </h2>
+                            <div id="faq14" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="mb-3">La evaluación es <strong>continua y práctica</strong> — no se basa en exámenes finales memorísticos.</p>
+                                    <p class="mb-3">Cada curso tiene entregables concretos: notebooks reproducibles, modelos entrenados, sistemas RAG funcionando, dashboards de monitoreo, defensa de decisiones técnicas. El criterio es el mismo que usa la industria: <em>si lo podés ejecutar y defender, lo aprobás</em>.</p>
+                                    <p class="mb-3">La cursada cierra con la <strong>defensa del proyecto integrador</strong> frente al cuerpo docente.</p>
+                                    <p class="mb-0">Mirá el <a href="plan-de-estudios/#cronograma">cronograma clase por clase</a> para ver el tipo de entregables.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq15">
+                                    ¿Es necesario un examen de admisión?
+                                </button>
+                            </h2>
+                            <div id="faq15" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="mb-2">No, no hay examen de admisión. Para inscribirte solo necesitás cumplir con los requisitos formales de admisión a un posgrado universitario:</p>
+                                    <ul class="mb-3">
+                                        <li><strong>Título de grado</strong> de cualquier orientación, o</li>
+                                        <li><strong>Equivalencia por experiencia profesional</strong> (analizada caso por caso por la dirección académica para perfiles con trayectoria comprobable sin título de grado).</li>
+                                    </ul>
+                                    <p class="mb-3">El proceso es: <strong>pre-registro → charla informativa → inscripción formal → pago de matrícula → arranque en agosto</strong>.</p>
+                                    <p class="mb-0">Detalles completos en la sección <a href="requisitos/">Requisitos</a>.</p>
                                 </div>
                             </div>
                         </div>
@@ -1137,8 +1526,14 @@
                                             <option value="Desarrollador / Ingeniero IT">Desarrollador / Ingeniero IT</option>
                                             <option value="Data Scientist / Analista de datos">Data Scientist / Analista de datos</option>
                                             <option value="DevOps / Cloud / Infraestructura">DevOps / Cloud / Infraestructura</option>
-                                            <option value="Investigador / Docente">Investigador / Docente</option>
-                                            <option value="Empresario / Consultor">Empresario / Consultor</option>
+                                            <option value="Finanzas / Economía">Finanzas / Economía</option>
+                                            <option value="Marketing / Comunicación">Marketing / Comunicación</option>
+                                            <option value="Salud / Medicina">Salud / Medicina</option>
+                                            <option value="Diseño / Creativo / Audiovisual">Diseño / Creativo / Audiovisual</option>
+                                            <option value="Abogado / Contador / Administrador">Abogado / Contador / Administrador</option>
+                                            <option value="Funcionario público">Funcionario público</option>
+                                            <option value="Docente / Investigador">Docente / Investigador</option>
+                                            <option value="Empresario / Consultor / Emprendedor">Empresario / Consultor / Emprendedor</option>
                                             <option value="Estudiante avanzado">Estudiante avanzado</option>
                                             <option value="Otro">Otro</option>
                                         </select>
@@ -1254,5 +1649,7 @@
         });
     </script>
 
+</body>
+</html>
 
 </body>

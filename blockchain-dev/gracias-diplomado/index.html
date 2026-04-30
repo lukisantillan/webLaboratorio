@@ -33,14 +33,15 @@
         }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
 
         fbq('init', '1845986945991192');
+        fbq('track', 'PageView');
         (function () {
             var eid = null;
             try { eid = sessionStorage.getItem('lead_event_id'); } catch (e) {}
             if (eid) {
-                fbq('track', 'Lead', {}, { eventID: eid });
+                fbq('track', 'Lead', { content_name: 'inscripcion-blockchain' }, { eventID: eid });
                 try { sessionStorage.removeItem('lead_event_id'); } catch (e) {}
             } else {
-                fbq('track', 'Lead');
+                fbq('track', 'Lead', { content_name: 'inscripcion-blockchain' });
             }
         })();
     </script>

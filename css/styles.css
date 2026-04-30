@@ -13120,6 +13120,8 @@ header.masthead .masthead-heading {
 .team-member img {
   width: 8rem;
   height: 8rem;
+  object-fit: cover;
+  object-position: center top;
   border: 0.5rem solid rgba(0, 0, 0, 0.1);
 }
 

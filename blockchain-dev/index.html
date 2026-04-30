@@ -12,7 +12,9 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Diplomatura en Blockchain - UNLu | Inscripción Abierta" />
     <meta property="og:description" content="Diplomatura de Posgrado en Innovación y Desarrollo de Aplicaciones basadas en Blockchain. 100% virtual, 4 meses, inicio agosto 2026. Cupos limitados." />
-    <meta property="og:image" content="https://licdia.unlu.edu.ar/assets/img/logo.ico" />
+    <meta property="og:image" content="https://licdia.unlu.edu.ar/assets/img/og-blockchain.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://licdia.unlu.edu.ar/blockchain-dev/" />
     <meta property="og:locale" content="es_AR" />
 
@@ -20,11 +22,69 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Diplomatura en Blockchain - UNLu" />
     <meta name="twitter:description" content="Aprendé desarrollo Web3, DApps, DeFi y smart contracts. 100% virtual, cupos limitados." />
-    <meta name="twitter:image" content="https://licdia.unlu.edu.ar/assets/img/logo.ico" />
+    <meta name="twitter:image" content="https://licdia.unlu.edu.ar/assets/img/og-blockchain.jpg" />
 
     <link rel="canonical" href="https://licdia.unlu.edu.ar/blockchain-dev/" />
 
-    <title> Diplomatura en Innovación y Desarrollo de Aplicaciones basadas en Blockchain - LICDIA</title>
+    <!-- FAQPage Schema for rich results -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"¿Necesito conocimientos previos en blockchain? ¿Hace falta saber programar?","acceptedAnswer":{"@type":"Answer","text":"No, no hace falta saber blockchain — la diplomatura arranca desde cero: qué es blockchain, cómo funcionan los smart contracts, qué problema resuelve cada componente y por qué importa. Lo que sí recomendamos es tener conocimientos básicos de programación (Python, JavaScript, Java o cualquier lenguaje) y manejarte cómodo en una terminal — no esperamos que sepas Solidity, te lo enseñamos. Si venís de finanzas, infraestructura cloud o sos founder sin código, vas a seguir bien todo el contenido conceptual y los módulos no-dev."}},
+        {"@type":"Question","name":"¿La cursada es 100% virtual?","acceptedAnswer":{"@type":"Answer","text":"Sí. Las clases son en vivo por videoconferencia los martes y jueves de 19 a 21 hs (ARG). Cada clase queda grabada y disponible de forma permanente en el aula virtual para que la revises cuando quieras — útil si trabajás full-time o estás en otra zona horaria. Además contás con un canal de consulta permanente (Slack/Discord) con docentes y pares."}},
+        {"@type":"Question","name":"¿Qué título otorga?","acceptedAnswer":{"@type":"Answer","text":"La Diplomatura de Posgrado Universitario en Innovación y Desarrollo de Aplicaciones basadas en Blockchain, emitida por la Universidad Nacional de Luján — universidad pública nacional con validez oficial en todo el país. No es una certificación privada de plataforma: es un título universitario que sirve como antecedente formal para futuras maestrías o doctorados. Cada uno de los 4 cursos aprobados otorga además un certificado individual de posgrado universitario."}},
+        {"@type":"Question","name":"¿Puedo cursar módulos sueltos?","acceptedAnswer":{"@type":"Answer","text":"Sí. La diplomatura está compuesta por 4 cursos de posgrado de 40 hs cada uno que pueden cursarse de forma independiente: (1) Fundamentos de Blockchain, Frameworks y Herramientas para la creación de DApps; (2) Desarrollo de Aplicaciones y DApps Blockchain; (3) Automatización de Infraestructura y Arquitectura Tecnológica para Blockchain; (4) Fundamentos Financieros y Blockchain para Finanzas Descentralizadas. Cada curso individual otorga su propio certificado de posgrado universitario. Si completás los 4, obtenés el título de Diplomatura completo."}},
+        {"@type":"Question","name":"¿Cuáles son las formas de pago?","acceptedAnswer":{"@type":"Answer","text":"Tres opciones, todas a través de la UNLu: (1) Pago electrónico 24 hs vía Pago Mis Cuentas con DNI y clave; (2) Cajero automático — Pago Mis Cuentas → Establecimientos Educativos → Universidad Nac. Luján; (3) Transferencia bancaria directa con CUIT/CBU de la universidad. Estructura: matrícula de $170.000 + 4 cuotas de $170.000 (una por cada curso). Vencimiento día 15 de cada mes."}},
+        {"@type":"Question","name":"¿Cuándo es la charla informativa?","acceptedAnswer":{"@type":"Answer","text":"El miércoles 7 de mayo de 2026, encuentro virtual de aproximadamente 1 hora. El director cuenta el plan de estudios, los proyectos integradores, la salida laboral del sector, y respondemos en vivo todas las dudas. Completá el formulario de pre-registro y te enviamos el link de acceso unos días antes."}},
+        {"@type":"Question","name":"¿Cuándo empieza la cursada?","acceptedAnswer":{"@type":"Answer","text":"La próxima cohorte arranca en agosto de 2026. Las inscripciones cierran a fines de julio o cuando se completa el cupo (lo que pase primero — recordá que son máximo 30 alumnos por cohorte). La forma más segura de no quedarte afuera es pre-registrarte a la charla informativa: te avisamos primeros cuando se abre la inscripción formal."}},
+        {"@type":"Question","name":"¿Hay límite de cupos?","acceptedAnswer":{"@type":"Answer","text":"Sí. Trabajamos con cohortes de máximo 30 alumnos para mantener una relación cercana entre docentes y estudiantes — los docentes pueden dar feedback real al código y al proyecto integrador de cada alumno, no solo dictar clase magistral. Los lugares se asignan por orden de inscripción. Cuando se completa el cupo, el resto pasa a lista de espera."}},
+        {"@type":"Question","name":"¿Necesito una computadora especial? ¿Qué software se usa?","acceptedAnswer":{"@type":"Answer","text":"No, una notebook común alcanza — i5/Ryzen 5 o superior, 8 GB de RAM y conexión estable a internet. Trabajamos con herramientas open source y servicios cloud free tier — sin licencias pagas: Solidity, Hardhat, Foundry, Remix; Google Cloud Platform en plan free tier; Node.js, React, ethers.js, web3.js; Docker, Terraform, GitHub Actions. Todo el software es gratuito y multiplataforma."}},
+        {"@type":"Question","name":"¿Quiénes son los docentes?","acceptedAnswer":{"@type":"Answer","text":"Un equipo con trayectoria activa en la industria y la academia. La dirección está a cargo del Dr. David Petrocelli (Senior Cloud Architect en Caylent USA, doctor en Ciencias Informáticas UNLP) y la coordinación académica del Mg. Juan M. Fernández (Director de LICDIA-UNLu, profesor en UNLu, ITBA y UNTREF). Completan el cuerpo docente el Dr. Julián Olivares (CONICET/UNGS, historia económica y economía política), el APU Nehuén Prados (smart contracts, DApps, sistemas distribuidos, fundador de Craving) y Deiller Guevara (operador de derivados A3 Mercados Programa NOR XI, especialista en DeFi y market making)."}},
+        {"@type":"Question","name":"¿Qué salida laboral tiene?","acceptedAnswer":{"@type":"Answer","text":"El sector blockchain en Argentina y Latinoamérica está entre los de mayor demanda y mejor remuneración del mercado tech. Argentina es uno de los hubs Web3 más relevantes a nivel global — empresas como Lemon, Belo, Ripio, Buenbit, Decentraland y OpenZeppelin tienen base local, y muchísimos profesionales argentinos trabajan en remoto para empresas internacionales (Coinbase, Aave, Maker, Polygon) cobrando en USD. Roles típicos: Smart Contract / DApp Developer, Blockchain Architect, DeFi Analyst, Cloud DevOps con blockchain, Smart Contract Auditor, Founder de proyectos Web3."}},
+        {"@type":"Question","name":"¿Cuál es la carga horaria total?","acceptedAnswer":{"@type":"Answer","text":"La diplomatura tiene una carga horaria total de 160 horas distribuidas en 4 meses (4 cursos de 40 hs cada uno). Las clases en vivo son los martes y jueves de 19 a 21 hs (4 hs semanales). El resto se distribuye en trabajo práctico, lecturas, ejercicios entregables y desarrollo del proyecto integrador. Esperá dedicarle entre 8 y 12 hs semanales en total — pensado para que mantengas tu trabajo full-time mientras cursás."}},
+        {"@type":"Question","name":"¿Hay un trabajo final o proyecto integrador?","acceptedAnswer":{"@type":"Answer","text":"Sí, y es uno de los pilares de la diplomatura. La cursada cierra con un proyecto integrador propio aplicado a un caso real de la industria: construís una solución end-to-end con smart contracts desplegados en testnet o mainnet, infraestructura cloud levantada, análisis económico/financiero del modelo y documentación técnica completa. Lo defendés frente a docentes y compañeros, y queda como pieza de portfolio que podés mostrar a empleadores."}},
+        {"@type":"Question","name":"¿Cómo es la evaluación?","acceptedAnswer":{"@type":"Answer","text":"La evaluación es continua y práctica — no se basa en exámenes finales memorísticos. Cada curso tiene entregables concretos: deploy de smart contracts, infraestructura levantada con IaC, análisis financiero ejecutado, defensa de decisiones técnicas. El criterio es el mismo que usa la industria: si lo podés ejecutar y defender, lo aprobás. La cursada cierra con la defensa del proyecto integrador frente al cuerpo docente."}},
+        {"@type":"Question","name":"¿Es necesario un examen de admisión?","acceptedAnswer":{"@type":"Answer","text":"No, no hay examen de admisión. Para inscribirte solo necesitás cumplir con los requisitos formales: título de grado de cualquier orientación, o equivalencia por experiencia profesional (analizada caso por caso por la dirección académica). El proceso es: pre-registro → charla informativa → inscripción formal → pago de matrícula → arranque en agosto."}}
+      ]
+    }
+    </script>
+
+    <!-- Course Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Diplomatura de Posgrado en Innovación y Desarrollo de Aplicaciones basadas en Blockchain",
+      "description": "Diplomatura de posgrado universitario en blockchain. Smart contracts, DApps, DeFi, infraestructura cloud descentralizada. 4 cursos de 40 hs, 160 hs totales, 100% virtual. Inicio agosto 2026.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Universidad Nacional de Luján",
+        "sameAs": "https://www.unlu.edu.ar/"
+      },
+      "educationalLevel": "Posgrado",
+      "inLanguage": "es-AR",
+      "courseMode": "online",
+      "url": "https://licdia.unlu.edu.ar/blockchain-dev/",
+      "image": "https://licdia.unlu.edu.ar/assets/img/og-blockchain.jpg",
+      "offers": {
+        "@type": "Offer",
+        "price": "850000",
+        "priceCurrency": "ARS",
+        "category": "Diplomatura completa: matrícula $170.000 + 4 cuotas de $170.000",
+        "availability": "https://schema.org/PreOrder"
+      },
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "startDate": "2026-08",
+        "courseWorkload": "PT160H"
+      }
+    }
+    </script>
+
+    <title>Diplomatura en Blockchain UNLu - LICDIA | Inicio Agosto 2026</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="../assets/img/logo.ico" />
     <!-- Font Awesome icons (free version)-->
@@ -35,7 +95,6 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="../css/styles.css" rel="stylesheet" />
     <link href="../css/style2.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- AOS ANIMACIONES -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Poppins bold para títulos -->
@@ -54,6 +113,320 @@
         .blockchain-theme .alert a.text-white {
             color: #ffffff !important;
         }
+
+        /* ============================================================
+           SECCIONES NUEVAS: Stack, Proyectos, Pre-requisitos, Quiz
+           ============================================================ */
+
+        /* --- Variables (refuerzo local por si el CSS global no las tiene) --- */
+        :root {
+            --brand: #4C1C7F;
+            --brand-dark: #261951;
+            --brand-soft: #F3EBFB;
+        }
+
+        /* --- Card base reutilizable para las 4 secciones --- */
+        .bc-card {
+            background: #fff;
+            border: 1px solid #ece7f3;
+            border-radius: 16px;
+            padding: 1.75rem 1.25rem;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+        .bc-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 4px;
+            background: linear-gradient(90deg, var(--brand) 0%, var(--brand-dark) 100%);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        .bc-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(76, 28, 127, 0.18);
+            border-color: var(--brand-soft);
+        }
+        .bc-card:hover::before { opacity: 1; }
+
+        /* --- Icon wrap (mismo patrón que destinatario-icon-wrap) --- */
+        .bc-icon-wrap {
+            width: 64px; height: 64px;
+            border-radius: 50%;
+            background: var(--brand-soft);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 1.1rem;
+            transition: background 0.25s ease;
+        }
+        .bc-icon-wrap i {
+            font-size: 1.6rem;
+            color: var(--brand);
+            transition: color 0.25s ease;
+        }
+        .bc-card:hover .bc-icon-wrap { background: var(--brand); }
+        .bc-card:hover .bc-icon-wrap i { color: #fff; }
+
+        /* --- Stack tech badges --- */
+        .stack-badge-name {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--brand-dark);
+            margin-bottom: 0.2rem;
+        }
+        .stack-badge-tag {
+            font-size: 0.78rem;
+            color: #6c757d;
+        }
+
+        /* --- Proyecto cards --- */
+        .proyecto-card .bc-icon-wrap { width: 56px; height: 56px; }
+        .proyecto-card .bc-icon-wrap i { font-size: 1.4rem; }
+        .proyecto-title {
+            font-weight: 700;
+            color: var(--brand-dark);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .proyecto-desc {
+            font-size: 0.88rem;
+            color: #4a4a4a;
+            line-height: 1.55;
+            margin-bottom: 0.75rem;
+        }
+        .stack-pill {
+            display: inline-block;
+            background: var(--brand-soft);
+            color: var(--brand-dark);
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 0.2rem 0.55rem;
+            border-radius: 999px;
+            margin: 0.15rem 0.1rem 0;
+        }
+
+        /* --- Pre-requisitos checklist --- */
+        .prereq-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            background: #fff;
+            border: 1px solid #ece7f3;
+            border-radius: 14px;
+            padding: 1.1rem 1.25rem;
+            transition: box-shadow 0.2s ease;
+        }
+        .prereq-item:hover { box-shadow: 0 8px 24px rgba(76, 28, 127, 0.1); }
+        .prereq-check {
+            font-size: 1.4rem;
+            color: #198754;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+        .prereq-title {
+            font-weight: 700;
+            color: var(--brand-dark);
+            font-size: 0.97rem;
+            margin-bottom: 0.15rem;
+        }
+        .prereq-sub {
+            font-size: 0.85rem;
+            color: #6c757d;
+            margin-bottom: 0;
+        }
+        .prereq-cta-box {
+            background: var(--brand-soft);
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            border: 1px solid #ddd0f0;
+        }
+
+        /* --- Quiz --- */
+        #quiz .quiz-wrapper {
+            background: #fff;
+            border: 1px solid #ece7f3;
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 680px;
+            margin: 0 auto;
+            box-shadow: 0 4px 24px rgba(76, 28, 127, 0.08);
+        }
+        .quiz-question {
+            font-size: 0.97rem;
+            font-weight: 600;
+            color: #2c2c2c;
+            margin-bottom: 0.5rem;
+        }
+        .quiz-radios { display: flex; gap: 1.5rem; margin-bottom: 0; }
+        .quiz-radios label {
+            display: flex; align-items: center; gap: 0.4rem;
+            font-size: 0.9rem; cursor: pointer; color: #4a4a4a;
+        }
+        .quiz-question-block {
+            padding: 0.9rem 0;
+            border-bottom: 1px solid #f0eaf8;
+        }
+        .quiz-question-block:last-of-type { border-bottom: none; }
+        #quiz-result-box {
+            border-radius: 14px;
+            padding: 1.25rem 1.5rem;
+            margin-top: 1.5rem;
+            display: none;
+            animation: fadeInResult 0.4s ease;
+        }
+        @keyframes fadeInResult {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .result-green  { background: #d1e7dd; border: 1px solid #a3cfbb; color: #0a3622; }
+        .result-purple { background: var(--brand-soft); border: 1px solid #c9b8e8; color: var(--brand-dark); }
+        .result-yellow { background: #fff3cd; border: 1px solid #ffd782; color: #664d03; }
+        .result-grey   { background: #e9ecef; border: 1px solid #ced4da; color: #343a40; }
+        .result-score  { font-size: 0.85rem; opacity: 0.75; margin-bottom: 0.4rem; }
+        .result-text   { font-weight: 600; margin-bottom: 0; }
+        #btn-quiz-submit {
+            background: var(--brand);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 0.65rem 2rem;
+            font-weight: 700;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+            margin-top: 1.25rem;
+        }
+        #btn-quiz-submit:hover { background: var(--brand-dark); transform: translateY(-2px); }
+        #btn-quiz-submit:focus-visible {
+            outline: 2px solid var(--brand);
+            outline-offset: 3px;
+        }
+        .quiz-cta-btn {
+            display: inline-block;
+            margin-top: 0.85rem;
+            background: var(--brand);
+            color: #fff;
+            padding: 0.5rem 1.5rem;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 0.88rem;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+        .quiz-cta-btn:hover { background: var(--brand-dark); color: #fff; }
+        .quiz-cta-link {
+            display: inline-block;
+            margin-top: 0.85rem;
+            color: var(--brand);
+            font-weight: 600;
+            font-size: 0.88rem;
+            text-decoration: underline;
+        }
+
+        /* reduced-motion override */
+        @media (prefers-reduced-motion: reduce) {
+            .bc-card, .prereq-item, #btn-quiz-submit { transition: none; }
+            #quiz-result-box { animation: none; }
+        }
+
+        /* Plan de estudios — estilo unificado con /plan-de-estudios/ */
+        .plan-card {
+            background: #fff;
+            border: 1px solid #ece7f3;
+            border-radius: 14px;
+            margin-bottom: 1rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .plan-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4C1C7F 0%, #261951 100%);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        .plan-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 36px rgba(76, 28, 127, 0.16);
+            border-color: #F3EBFB;
+        }
+        .plan-card:hover::before { opacity: 1; }
+        .plan-card .accordion-item {
+            border: none;
+            border-radius: 0;
+            background: transparent;
+        }
+        .plan-card .accordion-button {
+            background: transparent;
+            color: #261951;
+            font-weight: 700;
+            border-radius: 0 !important;
+            box-shadow: none;
+        }
+        .plan-card .accordion-button:not(.collapsed) {
+            background: #F3EBFB;
+            color: #261951;
+            box-shadow: none;
+        }
+        .plan-card .accordion-button:focus {
+            box-shadow: 0 0 0 2px rgba(76, 28, 127, 0.3);
+        }
+        .plan-icon-wrap {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #4C1C7F;
+            color: #fff;
+            font-size: 0.85rem;
+            font-weight: 800;
+            flex-shrink: 0;
+            margin-right: 0.75rem;
+            transition: background 0.25s ease;
+        }
+        .plan-card:hover .plan-icon-wrap { background: #261951; }
+        .lente-estrategica {
+            background: #F3EBFB;
+            border-left: 4px solid #4C1C7F;
+            border-radius: 8px;
+            padding: 0.85rem 1.1rem;
+            margin: 1rem 0 1rem;
+            font-size: 0.95rem;
+            color: #261951;
+        }
+        .lente-estrategica .pin { display: inline-block; margin-right: 0.4rem; }
+        .lente-estrategica strong { color: #4C1C7F; font-weight: 800; }
+        .lente-estrategica em { color: #261951; font-style: italic; }
+        .estrategia-block {
+            background: #fff;
+            border-left: 4px solid #4C1C7F;
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 16px rgba(76, 28, 127, 0.08);
+        }
+        .estrategia-block h5 {
+            color: #261951;
+            font-weight: 800;
+            margin-bottom: 0.6rem;
+        }
+        .estrategia-block p {
+            color: #3a3a3a;
+            font-size: 0.97rem;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+        .estrategia-block strong { color: #4C1C7F; }
     </style>
     <!-- Meta Pixel Code -->
     <script>
@@ -96,6 +469,8 @@
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#masthead">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#informacionPlan">Plan de estudios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="plan-de-estudios/#cronograma">Cronograma</a></li>
+                    <li class="nav-item"><a class="nav-link" href="por-que-elegirnos/">Por qué elegirnos</a></li>
                     <li class="nav-item"><a class="nav-link" href="aranceles/">Aranceles</a></li>
                     <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Pre-registro</a></li>
@@ -185,6 +560,14 @@
                 <div class="tile">
                     <span class="rule rule-top"></span>
                     <h3 class="h4 fw-semibold my-3 mb-3"><a href="enfoque/">Enfoque</a></h3>
+                    <span class="rule rule-bottom"></span>
+                </div>
+            </div>
+
+            <div class="col-6 col-md-4 col-lg zoom-hover">
+                <div class="tile">
+                    <span class="rule rule-top"></span>
+                    <h3 class="h4 fw-semibold my-3 mb-3"><a href="por-que-elegirnos/">Por qué elegirnos</a></h3>
                     <span class="rule rule-bottom"></span>
                 </div>
             </div>
@@ -341,148 +724,162 @@
                     <div class="col-12 col-lg-10 px-0">
                         <div class="card border-0 rounded-0 shadow-sm">
                             <div class="card-body p-3 p-md-4">
-                                <div class="accordion" id="accordionPanelsStayOpenExample">
+                                <div id="accordionPanelsStayOpenExample">
 
                                     <!-- Item 1 -->
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                                                aria-controls="panelsStayOpen-collapseOne">
-                                                (1) Fundamentos de Blockchain, y Frameworks y Herramientas para la Creación de DApps
-                                            </button>
-                                        </h2>
-                                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
-                                            <div class="accordion-body">
-                                                <p>
-                                                    Breve revisión de la evolución de blockchain. Conceptos clave
-                                                    como bloques, nodos y mineros. Clasificación de tipos de
-                                                    blockchain: públicas, privadas y de consorcio.
-                                                    Principios de Descentralización. Funcionamiento de cadenas de
-                                                    bloques: tipos de cadenas de bloques y algoritmos de consenso.
-                                                    Casos de uso y aplicaciones actuales. Desafíos y limitaciones.
-                                                    Frameworks y Herramientas para Desarrollo Web3/DApp. Ethereum y
-                                                    Solidity, Hardhat y otras plataformas.
-                                                    Elementos de criptografía en DeFi. Criptografía como medio para
-                                                    asegurar la integridad, seguridad y privacidad en sistemas
-                                                    descentralizados. Creación de criptomonedas, y los fundamentos de
-                                                    la criptografía hash.
-                                                </p>
-                                                <p class="mt-3 mb-3 p-3 rounded" style="background: rgba(76,28,127,0.06); border-left: 3px solid #4C1C7F;">
-                                                    <strong style="color: #4C1C7F;">📌 Lente estratégica:</strong>
-                                                    selección de <em>use case</em> — cuándo conviene blockchain (y cuándo no), qué tipo elegir (pública / privada / consorcio) según el problema a resolver.
-                                                </p>
-                                                <a href="https://drive.google.com/file/d/1Q-N7jwTl8uJG8VtwRX3_wVyEWjiL4Zpk/view?usp=sharing"
-                                                    class="alert-link text-decoration-underline" target="_blank">
-                                                    Accede al programa
-                                                </a>
+                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="100">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                                    aria-controls="panelsStayOpen-collapseOne">
+                                                    <span class="plan-icon-wrap" aria-hidden="true">1</span>
+                                                    Fundamentos de Blockchain, y Frameworks y Herramientas para la Creación de DApps
+                                                </button>
+                                            </h2>
+                                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                                                <div class="accordion-body">
+                                                    <p>
+                                                        Breve revisión de la evolución de blockchain. Conceptos clave
+                                                        como bloques, nodos y mineros. Clasificación de tipos de
+                                                        blockchain: públicas, privadas y de consorcio.
+                                                        Principios de Descentralización. Funcionamiento de cadenas de
+                                                        bloques: tipos de cadenas de bloques y algoritmos de consenso.
+                                                        Casos de uso y aplicaciones actuales. Desafíos y limitaciones.
+                                                        Frameworks y Herramientas para Desarrollo Web3/DApp. Ethereum y
+                                                        Solidity, Hardhat y otras plataformas.
+                                                        Elementos de criptografía en DeFi. Criptografía como medio para
+                                                        asegurar la integridad, seguridad y privacidad en sistemas
+                                                        descentralizados. Creación de criptomonedas, y los fundamentos de
+                                                        la criptografía hash.
+                                                    </p>
+                                                    <div class="lente-estrategica">
+                                                        <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica:</strong> selección de <em>use case</em> — cuándo conviene blockchain (y cuándo no), qué tipo elegir (pública / privada / consorcio) según el problema a resolver.
+                                                    </div>
+                                                    <a href="https://drive.google.com/file/d/1Q-N7jwTl8uJG8VtwRX3_wVyEWjiL4Zpk/view?usp=sharing"
+                                                        class="alert-link text-decoration-underline" target="_blank">
+                                                        Accede al programa
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- Item 2 -->
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo"
-                                                aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
-                                                (2) Fundamentos Financieros y Blockchain para Finanzas Descentralizadas
-                                            </button>
-                                        </h2>
-                                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
-                                            <div class="accordion-body">
-                                                <p>
-                                                    Introducción a las Finanzas: Concepto y Objetivos; Análisis
-                                                    Financiero: Cálculo Financiero. Riesgo y Rentabilidad:
-                                                    Definiciones y Diversificación. Finanzas Corporativas: Estructura
-                                                    de Capital y Decisiones de Inversión. Blockchain y Criptomonedas:
-                                                    Aplicaciones de DeFi, Ventajas y Riesgos. Casos de Uso en DeFi:
-                                                    Ejemplos de Proyectos e Impacto en el Sector Financiero.
-                                                    Criptoeconomía y DeFi: Características y funcionamiento de
-                                                    criptomonedas, Stablecoins, Staking, Lending and Borrowing, AMMs,
-                                                    DEX vs CEX, Derivados sintéticos, ICOs.
-                                                </p>
-                                                <p class="mt-3 mb-3 p-3 rounded" style="background: rgba(76,28,127,0.06); border-left: 3px solid #4C1C7F;">
-                                                    <strong style="color: #4C1C7F;">📌 Lente estratégica:</strong>
-                                                    <em>tokenomics</em> y diseño de modelo de negocio — cómo se estructuran los incentivos económicos de un protocolo, qué hace viable una stablecoin, cómo decidir la estructura de capital de un proyecto Web3.
-                                                </p>
-                                                <a href="https://drive.google.com/file/d/1C8kqt3Z111b1hI_5Svx54ZXIuFzzx9_C/view?usp=sharing"
-                                                    class="alert-link text-decoration-underline" target="_blank">
-                                                    Accede al programa
-                                                </a>
+                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="200">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo"
+                                                    aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                                                    <span class="plan-icon-wrap" aria-hidden="true">2</span>
+                                                    Fundamentos Financieros y Blockchain para Finanzas Descentralizadas
+                                                </button>
+                                            </h2>
+                                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                                                <div class="accordion-body">
+                                                    <p>
+                                                        Introducción a las Finanzas: Concepto y Objetivos; Análisis
+                                                        Financiero: Cálculo Financiero. Riesgo y Rentabilidad:
+                                                        Definiciones y Diversificación. Finanzas Corporativas: Estructura
+                                                        de Capital y Decisiones de Inversión. Blockchain y Criptomonedas:
+                                                        Aplicaciones de DeFi, Ventajas y Riesgos. Casos de Uso en DeFi:
+                                                        Ejemplos de Proyectos e Impacto en el Sector Financiero.
+                                                        Criptoeconomía y DeFi: Características y funcionamiento de
+                                                        criptomonedas, Stablecoins, Staking, Lending and Borrowing, AMMs,
+                                                        DEX vs CEX, Derivados sintéticos, ICOs.
+                                                    </p>
+                                                    <div class="lente-estrategica">
+                                                        <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica:</strong> <em>criptoeconomía aplicada</em> — diseño de tokenomics, evaluación de modelos DeFi (lending, AMMs, derivados) y lectura crítica de proyectos reales del ecosistema.
+                                                    </div>
+                                                    <a href="https://drive.google.com/file/d/1C8kqt3Z111b1hI_5Svx54ZXIuFzzx9_C/view?usp=sharing"
+                                                        class="alert-link text-decoration-underline" target="_blank">
+                                                        Accede al programa
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- Item 3 -->
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree"
-                                                aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
-                                                (3) Automatización de Infraestructura &amp; Arquitectura Tecnológica para Blockchain
-                                            </button>
-                                        </h2>
-                                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
-                                            <div class="accordion-body">
-                                                <p>
-                                                    Infraestructura para Blockchain: Nube y sus servicios para
-                                                    BlockChain (almacenamiento, cómputo, bases de datos).
-                                                    Infraestructura como código (IaC) y canalizaciones CI/CD, para
-                                                    despliegue de recursos en entornos cloud. Arquitectura y
-                                                    orquestadores de contenedores como plataformas escalables y
-                                                    especializadas en BlockChain. Redes capa 1 (Layer 1) y capa 2
-                                                    (Layer 2). Escalabilidad y rendimiento: soluciones de capa 2.
-                                                </p>
-                                                <p class="mt-3 mb-3 p-3 rounded" style="background: rgba(76,28,127,0.06); border-left: 3px solid #4C1C7F;">
-                                                    <strong style="color: #4C1C7F;">📌 Lente estratégica:</strong>
-                                                    <em>trade-offs</em> de arquitectura — Layer 1 vs Layer 2, costo / performance / soberanía, cuándo IaC propio vs servicios <em>managed</em>.
-                                                </p>
-                                                <a href="https://drive.google.com/file/d/1MF09yPS-uZcD7KgLDP0N2_nkhvJrjyFQ/view?usp=sharing"
-                                                    class="alert-link text-decoration-underline" target="_blank">
-                                                    Accede al programa
-                                                </a>
+                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="300">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree"
+                                                    aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                                                    <span class="plan-icon-wrap" aria-hidden="true">3</span>
+                                                    Automatización de Infraestructura &amp; Arquitectura Tecnológica para Blockchain
+                                                </button>
+                                            </h2>
+                                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                                                <div class="accordion-body">
+                                                    <p>
+                                                        Infraestructura para Blockchain: Nube y sus servicios para
+                                                        BlockChain (almacenamiento, cómputo, bases de datos).
+                                                        Infraestructura como código (IaC) y canalizaciones CI/CD, para
+                                                        despliegue de recursos en entornos cloud. Arquitectura y
+                                                        orquestadores de contenedores como plataformas escalables y
+                                                        especializadas en BlockChain. Redes capa 1 (Layer 1) y capa 2
+                                                        (Layer 2). Escalabilidad y rendimiento: soluciones de capa 2.
+                                                    </p>
+                                                    <div class="lente-estrategica">
+                                                        <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica:</strong> <em>trade-offs de implementación</em> — costos, performance y seguridad al elegir Layer 1 vs Layer 2, nodo propio vs servicio gestionado, on-chain vs off-chain.
+                                                    </div>
+                                                    <a href="https://drive.google.com/file/d/1MF09yPS-uZcD7KgLDP0N2_nkhvJrjyFQ/view?usp=sharing"
+                                                        class="alert-link text-decoration-underline" target="_blank">
+                                                        Accede al programa
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <!-- Item 4 -->
-                                    <div class="accordion-item">
-                                        <h2 class="accordion-header">
-                                            <button class="accordion-button collapsed" type="button"
-                                                data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour"
-                                                aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
-                                                (4) Desarrollo de Aplicaciones y DApps Blockchain
-                                            </button>
-                                        </h2>
-                                        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
-                                            <div class="accordion-body">
-                                                <p>
-                                                    Crowdfunding, Web3, clasificación y aplicación en el ecosistema
-                                                    blockchain. Crowdfunding basado en recompensas utilizando DApps y
-                                                    smart contracts. Web3 avanzado: Metaverso, NFTs y tokenización de
-                                                    activos. Escribir, compilar y desplegar contratos inteligentes en
-                                                    Ethereum L2 (Polygon) con Solidity.
-                                                </p>
-                                                <p class="mt-3 mb-3 p-3 rounded" style="background: rgba(76,28,127,0.06); border-left: 3px solid #4C1C7F;">
-                                                    <strong style="color: #4C1C7F;">📌 Lente estratégica:</strong>
-                                                    <em>business case</em> ejecutado — el alumno no solo demuestra que el código corre: defiende por qué este token, qué problema resuelve, qué supuestos económicos lo sostienen.
-                                                </p>
-                                                <a href="https://drive.google.com/file/d/1ACkbJjGBDEG3U-pQTcB6YiOcEPj8rDqn/view?usp=sharing"
-                                                    class="alert-link text-decoration-underline" target="_blank">
-                                                    Accede al programa
-                                                </a>
+                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="400">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button"
+                                                    data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour"
+                                                    aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                                                    <span class="plan-icon-wrap" aria-hidden="true">4</span>
+                                                    Desarrollo de Aplicaciones y DApps Blockchain
+                                                </button>
+                                            </h2>
+                                            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse">
+                                                <div class="accordion-body">
+                                                    <p>
+                                                        Crowdfunding, Web3, clasificación y aplicación en el ecosistema
+                                                        blockchain. Crowdfunding basado en recompensas utilizando DApps y
+                                                        smart contracts. Web3 avanzado: Metaverso, NFTs y tokenización de
+                                                        activos. Escribir, compilar y desplegar contratos inteligentes en
+                                                        Ethereum L2 (Polygon) con Solidity.
+                                                    </p>
+                                                    <div class="lente-estrategica">
+                                                        <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica:</strong> <em>business case end-to-end</em> — del contrato Solidity al frontend Web3 con wallets, integraciones y producto desplegado en mainnet/testnet pública.
+                                                    </div>
+                                                    <a href="https://drive.google.com/file/d/1ACkbJjGBDEG3U-pQTcB6YiOcEPj8rDqn/view?usp=sharing"
+                                                        class="alert-link text-decoration-underline" target="_blank">
+                                                        Accede al programa
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
                                 </div><!-- /accordion -->
 
-                                <div class="mt-4 p-4 rounded" style="background: linear-gradient(135deg, rgba(76,28,127,0.08) 0%, rgba(212,184,255,0.08) 100%); border-left: 4px solid #4C1C7F;">
-                                    <h5 class="fw-bold mb-2" style="color: #4C1C7F;">¿Y la estrategia?</h5>
-                                    <p class="mb-0">
+                                <div class="estrategia-block" data-aos="fade-up" data-aos-delay="500">
+                                    <h5>¿Y la estrategia?</h5>
+                                    <p>
                                         Está distribuida en los 4 módulos, no aislada en una capa para directivos. La <strong>criptoeconomía</strong> vive en el módulo de DeFi, el <strong>business case</strong> en el de DApps, la <strong>selección de use case</strong> en los fundamentos, los <strong>trade-offs de implementación</strong> en infraestructura. Lo que en otros programas son slides, acá son decisiones que el alumno toma mientras construye.
                                     </p>
+                                </div>
+
+                                <div class="text-center mt-4">
+                                    <a href="plan-de-estudios/#cronograma" class="btn btn-outline-dark btn-lg px-4 py-2">
+                                        <i class="far fa-calendar-alt me-2"></i>Ver cronograma clase por clase
+                                    </a>
                                 </div>
                             </div><!-- /card-body -->
                         </div><!-- /card -->
@@ -506,35 +903,39 @@
             <div class="row justify-content-center">
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1500">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="../assets/img/team/24.jpg" alt="..." />
-                        <div>
-                            <h4>Dr. David Petrocelli</h4>
-                            <h5 class="h5" style="color: #6c757d;">(Director)</h5>
-                        </div>
-                        <p class="text-muted">
-                            Dr. en Ciencias Informáticas (UNLP). <br>
-                            Senior Cloud Architect en Caylent Inc. (USA). <br>
-                            Docente e investigador en UNLu. <br>
-                            Referente en arquitecturas cloud, DevOps e infraestructura descentralizada. <br>
-                            Experiencia internacional en proyectos blockchain sobre AWS.
-                        </p>
+                        <a href="docentes/petrocelli/" style="text-decoration:none; color:inherit;">
+                            <img class="mx-auto rounded-circle" src="../assets/img/team/petrocelli.jpg" alt="Dr. David Petrocelli - Director" />
+                            <div>
+                                <h4>Dr. David Petrocelli</h4>
+                                <h5 class="h5" style="color: #6c757d;">(Director)</h5>
+                            </div>
+                            <p class="text-muted">
+                                Dr. en Ciencias Informáticas (UNLP). <br>
+                                Senior Cloud Architect en Caylent Inc. (USA). <br>
+                                Docente e investigador en UNLu. <br>
+                                Referente en arquitecturas cloud, DevOps e infraestructura descentralizada. <br>
+                                Experiencia internacional en proyectos blockchain sobre AWS.
+                            </p>
+                            <span style="font-size:0.85rem; color:#4C1C7F; font-weight:600;">Ver perfil &rarr;</span>
+                        </a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1500">
                     <div class="team-member">
-                        <a href="https://licdia.unlu.edu.ar/director/" target="_blank">
-                            <img class="mx-auto rounded-circle" src="../assets/img/team/1.jpg" alt="..." />
+                        <a href="docentes/fernandez/" style="text-decoration:none; color:inherit;">
+                            <img class="mx-auto rounded-circle" src="../assets/img/team/1.jpg" alt="Mg. Juan M. Fernández - Coordinador Académico" />
+                            <div>
+                                <h4>Mg. Juan M. Fernández</h4>
+                                <h5 class="h5" style="color: #6c757d;">(Coordinador Académico)</h5>
+                            </div>
+                            <p class="text-muted">
+                                Director de LICDIA-UNLu. <br>
+                                Magister en Inteligencia de datos orientada a Big Data (UNLP). <br>
+                                Profesor en UNLu, ITBA y UNTREF. <br>
+                                Investigador activo en tecnologías descentralizadas y Web3.
+                            </p>
+                            <span style="font-size:0.85rem; color:#4C1C7F; font-weight:600;">Ver perfil &rarr;</span>
                         </a>
-                        <div>
-                            <h4>Mg. Juan M. Fernández</h4>
-                            <h5 class="h5" style="color: #6c757d;">(Coordinador Académico)</h5>
-                        </div>
-                        <p class="text-muted">
-                            Director de LICDIA-UNLu. <br>
-                            Magister en Inteligencia de datos orientada a Big Data (UNLP). <br>
-                            Profesor en UNLu, ITBA y UNTREF. <br>
-                            Investigador activo en tecnologías descentralizadas y Web3.
-                        </p>
                     </div>
                 </div>
             </div>
@@ -542,38 +943,72 @@
             <div class="row justify-content-center">
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1500">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="../assets/img/team/olivares.jpg" alt="Dr. Julián Olivares" />
-                        <h4>Dr. Julián Olivares</h4>
-                        <p class="text-muted">
-                            Dr. en Historia (UBA). <br>
-                            Becario Doctoral CONICET. <br>
-                            Investigador en UNGS. <br>
-                            Especialista en economía de las criptomonedas, historia del dinero digital y marcos regulatorios de blockchain en América Latina.
-                        </p>
+                        <a href="docentes/olivares/" style="text-decoration:none; color:inherit;">
+                            <img class="mx-auto rounded-circle" src="../assets/img/team/olivares.jpg" alt="Dr. Julián Olivares" />
+                            <h4>Dr. Julián Olivares</h4>
+                            <p class="text-muted">
+                                Dr. en Historia (UBA). Lic. en Historia (UNLu). <br>
+                                Becario Doctoral CONICET (2019-2025) en UNGS. <br>
+                                Maestrando en Análisis y Generación de Información Estadística (UNTREF). <br>
+                                Aporta marco histórico, economía política y manejo riguroso de bases macro internacionales (BM, OIT, UNESCO, INDEC). 20 artículos publicados en revistas científicas.
+                            </p>
+                            <span style="font-size:0.85rem; color:#4C1C7F; font-weight:600;">Ver perfil &rarr;</span>
+                        </a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1500">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="../assets/img/team/prados.jpg" alt="APU Nehuén Prados" />
-                        <h4>APU Nehuén Prados</h4>
-                        <p class="text-muted">
-                            Analista Programador Universitario (UNLu). <br>
-                            Developer, DevOps y arquitecto de sistemas distribuidos. <br>
-                            Especialista en contratos inteligentes, DApps y protocolos Web3. <br>
-                            Experiencia en despliegue de nodos blockchain y ecosistema Ethereum/Solidity.
-                        </p>
+                        <a href="docentes/prados/" style="text-decoration:none; color:inherit;">
+                            <img class="mx-auto rounded-circle" src="../assets/img/team/prados.jpg" alt="APU Nehuén Prados" />
+                            <h4>APU Nehuén Prados</h4>
+                            <p class="text-muted">
+                                Analista Programador Universitario (UNLu). <br>
+                                Developer, DevOps y arquitecto de sistemas distribuidos. <br>
+                                Soluciones end-to-end on-chain y off-chain, con experiencia en la BFA. <br>
+                                Más de una década en el ecosistema cripto. Fundador de Craving (fintech tecnológica).
+                            </p>
+                            <span style="font-size:0.85rem; color:#4C1C7F; font-weight:600;">Ver perfil &rarr;</span>
+                        </a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1500">
                     <div class="team-member">
-                        <img class="mx-auto rounded-circle" src="../assets/img/team/leandro.jpg" alt="Deiller Guevara" />
-                        <h4>Deiller Guevara</h4>
-                        <p class="text-muted">
-                            Analista en Finanzas (UADE). <br>
-                            Operador Bursátil de Derivados certificado NOR XI — A3 Mercados. <br>
-                            Especialista en DeFi, stablecoins, exchanges descentralizados y criptoeconomía. <br>
-                            Formador de profesionales en finanzas descentralizadas y mercados cripto.
-                        </p>
+                        <a href="docentes/guevara/" style="text-decoration:none; color:inherit;">
+                            <img class="mx-auto rounded-circle" src="../assets/img/team/guevara.jpg" alt="Deiller Guevara" />
+                            <h4>Deiller Guevara</h4>
+                            <p class="text-muted">
+                                Operador de Derivados — Programa NOR XI, A3 Mercados. <br>
+                                Especialista en mercado de capitales, DeFi y mecánica de exchanges descentralizados. <br>
+                                Experiencia práctica en market making, gestión de fondos y análisis de procesos. <br>
+                                Formación en Finanzas (UADE) e implementación de sistemas ERP.
+                            </p>
+                            <span style="font-size:0.85rem; color:#4C1C7F; font-weight:600;">Ver perfil &rarr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fila 3: Docentes invitados -->
+            <div class="text-center mt-4">
+                <h3 class="section-heading text-uppercase" style="font-size:1.5rem;">Docentes invitados</h3>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1500">
+                    <div class="team-member">
+                        <a href="docentes/ciro/" style="text-decoration:none; color:inherit;">
+                            <img class="mx-auto rounded-circle" src="../assets/img/team/ciro.jpg" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Ciro+Romero&background=4C1C7F&color=fff&size=400&bold=true&font-size=0.4';" alt="Ciro Edgardo Romero - Docente Invitado" />
+                            <div>
+                                <h4>Ciro E. Romero</h4>
+                                <h5 class="h5" style="color: #6c757d;">(Docente Invitado)</h5>
+                            </div>
+                            <p class="text-muted">
+                                Líder de I+D+i en C&amp;S Informática S.A. <br>
+                                Especialista en IoT (UBA-FIUBA). <br>
+                                Docente en UNQ y Lab. Sistemas Embebidos FIUBA. <br>
+                                Investigador en blockchain + IoT, Zero Knowledge Proof, redes IOTA y nodos distribuidos sobre ESP32.
+                            </p>
+                            <span style="font-size:0.85rem; color:#4C1C7F; font-weight:600;">Ver perfil &rarr;</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -804,6 +1239,574 @@
         </div>
     </section>
 
+<!-- ============================================================ -->
+<!-- SECCIÓN 1: STACK TECNOLÓGICO                               -->
+<!-- ============================================================ -->
+    <section class="page-section bg-light" id="stack-tech" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container">
+            <div class="text-center mb-2">
+                <h2 class="section-heading text-uppercase">Stack tecnológico</h2>
+                <p class="text-muted" style="max-width:600px; margin:0 auto 2.5rem;">Las herramientas que vas a manejar — todas open source o con plan free</p>
+            </div>
+
+            <div class="row g-3 justify-content-center">
+
+                <!-- Solidity -->
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="fade-up" data-aos-delay="0" data-aos-duration="700">
+                    <div class="bc-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-file-contract"></i></div>
+                        <div class="stack-badge-name">Solidity</div>
+                        <div class="stack-badge-tag">Smart contracts</div>
+                    </div>
+                </div>
+
+                <!-- Hardhat -->
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="fade-up" data-aos-delay="50" data-aos-duration="700">
+                    <div class="bc-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-hammer"></i></div>
+                        <div class="stack-badge-name">Hardhat</div>
+                        <div class="stack-badge-tag">Testing &amp; deploy</div>
+                    </div>
+                </div>
+
+                <!-- Foundry -->
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700">
+                    <div class="bc-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-wrench"></i></div>
+                        <div class="stack-badge-name">Foundry</div>
+                        <div class="stack-badge-tag">Toolkit avanzado</div>
+                    </div>
+                </div>
+
+                <!-- Remix -->
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="fade-up" data-aos-delay="150" data-aos-duration="700">
+                    <div class="bc-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-laptop-code"></i></div>
+                        <div class="stack-badge-name">Remix</div>
+                        <div class="stack-badge-tag">IDE online</div>
+                    </div>
+                </div>
+
+                <!-- Ethereum -->
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="fade-up" data-aos-delay="200" data-aos-duration="700">
+                    <div class="bc-card text-center">
+                        <div class="bc-icon-wrap"><i class="fab fa-ethereum"></i></div>
+                        <div class="stack-badge-name">Ethereum</div>
+                        <div class="stack-badge-tag">Layer 1</div>
+                    </div>
+                </div>
+
+                <!-- Polygon -->
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="fade-up" data-aos-delay="250" data-aos-duration="700">
+                    <div class="bc-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-shapes"></i></div>
+                        <div class="stack-badge-name">Polygon</div>
+                        <div class="stack-badge-tag">Layer 2</div>
+                    </div>
+                </div>
+
+                <!-- GCP -->
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="fade-up" data-aos-delay="300" data-aos-duration="700">
+                    <div class="bc-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-cloud"></i></div>
+                        <div class="stack-badge-name">GCP</div>
+                        <div class="stack-badge-tag">Google Cloud free tier</div>
+                    </div>
+                </div>
+
+                <!-- Docker -->
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="fade-up" data-aos-delay="350" data-aos-duration="700">
+                    <div class="bc-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-cube"></i></div>
+                        <div class="stack-badge-name">Docker</div>
+                        <div class="stack-badge-tag">Containers</div>
+                    </div>
+                </div>
+
+                <!-- Terraform -->
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="fade-up" data-aos-delay="400" data-aos-duration="700">
+                    <div class="bc-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-server"></i></div>
+                        <div class="stack-badge-name">Terraform</div>
+                        <div class="stack-badge-tag">IaC</div>
+                    </div>
+                </div>
+
+                <!-- GitHub Actions -->
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="fade-up" data-aos-delay="450" data-aos-duration="700">
+                    <div class="bc-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-code-branch"></i></div>
+                        <div class="stack-badge-name">GitHub Actions</div>
+                        <div class="stack-badge-tag">CI/CD</div>
+                    </div>
+                </div>
+
+                <!-- Node.js + React -->
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="fade-up" data-aos-delay="500" data-aos-duration="700">
+                    <div class="bc-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-code"></i></div>
+                        <div class="stack-badge-name">Node.js + React</div>
+                        <div class="stack-badge-tag">Frontend</div>
+                    </div>
+                </div>
+
+                <!-- ethers.js / web3.js -->
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2" data-aos="fade-up" data-aos-delay="550" data-aos-duration="700">
+                    <div class="bc-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-cubes"></i></div>
+                        <div class="stack-badge-name">ethers.js / web3.js</div>
+                        <div class="stack-badge-tag">Librerías Web3</div>
+                    </div>
+                </div>
+
+            </div><!-- /row -->
+
+            <p class="text-center text-muted mt-4 mb-0" style="font-size:0.88rem;">
+                <i class="fas fa-check-circle me-1" style="color:#198754;"></i>
+                100% open source y multiplataforma (Linux, macOS, Windows). Sin licencias pagas.
+            </p>
+        </div>
+    </section>
+
+<!-- ============================================================ -->
+<!-- SECCIÓN 2: LO QUE VAS A CONSTRUIR                          -->
+<!-- ============================================================ -->
+    <section class="page-section" id="proyectos" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container">
+            <div class="text-center mb-2">
+                <h2 class="section-heading text-uppercase">Lo que vas a construir</h2>
+                <p class="text-muted" style="max-width:640px; margin:0 auto 2.5rem;">Cuatro tipos de proyectos integradores que vas a poder ejecutar al terminar la diplomatura</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+
+                <!-- Proyecto 1: RWA -->
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="0" data-aos-duration="700">
+                    <div class="bc-card proyecto-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-coins"></i></div>
+                        <p class="proyecto-title">DApp de tokenización de activos reales (RWA)</p>
+                        <p class="proyecto-desc">Plataforma para tokenizar inmuebles, activos financieros o productos físicos. Smart contracts que representan participaciones, on-chain registry y dashboard de gestión.</p>
+                        <div>
+                            <span class="stack-label" style="font-size:0.75rem;font-weight:700;color:#6c757d;text-transform:uppercase;letter-spacing:.04em;">Stack:</span>
+                            <span class="stack-pill">Solidity</span>
+                            <span class="stack-pill">ERC-721/3525</span>
+                            <span class="stack-pill">GCP</span>
+                            <span class="stack-pill">React</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2: DeFi -->
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="80" data-aos-duration="700">
+                    <div class="bc-card proyecto-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-chart-line"></i></div>
+                        <p class="proyecto-title">Plataforma DeFi (yield farming / lending)</p>
+                        <p class="proyecto-desc">Protocolo descentralizado para depositar tokens y obtener rendimiento. Liquidity pools, smart contracts auditados y frontend Web3.</p>
+                        <div>
+                            <span class="stack-label" style="font-size:0.75rem;font-weight:700;color:#6c757d;text-transform:uppercase;letter-spacing:.04em;">Stack:</span>
+                            <span class="stack-pill">Solidity</span>
+                            <span class="stack-pill">AMM</span>
+                            <span class="stack-pill">ethers.js</span>
+                            <span class="stack-pill">Hardhat</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3: DAO -->
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="160" data-aos-duration="700">
+                    <div class="bc-card proyecto-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-people-arrows"></i></div>
+                        <p class="proyecto-title">DAO con governance on-chain</p>
+                        <p class="proyecto-desc">Organización autónoma con votación on-chain. Token de governance, propuestas y ejecución automática de decisiones.</p>
+                        <div>
+                            <span class="stack-label" style="font-size:0.75rem;font-weight:700;color:#6c757d;text-transform:uppercase;letter-spacing:.04em;">Stack:</span>
+                            <span class="stack-pill">Solidity</span>
+                            <span class="stack-pill">Governor</span>
+                            <span class="stack-pill">ENS</span>
+                            <span class="stack-pill">GCP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Proyecto 4: SBT / identidad digital -->
+                <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="240" data-aos-duration="700">
+                    <div class="bc-card proyecto-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-id-card"></i></div>
+                        <p class="proyecto-title">Sistema de identidad digital con SBTs</p>
+                        <p class="proyecto-desc">Identidad descentralizada con Soulbound Tokens (no transferibles). Verificación de credenciales, certificados académicos y KYC on-chain.</p>
+                        <div>
+                            <span class="stack-label" style="font-size:0.75rem;font-weight:700;color:#6c757d;text-transform:uppercase;letter-spacing:.04em;">Stack:</span>
+                            <span class="stack-pill">Solidity</span>
+                            <span class="stack-pill">SBT</span>
+                            <span class="stack-pill">IPFS</span>
+                            <span class="stack-pill">Polygon</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /row -->
+
+            <p class="text-center text-muted mt-4 mb-0" style="font-size:0.88rem; max-width:620px; margin-left:auto; margin-right:auto;">
+                <i class="fas fa-briefcase me-1" style="color:var(--brand);"></i>
+                Cada egresado entrega un proyecto integrador propio sobre un caso real de la industria — usable como pieza de portfolio.
+            </p>
+        </div>
+    </section>
+
+<!-- ============================================================ -->
+<!-- SECCIÓN: ROLES LABORALES POST-EGRESO                       -->
+<!-- ============================================================ -->
+    <section class="page-section bg-light" id="roles-laborales" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container">
+            <div class="text-center mb-2">
+                <h2 class="section-heading text-uppercase">¿Para qué te prepara?</h2>
+                <p class="text-muted" style="max-width:680px; margin:0 auto 2.5rem;">Roles concretos del mercado Web3 a los que vas a poder aplicar al terminar — la mayoría con modalidad remota internacional y pago en USD.</p>
+            </div>
+
+            <div class="row g-4 justify-content-center">
+
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="bc-card text-center" style="height:100%;">
+                        <div class="bc-icon-wrap"><i class="fas fa-file-contract"></i></div>
+                        <p class="proyecto-title">Smart Contract / DApp Developer</p>
+                        <p class="proyecto-desc">Diseñá y desplegá contratos inteligentes en Ethereum y Layer 2. Solidity, Hardhat/Foundry, ethers.js, integración con frontends Web3.</p>
+                        <p class="text-muted mb-0" style="font-size:0.82rem;"><i class="fas fa-dollar-sign me-1" style="color:var(--brand);"></i>USD 4.000–8.000/mes remoto</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+                    <div class="bc-card text-center" style="height:100%;">
+                        <div class="bc-icon-wrap"><i class="fas fa-sitemap"></i></div>
+                        <p class="proyecto-title">Blockchain / Solutions Architect</p>
+                        <p class="proyecto-desc">Diseñá arquitecturas descentralizadas end-to-end: nodos, redes Layer 1/Layer 2, integración con sistemas legacy, decisiones tecnológicas estratégicas.</p>
+                        <p class="text-muted mb-0" style="font-size:0.82rem;"><i class="fas fa-dollar-sign me-1" style="color:var(--brand);"></i>USD 6.000–12.000/mes remoto</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
+                    <div class="bc-card text-center" style="height:100%;">
+                        <div class="bc-icon-wrap"><i class="fas fa-chart-pie"></i></div>
+                        <p class="proyecto-title">DeFi Analyst / Tokenomics Designer</p>
+                        <p class="proyecto-desc">Analizá protocolos DeFi, diseñá tokenomics, evaluá liquidez y riesgo on-chain. Combina background financiero con análisis de protocolos.</p>
+                        <p class="text-muted mb-0" style="font-size:0.82rem;"><i class="fas fa-dollar-sign me-1" style="color:var(--brand);"></i>USD 3.500–7.000/mes remoto</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="240">
+                    <div class="bc-card text-center" style="height:100%;">
+                        <div class="bc-icon-wrap"><i class="fas fa-cloud"></i></div>
+                        <p class="proyecto-title">Cloud DevOps con Blockchain</p>
+                        <p class="proyecto-desc">Operá nodos blockchain en AWS/GCP, automatizá despliegues con Terraform, levantá redes privadas y CI/CD para infra Web3 en producción.</p>
+                        <p class="text-muted mb-0" style="font-size:0.82rem;"><i class="fas fa-dollar-sign me-1" style="color:var(--brand);"></i>USD 5.000–10.000/mes remoto</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="320">
+                    <div class="bc-card text-center" style="height:100%;">
+                        <div class="bc-icon-wrap"><i class="fas fa-shield-halved"></i></div>
+                        <p class="proyecto-title">Smart Contract Auditor</p>
+                        <p class="proyecto-desc">Auditá contratos antes de mainnet — uno de los roles mejor pagos del sector. Identificación de vulnerabilidades, análisis estático y dinámico.</p>
+                        <p class="text-muted mb-0" style="font-size:0.82rem;"><i class="fas fa-dollar-sign me-1" style="color:var(--brand);"></i>USD 8.000–15.000/mes remoto</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bc-card text-center" style="height:100%;">
+                        <div class="bc-icon-wrap"><i class="fas fa-rocket"></i></div>
+                        <p class="proyecto-title">Web3 Founder / Builder</p>
+                        <p class="proyecto-desc">Construí tu propio proyecto Web3 — DApp, DAO, protocolo o startup. La diplomatura te deja con MVPs reales y red de contactos para escalar.</p>
+                        <p class="text-muted mb-0" style="font-size:0.82rem;"><i class="fas fa-coins me-1" style="color:var(--brand);"></i>Equity + tokens del proyecto</p>
+                    </div>
+                </div>
+
+            </div><!-- /row -->
+
+            <p class="text-center text-muted mt-4 mb-0" style="font-size:0.88rem; max-width:680px; margin-left:auto; margin-right:auto;">
+                <i class="fas fa-info-circle me-1" style="color:var(--brand);"></i>
+                Rangos salariales orientativos basados en mercado Web3 LATAM/internacional remoto a 2026. Variable según experiencia, stack y empresa.
+            </p>
+        </div>
+    </section>
+
+<!-- ============================================================ -->
+<!-- SECCIÓN: TABLA COMPARATIVA                                  -->
+<!-- ============================================================ -->
+    <section class="page-section" id="comparativa" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container">
+            <div class="text-center mb-2">
+                <h2 class="section-heading text-uppercase">¿En qué se diferencia esta Diplomatura?</h2>
+                <p class="text-muted" style="max-width:680px; margin:0 auto 2.5rem;">Una mirada honesta sobre el mercado de formación blockchain en Argentina y por qué elegimos hacer las cosas distinto.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-11">
+                    <div class="table-responsive">
+                        <table class="table align-middle" style="font-size:0.93rem; border-radius:12px; overflow:hidden; box-shadow:0 4px 18px rgba(76,28,127,0.08);">
+                            <thead>
+                                <tr style="background:linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%); color:#fff;">
+                                    <th style="padding:1rem; min-width:160px;"></th>
+                                    <th style="padding:1rem; text-align:center; background:rgba(255,255,255,0.12);"><i class="fas fa-medal me-1"></i>Diplomatura UNLu<br><span style="font-size:0.78rem; font-weight:400; opacity:0.9;">(Esta propuesta)</span></th>
+                                    <th style="padding:1rem; text-align:center; font-weight:500;">Posgrados privados</th>
+                                    <th style="padding:1rem; text-align:center; font-weight:500;">Bootcamps masivos online</th>
+                                    <th style="padding:1rem; text-align:center; font-weight:500;">Cursos sueltos / YouTube</th>
+                                </tr>
+                            </thead>
+                            <tbody style="background:#fff;">
+                                <tr>
+                                    <td style="font-weight:700; color:var(--brand-dark);">Precio total</td>
+                                    <td style="text-align:center; background:#f7f1fc;"><strong style="color:var(--brand-dark);">$850.000 ARS</strong></td>
+                                    <td style="text-align:center; color:#6c757d;">$2.000.000+ ARS</td>
+                                    <td style="text-align:center; color:#6c757d;">USD 30–80/mes</td>
+                                    <td style="text-align:center; color:#6c757d;">Variable / gratis</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight:700; color:var(--brand-dark);">Título oficial</td>
+                                    <td style="text-align:center; background:#f7f1fc;"><i class="fas fa-check-circle" style="color:#198754;"></i> <strong>Posgrado universitario</strong></td>
+                                    <td style="text-align:center;"><i class="fas fa-check-circle" style="color:#198754;"></i> Posgrado privado</td>
+                                    <td style="text-align:center;"><i class="fas fa-times-circle" style="color:#dc3545;"></i> Solo certificado</td>
+                                    <td style="text-align:center;"><i class="fas fa-times-circle" style="color:#dc3545;"></i> Sin acreditación</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight:700; color:var(--brand-dark);">Universidad pública</td>
+                                    <td style="text-align:center; background:#f7f1fc;"><i class="fas fa-check-circle" style="color:#198754;"></i> <strong>UNLu</strong></td>
+                                    <td style="text-align:center;"><i class="fas fa-times-circle" style="color:#dc3545;"></i> Privada</td>
+                                    <td style="text-align:center;"><i class="fas fa-times-circle" style="color:#dc3545;"></i> Empresa privada</td>
+                                    <td style="text-align:center;">—</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight:700; color:var(--brand-dark);">Tamaño de cohorte</td>
+                                    <td style="text-align:center; background:#f7f1fc;"><strong style="color:var(--brand-dark);">Máx. 30 alumnos</strong></td>
+                                    <td style="text-align:center; color:#6c757d;">50–100</td>
+                                    <td style="text-align:center; color:#6c757d;">500+</td>
+                                    <td style="text-align:center; color:#6c757d;">Sin cohorte</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight:700; color:var(--brand-dark);">Clases en vivo</td>
+                                    <td style="text-align:center; background:#f7f1fc;"><i class="fas fa-check-circle" style="color:#198754;"></i> <strong>Mar y Jue 19-21</strong></td>
+                                    <td style="text-align:center;"><i class="fas fa-check-circle" style="color:#198754;"></i></td>
+                                    <td style="text-align:center; color:#6c757d;">Mayormente grabadas</td>
+                                    <td style="text-align:center;"><i class="fas fa-times-circle" style="color:#dc3545;"></i></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight:700; color:var(--brand-dark);">Proyecto integrador real</td>
+                                    <td style="text-align:center; background:#f7f1fc;"><i class="fas fa-check-circle" style="color:#198754;"></i> <strong>End-to-end</strong></td>
+                                    <td style="text-align:center; color:#6c757d;">Variable</td>
+                                    <td style="text-align:center; color:#6c757d;">Ejercicios sueltos</td>
+                                    <td style="text-align:center;"><i class="fas fa-times-circle" style="color:#dc3545;"></i></td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight:700; color:var(--brand-dark);">Cuerpo docente con industria internacional</td>
+                                    <td style="text-align:center; background:#f7f1fc;"><i class="fas fa-check-circle" style="color:#198754;"></i> <strong>Caylent USA + CONICET</strong></td>
+                                    <td style="text-align:center; color:#6c757d;">Variable</td>
+                                    <td style="text-align:center; color:#6c757d;">Influencers</td>
+                                    <td style="text-align:center; color:#6c757d;">Variable</td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight:700; color:var(--brand-dark);">Feedback directo a tu código</td>
+                                    <td style="text-align:center; background:#f7f1fc;"><i class="fas fa-check-circle" style="color:#198754;"></i> <strong>Sí, todos los entregables</strong></td>
+                                    <td style="text-align:center;"><i class="fas fa-check-circle" style="color:#198754;"></i></td>
+                                    <td style="text-align:center;"><i class="fas fa-times-circle" style="color:#dc3545;"></i> Auto-evaluación</td>
+                                    <td style="text-align:center;"><i class="fas fa-times-circle" style="color:#dc3545;"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-center text-muted mt-4 mb-0" style="font-size:0.88rem; max-width:720px; margin-left:auto; margin-right:auto;">
+                <i class="fas fa-balance-scale me-1" style="color:var(--brand);"></i>
+                Comparación general basada en propuestas públicas del mercado argentino en 2026. Cada formato tiene su lugar: elegimos la combinación universidad pública + cohorte chica + proyecto real porque entendemos que es la mejor relación entre calidad, costo y validez profesional.
+            </p>
+        </div>
+    </section>
+
+<!-- ============================================================ -->
+<!-- SECCIÓN 3: PRE-REQUISITOS CHECKLIST                        -->
+<!-- ============================================================ -->
+    <section class="page-section bg-light" id="prerequisitos-check" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container">
+            <div class="text-center mb-2">
+                <h2 class="section-heading text-uppercase">¿Cumplís con los pre-requisitos?</h2>
+                <p class="text-muted" style="max-width:540px; margin:0 auto 2.5rem;">Si marcás los 5, estás listo para empezar</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8">
+                    <div class="d-flex flex-column gap-3">
+
+                        <div class="prereq-item" data-aos="fade-up" data-aos-delay="0" data-aos-duration="600">
+                            <i class="fas fa-check-circle prereq-check" aria-hidden="true"></i>
+                            <div>
+                                <p class="prereq-title">Título universitario de grado (cualquier orientación)</p>
+                                <p class="prereq-sub">o equivalencia por experiencia profesional</p>
+                            </div>
+                        </div>
+
+                        <div class="prereq-item" data-aos="fade-up" data-aos-delay="60" data-aos-duration="600">
+                            <i class="fas fa-check-circle prereq-check" aria-hidden="true"></i>
+                            <div>
+                                <p class="prereq-title">Conocimientos básicos de programación (Python, JavaScript, Java o similar)</p>
+                                <p class="prereq-sub">no hace falta saber blockchain previamente</p>
+                            </div>
+                        </div>
+
+                        <div class="prereq-item" data-aos="fade-up" data-aos-delay="120" data-aos-duration="600">
+                            <i class="fas fa-check-circle prereq-check" aria-hidden="true"></i>
+                            <div>
+                                <p class="prereq-title">Computadora con 8 GB RAM y conexión estable</p>
+                                <p class="prereq-sub">cualquier laptop moderna alcanza</p>
+                            </div>
+                        </div>
+
+                        <div class="prereq-item" data-aos="fade-up" data-aos-delay="180" data-aos-duration="600">
+                            <i class="fas fa-check-circle prereq-check" aria-hidden="true"></i>
+                            <div>
+                                <p class="prereq-title">Disponibilidad de 8-12 hs semanales</p>
+                                <p class="prereq-sub">durante 4 meses</p>
+                            </div>
+                        </div>
+
+                        <div class="prereq-item" data-aos="fade-up" data-aos-delay="240" data-aos-duration="600">
+                            <i class="fas fa-check-circle prereq-check" aria-hidden="true"></i>
+                            <div>
+                                <p class="prereq-title">Inglés técnico de lectura</p>
+                                <p class="prereq-sub">para documentación; las clases son en español</p>
+                            </div>
+                        </div>
+
+                    </div><!-- /checklist -->
+
+                    <!-- CTA box -->
+                    <div class="prereq-cta-box mt-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="600">
+                        <p class="mb-2 fw-semibold" style="color:var(--brand-dark); font-size:1rem;">
+                            ¿Cumplís con todos? Empezá tu inscripción. &nbsp;|&nbsp; ¿Te falta alguno? Escribinos en la charla informativa.
+                        </p>
+                        <a href="#contact" class="btn btn-dark px-4 py-2 rounded-pill fw-bold">Pre-registro</a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- ============================================================ -->
+<!-- SECCIÓN 4: QUIZ "¿ES PARA VOS?"                            -->
+<!-- ============================================================ -->
+    <section class="page-section" id="quiz" data-aos="fade-up" data-aos-duration="1200">
+        <div class="container">
+            <div class="text-center mb-2">
+                <h2 class="section-heading text-uppercase">¿Es esta diplomatura para vos?</h2>
+                <p class="text-muted" style="max-width:500px; margin:0 auto 2.5rem;">5 preguntas — al terminar te decimos qué tan bien encajás</p>
+            </div>
+
+            <div class="quiz-wrapper" data-aos="fade-up" data-aos-delay="100" data-aos-duration="700">
+
+                <form id="quizForm" novalidate>
+
+                    <div class="quiz-question-block">
+                        <p class="quiz-question">1. ¿Te interesa <strong>construir productos sobre blockchain</strong>, no solo invertir en cripto?</p>
+                        <div class="quiz-radios" role="radiogroup" aria-labelledby="q1-label">
+                            <label><input type="radio" name="q1" value="si" required> Sí</label>
+                            <label><input type="radio" name="q1" value="no"> No</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question-block">
+                        <p class="quiz-question">2. ¿Tenés <strong>conocimientos básicos de programación</strong> o estás dispuesto a aprenderlos?</p>
+                        <div class="quiz-radios" role="radiogroup">
+                            <label><input type="radio" name="q2" value="si" required> Sí</label>
+                            <label><input type="radio" name="q2" value="no"> No</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question-block">
+                        <p class="quiz-question">3. ¿Podés <strong>dedicarle 8-12 hs semanales</strong> durante 4 meses?</p>
+                        <div class="quiz-radios" role="radiogroup">
+                            <label><input type="radio" name="q3" value="si" required> Sí</label>
+                            <label><input type="radio" name="q3" value="no"> No</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question-block">
+                        <p class="quiz-question">4. ¿Tenés <strong>computadora y conexión estable</strong>?</p>
+                        <div class="quiz-radios" role="radiogroup">
+                            <label><input type="radio" name="q4" value="si" required> Sí</label>
+                            <label><input type="radio" name="q4" value="no"> No</label>
+                        </div>
+                    </div>
+
+                    <div class="quiz-question-block">
+                        <p class="quiz-question">5. ¿Te interesa un <strong>título universitario oficial</strong>, no una certificación privada?</p>
+                        <div class="quiz-radios" role="radiogroup">
+                            <label><input type="radio" name="q5" value="si" required> Sí</label>
+                            <label><input type="radio" name="q5" value="no"> No</label>
+                        </div>
+                    </div>
+
+                    <button type="button" id="btn-quiz-submit" onclick="calcularQuiz()">Ver resultado</button>
+
+                </form>
+
+                <div id="quiz-result-box" role="alert" aria-live="polite"></div>
+
+            </div><!-- /quiz-wrapper -->
+        </div>
+    </section>
+
+<!-- Script del quiz (vanilla JS, sin dependencias) -->
+<script>
+(function () {
+    function calcularQuiz() {
+        var nombres = ['q1','q2','q3','q4','q5'];
+        var puntaje = 0;
+        var incompleto = false;
+
+        for (var i = 0; i < nombres.length; i++) {
+            var sel = document.querySelector('input[name="' + nombres[i] + '"]:checked');
+            if (!sel) { incompleto = true; break; }
+            if (sel.value === 'si') puntaje++;
+        }
+
+        var box = document.getElementById('quiz-result-box');
+
+        if (incompleto) {
+            box.className = 'result-yellow';
+            box.innerHTML = '<p class="result-text">Por favor respondé las 5 preguntas antes de ver el resultado.</p>';
+            box.style.display = 'block';
+            return;
+        }
+
+        var html = '<p class="result-score">Tu puntaje: ' + puntaje + '/5</p>';
+
+        if (puntaje === 5) {
+            box.className = 'result-green';
+            html += '<p class="result-text">Esta diplomatura es 100% para vos. Estás listo para inscribirte.</p>';
+            html += '<a href="#contact" class="quiz-cta-btn">Pre-registro</a>';
+        } else if (puntaje === 4) {
+            box.className = 'result-purple';
+            html += '<p class="result-text">Te encaja muy bien. Hablemos en la charla informativa para resolver lo que te falta.</p>';
+            html += '<a href="#contact" class="quiz-cta-btn">Pre-registro</a>';
+        } else if (puntaje === 3) {
+            box.className = 'result-yellow';
+            html += '<p class="result-text">Podría encajarte. Sumate a la charla informativa así te aclaramos dudas.</p>';
+            html += '<a href="#contact" class="quiz-cta-btn">Pre-registro</a>';
+        } else {
+            box.className = 'result-grey';
+            html += '<p class="result-text">Quizás no sea el mejor momento. Si solo te interesa cripto como inversión, mirá un curso de trading. Si querés construir, te esperamos.</p>';
+            html += '<a href="destinatarios/" class="quiz-cta-link">Ver a quién está dirigida la diplomatura</a>';
+        }
+
+        box.innerHTML = html;
+        box.style.display = 'block';
+        box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    /* Exponer globalmente para el onclick inline */
+    window.calcularQuiz = calcularQuiz;
+})();
+</script>
+
 <!-- FAQ -->
     <section class="page-section" id="faq" data-aos="fade-up" data-aos-duration="1500">
         <div class="container">
@@ -817,12 +1820,14 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                                    ¿Necesito conocimientos previos en blockchain?
+                                    ¿Necesito conocimientos previos en blockchain? ¿Hace falta saber programar?
                                 </button>
                             </h2>
                             <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    No. La diplomatura arranca desde los fundamentos. Es ideal para profesionales de tecnología, finanzas o áreas afines que quieran incorporar blockchain a su perfil. Se recomienda tener conocimientos básicos de programación.
+                                    <p class="mb-3">No, no hace falta saber blockchain — la diplomatura arranca desde cero: qué es blockchain, cómo funcionan los smart contracts, qué problema resuelve cada componente y por qué importa.</p>
+                                    <p class="mb-3">Lo que sí recomendamos es tener <strong>conocimientos básicos de programación</strong> (Python, JavaScript, Java o cualquier lenguaje) y manejarte cómodo en una terminal — <strong>no esperamos que sepas Solidity, te lo enseñamos</strong>.</p>
+                                    <p class="mb-0">Si venís de finanzas, infraestructura cloud o sos founder sin código, vas a seguir bien todo el contenido conceptual y los módulos no-dev. Los módulos de desarrollo requieren más esfuerzo, pero la curva es manejable con dedicación.</p>
                                 </div>
                             </div>
                         </div>
@@ -835,7 +1840,9 @@
                             </h2>
                             <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Sí. Las clases son en vivo por videoconferencia los martes y jueves de 19 a 21 hs. Quedan grabadas para quienes no puedan asistir en el momento.
+                                    <p class="mb-3">Sí. Las clases son <strong>en vivo por videoconferencia los martes y jueves de 19 a 21 hs (ARG)</strong>.</p>
+                                    <p class="mb-3">Cada clase queda grabada y disponible <strong>de forma permanente</strong> en el aula virtual para que la revises cuando quieras — útil si trabajás full-time o estás en otra zona horaria.</p>
+                                    <p class="mb-0">Además contás con un canal de consulta permanente (Slack/Discord) con docentes y pares para resolver dudas entre clases — no estás solo entre clase y clase.</p>
                                 </div>
                             </div>
                         </div>
@@ -848,7 +1855,9 @@
                             </h2>
                             <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Diplomatura de Posgrado Universitario en Innovación y Desarrollo de Aplicaciones basadas en Blockchain, emitida por la Universidad Nacional de Luján. Cada curso aprobado otorga además un certificado individual.
+                                    <p class="mb-3">La <strong>Diplomatura de Posgrado Universitario en Innovación y Desarrollo de Aplicaciones basadas en Blockchain</strong>, emitida por la <strong>Universidad Nacional de Luján</strong> — universidad pública nacional con validez oficial en todo el país.</p>
+                                    <p class="mb-3">No es una certificación privada de plataforma: es un título universitario que podés mostrar en tu CV y LinkedIn, y que <strong>sirve como antecedente formal</strong> para futuras maestrías o doctorados.</p>
+                                    <p class="mb-0">Cada uno de los 4 cursos aprobados otorga además un certificado individual de posgrado universitario.</p>
                                 </div>
                             </div>
                         </div>
@@ -861,7 +1870,15 @@
                             </h2>
                             <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    Sí. Cada uno de los 4 cursos de posgrado puede cursarse de forma independiente. Si completás los 4, obtenés la Diplomatura.
+                                    <p class="mb-2">Sí. La diplomatura está compuesta por <strong>4 cursos de posgrado de 40 hs cada uno</strong> que pueden cursarse de forma independiente:</p>
+                                    <ol class="mb-3">
+                                        <li>Fundamentos de Blockchain, Frameworks y Herramientas para la creación de DApps</li>
+                                        <li>Desarrollo de Aplicaciones y DApps Blockchain</li>
+                                        <li>Automatización de Infraestructura y Arquitectura Tecnológica para Blockchain</li>
+                                        <li>Fundamentos Financieros y Blockchain para Finanzas Descentralizadas</li>
+                                    </ol>
+                                    <p class="mb-3">Cada curso individual otorga su propio <strong>certificado de posgrado universitario</strong>. Si completás los 4, obtenés el <strong>título de Diplomatura</strong> completo, que incluye el proyecto integrador end-to-end.</p>
+                                    <p class="mb-0">Si recién arrancás, podés empezar por el Curso 1 (Fundamentos) y decidir después si seguís con los demás — los cursos están diseñados en secuencia pero cada uno cierra por sí solo.</p>
                                 </div>
                             </div>
                         </div>
@@ -874,7 +1891,14 @@
                             </h2>
                             <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    El pago se realiza por transferencia bancaria. Matrícula de $170.000 + 4 cuotas de $170.000 (una por cada curso). Para más detalles, consultá la sección de <a href="aranceles/">Aranceles</a>.
+                                    <p class="mb-2">Tres opciones, todas a través de la UNLu:</p>
+                                    <ol class="mb-3">
+                                        <li><strong>Pago electrónico 24 hs</strong> vía Pago Mis Cuentas (con DNI y clave).</li>
+                                        <li><strong>Cajero automático</strong> — Pago Mis Cuentas → Establecimientos Educativos → "Universidad Nac. Luján".</li>
+                                        <li><strong>Transferencia bancaria</strong> directa con CUIT/CBU de la universidad.</li>
+                                    </ol>
+                                    <p class="mb-3">Estructura: <strong>matrícula de $170.000 + 4 cuotas de $170.000</strong> (una por cada curso). Vencimiento día 15 de cada mes.</p>
+                                    <p class="mb-0">Para datos bancarios, comprobante y resolución oficial, consultá la sección de <a href="aranceles/">Aranceles</a>.</p>
                                 </div>
                             </div>
                         </div>
@@ -887,12 +1911,174 @@
                             </h2>
                             <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    El 7 de mayo de 2026. Completá el formulario de pre-registro y te enviamos el link de acceso.
+                                    <p class="mb-3">El <strong>miércoles 7 de mayo de 2026</strong>, encuentro virtual de aproximadamente <strong>1 hora</strong>.</p>
+                                    <p class="mb-3">El director cuenta el plan de estudios, los proyectos integradores que vas a construir, la salida laboral del sector, y respondemos en vivo todas las dudas.</p>
+                                    <p class="mb-0">Completá el formulario de pre-registro y te enviamos el link de acceso unos días antes.</p>
                                     <div class="mt-3">
                                         <a href="#contact" class="btn btn-dark btn-lg px-4 py-2">
                                             Pre-registro charla informativa
                                         </a>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                    ¿Cuándo empieza la cursada?
+                                </button>
+                            </h2>
+                            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="mb-3">La próxima cohorte arranca en <strong>agosto de 2026</strong>.</p>
+                                    <p class="mb-3">Las inscripciones cierran a fines de julio o cuando se completa el cupo (lo que pase primero — recordá que son <strong>máximo 30 alumnos por cohorte</strong>).</p>
+                                    <p class="mb-0">La forma más segura de no quedarte afuera es <a href="#contact">pre-registrarte</a> a la charla informativa: te avisamos primeros cuando se abre la inscripción formal.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                                    ¿Hay límite de cupos?
+                                </button>
+                            </h2>
+                            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="mb-3">Sí. Trabajamos con cohortes de <strong>máximo 30 alumnos</strong> para mantener una relación cercana entre docentes y estudiantes — los docentes pueden dar feedback real al código y al proyecto integrador de cada alumno, no solo dictar clase magistral.</p>
+                                    <p class="mb-3">Los lugares se asignan <strong>por orden de inscripción</strong> una vez completada la matrícula. Cuando se completa el cupo, el resto pasa a <strong>lista de espera</strong> para la próxima cohorte.</p>
+                                    <p class="mb-0">Para asegurar tu lugar: <a href="#contact">pre-registrate</a> cuanto antes y participá de la charla informativa — los pre-registrados son los primeros en enterarse cuando se abre la inscripción formal.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">
+                                    ¿Necesito una computadora especial? ¿Qué software se usa?
+                                </button>
+                            </h2>
+                            <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="mb-3">No, una notebook común alcanza — i5/Ryzen 5 o superior, 8 GB de RAM y conexión estable a internet.</p>
+                                    <p class="mb-2">Trabajamos con <strong>herramientas open source y servicios cloud free tier</strong> — sin licencias pagas ni hardware especial:</p>
+                                    <ul class="mb-3">
+                                        <li><strong>Solidity, Hardhat, Foundry, Remix</strong> — desarrollo y testing de smart contracts. Remix corre en el navegador; los demás son CLI ligeros.</li>
+                                        <li><strong>Google Cloud Platform (GCP)</strong> — infraestructura cloud descentralizada en plan <strong>free tier</strong> (sin costos para vos durante toda la cursada).</li>
+                                        <li><strong>Node.js, React, ethers.js, web3.js</strong> — frontend y dApps.</li>
+                                        <li><strong>Docker, Terraform, GitHub Actions</strong> — CI/CD e Infraestructura como Código.</li>
+                                    </ul>
+                                    <p class="mb-3">Todo el software es gratuito y multiplataforma (Linux, macOS, Windows).</p>
+                                    <p class="mb-0">Si tu equipo es muy viejo, gran parte del trabajo se puede hacer desde la nube — no estás obligado a instalar todo localmente.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">
+                                    ¿Quiénes son los docentes?
+                                </button>
+                            </h2>
+                            <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="mb-3">Un equipo con trayectoria activa en la industria y la academia.</p>
+                                    <p class="mb-3">La dirección está a cargo del <strong><a href="docentes/petrocelli/">Dr. David Petrocelli</a></strong> (Senior Cloud Architect en Caylent USA, doctor en Ciencias Informáticas UNLP) y la coordinación académica del <strong><a href="docentes/fernandez/">Mg. Juan M. Fernández</a></strong> (Director de LICDIA-UNLu, profesor en UNLu, ITBA y UNTREF).</p>
+                                    <p class="mb-3">Completan el cuerpo docente el <strong><a href="docentes/olivares/">Dr. Julián Olivares</a></strong> (CONICET/UNGS, historia económica y economía política), el <strong><a href="docentes/prados/">APU Nehuén Prados</a></strong> (smart contracts, DApps, sistemas distribuidos, fundador de Craving) y <strong><a href="docentes/guevara/">Deiller Guevara</a></strong> (operador de derivados A3 Mercados Programa NOR XI, especialista en DeFi y market making).</p>
+                                    <p class="mb-3">Como <strong>docente invitado</strong> participa <strong><a href="docentes/ciro/">Ciro E. Romero</a></strong> (Líder de I+D+i en C&amp;S Informática, Especialista en IoT por UBA-FIUBA, docente en UNQ y FIUBA), con foco en blockchain aplicada a IoT, Zero Knowledge Proof y redes descentralizadas tipo IOTA.</p>
+                                    <p class="mb-0">Hacé click en cada nombre para ver el perfil completo, o mirá la <a href="#team">sección Cuerpo docente</a> más arriba.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq11">
+                                    ¿Qué salida laboral tiene?
+                                </button>
+                            </h2>
+                            <div id="faq11" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="mb-3">El sector blockchain en Argentina y Latinoamérica está entre los de <strong>mayor demanda y mejor remuneración</strong> del mercado tech.</p>
+                                    <p class="mb-3">Argentina es uno de los hubs Web3 más relevantes a nivel global — empresas como <strong>Lemon, Belo, Ripio, Buenbit, Decentraland y OpenZeppelin</strong> tienen base local, y muchísimos profesionales argentinos trabajan <strong>en remoto para empresas internacionales</strong> (Coinbase, Aave, Maker, Polygon, etc.) cobrando en USD.</p>
+                                    <p class="mb-3">Tu proyecto integrador es la pieza concreta que te diferencia en una entrevista.</p>
+                                    <p class="mb-2">Roles típicos para egresados de la diplomatura:</p>
+                                    <ul class="mt-2 mb-2">
+                                        <li><strong>Smart Contract / DApp Developer</strong> — Solidity, Ethereum, Layer 2.</li>
+                                        <li><strong>Blockchain Architect</strong> — diseño de arquitecturas descentralizadas.</li>
+                                        <li><strong>DeFi Analyst / Tokenomics Designer</strong> — análisis de protocolos y diseño de tokens.</li>
+                                        <li><strong>Cloud / DevOps con blockchain</strong> — nodos, infraestructura cloud descentralizada.</li>
+                                        <li><strong>Smart Contract Auditor</strong> — auditoría de seguridad.</li>
+                                        <li><strong>Founder / Builder</strong> de proyectos Web3 propios.</li>
+                                    </ul>
+                                    <p class="mb-0">Los rangos salariales del sector son significativamente superiores al promedio del tech tradicional, especialmente en modalidad remota internacional con pago en USD.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq12">
+                                    ¿Cuál es la carga horaria total?
+                                </button>
+                            </h2>
+                            <div id="faq12" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="mb-3">La diplomatura tiene una carga horaria total de <strong>160 horas distribuidas en 4 meses</strong> (4 cursos de 40 hs cada uno).</p>
+                                    <p class="mb-3">Las clases en vivo son los <strong>martes y jueves de 19 a 21 hs</strong> (4 hs semanales en clase). El resto se distribuye en trabajo práctico, lecturas, ejercicios entregables y desarrollo del proyecto integrador.</p>
+                                    <p class="mb-0">Esperá dedicarle entre <strong>8 y 12 hs semanales</strong> en total — un compromiso pensado para que puedas mantener tu trabajo full-time mientras cursás.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq13">
+                                    ¿Hay un trabajo final o proyecto integrador?
+                                </button>
+                            </h2>
+                            <div id="faq13" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="mb-3">Sí, y es uno de los pilares de la diplomatura.</p>
+                                    <p class="mb-3">La cursada cierra con un <strong>proyecto integrador propio aplicado a un caso real de la industria</strong>: construís una solución <em>end-to-end</em> con smart contracts desplegados en testnet (o mainnet), infraestructura cloud levantada, análisis económico/financiero del modelo y documentación técnica completa.</p>
+                                    <p class="mb-3">Lo defendés frente a docentes y compañeros al final, y queda como pieza de portfolio que podés mostrar a empleadores o usar como base de tu propio emprendimiento Web3.</p>
+                                    <p class="mb-0">Mirá la sección <a href="#proyectos">"Lo que vas a construir"</a> para ver ejemplos concretos.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq14">
+                                    ¿Cómo es la evaluación?
+                                </button>
+                            </h2>
+                            <div id="faq14" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="mb-3">La evaluación es <strong>continua y práctica</strong> — no se basa en exámenes finales memorísticos.</p>
+                                    <p class="mb-3">Cada curso tiene entregables concretos: deploy de smart contracts, infraestructura levantada con IaC, análisis financiero ejecutado, defensa de decisiones técnicas. El criterio es el mismo que usa la industria: <em>si lo podés ejecutar y defender, lo aprobás</em>.</p>
+                                    <p class="mb-3">La cursada cierra con la <strong>defensa del proyecto integrador</strong> frente al cuerpo docente.</p>
+                                    <p class="mb-0">Mirá la sección <a href="#proyectos">"Lo que vas a construir"</a> para ver el tipo de entregables que vas a producir.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq15">
+                                    ¿Es necesario un examen de admisión?
+                                </button>
+                            </h2>
+                            <div id="faq15" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p class="mb-2">No, no hay examen de admisión. Para inscribirte solo necesitás cumplir con los requisitos formales de admisión a un posgrado universitario:</p>
+                                    <ul class="mb-3">
+                                        <li><strong>Título de grado</strong> de cualquier orientación, o</li>
+                                        <li><strong>Equivalencia por experiencia profesional</strong> (analizada caso por caso por la dirección académica para perfiles con trayectoria comprobable sin título de grado).</li>
+                                    </ul>
+                                    <p class="mb-3">El proceso es: <strong>pre-registro → charla informativa → inscripción formal → pago de matrícula → arranque en agosto</strong>.</p>
+                                    <p class="mb-0">Detalles completos en la sección <a href="requisitos/">Requisitos</a>.</p>
                                 </div>
                             </div>
                         </div>
@@ -940,17 +2126,54 @@
 
                                     <div class="col-12">
                                         <label for="perfil" class="form-label">Perfil profesional *</label>
-                                        <select class="form-select" id="perfil" name="Perfil profesional" required>
-                                            <option value="" selected disabled>Seleccioná tu perfil</option>
-                                            <option value="Desarrollador / Ingeniero IT">Desarrollador / Ingeniero IT</option>
-                                            <option value="Data / Ciberseguridad">Data / Ciberseguridad</option>
-                                            <option value="Abogado / Contador / Administrador">Abogado / Contador / Administrador</option>
-                                            <option value="Funcionario público">Funcionario público</option>
-                                            <option value="Empresario / Consultor">Empresario / Consultor</option>
-                                            <option value="Estudiante avanzado">Estudiante avanzado</option>
-                                            <option value="Otro">Otro</option>
-                                        </select>
+                                        <div class="d-flex gap-2 flex-wrap align-items-stretch">
+                                            <select class="form-select flex-grow-1" id="perfil" name="Perfil profesional" required style="min-width: 220px;">
+                                                <option value="" selected disabled>Seleccioná tu perfil</option>
+                                                <option value="Desarrollador / Ingeniero IT">Desarrollador / Ingeniero IT</option>
+                                                <option value="Data / Ciberseguridad">Data / Ciberseguridad</option>
+                                                <option value="Finanzas / Economía">Finanzas / Economía</option>
+                                                <option value="Abogado / Contador / Administrador">Abogado / Contador / Administrador</option>
+                                                <option value="Funcionario público">Funcionario público</option>
+                                                <option value="Empresario / Consultor / Emprendedor">Empresario / Consultor / Emprendedor</option>
+                                                <option value="Marketing / Comunicación">Marketing / Comunicación</option>
+                                                <option value="Docente / Investigador">Docente / Investigador</option>
+                                                <option value="Estudiante avanzado">Estudiante avanzado</option>
+                                                <option value="Otro" data-otro="true">Otro</option>
+                                            </select>
+                                            <input type="text" class="form-control flex-grow-1 d-none" id="perfil-otro" placeholder="Especificá tu perfil" maxlength="120" style="min-width: 220px;">
+                                        </div>
                                     </div>
+                                    <script>
+                                        (function () {
+                                            var sel = document.getElementById('perfil');
+                                            var inp = document.getElementById('perfil-otro');
+                                            if (!sel || !inp) return;
+                                            var otroOpt = sel.querySelector('option[data-otro="true"]');
+
+                                            function syncOtroValue() {
+                                                if (sel.value && sel.value.indexOf('Otro') === 0 && otroOpt) {
+                                                    var txt = inp.value.trim();
+                                                    otroOpt.value = txt ? 'Otro: ' + txt : 'Otro';
+                                                    otroOpt.selected = true;
+                                                }
+                                            }
+
+                                            sel.addEventListener('change', function () {
+                                                var isOtro = sel.value && sel.value.indexOf('Otro') === 0;
+                                                if (isOtro) {
+                                                    inp.classList.remove('d-none');
+                                                    inp.required = true;
+                                                    setTimeout(function () { inp.focus(); }, 50);
+                                                } else {
+                                                    inp.classList.add('d-none');
+                                                    inp.required = false;
+                                                    inp.value = '';
+                                                    if (otroOpt) otroOpt.value = 'Otro';
+                                                }
+                                            });
+                                            inp.addEventListener('input', syncOtroValue);
+                                        })();
+                                    </script>
 
                                     <div class="col-12">
                                         <label for="titulo" class="form-label">¿Posee título universitario o terciario? *</label>
@@ -1024,9 +2247,68 @@
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
     <script defer src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     <a href="https://api.whatsapp.com/send?phone=%2B541123953895&text=Hola,%20queria%20información%20sobre%20la%20diplomatura%20en%20Blockchain%20..."
-        class="botonWPP" target="_blank">
+        class="botonWPP" target="_blank" rel="noopener" aria-label="Consultá por WhatsApp sobre la Diplomatura en Blockchain">
         <i class="fab fa-whatsapp"></i>
     </a>
+
+    <!-- Floating CTA — visible after scrolling past hero, only on mobile -->
+    <a href="#contact" id="floatingCTA" aria-label="Pre-registro charla informativa Blockchain" style="display:none;">
+        <i class="fas fa-rocket me-2"></i>Pre-registro charla
+    </a>
+    <style>
+        #floatingCTA {
+            position: fixed;
+            bottom: 1rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1040;
+            background: linear-gradient(135deg, #4C1C7F 0%, #261951 100%);
+            color: #fff;
+            font-weight: 700;
+            padding: 0.85rem 1.5rem;
+            border-radius: 999px;
+            text-decoration: none;
+            box-shadow: 0 10px 24px rgba(76, 28, 127, 0.45);
+            font-size: 0.95rem;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        #floatingCTA.visible {
+            opacity: 1;
+            display: inline-flex !important;
+            align-items: center;
+        }
+        #floatingCTA:hover, #floatingCTA:focus {
+            transform: translateX(-50%) translateY(-2px);
+            color: #fff;
+            box-shadow: 0 14px 30px rgba(76, 28, 127, 0.55);
+        }
+        @media (min-width: 992px) { #floatingCTA { display: none !important; } }
+    </style>
+    <script>
+    (function () {
+        var cta = document.getElementById('floatingCTA');
+        var contact = document.getElementById('contact');
+        if (!cta) return;
+        var threshold = 600;
+        function update() {
+            if (window.innerWidth >= 992) { cta.classList.remove('visible'); return; }
+            var pastHero = window.scrollY > threshold;
+            // hide when contact section is in view
+            var atContact = false;
+            if (contact) {
+                var r = contact.getBoundingClientRect();
+                atContact = r.top < window.innerHeight * 0.7;
+            }
+            if (pastHero && !atContact) cta.classList.add('visible');
+            else cta.classList.remove('visible');
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update);
+        update();
+    })();
+    </script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
