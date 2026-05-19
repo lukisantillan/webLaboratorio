@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5A0016"/>
+      <stop offset="0.55" stop-color="#800020"/>
+      <stop offset="1" stop-color="#3d0010"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.42" r="0.75">
+      <stop offset="0" stop-color="#a01030" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#5A0016" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+
+  <!-- grilla tenue tipo plano de datos -->
+  <g stroke="#ffffff" stroke-opacity="0.05" stroke-width="1">
+    <path d="M0 150H1600M0 300H1600M0 450H1600M0 600H1600M0 750H1600"/>
+    <path d="M200 0V900M400 0V900M600 0V900M800 0V900M1000 0V900M1200 0V900M1400 0V900"/>
+  </g>
+
+  <!-- ejes de un gráfico -->
+  <g stroke="#ffd2dc" stroke-opacity="0.20" stroke-width="2" fill="none">
+    <path d="M210 720 H1390"/>
+    <path d="M210 720 V180"/>
+  </g>
+
+  <!-- curva de tendencia (regresión) -->
+  <path d="M230 660 C 480 600, 620 500, 820 430 S 1180 280, 1370 230"
+        fill="none" stroke="#ffb3c1" stroke-opacity="0.55" stroke-width="4" stroke-linecap="round"/>
+  <!-- banda de confianza -->
+  <path d="M230 700 C 480 640, 620 540, 820 470 S 1180 320, 1370 270
+           L1370 195 C1180 245, 1010 330, 820 395 S 480 560, 230 620 Z"
+        fill="#ffb3c1" fill-opacity="0.07"/>
+
+  <!-- scatter plot (puntos de datos) -->
+  <g fill="#ffd2dc">
+    <circle cx="300" cy="640" r="6" fill-opacity="0.7"/>
+    <circle cx="370" cy="600" r="5" fill-opacity="0.5"/>
+    <circle cx="430" cy="615" r="7" fill-opacity="0.8"/>
+    <circle cx="500" cy="560" r="5" fill-opacity="0.55"/>
+    <circle cx="560" cy="585" r="6" fill-opacity="0.65"/>
+    <circle cx="640" cy="510" r="8" fill-opacity="0.85"/>
+    <circle cx="700" cy="540" r="5" fill-opacity="0.5"/>
+    <circle cx="770" cy="470" r="7" fill-opacity="0.75"/>
+    <circle cx="840" cy="455" r="6" fill-opacity="0.6"/>
+    <circle cx="910" cy="420" r="9" fill-opacity="0.9"/>
+    <circle cx="980" cy="445" r="5" fill-opacity="0.5"/>
+    <circle cx="1050" cy="375" r="7" fill-opacity="0.75"/>
+    <circle cx="1120" cy="350" r="6" fill-opacity="0.65"/>
+    <circle cx="1200" cy="320" r="8" fill-opacity="0.8"/>
+    <circle cx="1280" cy="290" r="5" fill-opacity="0.55"/>
+    <circle cx="1350" cy="255" r="7" fill-opacity="0.7"/>
+  </g>
+
+  <!-- red de nodos de datos (clustering) arriba a la derecha -->
+  <g stroke="#ffb3c1" stroke-opacity="0.22" stroke-width="1.5">
+    <path d="M1180 130 L1280 95 L1360 150 M1280 95 L1300 200 M1180 130 L1300 200 M1360 150 L1300 200"/>
+  </g>
+  <g fill="#ffd2dc" fill-opacity="0.5">
+    <circle cx="1180" cy="130" r="6"/>
+    <circle cx="1280" cy="95" r="8"/>
+    <circle cx="1360" cy="150" r="6"/>
+    <circle cx="1300" cy="200" r="7"/>
+  </g>
+
+  <!-- barras (histograma) abajo izquierda, muy sutil -->
+  <g fill="#ffffff" fill-opacity="0.06">
+    <rect x="250" y="640" width="34" height="80"/>
+    <rect x="296" y="600" width="34" height="120"/>
+    <rect x="342" y="560" width="34" height="160"/>
+    <rect x="388" y="600" width="34" height="120"/>
+    <rect x="434" y="660" width="34" height="60"/>
+  </g>
+</svg>

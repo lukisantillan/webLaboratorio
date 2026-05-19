@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Maestría en Ciencia de Datos - UNLu y FCyT-UADER. Posgrado interinstitucional acreditado por CONEAU con Reconocimiento Oficial y Validez Nacional. Magíster en Ciencia de Datos. Primera cohorte: segundo semestre 2026." />
+    <meta name="author" content="LICDIA - Laboratorio de Investigación en Ciencia de Datos e Inteligencia Artificial - UNLu" />
+    <meta name="keywords" content="maestría, ciencia de datos, posgrado, UNLu, UADER, Magíster, machine learning, aprendizaje automático, análisis de datos, visualización de información, data science, Argentina" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Maestría en Ciencia de Datos - UNLu UADER | Primera Cohorte 2026" />
+    <meta property="og:description" content="Posgrado interinstitucional UNLu-UADER. Acreditada CONEAU, validez nacional. Magíster en Ciencia de Datos. Primera cohorte segundo semestre 2026." />
+    <meta property="og:image" content="https://licdia.unlu.edu.ar/assets/img/og-blockchain.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://licdia.unlu.edu.ar/maestria-ciencia-datos/" />
+    <meta property="og:locale" content="es_AR" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Maestría en Ciencia de Datos - UNLu UADER" />
+    <meta name="twitter:description" content="Posgrado público interinstitucional en Ciencia de Datos. Acreditada CONEAU, validez nacional." />
+    <meta name="twitter:image" content="https://licdia.unlu.edu.ar/assets/img/og-blockchain.jpg" />
+
+    <link rel="canonical" href="https://licdia.unlu.edu.ar/maestria-ciencia-datos/" />
+
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type":"Question","name":"¿Qué título otorga la Maestría?","acceptedAnswer":{"@type":"Answer","text":"El título de Magíster en Ciencia de Datos, con Reconocimiento Oficial y Validez Nacional otorgado mediante la Disposición SSPU N° 490/25. Es una propuesta interinstitucional entre la Universidad Nacional de Luján (UNLu) y la Facultad de Ciencia y Tecnología de la Universidad Autónoma de Entre Ríos (FCyT-UADER), acreditada favorablemente por CONEAU (Acta 621, 25/11/2024)."}},
+        {"@type":"Question","name":"¿Cuál es la modalidad y duración?","acceptedAnswer":{"@type":"Answer","text":"La Maestría es presencial, con régimen semestral y una duración de 2 años. La estructura es de 8 cursos obligatorios + 2 optativos + Tesis, con 776 horas totales. Cada curso formal se dicta en 2 clases semanales de 4 horas; el 75% de la carga es presencial y el 25% de estudio autónomo."}},
+        {"@type":"Question","name":"¿Cuándo abre la primera cohorte?","acceptedAnswer":{"@type":"Answer","text":"La primera cohorte abre en el segundo semestre de 2026. La inscripción es del 1 de julio al 15 de agosto de 2026, la revisión y admisión del 16 al 23 de agosto, los cursos nivelatorios del 25 de agosto al 19 de septiembre, y el Curso 1 (Técnicas de Análisis para Ciencia de Datos) inicia el 22 de septiembre de 2026."}},
+        {"@type":"Question","name":"¿Cuáles son los requisitos de ingreso?","acceptedAnswer":{"@type":"Answer","text":"Se requiere título de grado universitario. La Comisión Académica evalúa los requisitos de ingreso durante el período de revisión y admisión. La apertura de la cohorte requiere un mínimo de 20 inscriptos."}},
+        {"@type":"Question","name":"¿Cuánto cuesta? ¿Hay becas?","acceptedAnswer":{"@type":"Answer","text":"Estructura arancelaria: matrícula de inscripción de $400.000, 18 cuotas mensuales de $350.000 y un derecho de defensa de tesis de $400.000, con un total de programa de $7.100.000. Existe una beca automática del 50% para docentes, nodocentes y graduados de la UNLu (total $3.550.000). El total del programa es una fracción del costo de la oferta privada (que va de $9.000.000 a $22.000.000)."}},
+        {"@type":"Question","name":"¿Puedo cursar materias sueltas sin inscribirme al programa completo?","acceptedAnswer":{"@type":"Answer","text":"Sí. Los cursos pueden cursarse de manera individual, sin inscripción al programa completo, por profesionales que los requieran en el marco de planes doctorales o maestrías semi-estructuradas que los reconozcan como créditos académicos. El arancel para cursantes externos equivale a 2 cuotas mensuales por curso, con el mismo beneficio del 50% para la comunidad UNLu."}},
+        {"@type":"Question","name":"¿Quiénes dictan la Maestría?","acceptedAnswer":{"@type":"Answer","text":"El plantel docente fue evaluado y validado durante el proceso de acreditación ante CONEAU. Los responsables de los 8 cursos formales son docentes de UNLu y UADER con trayectoria académica y profesional en ciencia de datos, estadística, aprendizaje automático y áreas afines."}}
+      ]
+    }
+    </script>
+
+    <!-- Course Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Maestría en Ciencia de Datos",
+      "description": "Posgrado interinstitucional UNLu-UADER en Ciencia de Datos. Magíster en Ciencia de Datos. 8 cursos obligatorios + 2 optativos + Tesis, 776 hs totales. Modalidad presencial. Primera cohorte segundo semestre 2026.",
+      "provider": {
+        "@type": "EducationalOrganization",
+        "name": "Universidad Nacional de Luján",
+        "sameAs": "https://www.unlu.edu.ar/"
+      },
+      "educationalLevel": "Posgrado - Maestría",
+      "inLanguage": "es-AR",
+      "courseMode": "onsite",
+      "url": "https://licdia.unlu.edu.ar/maestria-ciencia-datos/",
+      "image": "https://licdia.unlu.edu.ar/assets/img/og-blockchain.jpg",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "onsite",
+        "startDate": "2026-09-22",
+        "courseWorkload": "PT776H"
+      }
+    }
+    </script>
+
+    <title>Maestría en Ciencia de Datos - UNLu UADER | LICDIA | Primera Cohorte 2026</title>
+    <link rel="icon" type="image/x-icon" href="../assets/img/logo.ico" />
+    <script defer src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="../css/mcd-styles.css" rel="stylesheet" />
+    <link href="../css/mcd-style2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap" rel="stylesheet">
+    <style>
+        body h1.masthead-heading,
+        body h2.section-heading,
+        body .card-t,
+        body #cta-inscripcion h2,
+        body h2.display-5 {
+            font-family: 'Poppins', sans-serif !important;
+            font-weight: 700 !important;
+        }
+        body .alert a.text-white { color: #ffffff !important; }
+    </style>
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand efect" href="#page-top"><img src="../assets/img/logo.ico" alt="LICDIA" /></a>
+            <a class="navbar-brand efect" href="#page-top"><img src="../assets/img/depto.ico" alt="Departamento" /></a>
+            <a class="navbar-brand efect" href="#page-top"><img src="../assets/img/unlu.ico" alt="UNLu" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#masthead">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#informacionPlan">Plan de estudios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="plan-de-estudios/#cronograma">Cronograma</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Cuerpo docente</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#por-que-elegirnos">Por qué elegirnos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="aranceles/">Aranceles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Registro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../">LICDIA</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="backgroundhead fondoMcd" id="masthead" data-aos="flip-up" data-aos-duration="1500" onces="true">
+        <div class="container">
+            <h1 class="masthead-heading">Maestría en Ciencia de Datos</h1>
+            <div class="masthead-subheading pb-3">
+                <div class="masthead-subheading pb-2">Universidad Nacional de Luján · FCyT — UADER</div>
+            </div>
+            <a class="btn btn-primary btn-xl text-uppercase" href="#contact" id="buttonInfo">Quiero más información</a>
+        </div>
+    </header>
+
+    <article id="containerInfo" class="border-bottom border-dark" data-aos="flip-up" data-aos-duration="1500">
+        <div class="container">
+            <div class="row align-items-start p-3 p-md-5 justify-content-center">
+                <div class="col-12 col-md-4">
+                    <p class="mb-2"><span class="fw-semibold text-uppercase">Modalidad:</span> Presencial</p>
+                    <p class="mb-0"><span class="fw-semibold text-uppercase">Estado:</span> Próximamente — Dejá tus datos y te notificamos cuando abra la inscripción</p>
+                </div>
+                <div class="col-12 col-md-4">
+                    <p class="mb-2"><span class="fw-semibold text-uppercase">Inicio cursada:</span> 22 de septiembre de 2026</p>
+                    <p class="mb-0"><span class="fw-semibold text-uppercase">Duración:</span> 2 años (régimen semestral)</p>
+                </div>
+                <div class="col-12 col-md-4 d-flex flex-column gap-2">
+                    <div>
+                        <p class="mb-2"><span class="fw-semibold text-uppercase">Inscripción:</span> 1 de julio al 15 de agosto de 2026</p>
+                        <div class="mb-2">
+                            <a href="#contact" class="btn btn-dark px-3 py-2">Dejá tus datos</a>
+                        </div>
+                        <p class="mb-0"><span class="fw-semibold text-uppercase">Tipo de título:</span> Magíster en Ciencia de Datos (validez nacional)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <section class="container my-3" id="lic-ia">
+        <div class="row g-4 justify-content-center">
+            <div class="col-6 col-md-4 col-lg zoom-hover">
+                <div class="tile"><span class="rule rule-top"></span>
+                    <h3 class="h4 fw-semibold my-3 mb-3"><a href="plan-de-estudios/">Plan de estudios</a></h3>
+                    <span class="rule rule-bottom"></span></div>
+            </div>
+            <div class="col-6 col-md-4 col-lg zoom-hover">
+                <div class="tile"><span class="rule rule-top"></span>
+                    <h3 class="h4 fw-semibold my-3 mb-3"><a href="destinatarios/">Destinatarios</a></h3>
+                    <span class="rule rule-bottom"></span></div>
+            </div>
+            <div class="col-6 col-md-4 col-lg zoom-hover">
+                <div class="tile"><span class="rule rule-top"></span>
+                    <h3 class="h4 fw-semibold my-3 mb-3"><a href="requisitos/">Requisitos</a></h3>
+                    <span class="rule rule-bottom"></span></div>
+            </div>
+            <div class="col-6 col-md-4 col-lg zoom-hover">
+                <div class="tile"><span class="rule rule-top"></span>
+                    <h3 class="h4 fw-semibold my-3 mb-3"><a href="enfoque/">Enfoque</a></h3>
+                    <span class="rule rule-bottom"></span></div>
+            </div>
+            <div class="col-6 col-md-4 col-lg zoom-hover">
+                <div class="tile"><span class="rule rule-top"></span>
+                    <h3 class="h4 fw-semibold my-3 mb-3"><a href="aranceles/">Aranceles</a></h3>
+                    <span class="rule rule-bottom"></span></div>
+            </div>
+            <div class="col-6 col-md-4 col-lg zoom-hover">
+                <div class="tile"><span class="rule rule-top"></span>
+                    <h3 class="h4 fw-semibold my-3 mb-3"><a href="inscripcion-maestria-ciencia-datos/">¿Cómo me inscribo?</a></h3>
+                    <span class="rule rule-bottom"></span></div>
+            </div>
+        </div>
+    </section>
+
+    <article id="cta-inscripcion" class="py-5 bg-light" data-aos="fade-right" data-aos-duration="1500">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-12 col-lg-6">
+                    <h2 class="display-5 display-md-4 fw-bold m-0 d-flex align-items-center">
+                        Sé parte de la primera cohorte <span class="ms-3" aria-hidden="true">→</span>
+                    </h2>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <p class="fw-semibold mb-3">
+                        Dejá tus datos y te avisamos en cuanto se abra la inscripción a la primera cohorte de la
+                        Maestría en Ciencia de Datos UNLu — UADER.
+                    </p>
+                    <a href="#contact" rel="noopener" class="btn btn-primary px-4 py-2">Quiero que me avisen</a>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <div class="container mt-5 mb-5" id="informacion">
+        <div class="row justify-content-center">
+            <h2 class="card-t card-title">Información</h2>
+            <hr>
+            <div class="col-12 col-lg-10 mt-4">
+                <p>
+                    La <strong>Maestría en Ciencia de Datos</strong> es una propuesta de posgrado interinstitucional
+                    entre la <strong>Universidad Nacional de Luján (UNLu)</strong> y la
+                    <strong>Facultad de Ciencia y Tecnología de la Universidad Autónoma de Entre Ríos (FCyT — UADER)</strong>.
+                    Fue concebida para responder a una demanda creciente y sostenida de profesionales con formación
+                    avanzada en el análisis, procesamiento e interpretación de datos en contextos organizacionales complejos.
+                </p>
+                <p>
+                    La carrera fue aprobada en 2023, acreditada favorablemente por CONEAU en noviembre de 2024 y obtuvo
+                    su Reconocimiento Oficial y Validez Nacional mediante la Disposición SSPU N° 490/25. Es la única
+                    maestría pública en Ciencia de Datos del corredor que vincula el conurbano bonaerense con el litoral
+                    mesopotámico.
+                </p>
+                <p>
+                    El plan de estudios combina fundamentos teóricos sólidos con una fuerte orientación aplicada,
+                    cubriendo las áreas de mayor demanda del mercado laboral: análisis de datos, aprendizaje automático,
+                    visualización de información y aspectos legales y éticos del uso de la información.
+                </p>
+                <h4 class="fw-bold mt-4">Objetivos</h4>
+                <p>Formar profesionales capaces de diseñar, ejecutar e interpretar soluciones basadas en datos,
+                    integrando estadística, aprendizaje automático y comunicación de resultados, con criterio ético y
+                    legal sobre el uso de la información.</p>
+                <div class="row g-3 mb-3">
+                    <div class="col-12 col-md-4 flotar">
+                        <div class="p-3 border rounded-3 h-100">
+                            <div class="fs-3">📊</div>
+                            <h4 class="h6 mt-2">Analizar</h4>
+                            <p class="mb-0 small">Técnicas estadísticas y de análisis para extraer conocimiento de datos
+                                reales en contextos organizacionales.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 flotar">
+                        <div class="p-3 border rounded-3 h-100">
+                            <div class="fs-3">🤖</div>
+                            <h4 class="h6 mt-2">Modelar</h4>
+                            <p class="mb-0 small">Aprendizaje automático aplicado: construcción, evaluación y puesta en
+                                producción de modelos predictivos.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 flotar">
+                        <div class="p-3 border rounded-3 h-100">
+                            <div class="fs-3">📈</div>
+                            <h4 class="h6 mt-2">Comunicar</h4>
+                            <p class="mb-0 small">Visualización de información y comunicación de resultados con criterio
+                                ético y legal sobre el uso de los datos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="container my-4" data-aos="fade-up" data-aos-duration="1000">
+        <div class="alert text-center py-3" style="background: linear-gradient(to right, #800020, #5A0016); border: none; border-radius: 10px;">
+            <span class="text-white fw-bold fs-5">
+                <i class="fas fa-bell me-2"></i>Primera cohorte: segundo semestre 2026
+                <span class="mx-2">|</span>
+                <a href="#contact" class="text-white text-decoration-underline">Dejá tus datos y te avisamos cuando abra la inscripción <i class="fas fa-arrow-right ms-1"></i></a>
+            </span>
+        </div>
+    </div>
+
+    <div class="icons mb-5">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-6 col-md-3" data-aos="fade-right" data-aos-duration="1500">
+                    <i class="fa fa-flag-checkered fa-3x" aria-hidden="true" style="color:#800020;"></i>
+                    <h3 class="mt-4">Inicio cursada</h3>
+                    <p>22 de septiembre 2026</p>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="1500">
+                    <i class="fa fa-chalkboard-teacher fa-3x" style="color:#800020;"></i>
+                    <h3 class="mt-4">Modalidad</h3>
+                    <p>Presencial</p>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-down" data-aos-duration="1500">
+                    <i class="fas fa-graduation-cap fa-3x" style="color:#800020;"></i>
+                    <h3 class="mt-4">Título</h3>
+                    <p>Magíster en Ciencia de Datos</p>
+                </div>
+                <div class="col-6 col-md-3" data-aos="fade-left" data-aos-duration="1500">
+                    <i class="fa fa-calendar fa-3x" style="color:#800020;"></i>
+                    <h3 class="mt-4">Duración</h3>
+                    <p>2 años · 776 hs</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="bordefino"></div>
+
+    <article id="informacionPlan">
+        <div class="container mt-5 mb-5">
+            <h2 class="card-t card-title">Plan de estudios</h2>
+            <hr>
+            <p class="text-center text-muted mb-4">8 cursos obligatorios + 2 optativos + Tesis · 776 horas totales ·
+                Régimen semestral · Modalidad presencial</p>
+
+            <div class="full-bleed my-2">
+                <div class="row g-0 justify-content-center">
+                    <div class="col-12 col-lg-10 px-0">
+                        <div class="card border-0 rounded-0 shadow-sm">
+                            <div class="card-body p-3 p-md-4">
+                                <p class="mb-4">El plan de estudios se organiza en <strong>8 cursos formales</strong>
+                                    cuyos responsables fueron definidos y validados durante el proceso de acreditación
+                                    ante CONEAU. Para la primera cohorte se dictan los dos primeros cursos en el segundo
+                                    semestre de 2026.</p>
+
+                                <div id="accordionPlan">
+                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="80">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#planC1" aria-expanded="true" aria-controls="planC1">
+                                                    <span class="plan-icon-wrap" aria-hidden="true">1</span>
+                                                    Técnicas de Análisis para Ciencia de Datos · 64 hs
+                                                </button>
+                                            </h2>
+                                            <div id="planC1" class="accordion-collapse collapse show">
+                                                <div class="accordion-body">
+                                                    <p>Fundamentos estadísticos y técnicas de análisis exploratorio y
+                                                        descriptivo de datos. Responsable: <strong>Enrique Álvarez</strong>
+                                                        (UNLu). Primer curso de la cohorte 2026 — inicia el 22 de septiembre.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="120">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#planC2" aria-expanded="false" aria-controls="planC2">
+                                                    <span class="plan-icon-wrap" aria-hidden="true">2</span>
+                                                    Fundamentos de Ciencia de Datos · 64 hs
+                                                </button>
+                                            </h2>
+                                            <div id="planC2" class="accordion-collapse collapse">
+                                                <div class="accordion-body">
+                                                    <p>Conceptos centrales, ciclo de vida del dato y metodología de
+                                                        proyectos de ciencia de datos. Responsable:
+                                                        <strong>Santiago Banchero</strong> (UNLu). Segundo curso de la
+                                                        cohorte 2026 — del 10 de noviembre al 19 de diciembre.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="160">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#planC3" aria-expanded="false" aria-controls="planC3">
+                                                    <span class="plan-icon-wrap" aria-hidden="true">3</span>
+                                                    Aprendizaje Automático · 96 hs
+                                                </button>
+                                            </h2>
+                                            <div id="planC3" class="accordion-collapse collapse">
+                                                <div class="accordion-body">
+                                                    <p>Modelos supervisados y no supervisados, evaluación y puesta en
+                                                        producción. Responsable: <strong>Oscar García</strong> (UNLu).</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="200">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#planC4" aria-expanded="false" aria-controls="planC4">
+                                                    <span class="plan-icon-wrap" aria-hidden="true">4</span>
+                                                    Visualización de Información · 64 hs
+                                                </button>
+                                            </h2>
+                                            <div id="planC4" class="accordion-collapse collapse">
+                                                <div class="accordion-body">
+                                                    <p>Principios y técnicas de visualización para la comunicación
+                                                        efectiva de datos. Responsable: <strong>Roxana Ramírez</strong> (UADER).</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="240">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#planC5" aria-expanded="false" aria-controls="planC5">
+                                                    <span class="plan-icon-wrap" aria-hidden="true">5</span>
+                                                    Ciencia de Datos Aplicada I · 64 hs
+                                                </button>
+                                            </h2>
+                                            <div id="planC5" class="accordion-collapse collapse">
+                                                <div class="accordion-body">
+                                                    <p>Resolución de problemas reales con datos en dominios concretos.
+                                                        Responsable: <strong>Rosana Matuk</strong> (UNLu).</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="280">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#planC6" aria-expanded="false" aria-controls="planC6">
+                                                    <span class="plan-icon-wrap" aria-hidden="true">6</span>
+                                                    Ciencia de Datos Aplicada II · 64 hs
+                                                </button>
+                                            </h2>
+                                            <div id="planC6" class="accordion-collapse collapse">
+                                                <div class="accordion-body">
+                                                    <p>Profundización en proyectos aplicados de mayor complejidad.
+                                                        Responsable: <strong>Juan Manuel Fernández</strong> (UNLu).</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="320">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#planC7" aria-expanded="false" aria-controls="planC7">
+                                                    <span class="plan-icon-wrap" aria-hidden="true">7</span>
+                                                    Aspectos Legales y Éticos del Uso de la Información · 32 hs
+                                                </button>
+                                            </h2>
+                                            <div id="planC7" class="accordion-collapse collapse">
+                                                <div class="accordion-body">
+                                                    <p>Marco legal, ético y de protección de datos en proyectos de ciencia
+                                                        de datos. Responsable: <strong>Alejandro Trombert</strong> (UADER).</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="360">
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                                    data-bs-target="#planC8" aria-expanded="false" aria-controls="planC8">
+                                                    <span class="plan-icon-wrap" aria-hidden="true">8</span>
+                                                    Taller de Formulación de Tesis · 32 hs
+                                                </button>
+                                            </h2>
+                                            <div id="planC8" class="accordion-collapse collapse">
+                                                <div class="accordion-body">
+                                                    <p>Acompañamiento metodológico para la formulación del plan de tesis.
+                                                        Responsable: <strong>Fernando Bordignon</strong> (UNLu).</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="text-center mt-4">
+                                    <a href="plan-de-estudios/#cronograma" class="btn btn-outline-dark btn-lg px-4 py-2">
+                                        <i class="far fa-calendar-alt me-2"></i>Ver cronograma de la primera cohorte
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <section class="page-section bg-light" id="team">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Cuerpo docente</h2>
+                <h3 class="section-subheading text-muted">Plantel validado en el proceso de acreditación ante CONEAU</h3>
+            </div>
+            <hr>
+            <div class="row g-4 justify-content-center">
+                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                    <a href="docentes/alvarez/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
+                    <div class="docente-card">
+                        <img src="../assets/img/mcd-docentes/enrique-alvarez.jpg" alt="Lic. Enrique Álvarez" loading="lazy" />
+                        <div class="docente-body">
+                            <div class="docente-nombre">Lic. Enrique Álvarez</div>
+                            <div class="docente-curso">Matemática aplicada y estadística</div>
+                            <span class="docente-inst">UNLu</span>
+                            <span class="docente-link">Ver perfil <i class="fas fa-arrow-right ms-1"></i></span>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                    <a href="docentes/angelini/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
+                    <div class="docente-card">
+                        <img src="../assets/img/mcd-docentes/marcos-angelini.jpg" alt="Dr. Marcos Angelini" loading="lazy" />
+                        <div class="docente-body">
+                            <div class="docente-nombre">Dr. Marcos Angelini</div>
+                            <div class="docente-curso">Modelado de datos y análisis geoespacial</div>
+                            <span class="docente-inst">UNLu</span>
+                            <span class="docente-link">Ver perfil <i class="fas fa-arrow-right ms-1"></i></span>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                    <a href="docentes/banchero/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
+                    <div class="docente-card">
+                        <img src="../assets/img/mcd-docentes/santiago-banchero.jpg" alt="Lic. Santiago Banchero" loading="lazy" />
+                        <div class="docente-body">
+                            <div class="docente-nombre">Lic. Santiago Banchero</div>
+                            <div class="docente-curso">Teledetección y ciencia de datos</div>
+                            <span class="docente-inst">UNLu</span>
+                            <span class="docente-link">Ver perfil <i class="fas fa-arrow-right ms-1"></i></span>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                    <a href="docentes/bordignon/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
+                    <div class="docente-card">
+                        <img src="../assets/img/mcd-docentes/fernando-bordignon.jpg" alt="Dr. Fernando Bordignon" loading="lazy" />
+                        <div class="docente-body">
+                            <div class="docente-nombre">Dr. Fernando Bordignon</div>
+                            <div class="docente-curso">Tecnologías digitales y metodología</div>
+                            <span class="docente-inst">UNLu</span>
+                            <span class="docente-link">Ver perfil <i class="fas fa-arrow-right ms-1"></i></span>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                    <a href="docentes/cherencio/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
+                    <div class="docente-card">
+                        <img src="../assets/img/mcd-docentes/guillermo-cherencio.jpg" alt="Mg. Guillermo Cherencio" loading="lazy" />
+                        <div class="docente-body">
+                            <div class="docente-nombre">Mg. Guillermo Cherencio</div>
+                            <div class="docente-curso">Bases de datos e ingeniería de datos</div>
+                            <span class="docente-inst">UNLu</span>
+                            <span class="docente-link">Ver perfil <i class="fas fa-arrow-right ms-1"></i></span>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                    <a href="docentes/fernandez/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
+                    <div class="docente-card">
+                        <img src="../assets/img/mcd-docentes/juan-manuel-fernandez.jpg" alt="Mg. Juan Manuel Fernández" loading="lazy" />
+                        <div class="docente-body">
+                            <div class="docente-nombre">Mg. Juan Manuel Fernández</div>
+                            <div class="docente-curso">Big data, NLP y aprendizaje automático</div>
+                            <span class="docente-inst">UNLu</span>
+                            <span class="docente-link">Ver perfil <i class="fas fa-arrow-right ms-1"></i></span>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                    <a href="docentes/matuk/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
+                    <div class="docente-card">
+                        <img src="../assets/img/mcd-docentes/rosana-matuk.jpg" alt="Dra. Rosana Matuk Herrera" loading="lazy" />
+                        <div class="docente-body">
+                            <div class="docente-nombre">Dra. Rosana Matuk Herrera</div>
+                            <div class="docente-curso">Redes neuronales y machine learning</div>
+                            <span class="docente-inst">UNLu</span>
+                            <span class="docente-link">Ver perfil <i class="fas fa-arrow-right ms-1"></i></span>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                    <a href="docentes/petrocelli/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
+                    <div class="docente-card">
+                        <img src="../assets/img/mcd-docentes/david-petrocelli.jpg" alt="Dr. David Petrocelli" loading="lazy" />
+                        <div class="docente-body">
+                            <div class="docente-nombre">Dr. David Petrocelli</div>
+                            <div class="docente-curso">Cómputo de alto desempeño y arquitectura cloud</div>
+                            <span class="docente-inst">UNLu</span>
+                            <span class="docente-link">Ver perfil <i class="fas fa-arrow-right ms-1"></i></span>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                    <a href="docentes/sione/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
+                    <div class="docente-card">
+                        <img src="../assets/img/mcd-docentes/walter-sione.jpg" alt="Dr. Walter Sione" loading="lazy" />
+                        <div class="docente-body">
+                            <div class="docente-nombre">Dr. Walter Sione</div>
+                            <div class="docente-curso">Teledetección y datos ambientales</div>
+                            <span class="docente-inst">UADER</span>
+                            <span class="docente-link">Ver perfil <i class="fas fa-arrow-right ms-1"></i></span>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                    <a href="docentes/tolosa/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
+                    <div class="docente-card">
+                        <img src="../assets/img/mcd-docentes/gabriel-tolosa.jpg" alt="Dr. Gabriel Tolosa" loading="lazy" />
+                        <div class="docente-body">
+                            <div class="docente-nombre">Dr. Gabriel Tolosa</div>
+                            <div class="docente-curso">Recuperación de información y sistemas</div>
+                            <span class="docente-inst">UNLu</span>
+                            <span class="docente-link">Ver perfil <i class="fas fa-arrow-right ms-1"></i></span>
+                        </div>
+                    </div>
+                </a>
+                </div>
+            </div>
+            <p class="text-center text-muted small mt-4 mb-0">El plantel listado fue validado en el proceso de
+                acreditación ante CONEAU. La Dirección de la Maestría confirma la disponibilidad de cada responsable
+                de curso antes del inicio de la inscripción; la composición puede ajustarse entre la acreditación y el
+                inicio efectivo del dictado.</p>
+        </div>
+    </section>
+
+    <section class="page-section bg-light" id="por-que-elegirnos" data-aos="fade-up" data-aos-duration="1500">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">¿Por qué elegirnos?</h2>
+                <h3 class="section-subheading text-muted">Una maestría pública, acreditada y orientada a la práctica</h3>
+            </div>
+            <hr>
+            <div class="row g-4 justify-content-center mt-2">
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+                    <div class="bc-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-landmark"></i></div>
+                        <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Título oficial con validez nacional</h4>
+                        <p class="mb-0 small text-muted">Magíster en Ciencia de Datos con Reconocimiento Oficial
+                            (Disposición SSPU N° 490/25) y acreditación favorable de CONEAU.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
+                    <div class="bc-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-university"></i></div>
+                        <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Propuesta interinstitucional</h4>
+                        <p class="mb-0 small text-muted">Doble respaldo académico de la UNLu y la Facultad de
+                            Ciencia y Tecnología de la UADER, con un plantel diverso y federal.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
+                    <div class="bc-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-hand-holding-usd"></i></div>
+                        <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Accesible y pública</h4>
+                        <p class="mb-0 small text-muted">Aranceles de gestión estatal, con 50&nbsp;% de descuento
+                            para docentes, nodocentes y graduados de la UNLu.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bc-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-laptop-code"></i></div>
+                        <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Orientación aplicada</h4>
+                        <p class="mb-0 small text-muted">Fundamentos teóricos sólidos combinados con práctica real:
+                            análisis, aprendizaje automático y visualización de datos.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="240">
+                    <div class="bc-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Plantel docente validado</h4>
+                        <p class="mb-0 small text-muted">Profesores e investigadores de UNLu y UADER, evaluados
+                            durante el proceso de acreditación ante CONEAU.</p>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="280">
+                    <div class="bc-card text-center">
+                        <div class="bc-icon-wrap"><i class="fas fa-cubes"></i></div>
+                        <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Cursos individuales</h4>
+                        <p class="mb-0 small text-muted">Posibilidad de cursar materias sueltas como créditos para
+                            planes doctorales o maestrías semi-estructuradas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section" id="faq" data-aos="fade-up" data-aos-duration="1500">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Preguntas Frecuentes</h2>
+            </div>
+            <hr>
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-9">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    ¿Qué título otorga la Maestría?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Título de <strong>Magíster en Ciencia de Datos</strong>, con
+                                    Reconocimiento Oficial y Validez Nacional (Disposición SSPU N° 490/25). Propuesta
+                                    interinstitucional UNLu — FCyT/UADER, acreditada favorablemente por CONEAU
+                                    (Acta 621, 25/11/2024).</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    ¿Cuál es la modalidad y la duración?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Presencial, régimen semestral, 2 años de duración. Estructura:
+                                    8 cursos obligatorios + 2 optativos + Tesis (776 hs totales). Cada curso formal son
+                                    2 clases semanales de 4 hs; 75% presencial y 25% de estudio autónomo.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    ¿Cuándo abre la primera cohorte?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Segundo semestre de 2026. Inscripción del 1 de julio al 15 de
+                                    agosto; revisión y admisión del 16 al 23 de agosto; cursos nivelatorios del 25 de
+                                    agosto al 19 de septiembre; Curso 1 inicia el 22 de septiembre de 2026.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    ¿Cuáles son los requisitos de ingreso?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Título de grado universitario. La Comisión Académica evalúa
+                                    los requisitos de ingreso. La apertura de la cohorte requiere un mínimo de 20
+                                    inscriptos.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    ¿Cuánto cuesta? ¿Hay becas?
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Estructura arancelaria: matrícula de inscripción de
+                                    <strong>$400.000</strong>, 18 cuotas mensuales de <strong>$350.000</strong> y un
+                                    derecho de defensa de tesis de <strong>$400.000</strong> — total del programa
+                                    <strong>$7.100.000</strong>. <strong>Beca automática del 50%</strong> para docentes,
+                                    nodocentes y graduados de la UNLu (total $3.550.000). Ver el detalle completo en
+                                    <a href="aranceles/">Aranceles</a>.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                    ¿Puedo cursar materias sueltas?
+                                </button>
+                            </h2>
+                            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">Sí. Los cursos pueden cursarse de manera individual, sin
+                                    inscripción al programa completo, en el marco de planes doctorales o maestrías
+                                    semi-estructuradas que los reconozcan como créditos académicos. El arancel para
+                                    cursantes externos equivale a 2 cuotas mensuales por curso, con el mismo 50% para la
+                                    comunidad UNLu.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="page-section bg-light" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Dejá tus datos</h2>
+                <h3 class="section-subheading text-muted mb-4">Te avisamos en cuanto se abra la inscripción a la primera cohorte</h3>
+            </div>
+            <div class="container my-3">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <div class="card shadow-sm border-0">
+                            <div class="card-body p-3 p-md-4">
+                                <h3 class="h5 mb-3">Completá tus datos para recibir la información</h3>
+                                <form id="formCharla" class="row g-3">
+                                    <div class="col-12">
+                                        <label for="nombre" class="form-label">Nombre y apellido *</label>
+                                        <input type="text" class="form-control" id="nombre" name="Nombre y Apellido" required placeholder="Ej: Ana García">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="email" class="form-label">Correo electrónico *</label>
+                                        <input type="email" class="form-control" id="email" name="Correo" required placeholder="tuemail@ejemplo.com">
+                                    </div>
+                                    <div class="col-12 col-md-6">
+                                        <label for="tel" class="form-label">Teléfono (opcional)</label>
+                                        <input type="tel" class="form-control" id="tel" name="Teléfono" placeholder="+54 9 11 1234 5678">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="perfil" class="form-label">Perfil profesional *</label>
+                                        <div class="d-flex gap-2 flex-wrap align-items-stretch">
+                                            <select class="form-select flex-grow-1" id="perfil" name="Perfil profesional" required style="min-width: 220px;">
+                                                <option value="" selected disabled>Seleccioná tu perfil</option>
+                                                <option value="Desarrollador / Ingeniero IT">Desarrollador / Ingeniero IT</option>
+                                                <option value="Analista de datos / BI">Analista de datos / BI</option>
+                                                <option value="Estadística / Matemática">Estadística / Matemática</option>
+                                                <option value="Investigador / Académico">Investigador / Académico</option>
+                                                <option value="Finanzas / Economía">Finanzas / Economía</option>
+                                                <option value="Funcionario público">Funcionario público</option>
+                                                <option value="Empresario / Consultor / Emprendedor">Empresario / Consultor / Emprendedor</option>
+                                                <option value="Docente / Investigador">Docente / Investigador</option>
+                                                <option value="Estudiante avanzado">Estudiante avanzado</option>
+                                                <option value="Otro" data-otro="true">Otro</option>
+                                            </select>
+                                            <input type="text" class="form-control flex-grow-1 d-none" id="perfil-otro" placeholder="Especificá tu perfil" maxlength="120" style="min-width: 220px;">
+                                        </div>
+                                    </div>
+                                    <script>
+                                        (function () {
+                                            var sel = document.getElementById('perfil');
+                                            var inp = document.getElementById('perfil-otro');
+                                            if (!sel || !inp) return;
+                                            var otroOpt = sel.querySelector('option[data-otro="true"]');
+                                            function syncOtroValue() {
+                                                if (sel.value && sel.value.indexOf('Otro') === 0 && otroOpt) {
+                                                    var txt = inp.value.trim();
+                                                    otroOpt.value = txt ? 'Otro: ' + txt : 'Otro';
+                                                    otroOpt.selected = true;
+                                                }
+                                            }
+                                            sel.addEventListener('change', function () {
+                                                var isOtro = sel.value && sel.value.indexOf('Otro') === 0;
+                                                if (isOtro) {
+                                                    inp.classList.remove('d-none');
+                                                    inp.required = true;
+                                                    setTimeout(function () { inp.focus(); }, 50);
+                                                } else {
+                                                    inp.classList.add('d-none');
+                                                    inp.required = false;
+                                                    inp.value = '';
+                                                    if (otroOpt) otroOpt.value = 'Otro';
+                                                }
+                                            });
+                                            inp.addEventListener('input', syncOtroValue);
+                                        })();
+                                    </script>
+                                    <div class="col-12">
+                                        <label for="titulo" class="form-label">¿Posee título universitario? *</label>
+                                        <select class="form-select" id="titulo" name="Posee título" required>
+                                            <option value="" selected disabled>Seleccioná una opción</option>
+                                            <option value="Sí, título de grado universitario">Sí, título de grado universitario</option>
+                                            <option value="Sí, título de pregrado universitario">Sí, título de pregrado universitario</option>
+                                            <option value="Sí, título terciario no universitario">Sí, título terciario no universitario</option>
+                                            <option value="No, pero tengo experiencia laboral en el área">No, pero tengo experiencia laboral en el área</option>
+                                            <option value="Estudiante avanzado">Estudiante avanzado (cursando últimas materias)</option>
+                                        </select>
+                                    </div>
+                                    <input type="hidden" name="_subject" value="Pre-registro - Maestría en Ciencia de Datos UNLu-UADER">
+                                    <input type="hidden" name="_cc" value="licdia.unlu@gmail.com">
+                                    <input type="hidden" name="_template" value="table">
+                                    <input type="hidden" name="_captcha" value="false">
+                                    <input type="text" name="_honey" style="display:none">
+                                    <div class="col-12 d-flex">
+                                        <button class="btn btn-licdia mx-auto px-5">Quiero recibir la información</button>
+                                    </div>
+                                    <p class="text-muted small mb-0 mt-1">* Campos obligatorios</p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer bg-dark text-white py-4 mt-2">
+        <div class="container text-center small">
+            <p class="mb-2">
+                Copyright &copy; 2026 | Laboratorio de Investigación en Ciencia de Datos &amp; Inteligencia
+                Artificial de la Universidad Nacional de Luján
+                <a href="https://resoluciones.unlu.edu.ar/documento.frame.php?cod=128241" target="_blank" class="text-decoration-none text-info">
+                    [Disposición del Grupo de Investigación]
+                </a>
+                <a href="https://drive.google.com/file/d/1AddV4FMq70bOO4REUgAVppe5i4Vw9h_W/view" target="_blank" class="text-decoration-none text-info">
+                    [Resolución del Laboratorio]
+                </a>
+                - Argentina. Todos los derechos reservados.
+            </p>
+            <p class="mb-0">
+                Desarrollada por
+                <a href="https://www.linkedin.com/in/lucas-santill%C3%A1n-a50166263/" target="_blank" rel="noopener" class="fw-bold text-decoration-none text-info">
+                    Lucas Santillan
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="../js/scripts.js"></script>
+    <a href="https://api.whatsapp.com/send?phone=%2B541123953895&text=Hola,%20queria%20información%20sobre%20la%20Maestría%20en%20Ciencia%20de%20Datos%20..."
+        class="botonWPP" target="_blank" rel="noopener" aria-label="Consultá por WhatsApp sobre la Maestría en Ciencia de Datos">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <a href="#contact" id="floatingCTA" aria-label="Dejá tus datos - Maestría en Ciencia de Datos" style="display:none;">
+        <i class="fas fa-rocket me-2"></i>Dejá tus datos
+    </a>
+    <style>
+        #floatingCTA {
+            position: fixed; bottom: 1rem; left: 50%; transform: translateX(-50%); z-index: 1040;
+            background: linear-gradient(135deg, #800020 0%, #5A0016 100%);
+            color: #fff; font-weight: 700; padding: 0.85rem 1.5rem; border-radius: 999px;
+            text-decoration: none; box-shadow: 0 10px 24px rgba(128,0,32,0.45);
+            font-size: 0.95rem; white-space: nowrap; opacity: 0;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        #floatingCTA.visible { opacity: 1; display: inline-flex !important; align-items: center; }
+        #floatingCTA:hover, #floatingCTA:focus {
+            transform: translateX(-50%) translateY(-2px); color: #fff;
+            box-shadow: 0 14px 30px rgba(128,0,32,0.55);
+        }
+        @media (min-width: 992px) { #floatingCTA { display: none !important; } }
+    </style>
+    <script>
+    (function () {
+        var cta = document.getElementById('floatingCTA');
+        var contact = document.getElementById('contact');
+        if (!cta) return;
+        var threshold = 600;
+        function update() {
+            if (window.innerWidth >= 992) { cta.classList.remove('visible'); return; }
+            var pastHero = window.scrollY > threshold;
+            var atContact = false;
+            if (contact) {
+                var r = contact.getBoundingClientRect();
+                atContact = r.top < window.innerHeight * 0.7;
+            }
+            if (pastHero && !atContact) cta.classList.add('visible');
+            else cta.classList.remove('visible');
+        }
+        window.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update);
+        update();
+    })();
+    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var formCharla = document.getElementById('formCharla');
+            if (formCharla) {
+                formCharla.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    var data = new FormData(formCharla);
+                    data.append('Origen', 'Pre-registro Maestría en Ciencia de Datos UNLu-UADER');
+                    var submitBtn = formCharla.querySelector('button');
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Enviando...';
+                    fetch('https://lamb-texture-chef-cuts.trycloudflare.com/webhook/licdia-inscripcion', {
+                        method: 'POST',
+                        body: data,
+                        headers: { 'Accept': 'application/json' }
+                    }).then(function (r) { return r.json().catch(function () { return {}; }); })
+                      .then(function (resp) {
+                        if (resp && resp.event_id) {
+                            try { sessionStorage.setItem('lead_event_id', resp.event_id); } catch (e) {}
+                        }
+                        window.location.href = 'gracias-charla/';
+                      }).catch(function () {
+                        window.location.href = 'gracias-charla/';
+                      });
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
