@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://licdia.unlu.edu.ar/sitemap.xml
