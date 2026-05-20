@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5A0016"/>
+      <stop offset="0.55" stop-color="#800020"/>
+      <stop offset="1" stop-color="#3d0010"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.7" cy="0.35" r="0.7">
+      <stop offset="0" stop-color="#a01030" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#5A0016" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <!-- grilla sutil -->
+  <g stroke="#ffffff" stroke-opacity="0.05" stroke-width="1">
+    <path d="M0 120H1200M0 240H1200M0 360H1200M0 480H1200"/>
+    <path d="M150 0V630M300 0V630M450 0V630M600 0V630M750 0V630M900 0V630M1050 0V630"/>
+  </g>
+  <!-- curva de regresión a la derecha -->
+  <path d="M650 500 C 750 460, 830 380, 920 320 S 1100 200, 1170 170"
+        fill="none" stroke="#ffb3c1" stroke-opacity="0.45" stroke-width="3" stroke-linecap="round"/>
+  <!-- scatter sobre la curva -->
+  <g fill="#ffd2dc">
+    <circle cx="680" cy="490" r="5" fill-opacity="0.6"/>
+    <circle cx="730" cy="465" r="6" fill-opacity="0.7"/>
+    <circle cx="790" cy="430" r="5" fill-opacity="0.55"/>
+    <circle cx="850" cy="395" r="7" fill-opacity="0.75"/>
+    <circle cx="910" cy="350" r="5" fill-opacity="0.6"/>
+    <circle cx="970" cy="310" r="8" fill-opacity="0.85"/>
+    <circle cx="1030" cy="265" r="5" fill-opacity="0.55"/>
+    <circle cx="1090" cy="220" r="6" fill-opacity="0.7"/>
+  </g>
+  <!-- bloque de texto principal -->
+  <text x="80" y="240" font-family="Poppins, Montserrat, sans-serif" font-weight="900" font-size="64" fill="#ffffff">Maestría en</text>
+  <text x="80" y="320" font-family="Poppins, Montserrat, sans-serif" font-weight="900" font-size="64" fill="#ffffff">Ciencia de Datos</text>
+  <!-- línea separadora -->
+  <line x1="80" y1="360" x2="280" y2="360" stroke="#ffd2dc" stroke-width="3" stroke-linecap="round"/>
+  <!-- subtítulo -->
+  <text x="80" y="410" font-family="Montserrat, sans-serif" font-weight="600" font-size="28" fill="#ffd2dc">UNLu · FCyT — UADER</text>
+  <text x="80" y="445" font-family="Montserrat, sans-serif" font-weight="400" font-size="22" fill="#ffb3c1" fill-opacity="0.85">Posgrado público con validez nacional</text>
+  <text x="80" y="475" font-family="Montserrat, sans-serif" font-weight="400" font-size="22" fill="#ffb3c1" fill-opacity="0.85">Primera cohorte · 2do semestre 2026</text>
+  <!-- pildora LICDIA -->
+  <rect x="80" y="540" width="200" height="40" rx="20" fill="none" stroke="#ffd2dc" stroke-opacity="0.5" stroke-width="1.5"/>
+  <text x="180" y="567" font-family="Montserrat, sans-serif" font-weight="700" font-size="16" fill="#ffd2dc" text-anchor="middle" letter-spacing="2">LICDIA · UNLu</text>
+</svg>
