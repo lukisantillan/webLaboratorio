@@ -885,4 +885,6 @@ a {
 
 /* Opcional: bordes redondeados solo en desktop */
 @media (min-width: 992px) {
-  #informacionPlan .ca
+  #informacionPlan .card { border-radius: .75rem; }
+}
+

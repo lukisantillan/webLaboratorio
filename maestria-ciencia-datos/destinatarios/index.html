@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Destinatarios de la Maestría en Ciencia de Datos - UNLu UADER. Dirigida a profesionales y graduados universitarios que buscan formación avanzada en análisis de datos y machine learning." />
+    <meta name="author" content="LICDIA - UNLu" />
+    <meta name="keywords" content="maestría, ciencia de datos, posgrado, UNLu, UADER, Magíster, machine learning, destinatarios" />
+    <meta property="og:title" content="Destinatarios - Maestría en Ciencia de Datos - UNLu UADER" />
+    <meta property="og:image" content="https://licdia.unlu.edu.ar/assets/img/og-blockchain.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://licdia.unlu.edu.ar/maestria-ciencia-datos/destinatarios/" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://licdia.unlu.edu.ar/assets/img/og-blockchain.jpg" />
+    <link rel="canonical" href="https://licdia.unlu.edu.ar/maestria-ciencia-datos/destinatarios/" />
+    <meta property="og:description" content="Conocé a quién está dirigida la Maestría en Ciencia de Datos de la UNLu y UADER." />
+    <title>Destinatarios Maestría en Ciencia de Datos - LICDIA</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/img/logo.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="../../css/mcd-styles.css" rel="stylesheet" />
+    <link href="../../css/mcd-style2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        :root {
+            --brand: #800020;
+            --brand-dark: #4d0013;
+            --brand-soft: #f7e9ec;
+        }
+        .destinatario-card {
+            background: #fff;
+            border: 1px solid #efe3e6;
+            border-radius: 16px;
+            padding: 2rem 1.5rem;
+            height: 100%;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .destinatario-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--brand) 0%, var(--brand-dark) 100%);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        .destinatario-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(128, 0, 32, 0.18);
+            border-color: var(--brand-soft);
+        }
+        .destinatario-card:hover::before {
+            opacity: 1;
+        }
+        .destinatario-icon-wrap {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: var(--brand-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            transition: background 0.25s ease;
+        }
+        .destinatario-card:hover .destinatario-icon-wrap {
+            background: var(--brand);
+        }
+        .destinatario-icon-wrap i {
+            font-size: 2rem;
+            color: var(--brand);
+            transition: color 0.25s ease;
+        }
+        .destinatario-card:hover .destinatario-icon-wrap i {
+            color: #fff;
+        }
+        .destinatario-title {
+            font-weight: 700;
+            color: var(--brand-dark);
+            text-align: center;
+            margin-bottom: 1rem;
+            min-height: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .destinatario-card p {
+            color: #4a4a4a;
+            font-size: 0.95rem;
+            line-height: 1.55;
+            margin-bottom: 0;
+        }
+        .destinatario-intro {
+            font-size: 1.1rem;
+            color: #2c2c2c;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        .destinatario-disclaimer {
+            color: #6c757d;
+            font-style: italic;
+            border-top: 1px dashed #e3d3d8;
+            padding-top: 1.25rem;
+            margin-top: 2rem;
+        }
+        .cta-inscribite {
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 2.5rem 1.5rem;
+            text-align: center;
+            margin-top: 2.5rem;
+            box-shadow: 0 12px 30px rgba(128, 0, 32, 0.25);
+        }
+        .cta-inscribite h3 {
+            color: white;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        .cta-inscribite p {
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+        }
+        .cta-inscribite .btn-cta {
+            background: #fff;
+            color: var(--brand-dark);
+            font-weight: 700;
+            padding: 0.85rem 2.5rem;
+            border-radius: 999px;
+            border: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .cta-inscribite .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            color: var(--brand-dark);
+        }
+        .beca-banner {
+            background: var(--brand-soft);
+            border: 1px solid rgba(128, 0, 32, 0.25);
+            border-radius: 14px;
+            padding: 1.25rem 1.5rem;
+            margin-top: 2rem;
+        }
+        .beca-banner strong {
+            color: var(--brand-dark);
+        }
+    </style>
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) n = f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1845986945991192');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1845986945991192&ev=PageView&noscript=1" />
+    </noscript>
+
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand efect" href="#page-top"><img src="../../assets/img/logo.ico" alt="..." /></a>
+            <a class="navbar-brand efect" href="#page-top"><img src="../../assets/img/depto.ico" alt="..." /></a>
+            <a class="navbar-brand efect" href="#page-top"><img src="../../assets/img/unlu.ico" alt="..." /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../#informacionPlan">Plan de estudios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../plan-de-estudios/">Cronograma</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../aranceles/">Aranceles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../#contact">Pre-registro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../">LICDIA</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="backgroundAr fondoMcd" data-aos="flip-up" data-aos-delay="100" data-aos-duration="1500">
+        <div class="container">
+            <div class="masthead-heading">Destinatarios - Maestría en Ciencia de Datos</div>
+        </div>
+    </header>
+
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <h2 class="card-t card-title">¿A quién va dirigida?</h2>
+            <hr>
+            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+                aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../">Inicio</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Destinatarios</li>
+                </ol>
+            </nav>
+            <div class="col-md-10">
+                <div class="card p-4 shadow-sm border-0">
+                    <div class="card-body">
+                        <p class="destinatario-intro">Esta Maestría está dirigida a <strong>profesionales y graduados universitarios</strong> que buscan formación avanzada en el análisis, procesamiento e interpretación de datos en contextos organizacionales complejos. Las áreas centrales del programa son el <strong>análisis de datos</strong>, el <strong>aprendizaje automático</strong>, la <strong>visualización de información</strong> y los <strong>aspectos legales y éticos</strong> del uso de la información. En particular:</p>
+
+                        <div class="row g-4 mt-2">
+                            <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                                <div class="destinatario-card">
+                                    <div class="destinatario-icon-wrap">
+                                        <i class="fas fa-laptop-code"></i>
+                                    </div>
+                                    <h5 class="destinatario-title">Profesionales de sistemas e informática</h5>
+                                    <p>Desarrolladores, analistas y profesionales de TI que requieren incorporar ciencia de datos, aprendizaje automático y visualización a su práctica profesional.</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                                <div class="destinatario-card">
+                                    <div class="destinatario-icon-wrap">
+                                        <i class="fas fa-chart-bar"></i>
+                                    </div>
+                                    <h5 class="destinatario-title">Estadística y ciencias exactas</h5>
+                                    <p>Graduados en estadística, matemática y ciencias exactas que buscan profundizar en métodos de análisis y modelado de datos a escala.</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                                <div class="destinatario-card">
+                                    <div class="destinatario-icon-wrap">
+                                        <i class="fas fa-cogs"></i>
+                                    </div>
+                                    <h5 class="destinatario-title">Ingeniería y áreas afines</h5>
+                                    <p>Ingenieros y profesionales de disciplinas técnicas que necesitan interpretar datos para la toma de decisiones en entornos organizacionales complejos.</p>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                                <div class="destinatario-card">
+                                    <div class="destinatario-icon-wrap">
+                                        <i class="fas fa-briefcase"></i>
+                                    </div>
+                                    <h5 class="destinatario-title">Ciencias económicas</h5>
+                                    <p>Profesionales de ciencias económicas y de la gestión que requieren ciencia de datos para el análisis del negocio y la generación de valor a partir de la información.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="beca-banner" data-aos="fade-up" data-aos-delay="450">
+                            <p class="mb-2"><i class="fas fa-user-graduate me-2" style="color: var(--brand);"></i><strong>Cursos individuales (créditos académicos):</strong> también está abierta a quienes cursan planes doctorales o maestrías semi-estructuradas que reconozcan estos cursos como créditos académicos. Los cursos pueden tomarse de manera individual, sin inscripción al programa completo.</p>
+                            <p class="mb-0"><i class="fas fa-award me-2" style="color: var(--brand);"></i><strong>Beca automática del 50%</strong> en todos los aranceles para docentes, nodocentes y graduados de la UNLu.</p>
+                        </div>
+
+                        <p class="destinatario-disclaimer text-center mb-0"><i class="fas fa-info-circle me-1"></i>Las orientaciones afines facilitan el ingreso; los requisitos de admisión son evaluados por la Comisión Académica.</p>
+                    </div>
+                </div>
+
+                <div class="cta-inscribite" data-aos="fade-up" data-aos-delay="500">
+                    <h3>¿Te encaja alguno de estos perfiles?</h3>
+                    <p>Da el próximo paso e inscribite en la primera cohorte 2026.</p>
+                    <a href="../#contact" class="btn-cta">
+                        <i class="fas fa-rocket me-2"></i>Inscribite hoy
+                    </a>
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="../requisitos/" class="btn btn-outline-dark btn-lg px-4 py-2">
+                        <i class="fas fa-clipboard-check me-2"></i>Ver requisitos de admisión
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center my-4">
+        <a href="../" class="btn btn-outline-dark btn-lg px-4 py-2">
+            <i class="fas fa-arrow-left me-2"></i>Volver
+        </a>
+    </div>
+
+    <footer class="footer bg-dark text-white py-4 mt-2">
+        <div class="container text-center small">
+            <p class="mb-2">
+                Copyright &copy; 2026 | Laboratorio de Investigación en Ciencia de Datos &amp; Inteligencia
+                Artificial de la Universidad de Luján
+                <a href="https://resoluciones.unlu.edu.ar/documento.frame.php?cod=128241" target="_blank"
+                    class="text-decoration-none text-info">[Disposición del Grupo de Investigación]</a>
+                <a href="https://drive.google.com/file/d/1AddV4FMq70bOO4REUgAVppe5i4Vw9h_W/view" target="_blank"
+                    class="text-decoration-none text-info">[Resolución del Laboratorio]</a>
+                - Argentina. Todos los derechos reservados.
+            </p>
+            <p class="mb-0">
+                Desarrollada por
+                <a href="https://www.linkedin.com/in/lucas-santill%C3%A1n-a50166263/" target="_blank" rel="noopener"
+                    class="fw-bold text-decoration-none text-info">Lucas Santillan</a>
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/scripts.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
+    <a href="https://api.whatsapp.com/send?phone=%2B541123953895&text=Hola,%20queria%20información%20sobre%20la%20Maestría%20en%20Ciencia%20de%20Datos%20..."
+        class="botonWPP" target="_blank" rel="noopener" aria-label="Consultá por WhatsApp sobre la Maestría en Ciencia de Datos">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>

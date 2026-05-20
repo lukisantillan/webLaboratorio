@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Requisitos de admisión de la Maestría en Ciencia de Datos - UNLu UADER. Título de grado universitario, modalidad presencial, 2 años, 776 hs, título Magíster con validez nacional." />
+    <meta name="author" content="LICDIA - UNLu" />
+    <meta name="keywords" content="maestría, ciencia de datos, posgrado, UNLu, UADER, Magíster, machine learning, requisitos, admisión" />
+    <meta property="og:title" content="Requisitos - Maestría en Ciencia de Datos - UNLu UADER" />
+    <meta property="og:image" content="https://licdia.unlu.edu.ar/assets/img/og-blockchain.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:url" content="https://licdia.unlu.edu.ar/maestria-ciencia-datos/requisitos/" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://licdia.unlu.edu.ar/assets/img/og-blockchain.jpg" />
+    <link rel="canonical" href="https://licdia.unlu.edu.ar/maestria-ciencia-datos/requisitos/" />
+    <meta property="og:description" content="Conocé los requisitos de admisión para la Maestría en Ciencia de Datos de la UNLu y UADER." />
+    <title>Requisitos Maestría en Ciencia de Datos - LICDIA</title>
+    <link rel="icon" type="image/x-icon" href="../../assets/img/logo.ico" />
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="../../css/mcd-styles.css" rel="stylesheet" />
+    <link href="../../css/mcd-style2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        :root {
+            --brand: #800020;
+            --brand-dark: #4d0013;
+            --brand-soft: #f7e9ec;
+        }
+        .requisito-card {
+            background: #fff;
+            border: 1px solid #efe3e6;
+            border-radius: 14px;
+            padding: 1.25rem 1.25rem;
+            margin-bottom: 0.75rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .requisito-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--brand) 0%, var(--brand-dark) 100%);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        .requisito-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 32px rgba(128, 0, 32, 0.15);
+            border-color: var(--brand-soft);
+        }
+        .requisito-card:hover::before {
+            opacity: 1;
+        }
+        .requisito-icon-wrap {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--brand-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background 0.25s ease;
+        }
+        .requisito-card:hover .requisito-icon-wrap {
+            background: var(--brand);
+        }
+        .requisito-icon-wrap i {
+            color: var(--brand);
+            transition: color 0.25s ease;
+        }
+        .requisito-card:hover .requisito-icon-wrap i {
+            color: #fff;
+        }
+        .requisito-title {
+            font-weight: 700;
+            color: var(--brand-dark);
+            margin-bottom: 0.25rem;
+        }
+        .requisito-alert {
+            background: rgba(128, 0, 32, 0.08);
+            border: 1px solid rgba(128, 0, 32, 0.25);
+            border-radius: 14px;
+            padding: 1.25rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .requisito-alert::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--brand) 0%, var(--brand-dark) 100%);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+        }
+        .requisito-alert:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 32px rgba(128, 0, 32, 0.15);
+        }
+        .requisito-alert:hover::before {
+            opacity: 1;
+        }
+        .admision-callout {
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+            color: #fff;
+            border-radius: 14px;
+            padding: 1.5rem 1.75rem;
+            margin-bottom: 1.25rem;
+            box-shadow: 0 12px 30px rgba(128, 0, 32, 0.22);
+        }
+        .admision-callout h6 {
+            color: #ffd54f;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+        .admision-callout p {
+            color: #fff;
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 0;
+            line-height: 1.55;
+        }
+        .requisito-card.requisito-card--highlight {
+            background: var(--brand-soft);
+            border: 2px solid var(--brand);
+        }
+        .requisito-card.requisito-card--highlight::before {
+            opacity: 1;
+        }
+        .requisito-card.requisito-card--highlight .requisito-icon-wrap {
+            background: var(--brand);
+        }
+        .requisito-card.requisito-card--highlight .requisito-icon-wrap i {
+            color: #fff;
+        }
+        .requisito-card.requisito-card--highlight .requisito-title {
+            color: var(--brand);
+            font-size: 1.15rem;
+            font-weight: 800;
+        }
+        .badge-experiencia {
+            display: inline-block;
+            background: var(--brand);
+            color: #fff;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 0.2rem 0.6rem;
+            border-radius: 999px;
+            margin-left: 0.5rem;
+            vertical-align: middle;
+        }
+        .ficha-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .ficha-item {
+            background: var(--brand-soft);
+            border-radius: 12px;
+            padding: 1rem 1.1rem;
+            text-align: center;
+        }
+        .ficha-item .ficha-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--brand);
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .ficha-item .ficha-value {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: var(--brand-dark);
+        }
+        .crono-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+        .crono-list li {
+            display: flex;
+            gap: 0.75rem;
+            align-items: flex-start;
+            padding: 0.6rem 0;
+            border-bottom: 1px dashed #e3d3d8;
+        }
+        .crono-list li:last-child {
+            border-bottom: none;
+        }
+        .crono-list .crono-fecha {
+            font-weight: 700;
+            color: var(--brand);
+            min-width: 170px;
+        }
+    </style>
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) n = f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1845986945991192');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1845986945991192&ev=PageView&noscript=1" />
+    </noscript>
+
+</head>
+
+<body id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand efect" href="#page-top"><img src="../../assets/img/logo.ico" alt="..." /></a>
+            <a class="navbar-brand efect" href="#page-top"><img src="../../assets/img/depto.ico" alt="..." /></a>
+            <a class="navbar-brand efect" href="#page-top"><img src="../../assets/img/unlu.ico" alt="..." /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../#informacionPlan">Plan de estudios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../plan-de-estudios/">Cronograma</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../aranceles/">Aranceles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../#contact">Pre-registro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../">LICDIA</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="backgroundAr fondoMcd" data-aos="flip-up" data-aos-delay="100" data-aos-duration="1500">
+        <div class="container">
+            <div class="masthead-heading">Requisitos - Maestría en Ciencia de Datos</div>
+        </div>
+    </header>
+
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+            <h2 class="card-t card-title">Requisitos de admisión</h2>
+            <hr>
+            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
+                aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../">Inicio</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Requisitos</li>
+                </ol>
+            </nav>
+            <div class="col-md-10">
+                <div class="card p-4 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="mb-3"><i class="fas fa-id-card text-primary me-2"></i>Datos de la carrera</h5>
+
+                        <div class="ficha-grid" data-aos="fade-up">
+                            <div class="ficha-item">
+                                <div class="ficha-label">Título</div>
+                                <div class="ficha-value">Magíster en Ciencia de Datos</div>
+                            </div>
+                            <div class="ficha-item">
+                                <div class="ficha-label">Modalidad</div>
+                                <div class="ficha-value">Presencial</div>
+                            </div>
+                            <div class="ficha-item">
+                                <div class="ficha-label">Duración</div>
+                                <div class="ficha-value">2 años (régimen semestral)</div>
+                            </div>
+                            <div class="ficha-item">
+                                <div class="ficha-label">Carga horaria</div>
+                                <div class="ficha-value">776 hs totales</div>
+                            </div>
+                        </div>
+
+                        <div class="requisito-alert d-flex gap-3 align-items-start mb-4" data-aos="fade-up" data-aos-delay="100">
+                            <i class="fas fa-certificate fa-lg mt-1" style="color: var(--brand);"></i>
+                            <div>
+                                <strong>Reconocimiento Oficial y Validez Nacional</strong>
+                                <p class="mb-0 mt-1 small">Disposición SSPU N° 490/25 &middot; Acreditada por CONEAU (Acta 621, 25/11/2024) &middot; Res. HCS UNLu N° 789/23 &middot; Res. CS UADER N° 1487/23. Carrera interinstitucional entre la Universidad Nacional de Luján (UNLu) y la Facultad de Ciencia y Tecnología – UADER.</p>
+                            </div>
+                        </div>
+
+                        <h5 class="mb-3"><i class="fas fa-check-circle text-primary me-2"></i>Requisitos de ingreso</h5>
+
+                        <div class="admision-callout" data-aos="fade-up">
+                            <h6><i class="fas fa-bullhorn me-2"></i>Requisito principal</h6>
+                            <p>Poseer título de grado universitario. La Comisión Académica evalúa los requisitos de ingreso durante el período de revisión y admisión.</p>
+                        </div>
+
+                        <div class="requisito-card d-flex gap-3 align-items-start" data-aos="fade-up" data-aos-delay="100">
+                            <div class="requisito-icon-wrap">
+                                <i class="fas fa-graduation-cap fa-lg"></i>
+                            </div>
+                            <div>
+                                <p class="requisito-title mb-0">Título de grado universitario</p>
+                                <p class="mb-0 mt-1">Es requisito contar con título de grado universitario. Las orientaciones afines (sistemas e informática, estadística, ingeniería, ciencias económicas, ciencias exactas) facilitan el ingreso. La pertinencia del título es evaluada por la Comisión Académica.</p>
+                            </div>
+                        </div>
+
+                        <div class="requisito-card requisito-card--highlight d-flex gap-3 align-items-start" data-aos="fade-up" data-aos-delay="200">
+                            <div class="requisito-icon-wrap">
+                                <i class="fas fa-user-check fa-lg"></i>
+                            </div>
+                            <div>
+                                <p class="requisito-title mb-0">Evaluación de la Comisión Académica<span class="badge-experiencia">Admisión</span></p>
+                                <p class="mt-2 mb-0" style="font-size:1.05rem; font-weight:600; color: var(--brand-dark);">La Comisión Académica evalúa los requisitos de ingreso durante el período de revisión y admisión (16 al 23 de agosto de 2026). La documentación se revisa tras el cierre de la inscripción.</p>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <h5 class="mb-3"><i class="fas fa-users text-primary me-2"></i>Cupo de apertura</h5>
+
+                        <div class="requisito-card d-flex gap-3 align-items-start" data-aos="fade-up" data-aos-delay="100">
+                            <div class="requisito-icon-wrap">
+                                <i class="fas fa-user-friends fa-lg"></i>
+                            </div>
+                            <div>
+                                <p class="requisito-title mb-0">Cupo mínimo: 20 inscriptos</p>
+                                <p class="mb-0 mt-1">Se establece un mínimo de 20 inscriptos para habilitar el inicio de la primera cohorte. Este umbral garantiza la viabilidad del programa y asegura una masa crítica de cursantes que enriquece la dinámica pedagógica.</p>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <h5 class="mb-3"><i class="fas fa-calendar-alt text-primary me-2"></i>Cronograma de la primera cohorte 2026</h5>
+
+                        <div class="requisito-card" data-aos="fade-up" data-aos-delay="100">
+                            <ul class="crono-list">
+                                <li>
+                                    <span class="crono-fecha">1 jul – 15 ago 2026</span>
+                                    <span>Período de inscripción (45 días). Cierre el 15/8 para revisión de documentación.</span>
+                                </li>
+                                <li>
+                                    <span class="crono-fecha">16 – 23 ago 2026</span>
+                                    <span>Revisión y admisión. La Comisión Académica evalúa los requisitos de ingreso.</span>
+                                </li>
+                                <li>
+                                    <span class="crono-fecha">25 ago – 19 sep 2026</span>
+                                    <span>Cursos niveladores, mediados por tecnología con instancias asincrónicas y sincrónicas.</span>
+                                </li>
+                                <li>
+                                    <span class="crono-fecha">22 sep 2026</span>
+                                    <span>Inicio de cursos del plan de estudios.</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div class="requisito-alert d-flex gap-3 align-items-start" role="alert" data-aos="fade-up" data-aos-delay="200">
+                            <i class="fas fa-hands-helping fa-lg mt-1" style="color: var(--brand);"></i>
+                            <div>
+                                <strong>¿Tenés dudas sobre tu perfil o la documentación?</strong>
+                                <p class="mb-0 mt-1">La documentación se revisa tras el cierre de la inscripción. <a href="https://api.whatsapp.com/send?phone=%2B541123953895&text=Hola,%20quería%20consultar%20sobre%20los%20requisitos%20de%20admisión%20de%20la%20Maestría%20en%20Ciencia%20de%20Datos%20..." target="_blank" class="alert-link text-decoration-underline"><i class="fab fa-whatsapp me-1"></i>Contactanos</a> para que evaluemos tu perfil y te orientemos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="../#contact" class="btn btn-dark btn-lg px-4 py-2">
+                        <i class="fas fa-edit me-2"></i>Dejá tus datos
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container text-center my-4">
+        <a href="../" class="btn btn-outline-dark btn-lg px-4 py-2">
+            <i class="fas fa-arrow-left me-2"></i>Volver
+        </a>
+    </div>
+
+    <footer class="footer bg-dark text-white py-4 mt-2">
+        <div class="container text-center small">
+            <p class="mb-2">
+                Copyright &copy; 2026 | Laboratorio de Investigación en Ciencia de Datos &amp; Inteligencia
+                Artificial de la Universidad de Luján
+                <a href="https://resoluciones.unlu.edu.ar/documento.frame.php?cod=128241" target="_blank"
+                    class="text-decoration-none text-info">[Disposición del Grupo de Investigación]</a>
+                <a href="https://drive.google.com/file/d/1AddV4FMq70bOO4REUgAVppe5i4Vw9h_W/view" target="_blank"
+                    class="text-decoration-none text-info">[Resolución del Laboratorio]</a>
+                - Argentina. Todos los derechos reservados.
+            </p>
+            <p class="mb-0">
+                Desarrollada por
+                <a href="https://www.linkedin.com/in/lucas-santill%C3%A1n-a50166263/" target="_blank" rel="noopener"
+                    class="fw-bold text-decoration-none text-info">Lucas Santillan</a>
+            </p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/scripts.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
+    <a href="https://api.whatsapp.com/send?phone=%2B541123953895&text=Hola,%20queria%20información%20sobre%20la%20Maestría%20en%20Ciencia%20de%20Datos%20..."
+        class="botonWPP" target="_blank" rel="noopener" aria-label="Consultá por WhatsApp sobre la Maestría en Ciencia de Datos">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+</body>
+</html>

@@ -1,0 +1,1086 @@
+html, body {
+    overflow-x: hidden;
+}
+
+/* FITBA */
+.zoom {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.zoom::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../assets/img/fondo-contacto.jpg) repeat-x;
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+
+    animation: zoomInOut 4s ease-in-out infinite;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    margin-top: 60px;
+    margin-left: 20px;
+    padding: 20px;
+}
+
+.overlay h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.overlay p {
+    font-size: 1.25rem;
+    margin: 10px 0 0;
+}
+
+@keyframes zoomInOut {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+iframe {
+    border: 1px solid #333 !important;
+    border-radius: 8px;
+    /* Esquinas redondeadas */
+    box-shadow: 10px 15px 30px 10px rgba(0, 0, 0, 0.2);
+    /* Sombra */
+}
+
+/* PROYECTO ENSEÑANZA — Base hero con zoom */
+.fondo-hero,
+.fondoEnse, .fondoWeb, .fondoJuego, .fondoIA,
+.fondoIPC, .fondoJuan, .fondoProyectos, .fondoPublicaciones,
+.fondoCV, .fondoLLM {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fondo-hero::before,
+.fondoEnse::before, .fondoWeb::before, .fondoJuego::before, .fondoIA::before,
+.fondoIPC::before, .fondoJuan::before, .fondoProyectos::before, .fondoPublicaciones::before,
+.fondoCV::before, .fondoLLM::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                var(--bg-img, url(../assets/img/fondo-contacto.jpg)) center/cover no-repeat;
+    z-index: -1;
+    animation: zoomInOut 4s ease-in-out infinite;
+    will-change: transform;
+}
+
+/* Imagen por clase — solo cambia --bg-img */
+.fondoEnse          { --bg-img: url(../assets/img/fondoEnse.jpg); }
+.fondoWeb           { --bg-img: url(../assets/img/fondoWeb.jpg); }
+.fondoJuego         { --bg-img: url(../assets/img/fondoJuego.jpg); }
+.fondoIA            { --bg-img: url(../assets/img/fondoIA.jpg); }
+
+/* IPC */
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px;
+}
+
+
+.item-galeria {
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+
+.item-galeria img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .galeria {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .item-galeria {
+        width: 100%;
+        height: auto;
+    }
+
+    .item-galeria img {
+        height: auto;
+    }
+}
+
+.fondoIPC           { --bg-img: url(../assets/img/fondoIPC.jpg); }
+.fondoJuan          { --bg-img: url(../assets/img/fondoJuan.jpg); }
+
+.timeline>li .timeline-image {
+    background-color: #6c9abf;
+    border: 8px solid #338cad;
+}
+
+.timeline>li .timeline-panel2 {
+    padding: 20px 20px 20px 20px;
+    align-items: center;
+    margin-right: 0;
+    background-color: #31b5e589;
+    border-radius: 2000px;
+    border: 5px solid #6c9abf;
+
+}
+
+.fondoProyectos     { --bg-img: url(../assets/img/fondoProyectos.jpg); }
+.fondoPublicaciones { --bg-img: url(../assets/img/fondoPublicaciones.jpg); }
+.fondoCV            { --bg-img: url(../assets/img/fondoCV.jpg); }
+
+.iframe-video {
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente si hay altura suficiente */
+    padding-bottom: 20px;
+}
+
+/* Ajustar el tamaño del video */
+.contenedor-video {
+    position: relative;
+    width: 90%;
+    /* Ajustamos el ancho al 90% de la pantalla */
+    max-width: 1200px;
+    /* Lo hacemos más grande */
+    padding-bottom: 50%;
+    /* Mantiene la proporción 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.contenedor-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* estilos LLM - Sección de video  */
+.fondoLLM           { --bg-img: url(../assets/img/fondoLLM.jpg); }
+
+.fondoDiplomatura {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fondoMcd {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header.backgroundhead {
+    padding-top: 5.5rem;
+    padding-bottom: 2rem;
+    text-align: center;
+    color: #fbfbfb;
+    background-image: linear-gradient(to right, #800020, black);
+    height: 100px;
+}
+
+header.backgroundhead .masthead-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 3.25rem;
+    margin-bottom: 2rem;
+    font-family: 'DM Mono', monospace;
+}
+
+header.backgroundAr {
+    padding-top: 5.5rem;
+    padding-bottom: 2rem;
+    text-align: left;
+    color: #fbfbfb;
+    background-image: linear-gradient(to left, #003c85cf, rgb(0, 66, 172));
+    height: 100px;
+}
+
+header.backgroundAr .masthead-heading {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 3.25rem;
+    margin-bottom: 2rem;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+}
+
+/* Dev-IA - gradiente azul con líneas tecnológicas */
+header.backgroundhead.fondoDiplomatura {
+    background-image: linear-gradient(to right, rgba(28,46,84,0.35), rgba(25,61,118,0.4)), url('../assets/img/hero-ia-lineas-tech.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+header.backgroundAr.fondoDiplomatura {
+    background-image: linear-gradient(to left, rgba(29,120,229,0.4), rgba(0,60,133,0.45)), url('../assets/img/hero-ia-lineas-tech.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Blockchain - gradiente púrpura/índigo (#5A0016, #5A0016, #800020) */
+header.backgroundhead.fondoMcd {
+    background-image: linear-gradient(to right, rgba(128,0,32,0.7), rgba(90,0,22,0.8)), url('../assets/img/mcd-hero.svg');
+    background-size: cover;
+    background-position: center;
+}
+
+header.backgroundAr.fondoMcd {
+    background-image: linear-gradient(to left, rgba(90,0,22,0.8), rgba(128,0,32,0.8)), url('../assets/img/mcd-hero.svg');
+    background-size: cover;
+    background-position: center;
+}
+
+#bordefino {
+    width: 100%;
+    height: 10px;
+    background-image: linear-gradient(to right, #800020, black);
+}
+
+body #bordefino {
+    background-image: linear-gradient(to right, #800020, #5A0016);
+}
+
+.card-tittle {
+    text-align: center;
+}
+
+.card-t {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    #list-example {
+        display: none;
+    }
+
+    .card-t {
+        text-align: center;
+    }
+
+    .col-8 {
+        width: 100%;
+    }
+
+    .backgroundhead {
+        padding-top: 6rem;
+        padding-bottom: 4rem;
+    }
+
+    header.backgroundhead {
+        margin-top: 4rem;
+        padding-top: 7rem;
+        padding-bottom: 4rem;
+        text-align: center;
+        color: #fbfbfb;
+        background-image: linear-gradient(to right, #800020, black);
+        height: auto;
+    }
+
+    .backgroundAr {
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+    }
+
+    header.backgroundAr {
+        margin-top: 4rem;
+        padding-top: 6rem;
+        padding-bottom: 3rem;
+        text-align: center;
+        color: #fbfbfb;
+        background-image: linear-gradient(to right, #800020, black);
+        height: auto;
+    }
+
+    header.backgroundhead.fondoDiplomatura {
+        background-image: linear-gradient(to right, rgba(29,120,229,0.7), rgba(0,0,0,0.8)), url('../assets/img/fondoIA.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    header.backgroundAr.fondoDiplomatura {
+        background-image: linear-gradient(to left, rgba(29,120,229,0.8), rgba(0,60,133,0.8)), url('../assets/img/fondoIA.jpg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    header.backgroundhead.fondoMcd {
+        background-image: linear-gradient(to right, rgba(128,0,32,0.7), rgba(90,0,22,0.8)), url('../assets/img/mcd-hero.svg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    header.backgroundAr.fondoMcd {
+        background-image: linear-gradient(to right, rgba(128,0,32,0.7), rgba(90,0,22,0.8)), url('../assets/img/mcd-hero.svg');
+        background-size: cover;
+        background-position: center;
+    }
+
+    .masthead-subheading {
+        font-size: 12px;
+    }
+
+    header.backgroundhead .masthead-heading {
+        font-size: 1.9rem;
+        font-weight: 700;
+        line-height: 1.9rem;
+        font-family: 'DM Mono', monospace;
+    }
+
+    header.backgroundAr .masthead-heading {
+        font-size: 1.4rem;
+        font-weight: 700;
+        line-height: 1.7rem;
+        font-family: 'DM Mono', monospace;
+    }
+
+    #buttonInfo {
+        width: auto;
+        min-height: 48px;
+        align-items: center;
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    #informacionPlan {
+        padding: 1.5rem;
+    }
+
+    .infogrid {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .fondoDiplomatura .masthead-subheading {
+        font-size: 1rem;
+        color: rgb(190, 190, 190);
+    }
+
+    .masthead-subheading {
+        font-size: 0.85rem;
+    }
+
+    .col-3 h3 {
+        font-family: "Times New Roman", Times, sans-serif;
+        color: #800020
+    }
+
+    .fondoDiplomatura .masthead-subheading {
+        font-size: 17px;
+        color: rgb(190, 190, 190);
+    }
+}
+
+@media (min-width: 768px) {
+    header.backgroundhead {
+        height: 200px;
+        padding-top: 27rem;
+        padding-bottom: 21rem;
+    }
+
+    header.backgroundhead .masthead-heading {
+        font-size: 2.5rem;
+        font-weight: 900;
+        line-height: 4.5rem;
+        margin-bottom: 1rem;
+    }
+
+    header.backgroundAr {
+        height: 200px;
+        padding-top: 20rem;
+        padding-bottom: 12rem;
+    }
+
+    header.backgroundAr .masthead-heading {
+        font-size: 2.5rem;
+        font-weight: 900;
+        line-height: 4.5rem;
+        margin-bottom: 1rem;
+    }
+
+}
+
+#containerInfo {
+    width: 100%;
+    height: auto;
+    background-color: #8abcf979;
+}
+
+.infogrid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+.fondoDiplomatura .masthead-subheading {
+    font-size: 1.3rem;
+    color: rgb(190, 190, 190);
+}
+
+.col-3 h3 {
+    font-family: "Times New Roman", Times, sans-serif;
+    color: #800020
+}
+
+#informacionPlan {
+    width: 100%;
+    height: auto;
+    background-color: #8abcf979;
+    padding: 100px;
+}
+
+#lic-ia .tile {
+    /* contenedor del item */
+    display: flex;
+    flex-direction: column;
+}
+
+#lic-ia .rule {
+    display: block;
+    width: 100%;
+    background: #5A0016
+}
+
+#lic-ia .rule-top {
+    height: 1px;
+    opacity: .7;
+}
+
+#lic-ia .rule-bottom {
+    height: 6px;
+}
+
+/* Blockchain theme - purple overrides (#5A0016, #5A0016, #800020) */
+body #lic-ia .rule {
+    background: #800020;
+}
+
+body .btn-primary {
+    background-color: #800020;
+    border-color: #800020;
+}
+
+body .btn-primary:hover,
+body .btn-primary:focus {
+    background-color: #5A0016;
+    border-color: #5A0016;
+}
+
+body #lic-ia a {
+    color: #800020;
+}
+
+body #lic-ia a:hover {
+    color: #5A0016;
+}
+
+body #containerInfo {
+    border-color: #800020 !important;
+    background-color: rgba(128,0,32,0.12);
+}
+
+body #informacionPlan {
+    background-color: rgba(128,0,32,0.12);
+}
+
+body .accordion-button:not(.collapsed) {
+    color: #800020;
+    background-color: rgba(128,0,32,0.08);
+}
+
+body .accordion-button:focus {
+    border-color: #800020;
+    box-shadow: 0 0 0 0.25rem rgba(128,0,32,0.25);
+}
+
+body .alert-link {
+    color: #800020;
+}
+
+body .breadcrumb-item a {
+    color: #800020 !important;
+}
+
+body a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-info):not(.text-white) {
+    color: #800020 !important;
+}
+
+body a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-info):not(.text-white):hover {
+    color: #5A0016 !important;
+}
+
+body #aranceles::before {
+    background: linear-gradient(rgba(90,0,22,0.6), rgba(128,0,32,0.7)), url(../assets/img/blockchain-aranceles.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* --- Blockchain: timeline (cuerpo docente) --- */
+body .timeline>li .timeline-image {
+    background-color: #5A0016;
+    border-color: #800020;
+}
+
+body .timeline>li .timeline-panel2 {
+    background-color: rgba(128,0,32,0.35);
+    border-color: #5A0016;
+}
+
+/* --- Blockchain: Bootstrap utility overrides --- */
+body .text-info {
+    color: #800020 !important;
+}
+
+body .text-primary {
+    color: #800020 !important;
+}
+
+body .link-primary {
+    color: #800020 !important;
+}
+
+body .link-primary:hover {
+    color: #5A0016 !important;
+}
+
+/* --- Blockchain: btn-licdia --- */
+body .btn-licdia {
+    background: linear-gradient(90deg, #5A0016, #800020);
+}
+
+/* --- Blockchain: enfoque section --- */
+body .enfoque-hero {
+    background: linear-gradient(90deg, rgba(90,0,22,0.85), rgba(128,0,32,0.46)),
+        url("../assets/img/pc.jpg") center/cover no-repeat;
+}
+
+/* --- Blockchain: icon dots --- */
+body .icon-dot {
+    background: #800020;
+}
+
+/* --- Blockchain: CSS variables override --- */
+body {
+    --accent: #5A0016;
+    --accent2: #800020;
+}
+
+/* --- Blockchain: links dentro del contenido (no navbar/footer/botones) --- */
+body main a:not(.btn):not(.text-white),
+body article a:not(.btn):not(.text-white),
+body section a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-white),
+body .breadcrumb-item a:not(.text-white),
+body .container a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-white) {
+    color: #800020 !important;
+}
+
+body main a:not(.btn):not(.text-white):hover,
+body article a:not(.btn):not(.text-white):hover,
+body section a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-white):hover,
+body .breadcrumb-item a:not(.text-white):hover,
+body .container a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-white):hover {
+    color: #5A0016 !important;
+}
+
+/* --- Blockchain: modal hero --- */
+body #modalInscripcion .modal-hero {
+    background: linear-gradient(90deg, #800020, #5A0016);
+}
+
+/* --- Blockchain: pagos section --- */
+body #pagos {
+    background: linear-gradient(180deg, #5A0016, #5A0016) !important;
+}
+
+/* --- Blockchain: arancel hero (aranceles page) --- */
+body .arancel-hero {
+    background: linear-gradient(135deg, #1a0006 0%, #5A0016 50%, #3d0010 100%) !important;
+}
+
+/* --- Blockchain: bank box inside pagos --- */
+body #pagos .bank-box {
+    background: linear-gradient(180deg, #5A0016, #3d0010) !important;
+}
+
+/* (legacy #aranceles full-bleed animado — neutralizado en el fork MCD:
+   colisionaba con headers que reusan id="aranceles"/"infoInsc"/"formInsc"
+   y rompía el layout al hacer scroll. El hero usa .backgroundAr.fondoMcd) */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.contact-banner {
+    min-height: 160px;
+    background: url("banner-contacto.jpg") center/cover no-repeat;
+    position: relative;
+}
+
+.contact-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+}
+
+.contact-banner>* {
+    position: relative;
+    z-index: 1;
+}
+
+/* Botón oscuro/gradiente en línea con tu sitio */
+.btn-licdia {
+    background: linear-gradient(90deg, #5A0016, #800020);
+    color: #fff;
+    border: 0;
+    border-radius: .375rem;
+}
+
+.btn-licdia:hover {
+    filter: brightness(.95);
+    color: #fff;
+}
+
+.zoom-hover {
+    transition: transform 0.3s ease;
+    /* duración y suavidad */
+}
+
+.zoom-hover:hover {
+    transform: scale(1.15);
+    /* 1.05 = 5% más grande */
+}
+
+/* (legacy #infoInsc / #formInsc full-bleed animado — neutralizado en el
+   fork MCD por la misma razón que #aranceles) */
+
+:root {
+    --accent: #5A0016;
+    /* azul profundo del sitio */
+    --accent2: #800020;
+    /* azul secundaria */
+}
+
+/* bloque visual derecho (podés cambiar imagen si querés) */
+.enfoque-hero {
+    min-height: 220px;
+    background: linear-gradient(90deg, rgba(11, 33, 48, .85), rgba(19, 85, 160, 0.461)),
+        url("../assets/img/pc.jpg") center/cover no-repeat;
+    box-shadow: inset 0 0 80px rgba(0, 0, 0, .3);
+}
+
+/* puntito/ícono circular azul para cada pilar */
+.icon-dot {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--accent2);
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+}
+
+/* bordes/tonos acordes a tu estética */
+#enfoque .card {
+    border-radius: .75rem;
+}
+
+#enfoque .card-body {
+    padding: 1rem 1rem;
+}
+
+/* títulos */
+#enfoque h2 {
+    color: var(--accent);
+}
+
+.iframe-videoDev {
+    display: flex;
+    justify-content: center;
+    /* Centra horizontalmente */
+    align-items: center;
+    /* Centra verticalmente si hay altura suficiente */
+    padding-bottom: 20px;
+}
+
+.contenedor-video .iframe-videoDev {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100%;
+}
+
+.inscribiteLink{
+    text-align: center;
+}
+
+#pagos .bank-box{
+  background: linear-gradient(180deg, #5A0016, #5A0016);
+  color:#fff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  box-shadow: inset 0 0 40px rgba(0,0,0,.25);
+}
+#pagos .copyable{ background: rgba(255,255,255,.08); padding:.1rem .35rem; border-radius:.25rem; }
+
+#modalInscripcion .modal-hero{
+  background: linear-gradient(90deg, var(--accent2), var(--accent));
+}
+#modalInscripcion .modal-content{ border-radius: 1rem; }
+
+#modalInscripcion .countdown .cd-box{
+  background:#f8fafc; border:1px solid #e5e7eb;
+  border-radius:.75rem; padding:.75rem 1rem; text-align:center; min-width:90px;
+}
+#modalInscripcion .cd-num{
+  font-size:2rem; line-height:1; font-variant-numeric: tabular-nums;
+  display:block; color:var(--accent);
+}
+#modalInscripcion small{ color:#6b7280; }
+
+/* Hace que un bloque ocupe todo el ancho del viewport */
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+/* Opcional: bordes redondeados solo en desktop */
+@media (min-width: 992px) {
+  #informacionPlan .card { border-radius: .75rem; }
+}
+
+/* ============================================================
+   MCD THEME — Maestría en Ciencia de Datos (UNLu–UADER)
+   Paleta bordó vino intenso:
+     --brand      #800020   (principal)
+     --brand-dark #5A0016   (oscuro / hover)
+     --brand-soft #FBEAEC   (fondo suave)
+   Tema base bordó (vino intenso) — exclusivo de la Maestría.
+   sin afectar a las demás diplomaturas.
+   ============================================================ */
+
+body {
+    --accent: #5A0016;
+    --accent2: #800020;
+    --brand: #800020;
+    --brand-dark: #5A0016;
+    --brand-soft: #FBEAEC;
+}
+
+/* Header hero */
+header.backgroundhead.fondoMcd {
+    background-image: linear-gradient(to right, rgba(128,0,32,0.72), rgba(90,0,22,0.82)), url('../assets/img/mcd-hero.svg');
+    background-size: cover;
+    background-position: center;
+}
+header.backgroundAr.fondoMcd {
+    background-image: linear-gradient(to left, rgba(90,0,22,0.82), rgba(128,0,32,0.8)), url('../assets/img/mcd-hero.svg');
+    background-size: cover;
+    background-position: center;
+}
+body #bordefino {
+    background-image: linear-gradient(to right, #800020, #5A0016);
+}
+
+/* Botones / links principales */
+body #lic-ia .rule { background: #800020; }
+body .btn-primary {
+    background-color: #800020;
+    border-color: #800020;
+}
+body .btn-primary:hover,
+body .btn-primary:focus {
+    background-color: #5A0016;
+    border-color: #5A0016;
+}
+body #lic-ia a { color: #800020; }
+body #lic-ia a:hover { color: #5A0016; }
+
+body #containerInfo {
+    border-color: #800020 !important;
+    background-color: rgba(128,0,32,0.10);
+}
+body #informacionPlan {
+    background-color: rgba(128,0,32,0.10);
+}
+body .accordion-button:not(.collapsed) {
+    color: #800020;
+    background-color: rgba(128,0,32,0.08);
+}
+body .accordion-button:focus {
+    border-color: #800020;
+    box-shadow: 0 0 0 0.25rem rgba(128,0,32,0.25);
+}
+body .alert-link { color: #800020; }
+body .breadcrumb-item a { color: #800020 !important; }
+
+body a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-info):not(.text-white) {
+    color: #800020 !important;
+}
+body a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-info):not(.text-white):hover {
+    color: #5A0016 !important;
+}
+
+body #aranceles::before {
+    background: linear-gradient(rgba(90,0,22,0.6), rgba(128,0,32,0.7)), url(../assets/img/blockchain-aranceles.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Timeline (cuerpo docente) */
+body .timeline>li .timeline-image {
+    background-color: #5A0016;
+    border-color: #800020;
+}
+body .timeline>li .timeline-panel2 {
+    background-color: rgba(128,0,32,0.32);
+    border-color: #5A0016;
+}
+
+/* Bootstrap utility overrides */
+body .text-info { color: #800020 !important; }
+body .text-primary { color: #800020 !important; }
+body .link-primary { color: #800020 !important; }
+body .link-primary:hover { color: #5A0016 !important; }
+
+body .btn-licdia {
+    background: linear-gradient(90deg, #5A0016, #800020);
+}
+body .enfoque-hero {
+    background: linear-gradient(90deg, rgba(90,0,22,0.85), rgba(128,0,32,0.46)),
+        url("../assets/img/pc.jpg") center/cover no-repeat;
+}
+body .icon-dot { background: #800020; }
+
+/* Links dentro del contenido */
+body main a:not(.btn):not(.text-white),
+body article a:not(.btn):not(.text-white),
+body section a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-white),
+body .breadcrumb-item a:not(.text-white),
+body .container a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-white) {
+    color: #800020 !important;
+}
+body main a:not(.btn):not(.text-white):hover,
+body article a:not(.btn):not(.text-white):hover,
+body section a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-white):hover,
+body .breadcrumb-item a:not(.text-white):hover,
+body .container a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-white):hover {
+    color: #5A0016 !important;
+}
+
+/* Modal / pagos / aranceles */
+body #modalInscripcion .modal-hero {
+    background: linear-gradient(90deg, #800020, #5A0016);
+}
+body #pagos {
+    background: linear-gradient(180deg, #5A0016, #3d0010) !important;
+}
+body .arancel-hero {
+    background: linear-gradient(135deg, #1a0006 0%, #5A0016 50%, #3d0010 100%) !important;
+}
+body #pagos .bank-box {
+    background: linear-gradient(180deg, #5A0016, #3d0010) !important;
+}
+
+/* Cards / componentes reutilizables del index (espeja .bc-card) */
+body .bc-card {
+    background: #fff;
+    border: 1px solid #f0e3e5;
+    border-radius: 16px;
+    padding: 1.75rem 1.25rem;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+body .bc-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: linear-gradient(90deg, #800020 0%, #5A0016 100%);
+    opacity: 0; transition: opacity .25s ease;
+}
+body .bc-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(128,0,32,0.18);
+    border-color: #FBEAEC;
+}
+body .bc-card:hover::before { opacity: 1; }
+body .bc-icon-wrap {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: #FBEAEC;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.1rem; transition: background .25s ease;
+}
+body .bc-icon-wrap i {
+    font-size: 1.6rem; color: #800020; transition: color .25s ease;
+}
+body .bc-card:hover .bc-icon-wrap { background: #800020; }
+body .bc-card:hover .bc-icon-wrap i { color: #fff; }
+
+body .plan-card {
+    background: #fff;
+    border: 1px solid #f0e3e5;
+    border-radius: 14px;
+    margin-bottom: 1rem;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    position: relative; overflow: hidden;
+}
+body .plan-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 4px;
+    background: linear-gradient(90deg, #800020 0%, #5A0016 100%);
+    opacity: 0; transition: opacity .25s ease;
+}
+body .plan-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 36px rgba(128,0,32,0.16);
+    border-color: #FBEAEC;
+}
+body .plan-card:hover::before { opacity: 1; }
+body .plan-card .accordion-item { border: none; border-radius: 0; background: transparent; }
+body .plan-card .accordion-button {
+    background: transparent; color: #5A0016; font-weight: 700;
+    border-radius: 0 !important; box-shadow: none;
+}
+body .plan-card .accordion-button:not(.collapsed) {
+    background: #FBEAEC; color: #5A0016; box-shadow: none;
+}
+body .plan-card .accordion-button:focus { box-shadow: 0 0 0 2px rgba(128,0,32,0.3); }
+body .plan-icon-wrap {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; border-radius: 50%;
+    background: #800020; color: #fff;
+    font-size: .85rem; font-weight: 800; flex-shrink: 0;
+    margin-right: .75rem; transition: background .25s ease;
+}
+body .plan-card:hover .plan-icon-wrap { background: #5A0016; }
+body .stack-pill {
+    display: inline-block; background: #FBEAEC; color: #5A0016;
+    font-size: .72rem; font-weight: 600;
+    padding: .2rem .55rem; border-radius: 999px; margin: .15rem .1rem 0;
+}
+body .stack-badge-name { font-weight: 700; font-size: .95rem; color: #5A0016; margin-bottom: .2rem; }
+body .stack-badge-tag { font-size: .78rem; color: #6c757d; }
+body .proyecto-title { font-weight: 700; color: #5A0016; font-size: 1rem; margin-bottom: .5rem; }
+body .proyecto-desc { font-size: .88rem; color: #4a4a4a; line-height: 1.55; margin-bottom: .75rem; }
+
+/* Fallback AOS GLOBAL: cualquier elemento con data-aos que NO haya sido
+   animado (queda en .aos-init sin .aos-animate) debe ser visible y SIN
+   transform. Sin esto, AOS deja transform:translateY(...) y opacity:0 en
+   secciones que no entraron al viewport a tiempo, empujando el contenido
+   y dejando huecos enormes (la página de perfil de docente se inflaba a
+   ~8000px con ~4000px de vacío). AOS sigue animando lo que sí dispara. */
+[data-aos].aos-init:not(.aos-animate) {
+    opacity: 1 !important;
+    transform: none !important;
+}
+@media (prefers-reduced-motion: reduce) {
+    [data-aos] { opacity: 1 !important; transform: none !important; }
+}
+
+/* Docente cards — avatar circular compacto y profesional.
+   SCOPEADO a #team (grilla del index). NO debe tocar las páginas de
+   perfil de docente (docentes/<slug>/), que definen su propio
+   .docente-card con layout foto-al-lado + bio en su <style> inline. */
+#team .docente-card {
+    background: #fff; border: 1px solid #f0e3e5; border-radius: 16px;
+    overflow: hidden; height: 100%;
+    padding: 1.6rem 1.1rem 1.4rem;
+    text-align: center;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+#team .docente-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(128,0,32,0.18);
+    border-color: #FBEAEC;
+}
+#team .docente-card img {
+    width: 130px; height: 130px; object-fit: cover; object-position: center top;
+    border-radius: 50%;
+    border: 4px solid #FBEAEC;
+    box-shadow: 0 6px 20px rgba(128,0,32,0.16);
+    background: #FBEAEC;
+    margin: 0 auto .9rem;
+    display: block;
+    transition: border-color .25s ease, box-shadow .25s ease;
+}
+#team .docente-card:hover img {
+    border-color: #800020;
+    box-shadow: 0 10px 26px rgba(128,0,32,0.28);
+}
+#team .docente-card .docente-body { padding: 0; }
+#team .docente-card .docente-nombre { font-weight: 700; color: #5A0016; font-size: 1.0rem; margin-bottom: .2rem; }
+#team .docente-card .docente-curso { font-size: .82rem; color: #6c757d; margin-bottom: .5rem; min-height: 2.1em; }
+#team .docente-card .docente-inst {
+    display: inline-block; background: #FBEAEC; color: #5A0016;
+    font-size: .72rem; font-weight: 700; padding: .15rem .6rem; border-radius: 999px;
+}
+#team .docente-card .docente-link {
+    display: inline-block; margin-top: .7rem;
+    font-size: .8rem; font-weight: 600; color: #800020;
+}
+#team .docente-card:hover .docente-link { color: #5A0016; }

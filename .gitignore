@@ -17,3 +17,9 @@ Thumbs.db
 
 # Material institucional sensible (resoluciones internas, credenciales, etc.)
 assets/credenciales/
+
+# Documentos internos de la Maestría en Ciencia de Datos (análisis de apertura, plantel, etc.)
+maestria-ciencia-datos/*.md
+maestria-ciencia-datos/*.zip
+maestria-ciencia-datos/*.docx
+maestria-ciencia-datos/*.pdf
