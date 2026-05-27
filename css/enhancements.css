@@ -10,7 +10,7 @@
   left: 0;
   width: 0%;
   height: 3px;
-  background: linear-gradient(90deg, #4C1C7F, #8B5CF6, #06b6d4);
+  background: linear-gradient(90deg, #4C1C7F, #A78BFA, #06b6d4);
   z-index: 9999;
   transition: width 0.05s linear;
   box-shadow: 0 0 8px rgba(139, 92, 246, 0.6);
@@ -35,7 +35,7 @@
 .theme-toggle:hover {
   transform: rotate(20deg) scale(1.1);
   background: rgba(139, 92, 246, 0.15);
-  border-color: #8B5CF6;
+  border-color: #A78BFA;
 }
 .theme-toggle .icon-moon { display: inline-block; }
 .theme-toggle .icon-sun { display: none; }
@@ -49,7 +49,7 @@
   bottom: 105px;
   right: 25px;
   z-index: 9998;
-  background: linear-gradient(135deg, #4C1C7F, #8B5CF6);
+  background: linear-gradient(135deg, #4C1C7F, #A78BFA);
   color: #fff !important;
   padding: 12px 20px;
   border-radius: 50px;
@@ -229,7 +229,7 @@ a.link-animated:hover::after { width: 100%; }
 }
 [data-theme="dark"] .navbar-light .navbar-nav .nav-link:hover,
 [data-theme="dark"] .navbar .nav-link:hover {
-  color: #8B5CF6 !important;
+  color: #A78BFA !important;
 }
 [data-theme="dark"] .navbar-brand {
   color: #f0f6fc !important;
@@ -249,7 +249,7 @@ a.link-animated:hover::after { width: 100%; }
 [data-theme="dark"] textarea:focus,
 [data-theme="dark"] select:focus {
   background-color: #161b22 !important;
-  border-color: #8B5CF6 !important;
+  border-color: #A78BFA !important;
   box-shadow: 0 0 0 0.25rem rgba(139, 92, 246, 0.25) !important;
   color: #f0f6fc !important;
 }
@@ -271,26 +271,51 @@ a.link-animated:hover::after { width: 100%; }
   color: #c9d1d9 !important;
 }
 
+/* btn-outline-dark queda invisible en dark (texto negro sobre fondo oscuro) */
+[data-theme="dark"] .btn-outline-dark {
+  color: #c9d1d9 !important;
+  border-color: #A78BFA !important;
+}
+[data-theme="dark"] .btn-outline-dark:hover {
+  background: #A78BFA !important;
+  border-color: #A78BFA !important;
+  color: #fff !important;
+}
+[data-theme="dark"] .btn-outline-dark i {
+  color: inherit !important;
+}
+
+/* Otras variantes dark de Bootstrap */
+[data-theme="dark"] .btn-dark {
+  background: #21262d !important;
+  border-color: #30363d !important;
+  color: #c9d1d9 !important;
+}
+[data-theme="dark"] .btn-dark:hover {
+  background: #30363d !important;
+  color: #fff !important;
+}
+
 /* Botones primarios mantienen color de marca, ajustan contraste */
 [data-theme="dark"] .btn-primary,
 [data-theme="dark"] .btn-purple {
-  background-color: #8B5CF6 !important;
-  border-color: #8B5CF6 !important;
+  background-color: #A78BFA !important;
+  border-color: #A78BFA !important;
   color: #fff !important;
 }
 [data-theme="dark"] .btn-primary:hover,
 [data-theme="dark"] .btn-purple:hover {
-  background-color: #7C3AED !important;
-  border-color: #7C3AED !important;
+  background-color: #8B5CF6 !important;
+  border-color: #8B5CF6 !important;
 }
 [data-theme="dark"] .btn-outline-primary,
 [data-theme="dark"] .btn-outline-light {
   color: #c9d1d9 !important;
-  border-color: #8B5CF6 !important;
+  border-color: #A78BFA !important;
 }
 [data-theme="dark"] .btn-outline-primary:hover,
 [data-theme="dark"] .btn-outline-light:hover {
-  background-color: #8B5CF6 !important;
+  background-color: #A78BFA !important;
   color: #fff !important;
 }
 
@@ -299,7 +324,7 @@ a.link-animated:hover::after { width: 100%; }
   color: #58a6ff;
 }
 [data-theme="dark"] a:not(.btn):not(.nav-link):not(.navbar-brand):not(.sticky-cta):hover {
-  color: #8B5CF6;
+  color: #A78BFA;
 }
 
 /* Badges */
@@ -396,7 +421,7 @@ body, .card, .navbar, footer, section, table, .accordion-item, .form-control {
 
 [data-theme="dark"] .tag-bc {
   background: #422006 !important;
-  color: #fbbf24 !important;
+  color: #fb923c !important;
 }
 [data-theme="dark"] .tag-ia {
   background: #1e3a5f !important;
@@ -499,11 +524,11 @@ body, .card, .navbar, footer, section, table, .accordion-item, .form-control {
 [data-theme="dark"] .btn-outline-primary,
 [data-theme="dark"] .btn-cronograma {
   color: #c4b5fd !important;
-  border-color: #8B5CF6 !important;
+  border-color: #A78BFA !important;
 }
 [data-theme="dark"] a[href*="#cronograma"]:hover,
 [data-theme="dark"] .btn-cronograma:hover {
-  background: #8B5CF6 !important;
+  background: #A78BFA !important;
   color: #fff !important;
 }
 
@@ -621,8 +646,8 @@ body, .card, .navbar, footer, section, table, .accordion-item, .form-control {
   color: #e0e7ff !important;
 }
 [data-theme="dark"] .result-yellow {
-  background: rgba(245, 158, 11, 0.18) !important;
-  color: #fde68a !important;
+  background: rgba(249, 115, 22, 0.18) !important;
+  color: #ffedd5 !important;
 }
 [data-theme="dark"] .result-blue {
   background: rgba(59, 130, 246, 0.18) !important;
@@ -638,9 +663,9 @@ body, .card, .navbar, footer, section, table, .accordion-item, .form-control {
 }
 [data-theme="dark"] .quiz-btn:hover,
 [data-theme="dark"] .btn-cta:hover {
-  background: #8B5CF6 !important;
+  background: #A78BFA !important;
   color: #fff !important;
-  border-color: #8B5CF6 !important;
+  border-color: #A78BFA !important;
 }
 
 /* O grande (preposiciones decorativas) */
@@ -740,6 +765,333 @@ html[data-theme="dark"] div[class*="alert"] a {
   color: #ffffff !important;
 }
 
+/* Bootstrap alert variants: oscurecer el fondo manteniendo el matiz */
+html[data-theme="dark"] .alert-warning {
+  background: rgba(249, 115, 22, 0.12) !important;
+  border-color: rgba(249, 115, 22, 0.4) !important;
+  color: #fdba74 !important;
+}
+html[data-theme="dark"] .alert-warning *,
+html[data-theme="dark"] .alert-warning strong,
+html[data-theme="dark"] .alert-warning em,
+html[data-theme="dark"] .alert-warning i {
+  color: #fdba74 !important;
+}
+html[data-theme="dark"] .alert-warning a {
+  color: #ffedd5 !important;
+  text-decoration: underline;
+}
+
+html[data-theme="dark"] .alert-info {
+  background: rgba(59, 130, 246, 0.12) !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+  color: #93c5fd !important;
+}
+html[data-theme="dark"] .alert-info *,
+html[data-theme="dark"] .alert-info a {
+  color: #93c5fd !important;
+}
+
+html[data-theme="dark"] .alert-success {
+  background: rgba(34, 197, 94, 0.12) !important;
+  border-color: rgba(34, 197, 94, 0.4) !important;
+  color: #86efac !important;
+}
+html[data-theme="dark"] .alert-success *,
+html[data-theme="dark"] .alert-success a {
+  color: #86efac !important;
+}
+
+html[data-theme="dark"] .alert-danger {
+  background: rgba(239, 68, 68, 0.12) !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+  color: #fca5a5 !important;
+}
+html[data-theme="dark"] .alert-danger *,
+html[data-theme="dark"] .alert-danger a {
+  color: #fca5a5 !important;
+}
+
+html[data-theme="dark"] .alert-primary {
+  background: rgba(167, 139, 250, 0.15) !important;
+  border-color: rgba(167, 139, 250, 0.4) !important;
+  color: #c4b5fd !important;
+}
+html[data-theme="dark"] .alert-primary *,
+html[data-theme="dark"] .alert-primary a {
+  color: #c4b5fd !important;
+}
+
+html[data-theme="dark"] .alert-secondary {
+  background: rgba(148, 163, 184, 0.12) !important;
+  border-color: rgba(148, 163, 184, 0.4) !important;
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .alert-secondary *,
+html[data-theme="dark"] .alert-secondary a {
+  color: #cbd5e1 !important;
+}
+
+/* =====================================================================
+   IN-PAGE <style> CLASSES: cards/boxes con fondo claro defindio dentro
+   de cada HTML. Una sola regla las cubre todas (mas especifica con html[]).
+   ===================================================================== */
+html[data-theme="dark"] .arancel-card,
+html[data-theme="dark"] .bank-box,
+html[data-theme="dark"] .bc-card,
+html[data-theme="dark"] .camino-alumno,
+html[data-theme="dark"] .compare-table,
+html[data-theme="dark"] .curso-card,
+html[data-theme="dark"] .destinatario-card,
+html[data-theme="dark"] .docente-card,
+html[data-theme="dark"] .enfoque-card,
+html[data-theme="dark"] .estrategia-block,
+html[data-theme="dark"] .factura-box,
+html[data-theme="dark"] .inscripcion-card,
+html[data-theme="dark"] .licdia-card,
+html[data-theme="dark"] .pago-card,
+html[data-theme="dark"] .plan-card,
+html[data-theme="dark"] .prereq-item,
+html[data-theme="dark"] .qa-card,
+html[data-theme="dark"] .quiz-card,
+html[data-theme="dark"] .quiz-wrapper,
+html[data-theme="dark"] .quote-card,
+html[data-theme="dark"] .requisito-card,
+html[data-theme="dark"] .stat-box,
+html[data-theme="dark"] .total-hero,
+html[data-theme="dark"] .lente-estrategica,
+html[data-theme="dark"] .tip,
+html[data-theme="dark"] .warn {
+  background: #161b22 !important;
+  background-color: #161b22 !important;
+  border-color: rgba(167, 139, 250, 0.25) !important;
+  color: #f0f6fc !important;
+}
+
+html[data-theme="dark"] .arancel-card *,
+html[data-theme="dark"] .bank-box *,
+html[data-theme="dark"] .bc-card *,
+html[data-theme="dark"] .camino-alumno *,
+html[data-theme="dark"] .compare-table *,
+html[data-theme="dark"] .curso-card *,
+html[data-theme="dark"] .destinatario-card *,
+html[data-theme="dark"] .docente-card *,
+html[data-theme="dark"] .enfoque-card *,
+html[data-theme="dark"] .estrategia-block *,
+html[data-theme="dark"] .factura-box *,
+html[data-theme="dark"] .inscripcion-card *,
+html[data-theme="dark"] .licdia-card *,
+html[data-theme="dark"] .pago-card *,
+html[data-theme="dark"] .plan-card *,
+html[data-theme="dark"] .prereq-item *,
+html[data-theme="dark"] .qa-card *,
+html[data-theme="dark"] .quiz-card *,
+html[data-theme="dark"] .quiz-wrapper *,
+html[data-theme="dark"] .quote-card *,
+html[data-theme="dark"] .requisito-card *,
+html[data-theme="dark"] .stat-box *,
+html[data-theme="dark"] .total-hero *,
+html[data-theme="dark"] .lente-estrategica * {
+  color: #f0f6fc !important;
+}
+/* Texto muted / small dentro de cards: gris claro pero distinto del titulo */
+html[data-theme="dark"] .arancel-card .text-muted,
+html[data-theme="dark"] .bank-box .text-muted,
+html[data-theme="dark"] .bc-card .text-muted,
+html[data-theme="dark"] .curso-card .text-muted,
+html[data-theme="dark"] .destinatario-card .text-muted,
+html[data-theme="dark"] .docente-card .text-muted,
+html[data-theme="dark"] .enfoque-card .text-muted,
+html[data-theme="dark"] .pago-card .text-muted,
+html[data-theme="dark"] .plan-card .text-muted,
+html[data-theme="dark"] .qa-card .text-muted,
+html[data-theme="dark"] .quote-card .text-muted,
+html[data-theme="dark"] .requisito-card .text-muted,
+html[data-theme="dark"] .arancel-card small,
+html[data-theme="dark"] .bank-box small,
+html[data-theme="dark"] .pago-card small,
+html[data-theme="dark"] .requisito-card small {
+  color: #94a3b8 !important;
+}
+
+/* Tables hover en dark */
+html[data-theme="dark"] table tr:hover td,
+html[data-theme="dark"] .compare-table tr:hover td {
+  background: rgba(167, 139, 250, 0.08) !important;
+}
+
+/* Pills semantic colors */
+html[data-theme="dark"] .pill.green,
+html[data-theme="dark"] .green {
+  background: rgba(34, 197, 94, 0.15) !important;
+  color: #86efac !important;
+  border-color: rgba(34, 197, 94, 0.4) !important;
+}
+html[data-theme="dark"] .pill.red,
+html[data-theme="dark"] .red {
+  background: rgba(239, 68, 68, 0.15) !important;
+  color: #fca5a5 !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+}
+html[data-theme="dark"] .tip {
+  background: rgba(59, 130, 246, 0.10) !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+}
+html[data-theme="dark"] .tip * {
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .warn {
+  background: rgba(249, 115, 22, 0.10) !important;
+  border-color: rgba(249, 115, 22, 0.4) !important;
+}
+html[data-theme="dark"] .warn * {
+  color: #fdba74 !important;
+}
+
+/* result-grey/yellow estaban antes, ampliamos por si quedaron sueltas */
+html[data-theme="dark"] .result-grey {
+  background: rgba(148, 163, 184, 0.10) !important;
+  border-color: rgba(148, 163, 184, 0.4) !important;
+  color: #cbd5e1 !important;
+}
+html[data-theme="dark"] .result-yellow {
+  background: rgba(249, 115, 22, 0.10) !important;
+  border-color: rgba(249, 115, 22, 0.4) !important;
+  color: #fdba74 !important;
+}
+
+/* Quiz button bg #fff (clase quiz-btn ya esta cubierta arriba pero refuerzo) */
+html[data-theme="dark"] .quiz-btn {
+  background: #161b22 !important;
+  border-color: rgba(167, 139, 250, 0.3) !important;
+  color: #f0f6fc !important;
+}
+
+/* Btn CTA del home/inscripcion */
+html[data-theme="dark"] .btn-cta {
+  color: #ffffff !important;
+}
+
+/* Camino bolita (steps numericos circulares) */
+html[data-theme="dark"] .camino-bolita {
+  background: #a78bfa !important;
+  color: #1a0a2e !important;
+  border-color: #a78bfa !important;
+}
+
+/* o-grande / guion: numeros decorativos en blockchain */
+html[data-theme="dark"] .o-grande {
+  color: #a78bfa !important;
+}
+html[data-theme="dark"] .guion {
+  color: #a78bfa !important;
+}
+
+/* =====================================================================
+   OVERRIDES de style2.css que tenian !important para light theme.
+   style2.css carga ANTES de enhancements.css pero usa .blockchain-theme
+   .ia-theme (clase del body) con especificidad alta + !important.
+   Igualamos especificidad prefijando con html[data-theme="dark"].
+   ===================================================================== */
+
+/* Bordes con morado oscuro de marca → violet-400 en dark */
+html[data-theme="dark"] .blockchain-theme #containerInfo {
+  border-color: #a78bfa !important;
+  background-color: rgba(167, 139, 250, 0.12) !important;
+  color: #f0f6fc !important;
+}
+
+html[data-theme="dark"] .blockchain-theme .accordion-button:not(.collapsed) {
+  color: #c4b5fd !important;
+  background-color: rgba(167, 139, 250, 0.10) !important;
+}
+
+html[data-theme="dark"] .blockchain-theme .accordion-button:focus {
+  border-color: #a78bfa !important;
+  box-shadow: 0 0 0 0.25rem rgba(167, 139, 250, 0.25) !important;
+}
+
+html[data-theme="dark"] .blockchain-theme .alert-link {
+  color: #c4b5fd !important;
+}
+
+html[data-theme="dark"] .blockchain-theme .breadcrumb-item a {
+  color: #c4b5fd !important;
+}
+
+/* Anchor color rule: el selector original tiene 9 :not(), super especifico.
+   Lo igualamos con el mismo + html[data-theme="dark"] adelante */
+html[data-theme="dark"] .blockchain-theme a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-info):not(.text-white) {
+  color: #c4b5fd !important;
+}
+html[data-theme="dark"] .blockchain-theme a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-info):not(.text-white):hover {
+  color: #a78bfa !important;
+}
+html[data-theme="dark"] .blockchain-theme .container a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-white) {
+  color: #c4b5fd !important;
+}
+
+html[data-theme="dark"] .blockchain-theme #lic-ia a {
+  color: #c4b5fd !important;
+}
+
+html[data-theme="dark"] .blockchain-theme .timeline > li .timeline-image {
+  background-color: #2d1b69 !important;
+  border-color: #a78bfa !important;
+}
+
+html[data-theme="dark"] .blockchain-theme .text-info,
+html[data-theme="dark"] .blockchain-theme .text-primary,
+html[data-theme="dark"] .blockchain-theme .link-primary {
+  color: #c4b5fd !important;
+}
+
+/* btn-primary del blockchain-theme: mejorar contraste en dark */
+html[data-theme="dark"] .blockchain-theme .btn-primary {
+  background-color: #8B5CF6 !important;
+  border-color: #a78bfa !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .blockchain-theme .btn-primary:hover,
+html[data-theme="dark"] .blockchain-theme .btn-primary:focus {
+  background-color: #a78bfa !important;
+  border-color: #c4b5fd !important;
+}
+
+/* IA: equivalentes para azul oscuro #1C2E54 / #1354A0 → claros en dark */
+html[data-theme="dark"] .ia-theme a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-info):not(.text-white),
+html[data-theme="dark"] .ia-theme .container a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-white),
+html[data-theme="dark"] .ia-theme .breadcrumb-item a,
+html[data-theme="dark"] .ia-theme .text-info,
+html[data-theme="dark"] .ia-theme .text-primary,
+html[data-theme="dark"] .ia-theme .link-primary,
+html[data-theme="dark"] .ia-theme .alert-link {
+  color: #93c5fd !important;
+}
+html[data-theme="dark"] .ia-theme a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-info):not(.text-white):hover {
+  color: #bfdbfe !important;
+}
+
+html[data-theme="dark"] .ia-theme .accordion-button:not(.collapsed) {
+  color: #93c5fd !important;
+  background-color: rgba(59, 130, 246, 0.10) !important;
+}
+html[data-theme="dark"] .ia-theme .accordion-button:focus {
+  border-color: #60a5fa !important;
+  box-shadow: 0 0 0 0.25rem rgba(59, 130, 246, 0.25) !important;
+}
+
+html[data-theme="dark"] .ia-theme .btn-primary {
+  background-color: #1e3a8a !important;
+  border-color: #60a5fa !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .ia-theme .btn-primary:hover,
+html[data-theme="dark"] .ia-theme .btn-primary:focus {
+  background-color: #2563eb !important;
+  border-color: #93c5fd !important;
+}
+
 /* Iconos del home: <i class="fa..."> con color inline #4C1C7F, dificil de ver sobre dark */
 html[data-theme="dark"] .icons i.fa,
 html[data-theme="dark"] .icons i.fas,
@@ -747,6 +1099,147 @@ html[data-theme="dark"] .icons i.far,
 html[data-theme="dark"] .icons i.fa-3x {
   color: #a78bfa !important;
   filter: drop-shadow(0 0 10px rgba(167, 139, 250, 0.4));
+}
+
+/* GLOBAL: cualquier icono Font Awesome con color inline morado oscuro de marca */
+/* Selector por atributo pisa los style="color:#4C1C7F" inline */
+html[data-theme="dark"] i[style*="#4C1C7F"],
+html[data-theme="dark"] i[style*="#4c1c7f"],
+html[data-theme="dark"] i[style*="color: #4C1C7F"],
+html[data-theme="dark"] i[style*="color:#4C1C7F"],
+html[data-theme="dark"] span[style*="#4C1C7F"],
+html[data-theme="dark"] span[style*="#4c1c7f"] {
+  color: #a78bfa !important;
+}
+
+/* SVGs con fill/stroke morado oscuro inline */
+html[data-theme="dark"] svg[fill="#4C1C7F"],
+html[data-theme="dark"] svg[fill="#4c1c7f"],
+html[data-theme="dark"] svg path[fill="#4C1C7F"],
+html[data-theme="dark"] svg path[fill="#4c1c7f"],
+html[data-theme="dark"] svg [fill="#4C1C7F"],
+html[data-theme="dark"] svg [fill="#4c1c7f"] {
+  fill: #a78bfa !important;
+}
+html[data-theme="dark"] svg[stroke="#4C1C7F"],
+html[data-theme="dark"] svg [stroke="#4C1C7F"],
+html[data-theme="dark"] svg [stroke="#4c1c7f"] {
+  stroke: #a78bfa !important;
+}
+
+/* =====================================================================
+   SWEEP MASIVO: inline colors oscuros sobre dark background
+   ===================================================================== */
+
+/* TEXTO inline: morados oscuros de marca → violet-400 (#a78bfa) */
+html[data-theme="dark"] [style*="color:#4C1C7F"],
+html[data-theme="dark"] [style*="color: #4C1C7F"],
+html[data-theme="dark"] [style*="color:#4c1c7f"],
+html[data-theme="dark"] [style*="color: #4c1c7f"] {
+  color: #a78bfa !important;
+}
+
+/* TEXTO inline: azules oscuros → sky/blue claro (#93c5fd) */
+html[data-theme="dark"] [style*="color: #1C2E54"],
+html[data-theme="dark"] [style*="color:#1C2E54"],
+html[data-theme="dark"] [style*="color: #1a4aad"],
+html[data-theme="dark"] [style*="color:#1a4aad"],
+html[data-theme="dark"] [style*="color: #1354A0"],
+html[data-theme="dark"] [style*="color:#1354A0"] {
+  color: #93c5fd !important;
+}
+
+/* TEXTO inline: grises oscuros (#4a4a4a #3a3a3a #6a6a6a) → gris claro legible */
+html[data-theme="dark"] [style*="color:#4a4a4a"],
+html[data-theme="dark"] [style*="color: #4a4a4a"],
+html[data-theme="dark"] [style*="color:#3a3a3a"],
+html[data-theme="dark"] [style*="color: #3a3a3a"],
+html[data-theme="dark"] [style*="color:#6a6a6a"],
+html[data-theme="dark"] [style*="color: #6a6a6a"],
+html[data-theme="dark"] [style*="color:#6c757d"],
+html[data-theme="dark"] [style*="color: #6c757d"] {
+  color: #c9d1d9 !important;
+}
+
+/* TEXTO inline: azul claro #a8c5e0 ya tiene buen contraste, solo lo levantamos un toque */
+html[data-theme="dark"] [style*="color:#a8c5e0"],
+html[data-theme="dark"] [style*="color: #a8c5e0"] {
+  color: #cbd5e1 !important;
+}
+
+/* FONDOS inline claros (#FAFAFC, #f7f1fc, #EBF1FB, #fff, #ffffff) → fondo oscuro
+   ENORME: estos crean bloques blancos en medio del dark mode */
+html[data-theme="dark"] [style*="background:#FAFAFC"],
+html[data-theme="dark"] [style*="background: #FAFAFC"],
+html[data-theme="dark"] [style*="background-color:#FAFAFC"],
+html[data-theme="dark"] [style*="background-color: #FAFAFC"],
+html[data-theme="dark"] [style*="background:#fafafc"],
+html[data-theme="dark"] [style*="background:#f7f1fc"],
+html[data-theme="dark"] [style*="background: #f7f1fc"],
+html[data-theme="dark"] [style*="background-color:#f7f1fc"],
+html[data-theme="dark"] [style*="background-color: #f7f1fc"],
+html[data-theme="dark"] [style*="background:#EBF1FB"],
+html[data-theme="dark"] [style*="background: #EBF1FB"],
+html[data-theme="dark"] [style*="background-color:#EBF1FB"],
+html[data-theme="dark"] [style*="background-color: #EBF1FB"],
+html[data-theme="dark"] [style*="background:#ebf1fb"],
+html[data-theme="dark"] [style*="background:#fff;"],
+html[data-theme="dark"] [style*="background: #fff;"],
+html[data-theme="dark"] [style*="background:#ffffff"],
+html[data-theme="dark"] [style*="background: #ffffff"],
+html[data-theme="dark"] [style*="background-color:#fff;"],
+html[data-theme="dark"] [style*="background-color: #fff;"],
+html[data-theme="dark"] [style*="background-color:#ffffff"],
+html[data-theme="dark"] [style*="background-color: #ffffff"] {
+  background: #161b22 !important;
+  background-color: #161b22 !important;
+  border-color: rgba(167, 139, 250, 0.2) !important;
+}
+
+/* Y los textos DENTRO de esos bloques que ahora son dark, fuerzan claros */
+html[data-theme="dark"] [style*="background:#FAFAFC"] *,
+html[data-theme="dark"] [style*="background: #FAFAFC"] *,
+html[data-theme="dark"] [style*="background-color:#FAFAFC"] *,
+html[data-theme="dark"] [style*="background-color: #FAFAFC"] *,
+html[data-theme="dark"] [style*="background:#f7f1fc"] *,
+html[data-theme="dark"] [style*="background-color:#f7f1fc"] *,
+html[data-theme="dark"] [style*="background:#EBF1FB"] *,
+html[data-theme="dark"] [style*="background-color:#EBF1FB"] *,
+html[data-theme="dark"] [style*="background:#fff;"] *,
+html[data-theme="dark"] [style*="background:#ffffff"] *,
+html[data-theme="dark"] [style*="background-color:#fff;"] *,
+html[data-theme="dark"] [style*="background-color:#ffffff"] * {
+  color: #f0f6fc !important;
+}
+html[data-theme="dark"] [style*="background:#FAFAFC"] p,
+html[data-theme="dark"] [style*="background:#f7f1fc"] p,
+html[data-theme="dark"] [style*="background:#EBF1FB"] p,
+html[data-theme="dark"] [style*="background:#fff;"] p,
+html[data-theme="dark"] [style*="background:#ffffff"] p,
+html[data-theme="dark"] [style*="background-color:#FAFAFC"] p,
+html[data-theme="dark"] [style*="background-color:#f7f1fc"] p,
+html[data-theme="dark"] [style*="background-color:#EBF1FB"] p,
+html[data-theme="dark"] [style*="background-color:#fff;"] p,
+html[data-theme="dark"] [style*="background-color:#ffffff"] p {
+  color: #c9d1d9 !important;
+}
+
+/* FONDOS azules/morados oscuros inline → mantener pero ajustar a violet/blue dark */
+html[data-theme="dark"] [style*="background:#1C2E54"],
+html[data-theme="dark"] [style*="background-color:#1C2E54"],
+html[data-theme="dark"] [style*="background:#193d76"],
+html[data-theme="dark"] [style*="background-color:#193d76"],
+html[data-theme="dark"] [style*="background:#1a63c0"],
+html[data-theme="dark"] [style*="background-color:#1a63c0"] {
+  background: #1e3a8a !important;
+  background-color: #1e3a8a !important;
+}
+html[data-theme="dark"] [style*="background:#4C1C7F"],
+html[data-theme="dark"] [style*="background-color:#4C1C7F"],
+html[data-theme="dark"] [style*="background:#261951"],
+html[data-theme="dark"] [style*="background-color:#261951"] {
+  background: #2d1b69 !important;
+  background-color: #2d1b69 !important;
 }
 
 html[data-theme="dark"] .icons h3,

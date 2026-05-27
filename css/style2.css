@@ -654,21 +654,38 @@ header.backgroundAr.fondoBlockchain {
     background: linear-gradient(135deg, #0a0a1a 0%, #261951 50%, #1a0d30 100%) !important;
 }
 
-/* --- Blockchain: bank box inside pagos --- */
-.blockchain-theme #pagos .bank-box {
+/* --- Blockchain: bank box inside pagos (LIGHT mode only) --- */
+html:not([data-theme="dark"]) .blockchain-theme #pagos .bank-box {
     background: linear-gradient(180deg, #261951, #1a0d30) !important;
 }
+html[data-theme="dark"] .blockchain-theme #pagos .bank-box {
+    background: linear-gradient(180deg, #1a1230, #0f0820) !important;
+    color: #f0f6fc !important;
+    box-shadow: none !important;
+    font-family: 'Courier New', monospace !important;
+}
 
-/* --- IA: bank box inside pagos (override dark global to navy-soft) --- */
-.ia-theme #pagos .bank-box {
+/* --- IA: bank box inside pagos (LIGHT only — dark uses enhancements.css) --- */
+html:not([data-theme="dark"]) .ia-theme #pagos .bank-box {
     background: #f0f5ff !important;
     color: #1C2E54 !important;
     box-shadow: none !important;
     font-family: 'Courier New', monospace !important;
 }
-.ia-theme #pagos .copyable {
+html[data-theme="dark"] .ia-theme #pagos .bank-box {
+    background: #161b22 !important;
+    color: #f0f6fc !important;
+    box-shadow: none !important;
+    font-family: 'Courier New', monospace !important;
+    border-color: rgba(147, 197, 253, 0.3) !important;
+}
+html:not([data-theme="dark"]) .ia-theme #pagos .copyable {
     background: rgba(28, 46, 84, 0.08) !important;
     color: #1C2E54 !important;
+}
+html[data-theme="dark"] .ia-theme #pagos .copyable {
+    background: rgba(147, 197, 253, 0.15) !important;
+    color: #cbd5e1 !important;
 }
 
 #aranceles {
