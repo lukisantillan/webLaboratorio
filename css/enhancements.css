@@ -1,0 +1,370 @@
+/* ============================================================
+   ENHANCEMENTS — Dark mode, microinteractions, scroll progress
+   Overlay sobre styles.css + style2.css. No modifica la base.
+   ============================================================ */
+
+/* ---------- 1. SCROLL PROGRESS BAR ---------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #4C1C7F, #8B5CF6, #06b6d4);
+  z-index: 9999;
+  transition: width 0.05s linear;
+  box-shadow: 0 0 8px rgba(139, 92, 246, 0.6);
+}
+
+/* ---------- 2. THEME TOGGLE BUTTON ---------- */
+.theme-toggle {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: inherit;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+  margin-left: 0.75rem;
+  font-size: 1rem;
+}
+.theme-toggle:hover {
+  transform: rotate(20deg) scale(1.1);
+  background: rgba(139, 92, 246, 0.15);
+  border-color: #8B5CF6;
+}
+.theme-toggle .icon-moon { display: inline-block; }
+.theme-toggle .icon-sun { display: none; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+[data-theme="dark"] .theme-toggle .icon-sun { display: inline-block; }
+
+/* ---------- 3. STICKY FLOATING CTA ---------- */
+.sticky-cta {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 9998;
+  background: linear-gradient(135deg, #4C1C7F, #8B5CF6);
+  color: #fff !important;
+  padding: 14px 22px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 10px 30px rgba(76, 28, 127, 0.45);
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.3s ease;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.sticky-cta.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.sticky-cta:hover {
+  box-shadow: 0 14px 40px rgba(139, 92, 246, 0.6);
+  transform: translateY(-3px);
+  color: #fff !important;
+}
+.sticky-cta i { font-size: 1.1rem; }
+@media (max-width: 576px) {
+  .sticky-cta {
+    bottom: 16px;
+    right: 16px;
+    padding: 12px 18px;
+    font-size: 0.85rem;
+  }
+}
+
+/* ---------- 4. CARD HOVER MICROINTERACTIONS ---------- */
+.card,
+.curso-card,
+.feature-card,
+.perfil-card,
+.tp-resultado,
+[class*="proyecto-card"],
+[class*="rol-card"] {
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.35s ease,
+              border-color 0.3s ease !important;
+  will-change: transform;
+}
+.card:hover,
+.curso-card:hover,
+.feature-card:hover,
+.perfil-card:hover,
+.tp-resultado:hover,
+[class*="proyecto-card"]:hover,
+[class*="rol-card"]:hover {
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 20px 40px rgba(76, 28, 127, 0.18),
+              0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Buttons: smoother hover */
+.btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease !important;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(76, 28, 127, 0.25);
+}
+.btn:active { transform: translateY(0); }
+
+/* Link underline animado */
+a.link-animated {
+  position: relative;
+  text-decoration: none;
+}
+a.link-animated::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+a.link-animated:hover::after { width: 100%; }
+
+/* ---------- 5. DARK MODE ---------- */
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+[data-theme="dark"] body {
+  background-color: #0d1117 !important;
+  color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
+  color: #f0f6fc !important;
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] li,
+[data-theme="dark"] span:not(.badge):not(.btn span),
+[data-theme="dark"] td,
+[data-theme="dark"] dd,
+[data-theme="dark"] dt {
+  color: #c9d1d9 !important;
+}
+
+/* Cards y contenedores */
+[data-theme="dark"] .card,
+[data-theme="dark"] .curso-card,
+[data-theme="dark"] .feature-card,
+[data-theme="dark"] .perfil-card,
+[data-theme="dark"] .tp-resultado,
+[data-theme="dark"] [class*="proyecto-card"],
+[data-theme="dark"] [class*="rol-card"],
+[data-theme="dark"] .cohorte-proof {
+  background-color: #161b22 !important;
+  border-color: #30363d !important;
+  color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] .card-body,
+[data-theme="dark"] .card-header,
+[data-theme="dark"] .card-footer {
+  background-color: transparent !important;
+  color: #c9d1d9 !important;
+}
+
+/* Secciones con fondos claros */
+[data-theme="dark"] section,
+[data-theme="dark"] .bg-light,
+[data-theme="dark"] .bg-white {
+  background-color: #0d1117 !important;
+}
+
+[data-theme="dark"] .bg-secondary,
+[data-theme="dark"] .bg-tertiary {
+  background-color: #161b22 !important;
+}
+
+/* Tablas */
+[data-theme="dark"] table {
+  background-color: #161b22 !important;
+  color: #c9d1d9 !important;
+}
+[data-theme="dark"] table th {
+  background-color: #21262d !important;
+  color: #f0f6fc !important;
+  border-color: #30363d !important;
+}
+[data-theme="dark"] table td {
+  border-color: #30363d !important;
+}
+[data-theme="dark"] .table-striped tbody tr:nth-of-type(odd) {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+/* Navbar */
+[data-theme="dark"] .navbar,
+[data-theme="dark"] nav.navbar {
+  background-color: rgba(13, 17, 23, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #30363d;
+}
+[data-theme="dark"] .navbar-light .navbar-nav .nav-link,
+[data-theme="dark"] .navbar .nav-link {
+  color: #c9d1d9 !important;
+}
+[data-theme="dark"] .navbar-light .navbar-nav .nav-link:hover,
+[data-theme="dark"] .navbar .nav-link:hover {
+  color: #8B5CF6 !important;
+}
+[data-theme="dark"] .navbar-brand {
+  color: #f0f6fc !important;
+}
+
+/* Inputs y forms */
+[data-theme="dark"] .form-control,
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+  background-color: #0d1117 !important;
+  color: #c9d1d9 !important;
+  border-color: #30363d !important;
+}
+[data-theme="dark"] .form-control:focus,
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] select:focus {
+  background-color: #161b22 !important;
+  border-color: #8B5CF6 !important;
+  box-shadow: 0 0 0 0.25rem rgba(139, 92, 246, 0.25) !important;
+  color: #f0f6fc !important;
+}
+[data-theme="dark"] .form-label,
+[data-theme="dark"] label {
+  color: #c9d1d9 !important;
+}
+[data-theme="dark"] ::placeholder {
+  color: #6e7681 !important;
+}
+
+/* Footer */
+[data-theme="dark"] footer {
+  background-color: #010409 !important;
+  color: #8b949e !important;
+  border-top: 1px solid #30363d;
+}
+[data-theme="dark"] footer a {
+  color: #c9d1d9 !important;
+}
+
+/* Botones primarios mantienen color de marca, ajustan contraste */
+[data-theme="dark"] .btn-primary,
+[data-theme="dark"] .btn-purple {
+  background-color: #8B5CF6 !important;
+  border-color: #8B5CF6 !important;
+  color: #fff !important;
+}
+[data-theme="dark"] .btn-primary:hover,
+[data-theme="dark"] .btn-purple:hover {
+  background-color: #7C3AED !important;
+  border-color: #7C3AED !important;
+}
+[data-theme="dark"] .btn-outline-primary,
+[data-theme="dark"] .btn-outline-light {
+  color: #c9d1d9 !important;
+  border-color: #8B5CF6 !important;
+}
+[data-theme="dark"] .btn-outline-primary:hover,
+[data-theme="dark"] .btn-outline-light:hover {
+  background-color: #8B5CF6 !important;
+  color: #fff !important;
+}
+
+/* Links genéricos */
+[data-theme="dark"] a:not(.btn):not(.nav-link):not(.navbar-brand):not(.sticky-cta) {
+  color: #58a6ff;
+}
+[data-theme="dark"] a:not(.btn):not(.nav-link):not(.navbar-brand):not(.sticky-cta):hover {
+  color: #8B5CF6;
+}
+
+/* Badges */
+[data-theme="dark"] .badge.bg-light {
+  background-color: #21262d !important;
+  color: #c9d1d9 !important;
+}
+
+/* Hero / secciones con imagen de fondo: oscurece overlay */
+[data-theme="dark"] header.masthead::before,
+[data-theme="dark"] .hero-section::before {
+  background: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Accordion / FAQ */
+[data-theme="dark"] .accordion-item,
+[data-theme="dark"] .accordion-button {
+  background-color: #161b22 !important;
+  color: #c9d1d9 !important;
+  border-color: #30363d !important;
+}
+[data-theme="dark"] .accordion-button:not(.collapsed) {
+  background-color: #21262d !important;
+  color: #f0f6fc !important;
+}
+[data-theme="dark"] .accordion-body {
+  background-color: #161b22 !important;
+  color: #c9d1d9 !important;
+}
+
+/* HR */
+[data-theme="dark"] hr {
+  border-color: #30363d !important;
+  opacity: 0.5;
+}
+
+/* Code blocks */
+[data-theme="dark"] code,
+[data-theme="dark"] pre {
+  background-color: #161b22 !important;
+  color: #f0f6fc !important;
+  border: 1px solid #30363d;
+}
+
+/* Imagenes con fondo blanco: leve atenuación para no encandilar */
+[data-theme="dark"] img:not(.no-dim) {
+  opacity: 0.92;
+  transition: opacity 0.3s ease;
+}
+[data-theme="dark"] img:not(.no-dim):hover {
+  opacity: 1;
+}
+
+/* Smooth theme transition global */
+body, .card, .navbar, footer, section, table, .accordion-item, .form-control {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Respeta usuarios con reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+  .card:hover,
+  .curso-card:hover,
+  .feature-card:hover {
+    transform: none !important;
+  }
+}

@@ -35,4 +35,9 @@
   <url><loc>https://licdia.unlu.edu.ar/dev-ia/requisitos/</loc><priority>0.8</priority></url>
   <url><loc>https://licdia.unlu.edu.ar/dev-ia/por-que-elegirnos/</loc><priority>0.85</priority></url>
   <url><loc>https://licdia.unlu.edu.ar/dev-ia/inscripcion-dev-ia/</loc><priority>0.85</priority></url>
+  <url><loc>https://licdia.unlu.edu.ar/blog/</loc><priority>0.7</priority></url>
+  <url><loc>https://licdia.unlu.edu.ar/blog/your-first-smart-contract-with-solidity/</loc><priority>0.6</priority></url>
+  <url><loc>https://licdia.unlu.edu.ar/blog/ethereum-mainnet-vs-l2-when-to-use-each-in-2026/</loc><priority>0.6</priority></url>
+  <url><loc>https://licdia.unlu.edu.ar/blog/rag-vs-fine-tuning-when-to-use-each/</loc><priority>0.6</priority></url>
+  <url><loc>https://licdia.unlu.edu.ar/blog/real-costs-of-serving-an-llm-in-production/</loc><priority>0.6</priority></url>
 </urlset>

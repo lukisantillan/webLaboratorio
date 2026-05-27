@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Blog — LICDIA UNLu</title>
+    <meta name="description" content="Practical articles on blockchain development and generative AI, written by the instructors of the LICDIA UNLu diplomas." />
+    <meta name="author" content="LICDIA UNLu" />
+    <link rel="canonical" href="https://licdia.unlu.edu.ar/blog/" />
+
+    <meta property="og:title" content="LICDIA UNLu Blog — Blockchain & Generative AI" />
+    <meta property="og:description" content="Practical articles on blockchain development and generative AI from the LICDIA UNLu instructors." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://licdia.unlu.edu.ar/blog/" />
+
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <!-- LICDIA-ENHANCEMENTS-V1 -->
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('licdia-theme');
+          if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+          if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+        } catch(e){}
+      })();
+    </script>
+    <link href="../css/enhancements.css" rel="stylesheet" />
+    <script src="../js/enhancements.js" defer></script>
+
+    <style>
+      body { font-family: 'Inter', system-ui, -apple-system, sans-serif; color: #1e293b; background: #fff; }
+      .navbar { padding: 1rem 0; border-bottom: 1px solid #e2e8f0; background: #fff; }
+      .navbar-brand { font-weight: 800; color: #4C1C7F; font-size: 1.15rem; }
+      .navbar .nav-link { color: #475569; font-weight: 500; }
+      .navbar .nav-link:hover { color: #4C1C7F; }
+
+      .blog-hero { padding: 5rem 0 3rem; text-align: center; background: linear-gradient(180deg, #faf5ff 0%, #fff 100%); }
+      .blog-hero h1 { font-size: 2.75rem; font-weight: 800; color: #1e293b; margin-bottom: 0.75rem; }
+      .blog-hero p { font-size: 1.15rem; color: #64748b; max-width: 640px; margin: 0 auto; }
+
+      .post-grid { padding: 3rem 0 5rem; }
+      .post-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.75rem; height: 100%; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
+      .post-card .tag { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; }
+      .tag-bc { background: #fef3c7; color: #92400e; }
+      .tag-ia { background: #dbeafe; color: #1e40af; }
+      .post-card h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.5rem; color: #1e293b; line-height: 1.3; }
+      .post-card p { color: #64748b; font-size: 0.95rem; line-height: 1.6; flex-grow: 1; }
+      .post-card .meta { font-size: 0.8rem; color: #94a3b8; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #f1f5f9; }
+      .post-card .read-more { color: #4C1C7F; font-weight: 600; font-size: 0.9rem; margin-top: 0.5rem; }
+
+      footer { background: #0f172a; color: #94a3b8; padding: 2.5rem 0; text-align: center; }
+      footer a { color: #c9d1d9; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="/">LICDIA <span style="color:#8B5CF6">UNLu</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/blockchain-dev/">Blockchain Dev</a></li>
+            <li class="nav-item"><a class="nav-link" href="/dev-ia/">IA Generativa</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="blog-hero">
+      <div class="container">
+        <h1>Blog</h1>
+        <p>Practical articles on blockchain development and generative AI, written by the instructors of the LICDIA UNLu diplomas.</p>
+      </div>
+    </section>
+
+    <section class="post-grid">
+      <div class="container">
+        <div class="row g-4">
+
+          <div class="col-md-6">
+            <a class="post-card" href="your-first-smart-contract-with-solidity/">
+              <span class="tag tag-bc">Blockchain</span>
+              <h2>Your First Smart Contract with Solidity: From Zero to Deployed in 30 Minutes</h2>
+              <p>A practical walkthrough from zero to a deployed ERC-20 token on a testnet. No theory upfront, just code that works.</p>
+              <div class="meta">~6 min read · Beginner</div>
+              <div class="read-more">Read article →</div>
+            </a>
+          </div>
+
+          <div class="col-md-6">
+            <a class="post-card" href="ethereum-mainnet-vs-l2-when-to-use-each-in-2026/">
+              <span class="tag tag-bc">Blockchain</span>
+              <h2>Ethereum Mainnet vs L2: When to Use Each in 2026</h2>
+              <p>A no-nonsense framework to decide between L1 and L2 based on what your contract actually does — not what's trending.</p>
+              <div class="meta">~7 min read · Intermediate</div>
+              <div class="read-more">Read article →</div>
+            </a>
+          </div>
+
+          <div class="col-md-6">
+            <a class="post-card" href="rag-vs-fine-tuning-when-to-use-each/">
+              <span class="tag tag-ia">Generative AI</span>
+              <h2>RAG vs Fine-Tuning: When to Use Each (and When Not To)</h2>
+              <p>A decision framework based on what you actually want the model to do, not what's trending. With a cost reality check.</p>
+              <div class="meta">~8 min read · Intermediate</div>
+              <div class="read-more">Read article →</div>
+            </a>
+          </div>
+
+          <div class="col-md-6">
+            <a class="post-card" href="real-costs-of-serving-an-llm-in-production/">
+              <span class="tag tag-ia">Generative AI</span>
+              <h2>The Real Costs of Serving an LLM in Production (2026 Edition)</h2>
+              <p>What you actually pay per million tokens — broken down by API providers, self-hosted, and the hidden costs nobody mentions.</p>
+              <div class="meta">~9 min read · Advanced</div>
+              <div class="read-more">Read article →</div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p class="mb-2">LICDIA — Licenciatura en Sistemas de Información, Universidad Nacional de Luján</p>
+        <p class="mb-0" style="font-size: 0.85rem;">
+          <a href="/blockchain-dev/">Blockchain Dev</a> ·
+          <a href="/dev-ia/">IA Generativa</a> ·
+          <a href="/blog/">Blog</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
