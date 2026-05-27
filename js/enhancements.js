@@ -140,11 +140,26 @@
     toggleVisibility();
   }
 
-  /* ---------- 5. INIT ---------- */
+  /* ---------- 5. AOS SAFETY NET ----------
+   Si AOS no termina de inicializar (deeplinks, tabs en background, scroll-restoration),
+   despues de 2.5s forzamos opacity:1 en cualquier [data-aos] no animado.
+   Esto evita que headers/cards queden invisibles sobre fondo oscuro o claro. */
+  function aosSafetyNet() {
+    setTimeout(function () {
+      document.querySelectorAll('[data-aos]:not(.aos-animate)').forEach(function (el) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        el.style.transition = 'opacity 0.4s ease';
+      });
+    }, 2500);
+  }
+
+  /* ---------- 6. INIT ---------- */
   function init() {
     injectToggle();
     injectScrollBar();
     injectStickyCTA();
+    aosSafetyNet();
   }
 
   if (document.readyState === 'loading') {

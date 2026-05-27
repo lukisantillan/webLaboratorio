@@ -536,6 +536,267 @@ body, .card, .navbar, footer, section, table, .accordion-item, .form-control {
   color: #c4b5fd !important;
 }
 
+/* ---------- 8. WIDE NET: cualquier card/box/wrap/item con bg claro ---------- */
+/* Audit detecto ~50 clases con bg #fff/light en homes y subpages.
+   Estos selectores las cubren todas de un saque. */
+[data-theme="dark"] [class$="-card"],
+[data-theme="dark"] [class*="-card "],
+[data-theme="dark"] [class$="-box"],
+[data-theme="dark"] [class*="-box "],
+[data-theme="dark"] [class$="-wrap"],
+[data-theme="dark"] [class$="-item"],
+[data-theme="dark"] .bc-card,
+[data-theme="dark"] .ia-card,
+[data-theme="dark"] .plan-card,
+[data-theme="dark"] .curso-card,
+[data-theme="dark"] .arancel-card,
+[data-theme="dark"] .pago-card,
+[data-theme="dark"] .bank-box,
+[data-theme="dark"] .factura-box,
+[data-theme="dark"] .destinatario-card,
+[data-theme="dark"] .enfoque-card,
+[data-theme="dark"] .requisito-card,
+[data-theme="dark"] .requisito-card--highlight,
+[data-theme="dark"] .hook-card,
+[data-theme="dark"] .licdia-card,
+[data-theme="dark"] .qa-card,
+[data-theme="dark"] .quote-card,
+[data-theme="dark"] .quiz-card,
+[data-theme="dark"] .quiz-wrapper,
+[data-theme="dark"] .prereq-item,
+[data-theme="dark"] .prereq-cta-box,
+[data-theme="dark"] .estrategia-block,
+[data-theme="dark"] .compare-table {
+  background: #161b22 !important;
+  border-color: #30363d !important;
+  color: #c9d1d9 !important;
+}
+
+[data-theme="dark"] [class$="-card"] h1,
+[data-theme="dark"] [class$="-card"] h2,
+[data-theme="dark"] [class$="-card"] h3,
+[data-theme="dark"] [class$="-card"] h4,
+[data-theme="dark"] [class$="-card"] h5,
+[data-theme="dark"] [class$="-card"] h6,
+[data-theme="dark"] [class$="-box"] h1,
+[data-theme="dark"] [class$="-box"] h2,
+[data-theme="dark"] [class$="-box"] h3,
+[data-theme="dark"] [class$="-box"] h4,
+[data-theme="dark"] .estrategia-block h5,
+[data-theme="dark"] .quote-card h4,
+[data-theme="dark"] .hook-card h4 {
+  color: #f0f6fc !important;
+}
+
+[data-theme="dark"] [class$="-card"] p,
+[data-theme="dark"] [class$="-card"] li,
+[data-theme="dark"] [class$="-card"] span:not(.badge),
+[data-theme="dark"] [class$="-box"] p,
+[data-theme="dark"] [class$="-box"] li,
+[data-theme="dark"] [class$="-item"] p,
+[data-theme="dark"] [class$="-item"] li {
+  color: #c9d1d9 !important;
+}
+
+/* Beneficios checklist (icon-wrap morados se mantienen, texto al lado se ve) */
+[data-theme="dark"] [class$="-icon-wrap"] {
+  background: rgba(139, 92, 246, 0.2) !important;
+}
+
+/* Pills y badges con bg claro */
+[data-theme="dark"] .stack-pill,
+[data-theme="dark"] .section-label {
+  background: #21262d !important;
+  color: #c9d1d9 !important;
+  border-color: #30363d !important;
+}
+
+/* Bloques de resultado (quiz / por-que-elegirnos) */
+[data-theme="dark"] .result-grey {
+  background: #1c2128 !important;
+  color: #c9d1d9 !important;
+}
+[data-theme="dark"] .result-purple {
+  background: rgba(139, 92, 246, 0.18) !important;
+  color: #e0e7ff !important;
+}
+[data-theme="dark"] .result-yellow {
+  background: rgba(245, 158, 11, 0.18) !important;
+  color: #fde68a !important;
+}
+[data-theme="dark"] .result-blue {
+  background: rgba(59, 130, 246, 0.18) !important;
+  color: #bfdbfe !important;
+}
+
+/* Botones quiz y CTA */
+[data-theme="dark"] .quiz-btn,
+[data-theme="dark"] .btn-cta {
+  background: #21262d !important;
+  color: #c9d1d9 !important;
+  border-color: #30363d !important;
+}
+[data-theme="dark"] .quiz-btn:hover,
+[data-theme="dark"] .btn-cta:hover {
+  background: #8B5CF6 !important;
+  color: #fff !important;
+  border-color: #8B5CF6 !important;
+}
+
+/* O grande (preposiciones decorativas) */
+[data-theme="dark"] .o-grande {
+  background: transparent !important;
+  color: #6e7681 !important;
+}
+
+/* Lineas separadoras claras */
+[data-theme="dark"] .line {
+  background: #30363d !important;
+}
+
+/* ---------- 9. FIX TEXTOS GENERICOS EN HOMES (sin clase de card) ---------- */
+/* La seccion de iconos "Inicio/Cursado/Dias/Duracion" en BC home y similar en IA
+   usa <h3> + <p> dentro de col-md-3 sin clase contenedora. */
+[data-theme="dark"] .icons h3,
+[data-theme="dark"] .icons p,
+[data-theme="dark"] section h3,
+[data-theme="dark"] section h4,
+[data-theme="dark"] section h5,
+[data-theme="dark"] section h6,
+[data-theme="dark"] section p,
+[data-theme="dark"] section li {
+  color: #c9d1d9;
+}
+[data-theme="dark"] section h1,
+[data-theme="dark"] section h2,
+[data-theme="dark"] .section-heading {
+  color: #f0f6fc !important;
+}
+
+/* Cuerpo docente (cards de docentes en home: img + h3 + p sin clase) */
+[data-theme="dark"] .team-member h4,
+[data-theme="dark"] .team-member h5,
+[data-theme="dark"] .team-member p,
+[data-theme="dark"] [class*="docente"] h3,
+[data-theme="dark"] [class*="docente"] h4,
+[data-theme="dark"] [class*="docente"] p {
+  color: #c9d1d9 !important;
+}
+
+/* IA "Para quien va dirigido" usa col-md-4 sin clase de card.
+   Targetea contenedores directos de iconos+texto */
+[data-theme="dark"] .col-md-4 h3,
+[data-theme="dark"] .col-md-4 h4,
+[data-theme="dark"] .col-md-4 h5,
+[data-theme="dark"] .col-md-6 h3,
+[data-theme="dark"] .col-md-6 h4,
+[data-theme="dark"] .col-md-6 h5,
+[data-theme="dark"] .col-md-3 h3,
+[data-theme="dark"] .col-md-3 h4 {
+  color: #f0f6fc !important;
+}
+[data-theme="dark"] .col-md-4 p,
+[data-theme="dark"] .col-md-6 p,
+[data-theme="dark"] .col-md-3 p {
+  color: #c9d1d9 !important;
+}
+
+/* Banner "Inscripcion 2026 abierta" usa style inline + .text-white + <a>.
+   Mi regla global de "a" pisaba el text-white. Restituyo. */
+[data-theme="dark"] .alert .text-white,
+[data-theme="dark"] .alert a.text-white {
+  color: #fff !important;
+}
+
+/* No atenuar fotos de docentes en dark (la regla img:not(.no-dim) las baja a 0.92) */
+[data-theme="dark"] img.rounded-circle,
+[data-theme="dark"] .team-member img,
+[data-theme="dark"] [class*="docente"] img,
+[data-theme="dark"] .docente-foto {
+  opacity: 1 !important;
+}
+
+/* Texto blanco/light que Bootstrap pone en bg morados oscuros del sitio (.bg-purple, hero) */
+[data-theme="dark"] .bg-purple,
+[data-theme="dark"] [class*="bg-blockchain"],
+[data-theme="dark"] [class*="bg-ia"] {
+  color: #fff;
+}
+[data-theme="dark"] .bg-purple *,
+[data-theme="dark"] [class*="bg-blockchain"] *,
+[data-theme="dark"] [class*="bg-ia"] * {
+  color: inherit;
+}
+
+/* ---------- 10. FIX BRUTAL: banner alert + iconos .icons ---------- */
+/* El banner usa <div class="alert"> con bg inline. La regla generica de "a"
+   pisaba a.text-white. Override con maxima especificidad. */
+html[data-theme="dark"] .alert *,
+html[data-theme="dark"] .alert .text-white,
+html[data-theme="dark"] .alert a,
+html[data-theme="dark"] div[class="alert text-center py-3"] *,
+html[data-theme="dark"] div[class*="alert"] .fw-bold,
+html[data-theme="dark"] div[class*="alert"] a {
+  color: #ffffff !important;
+}
+
+/* Iconos del home: <i class="fa..."> con color inline #4C1C7F, dificil de ver sobre dark */
+html[data-theme="dark"] .icons i.fa,
+html[data-theme="dark"] .icons i.fas,
+html[data-theme="dark"] .icons i.far,
+html[data-theme="dark"] .icons i.fa-3x {
+  color: #a78bfa !important;
+  filter: drop-shadow(0 0 10px rgba(167, 139, 250, 0.4));
+}
+
+html[data-theme="dark"] .icons h3,
+html[data-theme="dark"] .icons p {
+  color: #f0f6fc !important;
+}
+html[data-theme="dark"] .icons p {
+  color: #c9d1d9 !important;
+}
+
+/* Cuerpo docente: cards con foto + nombre + descripcion + link "Ver perfil" */
+html[data-theme="dark"] section img.rounded-circle,
+html[data-theme="dark"] .team-member img,
+html[data-theme="dark"] img[class*="docente"],
+html[data-theme="dark"] img[alt*="Petrocelli"],
+html[data-theme="dark"] img[alt*="Fernández"],
+html[data-theme="dark"] img[alt*="Olivares"],
+html[data-theme="dark"] img[alt*="Prados"],
+html[data-theme="dark"] img[alt*="Guevara"],
+html[data-theme="dark"] img[alt*="Ciro"],
+html[data-theme="dark"] img[alt*="Matuk"],
+html[data-theme="dark"] img[alt*="Gasch"] {
+  opacity: 1 !important;
+  filter: brightness(0.95);
+}
+
+/* Para cards de docentes que son col-md-X con h4/h3 + p sin clase */
+html[data-theme="dark"] .team-member h3,
+html[data-theme="dark"] .team-member h4,
+html[data-theme="dark"] .team-member h5,
+html[data-theme="dark"] .team-member p,
+html[data-theme="dark"] .team-member a {
+  color: #f0f6fc !important;
+}
+html[data-theme="dark"] .team-member p {
+  color: #c9d1d9 !important;
+}
+
+/* Asegura legibilidad en cualquier texto dentro de col-* */
+html[data-theme="dark"] [class*="col-"] h3,
+html[data-theme="dark"] [class*="col-"] h4,
+html[data-theme="dark"] [class*="col-"] h5 {
+  color: #f0f6fc !important;
+}
+html[data-theme="dark"] [class*="col-"] p,
+html[data-theme="dark"] [class*="col-"] small,
+html[data-theme="dark"] [class*="col-"] span:not(.badge):not(.pin):not([class*="text-"]) {
+  color: #c9d1d9 !important;
+}
+
 /* Navbar del blog (no es el mismo que las diplomaturas) */
 [data-theme="dark"] .navbar.navbar-expand-lg {
   background: #0d1117 !important;
@@ -554,3 +815,8 @@ body, .card, .navbar, footer, section, table, .accordion-item, .form-control {
     transform: none !important;
   }
 }
+
+/* ---------- 11. SAFETY NET: si JS de AOS no carga, no escondas todo ----------
+   AOS por defecto pone opacity 0 a todos los [data-aos]. Si AOS-JS falla o tarda,
+   los headers/cards quedan invisibles. Garantizamos legibilidad despues de 2s
+   (suficiente para que AOS-JS termine de inicializar) via JS en enhancements.js. */
