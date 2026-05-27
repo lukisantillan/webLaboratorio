@@ -988,6 +988,93 @@ html[data-theme="dark"] .guion {
 }
 
 /* =====================================================================
+   BOOTSTRAP .list-group / .list-group-item — usados en seccion "Beneficios"
+   Bootstrap por default les pone bg:#fff. En dark queda invisible.
+   ===================================================================== */
+html[data-theme="dark"] .list-group,
+html[data-theme="dark"] .list-group-flush {
+  background-color: transparent !important;
+}
+html[data-theme="dark"] .list-group-item {
+  background-color: #161b22 !important;
+  border-color: #30363d !important;
+  color: #c9d1d9 !important;
+}
+html[data-theme="dark"] .list-group-item * {
+  color: #c9d1d9 !important;
+}
+html[data-theme="dark"] .list-group-item span,
+html[data-theme="dark"] .list-group-item p {
+  color: #f0f6fc !important;
+}
+/* iconos check con color inline #1354A0 (IA) o #4C1C7F (BC) ya cubiertos arriba
+   pero refuerzo aca por contexto */
+html[data-theme="dark"] .list-group-item i.fa-check-circle,
+html[data-theme="dark"] .list-group-item i.fas {
+  /* IA: azul claro; el sweep general ya cambia los inline pero si llega "naked": */
+  filter: brightness(1.4);
+}
+
+/* =====================================================================
+   SECTIONS con bg inline claro (gradient o color solido)
+   Cubrir todos los hex claros conocidos en el atributo style
+   ===================================================================== */
+/* Quiz-fit en IA: style="background: linear-gradient(135deg, #EBF1FB 0%, #ffffff 100%);" */
+html[data-theme="dark"] section[style*="#EBF1FB"],
+html[data-theme="dark"] section[style*="#ebf1fb"],
+html[data-theme="dark"] section[style*="#FAFAFC"],
+html[data-theme="dark"] section[style*="#fafafc"],
+html[data-theme="dark"] section[style*="#f7f1fc"],
+html[data-theme="dark"] section[style*="#F7F1FC"],
+html[data-theme="dark"] section[style*="#f0f5ff"],
+html[data-theme="dark"] section[style*="#F0F5FF"],
+html[data-theme="dark"] section[style*="#ECE7F3"],
+html[data-theme="dark"] section[style*="#ece7f3"],
+html[data-theme="dark"] section[style*="#F3EBFB"],
+html[data-theme="dark"] section[style*="#f3ebfb"],
+html[data-theme="dark"] section[style*="0%, #ffffff"],
+html[data-theme="dark"] section[style*="0%, #FFFFFF"],
+html[data-theme="dark"] section[style*="0%, #fff "],
+html[data-theme="dark"] section[style*=", #ffffff"],
+html[data-theme="dark"] section[style*=", #FFFFFF"] {
+  background: #0d1117 !important;
+}
+
+/* Mismo patron para divs con bg gradient claro inline */
+html[data-theme="dark"] div[style*="linear-gradient"][style*="#EBF1FB"],
+html[data-theme="dark"] div[style*="linear-gradient"][style*="#FAFAFC"],
+html[data-theme="dark"] div[style*="linear-gradient"][style*="#f7f1fc"],
+html[data-theme="dark"] div[style*="linear-gradient"][style*="#f0f5ff"],
+html[data-theme="dark"] div[style*="linear-gradient"][style*="#ECE7F3"],
+html[data-theme="dark"] div[style*="linear-gradient"][style*="#F3EBFB"] {
+  background: #0d1117 !important;
+}
+
+/* Textos DENTRO de esas secciones que ahora son dark deben ser claros */
+html[data-theme="dark"] section[style*="#EBF1FB"] h1,
+html[data-theme="dark"] section[style*="#EBF1FB"] h2,
+html[data-theme="dark"] section[style*="#EBF1FB"] h3,
+html[data-theme="dark"] section[style*="#EBF1FB"] h4,
+html[data-theme="dark"] section[style*="#EBF1FB"] .section-heading,
+html[data-theme="dark"] section[style*="#ebf1fb"] h1,
+html[data-theme="dark"] section[style*="#ebf1fb"] h2,
+html[data-theme="dark"] section[style*="#ebf1fb"] h3,
+html[data-theme="dark"] section[style*="#ebf1fb"] .section-heading,
+html[data-theme="dark"] section[style*="#FAFAFC"] .section-heading,
+html[data-theme="dark"] section[style*="#f7f1fc"] .section-heading,
+html[data-theme="dark"] section[style*="#f0f5ff"] .section-heading,
+html[data-theme="dark"] section[style*="#ECE7F3"] .section-heading,
+html[data-theme="dark"] section[style*="#F3EBFB"] .section-heading {
+  color: #f0f6fc !important;
+}
+html[data-theme="dark"] section[style*="#EBF1FB"] p,
+html[data-theme="dark"] section[style*="#EBF1FB"] .text-muted,
+html[data-theme="dark"] section[style*="#ebf1fb"] p,
+html[data-theme="dark"] section[style*="#ebf1fb"] .text-muted {
+  color: #c9d1d9 !important;
+}
+
+/* =====================================================================
    OVERRIDES de style2.css que tenian !important para light theme.
    style2.css carga ANTES de enhancements.css pero usa .blockchain-theme
    .ia-theme (clase del body) con especificidad alta + !important.
@@ -1313,3 +1400,45 @@ html[data-theme="dark"] [class*="col-"] span:not(.badge):not(.pin):not([class*="
    AOS por defecto pone opacity 0 a todos los [data-aos]. Si AOS-JS falla o tarda,
    los headers/cards quedan invisibles. Garantizamos legibilidad despues de 2s
    (suficiente para que AOS-JS termine de inicializar) via JS en enhancements.js. */
+
+/* =====================================================================
+   VIDEO CHARLA INFORMATIVA — wrapper con marco morado de marca
+   ===================================================================== */
+.video-charla-wrap {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(76, 28, 127, 0.18),
+              0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(76, 28, 127, 0.15);
+  background: #000;
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1),
+              box-shadow 0.3s ease;
+  position: relative;
+}
+.video-charla-wrap:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 45px rgba(76, 28, 127, 0.28),
+              0 6px 18px rgba(0, 0, 0, 0.12);
+}
+.video-charla-wrap iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Dark mode: marco con violeta-300 más claro para mejor contraste */
+html[data-theme="dark"] .video-charla-wrap {
+  border-color: rgba(167, 139, 250, 0.35);
+  box-shadow: 0 10px 30px rgba(167, 139, 250, 0.15),
+              0 4px 12px rgba(0, 0, 0, 0.5);
+}
+html[data-theme="dark"] .video-charla-wrap:hover {
+  box-shadow: 0 18px 45px rgba(167, 139, 250, 0.30),
+              0 6px 18px rgba(0, 0, 0, 0.6);
+}
+
+/* Section heading del bloque video sigue paleta general */
+#video-charla .section-heading {
+  letter-spacing: 0.5px;
+}
