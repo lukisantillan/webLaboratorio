@@ -120,6 +120,193 @@
             color: var(--brand-dark);
             font-style: italic;
         }
+        .tp-resultado {
+            background: #e8f5e9;
+            border-left: 4px solid #2e7d32;
+            border-radius: 8px;
+            padding: 0.85rem 1.1rem;
+            margin: 0.6rem 0 1rem;
+            font-size: 0.95rem;
+            color: #1b5e20;
+        }
+        .tp-resultado .pin {
+            display: inline-block;
+            margin-right: 0.4rem;
+        }
+        .tp-resultado strong {
+            color: #2e7d32;
+            font-weight: 800;
+        }
+        /* Camino del alumno (timeline horizontal de bolitas) */
+        .camino-alumno {
+            background: linear-gradient(135deg, #faf7ff 0%, #f3ebfb 100%);
+            border-radius: 20px;
+            padding: 3rem 2rem 2.5rem;
+            margin: 2rem 0 1rem;
+            box-shadow: 0 8px 32px rgba(76, 28, 127, 0.10), 0 1px 4px rgba(76, 28, 127, 0.06);
+            border: 1px solid rgba(76, 28, 127, 0.08);
+        }
+        .camino-alumno h3 {
+            text-align: center;
+            color: var(--brand-dark);
+            font-weight: 800;
+            margin-bottom: 0.35rem;
+            font-size: 1.35rem;
+        }
+        .camino-alumno .camino-sub {
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.92rem;
+            margin: 0 auto 2rem;
+            max-width: 640px;
+        }
+        .camino-track {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            align-items: flex-start;
+            position: relative;
+        }
+        .camino-step {
+            text-align: center;
+            position: relative;
+            padding: 0 0.4rem;
+        }
+        .camino-bolita {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #fff 0%, #f8f4ff 70%, #f3ebfb 100%);
+            border: 4px solid var(--brand);
+            margin: 0 auto 0.85rem;
+            box-shadow: 0 10px 22px rgba(76, 28, 127, 0.22);
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            overflow: hidden;
+        }
+        .camino-bolita img {
+            width: 95%;
+            height: 95%;
+            object-fit: contain;
+            transition: transform 0.35s ease;
+        }
+        .camino-step:hover .camino-bolita {
+            transform: translateY(-6px) scale(1.06);
+            box-shadow: 0 16px 32px rgba(46, 125, 50, 0.32);
+            border-color: #2e7d32;
+        }
+        .camino-step:hover .camino-bolita img {
+            transform: scale(1.08);
+        }
+        .camino-numero {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 0.95rem;
+            z-index: 3;
+            box-shadow: 0 4px 10px rgba(38, 25, 81, 0.35), 0 1px 2px rgba(0,0,0,0.15);
+            border: 2px solid #fff;
+        }
+        .camino-step:hover .camino-numero {
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+            box-shadow: 0 6px 14px rgba(27, 94, 32, 0.4), 0 1px 2px rgba(0,0,0,0.15);
+        }
+        .camino-badge {
+            position: absolute;
+            bottom: -8px;
+            left: -8px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 3;
+            box-shadow: 0 5px 14px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.1), inset 0 0 0 1px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .camino-step:hover .camino-badge {
+            transform: scale(1.1) rotate(-6deg);
+            box-shadow: 0 7px 18px rgba(0,0,0,0.24), 0 1px 3px rgba(0,0,0,0.1), inset 0 0 0 1px rgba(0,0,0,0.08);
+        }
+        .camino-badge i {
+            font-size: 1.2rem;
+            color: #1a1a1a;
+        }
+        .camino-bolita-wrap {
+            position: relative;
+            width: 120px;
+            margin: 0 auto 0.85rem;
+        }
+        /* Línea conectora entre bolitas */
+        .camino-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: calc(50% + 60px);
+            width: calc(100% - 120px);
+            height: 3px;
+            background: linear-gradient(90deg, var(--brand) 0%, #2e7d32 100%);
+            opacity: 0.45;
+            z-index: 1;
+        }
+        .camino-tagline {
+            color: var(--brand-dark);
+            font-weight: 800;
+            font-size: 0.92rem;
+            margin-bottom: 0.25rem;
+            font-style: italic;
+        }
+        .camino-titulo {
+            color: var(--brand-dark);
+            font-weight: 800;
+            font-size: 0.82rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+        }
+        .camino-meta {
+            color: #6c757d;
+            font-size: 0.75rem;
+            margin-bottom: 0.55rem;
+            font-weight: 600;
+        }
+        .camino-desc {
+            color: #3a3a3a;
+            font-size: 0.85rem;
+            line-height: 1.45;
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .camino-track {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .camino-step:not(:last-child)::after {
+                display: none;
+            }
+            .camino-step {
+                padding: 0 1rem;
+            }
+        }
         .estrategia-block {
             background: #fff;
             border-left: 4px solid var(--brand);
@@ -230,7 +417,7 @@
                     <li class="nav-item"><a class="nav-link" href="../por-que-elegirnos/">Por qué elegirnos</a></li>
                     <li class="nav-item"><a class="nav-link" href="../aranceles/">Aranceles</a></li>
                     <li class="nav-item"><a class="nav-link" href="../#faq">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../#contact">Pre-registro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/charla/blockchain/#inscripcion">Preinscripción</a></li>
                     <li class="nav-item"><a class="nav-link" href="../../">LICDIA</a></li>
                 </ul>
             </div>
@@ -285,7 +472,7 @@
                                                 la criptografía hash.
                                             </p>
                                             <div class="lente-estrategica">
-                                                <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica:</strong> selección de <em>use case</em> — cuándo conviene blockchain (y cuándo no), qué tipo elegir (pública / privada / consorcio) según el problema a resolver.
+                                                <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica:</strong> del <em>primer commit al primer contrato verificado</em> — entender blockchain construyéndolo, no leyéndolo. Salís con código propio firmando transacciones en Ethereum.
                                             </div>
                                             <a href="https://drive.google.com/file/d/1Q-N7jwTl8uJG8VtwRX3_wVyEWjiL4Zpk/view?usp=sharing"
                                                 class="alert-link text-decoration-underline" target="_blank">
@@ -319,7 +506,7 @@
                                                 DEX vs CEX, Derivados sintéticos, ICOs.
                                             </p>
                                             <div class="lente-estrategica">
-                                                <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica:</strong> <em>criptoeconomía aplicada</em> — diseño de tokenomics, evaluación de modelos DeFi (lending, AMMs, derivados) y lectura crítica de proyectos reales del ecosistema.
+                                                <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica:</strong> <em>tokenomics con criterio regulatorio argentino</em> — diseñar la economía de un token y poder defenderla técnica, financiera y legalmente frente a CNV (PSAV / RG 994).
                                             </div>
                                             <a href="https://drive.google.com/file/d/1C8kqt3Z111b1hI_5Svx54ZXIuFzzx9_C/view?usp=sharing"
                                                 class="alert-link text-decoration-underline" target="_blank">
@@ -351,7 +538,7 @@
                                                 (Layer 2). Escalabilidad y rendimiento: soluciones de capa 2.
                                             </p>
                                             <div class="lente-estrategica">
-                                                <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica:</strong> <em>trade-offs de implementación</em> — costos, performance y seguridad al elegir Layer 1 vs Layer 2, nodo propio vs servicio gestionado, on-chain vs off-chain.
+                                                <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica:</strong> <em>qué necesitás de Web2 para que tu Web3 funcione en producción</em> — cloud, contenedores, observabilidad y pipelines como código, sobre los que después corre tu DApp. La diferencia entre "deploy en testnet" y "proyecto productivo".
                                             </div>
                                             <a href="https://drive.google.com/file/d/1MF09yPS-uZcD7KgLDP0N2_nkhvJrjyFQ/view?usp=sharing"
                                                 class="alert-link text-decoration-underline" target="_blank">
@@ -378,10 +565,10 @@
                                                 blockchain. Crowdfunding basado en recompensas utilizando DApps y
                                                 smart contracts. Web3 avanzado: Metaverso, NFTs y tokenización de
                                                 activos. Escribir, compilar y desplegar contratos inteligentes en
-                                                Ethereum L2 (Polygon) con Solidity.
+                                                Ethereum L2 (Base Sepolia / OP Stack) con Solidity. Construcción incremental de una pasarela de pago Web3 (ERC-20 + NFT de recibo + PaymentGateway + frontend Next.js) como caso guía del curso.
                                             </p>
                                             <div class="lente-estrategica">
-                                                <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica:</strong> <em>business case end-to-end</em> — del contrato Solidity al frontend Web3 con wallets, integraciones y producto desplegado en mainnet/testnet pública.
+                                                <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica:</strong> <em>del contrato al producto en Layer 2</em> — seguridad, testing y despliegue end-to-end con foco en costos reales de gas y experiencia de usuario Web3.
                                             </div>
                                             <a href="https://drive.google.com/file/d/1ACkbJjGBDEG3U-pQTcB6YiOcEPj8rDqn/view?usp=sharing"
                                                 class="alert-link text-decoration-underline" target="_blank">
@@ -407,13 +594,79 @@
     </div>
 
     <!-- ============================================================ -->
+    <!-- EL CAMINO DEL ALUMNO                                         -->
+    <!-- ============================================================ -->
+    <section class="page-section py-3" id="camino" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <div class="camino-alumno">
+                <h3>El camino del alumno</h3>
+                <p class="camino-sub">Cuatro cursos, cuatro evoluciones. Empezás chiquito y terminás con un DApp profesional desplegado en producción.</p>
+                <div class="camino-track">
+                    <div class="camino-step">
+                        <div class="camino-bolita-wrap">
+                            <div class="camino-bolita">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png" alt="Charmander" loading="lazy">
+                            </div>
+                            <div class="camino-numero">1</div>
+                            <div class="camino-badge" title="Blockchain"><i class="fa-solid fa-link" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="camino-titulo">Fundamentos</div>
+                        <div class="camino-meta">Agosto</div>
+                        <div class="camino-tagline">"Naciste developer Web3"</div>
+                        <p class="camino-desc">Tu primer contrato Solidity vivo en Ethereum. Pequeño pero real.</p>
+                    </div>
+                    <div class="camino-step">
+                        <div class="camino-bolita-wrap">
+                            <div class="camino-bolita">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png" alt="Charmeleon" loading="lazy">
+                            </div>
+                            <div class="camino-numero">2</div>
+                            <div class="camino-badge" title="Token / tokenomics"><i class="fa-solid fa-coins" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="camino-titulo">Diseño financiero</div>
+                        <div class="camino-meta">Septiembre</div>
+                        <div class="camino-tagline">"Tu token tiene identidad"</div>
+                        <p class="camino-desc">Diseñaste su economía, su encuadre regulatorio y desplegaste el ERC-20 seed sobre Sepolia.</p>
+                    </div>
+                    <div class="camino-step">
+                        <div class="camino-bolita-wrap">
+                            <div class="camino-bolita">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" alt="Charizard" loading="lazy">
+                            </div>
+                            <div class="camino-numero">3</div>
+                            <div class="camino-badge" title="Infra / contenedores"><i class="fa-solid fa-cubes" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="camino-titulo">Infra productiva</div>
+                        <div class="camino-meta">Octubre</div>
+                        <div class="camino-tagline">"Volás con infra propia"</div>
+                        <p class="camino-desc">Tu Web3 corre sobre el andamio Web2 que vos mismo levantaste: contenedores, monitoreo y pipelines.</p>
+                    </div>
+                    <div class="camino-step">
+                        <div class="camino-bolita-wrap">
+                            <div class="camino-bolita">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10034.png" alt="Mega Charizard X" loading="lazy">
+                            </div>
+                            <div class="camino-numero">4</div>
+                            <div class="camino-badge" title="Producción / live"><i class="fa-solid fa-rocket" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="camino-titulo">DApp en Layer 2</div>
+                        <div class="camino-meta">Noviembre</div>
+                        <div class="camino-tagline">"Forma final: producción real"</div>
+                        <p class="camino-desc">Tu pasarela de pago Web3 (ERC-20 + NFT + PaymentGateway + frontend) auditada con Slither y desplegada en Base Sepolia. Live.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
     <!-- CRONOGRAMA CLASE POR CLASE                                  -->
     <!-- ============================================================ -->
     <section class="page-section" id="cronograma" data-aos="fade-up" data-aos-duration="1200">
         <div class="container">
             <div class="text-center mb-4">
                 <h2 class="section-heading text-uppercase">Cronograma clase por clase</h2>
-                <p class="text-muted" style="max-width:720px; margin:0 auto;">Cohorte agosto 2026 — Martes y jueves de 19:00 a 21:00 hs (ARG). 32 clases en vivo distribuidas en 4 cursos consecutivos. Cada clase tiene tema y entregable concreto.</p>
+                <p class="text-muted" style="max-width:720px; margin:0 auto;">Cohorte agosto 2026 — Martes y jueves de 19:00 a 21:00 hs (ARG). 32 clases en vivo distribuidas en 4 cursos consecutivos. Cada clase tiene tema y actividad práctica concreta.</p>
                 <p class="text-muted mt-2" style="max-width:720px; margin:0 auto; font-size:0.85rem;"><i class="fas fa-info-circle me-1" style="color:var(--brand);"></i>Cronograma de referencia — sujeto a ajustes menores antes del inicio de cohorte.</p>
             </div>
 
@@ -425,144 +678,132 @@
     <span class="plan-icon-wrap" aria-hidden="true">1</span>
     <h4>Curso 1 — Fundamentos de Blockchain, Frameworks y Herramientas para DApps</h4>
   </div>
-  <p class="curso-meta">Agosto 2026 · Docente Responsable: Mg. Juan Manuel Fernández</p>
-  <div class="lente-estrategica">
-    <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica del curso:</strong> de la <em>criptografía y consenso</em> al primer DApp end-to-end desplegado en testnet pública, con repos públicos, tests automatizados y CI desde la primera semana.
+  <p class="curso-meta">Agosto 2026 · Docente Responsable: Mg. Juan Manuel Fernández · Equipo: Esp. Ciro Edgardo Romero</p>
+  <div class="tp-resultado">
+    <span class="pin" aria-hidden="true">🎯</span><strong>Resultado del TP del curso:</strong> tu primer contrato Solidity propio desplegado y verificado en Sepolia, con tests y CI en repo público.
   </div>
   <div class="table-responsive">
     <table class="table table-sm" style="font-size:0.9rem;">
       <thead>
         <tr>
           <th>Clase</th>
-          <th>Fecha</th>
           <th>Tema</th>
-          <th>Entregable</th>
+          <th>Actividad práctica</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>1</strong></td>
-          <td>Mar 04/08</td>
-          <td>Historia de blockchain, criptografía asimétrica (ECDSA, secp256k1) y funciones hash (SHA-256, Keccak-256)</td>
-          <td>Generar par de llaves con OpenSSL y firmar/verificar un mensaje; entregar capturas y comandos usados</td>
+          <td><strong>Presentación del curso</strong> (objetivos, modalidad, metodología y trabajo final). Historia de blockchain, criptografía asimétrica (ECDSA, secp256k1) y funciones hash (SHA-256, Keccak-256)</td>
+          <td>Generación de un par de llaves con OpenSSL y firma/verificación de un mensaje, con análisis de la salida en clase</td>
         </tr>
         <tr>
           <td><strong>2</strong></td>
-          <td>Jue 06/08</td>
           <td>Estructura del bloque, Merkle Trees, nonce y vinculación de bloques (hash chain)</td>
-          <td>Implementar en Python una mini-blockchain de 5 bloques con Merkle root y validación de integridad</td>
+          <td>Exploración visual de bloques reales en un explorador público (Etherscan/Sepolia): lectura de la cabecera del bloque y de la vinculación de hashes entre bloques consecutivos</td>
         </tr>
         <tr>
           <td><strong>3</strong></td>
-          <td>Mar 11/08</td>
           <td>Protocolos de consenso: PoW, PoS, PoA, dPoS, BFT — trade-offs y casos de uso</td>
-          <td>Informe comparativo de 2 páginas PoW vs PoS aplicado a una red financiera regional</td>
+          <td>Análisis comparativo de PoW vs PoS aplicado a una red financiera regional, con discusión de trade-offs en clase</td>
         </tr>
         <tr>
           <td><strong>4</strong></td>
-          <td>Jue 13/08</td>
-          <td>Tipos de redes: públicas (Ethereum, Bitcoin), privadas (Besu, Quorum) e híbridas; gobernanza on-chain</td>
-          <td>Diagrama de arquitectura para un caso de uso de trazabilidad agroindustrial argentino</td>
+          <td>Tipos de redes: públicas (Ethereum, Bitcoin), privadas (Besu, Quorum), híbridas y Layer 2 (introducción a Optimistic vs ZK Rollups, Base, Arbitrum); gobernanza on-chain</td>
+          <td>Diseño arquitectónico de un caso de trazabilidad agroindustrial argentino (pública, privada o híbrida)</td>
         </tr>
         <tr>
           <td><strong>5</strong></td>
-          <td>Mar 18/08</td>
           <td>Wallets (HD wallets, BIP-39/BIP-44), MetaMask, conexión a testnets (Sepolia, Holesky) y faucets</td>
-          <td>Configurar MetaMask, recibir ETH de testnet Sepolia y enviar transacción con captura del hash</td>
+          <td>Configuración de MetaMask sobre testnet Sepolia y análisis de una transacción en Etherscan</td>
         </tr>
         <tr>
           <td><strong>6</strong></td>
-          <td>Jue 20/08</td>
           <td>Remix IDE e introducción a Solidity: tipos, mappings, structs, visibilidad y modifiers</td>
-          <td>Desplegar contrato "Voting" en Remix sobre Sepolia y verificar en Etherscan</td>
+          <td>Despliegue de un contrato "Voting" en Remix sobre Sepolia y verificación pública en Etherscan</td>
         </tr>
         <tr>
           <td><strong>7</strong></td>
-          <td>Mar 25/08</td>
-          <td>Setup de Hardhat y Foundry: scripts, tests, fork de mainnet y debugging local</td>
-          <td>Repo Hardhat + Foundry con contrato Counter, 5 tests unitarios y CI básico en GitHub Actions</td>
+          <td>Setup de Hardhat y Foundry: scripts, tests, fork de mainnet y debugging local (con referencia a Anchor como equivalente del lado Solana)</td>
+          <td>Armado en vivo de un repo Hardhat + Foundry con contrato Counter, tests unitarios y CI básico en GitHub Actions</td>
         </tr>
         <tr>
           <td><strong>8</strong></td>
-          <td>Jue 27/08</td>
-          <td>Cierre: primer DApp end-to-end (contrato + frontend mínimo) e integración con Curso 4</td>
-          <td>Demo en vivo del DApp desplegado en Sepolia y push del repo a GitHub con README completo</td>
+          <td>Cierre del Curso 1: entrega del TP final (contrato propio + tests + verificación en Etherscan) y handoff a Curso 2 (capa financiera sobre la base técnica)</td>
+          <td>Presentación en clase del TP final del curso y revisión cruzada entre alumnos del repo y del contrato verificado</td>
         </tr>
       </tbody>
     </table>
+  </div>
+  <div class="lente-estrategica">
+    <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica del curso:</strong> del <em>primer commit al primer contrato verificado</em> — entender blockchain construyéndolo, no leyéndolo. Salís con código propio firmando transacciones en Ethereum.
   </div>
 </div>
 
 <div class="curso-card" data-aos="fade-up" data-aos-delay="200">
   <div class="curso-header">
     <span class="plan-icon-wrap" aria-hidden="true">2</span>
-    <h4>Curso 4 — Desarrollo de Aplicaciones y DApps Blockchain</h4>
+    <h4>Curso 2 — Fundamentos Financieros y Blockchain para Finanzas Descentralizadas</h4>
   </div>
-  <p class="curso-meta">Septiembre 2026 · Docente Responsable: Dr. David Petrocelli · Equipo: APU Nehuén Prados</p>
-  <div class="lente-estrategica">
-    <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica del curso:</strong> <em>seguridad y testing como cultura</em>, no checklist — Solidity avanzado, fuzzing con Foundry, auditoría con Slither y patrones upgradeables (UUPS / Transparent) sobre DApps reales.
+  <p class="curso-meta">Septiembre 2026 · Docente Responsable: Dr. Julián Olivares · Equipo: Deiller Guevara</p>
+  <div class="tp-resultado">
+    <span class="pin" aria-hidden="true">🎯</span><strong>Resultado del TP del curso:</strong> artículo financiero de un token propio (tokenomics + encuadre PSAV) y el ERC-20 desplegado en Sepolia siguiendo ese diseño.
   </div>
   <div class="table-responsive">
     <table class="table table-sm" style="font-size:0.9rem;">
       <thead>
         <tr>
           <th>Clase</th>
-          <th>Fecha</th>
           <th>Tema</th>
-          <th>Entregable</th>
+          <th>Actividad práctica</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>1</strong></td>
-          <td>Mar 01/09</td>
-          <td>Solidity avanzado: modifiers, custom errors, events, fallback/receive y assembly básico</td>
-          <td>Refactorizar un contrato legacy aplicando custom errors y events; reportar gas savings antes/después</td>
+          <td><strong>Presentación del curso</strong> (objetivos, modalidad, metodología y trabajo final). Historia del dinero: trueque, metálico, fiat, dinero digital y emisión monetaria</td>
+          <td>Análisis en clase de la inflación argentina 2020-2026 y discusión del rol potencial de las stablecoins en la economía local</td>
         </tr>
         <tr>
           <td><strong>2</strong></td>
-          <td>Jue 03/09</td>
-          <td>Patrones de seguridad: reentrancy, integer overflow/underflow, front-running, DoS y access control</td>
-          <td>Identificar y parchear 3 vulnerabilidades en un contrato vulnerable provisto (CTF style)</td>
+          <td>Tokenomics: supply, emission, vesting, sinks, incentivos de gobernanza y veTokenomics</td>
+          <td>Diseño colaborativo de tokenomics sobre un caso real: supply, vesting, sinks e incentivos de gobernanza en pizarra</td>
         </tr>
         <tr>
           <td><strong>3</strong></td>
-          <td>Mar 08/09</td>
-          <td>Testing avanzado con Hardhat y Foundry: fuzzing, invariant testing y coverage</td>
-          <td>Suite de tests con cobertura mayor al 90% y al menos 2 invariantes definidas con Foundry</td>
+          <td>Stablecoins: collateralized (USDC, USDT), crypto-backed (DAI), algorítmicas y caso UST/Luna</td>
+          <td>Comparación en vivo de USDC, DAI y FRAX: lectura de reservas auditadas y análisis del colapso de UST/Luna como caso de estudio</td>
         </tr>
         <tr>
           <td><strong>4</strong></td>
-          <td>Jue 10/09</td>
-          <td>Estándares de tokens: ERC-20, ERC-721, ERC-1155, ERC-4626 (vaults) y ERC-5114 (SBTs / Soulbound Tokens no transferibles); OpenZeppelin</td>
-          <td>Desplegar en Sepolia un ERC-20 propio, un ERC-721 con metadata en IPFS y un SBT (ERC-5114) para credenciales académicas, verificados en Etherscan</td>
+          <td>DeFi y AMMs: Uniswap v2/v3/v4, mecánica x*y=k, concentrated liquidity y impermanent loss</td>
+          <td>Provisión de liquidez en vivo en Uniswap v3 testnet y simulación de impermanent loss con distintos escenarios de precio</td>
         </tr>
         <tr>
           <td><strong>5</strong></td>
-          <td>Mar 15/09</td>
-          <td>Frontend Web3: React + ethers.js v6 + wagmi + viem; hooks de conexión y manejo de estado</td>
-          <td>Frontend React que lea balance ERC-20 del usuario y permita transferir tokens vía wagmi</td>
+          <td>Lending &amp; borrowing: Aave, Compound, Curve; tasas variables, liquidaciones y flash loans</td>
+          <td>Ejecución guiada de un flash loan en testnet de Aave v3 para arbitraje simple entre dos DEX, con inspección de la transacción</td>
         </tr>
         <tr>
           <td><strong>6</strong></td>
-          <td>Jue 17/09</td>
-          <td>Identidad descentralizada e integración con wallets: WalletConnect v2, RainbowKit, EIP-712, SIWE, DIDs (W3C), Verifiable Credentials (W3C VC Data Model 2.0) y EAS (Ethereum Attestation Service)</td>
-          <td>Login SIWE + emitir una Verifiable Credential W3C firmada con EIP-712 y registrarla como atestación on-chain con EAS en Sepolia (incluir schema y resolver)</td>
+          <td>Derivados on-chain: perpetuals (GMX, dYdX), opciones (Lyra, Premia) y productos estructurados</td>
+          <td>Modelado del payoff de un perpetual con funding rate en notebook Python y backtest sobre datos reales del mercado</td>
         </tr>
         <tr>
           <td><strong>7</strong></td>
-          <td>Mar 22/09</td>
-          <td>Layer 2: Polygon PoS, Optimism, Arbitrum, zkSync; bridges y mensajería cross-chain</td>
-          <td>Desplegar el mismo ERC-20 en Polygon Amoy y Arbitrum Sepolia; comparar costos de gas en informe</td>
+          <td>Marco regulatorio: PSAV en Argentina (RG CNV 994), MiCA en UE y casos LATAM (Brasil, México)</td>
+          <td>Mesa de análisis regulatorio: lectura de la RG CNV 994 y discusión sobre cómo encuadrar un proyecto propio bajo el régimen PSAV</td>
         </tr>
         <tr>
           <td><strong>8</strong></td>
-          <td>Jue 24/09</td>
-          <td>Cierre: upgradeable proxies (UUPS, Transparent), auditoría básica con Slither y entrega del DApp</td>
-          <td>Defensa de DApp upgradeable propio + reporte Slither con findings y mitigaciones aplicadas</td>
+          <td>Cierre: integración financiera con el proyecto integrador y handoff a Curso 3 (infraestructura)</td>
+          <td>Integración en clase de la capa financiera del proyecto integrador (tokenomics + regulación + riesgos) y handoff a la fase de infraestructura</td>
         </tr>
       </tbody>
     </table>
+  </div>
+  <div class="lente-estrategica">
+    <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica del curso:</strong> <em>tokenomics con criterio regulatorio argentino</em> — diseñar la economía de un token y poder defenderla técnica, financiera y legalmente frente a CNV (PSAV / RG 994).
   </div>
 </div>
 
@@ -572,150 +813,138 @@
     <h4>Curso 3 — Automatización de Infraestructura &amp; Arquitectura Tecnológica para Blockchain</h4>
   </div>
   <p class="curso-meta">Octubre 2026 · Docente Responsable: Dr. David Petrocelli · Equipo: APU Nehuén Prados</p>
-  <div class="lente-estrategica">
-    <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica del curso:</strong> <em>nodos en producción</em> — IaC con Terraform y CDK, Kubernetes, observabilidad (Prometheus + Grafana + Loki), CI/CD con OIDC y FinOps blockchain bajo AWS Well-Architected.
+  <div class="tp-resultado">
+    <span class="pin" aria-hidden="true">🎯</span><strong>Resultado del TP del curso:</strong> el "andamio Web2" completo para sostener tu proyecto Web3 en producción — contenedores, IaC con Terraform, GKE, observabilidad y pipelines, más proxy RPC propio sobre Base Sepolia, gateway IPFS dedicado e indexer self-hosted. La capa sobre la que el DApp del Curso 4 va a correr en producción.
   </div>
   <div class="table-responsive">
     <table class="table table-sm" style="font-size:0.9rem;">
       <thead>
         <tr>
           <th>Clase</th>
-          <th>Fecha</th>
           <th>Tema</th>
-          <th>Entregable</th>
+          <th>Actividad práctica</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>1</strong></td>
-          <td>Mar 29/09</td>
-          <td>Despliegue de nodos Ethereum (Geth, Erigon, Nethermind) y consensus clients (Prysm, Lighthouse) en EC2</td>
-          <td>Desplegar nodo Ethereum execution+consensus en EC2 t3.large y sincronizar con Holesky</td>
+          <td><strong>Presentación del curso</strong> (objetivos, modalidad, metodología y trabajo final). Arquitectura híbrida Web2/Web3: qué vive on-chain y qué vive off-chain. Despliegue de nodos blockchain sobre Compute Engine. Presentación del repo template provisto por la cátedra (mini-blockchain educativa que se opera en paralelo durante el curso)</td>
+          <td>Despliegue en vivo de un nodo blockchain sobre Compute Engine y deploy del repo template en una segunda instancia para operarla como infra propia</td>
         </tr>
         <tr>
           <td><strong>2</strong></td>
-          <td>Jue 01/10</td>
-          <td>IaC con Terraform: VPC, EC2, EBS, IAM y Secrets Manager para nodos blockchain</td>
-          <td>Módulo Terraform reutilizable para nodo Ethereum con tfvars dev/prod y plan validado</td>
+          <td>IaC con Terraform sobre GCP: VPC, Compute Engine, Persistent Disk, IAM y Secret Manager para workloads stateful</td>
+          <td>Construcción guiada de un módulo Terraform reutilizable para nodo Ethereum en GCP, con tfvars dev/prod y plan validado en clase</td>
         </tr>
         <tr>
           <td><strong>3</strong></td>
-          <td>Mar 06/10</td>
-          <td>AWS CDK (TypeScript) para infraestructura blockchain: stacks, constructs y multi-environment</td>
-          <td>Stack CDK que despliegue nodo Polygon con auto-scaling y backups EBS automáticos</td>
+          <td>Terraform avanzado en GCP: módulos reutilizables, workspaces (dev/staging/prod) y patrones multi-environment</td>
+          <td>Armado en vivo de un módulo Terraform reutilizable para un proxy RPC propio sobre Base Sepolia, con autoescalado, snapshots automáticos de Persistent Disk y secretos gestionados</td>
         </tr>
         <tr>
           <td><strong>4</strong></td>
-          <td>Jue 08/10</td>
-          <td>Redes privadas con Hyperledger Besu: IBFT 2.0, permissioning y privacy groups</td>
-          <td>Levantar red Besu de 4 nodos con IBFT 2.0 y desplegar contrato privado entre 2 participantes</td>
+          <td>CI/CD con GitHub Actions: build, test, deploy de contratos y promoción dev→prod con OIDC</td>
+          <td>Armado en clase de un pipeline GitHub Actions que despliega contratos a testnet en cada PR y a mainnet en tag de release vía OIDC</td>
         </tr>
         <tr>
           <td><strong>5</strong></td>
-          <td>Mar 13/10</td>
-          <td>Kubernetes para Web3: EKS, Helm charts para nodos, persistent volumes y stateful sets</td>
-          <td>Helm chart de nodo Geth desplegado en EKS con StatefulSet, PVC y Service exposing JSON-RPC</td>
+          <td>Kubernetes con GKE (Google Kubernetes Engine): Helm charts, persistent volumes y StatefulSets para workloads stateful</td>
+          <td>Despliegue guiado de un Helm chart para nodo Geth en GKE, con StatefulSet, PVC y exposición del endpoint JSON-RPC</td>
         </tr>
         <tr>
           <td><strong>6</strong></td>
-          <td>Jue 15/10</td>
-          <td>Observabilidad: Prometheus + Grafana + Loki para nodos, métricas de peers, slot lag y alertas</td>
-          <td>Dashboard Grafana con 6 paneles clave del nodo y 3 alertas configuradas (peer count, sync, disk)</td>
+          <td>Observabilidad: Prometheus + Grafana + Loki para métricas, logs y alertas (con foco en métricas de nodos blockchain: peers, slot lag, sync)</td>
+          <td>Construcción en vivo de un dashboard Grafana con los paneles clave del nodo y configuración de alertas sobre peer count, sync y disco</td>
         </tr>
         <tr>
           <td><strong>7</strong></td>
-          <td>Mar 20/10</td>
-          <td>CI/CD con GitHub Actions: build, test, deploy de contratos y promoción dev→prod con OIDC</td>
-          <td>Pipeline GitHub Actions que despliega contrato a testnet en cada PR y a mainnet en tag de release</td>
+          <td>Infraestructura Web3 sobre Layer 2 (Base Sepolia): proxy RPC propio con caché y rate limiting, gateway IPFS dedicado para metadatos y assets, e indexer self-hosted (Graph Node) para escuchar eventos on-chain</td>
+          <td>Despliegue en vivo de un stack mínimo de infra Web3 sobre GCP: proxy RPC apuntando a Base Sepolia, gateway IPFS propio e indexer básico que escucha eventos de un contrato del Curso 1</td>
         </tr>
         <tr>
           <td><strong>8</strong></td>
-          <td>Jue 22/10</td>
-          <td>Cierre: FinOps blockchain, AWS Well-Architected (Security + Reliability) y handoff a Curso 2</td>
-          <td>Análisis Well-Architected de la arquitectura propia con 5 hallazgos y plan de remediación priorizado</td>
+          <td>Cierre: FinOps Web3 y revisión por pilares de buena arquitectura cloud (Google Cloud Architecture Framework, con guiños comparativos a AWS Well-Architected y Azure Well-Architected). Handoff a Curso 4: el andamio Web2 queda listo para hostear el DApp final</td>
+          <td>Revisión en clase del andamio Web2 desplegado (nodo Ethereum + PoC educativa + proxy RPC Base + IPFS + indexer + observabilidad) bajo los pilares del Google Cloud Architecture Framework, con priorización colaborativa de remediaciones antes del handoff al Curso 4</td>
         </tr>
       </tbody>
     </table>
+  </div>
+  <div class="lente-estrategica">
+    <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica del curso:</strong> <em>qué necesitás de Web2 para que tu Web3 funcione en producción</em> — cloud, contenedores, observabilidad y pipelines como código, sobre los que después corre tu DApp. La diferencia entre "deploy en testnet" y "proyecto productivo".
   </div>
 </div>
 
 <div class="curso-card" data-aos="fade-up" data-aos-delay="400">
   <div class="curso-header">
     <span class="plan-icon-wrap" aria-hidden="true">4</span>
-    <h4>Curso 2 — Fundamentos Financieros y Blockchain para Finanzas Descentralizadas</h4>
+    <h4>Curso 4 — Desarrollo de Aplicaciones y DApps Blockchain</h4>
   </div>
-  <p class="curso-meta">Noviembre 2026 · Docente Responsable: Dr. Julián Olivares · Equipo: Deiller Guevara</p>
-  <div class="lente-estrategica">
-    <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica del curso:</strong> <em>tokenomics y regulación argentina aplicada</em> — diseño de economía de token, AMMs, lending, derivados on-chain y análisis bajo PSAV (RG CNV 994) sobre el proyecto integrador propio.
+  <p class="curso-meta">Noviembre 2026 · Docente Responsable: Dr. David Petrocelli · Equipo: APU Nehuén Prados</p>
+  <div class="tp-resultado">
+    <span class="pin" aria-hidden="true">🎯</span><strong>Resultado del TP del curso:</strong> tu primera <strong>pasarela de pago Web3 (PaymentGateway)</strong> desplegada en Base Sepolia — contratos propios (ERC-20 + PaymentGateway), frontend con wallet connect (Next.js + wagmi + RainbowKit), auditoría con Slither y comparativa de costos contra mainnet. Reusa todo lo que diseñaste en el Curso 2 (token financiero) sobre el andamio levantado en el Curso 3 (infra).
   </div>
   <div class="table-responsive">
     <table class="table table-sm" style="font-size:0.9rem;">
       <thead>
         <tr>
           <th>Clase</th>
-          <th>Fecha</th>
           <th>Tema</th>
-          <th>Entregable</th>
+          <th>Actividad práctica</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>1</strong></td>
-          <td>Mar 27/10</td>
-          <td>Historia del dinero: trueque, metálico, fiat, dinero digital y emisión monetaria</td>
-          <td>Ensayo de 3 páginas analizando la inflación argentina 2020-2026 y rol potencial de stablecoins</td>
+          <td><strong>Presentación del curso</strong> (objetivos, modalidad, metodología y trabajo final). Repaso y nivelación de Solidity desde Curso 1 (tipos, mappings, modifiers, events, custom errors). Setup del entorno de desarrollo: Foundry, Anvil local y Next.js</td>
+          <td>Refactor en clase del contrato Counter del Curso 1 sumándole events y custom errors, midiendo gas antes y después</td>
         </tr>
         <tr>
           <td><strong>2</strong></td>
-          <td>Jue 29/10</td>
-          <td>Tokenomics: supply, emission, vesting, sinks, incentivos de gobernanza y veTokenomics</td>
-          <td>Diseñar tokenomics completa para un proyecto propio (whitepaper de 4 páginas con justificación)</td>
+          <td>Primer ERC-20 propio con OpenZeppelin: mint, transfer, approve, allowance. Verificación en Etherscan</td>
+          <td>Despliegue en Sepolia del ERC-20 del alumno (token de pago de la pasarela), verificado públicamente en Etherscan</td>
         </tr>
         <tr>
           <td><strong>3</strong></td>
-          <td>Mar 03/11</td>
-          <td>Stablecoins: collateralized (USDC, USDT), crypto-backed (DAI), algorítmicas y caso UST/Luna</td>
-          <td>Comparar 3 stablecoins (USDC, DAI, FRAX) en informe técnico con riesgos y reservas auditadas</td>
+          <td>Primer ERC-721 propio con OpenZeppelin: minteo, metadata e IPFS. Almacenamiento descentralizado para NFTs</td>
+          <td>Despliegue en Sepolia de un NFT propio (recibo/comprobante de la pasarela) con metadata e imagen subidas a IPFS</td>
         </tr>
         <tr>
           <td><strong>4</strong></td>
-          <td>Jue 05/11</td>
-          <td>DeFi y AMMs: Uniswap v2/v3/v4, mecánica x*y=k, concentrated liquidity y impermanent loss</td>
-          <td>Proveer liquidez en Uniswap v3 testnet y simular IL en hoja de cálculo con 3 escenarios de precio</td>
+          <td>Patrones de seguridad: reentrancy, integer overflow, access control. Patrón CEI (Checks-Effects-Interactions) y ReentrancyGuard. Auditoría con Slither</td>
+          <td>CTF en clase: identificación y parcheo de vulnerabilidades en un contrato vulnerable provisto + corrida de Slither sobre los contratos propios</td>
         </tr>
         <tr>
           <td><strong>5</strong></td>
-          <td>Mar 10/11</td>
-          <td>Lending &amp; borrowing: Aave, Compound, Curve; tasas variables, liquidaciones y flash loans</td>
-          <td>Ejecutar un flash loan en testnet (Aave v3) para arbitraje simple entre 2 DEX; reportar tx hash</td>
+          <td>Contrato <strong>PaymentGateway</strong>: recepción de pagos en ERC-20 (stablecoin), emisión de recibo (NFT) y liberación al receptor. Testing con Foundry</td>
+          <td>Despliegue del PaymentGateway que integra el ERC-20 y el NFT de los pasos anteriores, con suite de tests automatizados en Foundry</td>
         </tr>
         <tr>
           <td><strong>6</strong></td>
-          <td>Jue 12/11</td>
-          <td>Derivados on-chain: perpetuals (GMX, dYdX), opciones (Lyra, Premia) y productos estructurados</td>
-          <td>Modelar payoff de un perpetual con funding rate en notebook Python y backtest sobre datos reales</td>
+          <td>Frontend Web3: Next.js + wagmi + viem + RainbowKit. Conexión de wallet, lectura de estado on-chain y disparo de transacciones</td>
+          <td>Construcción del frontend de la pasarela: conectar wallet, mostrar saldo del ERC-20 y disparar un pago contra el PaymentGateway desplegado</td>
         </tr>
         <tr>
           <td><strong>7</strong></td>
-          <td>Mar 17/11</td>
-          <td>Marco regulatorio: PSAV en Argentina (RG CNV 994), MiCA en UE y casos LATAM (Brasil, México)</td>
-          <td>Análisis regulatorio del proyecto integrador propio bajo normativa CNV Argentina (informe de 3 páginas)</td>
+          <td>Layer 2 con foco en Base (OP Stack): migración del DApp completo a Base Sepolia, onramp de testnet y comparativa de costos de gas vs Ethereum mainnet</td>
+          <td>Despliegue end-to-end del DApp (ERC-20 + NFT + PaymentGateway + frontend) sobre Base Sepolia, verificado en Basescan, con análisis de gas comparado</td>
         </tr>
         <tr>
           <td><strong>8</strong></td>
-          <td>Jue 19/11</td>
-          <td>Defensa del Proyecto Integrador Final de la Diplomatura</td>
-          <td>Presentación oral de 20 min + repo + DApp desplegado + documentación completa ante jurado</td>
+          <td>Cierre e integración del DApp: pulido de auditoría Slither, mejoras de UX del frontend, completar documentación del repo y entrega final</td>
+          <td>Pulido final en clase del DApp (PaymentGateway + frontend + auditoría) sobre Base Sepolia y entrega del repo público completo para la defensa posterior del PIF</td>
         </tr>
       </tbody>
     </table>
+  </div>
+  <div class="lente-estrategica">
+    <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica del curso:</strong> <em>del contrato al producto en Layer 2</em> — construcción incremental de una pasarela de pago Web3 real, integrando ERC-20 + NFTs + frontend + auditoría con Slither, con foco en costos reales de gas y experiencia de usuario.
   </div>
 </div>
 
 <div class="estrategia-block" data-aos="fade-up" data-aos-delay="500">
   <h5>¿Y la estrategia? — Versión cronograma</h5>
   <p>
-    Cada clase entrega un <strong>artefacto reproducible</strong>: repo público, contrato verificado en Etherscan, dashboard Grafana, informe regulatorio. Las 32 clases construyen el <strong>Proyecto Integrador Final desde la primera semana</strong> — la última clase no es "el cierre del programa", es la <strong>defensa de algo que se vino construyendo</strong> en cada entregable. El alumno egresa con repos públicos auditables y un DApp desplegado en mainnet o testnet pública, con documentación completa.
+    Cada clase produce un <strong>artefacto reproducible</strong> en la actividad práctica: repo público, contrato verificado en Etherscan, dashboard Grafana, informe regulatorio. Las 32 clases construyen el <strong>Proyecto Integrador Final desde la primera semana</strong> — la última clase no es "el cierre del programa", es la <strong>defensa de algo que se vino construyendo</strong> clase por clase. El alumno egresa con repos públicos auditables y un DApp desplegado en mainnet o testnet pública, con documentación completa.
   </p>
 </div>
 
@@ -749,7 +978,7 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/scripts.js"></script>
+    <script src="../../js/scripts.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>AOS.init();</script>
     <a href="https://api.whatsapp.com/send?phone=%2B541123953895&text=Hola,%20queria%20información%20sobre%20la%20diplomatura%20en%20Blockchain%20..."

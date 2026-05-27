@@ -37,7 +37,7 @@
         {"@type":"Question","name":"¿Qué título otorga?","acceptedAnswer":{"@type":"Answer","text":"La Diplomatura de Posgrado Universitario en Innovación y Desarrollo de Aplicaciones basadas en Blockchain, emitida por la Universidad Nacional de Luján — universidad pública nacional con validez oficial en todo el país. No es una certificación privada de plataforma: es un título universitario que sirve como antecedente formal para futuras maestrías o doctorados. Cada uno de los 4 cursos aprobados otorga además un certificado individual de posgrado universitario."}},
         {"@type":"Question","name":"¿Puedo cursar módulos sueltos?","acceptedAnswer":{"@type":"Answer","text":"Sí. La diplomatura está compuesta por 4 cursos de posgrado de 40 hs cada uno que pueden cursarse de forma independiente: (1) Fundamentos de Blockchain, Frameworks y Herramientas para la creación de DApps; (2) Fundamentos Financieros y Blockchain para Finanzas Descentralizadas; (3) Automatización de Infraestructura y Arquitectura Tecnológica para Blockchain; (4) Desarrollo de Aplicaciones y DApps Blockchain. Cada curso individual otorga su propio certificado de posgrado universitario. Si completás los 4, obtenés el título de Diplomatura completo."}},
         {"@type":"Question","name":"¿Cuáles son las formas de pago?","acceptedAnswer":{"@type":"Answer","text":"Tres opciones, todas a través de la UNLu: (1) Pago electrónico 24 hs vía Pago Mis Cuentas con DNI y clave; (2) Cajero automático — Pago Mis Cuentas → Establecimientos Educativos → Universidad Nac. Luján; (3) Transferencia bancaria directa con CUIT/CBU de la universidad. Estructura: matrícula de $170.000 + 4 cuotas de $170.000 (una por cada curso). Vencimiento día 15 de cada mes."}},
-        {"@type":"Question","name":"¿Cuándo es la charla informativa?","acceptedAnswer":{"@type":"Answer","text":"El viernes 22 de mayo de 2026 a las 19 hs (ARG), encuentro virtual de aproximadamente 1 hora (2da charla informativa). El director cuenta el plan de estudios, los proyectos integradores, la salida laboral del sector, y respondemos en vivo todas las dudas. Completá el formulario de registro y te enviamos el link de acceso unos días antes."}},
+        {"@type":"Question","name":"¿Cómo me inscribo?","acceptedAnswer":{"@type":"Answer","text":"La inscripción está abierta y se realiza online en la página de Inscripción: completás un formulario con tus datos y nos comunicamos a la brevedad para confirmar tu lugar y los pasos siguientes. Los cupos son limitados a 30 alumnos por cohorte y se asignan por orden de inscripción. Una vez confirmado tu lugar, abonás la matrícula y arrancás con el material."}},
         {"@type":"Question","name":"¿Cuándo empieza la cursada?","acceptedAnswer":{"@type":"Answer","text":"La próxima cohorte arranca en agosto de 2026. Las inscripciones cierran a fines de julio o cuando se completa el cupo (lo que pase primero — recordá que son máximo 30 alumnos por cohorte). La forma más segura de no quedarte afuera es pre-registrarte a la charla informativa: te avisamos primeros cuando se abre la inscripción formal."}},
         {"@type":"Question","name":"¿Hay límite de cupos?","acceptedAnswer":{"@type":"Answer","text":"Sí. Trabajamos con cohortes de máximo 30 alumnos para mantener una relación cercana entre docentes y estudiantes — los docentes pueden dar feedback real al código y al proyecto integrador de cada alumno, no solo dictar clase magistral. Los lugares se asignan por orden de inscripción. Cuando se completa el cupo, el resto pasa a lista de espera."}},
         {"@type":"Question","name":"¿Necesito una computadora especial? ¿Qué software se usa?","acceptedAnswer":{"@type":"Answer","text":"No, una notebook común alcanza — i5/Ryzen 5 o superior, 8 GB de RAM y conexión estable a internet. Trabajamos con herramientas open source y servicios cloud free tier — sin licencias pagas: Solidity, Hardhat, Foundry, Remix; Google Cloud Platform en plan free tier; Node.js, React, ethers.js, web3.js; Docker, Terraform, GitHub Actions. Todo el software es gratuito y multiplataforma."}},
@@ -59,27 +59,39 @@
       "name": "Diplomatura de Posgrado en Innovación y Desarrollo de Aplicaciones basadas en Blockchain",
       "description": "Diplomatura de posgrado universitario en blockchain. Smart contracts, DApps, DeFi, infraestructura cloud descentralizada. 4 cursos de 40 hs, 160 hs totales, 100% virtual. Inicio agosto 2026.",
       "provider": {
-        "@type": "EducationalOrganization",
+        "@type": "CollegeOrUniversity",
         "name": "Universidad Nacional de Luján",
         "sameAs": "https://www.unlu.edu.ar/"
       },
       "educationalLevel": "Posgrado",
+      "educationalCredentialAwarded": "Diplomatura de Posgrado en Innovación y Desarrollo de Aplicaciones basadas en Blockchain",
       "inLanguage": "es-AR",
+      "courseCode": "DIPBLOCK-2026",
       "courseMode": "online",
+      "timeRequired": "PT160H",
+      "isAccessibleForFree": false,
       "url": "https://licdia.unlu.edu.ar/blockchain-dev/",
       "image": "https://licdia.unlu.edu.ar/assets/img/og-blockchain.jpg",
       "offers": {
         "@type": "Offer",
         "price": "850000",
         "priceCurrency": "ARS",
-        "category": "Diplomatura completa: matrícula $170.000 + 4 cuotas de $170.000",
-        "availability": "https://schema.org/PreOrder"
+        "category": "Paid",
+        "description": "Diplomatura completa: matrícula $170.000 + 4 cuotas de $170.000",
+        "availability": "https://schema.org/InStock",
+        "validFrom": "2026-05-01",
+        "validThrough": "2026-07-31"
       },
       "hasCourseInstance": {
         "@type": "CourseInstance",
         "courseMode": "online",
-        "startDate": "2026-08",
-        "courseWorkload": "PT160H"
+        "startDate": "2026-08-01",
+        "endDate": "2026-11-30",
+        "courseWorkload": "PT160H",
+        "location": {
+          "@type": "VirtualLocation",
+          "url": "https://licdia.unlu.edu.ar/blockchain-dev/"
+        }
       }
     }
     </script>
@@ -123,6 +135,40 @@
             --brand: #4C1C7F;
             --brand-dark: #261951;
             --brand-soft: #F3EBFB;
+        }
+
+        /* --- Botones Preinscripción: texto siempre blanco sobre violeta --- */
+        #buttonPreinscripcion,
+        #buttonPreinscripcion:link,
+        #buttonPreinscripcion:visited,
+        #buttonPreinscripcion:hover,
+        #buttonPreinscripcion:focus,
+        #buttonPreinscripcion:active,
+        #floatingCTA,
+        #floatingCTA:link,
+        #floatingCTA:visited,
+        #floatingCTA:hover,
+        #floatingCTA:focus,
+        #floatingCTA:active,
+        a.btn.btn-primary,
+        a.btn.btn-primary:link,
+        a.btn.btn-primary:visited,
+        a.btn.btn-primary:hover,
+        a.btn.btn-primary:focus,
+        a.btn.btn-primary:active,
+        a.btn.btn-dark,
+        a.btn.btn-dark:link,
+        a.btn.btn-dark:visited,
+        a.btn.btn-dark:hover,
+        a.btn.btn-dark:focus,
+        a.btn.btn-dark:active,
+        .quiz-cta-btn,
+        .quiz-cta-btn:link,
+        .quiz-cta-btn:visited,
+        .quiz-cta-btn:hover,
+        .quiz-cta-btn:focus,
+        .quiz-cta-btn:active {
+            color: #fff !important;
         }
 
         /* --- Card base reutilizable para las 4 secciones --- */
@@ -473,7 +519,7 @@
                     <li class="nav-item"><a class="nav-link" href="por-que-elegirnos/">Por qué elegirnos</a></li>
                     <li class="nav-item"><a class="nav-link" href="aranceles/">Aranceles</a></li>
                     <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Registro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/charla/blockchain/#inscripcion">Preinscripción</a></li>
                     <li class="nav-item"><a class="nav-link" href="../">LICDIA</a></li>
                 </ul>
             </div>
@@ -492,8 +538,8 @@
                 </div>
             </div>
             <a class="btn btn-primary btn-xl text-uppercase"
-                href="#contact"
-                id="buttonInfo"> Registro charla informativa online </a>
+                href="/charla/blockchain/#inscripcion"
+                id="buttonPreinscripcion"> Preinscripción </a>
         </div>
     </header>
     <article id="containerInfo" class="border-bottom border-dark" data-aos="flip-up" data-aos-duration="1500">
@@ -502,7 +548,7 @@
 
             <div class="col-12 col-md-4">
                 <p class="mb-2"><span class="fw-semibold text-uppercase">Modalidad:</span> Virtual</p>
-                <p class="mb-0"><span class="fw-semibold text-uppercase">Estado:</span> Próximamente - Dejá tus datos y te notificamos cuando abramos la inscripción</p>
+                <p class="mb-0"><span class="fw-semibold text-uppercase">Estado:</span> Inscripción abierta — cupos limitados a 30 lugares. <a href="/charla/blockchain/#inscripcion" class="fw-semibold">Inscribite</a>.</p>
             </div>
 
 
@@ -514,10 +560,10 @@
 
             <div class="col-12 col-md-4 d-flex flex-column gap-2">
                 <div>
-                    <p class="mb-2"><span class="fw-semibold text-uppercase">2da Charla informativa online: </span> Viernes 22 de mayo de 2026, 19 hs.</p>
+                    <p class="mb-2"><span class="fw-semibold text-uppercase">Inscripción 2026: </span> Abierta — Hasta el 10/06.</p>
                     <div class="mb-2">
-                        <a href="#contact" class="btn btn-dark px-3 py-2">
-                            Registro 2da charla informativa online
+                        <a href="/charla/blockchain/#inscripcion" class="btn btn-dark px-3 py-2">
+                            Preinscripción
                         </a>
                     </div>
                     <p class="mb-0"><span class="fw-semibold text-uppercase">Tipo de titulo: </span> Diplomatura de
@@ -583,7 +629,7 @@
             <div class="col-6 col-md-4 col-lg zoom-hover">
                 <div class="tile">
                     <span class="rule rule-top"></span>
-                    <h3 class="h4 fw-semibold my-3 mb-3"><a href="inscripcion-blockchain-dev/">¿Cómo me inscribo?</a></h3>
+                    <h3 class="h4 fw-semibold my-3 mb-3"><a href="/charla/blockchain/#inscripcion">¿Cómo me inscribo?</a></h3>
                     <span class="rule rule-bottom"></span>
                 </div>
             </div>
@@ -597,22 +643,22 @@
 
                 <div class="col-12 col-lg-6">
                     <h2 class="display-5 display-md-4 fw-bold m-0 d-flex align-items-center">
-                        Inscribíte ahora a la charla informativa <span class="ms-3" aria-hidden="true">→</span>
+                        Inscribite ahora <span class="ms-3" aria-hidden="true">→</span>
                     </h2>
                 </div>
 
 
                 <div class="col-12 col-lg-6">
                     <p class="fw-semibold mb-3">
-                        Dejá tus datos para participar de la charla informativa gratuita sobre la
+                        Completá el formulario de preinscripción a la
                         Diplomatura de Posgrado en Innovación y Desarrollo de Aplicaciones basadas en
-                        Blockchain.
+                        Blockchain. Cupos limitados.
                     </p>
 
 
-                    <a href="#contact"
+                    <a href="/charla/blockchain/#inscripcion"
                         rel="noopener" class="btn btn-primary px-4 py-2">
-                        Registro charla informativa online
+                        Preinscripción
                     </a>
                 </div>
             </div>
@@ -678,9 +724,9 @@
     <div class="container my-4" data-aos="fade-up" data-aos-duration="1000">
         <div class="alert text-center py-3" style="background: linear-gradient(to right, #4C1C7F, #261951); border: none; border-radius: 10px;">
             <span class="text-white fw-bold fs-5">
-                <i class="fas fa-bell me-2"></i>Próximamente: inscripción 2026
+                <i class="fas fa-bell me-2"></i>Inscripción 2026 abierta — cupos limitados
                 <span class="mx-2">|</span>
-                <a href="#contact" class="text-white text-decoration-underline">Dejá tus datos y te avisamos cuando esté abierto <i class="fas fa-arrow-right ms-1"></i></a>
+                <a href="/charla/blockchain/#inscripcion" class="text-white text-decoration-underline">Inscribite ahora <i class="fas fa-arrow-right ms-1"></i></a>
             </span>
         </div>
     </div>
@@ -1674,9 +1720,9 @@
                     <!-- CTA box -->
                     <div class="prereq-cta-box mt-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="600">
                         <p class="mb-2 fw-semibold" style="color:var(--brand-dark); font-size:1rem;">
-                            ¿Cumplís con todos? Empezá tu inscripción. &nbsp;|&nbsp; ¿Te falta alguno? Escribinos en la charla informativa.
+                            ¿Cumplís con todos? Empezá tu preinscripción. &nbsp;|&nbsp; ¿Te falta alguno? Escribinos por WhatsApp y lo vemos.
                         </p>
-                        <a href="#contact" class="btn btn-dark px-4 py-2 rounded-pill fw-bold">Registro</a>
+                        <a href="/charla/blockchain/#inscripcion" class="btn btn-dark px-4 py-2 rounded-pill fw-bold">Preinscripción</a>
                     </div>
 
                 </div>
@@ -1776,15 +1822,15 @@
         if (puntaje === 5) {
             box.className = 'result-green';
             html += '<p class="result-text">Esta diplomatura es 100% para vos. Estás listo para inscribirte.</p>';
-            html += '<a href="#contact" class="quiz-cta-btn">Registro</a>';
+            html += '<a href="/charla/blockchain/#inscripcion" class="quiz-cta-btn">Preinscripción</a>';
         } else if (puntaje === 4) {
             box.className = 'result-purple';
-            html += '<p class="result-text">Te encaja muy bien. Hablemos en la charla informativa para resolver lo que te falta.</p>';
-            html += '<a href="#contact" class="quiz-cta-btn">Registro</a>';
+            html += '<p class="result-text">Te encaja muy bien. Inscribite o escribinos por WhatsApp para resolver lo que te falta.</p>';
+            html += '<a href="/charla/blockchain/#inscripcion" class="quiz-cta-btn">Preinscripción</a>';
         } else if (puntaje === 3) {
             box.className = 'result-yellow';
-            html += '<p class="result-text">Podría encajarte. Sumate a la charla informativa así te aclaramos dudas.</p>';
-            html += '<a href="#contact" class="quiz-cta-btn">Registro</a>';
+            html += '<p class="result-text">Podría encajarte. Inscribite y nos ponemos en contacto para aclarar dudas.</p>';
+            html += '<a href="/charla/blockchain/#inscripcion" class="quiz-cta-btn">Preinscripción</a>';
         } else {
             box.className = 'result-grey';
             html += '<p class="result-text">Quizás no sea el mejor momento. Si solo te interesa cripto como inversión, mirá un curso de trading. Si querés construir, te esperamos.</p>';
@@ -1900,17 +1946,17 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
-                                    ¿Cuándo es la charla informativa?
+                                    ¿Cómo me inscribo?
                                 </button>
                             </h2>
                             <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
-                                    <p class="mb-3">El <strong>viernes 22 de mayo de 2026 a las 19 hs (ARG)</strong>, encuentro virtual de aproximadamente <strong>1 hora</strong> (2da charla informativa).</p>
-                                    <p class="mb-3">El director cuenta el plan de estudios, los proyectos integradores que vas a construir, la salida laboral del sector, y respondemos en vivo todas las dudas.</p>
-                                    <p class="mb-0">Completá el formulario de registro y te enviamos el link de acceso unos días antes.</p>
+                                    <p class="mb-3">La inscripción <strong>ya está abierta</strong>. Se realiza online: completás un formulario con tus datos y nos comunicamos a la brevedad para confirmar tu lugar y los pasos siguientes.</p>
+                                    <p class="mb-3">Los cupos son <strong>limitados a 30 alumnos</strong> por cohorte y se asignan por orden de inscripción. Una vez confirmado tu lugar, abonás la matrícula y arrancás con el material.</p>
+                                    <p class="mb-0">Si tenés dudas previas, podés escribirnos por WhatsApp y te respondemos sin compromiso.</p>
                                     <div class="mt-3">
-                                        <a href="#contact" class="btn btn-dark btn-lg px-4 py-2">
-                                            Registro 2da charla informativa online
+                                        <a href="inscripcion-blockchain-dev/" class="btn btn-dark btn-lg px-4 py-2">
+                                            Inscripción
                                         </a>
                                     </div>
                                 </div>
@@ -1927,7 +1973,7 @@
                                 <div class="accordion-body">
                                     <p class="mb-3">La próxima cohorte arranca en <strong>agosto de 2026</strong>.</p>
                                     <p class="mb-3">Las inscripciones cierran a fines de julio o cuando se completa el cupo (lo que pase primero — recordá que son <strong>máximo 30 alumnos por cohorte</strong>).</p>
-                                    <p class="mb-0">La forma más segura de no quedarte afuera es <a href="#contact">pre-registrarte</a> a la charla informativa: te avisamos primeros cuando se abre la inscripción formal.</p>
+                                    <p class="mb-0">La forma más segura de no quedarte afuera es <a href="/charla/blockchain/#inscripcion">inscribirte ya</a> — la inscripción formal está abierta con cupos limitados.</p>
                                 </div>
                             </div>
                         </div>
@@ -1942,7 +1988,7 @@
                                 <div class="accordion-body">
                                     <p class="mb-3">Sí. Trabajamos con cohortes de <strong>máximo 30 alumnos</strong> para mantener una relación cercana entre docentes y estudiantes — los docentes pueden dar feedback real al código y al proyecto integrador de cada alumno, no solo dictar clase magistral.</p>
                                     <p class="mb-3">Los lugares se asignan <strong>por orden de inscripción</strong> una vez completada la matrícula. Cuando se completa el cupo, el resto pasa a <strong>lista de espera</strong> para la próxima cohorte.</p>
-                                    <p class="mb-0">Para asegurar tu lugar: <a href="#contact">pre-registrate</a> cuanto antes y participá de la charla informativa — los pre-registrados son los primeros en enterarse cuando se abre la inscripción formal.</p>
+                                    <p class="mb-0">Para asegurar tu lugar: <a href="/charla/blockchain/#inscripcion">inscribite</a> cuanto antes — los cupos son limitados a 30 lugares y se asignan por orden de inscripción.</p>
                                 </div>
                             </div>
                         </div>
@@ -2071,7 +2117,7 @@
                                         <li><strong>Título de grado</strong> de cualquier orientación, o</li>
                                         <li><strong>Equivalencia por experiencia profesional</strong> (analizada caso por caso por la dirección académica para perfiles con trayectoria comprobable sin título de grado).</li>
                                     </ul>
-                                    <p class="mb-3">El proceso es: <strong>registro → charla informativa → inscripción formal → pago de matrícula → arranque en agosto</strong>.</p>
+                                    <p class="mb-3">El proceso es: <strong>preinscripción → revisión de antecedentes → confirmación de cupo → pago de matrícula → arranque en agosto</strong>.</p>
                                     <p class="mb-0">Detalles completos en la sección <a href="requisitos/">Requisitos</a>.</p>
                                 </div>
                             </div>
@@ -2083,12 +2129,33 @@
         </div>
     </section>
 
-<!--SECCION DE CONTACTO -->
+<!--SECCION DE INSCRIPCION -->
     <section class="page-section" id="contact">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase"> Registro 2da Charla Informativa Online</h2>
-                <h3 class="section-subheading text-muted mb-4">Viernes 22 de mayo de 2026, 19 hs · Online — Anotate y te avisamos con el link de acceso</h3>
+                <h2 class="section-heading text-uppercase">Inscribite a la Diplomatura</h2>
+                <h3 class="section-subheading mb-4" style="color: rgba(255,255,255,0.85); font-weight: 500;">Cohorte Agosto 2026 · Cupos limitados — completá el formulario de inscripción y nos comunicamos a la brevedad</h3>
+            </div>
+
+            <div class="container my-3">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8 text-center">
+                        <a href="inscripcion-blockchain-dev/" class="btn btn-primary btn-lg px-5 py-3" style="font-size:1.15rem; font-weight:700;">
+                            <i class="fas fa-user-plus me-2"></i>Quiero inscribirme
+                        </a>
+                        <p class="mt-3 small" style="color: rgba(255,255,255,0.75);">Te lleva al formulario completo de inscripción · Toda la información en menos de 2 minutos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- (Sección legacy del form de charla informativa desactivada — la inscripción se hace en /inscripcion-blockchain-dev/) -->
+    <section style="display:none;" id="contact-legacy-hidden">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase"> Registro Charla Informativa Online</h2>
+                <h3 class="section-subheading text-muted mb-4">Anotate y te avisamos con el link de acceso</h3>
             </div>
 
             <div class="container my-3">
@@ -2246,8 +2313,8 @@
     </a>
 
     <!-- Floating CTA — visible after scrolling past hero, only on mobile -->
-    <a href="#contact" id="floatingCTA" aria-label="Registro charla informativa online Blockchain" style="display:none;">
-        <i class="fas fa-rocket me-2"></i>Registro charla
+    <a href="/charla/blockchain/#inscripcion" id="floatingCTA" aria-label="Preinscripción Diplomatura Blockchain" style="display:none;">
+        <i class="fas fa-rocket me-2"></i>Preinscripción
     </a>
     <style>
         #floatingCTA {
