@@ -43,14 +43,15 @@
 [data-theme="dark"] .theme-toggle .icon-sun { display: inline-block; }
 
 /* ---------- 3. STICKY FLOATING CTA ---------- */
+/* Se ubica ENCIMA del boton WhatsApp existente (.botonWPP: bottom 25px, height 65px) */
 .sticky-cta {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  bottom: 105px;
+  right: 25px;
   z-index: 9998;
   background: linear-gradient(135deg, #4C1C7F, #8B5CF6);
   color: #fff !important;
-  padding: 14px 22px;
+  padding: 12px 20px;
   border-radius: 50px;
   font-weight: 700;
   text-decoration: none;
@@ -59,10 +60,11 @@
   transform: translateY(20px);
   pointer-events: none;
   transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.3s ease;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  max-width: calc(100vw - 50px);
 }
 .sticky-cta.visible {
   opacity: 1;
@@ -74,13 +76,13 @@
   transform: translateY(-3px);
   color: #fff !important;
 }
-.sticky-cta i { font-size: 1.1rem; }
+.sticky-cta i { font-size: 1rem; }
 @media (max-width: 576px) {
   .sticky-cta {
-    bottom: 16px;
+    bottom: 100px;
     right: 16px;
-    padding: 12px 18px;
-    font-size: 0.85rem;
+    padding: 10px 16px;
+    font-size: 0.8rem;
   }
 }
 
@@ -440,6 +442,98 @@ body, .card, .navbar, footer, section, table, .accordion-item, .form-control {
 }
 [data-theme="dark"] .post-content hr {
   border-color: #30363d !important;
+}
+
+/* ---------- 7. PLAN-DE-ESTUDIOS DARK OVERRIDES ---------- */
+/* Cajas con bg claro que rompen en dark: .lente-estrategica, .estrategia-block, .tp-resultado, .curso-card */
+
+[data-theme="dark"] .lente-estrategica {
+  background: rgba(139, 92, 246, 0.12) !important;
+  border-left-color: #a78bfa !important;
+  color: #c9d1d9 !important;
+}
+[data-theme="dark"] .lente-estrategica strong {
+  color: #c4b5fd !important;
+}
+[data-theme="dark"] .lente-estrategica em {
+  color: #e0e7ff !important;
+}
+
+[data-theme="dark"] .estrategia-block {
+  background: #161b22 !important;
+  border-left-color: #a78bfa !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+}
+[data-theme="dark"] .estrategia-block h5 {
+  color: #f0f6fc !important;
+}
+[data-theme="dark"] .estrategia-block p {
+  color: #c9d1d9 !important;
+}
+[data-theme="dark"] .estrategia-block strong {
+  color: #c4b5fd !important;
+}
+
+[data-theme="dark"] .tp-resultado {
+  background: rgba(46, 125, 50, 0.18) !important;
+  border-left-color: #4ade80 !important;
+  color: #c9d1d9 !important;
+}
+[data-theme="dark"] .tp-resultado strong {
+  color: #86efac !important;
+}
+
+[data-theme="dark"] .curso-card {
+  background: #161b22 !important;
+  border-color: #30363d !important;
+  color: #c9d1d9 !important;
+}
+[data-theme="dark"] .curso-card h4,
+[data-theme="dark"] .curso-card h5,
+[data-theme="dark"] .curso-card .curso-titulo {
+  color: #f0f6fc !important;
+}
+
+/* Botones "Ver cronograma" y "Accede al programa" */
+[data-theme="dark"] a[href*="#cronograma"],
+[data-theme="dark"] .btn-outline-primary,
+[data-theme="dark"] .btn-cronograma {
+  color: #c4b5fd !important;
+  border-color: #8B5CF6 !important;
+}
+[data-theme="dark"] a[href*="#cronograma"]:hover,
+[data-theme="dark"] .btn-cronograma:hover {
+  background: #8B5CF6 !important;
+  color: #fff !important;
+}
+
+/* Acordeon de plan (cada modulo) */
+[data-theme="dark"] .accordion-item,
+[data-theme="dark"] .accordion-button,
+[data-theme="dark"] .plan-card {
+  background-color: #161b22 !important;
+  border-color: #30363d !important;
+  color: #c9d1d9 !important;
+}
+[data-theme="dark"] .accordion-button {
+  color: #f0f6fc !important;
+}
+[data-theme="dark"] .accordion-button:not(.collapsed) {
+  background-color: #21262d !important;
+  color: #c4b5fd !important;
+}
+[data-theme="dark"] .accordion-button::after {
+  filter: invert(1) brightness(1.5);
+}
+
+/* Camino-card y camino-alumno (Pokemon) */
+[data-theme="dark"] .camino-card {
+  background: #161b22 !important;
+  border-color: #30363d !important;
+}
+[data-theme="dark"] .camino-tagline,
+[data-theme="dark"] .camino-badge {
+  color: #c4b5fd !important;
 }
 
 /* Navbar del blog (no es el mismo que las diplomaturas) */
