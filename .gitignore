@@ -24,3 +24,34 @@ maestria-ciencia-datos/*.zip
 maestria-ciencia-datos/*.docx
 maestria-ciencia-datos/*.pdf
 assets/img/mcd-docentes/_orig/
+
+# Programas oficiales internos de diplomaturas (docx institucionales)
+**/programas-hidden/
+
+# CVs personales de docentes (datos sensibles)
+# OJO: NO ignorar fotos de docentes (assets/img/...), solo material en blockchain-dev|dev-ia/docentes/
+blockchain-dev/docentes/**/*.docx
+blockchain-dev/docentes/**/*.pdf
+blockchain-dev/docentes/**/cv.data.yaml
+blockchain-dev/docentes/**/*CV*.md
+blockchain-dev/docentes/**/*CV*.html
+blockchain-dev/docentes/**/LLOGO*.png
+dev-ia/docentes/**/*.docx
+dev-ia/docentes/**/*.pdf
+dev-ia/docentes/**/cv.data.yaml
+dev-ia/docentes/**/*CV*.md
+dev-ia/docentes/**/*CV*.html
+
+# Material de trabajo interno en carpetas de inscripción (propuestas, formularios, backups)
+**/inscripcion-*/*.docx
+**/inscripcion-*/*.pdf
+**/inscripcion-*/*.pptx
+**/inscripcion-*/*backup*
+**/inscripcion-*/propuesta-*
+**/inscripcion-*/guia-presentacion.html
+**/inscripcion-*/*.png
+
+# LibreOffice / Office lock files y temporales
+**/.~lock.*
+~$*
+*.tmp
