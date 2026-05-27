@@ -356,6 +356,98 @@ body, .card, .navbar, footer, section, table, .accordion-item, .form-control {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+/* ---------- 6. BLOG-SPECIFIC DARK MODE OVERRIDES ---------- */
+[data-theme="dark"] .blog-hero,
+[data-theme="dark"] .post-header {
+  background: linear-gradient(180deg, #1a1530 0%, #0d1117 100%) !important;
+}
+[data-theme="dark"] .blog-hero h1,
+[data-theme="dark"] .post-header h1 {
+  color: #f0f6fc !important;
+}
+[data-theme="dark"] .blog-hero p,
+[data-theme="dark"] .post-header .subtitle {
+  color: #8b949e !important;
+}
+[data-theme="dark"] .post-header .meta {
+  color: #6e7681 !important;
+}
+
+[data-theme="dark"] .post-card {
+  background-color: #161b22 !important;
+  border-color: #30363d !important;
+  color: #c9d1d9 !important;
+}
+[data-theme="dark"] .post-card h2 {
+  color: #f0f6fc !important;
+}
+[data-theme="dark"] .post-card p {
+  color: #8b949e !important;
+}
+[data-theme="dark"] .post-card .meta {
+  color: #6e7681 !important;
+  border-color: #30363d !important;
+}
+[data-theme="dark"] .post-card .read-more {
+  color: #a78bfa !important;
+}
+
+[data-theme="dark"] .tag-bc {
+  background: #422006 !important;
+  color: #fbbf24 !important;
+}
+[data-theme="dark"] .tag-ia {
+  background: #1e3a5f !important;
+  color: #60a5fa !important;
+}
+
+[data-theme="dark"] .post-content {
+  color: #c9d1d9;
+}
+[data-theme="dark"] .post-content h2,
+[data-theme="dark"] .post-content h3 {
+  color: #f0f6fc !important;
+}
+[data-theme="dark"] .post-content p,
+[data-theme="dark"] .post-content li {
+  color: #c9d1d9 !important;
+}
+[data-theme="dark"] .post-content code {
+  background: #21262d !important;
+  color: #f472b6 !important;
+}
+[data-theme="dark"] .post-content pre {
+  background: #010409 !important;
+  border: 1px solid #30363d;
+}
+[data-theme="dark"] .post-content table {
+  background-color: #161b22 !important;
+}
+[data-theme="dark"] .post-content th {
+  background: #21262d !important;
+  color: #f0f6fc !important;
+  border-color: #30363d !important;
+}
+[data-theme="dark"] .post-content td {
+  border-color: #30363d !important;
+}
+[data-theme="dark"] .post-content blockquote {
+  color: #8b949e !important;
+  border-left-color: #a78bfa !important;
+}
+[data-theme="dark"] .post-content em {
+  color: #8b949e !important;
+}
+[data-theme="dark"] .post-content hr {
+  border-color: #30363d !important;
+}
+
+/* Navbar del blog (no es el mismo que las diplomaturas) */
+[data-theme="dark"] .navbar.navbar-expand-lg {
+  background: #0d1117 !important;
+  border-bottom-color: #30363d !important;
+}
+
 /* Respeta usuarios con reduced-motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
