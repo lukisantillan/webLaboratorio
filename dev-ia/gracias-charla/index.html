@@ -19,37 +19,7 @@
     <link href="../../css/styles.css" rel="stylesheet" />
     <link href="../../css/style2.css" rel="stylesheet" />
 
-    <!-- Meta Pixel Code -->
-    <script>
-        !function (f, b, e, v, n, t, s) {
-            if (f.fbq) return; n = f.fbq = function () {
-                n.callMethod ?
-                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
-            };
-            if (!f._fbq) n = f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-            n.queue = []; t = b.createElement(e); t.async = !0;
-            t.src = v; s = b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t, s)
-        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-
-        fbq('init', '1493410068477893');
-        fbq('track', 'PageView');
-        (function () {
-            var eid = null;
-            try { eid = sessionStorage.getItem('lead_event_id'); } catch (e) {}
-            if (eid) {
-                fbq('track', 'Lead', { content_name: 'charla-ia' }, { eventID: eid });
-                try { sessionStorage.removeItem('lead_event_id'); } catch (e) {}
-            } else {
-                fbq('track', 'Lead', { content_name: 'charla-ia' });
-            }
-        })();
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=1493410068477893&ev=Lead&noscript=1" />
-    </noscript>
-    <!-- End Meta Pixel Code -->
+    <!-- Meta Pixel: el código del pixel lo coloca el equipo de marketing en este lugar. NO agregar pixel desde acá. -->
     <script type="text/javascript" async="async" src="https://hub.fromdoppler.com/public/dhtrack.js"></script>
 
 </head>
@@ -118,6 +88,6 @@
 
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/scripts.js"></script>
+    <script src="../../js/scripts.js"></script>
 </body>
 </html>

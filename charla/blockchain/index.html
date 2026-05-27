@@ -984,10 +984,8 @@
                 return r.json().catch(function() { return {}; });
             })
             .then(function() {
-                form.style.display = 'none';
-                document.getElementById('successInscripcion').style.display = 'block';
-                if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'inscripcion-blockchain-charla' });
-                window.scrollTo({ top: form.offsetTop - 80, behavior: 'smooth' });
+                // Redirigir a la pagina de agradecimiento (el pixel lo coloca el equipo de marketing alli)
+                window.location.href = 'https://licdia.unlu.edu.ar/blockchain-dev/gracias-diplomado/index.html';
             })
             .catch(function() {
                 btn.disabled = false;

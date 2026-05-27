@@ -263,15 +263,15 @@ header.backgroundAr .masthead-heading {
     font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
 }
 
-/* Dev-IA - gradiente azul con líneas tecnológicas */
+/* Dev-IA - gradiente azul navy con líneas tecnológicas */
 header.backgroundhead.fondoDiplomatura {
-    background-image: linear-gradient(to right, rgba(28,46,84,0.35), rgba(25,61,118,0.4)), url('../assets/img/hero-ia-lineas-tech.jpg');
+    background-image: linear-gradient(to right, rgba(28,46,84,0.78), rgba(26,99,192,0.82)), url('../assets/img/hero-ia-lineas-tech.jpg');
     background-size: cover;
     background-position: center;
 }
 
 header.backgroundAr.fondoDiplomatura {
-    background-image: linear-gradient(to left, rgba(29,120,229,0.4), rgba(0,60,133,0.45)), url('../assets/img/hero-ia-lineas-tech.jpg');
+    background-image: linear-gradient(to left, rgba(26,99,192,0.82), rgba(28,46,84,0.88)), url('../assets/img/hero-ia-lineas-tech.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -657,6 +657,18 @@ header.backgroundAr.fondoBlockchain {
 /* --- Blockchain: bank box inside pagos --- */
 .blockchain-theme #pagos .bank-box {
     background: linear-gradient(180deg, #261951, #1a0d30) !important;
+}
+
+/* --- IA: bank box inside pagos (override dark global to navy-soft) --- */
+.ia-theme #pagos .bank-box {
+    background: #f0f5ff !important;
+    color: #1C2E54 !important;
+    box-shadow: none !important;
+    font-family: 'Courier New', monospace !important;
+}
+.ia-theme #pagos .copyable {
+    background: rgba(28, 46, 84, 0.08) !important;
+    color: #1C2E54 !important;
 }
 
 #aranceles {

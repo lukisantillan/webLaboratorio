@@ -7,14 +7,14 @@
     <meta name="description" content="Plan de estudios de la Diplomatura de Posgrado en IA Generativa - UNLu. 4 cursos: Introducción a la IA, Infraestructura, Aprendizaje Profundo e IA Generativa." />
     <meta name="author" content="LICDIA - UNLu" />
     <meta property="og:title" content="Plan de Estudios - Diplomatura en IA Generativa - UNLu" />
-    <meta property="og:image" content="https://licdia.unlu.edu.ar/assets/img/og-dev-ia.jpg" />
+    <meta property="og:image" content="https://licdia.unlu.edu.ar/assets/img/hero-ia-lineas-tech.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:url" content="https://licdia.unlu.edu.ar/dev-ia/plan-de-estudios/" />
     <meta property="og:locale" content="es_AR" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://licdia.unlu.edu.ar/assets/img/og-dev-ia.jpg" />
+    <meta name="twitter:image" content="https://licdia.unlu.edu.ar/assets/img/hero-ia-lineas-tech.jpg" />
     <link rel="canonical" href="https://licdia.unlu.edu.ar/dev-ia/plan-de-estudios/" />
     <meta property="og:description" content="Conocé los 4 cursos de la Diplomatura en IA Generativa: Introducción a la IA, Infraestructura, Aprendizaje Profundo e IA Generativa." />
     <title>Plan de Estudios IA Generativa - LICDIA</title>
@@ -119,6 +119,192 @@
         .lente-estrategica em {
             color: var(--brand-dark);
             font-style: italic;
+        }
+        .tp-resultado {
+            background: #e8f5e9;
+            border-left: 4px solid #2e7d32;
+            border-radius: 8px;
+            padding: 0.85rem 1.1rem;
+            margin: 0.6rem 0 1rem;
+            font-size: 0.95rem;
+            color: #1b5e20;
+        }
+        .tp-resultado .pin {
+            display: inline-block;
+            margin-right: 0.4rem;
+        }
+        .tp-resultado strong {
+            color: #2e7d32;
+            font-weight: 800;
+        }
+        /* Camino del alumno (timeline horizontal de bolitas) */
+        .camino-alumno {
+            background: linear-gradient(135deg, #faf7ff 0%, #f3ebfb 100%);
+            border-radius: 20px;
+            padding: 3rem 2rem 2.5rem;
+            margin: 2rem 0 1rem;
+            box-shadow: 0 8px 32px rgba(76, 28, 127, 0.10), 0 1px 4px rgba(76, 28, 127, 0.06);
+            border: 1px solid rgba(76, 28, 127, 0.08);
+        }
+        .camino-alumno h3 {
+            text-align: center;
+            color: var(--brand-dark);
+            font-weight: 800;
+            margin-bottom: 0.35rem;
+            font-size: 1.35rem;
+        }
+        .camino-alumno .camino-sub {
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.92rem;
+            margin: 0 auto 2rem;
+            max-width: 640px;
+        }
+        .camino-track {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+            align-items: flex-start;
+            position: relative;
+        }
+        .camino-step {
+            text-align: center;
+            position: relative;
+            padding: 0 0.4rem;
+        }
+        .camino-bolita {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle at 30% 30%, #fff 0%, #f8f4ff 70%, #f3ebfb 100%);
+            border: 4px solid var(--brand);
+            margin: 0 auto 0.85rem;
+            box-shadow: 0 10px 22px rgba(76, 28, 127, 0.22);
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            overflow: hidden;
+        }
+        .camino-bolita img {
+            width: 95%;
+            height: 95%;
+            object-fit: contain;
+            transition: transform 0.35s ease;
+        }
+        .camino-step:hover .camino-bolita {
+            transform: translateY(-6px) scale(1.06);
+            box-shadow: 0 16px 32px rgba(46, 125, 50, 0.32);
+            border-color: #2e7d32;
+        }
+        .camino-step:hover .camino-bolita img {
+            transform: scale(1.08);
+        }
+        .camino-numero {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 0.95rem;
+            z-index: 3;
+            box-shadow: 0 4px 10px rgba(38, 25, 81, 0.35), 0 1px 2px rgba(0,0,0,0.15);
+            border: 2px solid #fff;
+        }
+        .camino-step:hover .camino-numero {
+            background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%);
+            box-shadow: 0 6px 14px rgba(27, 94, 32, 0.4), 0 1px 2px rgba(0,0,0,0.15);
+        }
+        .camino-badge {
+            position: absolute;
+            bottom: -8px;
+            left: -8px;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 3;
+            box-shadow: 0 5px 14px rgba(0,0,0,0.2), 0 1px 3px rgba(0,0,0,0.1), inset 0 0 0 1px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .camino-step:hover .camino-badge {
+            transform: scale(1.1) rotate(-6deg);
+            box-shadow: 0 7px 18px rgba(0,0,0,0.24), 0 1px 3px rgba(0,0,0,0.1), inset 0 0 0 1px rgba(0,0,0,0.08);
+        }
+        .camino-badge i {
+            font-size: 1.2rem;
+            color: #1a1a1a;
+        }
+        .camino-bolita-wrap {
+            position: relative;
+            width: 120px;
+            margin: 0 auto 0.85rem;
+        }
+        .camino-step:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: calc(50% + 60px);
+            width: calc(100% - 120px);
+            height: 3px;
+            background: linear-gradient(90deg, var(--brand) 0%, #2e7d32 100%);
+            opacity: 0.45;
+            z-index: 1;
+        }
+        .camino-tagline {
+            color: var(--brand-dark);
+            font-weight: 800;
+            font-size: 0.92rem;
+            margin-bottom: 0.25rem;
+            font-style: italic;
+        }
+        .camino-titulo {
+            color: var(--brand-dark);
+            font-weight: 800;
+            font-size: 0.82rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+        }
+        .camino-meta {
+            color: #6c757d;
+            font-size: 0.75rem;
+            margin-bottom: 0.55rem;
+            font-weight: 600;
+        }
+        .camino-desc {
+            color: #3a3a3a;
+            font-size: 0.85rem;
+            line-height: 1.45;
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .camino-track {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .camino-step:not(:last-child)::after {
+                display: none;
+            }
+            .camino-step {
+                padding: 0 1rem;
+            }
         }
         .estrategia-block {
             background: #fff;
@@ -399,13 +585,79 @@
     </div>
 
     <!-- ============================================================ -->
+    <!-- EL CAMINO DEL ALUMNO                                         -->
+    <!-- ============================================================ -->
+    <section class="page-section py-3" id="camino" data-aos="fade-up" data-aos-duration="1000">
+        <div class="container">
+            <div class="camino-alumno">
+                <h3>El camino del alumno</h3>
+                <p class="camino-sub">Cuatro cursos, cuatro evoluciones. Empezás entrenando tu primer modelo y terminás con un sistema GenAI con RAG y agentes desplegado en GPU.</p>
+                <div class="camino-track">
+                    <div class="camino-step">
+                        <div class="camino-bolita-wrap">
+                            <div class="camino-bolita">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/172.png" alt="Pichu" loading="lazy">
+                            </div>
+                            <div class="camino-numero">1</div>
+                            <div class="camino-badge" title="Machine Learning / Redes neuronales"><i class="fa-solid fa-brain" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="camino-titulo">Fundamentos</div>
+                        <div class="camino-meta">Septiembre</div>
+                        <div class="camino-tagline">"Naciste data scientist"</div>
+                        <p class="camino-desc">Tus primeros modelos vivos: clasificás, regresionás y entrenás tu MLP desde cero en Python.</p>
+                    </div>
+                    <div class="camino-step">
+                        <div class="camino-bolita-wrap">
+                            <div class="camino-bolita">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png" alt="Pikachu" loading="lazy">
+                            </div>
+                            <div class="camino-numero">2</div>
+                            <div class="camino-badge" title="Cloud / Contenedores / IaC"><i class="fa-solid fa-cubes" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="camino-titulo">Infra cloud-native</div>
+                        <div class="camino-meta">Octubre</div>
+                        <div class="camino-tagline">"Volás con infra propia"</div>
+                        <p class="camino-desc">Dockerizás tu modelo, lo servís con FastAPI y lo desplegás en GKE con pipeline CI/CD propio sobre GCP.</p>
+                    </div>
+                    <div class="camino-step">
+                        <div class="camino-bolita-wrap">
+                            <div class="camino-bolita">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/26.png" alt="Raichu" loading="lazy">
+                            </div>
+                            <div class="camino-numero">3</div>
+                            <div class="camino-badge" title="Deep Learning"><i class="fa-solid fa-network-wired" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="camino-titulo">Deep Learning</div>
+                        <div class="camino-meta">Noviembre</div>
+                        <div class="camino-tagline">"Evolucionaste a redes neuronales"</div>
+                        <p class="camino-desc">Diseñás y entrenás CNNs y LSTMs sobre tus datos, aplicás transfer learning y explicás qué aprende el modelo con SHAP y Grad-CAM.</p>
+                    </div>
+                    <div class="camino-step">
+                        <div class="camino-bolita-wrap">
+                            <div class="camino-bolita">
+                                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/10100.png" alt="Raichu Alola" loading="lazy">
+                            </div>
+                            <div class="camino-numero">4</div>
+                            <div class="camino-badge" title="LLMs / Agentes / RAG"><i class="fa-solid fa-robot" aria-hidden="true"></i></div>
+                        </div>
+                        <div class="camino-titulo">GenAI en producción</div>
+                        <div class="camino-meta">Diciembre</div>
+                        <div class="camino-tagline">"Forma final regional: tu IA en producción"</div>
+                        <p class="camino-desc">Tu sistema GenAI con RAG, agentes y MCP, sobre LLM propio en GPU cloud. Live.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
     <!-- CRONOGRAMA CLASE POR CLASE                                  -->
     <!-- ============================================================ -->
     <section class="page-section" id="cronograma" data-aos="fade-up" data-aos-duration="1200">
         <div class="container">
             <div class="text-center mb-4">
                 <h2 class="section-heading text-uppercase">Cronograma clase por clase</h2>
-                <p class="text-muted" style="max-width:720px; margin:0 auto;">Cohorte agosto 2026 — Martes y jueves de 19:00 a 21:00 hs (ARG). 32 clases en vivo distribuidas en 4 cursos consecutivos. Cada clase tiene tema y entregable concreto.</p>
+                <p class="text-muted" style="max-width:720px; margin:0 auto;">Cohorte septiembre – diciembre 2026 — Martes y jueves de 19:00 a 21:00 hs (ARG). 32 clases en vivo distribuidas en 4 cursos consecutivos. Cada clase tiene tema y actividad práctica concreta.</p>
                 <p class="text-muted mt-2" style="max-width:720px; margin:0 auto; font-size:0.85rem;"><i class="fas fa-info-circle me-1" style="color:var(--brand);"></i>Cronograma de referencia — sujeto a ajustes menores antes del inicio de cohorte.</p>
             </div>
 
@@ -417,71 +669,65 @@
     <span class="plan-icon-wrap" aria-hidden="true">1</span>
     <h4>Curso 1 — Introducción a la Inteligencia Artificial</h4>
   </div>
-  <p class="curso-meta">Agosto 2026 · Docente Responsable: Mg. Juan Manuel Fernández</p>
-  <div class="lente-estrategica">
-    <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica del curso:</strong> <em>selección de paradigma</em> — del primer clasificador kNN al diseño end-to-end de un proyecto IA, decidiendo cuándo ML clásico, cuándo deep learning y cuándo LLM según problema, datos y costo.
+  <p class="curso-meta">Septiembre 2026 · Docente Responsable: Mg. Juan Manuel Fernández</p>
+  <div class="tp-resultado">
+    <span class="pin" aria-hidden="true">🎯</span><strong>Resultado del TP del curso:</strong> tu primer modelo de Machine Learning entrenado y evaluado sobre un dataset abierto elegido por vos, con métricas, análisis de sesgos y la definición del caso de estudio que vas a evolucionar durante los próximos 3 cursos.
   </div>
   <div class="table-responsive">
     <table class="table table-sm" style="font-size:0.9rem;">
       <thead>
         <tr>
           <th>Clase</th>
-          <th>Fecha</th>
           <th>Tema</th>
-          <th>Entregable</th>
+          <th>Actividad práctica</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>1</strong></td>
-          <td>Mar 04/08</td>
-          <td>Tipos de aprendizaje (supervisado, no supervisado, RL) y métricas (accuracy, precision/recall, F1, ROC-AUC)</td>
-          <td>Notebook con clasificador kNN sobre Iris + reporte de métricas con matriz de confusión</td>
+          <td><strong>Presentación del curso</strong> (objetivos, modalidad, metodología y trabajo final). Fundamentos de IA: enfoques simbólico, estadístico y conexionista. Tipos de aprendizaje (supervisado, no supervisado, refuerzo) y aplicaciones por sector</td>
+          <td>Recorrido en vivo por un clasificador kNN sobre Iris con análisis de la matriz de confusión</td>
         </tr>
         <tr>
           <td><strong>2</strong></td>
-          <td>Jue 06/08</td>
-          <td>Preprocessing y feature engineering (encoding, scaling, missing values, data leakage)</td>
-          <td>Pipeline sklearn aplicado a dataset Titanic con cross-validation y reporte de score</td>
+          <td>Aprendizaje supervisado: train/validation/test, métricas (accuracy, precision, recall, F1) y preprocesamiento de datos</td>
+          <td>Pipeline de preprocesamiento sobre dataset tabular abierto con cross-validation</td>
         </tr>
         <tr>
           <td><strong>3</strong></td>
-          <td>Mar 11/08</td>
-          <td>Algoritmos clásicos: regresión lineal/logística, árboles, random forest, gradient boosting (XGBoost)</td>
-          <td>Comparativa de 4 modelos sobre dataset tabular Kaggle (House Prices) con benchmark documentado</td>
+          <td>Algoritmos clásicos: regresión lineal y logística, árboles de decisión, k-NN</td>
+          <td>Comparativa de modelos supervisados sobre dataset propio, con métricas y matriz de confusión</td>
         </tr>
         <tr>
           <td><strong>4</strong></td>
-          <td>Jue 13/08</td>
-          <td>Validación, overfitting, regularización (L1/L2, dropout, early stopping) y bias-variance tradeoff</td>
-          <td>Modelo regularizado con learning curves + análisis bias-variance entregado en notebook</td>
+          <td>Métodos de ensamble: random forest y gradient boosting; regularización y overfitting</td>
+          <td>Benchmark de ensambles sobre el dataset del curso con curvas de aprendizaje</td>
         </tr>
         <tr>
           <td><strong>5</strong></td>
-          <td>Mar 18/08</td>
-          <td>NLP clásico: tokenización, TF-IDF, word embeddings (Word2Vec, GloVe)</td>
-          <td>Clasificador de sentimiento sobre tweets en español usando TF-IDF + LogReg con métricas</td>
+          <td>Aprendizaje no supervisado: clustering (k-means, jerárquico) y métricas de desempeño</td>
+          <td>Taller de Machine Learning: agrupamiento sobre un caso real con visualización de clusters</td>
         </tr>
         <tr>
           <td><strong>6</strong></td>
-          <td>Jue 20/08</td>
-          <td>Computer vision clásico: filtros, HOG, descriptores SIFT y matching de features</td>
-          <td>Detección de bordes y matching de features con OpenCV sobre dataset propio</td>
+          <td>Redes neuronales: perceptrón, feed-forward, funciones de activación y backpropagation conceptual</td>
+          <td>Taller de redes neuronales: entrenamiento de un MLP sobre dataset propio</td>
         </tr>
         <tr>
           <td><strong>7</strong></td>
-          <td>Mar 25/08</td>
-          <td>Ética, sesgos algorítmicos y casos famosos (COMPAS, Amazon hiring, face recognition)</td>
-          <td>Ensayo de 2 páginas: análisis de sesgo en el modelo propio entregado en clase 3</td>
+          <td>NLP y visión por computadora introductorios: bag-of-words, TF-IDF, embeddings y clasificación de imágenes</td>
+          <td>Clasificador de sentimiento sobre texto en español + reconocimiento de imágenes con modelo base</td>
         </tr>
         <tr>
           <td><strong>8</strong></td>
-          <td>Jue 27/08</td>
-          <td>Cierre: diseño de un proyecto IA end-to-end y elección del paradigma adecuado</td>
-          <td>Defensa oral de 5 min: problema elegido + paradigma justificado para el Proyecto Integrador Final</td>
+          <td>Cierre: ética y responsabilidad en IA (sesgos algorítmicos, casos COMPAS y reconocimiento facial) + presentación del caso de estudio integrador</td>
+          <td>Caso de estudio preliminar del TP final: dataset, objetivo, modelo y métricas, con discusión de sesgos potenciales</td>
         </tr>
       </tbody>
     </table>
+  </div>
+  <div class="lente-estrategica">
+    <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica del curso:</strong> <em>selección de paradigma</em> — del primer clasificador kNN al diseño end-to-end de un proyecto IA, decidiendo cuándo ML clásico, cuándo deep learning y cuándo LLM según problema, datos y costo.
   </div>
 </div>
 
@@ -490,71 +736,65 @@
     <span class="plan-icon-wrap" aria-hidden="true">2</span>
     <h4>Curso 2 — Infraestructura Tecnológica para Inteligencia Artificial</h4>
   </div>
-  <p class="curso-meta">Septiembre 2026 · Docente Responsable: Dr. David Petrocelli</p>
-  <div class="lente-estrategica">
-    <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica del curso:</strong> <em>trade-offs cloud para IA</em> — managed vs self-hosted, GPU vs CPU, training vs inference cost, serverless vs Kubernetes; FinOps ML aplicado bajo AWS Well-Architected ML Lens.
+  <p class="curso-meta">Octubre 2026 · Docente Responsable: Dr. David Petrocelli</p>
+  <div class="tp-resultado">
+    <span class="pin" aria-hidden="true">🎯</span><strong>Resultado del TP del curso:</strong> el "andamio cloud-native" completo que va a sostener tus modelos de Deep Learning (Curso 3) y tus apps de IA Generativa (Curso 4) en producción — contenedores con GPU, IaC con Terraform, GKE con autoescalado, observabilidad de modelos y pipelines CI/CD. La diferencia entre "un notebook que entrena" y "un sistema de IA que sirve".
   </div>
   <div class="table-responsive">
     <table class="table table-sm" style="font-size:0.9rem;">
       <thead>
         <tr>
           <th>Clase</th>
-          <th>Fecha</th>
           <th>Tema</th>
-          <th>Entregable</th>
+          <th>Actividad práctica</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>1</strong></td>
-          <td>Mar 01/09</td>
-          <td>Cloud para IA: AWS SageMaker, Bedrock, EC2 GPU; comparativa con GCP Vertex AI y Azure ML</td>
-          <td>Provisión de instancia EC2 g4dn.xlarge con CUDA + benchmark con PyTorch documentado</td>
+          <td><strong>Presentación del curso</strong> (objetivos, modalidad, metodología y trabajo final). Arquitectura híbrida de un sistema de IA: qué vive en GPU y qué vive en CPU, qué se entrena y qué se sirve. Despliegue de cargas de IA sobre Compute Engine. Presentación del repo template provisto por la cátedra (modelo base que se opera en paralelo durante el curso)</td>
+          <td>Despliegue en vivo de una carga de IA sobre Compute Engine y deploy del repo template en una segunda instancia para operarla como infra propia</td>
         </tr>
         <tr>
           <td><strong>2</strong></td>
-          <td>Jue 03/09</td>
-          <td>Contenedores para IA: Docker con CUDA, NGC (NVIDIA images), multi-stage builds y optimización de tamaño</td>
-          <td>Imagen Docker con PyTorch + CUDA, push a ECR y ejecución de inference verificada</td>
+          <td>IaC con Terraform sobre GCP: VPC, Compute Engine, Persistent Disk, IAM y Secret Manager para workloads stateful</td>
+          <td>Construcción guiada de un módulo Terraform reutilizable para un training job sobre GCP, con tfvars dev/prod y plan validado en clase</td>
         </tr>
         <tr>
           <td><strong>3</strong></td>
-          <td>Mar 08/09</td>
-          <td>IaC para IA: Terraform para SageMaker training jobs, S3, IAM y VPC con least privilege</td>
-          <td>Módulo Terraform reutilizable para entrenar un modelo en SageMaker con tfvars dev/prod</td>
+          <td>Terraform avanzado en GCP: módulos reutilizables, workspaces (dev/staging/prod) y patrones multi-environment</td>
+          <td>Armado en vivo de un módulo Terraform que aprovisiona un pipeline de training en Vertex AI con backend remoto en GCS y secretos gestionados</td>
         </tr>
         <tr>
           <td><strong>4</strong></td>
-          <td>Jue 10/09</td>
-          <td>CI/CD para modelos: GitHub Actions con OIDC, MLflow tracking y model registry</td>
-          <td>Pipeline GitHub Actions que entrena modelo en cada push y registra artefactos en MLflow</td>
+          <td>CI/CD con GitHub Actions: build, test, deploy de imágenes y promoción dev→prod con OIDC</td>
+          <td>Armado en clase de un pipeline GitHub Actions que entrena un modelo en cada push, lo registra en MLflow y promueve la imagen a Artifact Registry</td>
         </tr>
         <tr>
           <td><strong>5</strong></td>
-          <td>Mar 15/09</td>
-          <td>Kubernetes para inference: EKS + Karpenter + GPU node pools, Helm charts para servir modelos</td>
-          <td>Deployment de modelo Hugging Face en EKS con autoscaling, Service y exposición por Ingress</td>
+          <td>Kubernetes con GKE (Google Kubernetes Engine): Helm charts, persistent volumes y StatefulSets para workloads stateful</td>
+          <td>Despliegue guiado de un Helm chart para servir un modelo Hugging Face en GKE con autoescalado, Service e Ingress público</td>
         </tr>
         <tr>
           <td><strong>6</strong></td>
-          <td>Jue 17/09</td>
-          <td>Serverless para inference: Lambda + container image, SageMaker Serverless y análisis de costos</td>
-          <td>Función Lambda que sirve un modelo distilBERT con cold-start medido y reportado</td>
+          <td>Observabilidad ML: latencia, throughput, drift de datos y métricas de modelo con Cloud Monitoring + Prometheus + Grafana</td>
+          <td>Construcción en vivo de un dashboard Grafana con métricas clave del modelo en producción y alertas configuradas sobre drift y latencia</td>
         </tr>
         <tr>
           <td><strong>7</strong></td>
-          <td>Mar 22/09</td>
-          <td>Observabilidad ML: latencia, drift de datos, métricas de modelo (CloudWatch + Prometheus + Grafana)</td>
-          <td>Dashboard Grafana con 5 métricas clave de modelo en producción y 2 alertas configuradas</td>
+          <td>Inferencia gestionada en GCP: Vertex AI Endpoints y Cloud Run con GPU; comparativa cold start vs costo y patrones de serving</td>
+          <td>Despliegue del mismo modelo en Vertex AI Endpoint y en Cloud Run con GPU, midiendo y comparando cold start, latencia y costo</td>
         </tr>
         <tr>
           <td><strong>8</strong></td>
-          <td>Jue 24/09</td>
-          <td>Cierre: AWS Well-Architected ML Lens — Reliability, Cost Optimization y Security para IA</td>
-          <td>Análisis WA-ML-Lens sobre la arquitectura propia del curso con plan de remediación priorizado</td>
+          <td>Cierre: FinOps ML y revisión por pilares de buena arquitectura cloud (Google Cloud Architecture Framework, con guiños comparativos a AWS Well-Architected ML Lens y Azure Well-Architected). Handoff a Curso 3: el andamio queda listo para hostear los modelos de Deep Learning</td>
+          <td>Revisión en clase del andamio cloud-native desplegado bajo los pilares del Google Cloud Architecture Framework, con priorización colaborativa de remediaciones antes del handoff al Curso 3</td>
         </tr>
       </tbody>
     </table>
+  </div>
+  <div class="lente-estrategica">
+    <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica del curso:</strong> <em>qué necesitás de la nube para que tu IA funcione en producción</em> — Compute Engine con GPU, contenedores, IaC con Terraform, GKE y observabilidad de modelos. La diferencia entre "un notebook que entrena" y "un sistema de IA que sirve".
   </div>
 </div>
 
@@ -563,71 +803,65 @@
     <span class="plan-icon-wrap" aria-hidden="true">3</span>
     <h4>Curso 3 — Aprendizaje Profundo y Redes Neuronales</h4>
   </div>
-  <p class="curso-meta">Octubre 2026 · Docente Responsable: Dra. Rosana Matuk</p>
-  <div class="lente-estrategica">
-    <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica del curso:</strong> <em>elección de arquitectura</em> — CNN / RNN / Transformer / VAE según la naturaleza del dato; entrenamiento real en GPU cloud, hyperparameter tuning con Optuna e interpretabilidad con SHAP y Grad-CAM.
+  <p class="curso-meta">Noviembre 2026 · Docente Responsable: Dra. Rosana Matuk</p>
+  <div class="tp-resultado">
+    <span class="pin" aria-hidden="true">🎯</span><strong>Resultado del TP del curso:</strong> tu modelo de Deep Learning propio (CNN o LSTM) entrenado en GPU cloud sobre dataset real, con transfer learning desde una red preentrenada, métricas validadas e interpretabilidad explicada con SHAP y Grad-CAM. La base sobre la que el Curso 4 va a construir tu sistema de IA Generativa.
   </div>
   <div class="table-responsive">
     <table class="table table-sm" style="font-size:0.9rem;">
       <thead>
         <tr>
           <th>Clase</th>
-          <th>Fecha</th>
           <th>Tema</th>
-          <th>Entregable</th>
+          <th>Actividad práctica</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>1</strong></td>
-          <td>Mar 29/09</td>
-          <td>Redes neuronales feedforward: forward/backprop, optimizadores (SGD, Adam, AdamW) y schedulers</td>
-          <td>MLP en PyTorch entrenado sobre MNIST con curvas de loss y accuracy documentadas</td>
+          <td><strong>Presentación del curso</strong> (objetivos, modalidad, metodología y trabajo final). Redes feedforward y backpropagation: gradiente, activaciones (ReLU, GELU), optimizadores (SGD, Adam, AdamW) y schedulers</td>
+          <td>MLP en PyTorch entrenado sobre MNIST, con comparación de optimizadores y curvas de loss/accuracy analizadas en clase</td>
         </tr>
         <tr>
           <td><strong>2</strong></td>
-          <td>Jue 01/10</td>
-          <td>CNNs: convolución, pooling, ResNet, transfer learning y data augmentation</td>
-          <td>Clasificador de imágenes con ResNet-18 fine-tuned sobre dataset propio (5 clases) con métricas</td>
+          <td>Regularización y control de sobreajuste: dropout, BatchNorm, weight decay, early stopping y validación cruzada</td>
+          <td>Ablation study guiado de las técnicas de regularización sobre un MLP, midiendo el impacto de cada una en validación</td>
         </tr>
         <tr>
           <td><strong>3</strong></td>
-          <td>Mar 06/10</td>
-          <td>RNN, LSTM y GRU: secuencias y series temporales; teacher forcing y vanishing gradient</td>
-          <td>Modelo LSTM para predicción de demanda eléctrica con dataset público y backtesting</td>
+          <td>Redes convolucionales: convolución, pooling, arquitecturas (LeNet, VGG, ResNet) y data augmentation</td>
+          <td>CNN desde cero sobre CIFAR-10 y comparación contra una ResNet preentrenada con transfer learning</td>
         </tr>
         <tr>
           <td><strong>4</strong></td>
-          <td>Jue 08/10</td>
-          <td>Transformers: atención, encoder/decoder, BERT vs GPT y arquitectura general</td>
-          <td>Fine-tune de BERT para clasificación de texto en español, evaluado sobre test set independiente</td>
+          <td>Transfer learning y fine-tuning: feature extraction vs full fine-tune, congelado de capas e ImageNet como base</td>
+          <td>ResNet-18 fine-tuned sobre dataset propio de pocas clases, con matriz de confusión y análisis de errores</td>
         </tr>
         <tr>
           <td><strong>5</strong></td>
-          <td>Mar 13/10</td>
-          <td>Hyperparameter tuning: Optuna, Ray Tune, AutoML y búsqueda bayesiana</td>
-          <td>Optimización con Optuna del modelo de la clase anterior, reportar mejor configuración hallada</td>
+          <td>Redes recurrentes: RNN, LSTM y GRU; vanishing gradient, teacher forcing y secuencias largas</td>
+          <td>LSTM para predicción sobre serie temporal pública (demanda eléctrica o similar) con backtesting</td>
         </tr>
         <tr>
           <td><strong>6</strong></td>
-          <td>Jue 15/10</td>
-          <td>Interpretabilidad: SHAP, LIME, Grad-CAM y attention visualization</td>
-          <td>Análisis SHAP sobre modelo de Clase 3 + Grad-CAM sobre la CNN de Clase 2 con comentarios</td>
+          <td>Optimización de hiperparámetros: grid search, random search, búsqueda bayesiana con Optuna</td>
+          <td>Optimización con Optuna del modelo de la clase anterior, con reporte de la mejor configuración hallada</td>
         </tr>
         <tr>
           <td><strong>7</strong></td>
-          <td>Mar 20/10</td>
-          <td>Modelos multimodales: CLIP, BLIP, Vision-Language Models y embeddings cross-modal</td>
-          <td>Demo con CLIP buscando imágenes por descripción en lenguaje natural sobre corpus propio</td>
+          <td>Interpretabilidad de modelos: SHAP, LIME, Grad-CAM y visualización de activaciones intermedias</td>
+          <td>Análisis SHAP sobre la LSTM de clase 5 y Grad-CAM sobre la CNN de clase 3, con comentarios técnicos discutidos en clase</td>
         </tr>
         <tr>
           <td><strong>8</strong></td>
-          <td>Jue 22/10</td>
-          <td>Cierre: arquitectura propia para el Proyecto Integrador Final + entrenamiento en GPU cloud</td>
-          <td>Defensa de arquitectura elegida con justificación + entrenamiento exitoso en GPU reportado</td>
+          <td>Cierre: modelos avanzados (introducción a Transformers como puente al Curso 4) y arquitecturas híbridas</td>
+          <td>Caso de estudio preliminar del TP integrador: dataset elegido, arquitectura propuesta, estrategia de entrenamiento y plan de evaluación, presentado en clase</td>
         </tr>
       </tbody>
     </table>
+  </div>
+  <div class="lente-estrategica">
+    <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica del curso:</strong> <em>elección de arquitectura</em> — CNN para imágenes, LSTM para secuencias, transfer learning para acelerar; entrenamiento real en GPU cloud, hyperparameter tuning con Optuna e interpretabilidad con SHAP y Grad-CAM antes de saltar a Transformers en el Curso 4.
   </div>
 </div>
 
@@ -636,71 +870,65 @@
     <span class="plan-icon-wrap" aria-hidden="true">4</span>
     <h4>Curso 4 — Inteligencia Artificial Generativa</h4>
   </div>
-  <p class="curso-meta">Noviembre 2026 · Docente Responsable: Mg. Diego Gasch</p>
-  <div class="lente-estrategica">
-    <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica del curso:</strong> <em>RAG vs fine-tuning vs prompt engineering</em> — cuándo cada estrategia, costos comparativos y construcción de un sistema IA Generativa real combinando las tres con LangChain, Hugging Face y agentes con tool use.
+  <p class="curso-meta">Diciembre 2026 · Docente Responsable: Mg. Diego Gasch</p>
+  <div class="tp-resultado">
+    <span class="pin" aria-hidden="true">🎯</span><strong>Resultado del TP del curso:</strong> tu sistema GenAI propio — con RAG sobre corpus propio, agentes con tool use y MCP, montado sobre LLM gestionado (OpenAI/Google/Anthropic) o LLM open-source desplegado en GPU cloud (Vertex AI / Vast.ai), corriendo sobre el andamio del Curso 2. Listo para la defensa del Proyecto Integrador Final.
   </div>
   <div class="table-responsive">
     <table class="table table-sm" style="font-size:0.9rem;">
       <thead>
         <tr>
           <th>Clase</th>
-          <th>Fecha</th>
           <th>Tema</th>
-          <th>Entregable</th>
+          <th>Actividad práctica</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td><strong>1</strong></td>
-          <td>Mar 27/10</td>
-          <td>LLMs y arquitecturas modernas: GPT-4, Claude, Llama 3, Gemini y modelos open-source</td>
-          <td>Comparativa práctica de 3 LLMs sobre 5 prompts del mismo dominio con análisis de calidad/latencia</td>
+          <td><strong>Presentación del curso</strong> (objetivos, modalidad, metodología y trabajo final). Modelos de gestión de LLM: local, pipeline, API gestionada y web. Del Transformer del Curso 3 al LLM productivo: continuidad técnica</td>
+          <td>Setup del entorno + definición del caso de estudio del TP Integrador Final (template), tomando como base el modelo del Curso 3</td>
         </tr>
         <tr>
           <td><strong>2</strong></td>
-          <td>Jue 29/10</td>
-          <td>Prompt engineering avanzado: zero/few-shot, chain-of-thought, ReAct y self-consistency</td>
-          <td>Solución a problema complejo demostrando 4 técnicas con reporte de latencia y calidad de respuesta</td>
+          <td>Programación con LLMs vía API: OpenAI, Anthropic, Google GenAI, Hugging Face. Prompt engineering avanzado (zero/few-shot, chain-of-thought, ReAct)</td>
+          <td>Notebook comparando 4 técnicas de prompting sobre el mismo problema, con métricas de calidad y latencia</td>
         </tr>
         <tr>
           <td><strong>3</strong></td>
-          <td>Mar 03/11</td>
-          <td>Embeddings y vector databases: OpenAI/Cohere/Voyage embeddings, Pinecone, Chroma, pgvector</td>
-          <td>Indexación de 1000 documentos propios y búsqueda semántica con top-k evaluada manualmente</td>
+          <td>Modelos generativos multimodales: difusión (Stable Diffusion), generación de imágenes y audio (TTS con Coqui/HF)</td>
+          <td>Generación multimodal con <code>openai</code>, <code>google-genai</code>, <code>transformers</code> y <code>diffusers</code> integrados en un único notebook</td>
         </tr>
         <tr>
           <td><strong>4</strong></td>
-          <td>Jue 05/11</td>
-          <td>RAG (Retrieval-Augmented Generation) con LangChain o LlamaIndex; chunking y reranking</td>
-          <td>RAG completo sobre corpus de PDFs propios con LangChain + evaluación de relevancia (RAGAS)</td>
+          <td>Despliegue de LLMs open-source en cloud: Ollama y vLLM sobre GCP, Vast.ai para GPU on-demand y Vertex AI managed</td>
+          <td>Ollama en Compute Engine CPU + Vast.ai con GPU + Vertex AI Endpoint, con comparativa de costos, latencia y throughput</td>
         </tr>
         <tr>
           <td><strong>5</strong></td>
-          <td>Mar 10/11</td>
-          <td>Fine-tuning de modelos open-source: LoRA, QLoRA, PEFT con Hugging Face Trainer</td>
-          <td>Fine-tune con LoRA sobre Llama 3 8B para tarea específica + evaluación antes/después</td>
+          <td>FastAPI + Docker + GKE para LLMs: GPU scheduling en Kubernetes, testing con pytest y despliegue sobre el andamio del Curso 2</td>
+          <td>API FastAPI con Ollama containerizada, tests automatizados y deploy en GKE con GPU</td>
         </tr>
         <tr>
           <td><strong>6</strong></td>
-          <td>Jue 12/11</td>
-          <td>Agentes IA: tool use, function calling, ReAct loop, planificación y memoria</td>
-          <td>Agente que combina 3 herramientas (búsqueda web, calculadora, API externa) para resolver tarea compleja</td>
+          <td>Agentes IA y automatización low-code: n8n, function calling, patrones de orquestación y memoria</td>
+          <td>Pipeline n8n integrando un LLM con tres herramientas externas para resolver una tarea de extremo a extremo</td>
         </tr>
         <tr>
           <td><strong>7</strong></td>
-          <td>Mar 17/11</td>
-          <td>Modelos generativos visuales: Stable Diffusion, DALL-E, ControlNet y técnicas de inpainting</td>
-          <td>Generación de 5 imágenes con Stable Diffusion + ControlNet aplicando prompt engineering avanzado</td>
+          <td>Protocolo MCP (Model Context Protocol) y RAG con LangChain, LangGraph y LlamaIndex: embeddings, chunking, reranking y vector DBs</td>
+          <td>RAG sobre corpus propio + agente MCP en GCP con observabilidad básica (logs y métricas)</td>
         </tr>
         <tr>
           <td><strong>8</strong></td>
-          <td>Jue 19/11</td>
-          <td>Defensa del Proyecto Integrador Final de la Diplomatura</td>
-          <td>Presentación oral de 20 min + repo + sistema IA desplegado + documentación completa ante jurado</td>
+          <td>Cierre e integración del sistema GenAI: pulido del RAG, mejora de prompts, observabilidad del agente y completar documentación del repo</td>
+          <td>Pulido final en clase del sistema GenAI propio (RAG + agente MCP + LLM en GPU) y entrega del repo público completo para la defensa posterior del PIF</td>
         </tr>
       </tbody>
     </table>
+  </div>
+  <div class="lente-estrategica">
+    <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica del curso:</strong> <em>RAG vs fine-tuning vs prompt engineering</em> — cuándo cada estrategia, costos comparativos y construcción de un sistema GenAI real combinando las tres con LangChain, agentes y MCP, todo desplegado sobre el andamio cloud-native del Curso 2.
   </div>
 </div>
 
@@ -741,7 +969,7 @@
         </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/scripts.js"></script>
+    <script src="../../js/scripts.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>AOS.init();</script>
     <a href="https://api.whatsapp.com/send?phone=%2B541123953895&text=Hola,%20queria%20información%20sobre%20la%20diplomatura%20en%20IA%20Generativa%20..."

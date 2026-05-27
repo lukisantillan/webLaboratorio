@@ -31,25 +31,15 @@
             t.src = v; s = b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t, s)
         }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-
         fbq('init', '1845986945991192');
         fbq('track', 'PageView');
-        (function () {
-            var eid = null;
-            try { eid = sessionStorage.getItem('lead_event_id'); } catch (e) {}
-            if (eid) {
-                fbq('track', 'Lead', { content_name: 'inscripcion-blockchain' }, { eventID: eid });
-                try { sessionStorage.removeItem('lead_event_id'); } catch (e) {}
-            } else {
-                fbq('track', 'Lead', { content_name: 'inscripcion-blockchain' });
-            }
-        })();
     </script>
     <noscript>
         <img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=1845986945991192&ev=Lead&noscript=1" />
+            src="https://www.facebook.com/tr?id=1845986945991192&ev=PageView&noscript=1" />
     </noscript>
     <!-- End Meta Pixel Code -->
+
     <script type="text/javascript" async="async" src="https://hub.fromdoppler.com/public/dhtrack.js"></script>
 
 </head>
@@ -118,6 +108,6 @@
 
     <!-- Bootstrap core JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/scripts.js"></script>
+    <script src="../../js/scripts.js"></script>
 </body>
 </html>
