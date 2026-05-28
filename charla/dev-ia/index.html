@@ -38,6 +38,66 @@
             --brand-deep:  #0c1a36;
             --brand-soft:  #EBF1FB;
             --brand-light: #a8c5e0;
+            --page-bg:     #ffffff;
+            --card-bg:     #ffffff;
+            --text-base:   #212529;
+            --text-muted:  #6c757d;
+            --input-bg:    #ffffff;
+            --input-border:#ced4da;
+        }
+
+        html[data-theme="dark"] {
+            --brand:       #60a5fa;
+            --brand-mid:   #3b82f6;
+            --brand-dark:  #93c5fd;
+            --brand-deep:  #0c1a36;
+            --brand-soft:  rgba(96,165,250,0.10);
+            --brand-light: #bfdbfe;
+            --page-bg:     #0d1117;
+            --card-bg:     #161b22;
+            --text-base:   #c9d1d9;
+            --text-muted:  #8b949e;
+            --input-bg:    #0d1117;
+            --input-border:#30363d;
+        }
+
+        html[data-theme="dark"] body {
+            background-color: var(--page-bg) !important;
+            color: var(--text-base) !important;
+        }
+        html[data-theme="dark"] .card,
+        html[data-theme="dark"] .form-control,
+        html[data-theme="dark"] .form-select {
+            background-color: var(--card-bg) !important;
+            border-color: var(--input-border) !important;
+            color: var(--text-base) !important;
+        }
+        html[data-theme="dark"] .form-control:focus,
+        html[data-theme="dark"] .form-select:focus {
+            border-color: var(--brand) !important;
+            box-shadow: 0 0 0 0.25rem rgba(96,165,250,0.25) !important;
+        }
+        html[data-theme="dark"] .form-label,
+        html[data-theme="dark"] label {
+            color: var(--text-base) !important;
+        }
+        html[data-theme="dark"] .text-muted {
+            color: var(--text-muted) !important;
+        }
+        html[data-theme="dark"] ::placeholder {
+            color: #6e7681 !important;
+        }
+        html[data-theme="dark"] .alert-info {
+            background-color: rgba(96,165,250,0.10) !important;
+            border-color: rgba(96,165,250,0.4) !important;
+            color: var(--brand-dark) !important;
+        }
+        html[data-theme="dark"] .aviso-experiencia {
+            background-color: rgba(96,165,250,0.08) !important;
+            border-color: rgba(96,165,250,0.3) !important;
+        }
+        html[data-theme="dark"] hr {
+            border-color: var(--input-border) !important;
         }
 
         /* ─── countdown chip ─── */

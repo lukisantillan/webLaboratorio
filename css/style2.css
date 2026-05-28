@@ -265,13 +265,13 @@ header.backgroundAr .masthead-heading {
 
 /* Dev-IA - gradiente azul navy con líneas tecnológicas */
 header.backgroundhead.fondoDiplomatura {
-    background-image: linear-gradient(to right, rgba(28,46,84,0.78), rgba(26,99,192,0.82)), url('../assets/img/hero-ia-lineas-tech.jpg');
+    background-image: linear-gradient(to right, rgba(28,46,84,0.78), rgba(26,99,192,0.62)), url('../assets/img/foto-ia-pao.jpg');
     background-size: cover;
     background-position: center;
 }
 
 header.backgroundAr.fondoDiplomatura {
-    background-image: linear-gradient(to left, rgba(26,99,192,0.82), rgba(28,46,84,0.88)), url('../assets/img/hero-ia-lineas-tech.jpg');
+    background-image: linear-gradient(to left, rgba(26,99,192,0.82), rgba(28,46,84,0.88)), url('../assets/img/foto-ia-pao.jpg');
     background-size: cover;
     background-position: center;
 }
