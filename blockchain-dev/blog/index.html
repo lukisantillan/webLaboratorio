@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Blog Blockchain — LICDIA UNLu</title>
+    <meta name="description" content="Artículos prácticos sobre desarrollo blockchain, smart contracts, Solidity, L2 y arquitectura Web3 — por los instructores de la Diplomatura en Blockchain LICDIA UNLu." />
+    <meta name="author" content="LICDIA UNLu" />
+    <link rel="canonical" href="https://licdia.unlu.edu.ar/blockchain-dev/blog/" />
+
+    <meta property="og:title" content="Blog Blockchain — LICDIA UNLu" />
+    <meta property="og:description" content="Artículos prácticos sobre smart contracts, Solidity, L2 y desarrollo blockchain." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://licdia.unlu.edu.ar/blockchain-dev/blog/" />
+
+    <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('licdia-theme');
+          if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+          if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+        } catch(e){}
+      })();
+    </script>
+    <link href="../../css/enhancements.css" rel="stylesheet" />
+    <script src="../../js/enhancements.js" defer></script>
+
+    <style>
+      :root {
+        --brand: #4C1C7F;
+        --brand-light: #8B5CF6;
+        --brand-bg: #F3EBFB;
+        --page-bg: #ffffff;
+        --card-bg: #ffffff;
+        --text-base: #1e293b;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+      }
+      html[data-theme="dark"] {
+        --brand: #a78bfa;
+        --brand-light: #c4b5fd;
+        --brand-bg: rgba(167,139,250,0.10);
+        --page-bg: #0d1117;
+        --card-bg: #161b22;
+        --text-base: #c9d1d9;
+        --text-muted: #8b949e;
+        --border: #30363d;
+      }
+
+      body { font-family: 'Inter', system-ui, -apple-system, sans-serif; color: var(--text-base); background: var(--page-bg); }
+      .navbar { padding: 1rem 0; border-bottom: 1px solid var(--border); background: var(--page-bg); }
+      .navbar-brand { font-weight: 800; color: var(--brand); font-size: 1.15rem; }
+      .navbar .nav-link { color: var(--text-muted); font-weight: 500; }
+      .navbar .nav-link:hover, .navbar .nav-link.active { color: var(--brand); }
+
+      .blog-hero { padding: 5rem 0 3rem; text-align: center; background: linear-gradient(180deg, var(--brand-bg) 0%, var(--page-bg) 100%); }
+      .blog-hero .tag-hero { display: inline-block; padding: 0.35rem 1rem; border-radius: 999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1.25rem; background: var(--brand-bg); color: var(--brand); text-transform: uppercase; letter-spacing: 0.05em; }
+      .blog-hero h1 { font-size: 2.75rem; font-weight: 800; color: var(--text-base); margin-bottom: 0.75rem; }
+      .blog-hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 640px; margin: 0 auto; }
+
+      .post-grid { padding: 3rem 0 5rem; background: var(--page-bg); }
+      .post-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem; height: 100%; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s, border-color .2s; }
+      .post-card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(76,28,127,0.15); border-color: var(--brand); color: inherit; }
+      .post-card .tag { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; background: var(--brand-bg); color: var(--brand); }
+      .post-card h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-base); line-height: 1.3; }
+      .post-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1; }
+      .post-card .meta { font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+      .post-card .read-more { color: var(--brand); font-weight: 600; font-size: 0.9rem; margin-top: 0.5rem; }
+
+      .other-diploma { background: var(--brand-bg); border-radius: 16px; padding: 2rem; text-align: center; margin-top: 2rem; }
+      .other-diploma h3 { color: var(--brand); font-weight: 700; margin-bottom: 0.5rem; font-size: 1.1rem; }
+      .other-diploma p { color: var(--text-muted); margin-bottom: 1rem; font-size: 0.95rem; }
+      .other-diploma a { color: var(--brand); font-weight: 600; text-decoration: none; }
+      .other-diploma a:hover { text-decoration: underline; }
+
+      footer { background: #0f172a; color: #94a3b8; padding: 2.5rem 0; text-align: center; }
+      footer a { color: #c9d1d9; }
+      html[data-theme="dark"] footer { background: #010409; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="/blockchain-dev/">LICDIA <span style="color:var(--brand-light)">UNLu</span> · Blockchain</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/blockchain-dev/">Diplomatura Blockchain</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/blockchain-dev/blog/">Blog Blockchain</a></li>
+            <li class="nav-item"><a class="nav-link" href="/dev-ia/">IA Generativa</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="blog-hero">
+      <div class="container">
+        <span class="tag-hero">Blockchain</span>
+        <h1>Blog · Blockchain Dev</h1>
+        <p>Artículos prácticos sobre smart contracts, Solidity, Ethereum L2, y desarrollo Web3. Escritos por los instructores de la Diplomatura en Blockchain.</p>
+      </div>
+    </section>
+
+    <section class="post-grid">
+      <div class="container">
+        <div class="row g-4">
+
+          <div class="col-md-6">
+            <a class="post-card" href="/blog/your-first-smart-contract-with-solidity/">
+              <span class="tag">Solidity · Smart Contracts</span>
+              <h2>Your First Smart Contract with Solidity: From Zero to Deployed in 30 Minutes</h2>
+              <p>A practical walkthrough from zero to a deployed ERC-20 token on a testnet. No theory upfront, just code that works.</p>
+              <div class="meta">~6 min read · Beginner</div>
+              <div class="read-more">Read article →</div>
+            </a>
+          </div>
+
+          <div class="col-md-6">
+            <a class="post-card" href="/blog/ethereum-mainnet-vs-l2-when-to-use-each-in-2026/">
+              <span class="tag">Ethereum · L2</span>
+              <h2>Ethereum Mainnet vs L2: When to Use Each in 2026</h2>
+              <p>A no-nonsense framework to decide between L1 and L2 based on what your contract actually does — not what's trending.</p>
+              <div class="meta">~7 min read · Intermediate</div>
+              <div class="read-more">Read article →</div>
+            </a>
+          </div>
+
+        </div>
+
+        <div class="other-diploma">
+          <h3>¿Te interesa también IA Generativa?</h3>
+          <p>Tenemos un blog separado con artículos sobre LLMs, RAG, fine-tuning y despliegue en la nube.</p>
+          <a href="/dev-ia/blog/">Ver Blog IA Generativa →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p class="mb-2">LICDIA — Licenciatura en Sistemas de Información, Universidad Nacional de Luján</p>
+        <p class="mb-0" style="font-size: 0.85rem;">
+          <a href="/blockchain-dev/">Diplomatura Blockchain</a> ·
+          <a href="/blockchain-dev/blog/">Blog Blockchain</a> ·
+          <a href="/dev-ia/">IA Generativa</a> ·
+          <a href="/dev-ia/blog/">Blog IA</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

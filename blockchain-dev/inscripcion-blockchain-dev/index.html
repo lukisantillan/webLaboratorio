@@ -132,6 +132,36 @@
             text-align: center;
             margin-bottom: 0.5rem;
         }
+
+        /* ── Dark mode overrides ── */
+        html[data-theme="dark"] .inscripcion-card {
+            background: #161b22 !important;
+            border-color: #30363d !important;
+        }
+        html[data-theme="dark"] .inscripcion-icon-wrap {
+            background: rgba(167,139,250,0.12) !important;
+        }
+        html[data-theme="dark"] .inscripcion-card:hover .inscripcion-icon-wrap {
+            background: var(--brand) !important;
+        }
+        html[data-theme="dark"] .inscripcion-step-number {
+            color: #c4b5fd !important;
+        }
+        html[data-theme="dark"] .inscripcion-title {
+            color: #e2d6ff !important;
+        }
+        html[data-theme="dark"] .inscripcion-card .paso-body,
+        html[data-theme="dark"] .inscripcion-card .paso-body ul {
+            color: #c9d1d9 !important;
+        }
+        html[data-theme="dark"] .inscripcion-nota {
+            background: rgba(167,139,250,0.10) !important;
+            color: #c9d1d9 !important;
+            border-left-color: #a78bfa !important;
+        }
+        html[data-theme="dark"] #como-inscribirse .section-header {
+            color: #c9d1d9 !important;
+        }
     </style>
     <!-- Meta Pixel Code -->
     <script>

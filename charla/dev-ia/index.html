@@ -30,6 +30,17 @@
         src="https://www.facebook.com/tr?id=1493410068477893&ev=PageView&noscript=1"/></noscript>
     <script type="text/javascript" async src="https://hub.fromdoppler.com/public/dhtrack.js"></script>
 
+    <!-- Theme bootstrap: respeta localStorage o prefers-color-scheme -->
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('licdia-theme');
+          if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+          if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+        } catch(e){}
+      })();
+    </script>
+
     <style>
         :root {
             --brand:       #1354A0;
@@ -98,6 +109,69 @@
         }
         html[data-theme="dark"] hr {
             border-color: var(--input-border) !important;
+        }
+
+        /* ─── dark mode: secciones con bg hardcoded ─── */
+        html[data-theme="dark"] .fechas-banner {
+            background: var(--card-bg) !important;
+            border-top-color: var(--brand) !important;
+        }
+        html[data-theme="dark"] .fecha-item .label {
+            color: var(--text-muted) !important;
+        }
+        html[data-theme="dark"] .fecha-item .value {
+            color: var(--brand-light) !important;
+        }
+        html[data-theme="dark"] .pasos-section {
+            background: var(--page-bg) !important;
+        }
+        html[data-theme="dark"] .pasos-section h2,
+        html[data-theme="dark"] .paso-mini .txt strong,
+        html[data-theme="dark"] .form-card h3,
+        html[data-theme="dark"] .form-card .form-label {
+            color: var(--brand-light) !important;
+        }
+        html[data-theme="dark"] .paso-mini { color: var(--text-base) !important; }
+        html[data-theme="dark"] .paso-mini .num {
+            background: var(--brand-soft) !important;
+            color: var(--brand) !important;
+        }
+        html[data-theme="dark"] .form-inscripcion-section {
+            background: linear-gradient(180deg, var(--page-bg) 0%, var(--card-bg) 100%) !important;
+        }
+        html[data-theme="dark"] .form-card {
+            background: var(--card-bg) !important;
+            border-color: var(--input-border) !important;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4) !important;
+        }
+        html[data-theme="dark"] .form-card .form-control,
+        html[data-theme="dark"] .form-card .form-select {
+            background: var(--input-bg) !important;
+            border-color: var(--input-border) !important;
+            color: var(--text-base) !important;
+        }
+        html[data-theme="dark"] .form-card .file-hint {
+            color: var(--text-muted) !important;
+        }
+        html[data-theme="dark"] .faltantes-aviso {
+            background: var(--card-bg) !important;
+            border-color: var(--brand) !important;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.3) !important;
+        }
+        html[data-theme="dark"] .faltantes-aviso ul li {
+            color: var(--text-base) !important;
+        }
+        html[data-theme="dark"] .aviso-check {
+            background: var(--card-bg) !important;
+            border-color: var(--brand) !important;
+        }
+        html[data-theme="dark"] .aviso-check .form-check-label {
+            color: var(--text-base) !important;
+        }
+        html[data-theme="dark"] .btn-enviar-inscripcion:disabled,
+        html[data-theme="dark"] .btn-enviar-inscripcion[disabled] {
+            background: #30363d !important;
+            color: var(--text-muted) !important;
         }
 
         /* ─── countdown chip ─── */
