@@ -1442,3 +1442,62 @@ html[data-theme="dark"] .video-charla-wrap:hover {
 #video-charla .section-heading {
   letter-spacing: 0.5px;
 }
+
+/* =====================================================================
+   ALIAS dev-ia-theme = ia-theme (algunas paginas usan una, otras otra)
+   ===================================================================== */
+html[data-theme="dark"] .dev-ia-theme .btn-primary {
+  background-color: #1e3a8a !important;
+  border-color: #60a5fa !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .dev-ia-theme .btn-primary:hover,
+html[data-theme="dark"] .dev-ia-theme .btn-primary:focus {
+  background-color: #2563eb !important;
+  border-color: #93c5fd !important;
+}
+
+/* Tambien en LIGHT, queremos el btn-primary del header IA en azul de marca,
+   no en lo que sea default de Bootstrap */
+.ia-theme .masthead .btn-primary,
+.dev-ia-theme .masthead .btn-primary,
+.ia-theme header.masthead .btn-primary,
+.dev-ia-theme header.masthead .btn-primary {
+  background-color: #1354A0 !important;
+  border-color: #1354A0 !important;
+  color: #ffffff !important;
+}
+.ia-theme .masthead .btn-primary:hover,
+.dev-ia-theme .masthead .btn-primary:hover,
+.ia-theme header.masthead .btn-primary:hover,
+.dev-ia-theme header.masthead .btn-primary:hover {
+  background-color: #1a63c0 !important;
+  border-color: #1a63c0 !important;
+  color: #ffffff !important;
+}
+
+/* En dark: el btn del header IA usa el azul brillante de la paleta */
+html[data-theme="dark"] .ia-theme .masthead .btn-primary,
+html[data-theme="dark"] .dev-ia-theme .masthead .btn-primary,
+html[data-theme="dark"] .ia-theme header.masthead .btn-primary,
+html[data-theme="dark"] .dev-ia-theme header.masthead .btn-primary {
+  background-color: #1a63c0 !important;
+  border-color: #60a5fa !important;
+  color: #ffffff !important;
+}
+html[data-theme="dark"] .ia-theme .masthead .btn-primary:hover,
+html[data-theme="dark"] .dev-ia-theme .masthead .btn-primary:hover {
+  background-color: #2563eb !important;
+  border-color: #93c5fd !important;
+}
+
+/* Tambien duplicar otros overrides claves para dev-ia-theme */
+html[data-theme="dark"] .dev-ia-theme a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-info):not(.text-white),
+html[data-theme="dark"] .dev-ia-theme .container a:not(.nav-link):not(.navbar-brand):not(.btn):not(.botonWPP):not(.text-white),
+html[data-theme="dark"] .dev-ia-theme .breadcrumb-item a,
+html[data-theme="dark"] .dev-ia-theme .text-info,
+html[data-theme="dark"] .dev-ia-theme .text-primary,
+html[data-theme="dark"] .dev-ia-theme .link-primary,
+html[data-theme="dark"] .dev-ia-theme .alert-link {
+  color: #93c5fd !important;
+}
