@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Blog IA Generativa — LICDIA UNLu</title>
     <meta name="description" content="Artículos prácticos sobre IA generativa, LLMs, RAG, fine-tuning y despliegue en la nube — por los instructores de la Diplomatura en IA Generativa LICDIA UNLu." />
-    <meta name="author" content="LICDIA UNLu" />
+    <meta name="author" content="LICDIA - UNLu" />
+    <title>Blog · Diplomatura en IA Generativa — LICDIA UNLu</title>
     <link rel="canonical" href="https://licdia.unlu.edu.ar/dev-ia/blog/" />
 
-    <meta property="og:title" content="Blog IA Generativa — LICDIA UNLu" />
-    <meta property="og:description" content="Artículos prácticos sobre IA generativa, LLMs, RAG y despliegue en la nube." />
+    <meta property="og:title" content="Blog · Diplomatura en IA Generativa — LICDIA UNLu" />
+    <meta property="og:description" content="Artículos prácticos sobre LLMs, RAG, fine-tuning y despliegue en la nube." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://licdia.unlu.edu.ar/dev-ia/blog/" />
     <meta property="og:image" content="https://licdia.unlu.edu.ar/assets/img/og-blog-ia.png" />
@@ -19,11 +19,17 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://licdia.unlu.edu.ar/assets/img/og-blog-ia.png" />
 
-    <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="../../assets/img/logo.ico" />
+    <script defer src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link href="../../css/styles.css" rel="stylesheet" />
+    <link href="../../css/style2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
+    <!-- Theme bootstrap -->
     <script>
       (function(){
         try {
@@ -38,9 +44,10 @@
 
     <style>
       :root {
-        --brand: #1354A0;
-        --brand-light: #3b82f6;
-        --brand-bg: #EBF1FB;
+        --ia-brand: #1354A0;
+        --ia-brand-dark: #1C2E54;
+        --ia-brand-soft: #EBF1FB;
+        --ia-brand-light: #a8c5e0;
         --page-bg: #ffffff;
         --card-bg: #ffffff;
         --text-base: #1e293b;
@@ -48,9 +55,10 @@
         --border: #e2e8f0;
       }
       html[data-theme="dark"] {
-        --brand: #60a5fa;
-        --brand-light: #93c5fd;
-        --brand-bg: rgba(96,165,250,0.10);
+        --ia-brand: #60a5fa;
+        --ia-brand-dark: #93c5fd;
+        --ia-brand-soft: rgba(96,165,250,0.10);
+        --ia-brand-light: #bfdbfe;
         --page-bg: #0d1117;
         --card-bg: #161b22;
         --text-base: #c9d1d9;
@@ -58,109 +66,274 @@
         --border: #30363d;
       }
 
-      body { font-family: 'Inter', system-ui, -apple-system, sans-serif; color: var(--text-base); background: var(--page-bg); }
-      .navbar { padding: 1rem 0; border-bottom: 1px solid var(--border); background: var(--page-bg); }
-      .navbar-brand { font-weight: 800; color: var(--brand); font-size: 1.15rem; }
-      .navbar .nav-link { color: var(--text-muted); font-weight: 500; }
-      .navbar .nav-link:hover, .navbar .nav-link.active { color: var(--brand); }
+      body.ia-theme.dev-ia-theme {
+        background: var(--page-bg);
+        color: var(--text-base);
+      }
 
-      .blog-hero { padding: 5rem 0 3rem; text-align: center; background: linear-gradient(180deg, var(--brand-bg) 0%, var(--page-bg) 100%); }
-      .blog-hero .tag-hero { display: inline-block; padding: 0.35rem 1rem; border-radius: 999px; font-size: 0.8rem; font-weight: 700; margin-bottom: 1.25rem; background: var(--brand-bg); color: var(--brand); text-transform: uppercase; letter-spacing: 0.05em; }
-      .blog-hero h1 { font-size: 2.75rem; font-weight: 800; color: var(--text-base); margin-bottom: 0.75rem; }
-      .blog-hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 640px; margin: 0 auto; }
+      /* ─── Blog hero usando el patron visual del sitio ─── */
+      .blog-hero {
+        background: linear-gradient(135deg, var(--ia-brand-dark) 0%, var(--ia-brand) 100%);
+        color: #fff;
+        padding: 7rem 0 3.5rem;
+        text-align: center;
+      }
+      .blog-hero .blog-tag {
+        display: inline-block;
+        padding: .4rem 1.1rem;
+        background: rgba(255,255,255,0.15);
+        border: 1px solid rgba(255,255,255,0.25);
+        border-radius: 2rem;
+        font-family: 'Montserrat', sans-serif;
+        font-size: .78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .12em;
+        margin-bottom: 1.25rem;
+      }
+      .blog-hero h1 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .04em;
+        margin-bottom: .75rem;
+      }
+      .blog-hero p {
+        font-family: 'Roboto Slab', serif;
+        font-size: clamp(1rem, 2vw, 1.15rem);
+        color: var(--ia-brand-light);
+        max-width: 720px;
+        margin: 0 auto;
+      }
 
-      .post-grid { padding: 3rem 0 5rem; background: var(--page-bg); }
-      .post-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 1.75rem; height: 100%; text-decoration: none; color: inherit; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s, border-color .2s; }
-      .post-card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(19,84,160,0.12); border-color: var(--brand); color: inherit; }
-      .post-card .tag { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.75rem; font-weight: 600; margin-bottom: 0.75rem; background: var(--brand-bg); color: var(--brand); }
-      .post-card h2 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--text-base); line-height: 1.3; }
-      .post-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; flex-grow: 1; }
-      .post-card .meta { font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border); }
-      .post-card .read-more { color: var(--brand); font-weight: 600; font-size: 0.9rem; margin-top: 0.5rem; }
+      /* ─── Post grid ─── */
+      .post-grid {
+        padding: 4rem 0 5rem;
+        background: var(--page-bg);
+      }
+      .post-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 2rem;
+        height: 100%;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      .post-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 4px;
+        background: linear-gradient(90deg, var(--ia-brand) 0%, var(--ia-brand-dark) 100%);
+        opacity: 0;
+        transition: opacity .25s ease;
+      }
+      .post-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 40px rgba(19,84,160,0.15);
+        border-color: var(--ia-brand);
+        color: inherit;
+      }
+      .post-card:hover::before { opacity: 1; }
+      .post-card .post-tag {
+        display: inline-block;
+        align-self: flex-start;
+        padding: .3rem .85rem;
+        background: var(--ia-brand-soft);
+        color: var(--ia-brand);
+        font-family: 'Montserrat', sans-serif;
+        font-size: .72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: .08em;
+        border-radius: 999px;
+        margin-bottom: 1rem;
+      }
+      .post-card h2 {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--ia-brand-dark);
+        line-height: 1.3;
+        margin-bottom: .75rem;
+      }
+      html[data-theme="dark"] .post-card h2 { color: var(--ia-brand-light); }
+      .post-card p {
+        font-family: 'Roboto Slab', serif;
+        color: var(--text-muted);
+        font-size: .96rem;
+        line-height: 1.65;
+        flex-grow: 1;
+      }
+      .post-card .meta {
+        font-family: 'Montserrat', sans-serif;
+        font-size: .78rem;
+        color: var(--text-muted);
+        margin-top: 1.25rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--border);
+        text-transform: uppercase;
+        letter-spacing: .06em;
+      }
+      .post-card .read-more {
+        font-family: 'Montserrat', sans-serif;
+        color: var(--ia-brand);
+        font-weight: 700;
+        font-size: .88rem;
+        margin-top: .65rem;
+        text-transform: uppercase;
+        letter-spacing: .05em;
+      }
 
-      .other-diploma { background: var(--brand-bg); border-radius: 16px; padding: 2rem; text-align: center; margin-top: 2rem; }
-      .other-diploma h3 { color: var(--brand); font-weight: 700; margin-bottom: 0.5rem; font-size: 1.1rem; }
-      .other-diploma p { color: var(--text-muted); margin-bottom: 1rem; font-size: 0.95rem; }
-      .other-diploma a { color: var(--brand); font-weight: 600; text-decoration: none; }
-      .other-diploma a:hover { text-decoration: underline; }
-
-      footer { background: #0f172a; color: #94a3b8; padding: 2.5rem 0; text-align: center; }
-      footer a { color: #c9d1d9; }
-      html[data-theme="dark"] footer { background: #010409; }
+      .blog-cta-section {
+        background: var(--ia-brand-soft);
+        border-radius: 18px;
+        padding: 2.5rem 2rem;
+        text-align: center;
+        margin-top: 3rem;
+      }
+      .blog-cta-section h3 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        color: var(--ia-brand-dark);
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        letter-spacing: .05em;
+        margin-bottom: .65rem;
+      }
+      html[data-theme="dark"] .blog-cta-section h3 { color: var(--ia-brand-light); }
+      .blog-cta-section p {
+        font-family: 'Roboto Slab', serif;
+        color: var(--text-muted);
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+      .blog-cta-section .btn-cta {
+        display: inline-block;
+        background: var(--ia-brand);
+        color: #fff;
+        padding: .85rem 2rem;
+        border-radius: .5rem;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: .92rem;
+        text-transform: uppercase;
+        letter-spacing: .06em;
+        text-decoration: none;
+        transition: background .2s;
+      }
+      .blog-cta-section .btn-cta:hover { background: var(--ia-brand-dark); color: #fff; }
     </style>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand" href="/dev-ia/">LICDIA <span style="color:var(--brand-light)">UNLu</span> · IA</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="nav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="/dev-ia/">Diplomatura IA</a></li>
-            <li class="nav-item"><a class="nav-link active" href="/dev-ia/blog/">Blog IA</a></li>
-            <li class="nav-item"><a class="nav-link" href="/blockchain-dev/">Blockchain</a></li>
-          </ul>
+
+<body id="page-top" class="ia-theme dev-ia-theme">
+
+    <!-- Navbar (mismo del sitio IA) -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand efect" href="/dev-ia/"><img src="../../assets/img/logo.ico" alt="..." /></a>
+            <a class="navbar-brand efect" href="/dev-ia/"><img src="../../assets/img/depto.ico" alt="..." /></a>
+            <a class="navbar-brand efect" href="/dev-ia/"><img src="../../assets/img/unlu.ico" alt="..." /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="/dev-ia/">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/dev-ia/#informacionPlan">Plan de estudios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/dev-ia/plan-de-estudios/#cronograma">Cronograma</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/dev-ia/por-que-elegirnos/">Por qué elegirnos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/dev-ia/aranceles/">Aranceles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/dev-ia/#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/dev-ia/blog/">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/charla/dev-ia/#inscripcion">Inscripción</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">LICDIA</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
-    <section class="blog-hero">
-      <div class="container">
-        <span class="tag-hero">IA Generativa</span>
-        <h1>Blog · IA Generativa</h1>
-        <p>Artículos prácticos sobre LLMs, RAG, fine-tuning, costos reales de inferencia y despliegue en la nube. Escritos por los instructores de la Diplomatura en IA Generativa.</p>
-      </div>
-    </section>
+    <!-- Hero -->
+    <header class="blog-hero">
+        <div class="container">
+            <span class="blog-tag">IA Generativa</span>
+            <h1>Blog</h1>
+            <p>Artículos prácticos sobre LLMs, RAG, fine-tuning, costos reales de inferencia y despliegue en la nube — escritos por los instructores de la Diplomatura en IA Generativa.</p>
+        </div>
+    </header>
 
+    <!-- Posts grid -->
     <section class="post-grid">
-      <div class="container">
-        <div class="row g-4">
+        <div class="container">
+            <div class="row g-4">
 
-          <div class="col-md-6">
-            <a class="post-card" href="/blog/rag-vs-fine-tuning-when-to-use-each/">
-              <span class="tag">RAG · Fine-Tuning</span>
-              <h2>RAG vs Fine-Tuning: When to Use Each (and When Not To)</h2>
-              <p>A decision framework based on what you actually want the model to do, not what's trending. With a cost reality check.</p>
-              <div class="meta">~8 min read · Intermediate</div>
-              <div class="read-more">Read article →</div>
-            </a>
-          </div>
+                <div class="col-md-6">
+                    <a class="post-card" href="/blog/rag-vs-fine-tuning-when-to-use-each/">
+                        <span class="post-tag">RAG · Fine-Tuning</span>
+                        <h2>RAG vs Fine-Tuning: When to Use Each (and When Not To)</h2>
+                        <p>A decision framework based on what you actually want the model to do, not what's trending. With a cost reality check.</p>
+                        <div class="meta">~8 min read · Intermediate</div>
+                        <div class="read-more">Read article →</div>
+                    </a>
+                </div>
 
-          <div class="col-md-6">
-            <a class="post-card" href="/blog/real-costs-of-serving-an-llm-in-production/">
-              <span class="tag">LLM Costs</span>
-              <h2>The Real Costs of Serving an LLM in Production (2026 Edition)</h2>
-              <p>What you actually pay per million tokens — broken down by API providers, self-hosted, and the hidden costs nobody mentions.</p>
-              <div class="meta">~9 min read · Advanced</div>
-              <div class="read-more">Read article →</div>
-            </a>
-          </div>
+                <div class="col-md-6">
+                    <a class="post-card" href="/blog/real-costs-of-serving-an-llm-in-production/">
+                        <span class="post-tag">LLM Costs</span>
+                        <h2>The Real Costs of Serving an LLM in Production (2026 Edition)</h2>
+                        <p>What you actually pay per million tokens — broken down by API providers, self-hosted, and the hidden costs nobody mentions.</p>
+                        <div class="meta">~9 min read · Advanced</div>
+                        <div class="read-more">Read article →</div>
+                    </a>
+                </div>
 
+            </div>
+
+            <div class="blog-cta-section">
+                <h3>¿Querés ser parte de la próxima cohorte?</h3>
+                <p>La Diplomatura en IA Generativa abre su 2da cohorte en 2026. Cupos limitados.</p>
+                <a href="/charla/dev-ia/#inscripcion" class="btn-cta">Inscribite a la Diplomatura</a>
+            </div>
         </div>
-
-        <div class="other-diploma">
-          <h3>¿Te interesa también Blockchain?</h3>
-          <p>Tenemos un blog separado con artículos sobre smart contracts, L2, y desarrollo blockchain.</p>
-          <a href="/blockchain-dev/blog/">Ver Blog Blockchain →</a>
-        </div>
-
-      </div>
     </section>
 
-    <footer>
-      <div class="container">
-        <p class="mb-2">LICDIA — Licenciatura en Sistemas de Información, Universidad Nacional de Luján</p>
-        <p class="mb-0" style="font-size: 0.85rem;">
-          <a href="/dev-ia/">Diplomatura IA</a> ·
-          <a href="/dev-ia/blog/">Blog IA</a> ·
-          <a href="/blockchain-dev/">Blockchain</a> ·
-          <a href="/blockchain-dev/blog/">Blog Blockchain</a>
-        </p>
-      </div>
+    <!-- Footer (mismo del sitio) -->
+    <footer class="footer bg-dark text-white py-4 mt-2">
+        <div class="container text-center small">
+            <p class="mb-2">
+                Copyright &copy; 2026 | Laboratorio de Investigación en Ciencia de Datos &amp; Inteligencia
+                Artificial de la Universidad de Luján
+                <a href="https://resoluciones.unlu.edu.ar/documento.frame.php?cod=128241" target="_blank"
+                    class="text-decoration-none text-info">
+                    [Disposición del Grupo de Investigación]
+                </a>
+                <a href="https://drive.google.com/file/d/1AddV4FMq70bOO4REUgAVppe5i4Vw9h_W/view" target="_blank"
+                    class="text-decoration-none text-info">
+                    [Resolución del Laboratorio]
+                </a>
+                - Argentina. Todos los derechos reservados.
+            </p>
+            <p class="mb-0">
+                Desarrollada por
+                <a href="https://www.linkedin.com/in/lucas-santill%C3%A1n-a50166263/" target="_blank" rel="noopener"
+                    class="fw-bold text-decoration-none text-info">
+                    Lucas Santillan
+                </a>
+            </p>
+        </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>AOS.init();</script>
 </body>
 </html>
