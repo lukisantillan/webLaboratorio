@@ -40,10 +40,10 @@
             var eid = null;
             try { eid = sessionStorage.getItem('lead_event_id'); } catch (e) {}
             if (eid) {
-                fbq('track', 'Lead', { content_name: 'preregistro-maestria-ciencia-datos' }, { eventID: eid });
+                fbq('track', 'Lead', { content_name: 'registro-maestria-ciencia-datos' }, { eventID: eid });
                 try { sessionStorage.removeItem('lead_event_id'); } catch (e) {}
             } else {
-                fbq('track', 'Lead', { content_name: 'preregistro-maestria-ciencia-datos' });
+                fbq('track', 'Lead', { content_name: 'registro-maestria-ciencia-datos' });
             }
         })();
     </script>

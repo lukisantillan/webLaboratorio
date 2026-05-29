@@ -184,6 +184,19 @@
       "knowsAbout": ["Contratos inteligentes", "DApps", "Soluciones on-chain y off-chain", "Blockchain Federal Argentina (BFA)", "Despliegue de nodos", "Operación de validadores", "DevOps", "Sistemas distribuidos", "Redes IoT", "Fintech", "Ecosistema cripto"]
     }
     </script>
+    <!-- LICDIA-ENHANCEMENTS-V1 -->
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('licdia-theme');
+          if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+          if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+        } catch(e){}
+      })();
+    </script>
+    <link href="../../../css/enhancements.css" rel="stylesheet" />
+    <script src="../../../js/enhancements.js" defer></script>
+
 </head>
 
 <body id="page-top" class="blockchain-theme">
@@ -205,7 +218,7 @@
                     <li class="nav-item"><a class="nav-link" href="../../por-que-elegirnos/">Por qué elegirnos</a></li>
                     <li class="nav-item"><a class="nav-link" href="../../aranceles/">Aranceles</a></li>
                     <li class="nav-item"><a class="nav-link" href="../../#faq">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/charla/blockchain/#inscripcion">Preinscripción</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/charla/blockchain/#inscripcion">Inscripción</a></li>
                     <li class="nav-item"><a class="nav-link" href="../../../">LICDIA</a></li>
                 </ul>
             </div>
@@ -317,7 +330,7 @@
                     <h3>¿Querés sumarte a la próxima cohorte?</h3>
                     <p>Aprendé a escribir contratos inteligentes con quien ya los desplegó en producción.</p>
                     <a href="/charla/blockchain/#inscripcion" class="btn-cta">
-                        <i class="fas fa-rocket me-2"></i>Preinscripción
+                        <i class="fas fa-rocket me-2"></i>Inscripción
                     </a>
                 </div>
 

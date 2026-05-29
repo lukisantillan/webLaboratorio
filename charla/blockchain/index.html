@@ -30,6 +30,17 @@
         src="https://www.facebook.com/tr?id=1493410068477893&ev=PageView&noscript=1"/></noscript>
     <script type="text/javascript" async src="https://hub.fromdoppler.com/public/dhtrack.js"></script>
 
+    <!-- Theme bootstrap: respeta localStorage o prefers-color-scheme -->
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('licdia-theme');
+          if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+          if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+        } catch(e){}
+      })();
+    </script>
+
     <style>
         :root {
             --brand:       #4c1c7f;
@@ -38,6 +49,113 @@
             --brand-deep:  #1a0d30;
             --brand-soft:  #F3EBFB;
             --brand-light: #d4b8ff;
+            --page-bg:     #ffffff;
+            --card-bg:     #ffffff;
+            --text-base:   #212529;
+            --text-muted:  #6c757d;
+            --input-bg:    #ffffff;
+            --input-border:#ced4da;
+        }
+
+        html[data-theme="dark"] {
+            --brand:       #a78bfa;
+            --brand-mid:   #8b5cf6;
+            --brand-dark:  #c4b5fd;
+            --brand-deep:  #1a0d30;
+            --brand-soft:  rgba(167,139,250,0.10);
+            --brand-light: #e2d6ff;
+            --page-bg:     #0d1117;
+            --card-bg:     #161b22;
+            --text-base:   #c9d1d9;
+            --text-muted:  #8b949e;
+            --input-bg:    #0d1117;
+            --input-border:#30363d;
+        }
+
+        html[data-theme="dark"] body {
+            background-color: var(--page-bg) !important;
+            color: var(--text-base) !important;
+        }
+        html[data-theme="dark"] .card,
+        html[data-theme="dark"] .form-control,
+        html[data-theme="dark"] .form-select {
+            background-color: var(--card-bg) !important;
+            border-color: var(--input-border) !important;
+            color: var(--text-base) !important;
+        }
+        html[data-theme="dark"] .form-control:focus,
+        html[data-theme="dark"] .form-select:focus {
+            border-color: var(--brand) !important;
+            box-shadow: 0 0 0 0.25rem rgba(167,139,250,0.25) !important;
+        }
+        html[data-theme="dark"] .form-label,
+        html[data-theme="dark"] label {
+            color: var(--text-base) !important;
+        }
+        html[data-theme="dark"] .text-muted {
+            color: var(--text-muted) !important;
+        }
+        html[data-theme="dark"] ::placeholder {
+            color: #6e7681 !important;
+        }
+        html[data-theme="dark"] .alert-info {
+            background-color: rgba(167,139,250,0.10) !important;
+            border-color: rgba(167,139,250,0.4) !important;
+            color: var(--brand-dark) !important;
+        }
+        html[data-theme="dark"] .aviso-experiencia {
+            background-color: rgba(167,139,250,0.08) !important;
+            border-color: rgba(167,139,250,0.3) !important;
+        }
+        html[data-theme="dark"] hr {
+            border-color: var(--input-border) !important;
+        }
+        html[data-theme="dark"] .fechas-banner {
+            background: var(--card-bg) !important;
+            border-top-color: var(--brand) !important;
+        }
+        html[data-theme="dark"] .fecha-item .label { color: var(--text-muted) !important; }
+        html[data-theme="dark"] .fecha-item .value { color: var(--brand-light) !important; }
+        html[data-theme="dark"] .pasos-section { background: var(--page-bg) !important; }
+        html[data-theme="dark"] .pasos-section h2,
+        html[data-theme="dark"] .paso-mini .txt strong,
+        html[data-theme="dark"] .form-card h3,
+        html[data-theme="dark"] .form-card .form-label { color: var(--brand-light) !important; }
+        html[data-theme="dark"] .paso-mini { color: var(--text-base) !important; }
+        html[data-theme="dark"] .paso-mini .num {
+            background: var(--brand-soft) !important;
+            color: var(--brand) !important;
+        }
+        html[data-theme="dark"] .form-inscripcion-section {
+            background: linear-gradient(180deg, var(--page-bg) 0%, var(--card-bg) 100%) !important;
+        }
+        html[data-theme="dark"] .form-card {
+            background: var(--card-bg) !important;
+            border-color: var(--input-border) !important;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.4) !important;
+        }
+        html[data-theme="dark"] .form-card .form-control,
+        html[data-theme="dark"] .form-card .form-select {
+            background: var(--input-bg) !important;
+            border-color: var(--input-border) !important;
+            color: var(--text-base) !important;
+        }
+        html[data-theme="dark"] .form-card .file-hint { color: var(--text-muted) !important; }
+        html[data-theme="dark"] .faltantes-aviso {
+            background: var(--card-bg) !important;
+            border-color: var(--brand) !important;
+            box-shadow: 0 8px 22px rgba(0,0,0,0.3) !important;
+        }
+        html[data-theme="dark"] .faltantes-aviso ul li { color: var(--text-base) !important; }
+        html[data-theme="dark"] .aviso-check {
+            background: var(--card-bg) !important;
+            border-color: var(--brand) !important;
+        }
+        html[data-theme="dark"] .aviso-check .form-check-label { color: var(--text-base) !important; }
+        html[data-theme="dark"] .btn-enviar-inscripcion:disabled,
+        html[data-theme="dark"] .btn-enviar-inscripcion[disabled] {
+            background: #30363d !important;
+            color: var(--text-muted) !important;
         }
 
         /* ─── countdown chip ─── */
@@ -974,7 +1092,7 @@
             data.append('Origen', 'Inscripción Diplomatura Blockchain');
             data.append('Diplomatura', 'Innovación y Desarrollo de Aplicaciones basadas en Blockchain');
 
-            fetch('https://lamb-texture-chef-cuts.trycloudflare.com/webhook/licdia-inscripcion', {
+            fetch('https://buried-albert-webshots-submit.trycloudflare.com/webhook/licdia-inscripcion', {
                 method: 'POST',
                 headers: { 'Accept': 'application/json' },
                 body: data

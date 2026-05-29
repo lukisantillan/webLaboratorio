@@ -137,7 +137,7 @@
             --brand-soft: #F3EBFB;
         }
 
-        /* --- Botones Preinscripción: texto siempre blanco sobre violeta --- */
+        /* --- Botones Inscripción: texto siempre blanco sobre violeta --- */
         #buttonPreinscripcion,
         #buttonPreinscripcion:link,
         #buttonPreinscripcion:visited,
@@ -496,6 +496,19 @@
     </noscript>
     <!-- End Meta Pixel Code -->
     <script type="text/javascript" async="async" src="https://hub.fromdoppler.com/public/dhtrack.js"></script>
+    <!-- LICDIA-ENHANCEMENTS-V1 -->
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('licdia-theme');
+          if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+          if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+        } catch(e){}
+      })();
+    </script>
+    <link href="../css/enhancements.css" rel="stylesheet" />
+    <script src="../js/enhancements.js" defer></script>
+
 
 </head>
 
@@ -519,7 +532,8 @@
                     <li class="nav-item"><a class="nav-link" href="por-que-elegirnos/">Por qué elegirnos</a></li>
                     <li class="nav-item"><a class="nav-link" href="aranceles/">Aranceles</a></li>
                     <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/charla/blockchain/#inscripcion">Preinscripción</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/blockchain-dev/blog/">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="inscripcion-blockchain-dev/">Inscripción</a></li>
                     <li class="nav-item"><a class="nav-link" href="../">LICDIA</a></li>
                 </ul>
             </div>
@@ -539,7 +553,7 @@
             </div>
             <a class="btn btn-primary btn-xl text-uppercase"
                 href="/charla/blockchain/#inscripcion"
-                id="buttonPreinscripcion"> Preinscripción </a>
+                id="buttonPreinscripcion"> Inscripción </a>
         </div>
     </header>
     <article id="containerInfo" class="border-bottom border-dark" data-aos="flip-up" data-aos-duration="1500">
@@ -563,7 +577,7 @@
                     <p class="mb-2"><span class="fw-semibold text-uppercase">Inscripción 2026: </span> Abierta — Hasta el 10/06.</p>
                     <div class="mb-2">
                         <a href="/charla/blockchain/#inscripcion" class="btn btn-dark px-3 py-2">
-                            Preinscripción
+                            Inscripción
                         </a>
                     </div>
                     <p class="mb-0"><span class="fw-semibold text-uppercase">Tipo de titulo: </span> Diplomatura de
@@ -574,6 +588,48 @@
         </div>
         </div>
     </article>
+
+    <!-- VIDEO CHARLA INFORMATIVA -->
+    <section class="container my-5" id="video-charla" data-aos="fade-up" data-aos-duration="1000">
+        <div class="text-center mb-4">
+            <h2 class="section-heading text-uppercase mb-2">Charla informativa</h2>
+            <p class="text-muted" style="max-width:680px; margin:0 auto;">
+                Mirá las grabaciones de las charlas informativas con presentación del programa, plan de estudios y respuestas a preguntas frecuentes.
+            </p>
+        </div>
+        <div class="row g-4 justify-content-center">
+            <div class="col-12 col-lg-6">
+                <div class="video-charla-wrap">
+                    <div class="ratio ratio-16x9">
+                        <iframe
+                            src="https://www.youtube.com/embed/68CD0BoMYRQ?rel=0&amp;modestbranding=1&amp;color=white"
+                            title="Charla informativa 07/05/2026 — Diplomatura en Blockchain UNLu"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                <p class="text-center text-muted small mt-2 mb-0">Charla del 07/05/2026</p>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="video-charla-wrap">
+                    <div class="ratio ratio-16x9">
+                        <iframe
+                            src="https://www.youtube.com/embed/ADmv7eAyhwQ?rel=0&amp;modestbranding=1&amp;color=white"
+                            title="Charla informativa 22/05/2026 — Diplomatura en Blockchain UNLu"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+                <p class="text-center text-muted small mt-2 mb-0">Charla del 22/05/2026</p>
+            </div>
+        </div>
+    </section>
 
     <section class="container my-3" id="lic-ia">
         <div class="row g-4 justify-content-center">
@@ -650,7 +706,7 @@
 
                 <div class="col-12 col-lg-6">
                     <p class="fw-semibold mb-3">
-                        Completá el formulario de preinscripción a la
+                        Completá el formulario de inscripción a la
                         Diplomatura de Posgrado en Innovación y Desarrollo de Aplicaciones basadas en
                         Blockchain. Cupos limitados.
                     </p>
@@ -658,7 +714,7 @@
 
                     <a href="/charla/blockchain/#inscripcion"
                         rel="noopener" class="btn btn-primary px-4 py-2">
-                        Preinscripción
+                        Inscripción
                     </a>
                 </div>
             </div>
@@ -1720,9 +1776,9 @@
                     <!-- CTA box -->
                     <div class="prereq-cta-box mt-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="600">
                         <p class="mb-2 fw-semibold" style="color:var(--brand-dark); font-size:1rem;">
-                            ¿Cumplís con todos? Empezá tu preinscripción. &nbsp;|&nbsp; ¿Te falta alguno? Escribinos por WhatsApp y lo vemos.
+                            ¿Cumplís con todos? Empezá tu inscripción. &nbsp;|&nbsp; ¿Te falta alguno? Escribinos por WhatsApp y lo vemos.
                         </p>
-                        <a href="/charla/blockchain/#inscripcion" class="btn btn-dark px-4 py-2 rounded-pill fw-bold">Preinscripción</a>
+                        <a href="/charla/blockchain/#inscripcion" class="btn btn-dark px-4 py-2 rounded-pill fw-bold">Inscripción</a>
                     </div>
 
                 </div>
@@ -1822,15 +1878,15 @@
         if (puntaje === 5) {
             box.className = 'result-green';
             html += '<p class="result-text">Esta diplomatura es 100% para vos. Estás listo para inscribirte.</p>';
-            html += '<a href="/charla/blockchain/#inscripcion" class="quiz-cta-btn">Preinscripción</a>';
+            html += '<a href="/charla/blockchain/#inscripcion" class="quiz-cta-btn">Inscripción</a>';
         } else if (puntaje === 4) {
             box.className = 'result-purple';
             html += '<p class="result-text">Te encaja muy bien. Inscribite o escribinos por WhatsApp para resolver lo que te falta.</p>';
-            html += '<a href="/charla/blockchain/#inscripcion" class="quiz-cta-btn">Preinscripción</a>';
+            html += '<a href="/charla/blockchain/#inscripcion" class="quiz-cta-btn">Inscripción</a>';
         } else if (puntaje === 3) {
             box.className = 'result-yellow';
             html += '<p class="result-text">Podría encajarte. Inscribite y nos ponemos en contacto para aclarar dudas.</p>';
-            html += '<a href="/charla/blockchain/#inscripcion" class="quiz-cta-btn">Preinscripción</a>';
+            html += '<a href="/charla/blockchain/#inscripcion" class="quiz-cta-btn">Inscripción</a>';
         } else {
             box.className = 'result-grey';
             html += '<p class="result-text">Quizás no sea el mejor momento. Si solo te interesa cripto como inversión, mirá un curso de trading. Si querés construir, te esperamos.</p>';
@@ -2117,7 +2173,7 @@
                                         <li><strong>Título de grado</strong> de cualquier orientación, o</li>
                                         <li><strong>Equivalencia por experiencia profesional</strong> (analizada caso por caso por la dirección académica para perfiles con trayectoria comprobable sin título de grado).</li>
                                     </ul>
-                                    <p class="mb-3">El proceso es: <strong>preinscripción → revisión de antecedentes → confirmación de cupo → pago de matrícula → arranque en agosto</strong>.</p>
+                                    <p class="mb-3">El proceso es: <strong>inscripción → revisión de antecedentes → confirmación de cupo → pago de matrícula → arranque en agosto</strong>.</p>
                                     <p class="mb-0">Detalles completos en la sección <a href="requisitos/">Requisitos</a>.</p>
                                 </div>
                             </div>
@@ -2313,8 +2369,8 @@
     </a>
 
     <!-- Floating CTA — visible after scrolling past hero, only on mobile -->
-    <a href="/charla/blockchain/#inscripcion" id="floatingCTA" aria-label="Preinscripción Diplomatura Blockchain" style="display:none;">
-        <i class="fas fa-rocket me-2"></i>Preinscripción
+    <a href="/charla/blockchain/#inscripcion" id="floatingCTA" aria-label="Inscripción Diplomatura Blockchain" style="display:none;">
+        <i class="fas fa-rocket me-2"></i>Inscripción
     </a>
     <style>
         #floatingCTA {
@@ -2387,7 +2443,7 @@
                     var submitBtn = formCharla.querySelector('button');
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'Enviando...';
-                    fetch('https://lamb-texture-chef-cuts.trycloudflare.com/webhook/licdia-inscripcion', {
+                    fetch('https://buried-albert-webshots-submit.trycloudflare.com/webhook/licdia-inscripcion', {
                         method: 'POST',
                         body: data,
                         headers: { 'Accept': 'application/json' }

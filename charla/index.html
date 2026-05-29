@@ -30,7 +30,70 @@
         src="https://www.facebook.com/tr?id=1493410068477893&ev=PageView&noscript=1"/></noscript>
     <script type="text/javascript" async src="https://hub.fromdoppler.com/public/dhtrack.js"></script>
 
+    <!-- Theme bootstrap: respeta localStorage o prefers-color-scheme -->
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('licdia-theme');
+          if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+          if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+        } catch(e){}
+      })();
+    </script>
+
     <style>
+        :root {
+            --page-bg: #ffffff;
+            --card-bg: #ffffff;
+            --text-base: #212529;
+            --text-muted: #6c757d;
+            --banner-bg: #f8f9fa;
+            --input-bg: #ffffff;
+            --input-border: #ced4da;
+            --accent: #1a63c0;
+        }
+        html[data-theme="dark"] {
+            --page-bg: #0d1117;
+            --card-bg: #161b22;
+            --text-base: #c9d1d9;
+            --text-muted: #8b949e;
+            --banner-bg: #161b22;
+            --input-bg: #0d1117;
+            --input-border: #30363d;
+            --accent: #60a5fa;
+        }
+
+        html[data-theme="dark"] body {
+            background-color: var(--page-bg) !important;
+            color: var(--text-base) !important;
+        }
+        html[data-theme="dark"] .fechas-banner {
+            background: var(--banner-bg) !important;
+            border-top-color: var(--accent) !important;
+        }
+        html[data-theme="dark"] .fecha-item .label { color: var(--text-muted) !important; }
+        html[data-theme="dark"] .fecha-item .value { color: #bfdbfe !important; }
+        html[data-theme="dark"] .fecha-item.cierre .value { color: #ff7b87 !important; }
+        html[data-theme="dark"] .diploma-card {
+            background: var(--card-bg) !important;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important;
+        }
+        html[data-theme="dark"] .diploma-card .price-tag { color: #bfdbfe !important; }
+        html[data-theme="dark"] .diploma-card .price-detail { color: var(--text-muted) !important; }
+        html[data-theme="dark"] .diploma-card .card-body { color: var(--text-base) !important; }
+        html[data-theme="dark"] .form-control,
+        html[data-theme="dark"] .form-select {
+            background: var(--input-bg) !important;
+            border-color: var(--input-border) !important;
+            color: var(--text-base) !important;
+        }
+        html[data-theme="dark"] .excl-card .form-control {
+            background: #1f2937 !important;
+            color: var(--text-base) !important;
+        }
+        html[data-theme="dark"] ::placeholder { color: #6e7681 !important; }
+        html[data-theme="dark"] .text-muted { color: var(--text-muted) !important; }
+
         /* ─── countdown chip ─── */
         .countdown-chip {
             display: inline-flex;
@@ -70,7 +133,7 @@
         /* ─── fechas banner ─── */
         .fechas-banner {
             background: #f8f9fa;
-            border-top: 4px solid #ffc107;
+            border-top: 4px solid #1a63c0;
             padding: 2rem 0;
         }
         .fecha-item {
@@ -161,7 +224,7 @@
         }
         .exclusive-badge {
             display: inline-block;
-            background: #ffc107;
+            background: #93c5fd;
             color: #1a2f4a;
             font-family: 'Montserrat', sans-serif;
             font-weight: 700;
@@ -248,7 +311,7 @@
         #countdown .cd-num {
             font-size: 2rem;
             font-weight: 700;
-            color: #ffc107;
+            color: #93c5fd;
             line-height: 1;
         }
         #countdown .cd-label {
@@ -292,10 +355,10 @@
             </span>
             <h1 class="mt-3">¡Inscripción Exclusiva!</h1>
             <p class="subtitle">Diplomaturas de Posgrado 2026 — Universidad Nacional de Luján</p>
-            <p class="mt-2" style="color:#ffc107;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.04em;">
+            <p class="mt-2" style="color:#93c5fd;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.95rem;letter-spacing:.04em;">
                 Inscripciones generales abren: 29 de mayo
             </p>
-            <a href="#exclusiva" class="btn btn-lg mt-3 px-5 py-3" style="background:#ffc107;color:#0d1b2a;font-weight:800;font-size:1.15rem;border-radius:50px;letter-spacing:.03em;">
+            <a href="#exclusiva" class="btn btn-lg mt-3 px-5 py-3" style="background:#1a63c0;color:#fff;font-weight:800;font-size:1.15rem;border-radius:50px;letter-spacing:.03em;">
                 <i class="fas fa-arrow-right me-2"></i>Inscribite ahora
             </a>
 
@@ -566,8 +629,8 @@
             btn.disabled = true;
             btn.textContent = 'Enviando...';
             var data = new FormData(this);
-            data.append('Origen', 'Pre-registro charla exclusiva IA');
-            fetch('https://lamb-texture-chef-cuts.trycloudflare.com/webhook/licdia-inscripcion', {
+            data.append('Origen', 'Registro charla exclusiva IA');
+            fetch('https://buried-albert-webshots-submit.trycloudflare.com/webhook/licdia-inscripcion', {
                 method: 'POST',
                 headers: { 'Accept': 'application/json' },
                 body: data
@@ -592,8 +655,8 @@
             btn.disabled = true;
             btn.textContent = 'Enviando...';
             var data = new FormData(this);
-            data.append('Origen', 'Pre-registro charla exclusiva Blockchain');
-            fetch('https://lamb-texture-chef-cuts.trycloudflare.com/webhook/licdia-inscripcion', {
+            data.append('Origen', 'Registro charla exclusiva Blockchain');
+            fetch('https://buried-albert-webshots-submit.trycloudflare.com/webhook/licdia-inscripcion', {
                 method: 'POST',
                 headers: { 'Accept': 'application/json' },
                 body: data

@@ -53,6 +53,19 @@
     </noscript>
     <!-- End Meta Pixel Code -->
     <script type="text/javascript" async="async" src="https://hub.fromdoppler.com/public/dhtrack.js"></script>
+    <!-- LICDIA-ENHANCEMENTS-V1 -->
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('licdia-theme');
+          if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+          if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+        } catch(e){}
+      })();
+    </script>
+    <link href="../../css/enhancements.css" rel="stylesheet" />
+    <script src="../../js/enhancements.js" defer></script>
+
 
 </head>
 
@@ -243,7 +256,7 @@
                 btn.textContent = 'Enviando...';
                 var data = new FormData(form);
                 data.append('Origen', 'Inscripción Diplomatura IA');
-                fetch('https://lamb-texture-chef-cuts.trycloudflare.com/webhook/licdia-inscripcion', {
+                fetch('https://buried-albert-webshots-submit.trycloudflare.com/webhook/licdia-inscripcion', {
                     method: 'POST',
                     body: data,
                     headers: { 'Accept': 'application/json' }

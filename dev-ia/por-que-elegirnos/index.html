@@ -322,6 +322,19 @@
       "teaches": ["IA Generativa", "Machine Learning", "Deep Learning", "LLMs", "RAG", "Agentes", "Cloud", "MLOps"]
     }
     </script>
+    <!-- LICDIA-ENHANCEMENTS-V1 -->
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('licdia-theme');
+          if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+          if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+        } catch(e){}
+      })();
+    </script>
+    <link href="../../css/enhancements.css" rel="stylesheet" />
+    <script src="../../js/enhancements.js" defer></script>
+
 </head>
 
 <body id="page-top" class="dev-ia-theme">
@@ -345,7 +358,7 @@
                     <li class="nav-item"><a class="nav-link" href="../por-que-elegirnos/">Por qué elegirnos</a></li>
                     <li class="nav-item"><a class="nav-link" href="../aranceles/">Aranceles</a></li>
                     <li class="nav-item"><a class="nav-link" href="../#faq">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../#contact">Pre-registro</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../#contact">Registro</a></li>
                     <li class="nav-item"><a class="nav-link" href="../../">LICDIA</a></li>
                 </ul>
             </div>
@@ -617,7 +630,7 @@
                     <div class="cta-inscribite" data-aos="fade-up" data-aos-delay="100">
                         <h3>¿Listo para construir con IA?</h3>
                         <p>Da el próximo paso e inscribite en la Diplomatura en IA Generativa — 2da cohorte 2026.</p>
-                        <a href="../inscripcion-dev-ia/" class="btn-cta">
+                        <a href="/charla/dev-ia/#inscripcion" class="btn-cta">
                             <i class="fas fa-rocket me-2"></i>Inscribite hoy
                         </a>
                     </div>

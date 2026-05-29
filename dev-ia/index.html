@@ -150,7 +150,7 @@
       "name": "¿Es necesario un examen de admisión?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No, no hay examen de admisión. Para inscribirte solo necesitás cumplir con los requisitos formales de admisión a un posgrado universitario: El proceso es: pre-registro → charla informativa → inscripción formal → pago de matrícula → arranque en septiembre. Detalles completos en la sección Requisitos."
+        "text": "No, no hay examen de admisión. Para inscribirte solo necesitás cumplir con los requisitos formales de admisión a un posgrado universitario: El proceso es: registro → charla informativa → inscripción formal → pago de matrícula → arranque en septiembre. Detalles completos en la sección Requisitos."
       }
     }
   ]
@@ -599,7 +599,7 @@
         .quiz-result p { margin-bottom: 0.5rem; }
         .result-green  { background: #d1e7dd; border: 2px solid #198754; color: #0a3622; }
         .result-blue   { background: var(--brand-soft); border: 2px solid var(--brand); color: var(--brand-dark); }
-        .result-yellow { background: #fff3cd; border: 2px solid #ffc107; color: #6d4300; }
+        .result-yellow { background: #fff3cd; border: 2px solid #60a5fa; color: #6d4300; }
         .result-grey   { background: #f1f1f1; border: 2px solid #adb5bd; color: #3a3a3a; }
         .quiz-cta-btn {
             display: inline-block;
@@ -649,10 +649,23 @@
     </noscript>
     <!-- End Meta Pixel Code -->
     <script type="text/javascript" async="async" src="https://hub.fromdoppler.com/public/dhtrack.js"></script>
+    <!-- LICDIA-ENHANCEMENTS-V1 -->
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('licdia-theme');
+          if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+          if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+        } catch(e){}
+      })();
+    </script>
+    <link href="../css/enhancements.css" rel="stylesheet" />
+    <script src="../js/enhancements.js" defer></script>
+
 
 </head>
 
-<body id="page-top">
+<body id="page-top" class="ia-theme dev-ia-theme">
     <!-- Barra de Navegación, imagenes de logos, etc.-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
@@ -672,7 +685,8 @@
                     <li class="nav-item"><a class="nav-link" href="por-que-elegirnos/">Por qué elegirnos</a></li>
                     <li class="nav-item"><a class="nav-link" href="aranceles/">Aranceles</a></li>
                     <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="inscripcion-dev-ia/">Inscripción</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/dev-ia/blog/">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/charla/dev-ia/#inscripcion">Inscripción</a></li>
                     <li class="nav-item"><a class="nav-link" href="../">LICDIA</a></li>
                 </ul>
             </div>
@@ -691,7 +705,7 @@
                 </div>
             </div>
             <a class="btn btn-primary btn-xl text-uppercase"
-                href="inscripcion-dev-ia/"
+                href="/charla/dev-ia/#inscripcion"
                 id="buttonInfo"> Inscribite a la Diplomatura </a>
         </div>
     </header>
@@ -708,39 +722,80 @@
         </div>
     </div>
 
+    <!-- Banner info clasico (3 columnas) -->
     <article id="containerInfo" class="border-bottom border-dark" data-aos="flip-up" data-aos-duration="1500">
         <div class="container">
-        <div class="row align-items-start p-3 p-md-5 justify-content-center">
-    
-            <div class="col-12 col-md-4">
-                <p class="mb-2"><span class="fw-semibold text-uppercase">Modalidad:</span> Virtual</p>
-                <p class="mb-0"><span class="fw-semibold text-uppercase">Estado:</span> Inscripción abierta — cupos limitados a 30 lugares. <a href="inscripcion-dev-ia/" class="fw-semibold">Inscribite</a>.</p>
-            </div>
+            <div class="row align-items-start p-3 p-md-5 justify-content-center">
 
-    
-            <div class="col-12 col-md-4">
-                <p class="mb-2"><span class="fw-semibold text-uppercase">Inicio:</span> Septiembre 2026</p>
-                <p class="mb-0"><span class="fw-semibold text-uppercase">Finalización:</span> Diciembre 2026</p>
-            </div>
-
-            
-            <div class="col-12 col-md-4 d-flex flex-column gap-2">
-                <div>
-                    <p class="mb-2"><span class="fw-semibold text-uppercase">Charla informativa (2025): </span> <a
+                <div class="col-12 col-md-4">
+                    <p class="mb-2"><span class="fw-semibold text-uppercase">Modalidad:</span> Virtual</p>
+                    <p class="mb-0"><span class="fw-semibold text-uppercase">Charla informativa (2025): </span> <a
                             href="https://drive.google.com/file/d/1RqMK20wWeMGIJ94PuXWRi4JieTezMjaa/view?usp=sharing"
-                            class="text-decoration-underline" target="_blank"> Video de la charla. </a></p>
-                    <p class="mb-2"><span class="fw-semibold text-uppercase">Inscripción 2026: </span> Abierta — cupos limitados a 30 lugares. <a href="inscripcion-dev-ia/" class="text-decoration-underline">Inscribite</a></p>
-                    <p class="mb-0"><span class="fw-semibold text-uppercase">Tipo de titulo: </span> Diplomatura de
-                        Posgrado
-                        Universitario </p>
+                            class="text-decoration-underline" target="_blank"> Video de la charla.</a></p>
                 </div>
-                <div class="mt-5">
-                    <a class="btn btn-primary px-4" href="#contact">Preregistro charla</a>
+
+                <div class="col-12 col-md-4">
+                    <p class="mb-2"><span class="fw-semibold text-uppercase">Inicio:</span> Septiembre 2026</p>
+                    <p class="mb-0"><span class="fw-semibold text-uppercase">Finalización:</span> Diciembre 2026</p>
                 </div>
+
+                <div class="col-12 col-md-4">
+                    <p class="mb-2"><span class="fw-semibold text-uppercase">Inscripción 2026:</span> Abierta — cupos limitados a 30 lugares.</p>
+                    <p class="mb-0"><span class="fw-semibold text-uppercase">Tipo de título:</span> Diplomatura de Posgrado Universitario</p>
+                </div>
+
             </div>
-        </div>
         </div>
     </article>
+
+    <!-- Bloque con las 2 CTAs parejas (chips + boton) -->
+    <section class="container py-4 py-md-5" id="ctas-home" data-aos="fade-up" data-aos-duration="1200">
+        <div class="row g-4 justify-content-center">
+
+            <!-- CTA 1: Registro Charla Informativa -->
+            <div class="col-12 col-lg-6">
+                <div class="h-100 p-4 p-md-5 text-center" style="background: linear-gradient(135deg, #1C2E54 0%, #1354A0 100%); color:#fff; border-radius: 16px;">
+                    <h3 class="text-uppercase fw-bold mb-2" style="font-size:1.4rem; letter-spacing:.05em;">Registro a la Charla Informativa</h3>
+                    <p class="mb-4" style="color: rgba(255,255,255,0.85); font-size:.95rem;">Próximas charlas online · Anotate y te enviamos el link</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+                        <div style="background:rgba(255,255,255,0.10); border:1px solid rgba(96,165,250,0.35); border-radius:12px; padding:.75rem 1.25rem;">
+                            <div style="font-size:.7rem; font-weight:700; letter-spacing:.1em; color:#a8c5e0; text-transform:uppercase;">1ra charla</div>
+                            <div style="font-size:1.1rem; font-weight:700; color:#fff;">Viernes 26/06 · 19hs</div>
+                        </div>
+                        <div style="background:rgba(255,255,255,0.10); border:1px solid rgba(96,165,250,0.35); border-radius:12px; padding:.75rem 1.25rem;">
+                            <div style="font-size:.7rem; font-weight:700; letter-spacing:.1em; color:#a8c5e0; text-transform:uppercase;">2da charla</div>
+                            <div style="font-size:1.1rem; font-weight:700; color:#fff;">Lunes 13/07 · 19hs</div>
+                        </div>
+                    </div>
+                    <a href="#contact-form-charla" class="btn btn-lg px-4 py-3" style="background:#ffffff; color:#1C2E54; font-size:1.05rem; font-weight:700; border:2px solid #ffffff;">
+                        <i class="fas fa-calendar-check me-2"></i>Quiero registrarme a la charla
+                    </a>
+                </div>
+            </div>
+
+            <!-- CTA 2: Inscripción Diplomatura -->
+            <div class="col-12 col-lg-6">
+                <div class="h-100 p-4 p-md-5 text-center" style="background: linear-gradient(135deg, #1C2E54 0%, #1354A0 100%); color:#fff; border-radius: 16px;">
+                    <h3 class="text-uppercase fw-bold mb-2" style="font-size:1.4rem; letter-spacing:.05em;">Inscribite a la Diplomatura</h3>
+                    <p class="mb-4" style="color: rgba(255,255,255,0.85); font-size:.95rem;">Cohorte 2026 · Cupos limitados a 30 estudiantes</p>
+                    <div class="d-flex flex-wrap justify-content-center gap-3 mb-4">
+                        <div style="background:rgba(255,255,255,0.10); border:1px solid rgba(96,165,250,0.35); border-radius:12px; padding:.75rem 1.25rem;">
+                            <div style="font-size:.7rem; font-weight:700; letter-spacing:.1em; color:#a8c5e0; text-transform:uppercase;">Inicio cohorte</div>
+                            <div style="font-size:1.1rem; font-weight:700; color:#fff;">Septiembre 2026</div>
+                        </div>
+                        <div style="background:rgba(255,255,255,0.10); border:1px solid rgba(96,165,250,0.35); border-radius:12px; padding:.75rem 1.25rem;">
+                            <div style="font-size:.7rem; font-weight:700; letter-spacing:.1em; color:#a8c5e0; text-transform:uppercase;">Finalización</div>
+                            <div style="font-size:1.1rem; font-weight:700; color:#fff;">Diciembre 2026</div>
+                        </div>
+                    </div>
+                    <a href="/charla/dev-ia/#inscripcion" class="btn btn-lg px-4 py-3" style="background:#ffffff; color:#1C2E54; font-size:1.05rem; font-weight:700; border:2px solid #ffffff;">
+                        <i class="fas fa-user-plus me-2"></i>Quiero inscribirme a la Diplomatura
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </section>
 
     <section class="container my-3" id="lic-ia">
         <div class="row g-4 justify-content-center">
@@ -796,7 +851,7 @@
             <div class="col-6 col-md-4 col-lg zoom-hover">
                 <div class="tile">
                     <span class="rule rule-top"></span>
-                    <h3 class="h4 fw-semibold my-3 mb-3"><a href="inscripcion-dev-ia/">¿Cómo me inscribo?</a></h3>
+                    <h3 class="h4 fw-semibold my-3 mb-3"><a href="/charla/dev-ia/#inscripcion">¿Cómo me inscribo?</a></h3>
                     <span class="rule rule-bottom"></span>
                 </div>
             </div>
@@ -1142,7 +1197,7 @@
 
     <section class="container my-4 text-center" data-aos="fade-up" data-aos-duration="800">
         <a href="#contact" class="btn btn-primary btn-lg px-5 py-3">
-            <i class="fas fa-paper-plane me-2"></i>Preregistro charla informativa
+            <i class="fas fa-paper-plane me-2"></i>Registro charla informativa
         </a>
     </section>
     <section id="enfoque" class="py-5 bg-light">
@@ -1640,7 +1695,7 @@
     <section class="py-5" id="experiencia-2025" style="background: linear-gradient(135deg, #1C2E54 0%, #193d76 60%, #1a63c0 100%); color:#fff;" data-aos="fade-up" data-aos-duration="1000">
         <div class="container">
             <div class="text-center mb-5">
-                <span class="d-inline-block mb-3" style="background:#ffc107; color:#1C2E54; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; font-size:0.78rem; padding:0.4rem 1rem; border-radius:999px;">
+                <span class="d-inline-block mb-3" style="background:#ffffff; color:#1C2E54; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; font-size:0.78rem; padding:0.4rem 1rem; border-radius:999px;">
                     <i class="fas fa-hourglass-half me-1"></i>Cohorte 2025 · En el tramo final
                 </span>
                 <h2 class="section-heading text-uppercase" style="color:#fff;">1ra Cohorte 2025 — En curso</h2>
@@ -1651,32 +1706,32 @@
             <div class="row g-4 justify-content-center text-center">
                 <div class="col-6 col-md-3">
                     <div style="background:rgba(255,255,255,0.08); border-radius:1rem; padding:1.5rem 1rem; height:100%;">
-                        <i class="fas fa-user-check fa-2x mb-2" style="color:#ffc107;"></i>
-                        <div class="display-4 fw-bold" style="color:#ffc107;">20</div>
+                        <i class="fas fa-user-check fa-2x mb-2" style="color:#60a5fa;"></i>
+                        <div class="display-4 fw-bold" style="color:#60a5fa;">20</div>
                         <p class="mt-2 mb-0 fw-semibold" style="color:#fff;">Inscriptos</p>
                         <p class="mb-0" style="color:#a8c5e0; font-size:0.85rem;">en la 1ra cohorte</p>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
                     <div style="background:rgba(255,255,255,0.08); border-radius:1rem; padding:1.5rem 1rem; height:100%;">
-                        <i class="fas fa-flag-checkered fa-2x mb-2" style="color:#ffc107;"></i>
-                        <div class="display-4 fw-bold" style="color:#ffc107;">12</div>
+                        <i class="fas fa-flag-checkered fa-2x mb-2" style="color:#60a5fa;"></i>
+                        <div class="display-4 fw-bold" style="color:#60a5fa;">12</div>
                         <p class="mt-2 mb-0 fw-semibold" style="color:#fff;">En trabajo final</p>
                         <p class="mb-0" style="color:#a8c5e0; font-size:0.85rem;">preparando defensa</p>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
                     <div style="background:rgba(255,255,255,0.08); border-radius:1rem; padding:1.5rem 1rem; height:100%;">
-                        <i class="fas fa-clock fa-2x mb-2" style="color:#ffc107;"></i>
-                        <div class="display-4 fw-bold" style="color:#ffc107;">160 hs</div>
+                        <i class="fas fa-clock fa-2x mb-2" style="color:#60a5fa;"></i>
+                        <div class="display-4 fw-bold" style="color:#60a5fa;">160 hs</div>
                         <p class="mt-2 mb-0 fw-semibold" style="color:#fff;">Carga horaria</p>
                         <p class="mb-0" style="color:#a8c5e0; font-size:0.85rem;">4 cursos × 40 hs</p>
                     </div>
                 </div>
                 <div class="col-6 col-md-3">
                     <div style="background:rgba(255,255,255,0.08); border-radius:1rem; padding:1.5rem 1rem; height:100%;">
-                        <i class="fas fa-university fa-2x mb-2" style="color:#ffc107;"></i>
-                        <div class="display-4 fw-bold" style="color:#ffc107;">UNLu</div>
+                        <i class="fas fa-university fa-2x mb-2" style="color:#60a5fa;"></i>
+                        <div class="display-4 fw-bold" style="color:#60a5fa;">UNLu</div>
                         <p class="mt-2 mb-0 fw-semibold" style="color:#fff;">Título oficial</p>
                         <p class="mb-0" style="color:#a8c5e0; font-size:0.85rem;">posgrado universitario</p>
                     </div>
@@ -1689,25 +1744,25 @@
                     <div class="row g-3 text-center">
                         <div class="col-6 col-md-3">
                             <div class="d-flex align-items-center justify-content-center gap-2" style="background:rgba(255,255,255,0.06); border-radius:0.6rem; padding:0.75rem 0.5rem;">
-                                <i class="fas fa-check-circle" style="color:#ffc107;"></i>
+                                <i class="fas fa-check-circle" style="color:#60a5fa;"></i>
                                 <span style="color:#fff; font-size:0.92rem;">4 cursos completos cursados</span>
                             </div>
                         </div>
                         <div class="col-6 col-md-3">
                             <div class="d-flex align-items-center justify-content-center gap-2" style="background:rgba(255,255,255,0.06); border-radius:0.6rem; padding:0.75rem 0.5rem;">
-                                <i class="fas fa-globe-americas" style="color:#ffc107;"></i>
+                                <i class="fas fa-globe-americas" style="color:#60a5fa;"></i>
                                 <span style="color:#fff; font-size:0.92rem;">Alumnos en toda Latinoamérica</span>
                             </div>
                         </div>
                         <div class="col-6 col-md-3">
                             <div class="d-flex align-items-center justify-content-center gap-2" style="background:rgba(255,255,255,0.06); border-radius:0.6rem; padding:0.75rem 0.5rem;">
-                                <i class="fas fa-code-branch" style="color:#ffc107;"></i>
+                                <i class="fas fa-code-branch" style="color:#60a5fa;"></i>
                                 <span style="color:#fff; font-size:0.92rem;">Notebooks y repos entregados</span>
                             </div>
                         </div>
                         <div class="col-6 col-md-3">
                             <div class="d-flex align-items-center justify-content-center gap-2" style="background:rgba(255,255,255,0.06); border-radius:0.6rem; padding:0.75rem 0.5rem;">
-                                <i class="fas fa-redo-alt" style="color:#ffc107;"></i>
+                                <i class="fas fa-redo-alt" style="color:#60a5fa;"></i>
                                 <span style="color:#fff; font-size:0.92rem;">2da cohorte 2026 abierta</span>
                             </div>
                         </div>
@@ -1724,7 +1779,7 @@
                 <div class="col-12 col-md-4">
                     <div class="card border-0 h-100" style="background:rgba(255,255,255,0.1); border-radius:1rem;">
                         <div class="card-body p-4">
-                            <p class="mb-3" style="color:#ffc107; font-size:1.5rem; line-height:1;"><i class="fas fa-quote-left"></i></p>
+                            <p class="mb-3" style="color:#60a5fa; font-size:1.5rem; line-height:1;"><i class="fas fa-quote-left"></i></p>
                             <p class="mb-3" style="color:#fff; font-size:0.97rem; line-height:1.6;">La diplomatura me dio las herramientas para implementar soluciones de IA en mi empresa. La calidad docente es excelente y el acompañamiento permanente.</p>
                             <hr style="border-color:rgba(255,255,255,0.15);">
                             <p class="mb-0 fw-semibold" style="color:#fff;">Alumno/a · Cohorte 2025</p>
@@ -1735,7 +1790,7 @@
                 <div class="col-12 col-md-4">
                     <div class="card border-0 h-100" style="background:rgba(255,255,255,0.1); border-radius:1rem;">
                         <div class="card-body p-4">
-                            <p class="mb-3" style="color:#ffc107; font-size:1.5rem; line-height:1;"><i class="fas fa-quote-left"></i></p>
+                            <p class="mb-3" style="color:#60a5fa; font-size:1.5rem; line-height:1;"><i class="fas fa-quote-left"></i></p>
                             <p class="mb-3" style="color:#fff; font-size:0.97rem; line-height:1.6;">Pasé de usar IA como usuario a construir mis propios agentes y pipelines en cloud. Un salto enorme en mi perfil profesional.</p>
                             <hr style="border-color:rgba(255,255,255,0.15);">
                             <p class="mb-0 fw-semibold" style="color:#fff;">Alumno/a · Cohorte 2025</p>
@@ -1746,7 +1801,7 @@
                 <div class="col-12 col-md-4">
                     <div class="card border-0 h-100" style="background:rgba(255,255,255,0.1); border-radius:1rem;">
                         <div class="card-body p-4">
-                            <p class="mb-3" style="color:#ffc107; font-size:1.5rem; line-height:1;"><i class="fas fa-quote-left"></i></p>
+                            <p class="mb-3" style="color:#60a5fa; font-size:1.5rem; line-height:1;"><i class="fas fa-quote-left"></i></p>
                             <p class="mb-3" style="color:#fff; font-size:0.97rem; line-height:1.6;">El nivel práctico es muy alto. Cada módulo termina con un proyecto real. Aprendí más en 4 meses que en años de cursos online.</p>
                             <hr style="border-color:rgba(255,255,255,0.15);">
                             <p class="mb-0 fw-semibold" style="color:#fff;">Alumno/a · Cohorte 2025</p>
@@ -1758,8 +1813,8 @@
 
             <!-- CTA -->
             <div class="text-center mt-5">
-                <p class="mb-3" style="color:#fff; font-size:1.05rem;">La 2da cohorte arranca en <strong style="color:#ffc107;">septiembre 2026</strong>. No te quedes afuera.</p>
-                <a href="#contact" class="btn btn-lg" style="background:#ffc107; color:#1C2E54; font-weight:700; padding:0.85rem 2.5rem; border-radius:999px;">
+                <p class="mb-3" style="color:#fff; font-size:1.05rem;">La 2da cohorte arranca en <strong style="color:#60a5fa;">septiembre 2026</strong>. No te quedes afuera.</p>
+                <a href="#contact" class="btn btn-lg" style="background:#60a5fa; color:#1C2E54; font-weight:700; padding:0.85rem 2.5rem; border-radius:999px;">
                     <i class="fas fa-rocket me-2"></i>Pre-registrate a la charla informativa
                 </a>
             </div>
@@ -2347,7 +2402,7 @@
                                     <p class="mb-3">Si querés ver cómo funcionó la cohorte 2025, podés mirar el <a href="https://drive.google.com/file/d/1RqMK20wWeMGIJ94PuXWRi4JieTezMjaa/view?usp=sharing" target="_blank">video de la charla informativa anterior</a>.</p>
                                     <p class="mb-0">Si tenés dudas previas, podés escribirnos por WhatsApp y te respondemos sin compromiso.</p>
                                     <div class="mt-3">
-                                        <a href="inscripcion-dev-ia/" class="btn btn-dark btn-lg px-4 py-2">
+                                        <a href="/charla/dev-ia/#inscripcion" class="btn btn-dark btn-lg px-4 py-2">
                                             Inscripción
                                         </a>
                                     </div>
@@ -2510,7 +2565,7 @@
                                         <li><strong>Título de grado</strong> de cualquier orientación, o</li>
                                         <li><strong>Equivalencia por experiencia profesional</strong> (analizada caso por caso por la dirección académica para perfiles con trayectoria comprobable sin título de grado).</li>
                                     </ul>
-                                    <p class="mb-3">El proceso es: <strong>pre-registro → charla informativa → inscripción formal → pago de matrícula → arranque en septiembre</strong>.</p>
+                                    <p class="mb-3">El proceso es: <strong>registro → charla informativa → inscripción formal → pago de matrícula → arranque en septiembre</strong>.</p>
                                     <p class="mb-0">Detalles completos en la sección <a href="requisitos/">Requisitos</a>.</p>
                                 </div>
                             </div>
@@ -2522,36 +2577,9 @@
         </div>
     </section>
 
-<!--SECCION DE CONTACTO -->
-    <!--SECCION DE INSCRIPCION -->
-    <section class="page-section" id="contact">
+<!--SECCION FORM CHARLA (form completo, anchor desde CTA arriba) -->
+    <section class="page-section" id="contact-form-charla" style="padding-top: 1rem;">
         <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">Inscribite a la Diplomatura</h2>
-                <h3 class="section-subheading mb-4" style="color: rgba(255,255,255,0.85); font-weight: 500;">Cohorte Septiembre 2026 · Cupos limitados — completá el formulario de inscripción y nos comunicamos a la brevedad</h3>
-            </div>
-
-            <div class="container my-3">
-                <div class="row justify-content-center">
-                    <div class="col-12 col-lg-8 text-center">
-                        <a href="inscripcion-dev-ia/" class="btn btn-primary btn-lg px-5 py-3" style="font-size:1.15rem; font-weight:700;">
-                            <i class="fas fa-user-plus me-2"></i>Quiero inscribirme
-                        </a>
-                        <p class="mt-3 small" style="color: rgba(255,255,255,0.75);">Te lleva al formulario completo de inscripción · Toda la información en menos de 2 minutos</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- (Sección legacy del form de charla informativa desactivada — la inscripción se hace en /inscripcion-dev-ia/) -->
-    <section style="display:none;" id="contact-legacy-hidden">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase"> Registro Charla Informativa Online</h2>
-                <h3 class="section-subheading text-muted mb-4">Anotate y te avisamos con el link de acceso</h3>
-            </div>
-
             <div class="container my-3">
                 <div class="row justify-content-center">
                     <div class="col-12 col-lg-8">
@@ -2611,7 +2639,7 @@
                                         </select>
                                     </div>
 
-                                    <input type="hidden" name="_subject" value="Pre-registro 2da cohorte - IA Generativa">
+                                    <input type="hidden" name="_subject" value="Registro charla informativa IA - 26/06 o 13/07">
                                     <input type="hidden" name="_cc" value="licdia.unlu@gmail.com">
                                     <input type="hidden" name="_template" value="table">
                                     <input type="hidden" name="_captcha" value="false">
@@ -2687,11 +2715,11 @@
                 formCharla.addEventListener('submit', function (e) {
                     e.preventDefault();
                     var data = new FormData(formCharla);
-                    data.append('Origen', 'Pre-registro charla informativa IA');
+                    data.append('Origen', 'Registro charla informativa IA');
                     var submitBtn = formCharla.querySelector('button');
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'Enviando...';
-                    fetch('https://lamb-texture-chef-cuts.trycloudflare.com/webhook/licdia-inscripcion', {
+                    fetch('https://buried-albert-webshots-submit.trycloudflare.com/webhook/licdia-inscripcion', {
                         method: 'POST',
                         body: data,
                         headers: { 'Accept': 'application/json' }

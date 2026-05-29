@@ -1,0 +1,160 @@
+/* =====================================================================
+   DESIGN TOKENS — LICDIA UNLu
+   Sistema de variables CSS para light/dark mode.
+   Cargar ANTES de cualquier otro CSS.
+   ===================================================================== */
+
+/* -------- LIGHT THEME (default) -------- */
+:root {
+  /* Backgrounds */
+  --bg-base: #ffffff;
+  --bg-surface: #ffffff;
+  --bg-elevated: #f8f9fa;
+  --bg-card: #ffffff;
+  --bg-card-soft: #fafafc;
+  --bg-input: #ffffff;
+  --bg-code: #f6f8fa;
+  --bg-muted: #f1f5f9;
+
+  /* Soft backgrounds (purple-tinted, blue-tinted) */
+  --bg-purple-soft: #f7f1fc;     /* light lavender */
+  --bg-purple-softer: #ece7f3;
+  --bg-blue-soft: #ebf1fb;
+  --bg-blue-softer: #f0f5ff;
+
+  /* Text */
+  --text-base: #212529;
+  --text-strong: #1a1a1a;
+  --text-muted: #6c757d;
+  --text-soft: #4a4a4a;
+  --text-inverse: #ffffff;
+
+  /* Borders */
+  --border-base: #dee2e6;
+  --border-soft: #e9ecef;
+  --border-strong: #ced4da;
+
+  /* BRAND — Blockchain (purple) */
+  --brand-purple-dark: #4C1C7F;     /* primary purple */
+  --brand-purple-darker: #2E0F58;
+  --brand-purple-mid: #7E3FBF;
+  --brand-purple-soft: #C9A9F0;
+  --brand-purple-text: #4C1C7F;     /* purple for text on light */
+  --brand-purple-bg: #4C1C7F;       /* purple for bg on light */
+
+  /* BRAND — IA (blue) */
+  --brand-blue-dark: #1C2E54;
+  --brand-blue-darker: #0c1a36;
+  --brand-blue-mid: #1354A0;
+  --brand-blue-bright: #3182CE;
+  --brand-blue-text: #1C2E54;
+  --brand-blue-bg: #1354A0;
+
+  /* Accent colors — NO yellows (Pao's rule) */
+  --accent-coral: #fb7185;
+  --accent-burgundy: #800020;
+  --accent-orange: #f97316;
+
+  /* Semantic — warning usa naranja en vez de amarillo */
+  --color-success: #198754;
+  --color-success-bg: #d1e7dd;
+  --color-warning: #f97316;          /* orange-500 — NOT yellow */
+  --color-warning-bg: #ffedd5;       /* orange-100 */
+  --color-danger: #dc3545;
+  --color-danger-bg: #f8d7da;
+  --color-info: #0dcaf0;
+  --color-info-bg: #cff4fc;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.1);
+  --shadow-card: 0 2px 8px rgba(76, 28, 127, 0.08);
+
+  /* Gradients (mantienen marca en ambos modos pero con tonos ajustados) */
+  --grad-purple: linear-gradient(135deg, #4C1C7F 0%, #7E3FBF 100%);
+  --grad-blue: linear-gradient(135deg, #0c1a36 0%, #1C2E54 50%, #193d76 100%);
+  --grad-purple-soft: linear-gradient(180deg, #f7f1fc 0%, #ece7f3 100%);
+  --grad-blue-soft: linear-gradient(180deg, #ebf1fb 0%, #f0f5ff 100%);
+}
+
+/* -------- DARK THEME -------- */
+[data-theme="dark"] {
+  /* Backgrounds (GitHub-style dark) */
+  --bg-base: #0d1117;
+  --bg-surface: #161b22;
+  --bg-elevated: #1c2128;
+  --bg-card: #161b22;
+  --bg-card-soft: #1c2128;
+  --bg-input: #0d1117;
+  --bg-code: #161b22;
+  --bg-muted: #21262d;
+
+  /* Soft backgrounds: oscuros con tinte */
+  --bg-purple-soft: rgba(167, 139, 250, 0.08);
+  --bg-purple-softer: rgba(167, 139, 250, 0.05);
+  --bg-blue-soft: rgba(147, 197, 253, 0.08);
+  --bg-blue-softer: rgba(147, 197, 253, 0.05);
+
+  /* Text */
+  --text-base: #c9d1d9;
+  --text-strong: #f0f6fc;
+  --text-muted: #8b949e;
+  --text-soft: #b1bac4;
+  --text-inverse: #1a1a1a;
+
+  /* Borders */
+  --border-base: #30363d;
+  --border-soft: #21262d;
+  --border-strong: #484f58;
+
+  /* BRAND — Blockchain (en dark usamos violet-300/400 para contraste) */
+  --brand-purple-dark: #a78bfa;        /* swap! antes era oscuro, ahora claro para texto */
+  --brand-purple-darker: #8B5CF6;
+  --brand-purple-mid: #c4b5fd;
+  --brand-purple-soft: rgba(167, 139, 250, 0.15);
+  --brand-purple-text: #c4b5fd;
+  --brand-purple-bg: #8B5CF6;          /* para fondos solidos en dark */
+
+  /* BRAND — IA (en dark usamos blue-300/400) */
+  --brand-blue-dark: #93c5fd;
+  --brand-blue-darker: #60a5fa;
+  --brand-blue-mid: #bfdbfe;
+  --brand-blue-bright: #3b82f6;
+  --brand-blue-text: #93c5fd;
+  --brand-blue-bg: #1e3a8a;
+
+  /* Accent — NO yellows */
+  --accent-coral: #fda4af;
+  --accent-burgundy: #f87171;
+  --accent-orange: #fb923c;
+
+  /* Semantic dark — warning = naranja, NO amarillo */
+  --color-success: #4ade80;
+  --color-success-bg: rgba(34, 197, 94, 0.15);
+  --color-warning: #fb923c;          /* orange-400 — NOT yellow */
+  --color-warning-bg: rgba(249, 115, 22, 0.15);
+  --color-danger: #f87171;
+  --color-danger-bg: rgba(239, 68, 68, 0.15);
+  --color-info: #38bdf8;
+  --color-info-bg: rgba(56, 189, 248, 0.15);
+
+  /* Shadows en dark son mas sutiles */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.5);
+  --shadow-card: 0 2px 8px rgba(167, 139, 250, 0.15);
+
+  /* Gradients adaptados — mantienen la marca pero ajustados */
+  --grad-purple: linear-gradient(135deg, #2d1b69 0%, #4c1d95 100%);
+  --grad-blue: linear-gradient(135deg, #0c1a36 0%, #1e3a8a 50%, #1e40af 100%);
+  --grad-purple-soft: linear-gradient(180deg, rgba(167,139,250,0.1) 0%, rgba(167,139,250,0.05) 100%);
+  --grad-blue-soft: linear-gradient(180deg, rgba(147,197,253,0.1) 0%, rgba(147,197,253,0.05) 100%);
+}
+
+/* -------- Base typography (cambia con el tema) -------- */
+html, body {
+  background: var(--bg-base);
+  color: var(--text-base);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}

@@ -1052,7 +1052,7 @@
                                             <option value="Estudiante avanzado">Estudiante avanzado (cursando últimas materias)</option>
                                         </select>
                                     </div>
-                                    <input type="hidden" name="_subject" value="Pre-registro - Maestría en Ciencia de Datos UNLu-UADER">
+                                    <input type="hidden" name="_subject" value="Registro - Maestría en Ciencia de Datos UNLu-UADER">
                                     <input type="hidden" name="_cc" value="licdia.unlu@gmail.com">
                                     <input type="hidden" name="_template" value="table">
                                     <input type="hidden" name="_captcha" value="false">
@@ -1149,11 +1149,11 @@
                 formCharla.addEventListener('submit', function (e) {
                     e.preventDefault();
                     var data = new FormData(formCharla);
-                    data.append('Origen', 'Pre-registro Maestría en Ciencia de Datos UNLu-UADER');
+                    data.append('Origen', 'Registro Maestría en Ciencia de Datos UNLu-UADER');
                     var submitBtn = formCharla.querySelector('button');
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'Enviando...';
-                    fetch('https://lamb-texture-chef-cuts.trycloudflare.com/webhook/licdia-inscripcion', {
+                    fetch('https://buried-albert-webshots-submit.trycloudflare.com/webhook/licdia-inscripcion', {
                         method: 'POST',
                         body: data,
                         headers: { 'Accept': 'application/json' }

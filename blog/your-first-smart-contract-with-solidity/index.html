@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Your First Smart Contract with Solidity: From Zero to Deployed in 30 Minutes — LICDIA UNLu Blog</title>
+    <meta name="description" content="A practical walkthrough from zero to a deployed ERC-20 token on a testnet" />
+    <meta name="author" content="David Petrocelli — LICDIA UNLu" />
+    <link rel="canonical" href="https://licdia.unlu.edu.ar/blog/your-first-smart-contract-with-solidity/" />
+
+    <meta property="og:title" content="Your First Smart Contract with Solidity: From Zero to Deployed in 30 Minutes" />
+    <meta property="og:description" content="A practical walkthrough from zero to a deployed ERC-20 token on a testnet" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://licdia.unlu.edu.ar/blog/your-first-smart-contract-with-solidity/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "Your First Smart Contract with Solidity: From Zero to Deployed in 30 Minutes",
+      "description": "A practical walkthrough from zero to a deployed ERC-20 token on a testnet",
+      "author": { "@type": "Person", "name": "David Petrocelli", "url": "https://licdia.unlu.edu.ar/" },
+      "publisher": { "@type": "CollegeOrUniversity", "name": "Universidad Nacional de Lujan", "url": "https://www.unlu.edu.ar/" },
+      "mainEntityOfPage": "https://licdia.unlu.edu.ar/blog/your-first-smart-contract-with-solidity/",
+      "datePublished": "2026-05-27",
+      "inLanguage": "en"
+    }
+    </script>
+
+    <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github.min.css" rel="stylesheet" />
+
+    <!-- LICDIA-ENHANCEMENTS-V1 -->
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('licdia-theme');
+          if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+          if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+        } catch(e){}
+      })();
+    </script>
+    <link href="../../css/enhancements.css" rel="stylesheet" />
+    <script src="../../js/enhancements.js" defer></script>
+
+    <style>
+      body { font-family: 'Inter', system-ui, sans-serif; color: #1e293b; background: #fff; line-height: 1.7; }
+      .navbar { padding: 1rem 0; border-bottom: 1px solid #e2e8f0; background: #fff; }
+      .navbar-brand { font-weight: 800; color: #4C1C7F; font-size: 1.15rem; }
+      .navbar .nav-link { color: #475569; font-weight: 500; }
+
+      .post-header { padding: 3.5rem 0 2rem; background: linear-gradient(180deg, #faf5ff 0%, #fff 100%); }
+      .post-header .tag { display: inline-block; padding: 0.3rem 0.85rem; border-radius: 999px; font-size: 0.78rem; font-weight: 600; margin-bottom: 1rem; }
+      .tag-bc { background: #fef3c7; color: #92400e; }
+      .tag-ia { background: #dbeafe; color: #1e40af; }
+      .post-header h1 { font-size: 2.5rem; font-weight: 800; color: #1e293b; margin-bottom: 0.75rem; line-height: 1.2; }
+      .post-header .subtitle { font-size: 1.2rem; color: #64748b; }
+      .post-header .meta { margin-top: 1.5rem; color: #94a3b8; font-size: 0.9rem; }
+
+      .post-content { padding: 2rem 0 5rem; max-width: 760px; margin: 0 auto; }
+      .post-content h2 { font-size: 1.7rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; color: #1e293b; }
+      .post-content h3 { font-size: 1.3rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: #334155; }
+      .post-content p { margin-bottom: 1.25rem; font-size: 1.05rem; color: #334155; }
+      .post-content ul, .post-content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+      .post-content li { margin-bottom: 0.4rem; }
+      .post-content code { font-family: 'JetBrains Mono', monospace; background: #f1f5f9; color: #be185d; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.92em; }
+      .post-content pre { background: #0f172a; color: #e2e8f0; padding: 1.25rem; border-radius: 10px; overflow-x: auto; font-size: 0.88rem; margin: 1.5rem 0; }
+      .post-content pre code { background: transparent; color: inherit; padding: 0; }
+      .post-content table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
+      .post-content th, .post-content td { border: 1px solid #e2e8f0; padding: 0.6rem 0.85rem; text-align: left; }
+      .post-content th { background: #f8fafc; font-weight: 600; }
+      .post-content blockquote { border-left: 4px solid #8B5CF6; padding-left: 1rem; color: #64748b; font-style: italic; margin: 1.5rem 0; }
+      .post-content hr { border: 0; border-top: 1px solid #e2e8f0; margin: 2.5rem 0; }
+      .post-content em { font-style: italic; color: #475569; }
+
+      .post-cta { background: linear-gradient(135deg, #4C1C7F, #8B5CF6); color: #fff; padding: 2.5rem; border-radius: 14px; margin-top: 3rem; text-align: center; }
+      .post-cta h3 { color: #fff !important; margin-bottom: 0.75rem; }
+      .post-cta p { color: rgba(255,255,255,0.9) !important; margin-bottom: 1.5rem; }
+      .post-cta a { display: inline-block; background: #fff; color: #4C1C7F; padding: 0.75rem 1.75rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+
+      footer { background: #0f172a; color: #94a3b8; padding: 2.5rem 0; text-align: center; }
+      footer a { color: #c9d1d9; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="/">LICDIA <span style="color:#8B5CF6">UNLu</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/blockchain-dev/">Blockchain Dev</a></li>
+            <li class="nav-item"><a class="nav-link" href="/dev-ia/">IA Generativa</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <article>
+      <header class="post-header">
+        <div class="container">
+          <a href="/blog/" style="color:#8B5CF6; text-decoration:none; font-size:0.9rem; font-weight:600;">← Back to blog</a>
+          <div style="margin-top: 1rem;">
+            <span class="tag tag-bc">Blockchain</span>
+          </div>
+          <h1>Your First Smart Contract with Solidity: From Zero to Deployed in 30 Minutes</h1>
+          <p class="subtitle">A practical walkthrough from zero to a deployed ERC-20 token on a testnet</p>
+          <div class="meta">By David Petrocelli · LICDIA UNLu · 2026</div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-content">
+          <h1>Your First Smart Contract with Solidity: From Zero to Deployed in 30 Minutes</h1>
+<p>If you've ever wondered what writing a smart contract actually feels like — beyond the hype — this is the most direct path I can give you. No wallets to fund with real money, no theory upfront. We're deploying a real ERC-20 token to Sepolia testnet, end to end, in about half an hour.</p>
+<h2>What you'll need</h2>
+<ul>
+<li>Node.js 20+ installed</li>
+<li>A MetaMask wallet (free, browser extension)</li>
+<li>Some Sepolia ETH from a faucet (free, takes 2 minutes)</li>
+</ul>
+<p>That's it. No paid services, no credit card.</p>
+<h2>Step 1: Set up the project</h2>
+<pre><code class="language-bash">mkdir my-first-token &amp;&amp; cd my-first-token
+npm init -y
+npm install --save-dev hardhat @nomicfoundation/hardhat-toolbox
+npx hardhat init
+</code></pre>
+<p>Pick "Create a JavaScript project" when Hardhat asks. It scaffolds a working repo with sample contracts.</p>
+<h2>Step 2: Write the contract</h2>
+<p>Replace <code>contracts/Lock.sol</code> with this:</p>
+<pre><code class="language-solidity">// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import &quot;@openzeppelin/contracts/token/ERC20/ERC20.sol&quot;;
+
+contract MyToken is ERC20 {
+    constructor() ERC20(&quot;MyToken&quot;, &quot;MTK&quot;) {
+        _mint(msg.sender, 1000 * 10 ** decimals());
+    }
+}
+</code></pre>
+<p>Install the OpenZeppelin contracts:</p>
+<pre><code class="language-bash">npm install @openzeppelin/contracts
+</code></pre>
+<p>That's the entire contract. 8 lines. It creates a token called "MyToken" with the symbol "MTK", and mints 1000 of them to whoever deploys it.</p>
+<h2>Step 3: Why OpenZeppelin matters</h2>
+<p>You could write the ERC-20 standard yourself. But the OpenZeppelin implementation has been audited dozens of times, used in billions of dollars of contracts, and battle-tested for edge cases (integer overflows, reentrancy patterns around transfers, etc.) that you wouldn't catch on a first pass.</p>
+<p><strong>Rule of thumb in production</strong>: never reimplement a standard that has a reference library. The risk-to-reward is terrible.</p>
+<h2>Step 4: Configure the network</h2>
+<p>Create a <code>.env</code> file (and add it to <code>.gitignore</code> immediately):</p>
+<pre><code class="language-bash">SEPOLIA_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com
+PRIVATE_KEY=&lt;your_metamask_private_key&gt;
+</code></pre>
+<p>To get your private key from MetaMask: account menu → Account details → Show private key. <strong>Never use a wallet that holds real funds for testing.</strong> Create a fresh one.</p>
+<p>Edit <code>hardhat.config.js</code>:</p>
+<pre><code class="language-javascript">require(&quot;@nomicfoundation/hardhat-toolbox&quot;);
+require(&quot;dotenv&quot;).config();
+
+module.exports = {
+  solidity: &quot;0.8.20&quot;,
+  networks: {
+    sepolia: {
+      url: process.env.SEPOLIA_RPC_URL,
+      accounts: [process.env.PRIVATE_KEY],
+    },
+  },
+};
+</code></pre>
+<p>Install dotenv:</p>
+<pre><code class="language-bash">npm install dotenv
+</code></pre>
+<h2>Step 5: Get Sepolia ETH</h2>
+<p>Go to any of these faucets and paste your MetaMask address:</p>
+<ul>
+<li>https://sepoliafaucet.com</li>
+<li>https://www.alchemy.com/faucets/ethereum-sepolia</li>
+</ul>
+<p>You need about 0.05 ETH. It arrives in under a minute.</p>
+<h2>Step 6: Deploy</h2>
+<p>Create <code>scripts/deploy.js</code>:</p>
+<pre><code class="language-javascript">const hre = require(&quot;hardhat&quot;);
+
+async function main() {
+  const Token = await hre.ethers.getContractFactory(&quot;MyToken&quot;);
+  const token = await Token.deploy();
+  await token.waitForDeployment();
+  console.log(&quot;MyToken deployed to:&quot;, await token.getAddress());
+}
+
+main().catch((error) =&gt; {
+  console.error(error);
+  process.exitCode = 1;
+});
+</code></pre>
+<p>Run it:</p>
+<pre><code class="language-bash">npx hardhat run scripts/deploy.js --network sepolia
+</code></pre>
+<p>Output:</p>
+<pre><code>MyToken deployed to: 0x4f3e1b...c2a9
+</code></pre>
+<p>That address is now a real ERC-20 contract on Sepolia. Anyone in the world can read from it.</p>
+<h2>Step 7: Verify it exists</h2>
+<p>Open https://sepolia.etherscan.io and paste the address. You'll see:</p>
+<ul>
+<li>The contract was deployed by your wallet</li>
+<li>Your wallet now holds 1000 MTK</li>
+<li>The transaction is permanent and public</li>
+</ul>
+<h2>What you actually learned</h2>
+<p>The 30 minutes you just spent contain most of the mental model you need for Web3 development:</p>
+<ol>
+<li><strong>Contracts are deterministic functions deployed to a public computer.</strong> They don't run on your machine.</li>
+<li><strong>State changes cost gas.</strong> Reads are free. Writes cost ETH.</li>
+<li><strong>You don't write standards from scratch.</strong> You import audited ones.</li>
+<li><strong>Testnets are free playgrounds.</strong> Mainnet is identical, with real money attached.</li>
+</ol>
+<h2>Next steps that actually teach you something</h2>
+<ul>
+<li>Add a <code>transfer</code> test using Hardhat's testing framework</li>
+<li>Try minting on a transfer (you'll quickly understand why <code>_mint</code> is <code>internal</code>)</li>
+<li>Deploy the same contract to <strong>Base Sepolia</strong> (a Layer 2) and compare gas costs</li>
+</ul>
+<p>If you go down that rabbit hole, you'll find yourself asking: "When should I use Ethereum directly vs an L2?" That's exactly the topic of the next article.</p>
+
+          <div class="post-cta">
+            <h3>Want to go deeper?</h3>
+            <p>This article is a small slice of what we teach in the Blockchain Development Diploma at UNLu. The full program covers EVM internals, Solidity security patterns, DeFi, L2 deployments, and a complete USDC payment gateway as the capstone.</p>
+            <a href="/blockchain-dev/">Explore the Blockchain Diploma</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <footer>
+      <div class="container">
+        <p class="mb-2">LICDIA — Licenciatura en Sistemas de Informacion, Universidad Nacional de Lujan</p>
+        <p class="mb-0" style="font-size: 0.85rem;">
+          <a href="/blockchain-dev/">Blockchain Dev</a> ·
+          <a href="/dev-ia/">IA Generativa</a> ·
+          <a href="/blog/">Blog</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

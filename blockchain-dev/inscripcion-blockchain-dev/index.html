@@ -132,6 +132,36 @@
             text-align: center;
             margin-bottom: 0.5rem;
         }
+
+        /* ── Dark mode overrides ── */
+        html[data-theme="dark"] .inscripcion-card {
+            background: #161b22 !important;
+            border-color: #30363d !important;
+        }
+        html[data-theme="dark"] .inscripcion-icon-wrap {
+            background: rgba(167,139,250,0.12) !important;
+        }
+        html[data-theme="dark"] .inscripcion-card:hover .inscripcion-icon-wrap {
+            background: var(--brand) !important;
+        }
+        html[data-theme="dark"] .inscripcion-step-number {
+            color: #c4b5fd !important;
+        }
+        html[data-theme="dark"] .inscripcion-title {
+            color: #e2d6ff !important;
+        }
+        html[data-theme="dark"] .inscripcion-card .paso-body,
+        html[data-theme="dark"] .inscripcion-card .paso-body ul {
+            color: #c9d1d9 !important;
+        }
+        html[data-theme="dark"] .inscripcion-nota {
+            background: rgba(167,139,250,0.10) !important;
+            color: #c9d1d9 !important;
+            border-left-color: #a78bfa !important;
+        }
+        html[data-theme="dark"] #como-inscribirse .section-header {
+            color: #c9d1d9 !important;
+        }
     </style>
     <!-- Meta Pixel Code -->
     <script>
@@ -155,6 +185,19 @@
     </noscript>
     <!-- End Meta Pixel Code -->
     <script type="text/javascript" async="async" src="https://hub.fromdoppler.com/public/dhtrack.js"></script>
+    <!-- LICDIA-ENHANCEMENTS-V1 -->
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('licdia-theme');
+          if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+          if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+        } catch(e){}
+      })();
+    </script>
+    <link href="../../css/enhancements.css" rel="stylesheet" />
+    <script src="../../js/enhancements.js" defer></script>
+
 
 </head>
 
@@ -178,7 +221,7 @@
                     <li class="nav-item"><a class="nav-link" href="../por-que-elegirnos/">Por qué elegirnos</a></li>
                     <li class="nav-item"><a class="nav-link" href="../aranceles/">Aranceles</a></li>
                     <li class="nav-item"><a class="nav-link" href="../#faq">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/charla/blockchain/#inscripcion">Preinscripción</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/charla/blockchain/#inscripcion">Inscripción</a></li>
                     <li class="nav-item"><a class="nav-link" href="../../">LICDIA</a></li>
                 </ul>
             </div>
@@ -412,7 +455,7 @@
                 btn.textContent = 'Enviando...';
                 var data = new FormData(form);
                 data.append('Origen', 'Inscripción Diplomatura Blockchain');
-                fetch('https://lamb-texture-chef-cuts.trycloudflare.com/webhook/licdia-inscripcion', {
+                fetch('https://buried-albert-webshots-submit.trycloudflare.com/webhook/licdia-inscripcion', {
                     method: 'POST',
                     body: data,
                     headers: { 'Accept': 'application/json' }

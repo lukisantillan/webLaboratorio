@@ -395,6 +395,19 @@
         <img height="1" width="1" style="display:none"
             src="https://www.facebook.com/tr?id=1845986945991192&ev=PageView&noscript=1" />
     </noscript>
+    <!-- LICDIA-ENHANCEMENTS-V1 -->
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('licdia-theme');
+          if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+          if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+        } catch(e){}
+      })();
+    </script>
+    <link href="../../css/enhancements.css" rel="stylesheet" />
+    <script src="../../js/enhancements.js" defer></script>
+
 
 </head>
 
@@ -417,7 +430,7 @@
                     <li class="nav-item"><a class="nav-link" href="../por-que-elegirnos/">Por qué elegirnos</a></li>
                     <li class="nav-item"><a class="nav-link" href="../aranceles/">Aranceles</a></li>
                     <li class="nav-item"><a class="nav-link" href="../#faq">FAQ</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/charla/blockchain/#inscripcion">Preinscripción</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/charla/blockchain/#inscripcion">Inscripción</a></li>
                     <li class="nav-item"><a class="nav-link" href="../../">LICDIA</a></li>
                 </ul>
             </div>

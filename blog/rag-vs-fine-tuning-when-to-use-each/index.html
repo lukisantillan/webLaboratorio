@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>RAG vs Fine-Tuning: When to Use Each (and When Not To) — LICDIA UNLu Blog</title>
+    <meta name="description" content="A decision framework based on what you actually want the model to do, not what's trending" />
+    <meta name="author" content="David Petrocelli — LICDIA UNLu" />
+    <link rel="canonical" href="https://licdia.unlu.edu.ar/blog/rag-vs-fine-tuning-when-to-use-each/" />
+
+    <meta property="og:title" content="RAG vs Fine-Tuning: When to Use Each (and When Not To)" />
+    <meta property="og:description" content="A decision framework based on what you actually want the model to do, not what's trending" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://licdia.unlu.edu.ar/blog/rag-vs-fine-tuning-when-to-use-each/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "RAG vs Fine-Tuning: When to Use Each (and When Not To)",
+      "description": "A decision framework based on what you actually want the model to do, not what's trending",
+      "author": { "@type": "Person", "name": "David Petrocelli", "url": "https://licdia.unlu.edu.ar/" },
+      "publisher": { "@type": "CollegeOrUniversity", "name": "Universidad Nacional de Lujan", "url": "https://www.unlu.edu.ar/" },
+      "mainEntityOfPage": "https://licdia.unlu.edu.ar/blog/rag-vs-fine-tuning-when-to-use-each/",
+      "datePublished": "2026-05-27",
+      "inLanguage": "en"
+    }
+    </script>
+
+    <link rel="icon" type="image/x-icon" href="../../assets/favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/highlight.js@11.9.0/styles/github.min.css" rel="stylesheet" />
+
+    <!-- LICDIA-ENHANCEMENTS-V1 -->
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('licdia-theme');
+          if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+          if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+        } catch(e){}
+      })();
+    </script>
+    <link href="../../css/enhancements.css" rel="stylesheet" />
+    <script src="../../js/enhancements.js" defer></script>
+
+    <style>
+      body { font-family: 'Inter', system-ui, sans-serif; color: #1e293b; background: #fff; line-height: 1.7; }
+      .navbar { padding: 1rem 0; border-bottom: 1px solid #e2e8f0; background: #fff; }
+      .navbar-brand { font-weight: 800; color: #4C1C7F; font-size: 1.15rem; }
+      .navbar .nav-link { color: #475569; font-weight: 500; }
+
+      .post-header { padding: 3.5rem 0 2rem; background: linear-gradient(180deg, #faf5ff 0%, #fff 100%); }
+      .post-header .tag { display: inline-block; padding: 0.3rem 0.85rem; border-radius: 999px; font-size: 0.78rem; font-weight: 600; margin-bottom: 1rem; }
+      .tag-bc { background: #fef3c7; color: #92400e; }
+      .tag-ia { background: #dbeafe; color: #1e40af; }
+      .post-header h1 { font-size: 2.5rem; font-weight: 800; color: #1e293b; margin-bottom: 0.75rem; line-height: 1.2; }
+      .post-header .subtitle { font-size: 1.2rem; color: #64748b; }
+      .post-header .meta { margin-top: 1.5rem; color: #94a3b8; font-size: 0.9rem; }
+
+      .post-content { padding: 2rem 0 5rem; max-width: 760px; margin: 0 auto; }
+      .post-content h2 { font-size: 1.7rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; color: #1e293b; }
+      .post-content h3 { font-size: 1.3rem; font-weight: 700; margin-top: 2rem; margin-bottom: 0.75rem; color: #334155; }
+      .post-content p { margin-bottom: 1.25rem; font-size: 1.05rem; color: #334155; }
+      .post-content ul, .post-content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+      .post-content li { margin-bottom: 0.4rem; }
+      .post-content code { font-family: 'JetBrains Mono', monospace; background: #f1f5f9; color: #be185d; padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.92em; }
+      .post-content pre { background: #0f172a; color: #e2e8f0; padding: 1.25rem; border-radius: 10px; overflow-x: auto; font-size: 0.88rem; margin: 1.5rem 0; }
+      .post-content pre code { background: transparent; color: inherit; padding: 0; }
+      .post-content table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
+      .post-content th, .post-content td { border: 1px solid #e2e8f0; padding: 0.6rem 0.85rem; text-align: left; }
+      .post-content th { background: #f8fafc; font-weight: 600; }
+      .post-content blockquote { border-left: 4px solid #8B5CF6; padding-left: 1rem; color: #64748b; font-style: italic; margin: 1.5rem 0; }
+      .post-content hr { border: 0; border-top: 1px solid #e2e8f0; margin: 2.5rem 0; }
+      .post-content em { font-style: italic; color: #475569; }
+
+      .post-cta { background: linear-gradient(135deg, #4C1C7F, #8B5CF6); color: #fff; padding: 2.5rem; border-radius: 14px; margin-top: 3rem; text-align: center; }
+      .post-cta h3 { color: #fff !important; margin-bottom: 0.75rem; }
+      .post-cta p { color: rgba(255,255,255,0.9) !important; margin-bottom: 1.5rem; }
+      .post-cta a { display: inline-block; background: #fff; color: #4C1C7F; padding: 0.75rem 1.75rem; border-radius: 50px; font-weight: 700; text-decoration: none; }
+
+      footer { background: #0f172a; color: #94a3b8; padding: 2.5rem 0; text-align: center; }
+      footer a { color: #c9d1d9; }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="/">LICDIA <span style="color:#8B5CF6">UNLu</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="nav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="/blockchain-dev/">Blockchain Dev</a></li>
+            <li class="nav-item"><a class="nav-link" href="/dev-ia/">IA Generativa</a></li>
+            <li class="nav-item"><a class="nav-link active" href="/blog/">Blog</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <article>
+      <header class="post-header">
+        <div class="container">
+          <a href="/blog/" style="color:#8B5CF6; text-decoration:none; font-size:0.9rem; font-weight:600;">← Back to blog</a>
+          <div style="margin-top: 1rem;">
+            <span class="tag tag-ia">Generative AI</span>
+          </div>
+          <h1>RAG vs Fine-Tuning: When to Use Each (and When Not To)</h1>
+          <p class="subtitle">A decision framework based on what you actually want the model to do, not what's trending</p>
+          <div class="meta">By David Petrocelli · LICDIA UNLu · 2026</div>
+        </div>
+      </header>
+
+      <div class="container">
+        <div class="post-content">
+          <h1>RAG vs Fine-Tuning: When to Use Each (and When Not To)</h1>
+<p>If you're building anything with LLMs in production, this question shows up in week one and never really goes away. The internet has a lot of bad takes on it. Here's what actually matters.</p>
+<h2>The 30-second answer</h2>
+<ul>
+<li><strong>RAG</strong> = "give the model fresh information at inference time"</li>
+<li><strong>Fine-tuning</strong> = "change how the model behaves or speaks"</li>
+</ul>
+<p>They solve different problems. Most teams need RAG. A few teams need fine-tuning. A small minority need both.</p>
+<h2>When you need RAG</h2>
+<p>Use RAG when the bottleneck is <strong>knowledge the model doesn't have</strong>.</p>
+<p>Examples:
+- A customer support bot that needs to know your product docs (which update weekly)
+- A legal assistant searching internal contracts
+- A coding agent that needs to read the current state of a repo
+- Any chatbot that should never confidently make up facts</p>
+<p>The pattern is always the same:</p>
+<pre><code>user query
+    ↓
+embed query
+    ↓
+search vector DB (top 5-20 chunks)
+    ↓
+inject chunks into prompt
+    ↓
+LLM generates answer grounded in chunks
+</code></pre>
+<p>The model itself doesn't change. You're just feeding it the right context at the right time.</p>
+<p><strong>Cost reality</strong>: a well-tuned RAG pipeline with <code>gpt-4.1-mini</code> or <code>claude-haiku-4-5</code> runs ~$0.001-0.005 per query at scale. The infrastructure (vector DB, embeddings, orchestration) is the real engineering work.</p>
+<h2>When you need fine-tuning</h2>
+<p>Use fine-tuning when the bottleneck is <strong>how the model behaves</strong>.</p>
+<p>Examples:
+- You need it to always answer in a specific JSON schema (and prompt engineering keeps failing on edge cases)
+- You need it to mimic a specific writing style across thousands of generations
+- You need it to handle a specialized vocabulary (medical, legal, internal jargon) without constantly explaining terms
+- You need a smaller, cheaper model to behave like a bigger one for a narrow task (distillation)</p>
+<p>The pattern:</p>
+<pre><code>collect 500-5.000 high-quality examples of (input, ideal output)
+    ↓
+fine-tune base model on those examples
+    ↓
+deploy the new model
+    ↓
+serve it like any other model
+</code></pre>
+<p><strong>Cost reality</strong>: fine-tuning an open model (Llama 3.3, Mistral) costs $50-500 in compute. Hosting it costs ~$0.50-3/hour depending on size and provider. Fine-tuning a frontier closed model (OpenAI, Anthropic) is more expensive but the operational simplicity is worth it for small teams.</p>
+<h2>When you absolutely don't need either</h2>
+<p>Be honest: a lot of "AI projects" are just <strong>prompt engineering problems wearing a costume</strong>.</p>
+<p>Before reaching for RAG or fine-tuning, try:</p>
+<ol>
+<li>A better system prompt with explicit examples</li>
+<li>Tool use (function calling) instead of forcing the model to know everything</li>
+<li>A smaller model with a cleaner prompt instead of a bigger one with a sloppy one</li>
+</ol>
+<p>If GPT-4.1 with a 200-word system prompt does the job, that <em>is</em> the production answer. Adding RAG or fine-tuning to feel sophisticated is technical debt with extra steps.</p>
+<h2>The decision matrix</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>First try</th>
+<th>If that fails</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"It hallucinates facts about our domain"</td>
+<td>RAG</td>
+<td>Fine-tune for grounding</td>
+</tr>
+<tr>
+<td>"It doesn't follow our output format"</td>
+<td>Better prompt + examples</td>
+<td>Fine-tune for format</td>
+</tr>
+<tr>
+<td>"It's too expensive at scale"</td>
+<td>Smaller model + RAG</td>
+<td>Distill via fine-tuning</td>
+</tr>
+<tr>
+<td>"It doesn't know about events after its cutoff"</td>
+<td>RAG with web search</td>
+<td>(Don't fine-tune for facts. Ever.)</td>
+</tr>
+<tr>
+<td>"It writes in the wrong tone"</td>
+<td>System prompt with style guide</td>
+<td>Fine-tune on tone examples</td>
+</tr>
+<tr>
+<td>"It can't reason about long documents"</td>
+<td>RAG with hierarchical chunking</td>
+<td>Long-context model</td>
+</tr>
+</tbody>
+</table>
+<h2>The combined pattern (real production systems)</h2>
+<p>The mature setup in most production LLM stacks looks like:</p>
+<ol>
+<li><strong>Fine-tuned smaller model</strong> as the "router" (cheap, fast, specialized)</li>
+<li><strong>RAG pipeline</strong> for any domain-specific knowledge</li>
+<li><strong>Frontier model</strong> for the hard cases the router escalates</li>
+</ol>
+<p>Example: a customer support agent might use a fine-tuned Llama 3.3 8B for 80% of queries (template responses, simple lookups), with a Claude or GPT-4.1 fallback for the 20% that need real reasoning. RAG over the docs feeds both.</p>
+<p>This is overkill for an MVP. It's the right architecture once you're handling 100k+ queries/month and need to control costs.</p>
+<h2>What I tell teams starting out</h2>
+<p>Build the dumbest thing that works first. Track where it fails. Let the failures tell you whether you need RAG (model doesn't know things) or fine-tuning (model doesn't behave correctly) or just a better prompt.</p>
+<p>Most teams reach for fine-tuning when RAG would have solved it. RAG is reversible, debuggable, and your data stays in your control. Fine-tuning bakes assumptions into a model — it's harder to roll back.</p>
+<h2>One more thing: evaluation matters more than the technique</h2>
+<p>Whatever you choose, you need a <strong>regression test suite of 50-200 representative queries</strong> with expected behaviors. Without that, you can't tell if a change made things better or worse. This single discipline separates production-grade LLM systems from demos that work on Tuesday and break on Wednesday.</p>
+<p>We dedicate an entire module of the curriculum to evaluation methodology because it's the unsexy skill that determines whether anything else you build is actually working.</p>
+
+          <div class="post-cta">
+            <h3>Want to go deeper?</h3>
+            <p>This article is a small slice of what we teach in the Generative AI Development Diploma at UNLu. The full program covers RAG architectures, fine-tuning, evaluation frameworks, MLOps for LLMs, and production deployment.</p>
+            <a href="/dev-ia/">Explore the IA Diploma</a>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <footer>
+      <div class="container">
+        <p class="mb-2">LICDIA — Licenciatura en Sistemas de Informacion, Universidad Nacional de Lujan</p>
+        <p class="mb-0" style="font-size: 0.85rem;">
+          <a href="/blockchain-dev/">Blockchain Dev</a> ·
+          <a href="/dev-ia/">IA Generativa</a> ·
+          <a href="/blog/">Blog</a>
+        </p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.9.0/build/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>
