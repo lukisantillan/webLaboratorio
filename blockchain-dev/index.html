@@ -657,7 +657,7 @@
                 left: 8%;
                 right: 8%;
                 height: 3px;
-                background: linear-gradient(90deg, #60a5fa 0%, #1354A0 100%);
+                background: linear-gradient(90deg, var(--brand) 0%, var(--brand-dark) 100%);
                 z-index: 0;
             }
             .proceso-step {
@@ -671,7 +671,7 @@
                 width: 72px;
                 height: 72px;
                 border-radius: 50%;
-                background: linear-gradient(135deg, #1C2E54 0%, #1354A0 100%);
+                background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
                 color: #fff;
                 display: flex;
                 align-items: center;
@@ -680,21 +680,21 @@
                 font-weight: 700;
                 margin: 0 auto 1rem auto;
                 border: 4px solid #fff;
-                box-shadow: 0 4px 12px rgba(28, 46, 84, 0.25);
+                box-shadow: 0 4px 12px rgba(76, 28, 127, 0.25);
                 transition: transform .25s ease, box-shadow .25s ease;
             }
             .proceso-step:hover .proceso-bolita {
                 transform: translateY(-4px);
-                box-shadow: 0 8px 20px rgba(28, 46, 84, 0.35);
+                box-shadow: 0 8px 20px rgba(76, 28, 127, 0.4);
             }
             .proceso-fecha {
                 font-size: .7rem;
                 font-weight: 700;
                 letter-spacing: .08em;
                 text-transform: uppercase;
-                color: #1354A0;
-                background: rgba(96,165,250,0.12);
-                border: 1px solid rgba(96,165,250,0.3);
+                color: var(--brand);
+                background: var(--brand-soft);
+                border: 1px solid rgba(76,28,127,0.3);
                 border-radius: 999px;
                 padding: .25rem .75rem;
                 display: inline-block;
@@ -703,7 +703,7 @@
             .proceso-titulo {
                 font-size: 1rem;
                 font-weight: 700;
-                color: #1C2E54;
+                color: var(--brand-dark);
                 margin-bottom: .25rem;
                 line-height: 1.3;
             }
@@ -713,14 +713,14 @@
                 line-height: 1.4;
                 margin-bottom: 0;
             }
-            [data-theme="dark"] .proceso-titulo { color: #e8eef7; }
+            [data-theme="dark"] .proceso-titulo { color: #f0e6ff; }
             [data-theme="dark"] .proceso-fecha {
-                color: #93c5fd;
-                background: rgba(96,165,250,0.15);
-                border-color: rgba(96,165,250,0.35);
+                color: #c8a8ff;
+                background: rgba(76,28,127,0.2);
+                border-color: rgba(200,168,255,0.35);
             }
             [data-theme="dark"] .proceso-desc { color: #a0aec0; }
-            [data-theme="dark"] .proceso-bolita { border-color: #1a1f2e; }
+            [data-theme="dark"] .proceso-bolita { border-color: #1a1024; }
             @media (max-width: 767px) {
                 .proceso-timeline {
                     flex-direction: column;
@@ -733,7 +733,7 @@
                     right: auto;
                     width: 3px;
                     height: auto;
-                    background: linear-gradient(180deg, #60a5fa 0%, #1354A0 100%);
+                    background: linear-gradient(180deg, var(--brand) 0%, var(--brand-dark) 100%);
                 }
                 .proceso-step { padding: 0 1rem; }
             }
@@ -742,32 +742,32 @@
         <div class="proceso-timeline">
             <div class="proceso-step">
                 <div class="proceso-bolita">1</div>
-                <span class="proceso-fecha">~ Hasta 30/06/26</span>
+                <span class="proceso-fecha">Aprox. hasta 30/06/26</span>
                 <h3 class="proceso-titulo">Reserva de cupo + documentación</h3>
                 <p class="proceso-desc">Completás el formulario online y subís tus papeles. Reservás tu lugar en la 1ra cohorte 2026.</p>
             </div>
             <div class="proceso-step">
                 <div class="proceso-bolita">2</div>
-                <span class="proceso-fecha">~ 01–15/07/26</span>
+                <span class="proceso-fecha">Aprox. 01–15/07/26</span>
                 <h3 class="proceso-titulo">Evaluación académica del perfil</h3>
                 <p class="proceso-desc">La dirección académica revisa tu título y experiencia. Te confirmamos por email.</p>
             </div>
             <div class="proceso-step">
                 <div class="proceso-bolita">3</div>
-                <span class="proceso-fecha">~ 16–22/07/26</span>
+                <span class="proceso-fecha">Aprox. 16–22/07/26</span>
                 <h3 class="proceso-titulo">Confirmación formal del cupo</h3>
                 <p class="proceso-desc">Recibís el OK definitivo y los datos para abonar la matrícula.</p>
             </div>
             <div class="proceso-step">
                 <div class="proceso-bolita">4</div>
-                <span class="proceso-fecha">~ 23/07 – Ago'26</span>
+                <span class="proceso-fecha">Aprox. 23/07 – Ago'26</span>
                 <h3 class="proceso-titulo">Pago de matrícula + 1er módulo</h3>
                 <p class="proceso-desc">Abonás matrícula y primera cuota. <strong>Arrancás la cursada en agosto 2026.</strong></p>
             </div>
         </div>
 
         <div class="text-center mt-5">
-            <a href="/charla/blockchain/#inscripcion" class="btn btn-lg px-4 py-3" style="background:#1C2E54; color:#fff; font-size:1rem; font-weight:700; border:2px solid #1C2E54;">
+            <a href="/charla/blockchain/#inscripcion" class="btn btn-lg px-4 py-3" style="background:var(--brand); color:#fff; font-size:1rem; font-weight:700; border:2px solid var(--brand);">
                 <i class="fas fa-rocket me-2"></i>Empezar el paso 1: reservar mi cupo
             </a>
         </div>
