@@ -661,6 +661,7 @@
     </script>
     <link href="../css/enhancements.css" rel="stylesheet" />
     <script src="../js/enhancements.js" defer></script>
+    <script src="/js/web-vitals-tracker.js" defer></script>
 
 
 </head>
@@ -1781,7 +1782,7 @@
                 <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1500">
                     <div class="team-member">
                         <a href="docentes/fernandez/">
-                            <img class="mx-auto rounded-circle" src="../assets/img/team/1.jpg" alt="Mg. Juan M. Fernández" />
+                            <picture><source srcset="../assets/img/team/1.webp" type="image/webp"><img class="mx-auto rounded-circle" src="../assets/img/team/1.jpg" alt="Mg. Juan M. Fernández" ></picture>
                         </a>
                         <div>
                             <h4><a href="docentes/fernandez/" class="text-decoration-none text-dark">Mg. Juan M. Fernández</a></h4>
@@ -1802,7 +1803,7 @@
                 <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1500">
                     <div class="team-member">
                         <a href="docentes/petrocelli/">
-                            <img class="mx-auto rounded-circle" src="../assets/img/team/24.jpg" alt="Dr. David Petrocelli" />
+                            <img class="mx-auto rounded-circle" src="../assets/img/team/24.jpg" alt="Dr. David Petrocelli" loading="lazy">
                         </a>
                         <div>
                             <h4><a href="docentes/petrocelli/" class="text-decoration-none text-dark">Dr. David Petrocelli</a></h4>
@@ -1824,7 +1825,7 @@
                 <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1500">
                     <div class="team-member">
                         <a href="docentes/matuk/">
-                            <img class="mx-auto rounded-circle" src="../assets/img/team/2.jpg" alt="Dra. Rosana Matuk" />
+                            <picture><source srcset="../assets/img/team/2.webp" type="image/webp"><img class="mx-auto rounded-circle" src="../assets/img/team/2.jpg" alt="Dra. Rosana Matuk" loading="lazy"></picture>
                         </a>
                         <h4><a href="docentes/matuk/" class="text-decoration-none text-dark">Dra. Rosana Matuk</a></h4>
                         <p class="text-muted">
@@ -1842,7 +1843,7 @@
                 <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1500">
                     <div class="team-member">
                         <a href="docentes/gasch/">
-                            <img class="mx-auto rounded-circle" src="../assets/img/team/gasch.jpg" alt="Mg. Diego Gasch" />
+                            <img class="mx-auto rounded-circle" src="../assets/img/team/gasch.jpg" alt="Mg. Diego Gasch" loading="lazy">
                         </a>
                         <h4><a href="docentes/gasch/" class="text-decoration-none text-dark">Mg. Diego Gasch</a></h4>
                         <p class="text-muted">
@@ -2859,7 +2860,7 @@
 
 
     <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script defer src="../js/scripts.js"></script>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
@@ -2888,18 +2889,37 @@
                     var submitBtn = formCharla.querySelector('button');
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'Enviando...';
+                    var controller = new AbortController();
+                    var timeoutId = setTimeout(function () { controller.abort(); }, 120000);
                     fetch('https://n8n.impulsate.lat/webhook/licdia-inscripcion', {
                         method: 'POST',
                         body: data,
-                        headers: { 'Accept': 'application/json' }
-                    }).then(function (r) { return r.json().catch(function () { return {}; }); })
+                        headers: { 'Accept': 'application/json' },
+                        signal: controller.signal
+                    }).then(function (r) { clearTimeout(timeoutId); return r.json().catch(function () { return {}; }); })
                       .then(function (resp) {
                         if (resp && resp.event_id) {
                             try { sessionStorage.setItem('lead_event_id', resp.event_id); } catch (e) {}
                         }
                         window.location.href = 'gracias-charla/';
-                      }).catch(function () {
-                        window.location.href = 'gracias-charla/';
+                      }).catch(function (err) {
+                        clearTimeout(timeoutId);
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Reservar mi lugar';
+                        var existing = document.getElementById('formCharla-error');
+                        if (existing) existing.remove();
+                        var div = document.createElement('div');
+                        div.id = 'formCharla-error';
+                        div.className = 'alert alert-danger mt-3';
+                        div.setAttribute('role', 'alert');
+                        var msg = (err && err.name === 'AbortError')
+                            ? 'El envío demoró demasiado. Por favor escribinos por WhatsApp.'
+                            : 'Error al enviar. Intentá de nuevo o escribinos por WhatsApp.';
+                        var waText = encodeURIComponent('Hola! Tuve un problema al enviar el formulario de la charla de IA Generativa. Quiero reservar mi lugar.');
+                        div.innerHTML = '<div class="mb-2">' + msg + '</div>' +
+                            '<a href="https://api.whatsapp.com/send?phone=541123953895&text=' + waText + '" target="_blank" rel="noopener" class="btn btn-success btn-sm">' +
+                            '<i class="fab fa-whatsapp me-1"></i>Escribinos por WhatsApp</a>';
+                        formCharla.appendChild(div);
                       });
                 });
             }

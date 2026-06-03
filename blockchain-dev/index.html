@@ -508,6 +508,7 @@
     </script>
     <link href="../css/enhancements.css" rel="stylesheet" />
     <script src="../js/enhancements.js" defer></script>
+    <script src="/js/web-vitals-tracker.js" defer></script>
 
 
 </head>
@@ -1152,7 +1153,7 @@
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1500">
                     <div class="team-member">
                         <a href="docentes/petrocelli/" style="text-decoration:none; color:inherit;">
-                            <img class="mx-auto rounded-circle" src="../assets/img/team/petrocelli.jpg" alt="Dr. David Petrocelli - Director" />
+                            <img class="mx-auto rounded-circle" src="../assets/img/team/petrocelli.jpg" alt="Dr. David Petrocelli - Director" >
                             <div>
                                 <h4>Dr. David Petrocelli</h4>
                                 <h5 class="h5" style="color: #6c757d;">(Director)</h5>
@@ -1171,7 +1172,7 @@
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1500">
                     <div class="team-member">
                         <a href="docentes/fernandez/" style="text-decoration:none; color:inherit;">
-                            <img class="mx-auto rounded-circle" src="../assets/img/team/1.jpg" alt="Mg. Juan M. Fernández - Coordinador Académico" />
+                            <picture><source srcset="../assets/img/team/1.webp" type="image/webp"><img class="mx-auto rounded-circle" src="../assets/img/team/1.jpg" alt="Mg. Juan M. Fernández - Coordinador Académico" loading="lazy"></picture>
                             <div>
                                 <h4>Mg. Juan M. Fernández</h4>
                                 <h5 class="h5" style="color: #6c757d;">(Coordinador Académico)</h5>
@@ -1192,7 +1193,7 @@
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1500">
                     <div class="team-member">
                         <a href="docentes/olivares/" style="text-decoration:none; color:inherit;">
-                            <img class="mx-auto rounded-circle" src="../assets/img/team/olivares.jpg" alt="Dr. Julián Olivares" />
+                            <img class="mx-auto rounded-circle" src="../assets/img/team/olivares.jpg" alt="Dr. Julián Olivares" loading="lazy">
                             <h4>Dr. Julián Olivares</h4>
                             <p class="text-muted">
                                 Dr. en Historia (UBA). Lic. en Historia (UNLu). <br>
@@ -1207,7 +1208,7 @@
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1500">
                     <div class="team-member">
                         <a href="docentes/prados/" style="text-decoration:none; color:inherit;">
-                            <img class="mx-auto rounded-circle" src="../assets/img/team/prados.jpg" alt="APU Nehuén Prados" />
+                            <picture><source srcset="../assets/img/team/prados.webp" type="image/webp"><img class="mx-auto rounded-circle" src="../assets/img/team/prados.jpg" alt="APU Nehuén Prados" loading="lazy"></picture>
                             <h4>APU Nehuén Prados</h4>
                             <p class="text-muted">
                                 Analista Programador Universitario (UNLu). <br>
@@ -1222,7 +1223,7 @@
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1500">
                     <div class="team-member">
                         <a href="docentes/guevara/" style="text-decoration:none; color:inherit;">
-                            <img class="mx-auto rounded-circle" src="../assets/img/team/guevara.jpg" alt="Deiller Guevara" />
+                            <img class="mx-auto rounded-circle" src="../assets/img/team/guevara.jpg" alt="Deiller Guevara" loading="lazy">
                             <h4>Deiller Guevara</h4>
                             <p class="text-muted">
                                 Operador de Derivados — Programa NOR XI, A3 Mercados. <br>
@@ -1237,7 +1238,7 @@
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1500">
                     <div class="team-member">
                         <a href="docentes/ciro/" style="text-decoration:none; color:inherit;">
-                            <img class="mx-auto rounded-circle" src="../assets/img/team/ciro.jpg" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Ciro+Romero&background=4C1C7F&color=fff&size=400&bold=true&font-size=0.4';" alt="Ciro Edgardo Romero" />
+                            <img class="mx-auto rounded-circle" src="../assets/img/team/ciro.jpg" onerror="this.onerror=null;this.src='https://ui-avatars.com/api/?name=Ciro+Romero&background=4C1C7F&color=fff&size=400&bold=true&font-size=0.4';" alt="Ciro Edgardo Romero" loading="lazy">
                             <h4>Ciro E. Romero</h4>
                             <p class="text-muted">
                                 Líder de I+D+i en C&amp;S Informática S.A. <br>
@@ -2497,7 +2498,7 @@
 
 
     <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script defer src="../js/scripts.js"></script>
     <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
@@ -2585,18 +2586,37 @@
                     var submitBtn = formCharla.querySelector('button');
                     submitBtn.disabled = true;
                     submitBtn.textContent = 'Enviando...';
+                    var controller = new AbortController();
+                    var timeoutId = setTimeout(function () { controller.abort(); }, 120000);
                     fetch('https://n8n.impulsate.lat/webhook/licdia-inscripcion', {
                         method: 'POST',
                         body: data,
-                        headers: { 'Accept': 'application/json' }
-                    }).then(function (r) { return r.json().catch(function () { return {}; }); })
+                        headers: { 'Accept': 'application/json' },
+                        signal: controller.signal
+                    }).then(function (r) { clearTimeout(timeoutId); return r.json().catch(function () { return {}; }); })
                       .then(function (resp) {
                         if (resp && resp.event_id) {
                             try { sessionStorage.setItem('lead_event_id', resp.event_id); } catch (e) {}
                         }
                         window.location.href = 'gracias-charla/';
-                      }).catch(function () {
-                        window.location.href = 'gracias-charla/';
+                      }).catch(function (err) {
+                        clearTimeout(timeoutId);
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Reservar mi lugar';
+                        var existing = document.getElementById('formCharla-error');
+                        if (existing) existing.remove();
+                        var div = document.createElement('div');
+                        div.id = 'formCharla-error';
+                        div.className = 'alert alert-danger mt-3';
+                        div.setAttribute('role', 'alert');
+                        var msg = (err && err.name === 'AbortError')
+                            ? 'El envío demoró demasiado. Por favor escribinos por WhatsApp.'
+                            : 'Error al enviar. Intentá de nuevo o escribinos por WhatsApp.';
+                        var waText = encodeURIComponent('Hola! Tuve un problema al enviar el formulario de la charla de Blockchain. Quiero reservar mi lugar.');
+                        div.innerHTML = '<div class="mb-2">' + msg + '</div>' +
+                            '<a href="https://api.whatsapp.com/send?phone=541123953895&text=' + waText + '" target="_blank" rel="noopener" class="btn btn-success btn-sm">' +
+                            '<i class="fab fa-whatsapp me-1"></i>Escribinos por WhatsApp</a>';
+                        formCharla.appendChild(div);
                       });
                 });
             }

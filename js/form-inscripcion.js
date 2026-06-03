@@ -35,6 +35,10 @@
   var BLOCK_SIZE_MB = 25;
   var TIMEOUT_MS = 120000;
   var JSZIP_CDN = 'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js';
+  var TURNSTILE_API = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+  // Default placeholder — REPLACE via LICDIAForm.init({ turnstileSiteKey: '...' })
+  var TURNSTILE_SITE_KEY = '__REPLACE_ME__';
+  var HONEYPOT_FIELD = 'website';
 
   function fmtBytes(b) {
     if (b < 1024) return b + ' B';
@@ -202,6 +206,7 @@
       var data = {};
       var formData = new FormData(form);
       formData.forEach(function (v, k) {
+        if (k === HONEYPOT_FIELD) return;
         if (!(v instanceof File)) {
           data[k] = v;
         }
@@ -271,7 +276,131 @@
     });
   }
 
-  function submitWithProgress(form, opts, progress, sizeOk) {
+  function injectHoneypot(form) {
+    if (form.querySelector('.licdia-hp')) return;
+    var wrap = document.createElement('div');
+    wrap.className = 'licdia-hp';
+    wrap.style.cssText = 'position:absolute;left:-9999px;';
+    wrap.setAttribute('aria-hidden', 'true');
+    var label = document.createElement('label');
+    label.textContent = 'No completar este campo: ';
+    var input = document.createElement('input');
+    input.type = 'text';
+    input.name = HONEYPOT_FIELD;
+    input.tabIndex = -1;
+    input.autocomplete = 'off';
+    label.appendChild(input);
+    wrap.appendChild(label);
+    form.appendChild(wrap);
+  }
+
+  function loadTurnstileScript() {
+    if (global.turnstile) return Promise.resolve(global.turnstile);
+    if (global.__licdiaTurnstileLoading) return global.__licdiaTurnstileLoading;
+    global.__licdiaTurnstileLoading = new Promise(function (resolve, reject) {
+      var existing = document.querySelector('script[data-licdia-turnstile]');
+      if (existing) {
+        existing.addEventListener('load', function () { resolve(global.turnstile); });
+        existing.addEventListener('error', function () { reject(new Error('No se pudo cargar Turnstile')); });
+        return;
+      }
+      var s = document.createElement('script');
+      s.src = TURNSTILE_API;
+      s.async = true;
+      s.defer = true;
+      s.setAttribute('data-licdia-turnstile', '1');
+      s.onload = function () { resolve(global.turnstile); };
+      s.onerror = function () { reject(new Error('No se pudo cargar Turnstile')); };
+      document.head.appendChild(s);
+    });
+    return global.__licdiaTurnstileLoading;
+  }
+
+  function setupTurnstile(form, opts) {
+    var siteKey = opts.turnstileSiteKey || TURNSTILE_SITE_KEY;
+    if (!siteKey || siteKey === '__REPLACE_ME__') {
+      console.warn('[LICDIAForm] Turnstile site key not configured — skipping captcha.');
+      return null;
+    }
+    var container = document.createElement('div');
+    container.className = 'licdia-turnstile';
+    container.style.cssText = 'margin:0 auto;';
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn && btn.parentElement) {
+      btn.parentElement.insertBefore(container, btn);
+    } else {
+      form.appendChild(container);
+    }
+
+    var widgetId = null;
+    var state = {
+      ready: false,
+      token: null,
+      error: null,
+      pending: []
+    };
+
+    function resolvePending(err, token) {
+      var list = state.pending;
+      state.pending = [];
+      list.forEach(function (p) {
+        if (err) p.reject(err); else p.resolve(token);
+      });
+    }
+
+    loadTurnstileScript().then(function (ts) {
+      if (!ts || typeof ts.render !== 'function') {
+        state.error = new Error('Turnstile no disponible');
+        resolvePending(state.error, null);
+        return;
+      }
+      widgetId = ts.render(container, {
+        sitekey: siteKey,
+        size: 'invisible',
+        callback: function (token) {
+          state.token = token;
+          state.ready = true;
+          resolvePending(null, token);
+        },
+        'error-callback': function () {
+          state.error = new Error('Turnstile error');
+          state.ready = false;
+          resolvePending(state.error, null);
+        },
+        'expired-callback': function () {
+          state.token = null;
+          state.ready = false;
+        }
+      });
+    }).catch(function (err) {
+      state.error = err;
+      resolvePending(err, null);
+    });
+
+    return {
+      getToken: function () {
+        return new Promise(function (resolve, reject) {
+          if (state.token) return resolve(state.token);
+          if (state.error) return reject(state.error);
+          state.pending.push({ resolve: resolve, reject: reject });
+          // Trigger execution if widget is rendered
+          if (global.turnstile && widgetId !== null) {
+            try { global.turnstile.execute(widgetId); } catch (e) { /* ignore */ }
+          }
+        });
+      },
+      reset: function () {
+        state.token = null;
+        state.ready = false;
+        state.error = null;
+        if (global.turnstile && widgetId !== null) {
+          try { global.turnstile.reset(widgetId); } catch (e) {}
+        }
+      }
+    };
+  }
+
+  function submitWithProgress(form, opts, progress, sizeOk, turnstileToken) {
     return new Promise(function (resolve, reject) {
       if (!sizeOk()) {
         reject(new Error('Hay archivos que superan el limite. Revisa los avisos en rojo.'));
@@ -282,8 +411,11 @@
       data.forEach(function (v, k) {
         if (v instanceof File && v.size === 0) data.delete(k);
       });
+      // Strip honeypot from outgoing payload (defense-in-depth: should be empty by here)
+      data.delete(HONEYPOT_FIELD);
       data.append('Origen', opts.origenLabel || 'Inscripcion LICDIA');
       if (opts.diplomaturaLabel) data.append('Diplomatura', opts.diplomaturaLabel);
+      if (turnstileToken) data.append('cf-turnstile-response', turnstileToken);
 
       var xhr = new XMLHttpRequest();
       var timedOut = false;
@@ -347,10 +479,23 @@
         buildErrorUI(form, errorBox, opts);
       }
 
-      // 4. Override submit handler
+      // 4. Anti-spam: honeypot
+      injectHoneypot(form);
+
+      // 5. Anti-spam: Cloudflare Turnstile (invisible)
+      var turnstile = setupTurnstile(form, opts);
+
+      // 6. Override submit handler
       form.addEventListener('submit', function (e) {
         e.preventDefault();
         if (errorBox) errorBox.style.display = 'none';
+
+        // Honeypot check — silently reject bots
+        var hpInput = form.querySelector('input[name="' + HONEYPOT_FIELD + '"]');
+        if (hpInput && hpInput.value && hpInput.value.trim() !== '') {
+          console.warn('[LICDIAForm] Bot detected (honeypot filled). Submission rejected.');
+          return;
+        }
 
         // Reservar el handler existente si hay validacion custom (campos faltantes)
         if (typeof global.getFaltantes === 'function') {
@@ -368,7 +513,13 @@
         }
         if (progress) progress.show();
 
-        submitWithProgress(form, opts, progress, sizeOk).then(function () {
+        var tokenPromise = turnstile
+          ? turnstile.getToken().then(function (t) { return t; })
+          : Promise.resolve(null);
+
+        tokenPromise.then(function (token) {
+          return submitWithProgress(form, opts, progress, sizeOk, token);
+        }).then(function () {
           if (opts.redirectUrl) {
             window.location.href = opts.redirectUrl;
           } else if (opts.successBoxId) {
@@ -383,6 +534,7 @@
             btn.disabled = false;
             btn.innerHTML = btn.dataset.originalHtml || '<i class="fas fa-paper-plane me-2"></i>Enviar inscripcion';
           }
+          if (turnstile) turnstile.reset();
           if (errorBox) {
             errorBox.style.display = 'block';
             errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
