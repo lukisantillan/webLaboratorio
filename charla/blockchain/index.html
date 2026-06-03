@@ -917,8 +917,17 @@
 
                         <div class="text-center mt-4" id="errorInscripcion" style="display:none;">
                             <i class="fas fa-exclamation-triangle fa-3x text-warning"></i>
-                            <p class="mt-3 fw-bold">No pudimos enviar tu inscripción.</p>
-                            <p class="text-muted">Probá de nuevo o escribinos por <a href="https://api.whatsapp.com/send?phone=%2B541123953895" target="_blank">WhatsApp</a>.</p>
+                            <p class="mt-3 fw-bold">No pudimos enviar tu inscripción ahora mismo.</p>
+                            <p class="text-muted mb-3">No te preocupes — bajá tu inscripción como ZIP y mandánosla por WhatsApp. La procesamos a mano enseguida.</p>
+                            <div class="d-flex flex-column flex-md-row gap-2 justify-content-center align-items-center">
+                                <button type="button" id="btnDescargarZip" class="btn btn-outline-primary px-4">
+                                    <i class="fas fa-file-archive me-2"></i>Descargar mi inscripción (ZIP)
+                                </button>
+                                <a href="https://api.whatsapp.com/send?phone=%2B541123953895&text=Hola%2C%20no%20pude%20enviar%20la%20inscripci%C3%B3n%20por%20la%20web%20y%20adjunto%20el%20ZIP%20con%20mis%20datos%20y%20documentaci%C3%B3n." target="_blank" class="btn btn-success px-4">
+                                    <i class="fab fa-whatsapp me-2"></i>Enviar por WhatsApp
+                                </a>
+                            </div>
+                            <p class="text-muted small mt-3 mb-0">Te avisamos por mail cuando recibamos el ZIP. Gracias por la paciencia.</p>
                         </div>
                     </div>
                 </div>
@@ -1092,7 +1101,7 @@
             data.append('Origen', 'Inscripción Diplomatura Blockchain');
             data.append('Diplomatura', 'Innovación y Desarrollo de Aplicaciones basadas en Blockchain');
 
-            fetch('https://passion-mandatory-dependence-wait.trycloudflare.com/webhook/licdia-inscripcion', {
+            fetch('https://n8n.impulsate.lat/webhook/licdia-inscripcion', {
                 method: 'POST',
                 headers: { 'Accept': 'application/json' },
                 body: data
