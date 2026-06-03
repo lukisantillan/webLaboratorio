@@ -55,3 +55,6 @@ dev-ia/docentes/**/*CV*.html
 **/.~lock.*
 ~$*
 *.tmp
+
+# Browser "Save Page As Complete" dumps (basura de snapshots)
+**/*_files/
