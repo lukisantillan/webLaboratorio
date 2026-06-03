@@ -1070,54 +1070,22 @@
         // Estado inicial
         updateSubmitState();
 
-        // ─── Formulario Inscripción Blockchain (con archivos) ──
-        document.getElementById('formInscripcion').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var form = this;
-            var btn  = document.getElementById('btnInscripcion');
-            var errBox = document.getElementById('errorInscripcion');
-
-            // Red de seguridad: revalido por si el usuario hackea el botón
-            var faltantes = getFaltantes();
-            if (faltantes.length > 0) {
-                updateSubmitState();
-                return;
-            }
-
-            errBox.style.display = 'none';
-            btn.disabled = true;
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Enviando inscripción...';
-
-            var data = new FormData(form);
-            // Sacar inputs file vacíos: rompen el workflow del webhook (HTTP 500)
-            var keys = [];
-            data.forEach(function(v, k) { keys.push([k, v]); });
-            keys.forEach(function(pair) {
-                var v = pair[1];
-                if (v instanceof File && v.size === 0) {
-                    data.delete(pair[0]);
-                }
-            });
-            data.append('Origen', 'Inscripción Diplomatura Blockchain');
-            data.append('Diplomatura', 'Innovación y Desarrollo de Aplicaciones basadas en Blockchain');
-
-            fetch('https://n8n.impulsate.lat/webhook/licdia-inscripcion', {
-                method: 'POST',
-                headers: { 'Accept': 'application/json' },
-                body: data
-            })
-            .then(function(r) {
-                if (!r.ok) throw new Error('HTTP ' + r.status);
-                return r.json().catch(function() { return {}; });
-            })
-            .then(function() {
-                // Redirigir a la pagina de agradecimiento (el pixel lo coloca el equipo de marketing alli)
-                window.location.href = 'https://licdia.unlu.edu.ar/blockchain-dev/gracias-diplomado/index.html';
-            })
-            .catch(function() {
-                btn.disabled = false;
-                btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Enviar inscripción';
-                errBox.style.display = 'block';
+    </script>
+    <!-- Modulo compartido: size validation, progress XHR, 120s timeout, ZIP fallback -->
+    <script src="/js/form-inscripcion.js"></script>
+    <script>
+        // Esperar a que el modulo este cargado, despues init
+        document.addEventListener('DOMContentLoaded', function () {
+            LICDIAForm.init({
+                formId: 'formInscripcion',
+                submitBtnId: 'btnInscripcion',
+                errorBoxId: 'errorInscripcion',
+                webhookUrl: 'https://n8n.impulsate.lat/webhook/licdia-inscripcion',
+                redirectUrl: 'https://licdia.unlu.edu.ar/blockchain-dev/gracias-diplomado/index.html',
+                origenLabel: 'Inscripción Diplomatura Blockchain',
+                diplomaturaLabel: 'Innovación y Desarrollo de Aplicaciones basadas en Blockchain',
+                whatsappPhone: '541123953895',
+                zipPrefix: 'inscripcion-licdia-blockchain'
             });
         });
     </script>

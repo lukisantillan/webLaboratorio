@@ -245,35 +245,20 @@
         </div>
     </section>
 
+    <!-- Modulo compartido: size validation, progress XHR, 120s timeout, ZIP fallback -->
+    <script src="/js/form-inscripcion.js"></script>
     <script>
-    (function() {
-        var form = document.getElementById('formInscripcion');
-        if (form) {
-            form.addEventListener('submit', function(e) {
-                e.preventDefault();
-                var btn = form.querySelector('button');
-                btn.disabled = true;
-                btn.textContent = 'Enviando...';
-                var data = new FormData(form);
-                data.append('Origen', 'Inscripción Diplomatura IA');
-                fetch('https://n8n.impulsate.lat/webhook/licdia-inscripcion', {
-                    method: 'POST',
-                    body: data,
-                    headers: { 'Accept': 'application/json' }
-                })
-                .then(function (r) { return r.json().catch(function () { return {}; }); })
-                .then(function (resp) {
-                    if (resp && resp.event_id) {
-                        try { sessionStorage.setItem('lead_event_id', resp.event_id); } catch (e) {}
-                    }
-                    window.location.href = '../gracias-diplomado/';
-                })
-                .catch(function() {
-                    window.location.href = '../gracias-diplomado/';
-                });
+        document.addEventListener('DOMContentLoaded', function () {
+            LICDIAForm.init({
+                formId: 'formInscripcion',
+                webhookUrl: 'https://n8n.impulsate.lat/webhook/licdia-inscripcion',
+                redirectUrl: window.location.origin + '/dev-ia/gracias-diplomado/',
+                origenLabel: 'Inscripción Diplomatura IA',
+                diplomaturaLabel: 'IA Generativa',
+                whatsappPhone: '541123953895',
+                zipPrefix: 'inscripcion-licdia-ia'
             });
-        }
-    })();
+        });
     </script>
 
     <div class="container text-center my-4">
