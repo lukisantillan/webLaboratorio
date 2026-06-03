@@ -9,6 +9,15 @@
     <meta name="robots" content="noindex, nofollow" />
     <title>Inscribite — Diplomaturas LICDIA UNLu 2026</title>
 
+    <meta property="og:title" content="Inscribite - Diplomaturas LICDIA UNLu 2026" />
+    <meta property="og:description" content="Inscribite a las charlas informativas de las Diplomaturas LICDIA UNLu 2026." />
+    <meta property="og:image" content="https://licdia.unlu.edu.ar/assets/img/og-default.jpg" />
+    <meta property="og:url" content="https://licdia.unlu.edu.ar/charla/" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Inscribite - Diplomaturas LICDIA UNLu 2026" />
+    <meta name="twitter:description" content="Inscribite a las charlas informativas de las Diplomaturas LICDIA UNLu 2026." />
+    <meta name="twitter:image" content="https://licdia.unlu.edu.ar/assets/img/og-default.jpg" />
     <link rel="icon" type="image/x-icon" href="../assets/img/logo.ico" />
     <script defer src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
@@ -332,6 +341,7 @@
         .charla-footer a { color: #a8c5e0; text-decoration: none; }
 
     </style>
+    <script src="/js/web-vitals-tracker.js" defer></script>
 </head>
 
 <body id="page-top">
@@ -600,7 +610,7 @@
     </a>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
         // ─── Countdown ───────────────────────────────────────
@@ -622,6 +632,22 @@
             setInterval(tick, 1000);
         })();
 
+        // ─── Helper: render inline error with WhatsApp fallback ─
+        function showFormError(formId, message) {
+            var form = document.getElementById(formId);
+            var existing = document.getElementById(formId + '-error');
+            if (existing) existing.remove();
+            var div = document.createElement('div');
+            div.id = formId + '-error';
+            div.className = 'alert alert-danger mt-3';
+            div.setAttribute('role', 'alert');
+            var waText = encodeURIComponent('Hola! Tuve un problema al enviar el formulario de la charla. Quiero reservar mi lugar.');
+            div.innerHTML = '<div class="mb-2">' + message + '</div>' +
+                '<a href="https://api.whatsapp.com/send?phone=541123953895&text=' + waText + '" target="_blank" rel="noopener" class="btn btn-success btn-sm">' +
+                '<i class="fab fa-whatsapp me-1"></i>Escribinos por WhatsApp</a>';
+            form.appendChild(div);
+        }
+
         // ─── Formulario IA ────────────────────────────────────
         document.getElementById('formIA').addEventListener('submit', function(e) {
             e.preventDefault();
@@ -630,21 +656,28 @@
             btn.textContent = 'Enviando...';
             var data = new FormData(this);
             data.append('Origen', 'Registro charla exclusiva IA');
+            var controller = new AbortController();
+            var timeoutId = setTimeout(function() { controller.abort(); }, 120000);
             fetch('https://n8n.impulsate.lat/webhook/licdia-inscripcion', {
                 method: 'POST',
                 headers: { 'Accept': 'application/json' },
-                body: data
+                body: data,
+                signal: controller.signal
             })
-            .then(function(r) { return r.json(); })
+            .then(function(r) { clearTimeout(timeoutId); return r.json(); })
             .then(function() {
                 document.getElementById('formIA').style.display = 'none';
                 document.getElementById('successIA').style.display = 'block';
                 if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'charla-exclusiva-ia' });
             })
-            .catch(function() {
+            .catch(function(err) {
+                clearTimeout(timeoutId);
                 btn.disabled = false;
                 btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Inscribirme en IA';
-                alert('Error al enviar. Intentá de nuevo o escribinos por WhatsApp.');
+                var msg = (err && err.name === 'AbortError')
+                    ? 'El envío demoró demasiado. Por favor escribinos por WhatsApp.'
+                    : 'Error al enviar. Intentá de nuevo o escribinos por WhatsApp.';
+                showFormError('formIA', msg);
             });
         });
 
@@ -656,21 +689,28 @@
             btn.textContent = 'Enviando...';
             var data = new FormData(this);
             data.append('Origen', 'Registro charla exclusiva Blockchain');
+            var controller = new AbortController();
+            var timeoutId = setTimeout(function() { controller.abort(); }, 120000);
             fetch('https://n8n.impulsate.lat/webhook/licdia-inscripcion', {
                 method: 'POST',
                 headers: { 'Accept': 'application/json' },
-                body: data
+                body: data,
+                signal: controller.signal
             })
-            .then(function(r) { return r.json(); })
+            .then(function(r) { clearTimeout(timeoutId); return r.json(); })
             .then(function() {
                 document.getElementById('formBC').style.display = 'none';
                 document.getElementById('successBC').style.display = 'block';
                 if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'charla-exclusiva-bc' });
             })
-            .catch(function() {
+            .catch(function(err) {
+                clearTimeout(timeoutId);
                 btn.disabled = false;
                 btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Inscribirme en Blockchain';
-                alert('Error al enviar. Intentá de nuevo o escribinos por WhatsApp.');
+                var msg = (err && err.name === 'AbortError')
+                    ? 'El envío demoró demasiado. Por favor escribinos por WhatsApp.'
+                    : 'Error al enviar. Intentá de nuevo o escribinos por WhatsApp.';
+                showFormError('formBC', msg);
             });
         });
     </script>

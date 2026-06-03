@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /blockchain-dev/inscripcion-blockchain-dev/propuesta-*
 
 Sitemap: https://licdia.unlu.edu.ar/sitemap.xml
