@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Diplomatura de Posgrado en Desarrollo de Soluciones de Inteligencia Artificial Generativa en la Nube — LICDIA UNLu. Cupos limitados: solo 30. Inscripciones abren el 26 de mayo." />
+    <meta name="description" content="Diplomatura de Posgrado en Desarrollo de Soluciones de Inteligencia Artificial Generativa en la Nube — LICDIA UNLu. Cupos limitados: solo 30. Charla informativa gratuita: jueves 23 de julio." />
     <meta name="author" content="LICDIA - UNLu" />
     <meta name="robots" content="noindex, nofollow" />
     <title>Inscribite — Diplomatura en IA Generativa — LICDIA UNLu 2026</title>
@@ -601,6 +601,45 @@
         }
         .btn-hero-cta:hover { background: var(--brand-mid); color: #fff; border-color: #fff; }
 
+        /* ─── fechas de charlas (hero) ─── */
+        .charlas-fechas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: .75rem;
+        }
+        .charla-fecha-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(255,255,255,0.22);
+            border-radius: .9rem;
+            padding: .7rem 1.4rem;
+            min-width: 150px;
+        }
+        .charla-fecha-card .cf-badge {
+            font-family: 'Montserrat', sans-serif;
+            font-size: .72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            color: #a8c5e0;
+        }
+        .charla-fecha-card .cf-day {
+            font-family: 'Roboto Slab', serif;
+            font-size: .95rem;
+            color: #cdddee;
+            margin-top: .2rem;
+        }
+        .charla-fecha-card .cf-date {
+            font-family: 'Roboto Slab', serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #fff;
+            margin-top: .02rem;
+        }
+
         /* ─── cupos pill ─── */
         .cupos-pill {
             display: inline-flex;
@@ -661,7 +700,7 @@
     <section class="charla-hero" id="exclusiva">
         <div class="container">
             <span class="countdown-chip mb-3">
-                <i class="fas fa-calendar-day"></i>&nbsp;Inscripciones abren el 26 de mayo
+                <i class="fas fa-calendar-day"></i>&nbsp;Charla informativa gratuita: jueves 23 de julio
             </span>
             <h1>Diplomatura de Posgrado en Desarrollo de Soluciones de Inteligencia Artificial Generativa en la Nube</h1>
             <p class="subtitle">Universidad Nacional de Luján · LICDIA</p>
@@ -681,12 +720,13 @@
                 <i class="fas fa-arrow-down me-2"></i>Quiero inscribirme
             </a>
 
-            <!-- Contador regresivo hasta 26 de mayo -->
-            <div id="countdown" class="mt-3">
-                <div class="cd-block"><span class="cd-num" id="cd-days">--</span><span class="cd-label">días</span></div>
-                <div class="cd-block"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">horas</span></div>
-                <div class="cd-block"><span class="cd-num" id="cd-minutes">--</span><span class="cd-label">min</span></div>
-                <div class="cd-block"><span class="cd-num" id="cd-seconds">--</span><span class="cd-label">seg</span></div>
+            <!-- Fecha de la charla informativa -->
+            <div class="charlas-fechas mt-4">
+                <div class="charla-fecha-card">
+                    <span class="cf-badge">Charla informativa</span>
+                    <span class="cf-day">Jueves</span>
+                    <span class="cf-date">23 de julio</span>
+                </div>
             </div>
         </div>
     </section>
@@ -696,8 +736,8 @@
         <div class="container">
             <div class="row justify-content-center text-center g-0">
                 <div class="col-12 col-md-4 fecha-item highlight">
-                    <div class="label">Inscripciones abren</div>
-                    <div class="value">26 de mayo</div>
+                    <div class="label">Charla informativa</div>
+                    <div class="value">Jueves 23 de julio</div>
                 </div>
                 <div class="col-6 col-md-4 fecha-item">
                     <div class="label">Inicio de cursada</div>
@@ -943,8 +983,13 @@
 
                         <div class="text-center mt-4" id="errorInscripcion" style="display:none;">
                             <i class="fas fa-exclamation-triangle fa-3x text-warning"></i>
-                            <p class="mt-3 fw-bold">No pudimos enviar tu inscripción.</p>
-                            <p class="text-muted">Probá de nuevo o escribinos por <a href="https://api.whatsapp.com/send?phone=%2B541123953895" target="_blank">WhatsApp</a>.</p>
+                            <p class="mt-3 fw-bold">No pudimos enviar tu inscripción ahora mismo.</p>
+                            <p class="text-muted mb-3" data-error-msg>No te preocupes — ya guardamos tus datos de contacto y el equipo se va a comunicar con vos. También podés escribirnos por WhatsApp y completamos tu inscripción a mano enseguida.</p>
+                            <div class="d-flex flex-column flex-md-row gap-2 justify-content-center align-items-center">
+                                <a href="https://api.whatsapp.com/send?phone=%2B541123953895&text=Hola%2C%20no%20pude%20enviar%20la%20inscripci%C3%B3n%20por%20la%20web%20y%20quiero%20completarla%20por%20ac%C3%A1." target="_blank" class="btn btn-success px-4">
+                                    <i class="fab fa-whatsapp me-2"></i>Inscribirme por WhatsApp
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -984,25 +1029,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        // ─── Countdown ───────────────────────────────────────
-        (function() {
-            var deadline = new Date('2026-05-26T00:00:00-03:00');
-            function tick() {
-                var now  = new Date();
-                var diff = Math.max(0, deadline - now);
-                var days = Math.floor(diff / 86400000);
-                var hrs  = Math.floor((diff % 86400000) / 3600000);
-                var mins = Math.floor((diff % 3600000) / 60000);
-                var secs = Math.floor((diff % 60000) / 1000);
-                document.getElementById('cd-days').textContent    = String(days).padStart(2,'0');
-                document.getElementById('cd-hours').textContent   = String(hrs).padStart(2,'0');
-                document.getElementById('cd-minutes').textContent = String(mins).padStart(2,'0');
-                document.getElementById('cd-seconds').textContent = String(secs).padStart(2,'0');
-            }
-            tick();
-            setInterval(tick, 1000);
-        })();
-
         // ─── Aviso forma de ingreso por experiencia ───────────
         document.getElementById('ingreso').addEventListener('change', function() {
             var aviso = document.getElementById('avisoExperiencia');
@@ -1045,16 +1071,18 @@
                 var el = document.getElementById(c.id);
                 if (!el.files || el.files.length === 0) faltantes.push(c.label);
             });
-            // Aviso legajo: siempre obligatorio
             if (!document.getElementById('aceptaLegajo').checked) {
                 faltantes.push('aceptar proceso de revisión UNLu');
             }
-            // Aviso experiencia: solo si aplica
             var ingreso = document.getElementById('ingreso').value;
             if (ingreso === 'Experiencia laboral / formación no universitaria') {
                 if (!document.getElementById('aceptaRevision').checked) {
                     faltantes.push('aceptar revisión del Comité Académico');
                 }
+            } else {
+                // Título / diploma: obligatorio salvo ingreso por experiencia laboral
+                var titEl = document.getElementById('titulo');
+                if (!titEl.files || titEl.files.length === 0) faltantes.push('título / diploma');
             }
             return faltantes;
         }
@@ -1064,46 +1092,291 @@
             var btn = document.getElementById('btnInscripcion');
             var aviso = document.getElementById('faltantesAviso');
             var listEl = document.getElementById('faltantesList');
-
             if (faltantes.length === 0) {
                 btn.disabled = false;
                 aviso.style.display = 'none';
             } else {
                 btn.disabled = true;
-                listEl.innerHTML = faltantes.map(function(f) {
-                    return '<li>' + f + '</li>';
-                }).join('');
+                listEl.innerHTML = faltantes.map(function(f) { return '<li>' + f + '</li>'; }).join('');
                 aviso.style.display = 'block';
             }
         }
 
-        // Listeners en todos los campos del form
         document.querySelectorAll('#formInscripcion input, #formInscripcion select, #formInscripcion textarea')
             .forEach(function(el) {
                 el.addEventListener('input', updateSubmitState);
                 el.addEventListener('change', updateSubmitState);
             });
-
-        // Estado inicial
         updateSubmitState();
 
-    </script>
-    <!-- Modulo compartido: size validation, progress XHR, 120s timeout, ZIP fallback -->
-    <script src="/js/form-inscripcion.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            LICDIAForm.init({
-                formId: 'formInscripcion',
-                submitBtnId: 'btnInscripcion',
-                errorBoxId: 'errorInscripcion',
-                webhookUrl: 'https://n8n.impulsate.lat/webhook/licdia-inscripcion',
-                redirectUrl: 'https://licdia.unlu.edu.ar/dev-ia/gracias-diplomado/index.html',
-                origenLabel: 'Inscripción Diplomatura IA',
-                diplomaturaLabel: 'IA Generativa',
-                whatsappPhone: '541123953895',
-                zipPrefix: 'inscripcion-licdia-ia'
+        // ─── Envío directo a Google Apps Script (sin n8n) ─────
+        // Reemplaza n8n: postea datos + archivos (base64) al Apps Script,
+        // que guarda en Drive + Sheet + mail. Corre dentro de Google → no se cae.
+        (function() {
+            var EXEC_URL  = 'https://script.google.com/macros/s/AKfycbyGYQAuFBN2fS5Ms11rW3T7THxqw2YXOt1viZMz3jAA01BUv93z0v9xsn2LFCdEPXo0mg/exec';
+            var MAX_TOTAL = 15 * 1024 * 1024; // 15 MB tras comprimir (tope seguro y rápido)
+            var GRACIAS   = 'https://licdia.unlu.edu.ar/dev-ia/gracias-diplomado/';
+
+            var form = document.getElementById('formInscripcion');
+            if (!form) return;
+
+            function fileToB64(file) {
+                return new Promise(function(resolve, reject) {
+                    var r = new FileReader();
+                    r.onload  = function() { resolve(String(r.result).split(',')[1] || ''); };
+                    r.onerror = reject;
+                    r.readAsDataURL(file);
+                });
+            }
+
+            // Comprime imágenes en el navegador: el grueso del peso son las fotos
+            // (foto 4x4 + DNI). Una foto de celu de 4MB baja a ~300-400KB sin perder
+            // legibilidad. PDFs/DOCX pasan sin tocar.
+            function compressImage(file) {
+                if (!file || !/^image\//.test(file.type)) return Promise.resolve(file);
+                return new Promise(function(resolve) {
+                    try {
+                        var url = URL.createObjectURL(file);
+                        var img = new Image();
+                        img.onload = function() {
+                            var MAXDIM = 1600;
+                            var scale = Math.min(1, MAXDIM / Math.max(img.width, img.height));
+                            var w = Math.max(1, Math.round(img.width * scale));
+                            var h = Math.max(1, Math.round(img.height * scale));
+                            var canvas = document.createElement('canvas');
+                            canvas.width = w; canvas.height = h;
+                            canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+                            URL.revokeObjectURL(url);
+                            canvas.toBlob(function(blob) {
+                                if (blob && blob.size < file.size) {
+                                    var newName = file.name.replace(/\.[^.]+$/, '') + '.jpg';
+                                    resolve(new File([blob], newName, { type: 'image/jpeg' }));
+                                } else {
+                                    resolve(file); // si no mejora, dejá el original
+                                }
+                            }, 'image/jpeg', 0.82);
+                        };
+                        img.onerror = function() { URL.revokeObjectURL(url); resolve(file); };
+                        img.src = url;
+                    } catch (e) { resolve(file); }
+                });
+            }
+
+            // Carga perezosa de pdf.js + jsPDF (solo si hay que comprimir un PDF pesado).
+            function loadScript(src) {
+                return new Promise(function(res, rej) {
+                    var s = document.createElement('script');
+                    s.src = src; s.onload = res; s.onerror = rej;
+                    document.head.appendChild(s);
+                });
+            }
+            function ensurePdfLibs() {
+                var chain = Promise.resolve();
+                if (!window.pdfjsLib) {
+                    chain = chain
+                        .then(function() { return loadScript('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js'); })
+                        .then(function() { window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'; });
+                }
+                if (!window.jspdf) {
+                    chain = chain.then(function() { return loadScript('https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js'); });
+                }
+                return chain;
+            }
+            // Comprime un PDF re-renderizando cada página a JPEG y rearmando un PDF nuevo.
+            // Sirve sobre todo para escaneos/fotos en PDF (los pesados). Solo si pesa > 2MB.
+            function compressPdf(file) {
+                if (!file || file.type !== 'application/pdf' || file.size < 2 * 1024 * 1024) return Promise.resolve(file);
+                return ensurePdfLibs()
+                    .then(function() { return file.arrayBuffer(); })
+                    .then(function(buf) { return window.pdfjsLib.getDocument({ data: buf }).promise; })
+                    .then(function(pdf) {
+                        var jsPDF = window.jspdf.jsPDF;
+                        var out = null;
+                        var seq = Promise.resolve();
+                        for (var i = 1; i <= pdf.numPages; i++) {
+                            (function(n) {
+                                seq = seq.then(function() {
+                                    return pdf.getPage(n).then(function(page) {
+                                        var vp = page.getViewport({ scale: 1.5 }); // ~150 DPI
+                                        var canvas = document.createElement('canvas');
+                                        canvas.width = vp.width; canvas.height = vp.height;
+                                        return page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise.then(function() {
+                                            var img = canvas.toDataURL('image/jpeg', 0.7);
+                                            var w = vp.width, h = vp.height;
+                                            if (!out) out = new jsPDF({ orientation: w > h ? 'l' : 'p', unit: 'pt', format: [w, h] });
+                                            else out.addPage([w, h], w > h ? 'l' : 'p');
+                                            out.addImage(img, 'JPEG', 0, 0, w, h);
+                                        });
+                                    });
+                                });
+                            })(i);
+                        }
+                        return seq.then(function() {
+                            var blob = out.output('blob');
+                            if (blob && blob.size < file.size) {
+                                return new File([blob], file.name.replace(/\.pdf$/i, '') + '.pdf', { type: 'application/pdf' });
+                            }
+                            return file;
+                        });
+                    })
+                    .catch(function() { return file; });
+            }
+            // Dispatcher: imagen → compressImage, PDF → compressPdf, resto → tal cual.
+            function compressFile(file) {
+                if (!file) return Promise.resolve(file);
+                if (/^image\//.test(file.type)) return compressImage(file);
+                if (file.type === 'application/pdf') return compressPdf(file);
+                return Promise.resolve(file);
+            }
+
+            // Optimización al vuelo: apenas el usuario sube un archivo, lo optimizamos,
+            // así al enviar ya está liviano y ve el ahorro al instante.
+            Array.prototype.slice.call(form.querySelectorAll('input[type=file]')).forEach(function(input) {
+                input.addEventListener('change', function() {
+                    var f = input.files && input.files[0];
+                    var hint = input.parentNode.querySelector('.file-hint');
+                    if (hint && !hint.getAttribute('data-orig')) hint.setAttribute('data-orig', hint.innerHTML);
+                    var optimizable = f && (/^image\//.test(f.type) || f.type === 'application/pdf');
+                    if (!optimizable) {
+                        if (hint && hint.getAttribute('data-orig')) hint.innerHTML = hint.getAttribute('data-orig');
+                        return;
+                    }
+                    var origMB = (f.size / 1048576).toFixed(1);
+                    if (hint) hint.innerHTML = '<span style="color:var(--brand)"><i class="fas fa-spinner fa-spin me-1"></i>Optimizando…</span>';
+                    compressFile(f).then(function(c) {
+                        try {
+                            var dt = new DataTransfer();
+                            dt.items.add(c);
+                            input.files = dt.files;
+                        } catch (e) { /* navegador sin DataTransfer: se comprime igual al enviar */ }
+                        if (hint) {
+                            if (c.size < f.size) {
+                                var newMB = (c.size / 1048576).toFixed(2);
+                                hint.innerHTML = '<span style="color:#198754"><i class="fas fa-check-circle me-1"></i>Optimizado: ' + origMB + ' MB → ' + newMB + ' MB</span>';
+                            } else if (hint.getAttribute('data-orig')) {
+                                hint.innerHTML = hint.getAttribute('data-orig');
+                            }
+                        }
+                        if (typeof updateSubmitState === 'function') updateSubmitState();
+                    });
+                });
             });
-        });
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                if (getFaltantes().length) { updateSubmitState(); return; }
+
+                var btn        = document.getElementById('btnInscripcion');
+                var errorBox   = document.getElementById('errorInscripcion');
+                var successBox = document.getElementById('successInscripcion');
+                var fileEls    = Array.prototype.slice.call(form.querySelectorAll('input[type=file]'));
+
+                var originalHtml = btn.innerHTML;
+                btn.disabled = true;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Comprimiendo imágenes…';
+
+                var fd = new FormData();
+                form.querySelectorAll('input, select, textarea').forEach(function(el) {
+                    if (!el.name || el.type === 'file') return;
+                    if (el.type === 'checkbox') { fd.append(el.name, el.checked ? 'Sí' : 'No'); return; }
+                    fd.append(el.name, el.value || '');
+                });
+                fd.append('Origen', 'Inscripción Diplomatura IA');
+
+                var recoverySent = false;
+                // Rescate de contacto: si el envío completo falla, igual mandamos los
+                // DATOS DE TEXTO (sin archivos) a licdia para no perder al aspirante.
+                // Es un POST chico → entra aunque el envío con archivos haya fallado.
+                function sendLeadRecovery() {
+                    if (recoverySent) return;
+                    recoverySent = true;
+                    try {
+                        var lead = new FormData();
+                        form.querySelectorAll('input, select, textarea').forEach(function(el) {
+                            if (!el.name || el.type === 'file') return;
+                            if (el.type === 'checkbox') { lead.append(el.name, el.checked ? 'Sí' : 'No'); return; }
+                            lead.append(el.name, el.value || '');
+                        });
+                        lead.append('Origen', 'Inscripción Diplomatura IA');
+                        lead.append('__partial', '1');
+                        lead.append('__file_count', '0');
+                        fetch(EXEC_URL, { method: 'POST', body: lead, mode: 'no-cors' });
+                    } catch (e) {}
+                }
+                function done() {
+                    if (window.fbq) fbq('track', 'Lead');
+                    window.location.href = GRACIAS;
+                }
+                function fail(msg) {
+                    sendLeadRecovery();
+                    btn.disabled = false;
+                    btn.innerHTML = originalHtml;
+                    if (successBox) successBox.style.display = 'none';
+                    if (errorBox) {
+                        if (msg) {
+                            var p = errorBox.querySelector('[data-error-msg]');
+                            if (p) p.textContent = msg;
+                        }
+                        errorBox.style.display = 'block';
+                        errorBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }
+
+                // Comprime cada imagen y arma el base64. Las fotos (el grueso del peso)
+                // bajan de varios MB a cientos de KB → el envío entra rápido en cualquier conexión.
+                var entries = [];
+                fileEls.forEach(function(el) {
+                    if (el.files && el.files[0]) {
+                        var label = el.name || 'Archivo';
+                        entries.push(
+                            compressFile(el.files[0]).then(function(file) {
+                                return fileToB64(file).then(function(b64) {
+                                    return { field: label, name: file.name, mime: file.type || 'application/octet-stream', b64: b64, size: file.size };
+                                });
+                            })
+                        );
+                    }
+                });
+
+                Promise.all(entries).then(function(results) {
+                    var totalCompressed = results.reduce(function(s, r) { return s + r.size; }, 0);
+                    if (totalCompressed > MAX_TOTAL) {
+                        // Aún comprimido pesa demasiado (ej. PDF escaneado enorme) → fallback claro.
+                        fail('Tus archivos pesan ' + (totalCompressed / 1048576).toFixed(1) +
+                             ' MB y superan el máximo para el envío web. Comprimí el PDF o mandanos la documentación por WhatsApp y la cargamos nosotros.');
+                        return;
+                    }
+                    results.forEach(function(r, i) {
+                        fd.append('__file_' + i + '_field', r.field);
+                        fd.append('__file_' + i + '_name',  r.name);
+                        fd.append('__file_' + i + '_mime',  r.mime);
+                        fd.append('__file_' + i + '_b64',   r.b64);
+                    });
+                    fd.append('__file_count', String(results.length));
+
+                    btn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Enviando…';
+
+                    // Apps Script responde con un redirect 302 a googleusercontent que NO
+                    // expone CORS legibles → los eventos de XHR cross-origin no son fiables.
+                    // Con fetch mode:'no-cors' la promesa resuelve cuando el POST se completó
+                    // en el servidor (respuesta opaca). Es el método robusto y confirmado.
+                    var ctrl = (typeof AbortController !== 'undefined') ? new AbortController() : null;
+                    var killer = ctrl ? setTimeout(function() { ctrl.abort(); }, 180000) : null;
+                    fetch(EXEC_URL, {
+                        method: 'POST',
+                        body: fd,
+                        mode: 'no-cors',
+                        signal: ctrl ? ctrl.signal : undefined
+                    }).then(function() {
+                        if (killer) clearTimeout(killer);
+                        done();
+                    }).catch(function() {
+                        if (killer) clearTimeout(killer);
+                        fail();
+                    });
+                }).catch(function() { fail(); });
+            });
+        })();
     </script>
 
 </body>

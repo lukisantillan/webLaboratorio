@@ -549,22 +549,28 @@
                             <div class="excl-price-detail">Matrícula $170.000 + 4 cuotas de $170.000</div>
                             <form id="formBC" class="row g-2">
                                 <div class="col-12">
-                                    <input type="text" class="form-control" name="Nombre y Apellido"
-                                           placeholder="Nombre y apellido *" required>
+                                    <div class="alert mb-0" role="alert" style="background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.28);color:#fff;font-size:.9rem;">
+                                        <i class="fas fa-circle-info me-2"></i>La inscripción a la charla de Blockchain no está disponible por el momento.
+                                    </div>
                                 </div>
-                                <div class="col-12">
-                                    <input type="email" class="form-control" name="Correo"
-                                           placeholder="Correo electrónico *" required>
-                                </div>
-                                <div class="col-12">
-                                    <input type="tel" class="form-control" name="Teléfono"
-                                           placeholder="WhatsApp / Teléfono">
-                                </div>
-                                <div class="col-12">
-                                    <button type="submit" class="btn btn-submit-bc w-100 py-3" id="btnBC">
-                                        <i class="fas fa-paper-plane me-2"></i>Inscribirme en Blockchain
-                                    </button>
-                                </div>
+                                <fieldset disabled class="col-12 p-0 m-0 border-0">
+                                    <div class="row g-2">
+                                        <div class="col-12">
+                                            <input type="text" class="form-control" name="Nombre y Apellido" placeholder="Nombre y apellido *">
+                                        </div>
+                                        <div class="col-12">
+                                            <input type="email" class="form-control" name="Correo" placeholder="Correo electrónico *">
+                                        </div>
+                                        <div class="col-12">
+                                            <input type="tel" class="form-control" name="Teléfono" placeholder="WhatsApp / Teléfono">
+                                        </div>
+                                        <div class="col-12">
+                                            <button type="submit" class="btn btn-submit-bc w-100 py-3" id="btnBC" disabled>
+                                                <i class="fas fa-paper-plane me-2"></i>No disponible
+                                            </button>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </form>
                             <div class="excl-success text-center mt-3" id="successBC">
                                 <i class="fas fa-check-circle fa-2x" style="color:#d4b8ff;"></i>
@@ -648,7 +654,8 @@
             form.appendChild(div);
         }
 
-        // ─── Formulario IA ────────────────────────────────────
+        // ─── Formulario IA — Google Apps Script (sin n8n) ─────
+        var CHARLA_EXEC = 'https://script.google.com/macros/s/AKfycbxS3yWYiKz--wzq_LbTlNL9SK_lIoDq_AeUDPaZbUaLmUanTZrGFUoOrhUQ08bbA7SL/exec';
         document.getElementById('formIA').addEventListener('submit', function(e) {
             e.preventDefault();
             var btn = document.getElementById('btnIA');
@@ -657,61 +664,34 @@
             var data = new FormData(this);
             data.append('Origen', 'Registro charla exclusiva IA');
             var controller = new AbortController();
-            var timeoutId = setTimeout(function() { controller.abort(); }, 120000);
-            fetch('https://n8n.impulsate.lat/webhook/licdia-inscripcion', {
+            var timeoutId = setTimeout(function() { controller.abort(); }, 60000);
+            // no-cors: el POST se completa en el server aunque el navegador no
+            // pueda leer la respuesta (redirect de Apps Script sin CORS legible).
+            fetch(CHARLA_EXEC, {
                 method: 'POST',
-                headers: { 'Accept': 'application/json' },
                 body: data,
+                mode: 'no-cors',
                 signal: controller.signal
             })
-            .then(function(r) { clearTimeout(timeoutId); return r.json(); })
             .then(function() {
+                clearTimeout(timeoutId);
                 document.getElementById('formIA').style.display = 'none';
                 document.getElementById('successIA').style.display = 'block';
                 if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'charla-exclusiva-ia' });
             })
-            .catch(function(err) {
+            .catch(function() {
                 clearTimeout(timeoutId);
                 btn.disabled = false;
                 btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Inscribirme en IA';
-                var msg = (err && err.name === 'AbortError')
-                    ? 'El envío demoró demasiado. Por favor escribinos por WhatsApp.'
-                    : 'Error al enviar. Intentá de nuevo o escribinos por WhatsApp.';
-                showFormError('formIA', msg);
+                showFormError('formIA', 'No pudimos enviar tu registro. Escribinos por WhatsApp y te reservamos el lugar.');
             });
         });
 
-        // ─── Formulario Blockchain ────────────────────────────
+        // ─── Formulario Blockchain — DESHABILITADO por ahora ──
+        // La charla de Blockchain no está disponible; el form está disabled.
+        // Handler no-op por las dudas (no postea a ningún lado).
         document.getElementById('formBC').addEventListener('submit', function(e) {
             e.preventDefault();
-            var btn = document.getElementById('btnBC');
-            btn.disabled = true;
-            btn.textContent = 'Enviando...';
-            var data = new FormData(this);
-            data.append('Origen', 'Registro charla exclusiva Blockchain');
-            var controller = new AbortController();
-            var timeoutId = setTimeout(function() { controller.abort(); }, 120000);
-            fetch('https://n8n.impulsate.lat/webhook/licdia-inscripcion', {
-                method: 'POST',
-                headers: { 'Accept': 'application/json' },
-                body: data,
-                signal: controller.signal
-            })
-            .then(function(r) { clearTimeout(timeoutId); return r.json(); })
-            .then(function() {
-                document.getElementById('formBC').style.display = 'none';
-                document.getElementById('successBC').style.display = 'block';
-                if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'charla-exclusiva-bc' });
-            })
-            .catch(function(err) {
-                clearTimeout(timeoutId);
-                btn.disabled = false;
-                btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Inscribirme en Blockchain';
-                var msg = (err && err.name === 'AbortError')
-                    ? 'El envío demoró demasiado. Por favor escribinos por WhatsApp.'
-                    : 'Error al enviar. Intentá de nuevo o escribinos por WhatsApp.';
-                showFormError('formBC', msg);
-            });
         });
     </script>
 
