@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Acceso a la beca de la Diplomatura en IA Generativa en la Nube - UNLu. Ingresá tu código de beca para completar la inscripción." />
+    <meta name="author" content="LICDIA - UNLu" />
+    <!-- Página de acceso restringido: no indexar -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="og:title" content="Beca - Diplomatura en IA Generativa - UNLu" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:type" content="website" />
+    <title> Beca - Diplomatura en IA Generativa - LICDIA</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="../../assets/img/logo.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../../css/styles.css" rel="stylesheet" />
+    <link href="../../css/style2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS ANIMACIONES -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        :root {
+            --brand: #1354A0;
+            --brand-dark: #0b2130;
+            --brand-soft: #EAF2FB;
+        }
+
+        /* ── Gate card — mismo lenguaje visual que .inscripcion-card ── */
+        .beca-gate-card {
+            background: #fff;
+            border: 1px solid #e3eaf3;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            max-width: 480px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .beca-gate-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--brand) 0%, var(--brand-dark) 100%);
+        }
+        .beca-icon-wrap {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: var(--brand-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+        }
+        .beca-icon-wrap i {
+            font-size: 1.75rem;
+            color: var(--brand);
+        }
+        .beca-gate-title {
+            font-weight: 700;
+            color: var(--brand-dark);
+            margin-bottom: 0.5rem;
+        }
+        .beca-gate-sub {
+            color: #4a4a4a;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.75rem;
+        }
+        #becaToken {
+            text-align: center;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .beca-error {
+            color: #b00020;
+            font-size: 0.9rem;
+            margin-top: 0.85rem;
+            min-height: 1.2rem;
+        }
+        .btn-beca {
+            background: var(--brand);
+            border: none;
+            color: #fff;
+            font-weight: 700;
+            padding: 0.65rem 2.5rem;
+            border-radius: 10px;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .btn-beca:hover {
+            background: var(--brand-dark);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* ── Iframe wrapper ── */
+        #becaFormWrap {
+            display: none;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        .beca-iframe-card {
+            background: #fff;
+            border: 1px solid #e3eaf3;
+            border-radius: 16px;
+            padding: 0.75rem;
+            overflow: hidden;
+        }
+        .beca-iframe-card iframe {
+            width: 100%;
+            min-height: 1400px;
+            border: 0;
+            border-radius: 10px;
+        }
+        .beca-welcome {
+            background: var(--brand-soft);
+            border-left: 4px solid var(--brand);
+            border-radius: 0 12px 12px 0;
+            padding: 0.85rem 1.25rem;
+            font-size: 0.93rem;
+            color: #2c2c2c;
+            margin-bottom: 1.25rem;
+        }
+
+        /* ── Dark mode ── */
+        html[data-theme="dark"] .beca-gate-card,
+        html[data-theme="dark"] .beca-iframe-card {
+            background: #161b22 !important;
+            border-color: #30363d !important;
+        }
+        html[data-theme="dark"] .beca-icon-wrap {
+            background: rgba(96,165,250,0.12) !important;
+        }
+        html[data-theme="dark"] .beca-icon-wrap i {
+            color: #93c5fd !important;
+        }
+        html[data-theme="dark"] .beca-gate-title {
+            color: #d3e5ff !important;
+        }
+        html[data-theme="dark"] .beca-gate-sub {
+            color: #c9d1d9 !important;
+        }
+        html[data-theme="dark"] .beca-welcome {
+            background: rgba(96,165,250,0.10) !important;
+            color: #c9d1d9 !important;
+            border-left-color: #60a5fa !important;
+        }
+    </style>
+    <!-- LICDIA-ENHANCEMENTS-V1 -->
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('licdia-theme');
+          if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+          if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+        } catch(e){}
+      })();
+    </script>
+    <link href="../../css/enhancements.css" rel="stylesheet" />
+    <script src="../../js/enhancements.min.js" defer></script>
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand efect" href="#page-top"><img src="../../assets/img/logo.ico" alt="..." /></a>
+            <a class="navbar-brand efect" href="#page-top"><img src="../../assets/img/depto.ico" alt="..." /></a>
+            <a class="navbar-brand efect" href="#page-top"><img src="../../assets/img/unlu.ico" alt="..." /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../#informacionPlan">Plan de estudios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../aranceles/">Aranceles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../">LICDIA</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="backgroundAr fondoDiplomatura" id="infoBeca" data-aos="flip-up" data-aos-delay="100"
+        data-aos-duration="1500" onces="true">
+        <div class="container">
+            <div class="masthead-heading"> Acceso a Beca - Diplomatura en Desarrollo de soluciones de
+                inteligencia artificial generativa en la nube
+            </div>
+            <div class="masthead-subheading pb-3">
+                <div class="masthead-subheading pb-2"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+
+            <!-- ── PASO 1: Gate del token ── -->
+            <div id="becaGate" data-aos="fade-up" data-aos-delay="100">
+                <div class="beca-gate-card">
+                    <div class="beca-icon-wrap">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h2 class="h4 beca-gate-title">Ingresá tu código de beca</h2>
+                    <p class="beca-gate-sub">
+                        Esta inscripción es exclusiva para personas con un código de beca asignado.
+                        Ingresá el código que te enviamos para acceder al formulario.
+                    </p>
+                    <form id="becaForm" autocomplete="off">
+                        <input type="text" class="form-control form-control-lg" id="becaToken"
+                            placeholder="BECA-XXXXX" maxlength="20" aria-label="Código de beca" required>
+                        <div class="beca-error" id="becaError" role="alert"></div>
+                        <button type="submit" class="btn btn-beca mt-2">
+                            <i class="fas fa-arrow-right me-2"></i>Acceder
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ── PASO 2: Form embebido (oculto hasta validar) ── -->
+            <div id="becaFormWrap" data-aos="fade-up">
+                <div class="beca-welcome">
+                    <strong><i class="fas fa-check-circle me-1"></i> Código válido.</strong>
+                    Completá el formulario de inscripción a la beca. Tu código quedó registrado automáticamente.
+                </div>
+                <div class="beca-iframe-card">
+                    <!-- El src se inyecta por JS al validar, con el token pre-rellenado -->
+                    <iframe id="becaIframe" title="Formulario de inscripción a la beca" loading="lazy">
+                        Cargando…
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container text-center my-4">
+        <a href="../" class="btn btn-outline-dark btn-lg px-4 py-2">
+            <i class="fas fa-arrow-left me-2"></i>Volver
+        </a>
+    </div>
+
+    <!-- Footer-->
+    <footer class="footer bg-dark text-white py-4 mt-2">
+        <div class="container text-center small">
+            <p class="mb-2">
+                Copyright &copy; 2026 | Laboratorio de Investigación en Ciencia de Datos &amp; Inteligencia
+                Artificial de la Universidad de Luján - Argentina. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ════════════════════════════════════════════════════════════════════
+         CONFIGURACIÓN DE LA BECA
+         ─────────────────────────────────────────────────────────────────────
+         1) FORM_BASE_URL: URL del Google Form en modo "viewform", SIN parámetros.
+            Mientras esté vacío, al validar el código se muestra un aviso de
+            contacto por WhatsApp en lugar del iframe.
+         2) TOKEN_ENTRY_ID: el id del campo "Código de beca" del form. Para obtenerlo:
+            en el Form → ⋮ → "Obtener vínculo previamente rellenado" → completá ese
+            campo con cualquier texto → copiá el link → buscá "entry.XXXXXXXXX".
+            Pegá acá ese "entry.XXXXXXXXX" (con el prefijo entry.).
+            Mientras esté en null, el token NO se pre-rellena (el gate igual funciona).
+         3) TOKEN_HASHES: lista de hashes SHA-256 de (SALT + token). NO contiene los
+            tokens en claro. La lista para repartir está en un archivo aparte.
+         ════════════════════════════════════════════════════════════════════ -->
+    <script>
+    (function () {
+        // ── CONFIG ──────────────────────────────────────────────────────────
+        var FORM_BASE_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdojoHUFXf4Afe5VgJx6OMh7o-_3V-Fmk0l-l-O611mURJgvQ/viewform";
+        var TOKEN_ENTRY_ID = null; // TODO: campo "Código de beca" del Google Form (form hoy pide login; al hacerlo público se puede extraer)
+        var SALT = "licdia-beca-ia-2026";
+        var TOKEN_HASHES = [
+            "ee60ddff168d3b9f17bcbcfdd83c8278a2a7685d5faab9f62921b1e0f9e9eed1",
+            "3dda1dbf08717e893cd0268bd06cd9e8db7105d26f8b744ac42b7ea6ec1a5638",
+            "1da49cf001f359ffc0e6d0fee718026326382b8439cccda1b8f9ee9938847a0e",
+            "8363625732de23d68e8ad28d45d03a7d05efdf0a747b08ac8b22687029cf9e1c",
+            "ca8a5f48fd16a06d744f08905a48b83dc5e6cc958a67220135946730f0e8f68a",
+            "97e64d510d11d26369cb5ea3bd7c21c5dd971e3772fdd362d5a69fab4c4f3ccd",
+            "5c3af64c9eedb0b1039fccb227eb16d886ee986e3e646f934593a928bcb9e194",
+            "68754470a301f38e08c34d1c236c1ea549e0dc7fc2fe838dc6e99e29f1f8184f",
+            "6e9b85819296732bc26bba891d7b6f0092a43b9240e8fbb69291c51c2f54f9a3",
+            "4f24dd9d0eca713b97867b932aa0d671fdc27600e4beb89dc20644dc212b0c3a",
+            "f0d1099bc2d0d6ffdf947012661696122c1ddd56000e6f3c348ab30f4a5f65fd",
+            "a5f33f39764c12625b0de6eea0b5a388cd58dde98946a5cdbb913d20d433b6f4",
+            "19e29da1be25c27434c0efa2e91fa62c656ea3b169d92bc179e75cf4981da722",
+            "51307610c432074ccb1bb1b13c234028a7ddb9398f96062034ef277834bc3d8c",
+            "3a4330f3bb313a3139622831b47ec2dc3e0dfdf9eec517b153839f007bcb20a5",
+            "da2856f83281870e2c4215045db0e69763e8224f69e001865afb7f18ea9e2100",
+            "7e165f2b6ceab901598d2d662255a6fce5077f57b13665801621f7b32134c869",
+            "2760e6965510063fcf32894f1fdb41e118278ffa5907d0460753eae9793d5819",
+            "9978c2a1bb59d50d1835c87b38c344123a38cb38641ca216fb74a088c53811a6",
+            "505b9e4292042dd7ac920395baee3cf1b2414cc9e13e694d00e568dba8b4292e",
+            "43941ac570c025376e476503e9f8ea669d269ba5b8d4d1f3d66e5bba8ba50047",
+            "2f89fc881f6ba827e49d0cf277dcf6f52d6bf1956dbf7882f73914964340b1de",
+            "6f21bf3fb7a4e74f979857fb64730e1db4d1b9a78734f85e12c2447eac5d1d19",
+            "7729b2a0d19cc6adfa321c54544410aba24ff620cbfee8699173db4a3a05d919",
+            "37bd52d5abb4a0d4a144c31ee8cc4e153862a60b9627d0a9e2dce9a950089946",
+            "c7e59ffd05ba652ccae320a39b538f5239a3a83c62bbb144a4798196719d6b8d",
+            "22cdbb8c8048f9c876d8b4b9b2ccd04f340e993818a9620c54d763998d8e4d96",
+            "75e2a99d6c16f87b681828f05d29514ae8146445e7d75f4024f4f9c80f3c5991",
+            "f2df075af015d3a09338f22dc24ba8144ffce7b2500e48a89c6205e07139bb7c",
+            "4d226b3c294552aeff58df8abb502283539780529829c1d4a347dcbd2dc9a757"
+        ];
+        // ────────────────────────────────────────────────────────────────────
+
+        async function sha256Hex(str) {
+            var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+            return Array.from(new Uint8Array(buf))
+                .map(function (b) { return b.toString(16).padStart(2, "0"); })
+                .join("");
+        }
+
+        function buildFormUrl(token) {
+            if (!TOKEN_ENTRY_ID) return FORM_BASE_URL;
+            var sep = FORM_BASE_URL.indexOf("?") === -1 ? "?" : "&";
+            return FORM_BASE_URL + sep + encodeURIComponent(TOKEN_ENTRY_ID) +
+                   "=" + encodeURIComponent(token);
+        }
+
+        function unlock(token) {
+            if (FORM_BASE_URL) {
+                document.getElementById("becaIframe").src = buildFormUrl(token);
+            } else {
+                // Form aún no configurado: aviso de contacto en lugar del iframe
+                document.querySelector(".beca-iframe-card").innerHTML =
+                    '<div class="p-4 text-center">' +
+                    '<p class="mb-2"><strong>Tu código es válido.</strong> El formulario de beca estará disponible en breve.</p>' +
+                    '<p class="mb-0">Escribinos por <a href="https://api.whatsapp.com/send?phone=%2B541123953895&text=Hola,%20tengo%20un%20c%C3%B3digo%20de%20beca%20(' +
+                    encodeURIComponent(token) +
+                    ')%20para%20la%20diplomatura%20en%20IA%20Generativa" target="_blank" rel="noopener">WhatsApp</a> indicando tu código para completar la inscripción.</p>' +
+                    '</div>';
+            }
+            document.getElementById("becaGate").style.display = "none";
+            document.getElementById("becaFormWrap").style.display = "block";
+            try { sessionStorage.setItem("becaUnlocked", token); } catch (e) {}
+            if (window.AOS) AOS.refresh();
+        }
+
+        var form = document.getElementById("becaForm");
+        var input = document.getElementById("becaToken");
+        var errEl = document.getElementById("becaError");
+
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            errEl.textContent = "";
+            var token = input.value.trim().toUpperCase();
+            if (!token) return;
+            var h;
+            try {
+                h = await sha256Hex(SALT + token);
+            } catch (err) {
+                errEl.textContent = "Tu navegador no soporta la validación. Probá con otro navegador.";
+                return;
+            }
+            if (TOKEN_HASHES.indexOf(h) !== -1) {
+                unlock(token);
+            } else {
+                errEl.textContent = "Código inválido. Verificá que lo hayas escrito correctamente.";
+                input.focus();
+                input.select();
+            }
+        });
+
+        // Si ya validó en esta sesión, reabrir directo (sin re-pedir el código)
+        try {
+            var prev = sessionStorage.getItem("becaUnlocked");
+            if (prev) unlock(prev);
+        } catch (e) {}
+    })();
+    </script>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/scripts.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
