@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Inscribite a la Diplomatura en IA Generativa en la Nube de UNLu. Cupos limitados, inicio septiembre 2026. Formacion universitaria en LLMs, Gen AI y despliegue en cloud." />
+    <meta name="description" content="Diplomatura en IA Generativa en la Nube de UNLu. La inscripcion 2026 esta cerrada: el cupo de 30 lugares se completo y no se reciben nuevas inscripciones." />
     <meta name="author" content="LICDIA - UNLu" />
     <meta property="og:title" content="Inscripcion - Diplomatura en IA Generativa - UNLu" />
-    <meta property="og:description" content="Asegura tu lugar en la 2da cohorte de la Diplomatura en IA Generativa de la UNLu. Inicio septiembre 2026, cupos limitados." />
+    <meta property="og:description" content="La inscripcion 2026 de la Diplomatura en IA Generativa de la UNLu esta cerrada con el cupo completo. No se reciben nuevas inscripciones." />
     <meta property="og:image" content="https://licdia.unlu.edu.ar/assets/img/hero-ia-lineas-tech.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -119,7 +119,27 @@
                     <li class="breadcrumb-item " aria-current="page">Información de inscripción</li>
                 </ol>
             </nav>
-            <article id="como-inscribirse" class="container">
+            <!-- Aviso de cierre de inscripción 2026 -->
+            <div class="container mb-4">
+                <div class="alert text-center py-4" style="background: linear-gradient(to right, #1C2E54, #0c1a36); border: none; border-radius: 10px;">
+                    <p class="text-white fw-bold mb-2" style="font-size: 1.5rem; line-height: 1.25;">
+                        <i class="fas fa-lock me-2" aria-hidden="true"></i>Inscripción 2026 — Cerrada
+                    </p>
+                    <p class="mb-2" style="color: rgba(255,255,255,.9); font-size: 1rem;">
+                        El cupo de 30 lugares está completo y <strong>no estamos recibiendo nuevas inscripciones</strong>.
+                    </p>
+                    <p class="mb-0" style="color: rgba(255,255,255,.8); font-size: .9rem;">
+                        Cualquier duda, contactá al equipo por
+                        <a href="mailto:licdia@unlu.edu.ar" class="text-white fw-semibold">mail</a>
+                        o
+                        <a href="https://api.whatsapp.com/send?phone=%2B541123953895&amp;text=Hola,%20queria%20informaci%C3%B3n%20sobre%20la%20diplomatura%20en%20IA%20Generativa%20..."
+                            target="_blank" rel="noopener" class="text-white fw-semibold">WhatsApp</a>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Pasos de inscripción: ocultos mientras la 2026 está cerrada. -->
+            <article id="como-inscribirse" class="container" style="display:none;">
                 <div class="card shadow-sm border-0">
                     <div class="card-body p-4">
                         <h2 class="h4 fw-bold mb-3">📝 Cómo inscribirse a la Diplomatura</h2>
@@ -177,7 +197,31 @@
         </div>
     </div>
 
+    <!-- Aviso de cierre — reemplaza al formulario de inscripción -->
     <section class="py-5 bg-light" id="inscripcion" data-aos="fade-up" data-aos-duration="1500">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-8 text-center">
+                    <h3 class="h4 fw-bold mb-3">Inscripción cerrada</h3>
+                    <p class="text-muted mb-4">
+                        La inscripción 2026 está cerrada y no estamos recibiendo nuevas solicitudes.
+                        Cuando se abra la inscripción de la próxima cohorte lo vamos a anunciar en esta página.
+                    </p>
+                    <p class="mb-0">Consultas: <a href="mailto:licdia@unlu.edu.ar">licdia@unlu.edu.ar</a> &middot; <a href="https://api.whatsapp.com/send?phone=%2B541123953895&amp;text=Hola,%20queria%20consultar%20sobre%20la%20diplomatura%20en%20IA%20Generativa%20..." target="_blank" rel="noopener">WhatsApp</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         FORMULARIO DE INSCRIPCIÓN
+         OCULTO mientras la inscripción 2026 está cerrada.
+         Para reabrir: quitar el style="display:none;" de esta section,
+         devolverle id="inscripcion" (y quitárselo a la de arriba),
+         volver a mostrar el article #como-inscribirse y reactivar
+         la llamada a LICDIAForm.init más abajo.
+    ═══════════════════════════════════════════════════ -->
+    <section class="py-5 bg-light" id="inscripcion-2026-cerrada" style="display:none;">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-8">
@@ -248,17 +292,19 @@
     <!-- Modulo compartido: size validation, progress XHR, 120s timeout, ZIP fallback -->
     <script src="/js/form-inscripcion.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            LICDIAForm.init({
-                formId: 'formInscripcion',
-                webhookUrl: 'https://n8n.impulsate.lat/webhook/licdia-inscripcion',
-                redirectUrl: window.location.origin + '/dev-ia/gracias-diplomado/',
-                origenLabel: 'Inscripción Diplomatura IA',
-                diplomaturaLabel: 'IA Generativa',
-                whatsappPhone: '541123953895',
-                zipPrefix: 'inscripcion-licdia-ia'
-            });
-        });
+        // Inscripción 2026 cerrada: el formulario está oculto y no se inicializa,
+        // así no puede enviarse. Para reabrir, descomentar este bloque.
+        // document.addEventListener('DOMContentLoaded', function () {
+        //     LICDIAForm.init({
+        //         formId: 'formInscripcion',
+        //         webhookUrl: 'https://n8n.impulsate.lat/webhook/licdia-inscripcion',
+        //         redirectUrl: window.location.origin + '/dev-ia/gracias-diplomado/',
+        //         origenLabel: 'Inscripción Diplomatura IA',
+        //         diplomaturaLabel: 'IA Generativa',
+        //         whatsappPhone: '541123953895',
+        //         zipPrefix: 'inscripcion-licdia-ia'
+        //     });
+        // });
     </script>
 
     <div class="container text-center my-4">

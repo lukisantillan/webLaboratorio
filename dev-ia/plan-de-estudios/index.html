@@ -506,7 +506,10 @@
                                                 IA en entornos cloud multinube. Arquitectura y orquestadores de
                                                 contenedores como plataformas escalables y especializadas en IA en
                                                 la nube. Despliegue e implementación de soluciones de inteligencia
-                                                artificial.
+                                                artificial. Curso de cursada conjunta con el Curso 3 de la
+                                                Diplomatura en Blockchain: las clases 1 a 6 son compartidas
+                                                entre ambas cohortes y las clases 7 y 8 son específicas de la
+                                                orientación Inteligencia Artificial.
                                             </p>
                                             <div class="lente-estrategica">
                                                 <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica:</strong> <em>trade-offs cloud para IA</em> — managed vs self-hosted, GPU vs CPU, training vs inference cost, cuándo serverless y cuándo K8s para servir modelos.
@@ -749,7 +752,10 @@
     <span class="plan-icon-wrap" aria-hidden="true">2</span>
     <h4>Curso 2 — Infraestructura Tecnológica para Inteligencia Artificial</h4>
   </div>
-  <p class="curso-meta">Octubre 2026 · Docente Responsable: Dr. David Petrocelli</p>
+  <p class="curso-meta">Octubre 2026 (inicio: jueves 8/10) · Docente Responsable: Dr. David Petrocelli</p>
+  <div class="lente-estrategica">
+    <span class="pin" aria-hidden="true">🤝</span><strong>Cursada conjunta:</strong> este curso se dicta junto con el Curso 3 de la Diplomatura en Blockchain (orientación Blockchain/Web3). Las clases 1 a 6 son compartidas entre ambas cohortes; las clases 7 y 8 son específicas de cada orientación.
+  </div>
   <div class="tp-resultado">
     <span class="pin" aria-hidden="true">🎯</span><strong>Resultado del TP del curso:</strong> el "andamio cloud-native" completo que va a sostener tus modelos de Deep Learning (Curso 3) y tus apps de IA Generativa (Curso 4) en producción — contenedores con GPU, IaC con Terraform, GKE con autoescalado, observabilidad de modelos y pipelines CI/CD. La diferencia entre "un notebook que entrena" y "un sistema de IA que sirve".
   </div>
@@ -765,7 +771,7 @@
       <tbody>
         <tr>
           <td><strong>1</strong></td>
-          <td><strong>Presentación del curso</strong> (objetivos, modalidad, metodología y trabajo final). Arquitectura híbrida de un sistema de IA: qué vive en GPU y qué vive en CPU, qué se entrena y qué se sirve. Despliegue de cargas de IA sobre Compute Engine. Presentación del repo template provisto por la cátedra (modelo base que se opera en paralelo durante el curso)</td>
+          <td><strong>Presentación del curso</strong> (objetivos, modalidad, metodología y trabajo final). Arquitectura híbrida en la nube: qué corre en GCP y qué no — cargas de IA entre GPU y CPU, y sistemas Web3 entre on-chain y off-chain. Despliegue de cargas sobre Compute Engine. Presentación del repo template provisto por la cátedra (se opera en paralelo durante el curso)</td>
           <td>Despliegue en vivo de una carga de IA sobre Compute Engine y deploy del repo template en una segunda instancia para operarla como infra propia</td>
         </tr>
         <tr>
@@ -780,7 +786,7 @@
         </tr>
         <tr>
           <td><strong>4</strong></td>
-          <td>CI/CD con GitHub Actions: build, test, deploy de imágenes y promoción dev→prod con OIDC</td>
+          <td>CI/CD con GitHub Actions: build, test, deploy y promoción dev→prod con OIDC</td>
           <td>Armado en clase de un pipeline GitHub Actions que entrena un modelo en cada push, lo registra en MLflow y promueve la imagen a Artifact Registry</td>
         </tr>
         <tr>
@@ -790,7 +796,7 @@
         </tr>
         <tr>
           <td><strong>6</strong></td>
-          <td>Observabilidad ML: latencia, throughput, drift de datos y métricas de modelo con Cloud Monitoring + Prometheus + Grafana</td>
+          <td>Observabilidad con Cloud Monitoring, Prometheus, Grafana y Loki: métricas, logs y alertas de las cargas en producción</td>
           <td>Construcción en vivo de un dashboard Grafana con métricas clave del modelo en producción y alertas configuradas sobre drift y latencia</td>
         </tr>
         <tr>
