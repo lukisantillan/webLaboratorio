@@ -549,6 +549,10 @@
                                                 orquestadores de contenedores como plataformas escalables y
                                                 especializadas en BlockChain. Redes capa 1 (Layer 1) y capa 2
                                                 (Layer 2). Escalabilidad y rendimiento: soluciones de capa 2.
+                                                Curso de cursada conjunta con el Curso 2 de la Diplomatura en
+                                                IA Generativa: las clases 1 a 6 son compartidas entre ambas
+                                                cohortes y las clases 7 y 8 son específicas de la orientación
+                                                Blockchain/Web3.
                                             </p>
                                             <div class="lente-estrategica">
                                                 <span class="pin" aria-hidden="true">📌</span><strong>Lente estratégica:</strong> <em>qué necesitás de Web2 para que tu Web3 funcione en producción</em> — cloud, contenedores, observabilidad y pipelines como código, sobre los que después corre tu DApp. La diferencia entre "deploy en testnet" y "proyecto productivo".
@@ -825,7 +829,10 @@
     <span class="plan-icon-wrap" aria-hidden="true">3</span>
     <h4>Curso 3 — Automatización de Infraestructura y Arquitectura Tecnológica para Blockchain</h4>
   </div>
-  <p class="curso-meta">Octubre 2026 · Docente Responsable: Dr. David Petrocelli · Equipo: APU Nehuén Prados</p>
+  <p class="curso-meta">Octubre 2026 (inicio: jueves 8/10) · Docente Responsable: Dr. David Petrocelli · Equipo: APU Nehuén Prados</p>
+  <div class="lente-estrategica">
+    <span class="pin" aria-hidden="true">🤝</span><strong>Cursada conjunta:</strong> este curso se dicta junto con el Curso 2 de la Diplomatura en IA Generativa (orientación Inteligencia Artificial). Las clases 1 a 6 son compartidas entre ambas cohortes; las clases 7 y 8 son específicas de cada orientación.
+  </div>
   <div class="tp-resultado">
     <span class="pin" aria-hidden="true">🎯</span><strong>Resultado del TP del curso:</strong> el "andamio Web2" completo para sostener tu proyecto Web3 en producción — contenedores, IaC con Terraform, GKE, observabilidad y pipelines, más proxy RPC propio sobre Base Sepolia, gateway IPFS dedicado e indexer self-hosted. La capa sobre la que el DApp del Curso 4 va a correr en producción.
   </div>
@@ -841,7 +848,7 @@
       <tbody>
         <tr>
           <td><strong>1</strong></td>
-          <td><strong>Presentación del curso</strong> (objetivos, modalidad, metodología y trabajo final). Arquitectura híbrida Web2/Web3: qué vive on-chain y qué vive off-chain. Despliegue de nodos blockchain sobre Compute Engine. Presentación del repo template provisto por la cátedra (mini-blockchain educativa que se opera en paralelo durante el curso)</td>
+          <td><strong>Presentación del curso</strong> (objetivos, modalidad, metodología y trabajo final). Arquitectura híbrida en la nube: qué corre en GCP y qué no — sistemas Web3 entre on-chain y off-chain, y cargas de IA entre GPU y CPU. Despliegue de nodos blockchain sobre Compute Engine. Presentación del repo template provisto por la cátedra (mini-blockchain educativa que se opera en paralelo durante el curso)</td>
           <td>Despliegue en vivo de un nodo blockchain sobre Compute Engine y deploy del repo template en una segunda instancia para operarla como infra propia</td>
         </tr>
         <tr>
@@ -856,7 +863,7 @@
         </tr>
         <tr>
           <td><strong>4</strong></td>
-          <td>CI/CD con GitHub Actions: build, test, deploy de contratos y promoción dev→prod con OIDC</td>
+          <td>CI/CD con GitHub Actions: build, test, deploy y promoción dev→prod con OIDC</td>
           <td>Armado en clase de un pipeline GitHub Actions que despliega contratos a testnet en cada PR y a mainnet en tag de release vía OIDC</td>
         </tr>
         <tr>
@@ -866,7 +873,7 @@
         </tr>
         <tr>
           <td><strong>6</strong></td>
-          <td>Observabilidad: Prometheus + Grafana + Loki para métricas, logs y alertas (con foco en métricas de nodos blockchain: peers, slot lag, sync)</td>
+          <td>Observabilidad con Cloud Monitoring, Prometheus, Grafana y Loki: métricas, logs y alertas de las cargas en producción</td>
           <td>Construcción en vivo de un dashboard Grafana con los paneles clave del nodo y configuración de alertas sobre peer count, sync y disco</td>
         </tr>
         <tr>

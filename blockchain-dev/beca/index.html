@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Acceso a la beca de la Diplomatura de Posgrado en Blockchain - UNLu. Ingresá tu código de beca para completar la inscripción." />
+    <meta name="author" content="LICDIA - UNLu" />
+    <!-- Página de acceso restringido: no indexar -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="og:title" content="Beca - Diplomatura en Blockchain - UNLu" />
+    <meta property="og:locale" content="es_AR" />
+    <meta property="og:type" content="website" />
+    <title> Beca - Diplomatura en Blockchain - LICDIA</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="../../assets/img/logo.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="../../css/styles.css" rel="stylesheet" />
+    <link href="../../css/style2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS ANIMACIONES -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <style>
+        :root {
+            --brand: #4C1C7F;
+            --brand-dark: #261951;
+            --brand-soft: #F3EBFB;
+        }
+
+        /* ── Gate card — mismo lenguaje visual que .inscripcion-card ── */
+        .beca-gate-card {
+            background: #fff;
+            border: 1px solid #ece7f3;
+            border-radius: 16px;
+            padding: 2.5rem 2rem;
+            max-width: 480px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .beca-gate-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--brand) 0%, var(--brand-dark) 100%);
+        }
+        .beca-icon-wrap {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: var(--brand-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+        }
+        .beca-icon-wrap i {
+            font-size: 1.75rem;
+            color: var(--brand);
+        }
+        .beca-gate-title {
+            font-weight: 700;
+            color: var(--brand-dark);
+            margin-bottom: 0.5rem;
+        }
+        .beca-gate-sub {
+            color: #4a4a4a;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.75rem;
+        }
+        #becaToken {
+            text-align: center;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .beca-error {
+            color: #b00020;
+            font-size: 0.9rem;
+            margin-top: 0.85rem;
+            min-height: 1.2rem;
+        }
+        .btn-beca {
+            background: var(--brand);
+            border: none;
+            color: #fff;
+            font-weight: 700;
+            padding: 0.65rem 2.5rem;
+            border-radius: 10px;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .btn-beca:hover {
+            background: var(--brand-dark);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* ── Iframe wrapper ── */
+        #becaFormWrap {
+            display: none;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        .beca-iframe-card {
+            background: #fff;
+            border: 1px solid #ece7f3;
+            border-radius: 16px;
+            padding: 0.75rem;
+            overflow: hidden;
+        }
+        .beca-iframe-card iframe {
+            width: 100%;
+            min-height: 1400px;
+            border: 0;
+            border-radius: 10px;
+        }
+        .beca-welcome {
+            background: var(--brand-soft);
+            border-left: 4px solid var(--brand);
+            border-radius: 0 12px 12px 0;
+            padding: 0.85rem 1.25rem;
+            font-size: 0.93rem;
+            color: #2c2c2c;
+            margin-bottom: 1.25rem;
+        }
+
+        /* ── Dark mode ── */
+        html[data-theme="dark"] .beca-gate-card,
+        html[data-theme="dark"] .beca-iframe-card {
+            background: #161b22 !important;
+            border-color: #30363d !important;
+        }
+        html[data-theme="dark"] .beca-icon-wrap {
+            background: rgba(167,139,250,0.12) !important;
+        }
+        html[data-theme="dark"] .beca-icon-wrap i {
+            color: #c4b5fd !important;
+        }
+        html[data-theme="dark"] .beca-gate-title {
+            color: #e2d6ff !important;
+        }
+        html[data-theme="dark"] .beca-gate-sub {
+            color: #c9d1d9 !important;
+        }
+        html[data-theme="dark"] .beca-welcome {
+            background: rgba(167,139,250,0.10) !important;
+            color: #c9d1d9 !important;
+            border-left-color: #a78bfa !important;
+        }
+    </style>
+    <!-- LICDIA-ENHANCEMENTS-V1 -->
+    <script>
+      (function(){
+        try {
+          var t = localStorage.getItem('licdia-theme');
+          if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+          if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+        } catch(e){}
+      })();
+    </script>
+    <link href="../../css/enhancements.css" rel="stylesheet" />
+    <script src="../../js/enhancements.min.js" defer></script>
+</head>
+
+<body id="page-top" class="blockchain-theme">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand efect" href="#page-top"><img src="../../assets/img/logo.ico" alt="..." /></a>
+            <a class="navbar-brand efect" href="#page-top"><img src="../../assets/img/depto.ico" alt="..." /></a>
+            <a class="navbar-brand efect" href="#page-top"><img src="../../assets/img/unlu.ico" alt="..." /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="../">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../#informacionPlan">Plan de estudios</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../aranceles/">Aranceles</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../#faq">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../../">LICDIA</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="backgroundAr fondoBlockchain" id="infoBeca" data-aos="flip-up" data-aos-delay="100"
+        data-aos-duration="1500" onces="true">
+        <div class="container">
+            <div class="masthead-heading"> Acceso a Beca - Diplomatura en Innovación y Desarrollo de
+                Aplicaciones basadas en Blockchain
+            </div>
+            <div class="masthead-subheading pb-3">
+                <div class="masthead-subheading pb-2"></div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container mt-5 mb-5">
+        <div class="row justify-content-center">
+
+            <!-- ── PASO 1: Gate del token ── -->
+            <div id="becaGate" data-aos="fade-up" data-aos-delay="100">
+                <div class="beca-gate-card">
+                    <div class="beca-icon-wrap">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h2 class="h4 beca-gate-title">Ingresá tu código de beca</h2>
+                    <p class="beca-gate-sub">
+                        Esta inscripción es exclusiva para personas con un código de beca asignado.
+                        Ingresá el código que te enviamos para acceder al formulario.
+                    </p>
+                    <form id="becaForm" autocomplete="off">
+                        <input type="text" class="form-control form-control-lg" id="becaToken"
+                            placeholder="BECA-XXXXX" maxlength="20" aria-label="Código de beca" required>
+                        <div class="beca-error" id="becaError" role="alert"></div>
+                        <button type="submit" class="btn btn-beca mt-2">
+                            <i class="fas fa-arrow-right me-2"></i>Acceder
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- ── PASO 2: Form embebido (oculto hasta validar) ── -->
+            <div id="becaFormWrap" data-aos="fade-up">
+                <div class="beca-welcome">
+                    <strong><i class="fas fa-check-circle me-1"></i> Código válido.</strong>
+                    Completá el formulario de inscripción a la beca. Tu código quedó registrado automáticamente.
+                </div>
+                <div class="beca-iframe-card">
+                    <!-- El src se inyecta por JS al validar, con el token pre-rellenado -->
+                    <iframe id="becaIframe" title="Formulario de inscripción a la beca" loading="lazy">
+                        Cargando…
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container text-center my-4">
+        <a href="../" class="btn btn-outline-dark btn-lg px-4 py-2">
+            <i class="fas fa-arrow-left me-2"></i>Volver
+        </a>
+    </div>
+
+    <!-- Footer-->
+    <footer class="footer bg-dark text-white py-4 mt-2">
+        <div class="container text-center small">
+            <p class="mb-2">
+                Copyright &copy; 2026 | Laboratorio de Investigación en Ciencia de Datos &amp; Inteligencia
+                Artificial de la Universidad de Luján - Argentina. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ════════════════════════════════════════════════════════════════════
+         CONFIGURACIÓN DE LA BECA
+         ─────────────────────────────────────────────────────────────────────
+         1) FORM_BASE_URL: URL del Google Form en modo "viewform", SIN parámetros.
+         2) TOKEN_ENTRY_ID: el id del campo "Código de beca" del form. Para obtenerlo:
+            en el Form → ⋮ → "Obtener vínculo previamente rellenado" → completá ese
+            campo con cualquier texto → copiá el link → buscá "entry.XXXXXXXXX".
+            Pegá acá ese "entry.XXXXXXXXX" (con el prefijo entry.).
+            Mientras esté en null, el token NO se pre-rellena (el gate igual funciona).
+         3) TOKEN_HASHES: lista de hashes SHA-256 de (SALT + token). NO contiene los
+            tokens en claro. La lista para repartir está en un archivo aparte.
+         ════════════════════════════════════════════════════════════════════ -->
+    <script>
+    (function () {
+        // ── CONFIG ──────────────────────────────────────────────────────────
+        var FORM_BASE_URL = "https://docs.google.com/forms/d/e/1FAIpQLScrfGoLudoYi5DZ2qoMnPhdlfn_LkxhxHfkWpT_cBN7aTGsOQ/viewform";
+        var TOKEN_ENTRY_ID = "entry.361911262"; // campo "Código de beca" del Google Form
+        var SALT = "licdia-beca-blockchain-2026";
+        var TOKEN_HASHES = [
+            "47b98c774480720f198dd12c93ae7f4433077411b43aa936bfe15d1e63452708",
+            "f92415b2a088f32d34a964ccff0d3cc34022dec1fb96a990f8b1645127edbe79",
+            "48e3406e38e05671c98b38a7ad9f606d55aab11fd71884ab7d57600dccf850a2",
+            "a24da3c8f6a1cb1bc576923297f00214b51a36dcdef5a7ed386ec6503380267b",
+            "67411c231b61a6146008eea96e7149a5f601ea51dee8765ea82fc15177c267ff",
+            "8a1dd7ffa6cb6a113af2104a7160285f8b65cfa143e6fa751f6ff2d698948f95",
+            "a660501941ea4a173f33293a9168a3cd81b2c4baaec595a6300439e4f6474ae5",
+            "3ee76322f86348b7622022cb637576142df14a1b91b5d4e3e55960cffc41126a",
+            "ec7c83aabc07f0cdbac52ebd6ca8ceba65f05fc8956458222d60c596210ec0d0",
+            "a8f674567d7804848f2b89eb0d8f6d4f2a21e11651fb2e1ca63ae3c067317a81",
+            "bbe89866e088fef245998609148046b50d6d90a7f3727b11bb1832ee0d3aa56f",
+            "f5c0099194cad7c165927a8ea41206f656ecf9f7717f94e37bedddea28abe491",
+            "d84e49bdbee064c2523a7ff0daefa26acce1e0d577451c9cfd1a3e8b32ecd513",
+            "ebffa3cec3038e5ced2cc2fbec95f18f2a380ccf91a5075ca02838ca70843275",
+            "f441581c3f0ab4dce31043c1149d962aecea1139b4ec4962f1c8fa47e2b93e10",
+            "767a4ca8c4349f36a6a1ac05f0f2bad3aae233d8c7f01822eea00a44a31e81a5",
+            "5b59e5772eb641bfd9f7be4fcdc8f4466e0caa02106d8cf0ff767b697a902296",
+            "127dbfe013091625f55b7dcde5a12d86c2a29a467b38e239d963ec275fa343df",
+            "566b466993f9fed18b3330e12a947ba0499ada90bbe720ffabd5180b75771a7a",
+            "321dbc08e6832b8f159281249b2156fd24cdc538d66f8cb13e03bb4a3688de36",
+            "797be0ca42233ea658afd2438f9d03c3360e0df7806b491de70131386c902a2f",
+            "e30449d89987e206901ce3e235bd739ed7a2b8239eae13121dccc58763587668",
+            "53ebd9950722c760db6f51119ff112ae7f2adae314e2485d8d84676626df1336",
+            "bdfe50a40404e297c4cd64e18e29ba4484f7219d208c2417db0e8b47959f325a",
+            "1ea25211f77b412c20b4e4816b90fb1d892353b0b0af7a52cd91e54a6248a425",
+            "a338e9d1c7b6d864bb2f5395df4a1c43ad957b4ed99fe5a04f30e4d6acc7d4f2",
+            "e5b4c726b3a3785275e1509d6a87099472e6058b602f11fdeb31c798f84d7576",
+            "71626449547580b43bf815d4fb8b7491bc2efa50d850f30db7639b181febc597",
+            "94a3bb0b7102b92e438b2646fa9bb4bd03f13c5194f9e148f304c73a8c2149ce",
+            "52457357e574394393159837e6c19d7f7affe887a9d200d758d90854ee4d187d"
+        ];
+        // ────────────────────────────────────────────────────────────────────
+
+        async function sha256Hex(str) {
+            var buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
+            return Array.from(new Uint8Array(buf))
+                .map(function (b) { return b.toString(16).padStart(2, "0"); })
+                .join("");
+        }
+
+        function buildFormUrl(token) {
+            if (!TOKEN_ENTRY_ID) return FORM_BASE_URL;
+            var sep = FORM_BASE_URL.indexOf("?") === -1 ? "?" : "&";
+            return FORM_BASE_URL + sep + encodeURIComponent(TOKEN_ENTRY_ID) +
+                   "=" + encodeURIComponent(token);
+        }
+
+        function unlock(token) {
+            document.getElementById("becaIframe").src = buildFormUrl(token);
+            document.getElementById("becaGate").style.display = "none";
+            document.getElementById("becaFormWrap").style.display = "block";
+            try { sessionStorage.setItem("becaUnlocked", token); } catch (e) {}
+            if (window.AOS) AOS.refresh();
+        }
+
+        var form = document.getElementById("becaForm");
+        var input = document.getElementById("becaToken");
+        var errEl = document.getElementById("becaError");
+
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault();
+            errEl.textContent = "";
+            var token = input.value.trim().toUpperCase();
+            if (!token) return;
+            var h;
+            try {
+                h = await sha256Hex(SALT + token);
+            } catch (err) {
+                errEl.textContent = "Tu navegador no soporta la validación. Probá con otro navegador.";
+                return;
+            }
+            if (TOKEN_HASHES.indexOf(h) !== -1) {
+                unlock(token);
+            } else {
+                errEl.textContent = "Código inválido. Verificá que lo hayas escrito correctamente.";
+                input.focus();
+                input.select();
+            }
+        });
+
+        // Si ya validó en esta sesión, reabrir directo (sin re-pedir el código)
+        try {
+            var prev = sessionStorage.getItem("becaUnlocked");
+            if (prev) unlock(prev);
+        } catch (e) {}
+    })();
+    </script>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/scripts.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>
