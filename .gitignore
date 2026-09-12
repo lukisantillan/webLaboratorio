@@ -58,3 +58,8 @@ dev-ia/docentes/**/*CV*.html
 
 # Browser "Save Page As Complete" dumps (basura de snapshots)
 **/*_files/
+
+# Borradores y backends internos que el deploy excluye (no deben commitearse)
+**/_backup/
+**/_backend/
+**/_backup_*.html
