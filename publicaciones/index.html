@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description"
-        content="Producción científica del Laboratorio de Investigación en Ciencia de Datos e Inteligencia Artificial (LICDIA) del Departamento de Ciencias Básicas de la UNLu: artículos, ponencias, pósteres y libros." />
+        content="Producción científica del Laboratorio de Investigación en Ciencia de Datos e Inteligencia Artificial (LICDIA) del Departamento de Ciencias Básicas de la UNLu: artículos, ponencias, pósteres y libros, con filtros por año, área, autor, sede, idioma y palabras clave." />
     <meta name="author" content="LICDIA UNLu" />
     <title>Publicaciones - LICDIA UNLu</title>
     <meta property="og:title" content="Publicaciones - LICDIA UNLu" />
@@ -32,28 +32,54 @@
     <link href="../css/style2.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        .pub-intro { max-width: 60rem; margin: 0 auto 2.5rem; text-align: center; }
+        .pub-intro { max-width: 60rem; margin: 0 auto 2rem; text-align: center; }
         .pub-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; }
         .pub-stat { min-width: 7rem; }
         .pub-stat strong { display: block; font-family: 'Montserrat', sans-serif; font-size: 2rem; line-height: 1; }
         .pub-stat span { font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; color: #6c757d; }
 
-        .pub-filtros { margin-bottom: 2.5rem; }
-        .pub-buscador { max-width: 32rem; margin: 0 auto 1.25rem; }
-        .pub-buscador input { width: 100%; padding: .7rem 1rem; border: 1px solid #ced4da; border-radius: 2rem; font-size: .95rem; }
+        .pub-panel { background: #f8f9fa; border: 1px solid #e9ecef; border-radius: .6rem;
+            padding: 1.25rem 1.25rem .9rem; margin-bottom: 1.5rem; }
+        .pub-buscador { position: relative; margin-bottom: 1rem; }
+        .pub-buscador input { width: 100%; padding: .7rem 1rem .7rem 2.4rem; border: 1px solid #ced4da;
+            border-radius: 2rem; font-size: .95rem; background: #fff; }
+        .pub-buscador i { position: absolute; left: .95rem; top: 50%; transform: translateY(-50%); color: #adb5bd; }
         .pub-buscador input:focus { outline: 2px solid #0d6efd; outline-offset: 1px; }
-        .pub-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem; margin-bottom: .6rem; }
+
+        .pub-selects { display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+            gap: .75rem; margin-bottom: 1rem; }
+        .pub-campo label { display: block; font-size: .7rem; text-transform: uppercase; letter-spacing: .06em;
+            color: #6c757d; font-weight: 700; margin-bottom: .22rem; }
+        .pub-campo select { width: 100%; padding: .45rem .6rem; border: 1px solid #ced4da; border-radius: .35rem;
+            font-size: .87rem; background: #fff; }
+        .pub-campo select:focus { outline: 2px solid #0d6efd; outline-offset: 1px; }
+
+        .pub-grupo-chips { margin-bottom: .55rem; }
+        .pub-grupo-chips > span.pub-grupo-label { display: inline-block; font-size: .7rem; text-transform: uppercase;
+            letter-spacing: .06em; color: #6c757d; font-weight: 700; margin-right: .4rem; }
         .pub-chip { border: 1px solid #ced4da; background: #fff; color: #495057; border-radius: 2rem;
-            padding: .3rem .9rem; font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; cursor: pointer; }
+            padding: .25rem .75rem; font-size: .78rem; cursor: pointer; margin: 0 .25rem .3rem 0; }
         .pub-chip:hover { border-color: #0d6efd; color: #0d6efd; }
         .pub-chip.activo { background: #0d6efd; border-color: #0d6efd; color: #fff; }
+        .pub-chip-n { opacity: .6; font-size: .72rem; }
 
-        .pub-anio-titulo { font-family: 'Montserrat', sans-serif; font-size: 1.4rem; text-transform: uppercase;
-            letter-spacing: .06em; border-bottom: 2px solid #dee2e6; padding-bottom: .4rem; margin: 2.5rem 0 1.2rem; }
+        .pub-barra { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+            gap: .75rem; padding-top: .6rem; border-top: 1px solid #e9ecef; }
+        .pub-contador { font-size: .85rem; color: #495057; }
+        .pub-contador strong { color: #0d6efd; }
+        .pub-acciones-barra { display: flex; flex-wrap: wrap; gap: .5rem; }
+        .pub-boton { border: 1px solid #ced4da; background: #fff; color: #495057; border-radius: .35rem;
+            padding: .3rem .75rem; font-size: .8rem; cursor: pointer; }
+        .pub-boton:hover { border-color: #0d6efd; color: #0d6efd; }
+        .pub-boton--limpiar[hidden] { display: none !important; }
+
+        .pub-sep { font-family: 'Montserrat', sans-serif; font-size: 1.25rem; text-transform: uppercase;
+            letter-spacing: .06em; border-bottom: 2px solid #dee2e6; padding-bottom: .4rem; margin: 2.2rem 0 1rem; }
         .pub-item { display: flex; flex-wrap: wrap; gap: 1rem; padding: 1.1rem 0; border-bottom: 1px solid #eceef0; }
         .pub-meta { flex: 0 0 11rem; display: flex; flex-direction: column; gap: .35rem; align-items: flex-start; }
-        .pub-cuerpo { flex: 1 1 20rem; }
+        .pub-cuerpo { flex: 1 1 20rem; min-width: 0; }
         .pub-fecha { font-size: .8rem; text-transform: uppercase; letter-spacing: .05em; color: #6c757d; }
+        .pub-area { font-size: .74rem; color: #495057; }
         .pub-badge { display: inline-block; font-size: .68rem; text-transform: uppercase; letter-spacing: .05em;
             padding: .18rem .5rem; border-radius: .25rem; }
         .pub-badge--congreso { background: #e7f1ff; color: #0a58ca; }
@@ -67,18 +93,25 @@
         .pub-venue { margin: 0; font-size: .88rem; color: #6c757d; }
         .pub-nota { margin: .3rem 0 0; font-size: .85rem; color: #6c757d; font-style: italic; }
         .pub-resumen { margin: .6rem 0 0; font-size: .9rem; color: #495057; }
-        .pub-claves { margin: .5rem 0 0; font-size: .82rem; color: #6c757d; }
-        .pub-claves span { text-transform: uppercase; letter-spacing: .04em; font-weight: 700; }
-        .pub-link { display: inline-block; margin-top: .5rem; margin-right: 1rem; font-size: .82rem;
-            font-weight: 700; text-decoration: none; color: #0a58ca; }
+        .pub-tags { margin-top: .5rem; }
+        .pub-tag { border: 1px solid #e3e6ea; background: #f8f9fa; color: #56606a; border-radius: .25rem;
+            padding: .12rem .45rem; font-size: .73rem; cursor: pointer; margin: 0 .25rem .25rem 0; }
+        .pub-tag:hover { border-color: #0d6efd; color: #0d6efd; }
+        .pub-tag--plano { cursor: default; display: inline-block; }
+        .pub-acciones { margin-top: .45rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+        .pub-link { font-size: .82rem; font-weight: 700; text-decoration: none; color: #0a58ca; }
         .pub-link:hover { text-decoration: underline; }
-        .pub-pdf { display: inline-block; margin-top: .5rem; font-size: .86rem; font-weight: 700; text-decoration: none; }
+        .pub-copiar { border: 0; background: none; padding: 0; color: #6c757d; font-size: .8rem; cursor: pointer; }
+        .pub-copiar:hover { color: #0d6efd; }
         .pub-item--proxima { background: #fffdf5; border-left: 3px solid #ffc107; padding-left: 1rem; }
         .pub-vacio { text-align: center; color: #6c757d; padding: 2.5rem 0; }
 
         @media (max-width: 767px) {
+            .pub-chip { padding: .45rem .85rem; font-size: .8rem; }
+            .pub-tag { padding: .3rem .55rem; }
             .pub-meta { flex: 1 1 100%; flex-direction: row; flex-wrap: wrap; align-items: center; }
-            .pub-anio-titulo { font-size: 1.2rem; }
+            .pub-sep { font-size: 1.1rem; }
+            .pub-panel { padding: 1rem .85rem .7rem; }
         }
     </style>
 </head>
@@ -127,457 +160,948 @@
                     <div class="pub-stat"><strong>33</strong><span>Publicaciones</span></div>
                     <div class="pub-stat"><strong>26</strong><span>En congresos</span></div>
                     <div class="pub-stat"><strong>5</strong><span>En revistas</span></div>
+                    <div class="pub-stat"><strong>42</strong><span>Autores</span></div>
                     <div class="pub-stat"><strong>2017-2026</strong><span>Período</span></div>
                 </div>
             </div>
 
-            <div class="pub-filtros">
+            <!--
+                PANEL DE FILTROS
+                Todo el filtrado ocurre en el navegador sobre el markup estatico de abajo: cada
+                <article> lleva sus facetas en data-* y el script solo muestra u oculta. No hay
+                backend ni dependencias nuevas, y las entradas siguen en el HTML para indexacion.
+                El estado se refleja en la query string, asi que una busqueda filtrada se puede
+                compartir por link.
+            -->
+            <div class="pub-panel">
                 <div class="pub-buscador">
+                    <i class="fas fa-magnifying-glass"></i>
                     <label class="visually-hidden" for="pubBuscar">Buscar publicaciones</label>
-                    <input type="search" id="pubBuscar" placeholder="Buscar por título, autor o congreso...">
+                    <input type="search" id="pubBuscar"
+                        placeholder="Buscar por título, autor, congreso, área o palabra clave...">
                 </div>
-                <div class="pub-chips" id="pubChipsTipo">
-                    <button type="button" class="pub-chip activo" data-filtro="tipo" data-valor="">Todos</button>
-                    <button type="button" class="pub-chip" data-filtro="tipo" data-valor="congreso">Congreso</button>
-                    <button type="button" class="pub-chip" data-filtro="tipo" data-valor="revista">Revista</button>
-                    <button type="button" class="pub-chip" data-filtro="tipo" data-valor="poster">Póster</button>
-                    <button type="button" class="pub-chip" data-filtro="tipo" data-valor="libro">Libro</button>
+
+                <div class="pub-selects">
+                    <div class="pub-campo">
+                        <label for="pubArea">Área</label>
+                        <select id="pubArea" data-filtro="area">
+                            <option value="">Todas las áreas</option>
+                        <option value="LLM y PLN">LLM y PLN (14)</option>
+                        <option value="Educación superior">Educación superior (5)</option>
+                        <option value="HPC y cloud">HPC y cloud (5)</option>
+                        <option value="Ambiente y territorio">Ambiente y territorio (3)</option>
+                        <option value="Visión por computadora">Visión por computadora (3)</option>
+                        <option value="Edición científica">Edición científica (1)</option>
+                        <option value="IA aplicada">IA aplicada (1)</option>
+                        <option value="Seguridad">Seguridad (1)</option>
+                        </select>
+                    </div>
+                    <div class="pub-campo">
+                        <label for="pubAutor">Autor</label>
+                        <select id="pubAutor" data-filtro="autor">
+                            <option value="">Todos los autores</option>
+                        <option value="Fernández, J. M.">Fernández, J. M. (25)</option>
+                        <option value="Errecalde, M.">Errecalde, M. (8)</option>
+                        <option value="Petrocelli, D.">Petrocelli, D. (6)</option>
+                        <option value="De Giusti, A. E.">De Giusti, A. E. (5)</option>
+                        <option value="Naiouf, M.">Naiouf, M. (5)</option>
+                        <option value="Oloriz, M.">Oloriz, M. (5)</option>
+                        <option value="Iglesias, A. N.">Iglesias, A. N. (3)</option>
+                        <option value="Lanson, D.">Lanson, D. (3)</option>
+                        <option value="Matuk Herrera, R.">Matuk Herrera, R. (3)</option>
+                        <option value="Barijhoff, H.">Barijhoff, H. (2)</option>
+                        <option value="Bertoglio, S.">Bertoglio, S. (2)</option>
+                        <option value="Camilo, M.">Camilo, M. (2)</option>
+                        <option value="Delfino, H.">Delfino, H. (2)</option>
+                        <option value="Errecalde, M. L.">Errecalde, M. L. (2)</option>
+                        <option value="Martínez, C.">Martínez, C. (2)</option>
+                        <option value="Baez, S.">Baez, S. (1)</option>
+                        <option value="Baquel, R.">Baquel, R. (1)</option>
+                        <option value="Burdisso, S.">Burdisso, S. (1)</option>
+                        <option value="Cagnina, L. C.">Cagnina, L. C. (1)</option>
+                        <option value="Cavasin, N.">Cavasin, N. (1)</option>
+                        <option value="Cavasín, N.">Cavasín, N. (1)</option>
+                        <option value="Del Gobbo, J.">Del Gobbo, J. (1)</option>
+                        <option value="Guerra, F.">Guerra, F. (1)</option>
+                        <option value="Jara, C.">Jara, C. (1)</option>
+                        <option value="Lanson, D. E.">Lanson, D. E. (1)</option>
+                        <option value="Marchetti, S.">Marchetti, S. (1)</option>
+                        <option value="Martínez, A.">Martínez, A. (1)</option>
+                        <option value="Masón, M. R.">Masón, M. R. (1)</option>
+                        <option value="Matuk, R.">Matuk, R. (1)</option>
+                        <option value="Meretta, F.">Meretta, F. (1)</option>
+                        <option value="Monti, K.">Monti, K. (1)</option>
+                        <option value="Oloriz, M. G.">Oloriz, M. G. (1)</option>
+                        <option value="Panessi, W.">Panessi, W. (1)</option>
+                        <option value="Pesado, P.">Pesado, P. (1)</option>
+                        <option value="Petrocelli, D. M.">Petrocelli, D. M. (1)</option>
+                        <option value="Pighin, M. E.">Pighin, M. E. (1)</option>
+                        <option value="Rissi, M.">Rissi, M. (1)</option>
+                        <option value="Robles, R.">Robles, R. (1)</option>
+                        <option value="Rodríguez, A.">Rodríguez, A. (1)</option>
+                        <option value="Rosenfeld, A.">Rosenfeld, A. (1)</option>
+                        <option value="Tamasi, F.">Tamasi, F. (1)</option>
+                        <option value="Zamudio, E.">Zamudio, E. (1)</option>
+                        </select>
+                    </div>
+                    <div class="pub-campo">
+                        <label for="pubSede">Sede</label>
+                        <select id="pubSede" data-filtro="sede">
+                            <option value="">Todas las sedes</option>
+                        <option value="CACIC">CACIC (9)</option>
+                        <option value="JCC-BD&amp;ET">JCC-BD&amp;ET (6)</option>
+                        <option value="WICC">WICC (3)</option>
+                        <option value="NeurIPS">NeurIPS (2)</option>
+                        <option value="Anuario División Geografía">Anuario División Geografía (1)</option>
+                        <option value="CIICE">CIICE (1)</option>
+                        <option value="CIbCA">CIbCA (1)</option>
+                        <option value="Coloquio de Estadística">Coloquio de Estadística (1)</option>
+                        <option value="Cuadernos de Extensión UNLPam">Cuadernos de Extensión UNLPam (1)</option>
+                        <option value="ECCV">ECCV (1)</option>
+                        <option value="EUDELAR">EUDELAR (1)</option>
+                        <option value="Euro-Par">Euro-Par (1)</option>
+                        <option value="NLP School">NLP School (1)</option>
+                        <option value="Polish-Colombian Symposium">Polish-Colombian Symposium (1)</option>
+                        <option value="RAN">RAN (1)</option>
+                        <option value="RETOS XXI">RETOS XXI (1)</option>
+                        <option value="Razón Crítica">Razón Crítica (1)</option>
+                        </select>
+                    </div>
+                    <div class="pub-campo">
+                        <label for="pubTag">Palabra clave</label>
+                        <select id="pubTag" data-filtro="tag">
+                            <option value="">Todas las palabras clave</option>
+                        <option value="ARM">ARM</option>
+                        <option value="CLI">CLI</option>
+                        <option value="Docker">Docker</option>
+                        <option value="GMP">GMP</option>
+                        <option value="GaLore">GaLore</option>
+                        <option value="HPC">HPC</option>
+                        <option value="LLaMA">LLaMA</option>
+                        <option value="LoRA">LoRA</option>
+                        <option value="PEFT">PEFT</option>
+                        <option value="PyMEs">PyMEs</option>
+                        <option value="PyTorch">PyTorch</option>
+                        <option value="RAG">RAG</option>
+                        <option value="SIAI">SIAI</option>
+                        <option value="abandono">abandono</option>
+                        <option value="acceso a la información">acceso a la información</option>
+                        <option value="actas">actas</option>
+                        <option value="adaptación de dominio">adaptación de dominio</option>
+                        <option value="agentes">agentes</option>
+                        <option value="agentes de IA">agentes de IA</option>
+                        <option value="analítica de datos">analítica de datos</option>
+                        <option value="aprendizaje automático">aprendizaje automático</option>
+                        <option value="auditoría">auditoría</option>
+                        <option value="automatización">automatización</option>
+                        <option value="bajo consumo">bajo consumo</option>
+                        <option value="bajo costo">bajo costo</option>
+                        <option value="bimodalidad">bimodalidad</option>
+                        <option value="bioinspiración">bioinspiración</option>
+                        <option value="certificación de títulos">certificación de títulos</option>
+                        <option value="clasificación de texto">clasificación de texto</option>
+                        <option value="cloud">cloud</option>
+                        <option value="clustering">clustering</option>
+                        <option value="cohortes">cohortes</option>
+                        <option value="congreso">congreso</option>
+                        <option value="contabilidad">contabilidad</option>
+                        <option value="contenedores">contenedores</option>
+                        <option value="correo electrónico">correo electrónico</option>
+                        <option value="corteza visual">corteza visual</option>
+                        <option value="cómputo intensivo">cómputo intensivo</option>
+                        <option value="dataset">dataset</option>
+                        <option value="desbalanceo">desbalanceo</option>
+                        <option value="detección de texto">detección de texto</option>
+                        <option value="discapacidad">discapacidad</option>
+                        <option value="dispositivos móviles">dispositivos móviles</option>
+                        <option value="diálogo">diálogo</option>
+                        <option value="dominio específico">dominio específico</option>
+                        <option value="edición">edición</option>
+                        <option value="eficiencia">eficiencia</option>
+                        <option value="elasticidad">elasticidad</option>
+                        <option value="escala local">escala local</option>
+                        <option value="español">español</option>
+                        <option value="estados de diálogo">estados de diálogo</option>
+                        <option value="estadística">estadística</option>
+                        <option value="extensión universitaria">extensión universitaria</option>
+                        <option value="fine-tuning">fine-tuning</option>
+                        <option value="generación narrativa">generación narrativa</option>
+                        <option value="gestión ambiental">gestión ambiental</option>
+                        <option value="gestión pública">gestión pública</option>
+                        <option value="gobiernos locales">gobiernos locales</option>
+                        <option value="inclusión">inclusión</option>
+                        <option value="industria farmacéutica">industria farmacéutica</option>
+                        <option value="información académica">información académica</option>
+                        <option value="información ambiental">información ambiental</option>
+                        <option value="juegos de rol">juegos de rol</option>
+                        <option value="lenguaje natural">lenguaje natural</option>
+                        <option value="manga">manga</option>
+                        <option value="memoria conversacional">memoria conversacional</option>
+                        <option value="microservicios">microservicios</option>
+                        <option value="minería de datos">minería de datos</option>
+                        <option value="modelos abiertos">modelos abiertos</option>
+                        <option value="multi-tenant">multi-tenant</option>
+                        <option value="móviles">móviles</option>
+                        <option value="neurociencia computacional">neurociencia computacional</option>
+                        <option value="normativa universitaria">normativa universitaria</option>
+                        <option value="nube">nube</option>
+                        <option value="nube híbrida">nube híbrida</option>
+                        <option value="ordenamiento territorial">ordenamiento territorial</option>
+                        <option value="procedencia">procedencia</option>
+                        <option value="procesamiento paralelo">procesamiento paralelo</option>
+                        <option value="propiedad intelectual">propiedad intelectual</option>
+                        <option value="reconocimiento de expresiones">reconocimiento de expresiones</option>
+                        <option value="recuperación de información">recuperación de información</option>
+                        <option value="recuperación de instancias">recuperación de instancias</option>
+                        <option value="redes autoorganizadas">redes autoorganizadas</option>
+                        <option value="redes neuronales">redes neuronales</option>
+                        <option value="rendimiento académico">rendimiento académico</option>
+                        <option value="segmentación">segmentación</option>
+                        <option value="selección de atributos">selección de atributos</option>
+                        <option value="semi-supervisado">semi-supervisado</option>
+                        <option value="sistemas multiagente">sistemas multiagente</option>
+                        <option value="software libre">software libre</option>
+                        <option value="trazabilidad">trazabilidad</option>
+                        <option value="universidades">universidades</option>
+                        </select>
+                    </div>
+                    <div class="pub-campo">
+                        <label for="pubOrden">Ordenar por</label>
+                        <select id="pubOrden">
+                            <option value="anio-desc">Año, más reciente primero</option>
+                            <option value="anio-asc">Año, más antiguo primero</option>
+                            <option value="titulo-asc">Título, A-Z</option>
+                            <option value="autor-asc">Primer autor, A-Z</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="pub-chips" id="pubChipsAnio">
+
+                <div class="pub-grupo-chips">
+                    <span class="pub-grupo-label">Tipo</span>
+                    <button type="button" class="pub-chip activo" data-filtro="tipo" data-valor="">Todos los tipos</button>
+                    <button type="button" class="pub-chip" data-filtro="tipo" data-valor="congreso">Congreso <span class="pub-chip-n">26</span></button>
+                    <button type="button" class="pub-chip" data-filtro="tipo" data-valor="revista">Revista <span class="pub-chip-n">5</span></button>
+                    <button type="button" class="pub-chip" data-filtro="tipo" data-valor="poster">Póster <span class="pub-chip-n">1</span></button>
+                    <button type="button" class="pub-chip" data-filtro="tipo" data-valor="libro">Libro <span class="pub-chip-n">1</span></button>
+                </div>
+                <div class="pub-grupo-chips">
+                    <span class="pub-grupo-label">Idioma</span>
+                    <button type="button" class="pub-chip activo" data-filtro="idioma" data-valor="">Ambos idiomas</button>
+                    <button type="button" class="pub-chip" data-filtro="idioma" data-valor="es">Español <span class="pub-chip-n">18</span></button>
+                    <button type="button" class="pub-chip" data-filtro="idioma" data-valor="en">Inglés <span class="pub-chip-n">15</span></button>
+                    <button type="button" class="pub-chip" data-filtro="acceso" data-valor="si">
+                        Con texto disponible <span class="pub-chip-n">13</span></button>
+                </div>
+                <div class="pub-grupo-chips">
+                    <span class="pub-grupo-label">Año</span>
                     <button type="button" class="pub-chip activo" data-filtro="anio" data-valor="">Todos los años</button>
-                    <button type="button" class="pub-chip" data-filtro="anio" data-valor="2026">2026</button>
-                    <button type="button" class="pub-chip" data-filtro="anio" data-valor="2025">2025</button>
-                    <button type="button" class="pub-chip" data-filtro="anio" data-valor="2024">2024</button>
-                    <button type="button" class="pub-chip" data-filtro="anio" data-valor="2023">2023</button>
-                    <button type="button" class="pub-chip" data-filtro="anio" data-valor="2022">2022</button>
-                    <button type="button" class="pub-chip" data-filtro="anio" data-valor="2021">2021</button>
-                    <button type="button" class="pub-chip" data-filtro="anio" data-valor="2020">2020</button>
-                    <button type="button" class="pub-chip" data-filtro="anio" data-valor="2019">2019</button>
-                    <button type="button" class="pub-chip" data-filtro="anio" data-valor="2018">2018</button>
-                    <button type="button" class="pub-chip" data-filtro="anio" data-valor="2017">2017</button>
+                    <button type="button" class="pub-chip" data-filtro="anio" data-valor="2026">2026 <span class="pub-chip-n">8</span></button>
+                    <button type="button" class="pub-chip" data-filtro="anio" data-valor="2025">2025 <span class="pub-chip-n">3</span></button>
+                    <button type="button" class="pub-chip" data-filtro="anio" data-valor="2024">2024 <span class="pub-chip-n">4</span></button>
+                    <button type="button" class="pub-chip" data-filtro="anio" data-valor="2023">2023 <span class="pub-chip-n">4</span></button>
+                    <button type="button" class="pub-chip" data-filtro="anio" data-valor="2022">2022 <span class="pub-chip-n">3</span></button>
+                    <button type="button" class="pub-chip" data-filtro="anio" data-valor="2021">2021 <span class="pub-chip-n">3</span></button>
+                    <button type="button" class="pub-chip" data-filtro="anio" data-valor="2020">2020 <span class="pub-chip-n">4</span></button>
+                    <button type="button" class="pub-chip" data-filtro="anio" data-valor="2019">2019 <span class="pub-chip-n">1</span></button>
+                    <button type="button" class="pub-chip" data-filtro="anio" data-valor="2018">2018 <span class="pub-chip-n">1</span></button>
+                    <button type="button" class="pub-chip" data-filtro="anio" data-valor="2017">2017 <span class="pub-chip-n">2</span></button>
+                </div>
+
+                <div class="pub-barra">
+                    <span class="pub-contador" id="pubContador" aria-live="polite">
+                        Mostrando <strong>33</strong> de 33 publicaciones</span>
+                    <span class="pub-acciones-barra">
+                        <button type="button" class="pub-boton pub-boton--limpiar" id="pubLimpiar" hidden>
+                            <i class="fas fa-xmark"></i> Limpiar filtros</button>
+                        <button type="button" class="pub-boton" id="pubBibtex">
+                            <i class="fas fa-download"></i> Descargar BibTeX</button>
+                    </span>
                 </div>
             </div>
 
-            <div id="pubListado">
             <!--
                 COMO AGREGAR UNA PUBLICACION
-                Copiar un bloque <article class="pub-item"> completo y editarlo. Los tres data-*
-                son los que hacen funcionar los filtros y el buscador:
-                  data-anio   ano de la publicacion; debe coincidir con el <section data-grupo="...">
-                  data-tipo   congreso | revista | poster | libro
-                  data-buscar titulo + autores + venue en minusculas (lo que matchea el buscador)
-                Si el ano no existe todavia, agregar una <section class="pub-anio" data-grupo="ANIO">
-                nueva y sumar el chip correspondiente en #pubChipsAnio.
+                Copiar un bloque <article class="pub-item"> completo y editarlo. Los data-* son
+                lo que consumen los filtros, el buscador y el orden; si alguno falta, esa entrada
+                queda fuera de la faceta correspondiente:
+                  data-anio    ano (tambien arma los separadores por ano)
+                  data-tipo    congreso | revista | poster | libro
+                  data-area    una de las areas que aparecen en el select #pubArea
+                  data-sede    congreso o revista, como figura en #pubSede
+                  data-idioma  es | en
+                  data-acceso  si | no  (si tiene enlace o PDF)
+                  data-autores autores separados por |, en el mismo formato que #pubAutor
+                  data-tags    palabras clave separadas por |
+                  data-titulo  titulo en minusculas, lo usa el orden alfabetico
+                  data-buscar  todo lo anterior junto en minusculas, lo usa el buscador
+                Si sumas un area, sede, autor o palabra clave nuevos, agregar tambien la <option>
+                al select correspondiente, y el chip si es un ano nuevo.
             -->
-            <section class="pub-anio" data-grupo="2026">
-                <h2 class="pub-anio-titulo">2026</h2>
-                <article class="pub-item" data-anio="2026" data-tipo="congreso" data-buscar="contabilidad digital: propuesta y validación de un modelo metodológico para integrar automatización, analítica de datos e inteligencia artificial en pymes meretta, f.; fernández, j. m. vi congreso internacional de investigación en contabilidad y empresa (ciice 2026), barcelona, españa, 2 al 4 de noviembre ">
+            <div id="pubListado">
+                <article class="pub-item" data-anio="2026" data-tipo="congreso"
+                    data-area="IA aplicada" data-sede="CIICE" data-idioma="es"
+                    data-acceso="no"
+                    data-autores="Meretta, F.|Fernández, J. M."
+                    data-tags="automatización|analítica de datos|PyMEs|contabilidad"
+                    data-titulo="contabilidad digital: propuesta y validación de un modelo metodológico para integrar automatización, analítica de datos "
+                    data-buscar="contabilidad digital: propuesta y validación de un modelo metodológico para integrar automatización, analítica de datos e inteligencia artificial en pymes meretta, f.; fernández, j. m. vi congreso internacional de investigación en contabilidad y empresa (ciice 2026), barcelona, españa, 2 al 4 de noviembre ia aplicada ciice  automatización analítica de datos pymes contabilidad">
                     <div class="pub-meta">
                         <span class="pub-fecha">Noviembre 2026</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span> <span class="pub-badge pub-badge--estado">Comunicación aceptada</span>
+                        <span class="pub-area">IA aplicada</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Contabilidad Digital: propuesta y validación de un modelo metodológico para integrar automatización, analítica de datos e inteligencia artificial en PyMEs</h3>
                         <p class="pub-autores">Meretta, F.; Fernández, J. M.</p>
                         <p class="pub-venue">VI Congreso Internacional de Investigación en Contabilidad y Empresa (CIICE 2026), Barcelona, España, 2 al 4 de noviembre</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="automatización">automatización</button><button type="button" class="pub-tag" data-tag="analítica de datos">analítica de datos</button><button type="button" class="pub-tag" data-tag="PyMEs">PyMEs</button><button type="button" class="pub-tag" data-tag="contabilidad">contabilidad</button></div>
+                        <div class="pub-acciones"><button type="button" class="pub-copiar" data-cita="Meretta, F.; Fernández, J. M. (2026). Contabilidad Digital: propuesta y validación de un modelo metodológico para integrar automatización, analítica de datos e inteligencia artificial en PyMEs. VI Congreso Internacional de Investigación en Contabilidad y Empresa (CIICE 2026), Barcelona, España, 2 al 4 de noviembre."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2026" data-tipo="congreso" data-buscar="remembering the flow: retrieval with dynamic turn representations for conversational memory fernández, j. m.; errecalde, m.; burdisso, s. xxxii congreso argentino de ciencias de la computación (cacic 2026), concepción del uruguay, 5 al 9 de octubre ">
+                <article class="pub-item" data-anio="2026" data-tipo="congreso"
+                    data-area="LLM y PLN" data-sede="CACIC" data-idioma="en"
+                    data-acceso="no"
+                    data-autores="Fernández, J. M.|Errecalde, M.|Burdisso, S."
+                    data-tags="memoria conversacional|recuperación de información|diálogo"
+                    data-titulo="remembering the flow: retrieval with dynamic turn representations for conversational memory"
+                    data-buscar="remembering the flow: retrieval with dynamic turn representations for conversational memory fernández, j. m.; errecalde, m.; burdisso, s. xxxii congreso argentino de ciencias de la computación (cacic 2026), concepción del uruguay, 5 al 9 de octubre llm y pln cacic  memoria conversacional recuperación de información diálogo">
                     <div class="pub-meta">
                         <span class="pub-fecha">Octubre 2026</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span> <span class="pub-badge pub-badge--estado">Aceptado para publicación</span>
+                        <span class="pub-area">LLM y PLN</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Remembering the Flow: Retrieval with Dynamic Turn Representations for Conversational Memory</h3>
                         <p class="pub-autores">Fernández, J. M.; Errecalde, M.; Burdisso, S.</p>
                         <p class="pub-venue">XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026), Concepción del Uruguay, 5 al 9 de octubre</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="memoria conversacional">memoria conversacional</button><button type="button" class="pub-tag" data-tag="recuperación de información">recuperación de información</button><button type="button" class="pub-tag" data-tag="diálogo">diálogo</button></div>
+                        <div class="pub-acciones"><button type="button" class="pub-copiar" data-cita="Fernández, J. M.; Errecalde, M.; Burdisso, S. (2026). Remembering the Flow: Retrieval with Dynamic Turn Representations for Conversational Memory. XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026), Concepción del Uruguay, 5 al 9 de octubre."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2026" data-tipo="congreso" data-buscar="un rag portable sobre sudocu: consulta conversacional de normativa universitaria mediante estados de diálogo con procedencia fernández, j. m.; tamasi, f.; marchetti, s.; oloriz, m.; errecalde, m. xxxii congreso argentino de ciencias de la computación (cacic 2026), concepción del uruguay ">
+                <article class="pub-item" data-anio="2026" data-tipo="congreso"
+                    data-area="LLM y PLN" data-sede="CACIC" data-idioma="es"
+                    data-acceso="no"
+                    data-autores="Fernández, J. M.|Tamasi, F.|Marchetti, S.|Oloriz, M.|Errecalde, M."
+                    data-tags="RAG|normativa universitaria|estados de diálogo|procedencia"
+                    data-titulo="un rag portable sobre sudocu: consulta conversacional de normativa universitaria mediante estados de diálogo con procede"
+                    data-buscar="un rag portable sobre sudocu: consulta conversacional de normativa universitaria mediante estados de diálogo con procedencia fernández, j. m.; tamasi, f.; marchetti, s.; oloriz, m.; errecalde, m. xxxii congreso argentino de ciencias de la computación (cacic 2026), concepción del uruguay llm y pln cacic  rag normativa universitaria estados de diálogo procedencia">
                     <div class="pub-meta">
                         <span class="pub-fecha">Octubre 2026</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span> <span class="pub-badge pub-badge--estado">Aceptado para publicación</span>
+                        <span class="pub-area">LLM y PLN</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Un RAG portable sobre SUDOCU: consulta conversacional de normativa universitaria mediante estados de diálogo con procedencia</h3>
                         <p class="pub-autores">Fernández, J. M.; Tamasi, F.; Marchetti, S.; Oloriz, M.; Errecalde, M.</p>
                         <p class="pub-venue">XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026), Concepción del Uruguay</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="RAG">RAG</button><button type="button" class="pub-tag" data-tag="normativa universitaria">normativa universitaria</button><button type="button" class="pub-tag" data-tag="estados de diálogo">estados de diálogo</button><button type="button" class="pub-tag" data-tag="procedencia">procedencia</button></div>
+                        <div class="pub-acciones"><button type="button" class="pub-copiar" data-cita="Fernández, J. M.; Tamasi, F.; Marchetti, S.; Oloriz, M.; Errecalde, M. (2026). Un RAG portable sobre SUDOCU: consulta conversacional de normativa universitaria mediante estados de diálogo con procedencia. XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026), Concepción del Uruguay."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2026" data-tipo="congreso" data-buscar="evidencia documental trazable con rag: un asistente para auditorías gmp en la industria farmacéutica pighin, m. e.; fernández, j. m. xxxii congreso argentino de ciencias de la computación (cacic 2026), concepción del uruguay ">
+                <article class="pub-item" data-anio="2026" data-tipo="congreso"
+                    data-area="LLM y PLN" data-sede="CACIC" data-idioma="es"
+                    data-acceso="no"
+                    data-autores="Pighin, M. E.|Fernández, J. M."
+                    data-tags="RAG|auditoría|industria farmacéutica|trazabilidad|GMP"
+                    data-titulo="evidencia documental trazable con rag: un asistente para auditorías gmp en la industria farmacéutica"
+                    data-buscar="evidencia documental trazable con rag: un asistente para auditorías gmp en la industria farmacéutica pighin, m. e.; fernández, j. m. xxxii congreso argentino de ciencias de la computación (cacic 2026), concepción del uruguay llm y pln cacic  rag auditoría industria farmacéutica trazabilidad gmp">
                     <div class="pub-meta">
                         <span class="pub-fecha">Octubre 2026</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span> <span class="pub-badge pub-badge--estado">Aceptado para publicación</span>
+                        <span class="pub-area">LLM y PLN</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Evidencia documental trazable con RAG: un asistente para auditorías GMP en la industria farmacéutica</h3>
                         <p class="pub-autores">Pighin, M. E.; Fernández, J. M.</p>
                         <p class="pub-venue">XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026), Concepción del Uruguay</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="RAG">RAG</button><button type="button" class="pub-tag" data-tag="auditoría">auditoría</button><button type="button" class="pub-tag" data-tag="industria farmacéutica">industria farmacéutica</button><button type="button" class="pub-tag" data-tag="trazabilidad">trazabilidad</button><button type="button" class="pub-tag" data-tag="GMP">GMP</button></div>
+                        <div class="pub-acciones"><button type="button" class="pub-copiar" data-cita="Pighin, M. E.; Fernández, J. M. (2026). Evidencia documental trazable con RAG: un asistente para auditorías GMP en la industria farmacéutica. XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026), Concepción del Uruguay."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2026" data-tipo="congreso" data-buscar="dm-ai: un director de juego multiagente basado en modelos de lenguaje para juegos de rol narrativos baez, s.; fernández, j. m. xxxii congreso argentino de ciencias de la computación (cacic 2026), concepción del uruguay ">
+                <article class="pub-item" data-anio="2026" data-tipo="congreso"
+                    data-area="LLM y PLN" data-sede="CACIC" data-idioma="es"
+                    data-acceso="no"
+                    data-autores="Baez, S.|Fernández, J. M."
+                    data-tags="sistemas multiagente|generación narrativa|juegos de rol"
+                    data-titulo="dm-ai: un director de juego multiagente basado en modelos de lenguaje para juegos de rol narrativos"
+                    data-buscar="dm-ai: un director de juego multiagente basado en modelos de lenguaje para juegos de rol narrativos baez, s.; fernández, j. m. xxxii congreso argentino de ciencias de la computación (cacic 2026), concepción del uruguay llm y pln cacic  sistemas multiagente generación narrativa juegos de rol">
                     <div class="pub-meta">
                         <span class="pub-fecha">Octubre 2026</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span> <span class="pub-badge pub-badge--estado">Aceptado para publicación</span>
+                        <span class="pub-area">LLM y PLN</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">DM-AI: un director de juego multiagente basado en modelos de lenguaje para juegos de rol narrativos</h3>
                         <p class="pub-autores">Baez, S.; Fernández, J. M.</p>
                         <p class="pub-venue">XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026), Concepción del Uruguay</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="sistemas multiagente">sistemas multiagente</button><button type="button" class="pub-tag" data-tag="generación narrativa">generación narrativa</button><button type="button" class="pub-tag" data-tag="juegos de rol">juegos de rol</button></div>
+                        <div class="pub-acciones"><button type="button" class="pub-copiar" data-cita="Baez, S.; Fernández, J. M. (2026). DM-AI: un director de juego multiagente basado en modelos de lenguaje para juegos de rol narrativos. XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026), Concepción del Uruguay."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2026" data-tipo="poster" data-buscar="parameter efficiency or efficient full fine-tuning? peft vs. galore camilo, m.; fernández, j. m.; errecalde, m. second south american nlp school, buenos aires, 3 y 4 de agosto ">
+                <article class="pub-item" data-anio="2026" data-tipo="poster"
+                    data-area="LLM y PLN" data-sede="NLP School" data-idioma="en"
+                    data-acceso="si"
+                    data-autores="Camilo, M.|Fernández, J. M.|Errecalde, M."
+                    data-tags="PEFT|GaLore|fine-tuning|eficiencia|LLaMA"
+                    data-titulo="parameter efficiency or efficient full fine-tuning? peft vs. galore"
+                    data-buscar="parameter efficiency or efficient full fine-tuning? peft vs. galore camilo, m.; fernández, j. m.; errecalde, m. second south american nlp school, buenos aires, 3 y 4 de agosto llm y pln nlp school  peft galore fine-tuning eficiencia llama">
                     <div class="pub-meta">
                         <span class="pub-fecha">Agosto 2026</span>
                         <span class="pub-badge pub-badge--poster">Póster</span> <span class="pub-badge pub-badge--estado">Segundo lugar — Poster Awards 2026</span>
+                        <span class="pub-area">LLM y PLN</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Parameter Efficiency or Efficient Full Fine-Tuning? PEFT vs. GaLore</h3>
                         <p class="pub-autores">Camilo, M.; Fernández, J. M.; Errecalde, M.</p>
                         <p class="pub-venue">Second South American NLP School, Buenos Aires, 3 y 4 de agosto</p>
-                        <a class="pub-pdf" href="../assets/poster-peft-vs-galore-nlp-school-2026.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Ver el póster (PDF)</a>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="PEFT">PEFT</button><button type="button" class="pub-tag" data-tag="GaLore">GaLore</button><button type="button" class="pub-tag" data-tag="fine-tuning">fine-tuning</button><button type="button" class="pub-tag" data-tag="eficiencia">eficiencia</button><button type="button" class="pub-tag" data-tag="LLaMA">LLaMA</button></div>
+                        <div class="pub-acciones"><a class="pub-link" href="../assets/poster-peft-vs-galore-nlp-school-2026.pdf" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Póster (PDF)</a><button type="button" class="pub-copiar" data-cita="Camilo, M.; Fernández, J. M.; Errecalde, M. (2026). Parameter Efficiency or Efficient Full Fine-Tuning? PEFT vs. GaLore. Second South American NLP School, Buenos Aires, 3 y 4 de agosto."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2026" data-tipo="congreso" data-buscar="performance vs. efficiency in domain-specific llm adaptation: a comparative study of full fine-tuning and lora on real-world data camilo, m.; fernández, j. m.; errecalde, m. xiv jornadas de cloud computing, big data &amp;amp; emerging topics (jcc-bd&amp;amp;et 2026), la plata ">
+                <article class="pub-item" data-anio="2026" data-tipo="congreso"
+                    data-area="LLM y PLN" data-sede="JCC-BD&amp;ET" data-idioma="en"
+                    data-acceso="no"
+                    data-autores="Camilo, M.|Fernández, J. M.|Errecalde, M."
+                    data-tags="fine-tuning|LoRA|adaptación de dominio"
+                    data-titulo="performance vs. efficiency in domain-specific llm adaptation: a comparative study of full fine-tuning and lora on real-w"
+                    data-buscar="performance vs. efficiency in domain-specific llm adaptation: a comparative study of full fine-tuning and lora on real-world data camilo, m.; fernández, j. m.; errecalde, m. xiv jornadas de cloud computing, big data &amp; emerging topics (jcc-bd&amp;et 2026), la plata llm y pln jcc-bd&amp;et  fine-tuning lora adaptación de dominio">
                     <div class="pub-meta">
                         <span class="pub-fecha">Junio 2026</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">LLM y PLN</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Performance vs. Efficiency in Domain-Specific LLM Adaptation: A Comparative Study of Full Fine-Tuning and LoRA on Real-World Data</h3>
                         <p class="pub-autores">Camilo, M.; Fernández, J. M.; Errecalde, M.</p>
                         <p class="pub-venue">XIV Jornadas de Cloud Computing, Big Data &amp; Emerging Topics (JCC-BD&amp;ET 2026), La Plata</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="fine-tuning">fine-tuning</button><button type="button" class="pub-tag" data-tag="LoRA">LoRA</button><button type="button" class="pub-tag" data-tag="adaptación de dominio">adaptación de dominio</button></div>
+                        <div class="pub-acciones"><button type="button" class="pub-copiar" data-cita="Camilo, M.; Fernández, J. M.; Errecalde, M. (2026). Performance vs. Efficiency in Domain-Specific LLM Adaptation: A Comparative Study of Full Fine-Tuning and LoRA on Real-World Data. XIV Jornadas de Cloud Computing, Big Data &amp; Emerging Topics (JCC-BD&amp;ET 2026), La Plata."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2026" data-tipo="congreso" data-buscar="a defense-in-depth architecture for protecting ai agent intellectual property in multi-tenant cloud environments petrocelli, d.; fernández, j. m. xiv jornadas de cloud computing, big data &amp;amp; emerging topics (jcc-bd&amp;amp;et 2026), la plata ">
+                <article class="pub-item" data-anio="2026" data-tipo="congreso"
+                    data-area="Seguridad" data-sede="JCC-BD&amp;ET" data-idioma="en"
+                    data-acceso="no"
+                    data-autores="Petrocelli, D.|Fernández, J. M."
+                    data-tags="agentes de IA|propiedad intelectual|multi-tenant|cloud"
+                    data-titulo="a defense-in-depth architecture for protecting ai agent intellectual property in multi-tenant cloud environments"
+                    data-buscar="a defense-in-depth architecture for protecting ai agent intellectual property in multi-tenant cloud environments petrocelli, d.; fernández, j. m. xiv jornadas de cloud computing, big data &amp; emerging topics (jcc-bd&amp;et 2026), la plata seguridad jcc-bd&amp;et  agentes de ia propiedad intelectual multi-tenant cloud">
                     <div class="pub-meta">
                         <span class="pub-fecha">Junio 2026</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">Seguridad</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">A Defense-in-Depth Architecture for Protecting AI Agent Intellectual Property in Multi-Tenant Cloud Environments</h3>
                         <p class="pub-autores">Petrocelli, D.; Fernández, J. M.</p>
                         <p class="pub-venue">XIV Jornadas de Cloud Computing, Big Data &amp; Emerging Topics (JCC-BD&amp;ET 2026), La Plata</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="agentes de IA">agentes de IA</button><button type="button" class="pub-tag" data-tag="propiedad intelectual">propiedad intelectual</button><button type="button" class="pub-tag" data-tag="multi-tenant">multi-tenant</button><button type="button" class="pub-tag" data-tag="cloud">cloud</button></div>
+                        <div class="pub-acciones"><button type="button" class="pub-copiar" data-cita="Petrocelli, D.; Fernández, J. M. (2026). A Defense-in-Depth Architecture for Protecting AI Agent Intellectual Property in Multi-Tenant Cloud Environments. XIV Jornadas de Cloud Computing, Big Data &amp; Emerging Topics (JCC-BD&amp;ET 2026), La Plata."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-            </section>
-            <section class="pub-anio" data-grupo="2025">
-                <h2 class="pub-anio-titulo">2025</h2>
-                <article class="pub-item" data-anio="2025" data-tipo="congreso" data-buscar="agente basado en llm para la ejecución de comandos cli a partir de lenguaje natural: caso de estudio con docker robles, r.; fernández, j. m. xxxi congreso argentino de ciencias de la computación (cacic 2025) ">
+                <article class="pub-item" data-anio="2025" data-tipo="congreso"
+                    data-area="LLM y PLN" data-sede="CACIC" data-idioma="es"
+                    data-acceso="no"
+                    data-autores="Robles, R.|Fernández, J. M."
+                    data-tags="agentes|CLI|Docker|lenguaje natural"
+                    data-titulo="agente basado en llm para la ejecución de comandos cli a partir de lenguaje natural: caso de estudio con docker"
+                    data-buscar="agente basado en llm para la ejecución de comandos cli a partir de lenguaje natural: caso de estudio con docker robles, r.; fernández, j. m. xxxi congreso argentino de ciencias de la computación (cacic 2025) llm y pln cacic  agentes cli docker lenguaje natural">
                     <div class="pub-meta">
                         <span class="pub-fecha">2025</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">LLM y PLN</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Agente basado en LLM para la ejecución de comandos CLI a partir de lenguaje natural: caso de estudio con Docker</h3>
                         <p class="pub-autores">Robles, R.; Fernández, J. M.</p>
                         <p class="pub-venue">XXXI Congreso Argentino de Ciencias de la Computación (CACIC 2025)</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="agentes">agentes</button><button type="button" class="pub-tag" data-tag="CLI">CLI</button><button type="button" class="pub-tag" data-tag="Docker">Docker</button><button type="button" class="pub-tag" data-tag="lenguaje natural">lenguaje natural</button></div>
+                        <div class="pub-acciones"><button type="button" class="pub-copiar" data-cita="Robles, R.; Fernández, J. M. (2025). Agente basado en LLM para la ejecución de comandos CLI a partir de lenguaje natural: caso de estudio con Docker. XXXI Congreso Argentino de Ciencias de la Computación (CACIC 2025)."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2025" data-tipo="congreso" data-buscar="sistema de generación aumentada por recuperación (rag) para el acceso a información académica guerra, f.; monti, k.; fernández, j. m. xxxi congreso argentino de ciencias de la computación (cacic 2025) ">
+                <article class="pub-item" data-anio="2025" data-tipo="congreso"
+                    data-area="LLM y PLN" data-sede="CACIC" data-idioma="es"
+                    data-acceso="no"
+                    data-autores="Guerra, F.|Monti, K.|Fernández, J. M."
+                    data-tags="RAG|información académica|recuperación de información"
+                    data-titulo="sistema de generación aumentada por recuperación (rag) para el acceso a información académica"
+                    data-buscar="sistema de generación aumentada por recuperación (rag) para el acceso a información académica guerra, f.; monti, k.; fernández, j. m. xxxi congreso argentino de ciencias de la computación (cacic 2025) llm y pln cacic  rag información académica recuperación de información">
                     <div class="pub-meta">
                         <span class="pub-fecha">2025</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">LLM y PLN</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Sistema de generación aumentada por recuperación (RAG) para el acceso a información académica</h3>
                         <p class="pub-autores">Guerra, F.; Monti, K.; Fernández, J. M.</p>
                         <p class="pub-venue">XXXI Congreso Argentino de Ciencias de la Computación (CACIC 2025)</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="RAG">RAG</button><button type="button" class="pub-tag" data-tag="información académica">información académica</button><button type="button" class="pub-tag" data-tag="recuperación de información">recuperación de información</button></div>
+                        <div class="pub-acciones"><button type="button" class="pub-copiar" data-cita="Guerra, F.; Monti, K.; Fernández, J. M. (2025). Sistema de generación aumentada por recuperación (RAG) para el acceso a información académica. XXXI Congreso Argentino de Ciencias de la Computación (CACIC 2025)."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2025" data-tipo="congreso" data-buscar="fine-tuning y adaptación de modelos de lenguaje abiertos en infraestructura hpc para aplicaciones de dominio específico fernández, j. m.; petrocelli, d. m.; matuk, r.; lanson, d.; zamudio, e.; cagnina, l. c.; errecalde, m. l. xxvii workshop de investigadores en ciencias de la computación (wicc 2025), mendoza, 10 y 11 de abril ">
+                <article class="pub-item" data-anio="2025" data-tipo="congreso"
+                    data-area="LLM y PLN" data-sede="WICC" data-idioma="es"
+                    data-acceso="si"
+                    data-autores="Fernández, J. M.|Petrocelli, D. M.|Matuk, R.|Lanson, D.|Zamudio, E.|Cagnina, L. C.|Errecalde, M. L."
+                    data-tags="fine-tuning|HPC|dominio específico|modelos abiertos"
+                    data-titulo="fine-tuning y adaptación de modelos de lenguaje abiertos en infraestructura hpc para aplicaciones de dominio específico"
+                    data-buscar="fine-tuning y adaptación de modelos de lenguaje abiertos en infraestructura hpc para aplicaciones de dominio específico fernández, j. m.; petrocelli, d. m.; matuk, r.; lanson, d.; zamudio, e.; cagnina, l. c.; errecalde, m. l. xxvii workshop de investigadores en ciencias de la computación (wicc 2025), mendoza, 10 y 11 de abril llm y pln wicc  fine-tuning hpc dominio específico modelos abiertos">
                     <div class="pub-meta">
                         <span class="pub-fecha">Abril 2025</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">LLM y PLN</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Fine-tuning y adaptación de modelos de lenguaje abiertos en infraestructura HPC para aplicaciones de dominio específico</h3>
                         <p class="pub-autores">Fernández, J. M.; Petrocelli, D. M.; Matuk, R.; Lanson, D.; Zamudio, E.; Cagnina, L. C.; Errecalde, M. L.</p>
                         <p class="pub-venue">XXVII Workshop de Investigadores en Ciencias de la Computación (WICC 2025), Mendoza, 10 y 11 de abril</p>
-                        <a class="pub-link" href="https://sedici.unlp.edu.ar/handle/10915/183892" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> SEDICI</a>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="fine-tuning">fine-tuning</button><button type="button" class="pub-tag" data-tag="HPC">HPC</button><button type="button" class="pub-tag" data-tag="dominio específico">dominio específico</button><button type="button" class="pub-tag" data-tag="modelos abiertos">modelos abiertos</button></div>
+                        <div class="pub-acciones"><a class="pub-link" href="https://sedici.unlp.edu.ar/handle/10915/183892" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> SEDICI</a><button type="button" class="pub-copiar" data-cita="Fernández, J. M.; Petrocelli, D. M.; Matuk, R.; Lanson, D.; Zamudio, E.; Cagnina, L. C.; Errecalde, M. L. (2025). Fine-tuning y adaptación de modelos de lenguaje abiertos en infraestructura HPC para aplicaciones de dominio específico. XXVII Workshop de Investigadores en Ciencias de la Computación (WICC 2025), Mendoza, 10 y 11 de abril."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-            </section>
-            <section class="pub-anio" data-grupo="2024">
-                <h2 class="pub-anio-titulo">2024</h2>
-                <article class="pub-item" data-anio="2024" data-tipo="revista" data-buscar="efectos de la incorporación de la bimodalidad en estudiantes que se declaran en situación de discapacidad en una universidad argentina fernández, j. m.; oloriz, m. g. razón crítica, (17), 1-18 estudio de las cohortes 2018 a 2022">
+                <article class="pub-item" data-anio="2024" data-tipo="revista"
+                    data-area="Educación superior" data-sede="Razón Crítica" data-idioma="es"
+                    data-acceso="si"
+                    data-autores="Fernández, J. M.|Oloriz, M. G."
+                    data-tags="bimodalidad|discapacidad|inclusión|cohortes"
+                    data-titulo="efectos de la incorporación de la bimodalidad en estudiantes que se declaran en situación de discapacidad en una univers"
+                    data-buscar="efectos de la incorporación de la bimodalidad en estudiantes que se declaran en situación de discapacidad en una universidad argentina fernández, j. m.; oloriz, m. g. razón crítica, (17), 1-18 educación superior razón crítica estudio de las cohortes 2018 a 2022 bimodalidad discapacidad inclusión cohortes">
                     <div class="pub-meta">
                         <span class="pub-fecha">2024</span>
                         <span class="pub-badge pub-badge--revista">Revista</span>
+                        <span class="pub-area">Educación superior</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Efectos de la incorporación de la bimodalidad en estudiantes que se declaran en situación de discapacidad en una universidad argentina</h3>
                         <p class="pub-autores">Fernández, J. M.; Oloriz, M. G.</p>
                         <p class="pub-venue">Razón Crítica, (17), 1-18</p>
-                        <p class="pub-nota">Estudio de las cohortes 2018 a 2022</p>
-                        <a class="pub-link" href="https://revistas.utadeo.edu.co/index.php/razoncritica/article/view/efectos-incorporacion-bimodalidad-estudiantes" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> Razón Crítica</a>
+                    <p class="pub-nota">Estudio de las cohortes 2018 a 2022</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="bimodalidad">bimodalidad</button><button type="button" class="pub-tag" data-tag="discapacidad">discapacidad</button><button type="button" class="pub-tag" data-tag="inclusión">inclusión</button><button type="button" class="pub-tag" data-tag="cohortes">cohortes</button></div>
+                        <div class="pub-acciones"><a class="pub-link" href="https://revistas.utadeo.edu.co/index.php/razoncritica/article/view/efectos-incorporacion-bimodalidad-estudiantes" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> Razón Crítica</a><button type="button" class="pub-copiar" data-cita="Fernández, J. M.; Oloriz, M. G. (2024). Efectos de la incorporación de la bimodalidad en estudiantes que se declaran en situación de discapacidad en una universidad argentina. Razón Crítica, (17), 1-18."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2024" data-tipo="libro" data-buscar="computer science — cacic 2023 (libro de actas del xxix congreso argentino de ciencias de la computación) pesado, p.; fernández, j. m.; panessi, w. (eds.) cham: springer, 2024. isbn 978-3-031-62245-8 ">
+                <article class="pub-item" data-anio="2024" data-tipo="libro"
+                    data-area="Edición científica" data-sede="CACIC" data-idioma="en"
+                    data-acceso="si"
+                    data-autores="Pesado, P.|Fernández, J. M.|Panessi, W."
+                    data-tags="actas|edición|congreso"
+                    data-titulo="computer science — cacic 2023 (libro de actas del xxix congreso argentino de ciencias de la computación)"
+                    data-buscar="computer science — cacic 2023 (libro de actas del xxix congreso argentino de ciencias de la computación) pesado, p.; fernández, j. m.; panessi, w. (eds.) cham: springer, 2024. isbn 978-3-031-62245-8 edición científica cacic  actas edición congreso">
                     <div class="pub-meta">
                         <span class="pub-fecha">2024</span>
                         <span class="pub-badge pub-badge--libro">Libro</span>
+                        <span class="pub-area">Edición científica</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Computer Science — CACIC 2023 (libro de actas del XXIX Congreso Argentino de Ciencias de la Computación)</h3>
                         <p class="pub-autores">Pesado, P.; Fernández, J. M.; Panessi, W. (eds.)</p>
                         <p class="pub-venue">Cham: Springer, 2024. ISBN 978-3-031-62245-8</p>
-                        <a class="pub-link" href="https://link.springer.com/book/10.1007/978-3-031-62245-8" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> Springer</a>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="actas">actas</button><button type="button" class="pub-tag" data-tag="edición">edición</button><button type="button" class="pub-tag" data-tag="congreso">congreso</button></div>
+                        <div class="pub-acciones"><a class="pub-link" href="https://link.springer.com/book/10.1007/978-3-031-62245-8" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> Springer</a><button type="button" class="pub-copiar" data-cita="Pesado, P.; Fernández, J. M.; Panessi, W. (eds.) (2024). Computer Science — CACIC 2023 (libro de actas del XXIX Congreso Argentino de Ciencias de la Computación). Cham: Springer, 2024. ISBN 978-3-031-62245-8."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2024" data-tipo="revista" data-buscar="sistemas de información ambiental como herramientas para la gestión pública de escala local: el caso del sistema de información ambiental integral (siai) del partido de luján, provincia de buenos aires lanson, d. e.; iglesias, a. n.; fernández, j. m.; rosenfeld, a. anuario de la división geografía, (18), 1-10 ">
+                <article class="pub-item" data-anio="2024" data-tipo="revista"
+                    data-area="Ambiente y territorio" data-sede="Anuario División Geografía" data-idioma="es"
+                    data-acceso="si"
+                    data-autores="Lanson, D. E.|Iglesias, A. N.|Fernández, J. M.|Rosenfeld, A."
+                    data-tags="SIAI|gestión pública|información ambiental|escala local"
+                    data-titulo="sistemas de información ambiental como herramientas para la gestión pública de escala local: el caso del sistema de info"
+                    data-buscar="sistemas de información ambiental como herramientas para la gestión pública de escala local: el caso del sistema de información ambiental integral (siai) del partido de luján, provincia de buenos aires lanson, d. e.; iglesias, a. n.; fernández, j. m.; rosenfeld, a. anuario de la división geografía, (18), 1-10 ambiente y territorio anuario división geografía  siai gestión pública información ambiental escala local">
                     <div class="pub-meta">
                         <span class="pub-fecha">2024</span>
                         <span class="pub-badge pub-badge--revista">Revista</span>
+                        <span class="pub-area">Ambiente y territorio</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Sistemas de Información Ambiental como herramientas para la gestión pública de escala local: el caso del Sistema de Información Ambiental Integral (SIAI) del Partido de Luján, Provincia de Buenos Aires</h3>
                         <p class="pub-autores">Lanson, D. E.; Iglesias, A. N.; Fernández, J. M.; Rosenfeld, A.</p>
                         <p class="pub-venue">Anuario de la División Geografía, (18), 1-10</p>
-                        <a class="pub-link" href="https://anuario-geografia.unlu.edu.ar/anugeografia/article/view/218" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> Anuario</a>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="SIAI">SIAI</button><button type="button" class="pub-tag" data-tag="gestión pública">gestión pública</button><button type="button" class="pub-tag" data-tag="información ambiental">información ambiental</button><button type="button" class="pub-tag" data-tag="escala local">escala local</button></div>
+                        <div class="pub-acciones"><a class="pub-link" href="https://anuario-geografia.unlu.edu.ar/anugeografia/article/view/218" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> Anuario</a><button type="button" class="pub-copiar" data-cita="Lanson, D. E.; Iglesias, A. N.; Fernández, J. M.; Rosenfeld, A. (2024). Sistemas de Información Ambiental como herramientas para la gestión pública de escala local: el caso del Sistema de Información Ambiental Integral (SIAI) del Partido de Luján, Provincia de Buenos Aires. Anuario de la División Geografía, (18), 1-10."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2024" data-tipo="revista" data-buscar="productos y procesos de la extensión universitaria en el campo de la gestión ambiental. el sistema de información ambiental integrada (siai) del partido de luján, provincia de buenos aires lanson, d.; iglesias, a. n.; fernández, j. m. cuadernos de extensión universitaria de la unlpam, vol. 8, n.º 2, julio-diciembre 2024, dossier. issn 2451-5930, e-issn 2718-7500 ">
+                <article class="pub-item" data-anio="2024" data-tipo="revista"
+                    data-area="Ambiente y territorio" data-sede="Cuadernos de Extensión UNLPam" data-idioma="es"
+                    data-acceso="no"
+                    data-autores="Lanson, D.|Iglesias, A. N.|Fernández, J. M."
+                    data-tags="SIAI|extensión universitaria|gestión ambiental"
+                    data-titulo="productos y procesos de la extensión universitaria en el campo de la gestión ambiental. el sistema de información ambien"
+                    data-buscar="productos y procesos de la extensión universitaria en el campo de la gestión ambiental. el sistema de información ambiental integrada (siai) del partido de luján, provincia de buenos aires lanson, d.; iglesias, a. n.; fernández, j. m. cuadernos de extensión universitaria de la unlpam, vol. 8, n.º 2, julio-diciembre 2024, dossier. issn 2451-5930, e-issn 2718-7500 ambiente y territorio cuadernos de extensión unlpam  siai extensión universitaria gestión ambiental">
                     <div class="pub-meta">
                         <span class="pub-fecha">2024</span>
                         <span class="pub-badge pub-badge--revista">Revista</span>
+                        <span class="pub-area">Ambiente y territorio</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Productos y procesos de la extensión universitaria en el campo de la gestión ambiental. El Sistema de Información Ambiental Integrada (SIAI) del partido de Luján, Provincia de Buenos Aires</h3>
                         <p class="pub-autores">Lanson, D.; Iglesias, A. N.; Fernández, J. M.</p>
                         <p class="pub-venue">Cuadernos de Extensión Universitaria de la UNLPam, Vol. 8, N.º 2, julio-diciembre 2024, Dossier. ISSN 2451-5930, e-ISSN 2718-7500</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="SIAI">SIAI</button><button type="button" class="pub-tag" data-tag="extensión universitaria">extensión universitaria</button><button type="button" class="pub-tag" data-tag="gestión ambiental">gestión ambiental</button></div>
+                        <div class="pub-acciones"><button type="button" class="pub-copiar" data-cita="Lanson, D.; Iglesias, A. N.; Fernández, J. M. (2024). Productos y procesos de la extensión universitaria en el campo de la gestión ambiental. El Sistema de Información Ambiental Integrada (SIAI) del partido de Luján, Provincia de Buenos Aires. Cuadernos de Extensión Universitaria de la UNLPam, Vol. 8, N.º 2, julio-diciembre 2024, Dossier. ISSN 2451-5930, e-ISSN 2718-7500."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-            </section>
-            <section class="pub-anio" data-grupo="2023">
-                <h2 class="pub-anio-titulo">2023</h2>
-                <article class="pub-item" data-anio="2023" data-tipo="congreso" data-buscar="instance retrieval from non-labeled data as a strategy for automatic classification of imbalanced e-mail datasets fernández, j. m.; errecalde, m. l. xxviii congreso argentino de ciencias de la computación (cacic 2022) ">
+                <article class="pub-item" data-anio="2023" data-tipo="congreso"
+                    data-area="LLM y PLN" data-sede="CACIC" data-idioma="en"
+                    data-acceso="si"
+                    data-autores="Fernández, J. M.|Errecalde, M. L."
+                    data-tags="clasificación de texto|desbalanceo|correo electrónico|recuperación de instancias"
+                    data-titulo="instance retrieval from non-labeled data as a strategy for automatic classification of imbalanced e-mail datasets"
+                    data-buscar="instance retrieval from non-labeled data as a strategy for automatic classification of imbalanced e-mail datasets fernández, j. m.; errecalde, m. l. xxviii congreso argentino de ciencias de la computación (cacic 2022) llm y pln cacic  clasificación de texto desbalanceo correo electrónico recuperación de instancias">
                     <div class="pub-meta">
                         <span class="pub-fecha">2023</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">LLM y PLN</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Instance retrieval from non-labeled data as a strategy for automatic classification of imbalanced e-mail datasets</h3>
                         <p class="pub-autores">Fernández, J. M.; Errecalde, M. L.</p>
                         <p class="pub-venue">XXVIII Congreso Argentino de Ciencias de la Computación (CACIC 2022)</p>
-                        <a class="pub-link" href="https://sedici.unlp.edu.ar/handle/10915/149456" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> SEDICI</a>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="clasificación de texto">clasificación de texto</button><button type="button" class="pub-tag" data-tag="desbalanceo">desbalanceo</button><button type="button" class="pub-tag" data-tag="correo electrónico">correo electrónico</button><button type="button" class="pub-tag" data-tag="recuperación de instancias">recuperación de instancias</button></div>
+                        <div class="pub-acciones"><a class="pub-link" href="https://sedici.unlp.edu.ar/handle/10915/149456" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> SEDICI</a><button type="button" class="pub-copiar" data-cita="Fernández, J. M.; Errecalde, M. L. (2023). Instance retrieval from non-labeled data as a strategy for automatic classification of imbalanced e-mail datasets. XXVIII Congreso Argentino de Ciencias de la Computación (CACIC 2022)."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2023" data-tipo="congreso" data-buscar="descubrimiento de patrones de comportamiento vinculados al abandono en la universidad nacional de luján mediante la aplicación de técnicas de aprendizaje automático oloriz, m.; fernández, j. m.; jara, c.; martínez, c.; baquel, r.; bertoglio, s.; delfino, h. xxv workshop de investigadores en ciencias de la computación, universidad nacional del noroeste, abril de 2023 ">
+                <article class="pub-item" data-anio="2023" data-tipo="congreso"
+                    data-area="Educación superior" data-sede="WICC" data-idioma="es"
+                    data-acceso="no"
+                    data-autores="Oloriz, M.|Fernández, J. M.|Jara, C.|Martínez, C.|Baquel, R.|Bertoglio, S.|Delfino, H."
+                    data-tags="abandono|aprendizaje automático|minería de datos"
+                    data-titulo="descubrimiento de patrones de comportamiento vinculados al abandono en la universidad nacional de luján mediante la apli"
+                    data-buscar="descubrimiento de patrones de comportamiento vinculados al abandono en la universidad nacional de luján mediante la aplicación de técnicas de aprendizaje automático oloriz, m.; fernández, j. m.; jara, c.; martínez, c.; baquel, r.; bertoglio, s.; delfino, h. xxv workshop de investigadores en ciencias de la computación, universidad nacional del noroeste, abril de 2023 educación superior wicc  abandono aprendizaje automático minería de datos">
                     <div class="pub-meta">
                         <span class="pub-fecha">Abril 2023</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">Educación superior</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Descubrimiento de patrones de comportamiento vinculados al abandono en la Universidad Nacional de Luján mediante la aplicación de técnicas de aprendizaje automático</h3>
                         <p class="pub-autores">Oloriz, M.; Fernández, J. M.; Jara, C.; Martínez, C.; Baquel, R.; Bertoglio, S.; Delfino, H.</p>
                         <p class="pub-venue">XXV Workshop de Investigadores en Ciencias de la Computación, Universidad Nacional del Noroeste, abril de 2023</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="abandono">abandono</button><button type="button" class="pub-tag" data-tag="aprendizaje automático">aprendizaje automático</button><button type="button" class="pub-tag" data-tag="minería de datos">minería de datos</button></div>
+                        <div class="pub-acciones"><button type="button" class="pub-copiar" data-cita="Oloriz, M.; Fernández, J. M.; Jara, C.; Martínez, C.; Baquel, R.; Bertoglio, S.; Delfino, H. (2023). Descubrimiento de patrones de comportamiento vinculados al abandono en la Universidad Nacional de Luján mediante la aplicación de técnicas de aprendizaje automático. XXV Workshop de Investigadores en Ciencias de la Computación, Universidad Nacional del Noroeste, abril de 2023."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2023" data-tipo="congreso" data-buscar="agrupamiento de universidades nacionales en función de sus características martínez, c.; delfino, h.; bertoglio, s.; oloriz, m.; fernández, j. m. l coloquio argentino de estadística 2023, argentina ">
+                <article class="pub-item" data-anio="2023" data-tipo="congreso"
+                    data-area="Educación superior" data-sede="Coloquio de Estadística" data-idioma="es"
+                    data-acceso="no"
+                    data-autores="Martínez, C.|Delfino, H.|Bertoglio, S.|Oloriz, M.|Fernández, J. M."
+                    data-tags="clustering|estadística|universidades"
+                    data-titulo="agrupamiento de universidades nacionales en función de sus características"
+                    data-buscar="agrupamiento de universidades nacionales en función de sus características martínez, c.; delfino, h.; bertoglio, s.; oloriz, m.; fernández, j. m. l coloquio argentino de estadística 2023, argentina educación superior coloquio de estadística  clustering estadística universidades">
                     <div class="pub-meta">
                         <span class="pub-fecha">2023</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">Educación superior</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Agrupamiento de Universidades Nacionales en función de sus características</h3>
                         <p class="pub-autores">Martínez, C.; Delfino, H.; Bertoglio, S.; Oloriz, M.; Fernández, J. M.</p>
                         <p class="pub-venue">L Coloquio Argentino de Estadística 2023, Argentina</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="clustering">clustering</button><button type="button" class="pub-tag" data-tag="estadística">estadística</button><button type="button" class="pub-tag" data-tag="universidades">universidades</button></div>
+                        <div class="pub-acciones"><button type="button" class="pub-copiar" data-cita="Martínez, C.; Delfino, H.; Bertoglio, S.; Oloriz, M.; Fernández, J. M. (2023). Agrupamiento de Universidades Nacionales en función de sus características. L Coloquio Argentino de Estadística 2023, Argentina."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2023" data-tipo="congreso" data-buscar="herramientas de gestión ambiental sustentable y ordenamiento territorial del ámbito transicional ciudad-campo en gobiernos locales. el caso del sistema de información ambiental integrada del municipio-partido de luján, provincia de buenos aires, argentina iglesias, a. n.; lanson, d.; fernández, j. m.; martínez, a. 4th polish-colombian international symposium ">
+                <article class="pub-item" data-anio="2023" data-tipo="congreso"
+                    data-area="Ambiente y territorio" data-sede="Polish-Colombian Symposium" data-idioma="es"
+                    data-acceso="no"
+                    data-autores="Iglesias, A. N.|Lanson, D.|Fernández, J. M.|Martínez, A."
+                    data-tags="ordenamiento territorial|gestión ambiental|gobiernos locales"
+                    data-titulo="herramientas de gestión ambiental sustentable y ordenamiento territorial del ámbito transicional ciudad-campo en gobiern"
+                    data-buscar="herramientas de gestión ambiental sustentable y ordenamiento territorial del ámbito transicional ciudad-campo en gobiernos locales. el caso del sistema de información ambiental integrada del municipio-partido de luján, provincia de buenos aires, argentina iglesias, a. n.; lanson, d.; fernández, j. m.; martínez, a. 4th polish-colombian international symposium ambiente y territorio polish-colombian symposium  ordenamiento territorial gestión ambiental gobiernos locales">
                     <div class="pub-meta">
                         <span class="pub-fecha">2023</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">Ambiente y territorio</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Herramientas de gestión ambiental sustentable y ordenamiento territorial del ámbito transicional ciudad-campo en gobiernos locales. El caso del Sistema de Información Ambiental Integrada del Municipio-Partido de Luján, Provincia de Buenos Aires, Argentina</h3>
                         <p class="pub-autores">Iglesias, A. N.; Lanson, D.; Fernández, J. M.; Martínez, A.</p>
                         <p class="pub-venue">4th Polish-Colombian International Symposium</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="ordenamiento territorial">ordenamiento territorial</button><button type="button" class="pub-tag" data-tag="gestión ambiental">gestión ambiental</button><button type="button" class="pub-tag" data-tag="gobiernos locales">gobiernos locales</button></div>
+                        <div class="pub-acciones"><button type="button" class="pub-copiar" data-cita="Iglesias, A. N.; Lanson, D.; Fernández, J. M.; Martínez, A. (2023). Herramientas de gestión ambiental sustentable y ordenamiento territorial del ámbito transicional ciudad-campo en gobiernos locales. El caso del Sistema de Información Ambiental Integrada del Municipio-Partido de Luján, Provincia de Buenos Aires, Argentina. 4th Polish-Colombian International Symposium."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-            </section>
-            <section class="pub-anio" data-grupo="2022">
-                <h2 class="pub-anio-titulo">2022</h2>
-                <article class="pub-item" data-anio="2022" data-tipo="revista" data-buscar="la automatización de la certificación de títulos universitarios en argentina como garantía del derecho al acceso a la información pública y la mejora en el uso de recursos oloriz, m.; rissi, m.; fernández, j. m.; masón, m. r. ran — revista academia &amp;amp; negocios, 8(2) ">
+                <article class="pub-item" data-anio="2022" data-tipo="revista"
+                    data-area="Educación superior" data-sede="RAN" data-idioma="es"
+                    data-acceso="si"
+                    data-autores="Oloriz, M.|Rissi, M.|Fernández, J. M.|Masón, M. R."
+                    data-tags="certificación de títulos|gestión pública|acceso a la información"
+                    data-titulo="la automatización de la certificación de títulos universitarios en argentina como garantía del derecho al acceso a la in"
+                    data-buscar="la automatización de la certificación de títulos universitarios en argentina como garantía del derecho al acceso a la información pública y la mejora en el uso de recursos oloriz, m.; rissi, m.; fernández, j. m.; masón, m. r. ran — revista academia &amp; negocios, 8(2) educación superior ran  certificación de títulos gestión pública acceso a la información">
                     <div class="pub-meta">
                         <span class="pub-fecha">2022</span>
                         <span class="pub-badge pub-badge--revista">Revista</span>
+                        <span class="pub-area">Educación superior</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">La automatización de la certificación de títulos universitarios en Argentina como garantía del derecho al acceso a la información pública y la mejora en el uso de recursos</h3>
                         <p class="pub-autores">Oloriz, M.; Rissi, M.; Fernández, J. M.; Masón, M. R.</p>
                         <p class="pub-venue">RAN — Revista Academia &amp; Negocios, 8(2)</p>
-                        <a class="pub-link" href="https://www.redalyc.org/journal/5608/560872306002/html/" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> Redalyc</a>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="certificación de títulos">certificación de títulos</button><button type="button" class="pub-tag" data-tag="gestión pública">gestión pública</button><button type="button" class="pub-tag" data-tag="acceso a la información">acceso a la información</button></div>
+                        <div class="pub-acciones"><a class="pub-link" href="https://www.redalyc.org/journal/5608/560872306002/html/" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> Redalyc</a><button type="button" class="pub-copiar" data-cita="Oloriz, M.; Rissi, M.; Fernández, J. M.; Masón, M. R. (2022). La automatización de la certificación de títulos universitarios en Argentina como garantía del derecho al acceso a la información pública y la mejora en el uso de recursos. RAN — Revista Academia &amp; Negocios, 8(2)."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2022" data-tipo="congreso" data-buscar="multi-class e-mail classification with a semi-supervised approach based on automatic feature selection and information retrieval fernández, j. m.; errecalde, m. conference on cloud computing, big data &amp;amp; emerging topics (pp. 75-90). cham: springer international publishing ">
+                <article class="pub-item" data-anio="2022" data-tipo="congreso"
+                    data-area="LLM y PLN" data-sede="JCC-BD&amp;ET" data-idioma="en"
+                    data-acceso="si"
+                    data-autores="Fernández, J. M.|Errecalde, M."
+                    data-tags="clasificación de texto|semi-supervisado|selección de atributos|correo electrónico"
+                    data-titulo="multi-class e-mail classification with a semi-supervised approach based on automatic feature selection and information r"
+                    data-buscar="multi-class e-mail classification with a semi-supervised approach based on automatic feature selection and information retrieval fernández, j. m.; errecalde, m. conference on cloud computing, big data &amp; emerging topics (pp. 75-90). cham: springer international publishing llm y pln jcc-bd&amp;et  clasificación de texto semi-supervisado selección de atributos correo electrónico">
                     <div class="pub-meta">
                         <span class="pub-fecha">Junio 2022</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">LLM y PLN</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Multi-class e-mail classification with a semi-supervised approach based on automatic feature selection and information retrieval</h3>
                         <p class="pub-autores">Fernández, J. M.; Errecalde, M.</p>
                         <p class="pub-venue">Conference on Cloud Computing, Big Data &amp; Emerging Topics (pp. 75-90). Cham: Springer International Publishing</p>
-                        <a class="pub-link" href="https://link.springer.com/book/10.1007/978-3-031-14599-5" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> Springer</a>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="clasificación de texto">clasificación de texto</button><button type="button" class="pub-tag" data-tag="semi-supervisado">semi-supervisado</button><button type="button" class="pub-tag" data-tag="selección de atributos">selección de atributos</button><button type="button" class="pub-tag" data-tag="correo electrónico">correo electrónico</button></div>
+                        <div class="pub-acciones"><a class="pub-link" href="https://link.springer.com/book/10.1007/978-3-031-14599-5" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> Springer</a><button type="button" class="pub-copiar" data-cita="Fernández, J. M.; Errecalde, M. (2022). Multi-class e-mail classification with a semi-supervised approach based on automatic feature selection and information retrieval. Conference on Cloud Computing, Big Data &amp; Emerging Topics (pp. 75-90). Cham: Springer International Publishing."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2022" data-tipo="congreso" data-buscar="instance retrieval from non-labeled data as a strategy for automatic classification of imbalanced e-mail datasets fernández, j. m.; errecalde, m. eudelar 2022. isbn 978-987-1364-31-2 ">
+                <article class="pub-item" data-anio="2022" data-tipo="congreso"
+                    data-area="LLM y PLN" data-sede="EUDELAR" data-idioma="en"
+                    data-acceso="no"
+                    data-autores="Fernández, J. M.|Errecalde, M."
+                    data-tags="clasificación de texto|desbalanceo|correo electrónico|recuperación de instancias"
+                    data-titulo="instance retrieval from non-labeled data as a strategy for automatic classification of imbalanced e-mail datasets"
+                    data-buscar="instance retrieval from non-labeled data as a strategy for automatic classification of imbalanced e-mail datasets fernández, j. m.; errecalde, m. eudelar 2022. isbn 978-987-1364-31-2 llm y pln eudelar  clasificación de texto desbalanceo correo electrónico recuperación de instancias">
                     <div class="pub-meta">
                         <span class="pub-fecha">Octubre 2022</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">LLM y PLN</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Instance retrieval from non-labeled data as a strategy for automatic classification of imbalanced e-mail datasets</h3>
                         <p class="pub-autores">Fernández, J. M.; Errecalde, M.</p>
                         <p class="pub-venue">EUDELAR 2022. ISBN 978-987-1364-31-2</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="clasificación de texto">clasificación de texto</button><button type="button" class="pub-tag" data-tag="desbalanceo">desbalanceo</button><button type="button" class="pub-tag" data-tag="correo electrónico">correo electrónico</button><button type="button" class="pub-tag" data-tag="recuperación de instancias">recuperación de instancias</button></div>
+                        <div class="pub-acciones"><button type="button" class="pub-copiar" data-cita="Fernández, J. M.; Errecalde, M. (2022). Instance retrieval from non-labeled data as a strategy for automatic classification of imbalanced e-mail datasets. EUDELAR 2022. ISBN 978-987-1364-31-2."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-            </section>
-            <section class="pub-anio" data-grupo="2021">
-                <h2 class="pub-anio-titulo">2021</h2>
-                <article class="pub-item" data-anio="2021" data-tipo="congreso" data-buscar="clasificación automática de correos electrónicos fernández, j. m.; cavasín, n.; rodríguez, a.; errecalde, m. xxiii workshop de investigadores en ciencias de la computación, universidad nacional de chilecito, abril de 2021. isbn 978-987-24611-3-3 ">
+                <article class="pub-item" data-anio="2021" data-tipo="congreso"
+                    data-area="LLM y PLN" data-sede="WICC" data-idioma="es"
+                    data-acceso="si"
+                    data-autores="Fernández, J. M.|Cavasín, N.|Rodríguez, A.|Errecalde, M."
+                    data-tags="clasificación de texto|correo electrónico"
+                    data-titulo="clasificación automática de correos electrónicos"
+                    data-buscar="clasificación automática de correos electrónicos fernández, j. m.; cavasín, n.; rodríguez, a.; errecalde, m. xxiii workshop de investigadores en ciencias de la computación, universidad nacional de chilecito, abril de 2021. isbn 978-987-24611-3-3 llm y pln wicc  clasificación de texto correo electrónico">
                     <div class="pub-meta">
                         <span class="pub-fecha">Abril 2021</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">LLM y PLN</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Clasificación automática de correos electrónicos</h3>
                         <p class="pub-autores">Fernández, J. M.; Cavasín, N.; Rodríguez, A.; Errecalde, M.</p>
                         <p class="pub-venue">XXIII Workshop de Investigadores en Ciencias de la Computación, Universidad Nacional de Chilecito, abril de 2021. ISBN 978-987-24611-3-3</p>
-                        <a class="pub-link" href="https://sedici.unlp.edu.ar/handle/10915/120066" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> SEDICI</a>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="clasificación de texto">clasificación de texto</button><button type="button" class="pub-tag" data-tag="correo electrónico">correo electrónico</button></div>
+                        <div class="pub-acciones"><a class="pub-link" href="https://sedici.unlp.edu.ar/handle/10915/120066" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> SEDICI</a><button type="button" class="pub-copiar" data-cita="Fernández, J. M.; Cavasín, N.; Rodríguez, A.; Errecalde, M. (2021). Clasificación automática de correos electrónicos. XXIII Workshop de Investigadores en Ciencias de la Computación, Universidad Nacional de Chilecito, abril de 2021. ISBN 978-987-24611-3-3."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2021" data-tipo="congreso" data-buscar="classic and recent (neural) approaches to automatic text classification: a comparative study with e-mails in the spanish language fernández, j. m.; cavasin, n.; errecalde, m. short papers of the 9th conference on cloud computing, big data &amp;amp; emerging topics (p. 20). facultad de informática (unlp). isbn 978-950-34-2016-4 ">
+                <article class="pub-item" data-anio="2021" data-tipo="congreso"
+                    data-area="LLM y PLN" data-sede="JCC-BD&amp;ET" data-idioma="en"
+                    data-acceso="no"
+                    data-autores="Fernández, J. M.|Cavasin, N.|Errecalde, M."
+                    data-tags="clasificación de texto|redes neuronales|español"
+                    data-titulo="classic and recent (neural) approaches to automatic text classification: a comparative study with e-mails in the spanish"
+                    data-buscar="classic and recent (neural) approaches to automatic text classification: a comparative study with e-mails in the spanish language fernández, j. m.; cavasin, n.; errecalde, m. short papers of the 9th conference on cloud computing, big data &amp; emerging topics (p. 20). facultad de informática (unlp). isbn 978-950-34-2016-4 llm y pln jcc-bd&amp;et  clasificación de texto redes neuronales español">
                     <div class="pub-meta">
                         <span class="pub-fecha">2021</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">LLM y PLN</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Classic and recent (neural) approaches to automatic text classification: a comparative study with e-mails in the Spanish language</h3>
                         <p class="pub-autores">Fernández, J. M.; Cavasin, N.; Errecalde, M.</p>
                         <p class="pub-venue">Short Papers of the 9th Conference on Cloud Computing, Big Data &amp; Emerging Topics (p. 20). Facultad de Informática (UNLP). ISBN 978-950-34-2016-4</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="clasificación de texto">clasificación de texto</button><button type="button" class="pub-tag" data-tag="redes neuronales">redes neuronales</button><button type="button" class="pub-tag" data-tag="español">español</button></div>
+                        <div class="pub-acciones"><button type="button" class="pub-copiar" data-cita="Fernández, J. M.; Cavasin, N.; Errecalde, M. (2021). Classic and recent (neural) approaches to automatic text classification: a comparative study with e-mails in the Spanish language. Short Papers of the 9th Conference on Cloud Computing, Big Data &amp; Emerging Topics (p. 20). Facultad de Informática (UNLP). ISBN 978-950-34-2016-4."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2021" data-tipo="congreso" data-buscar="collaborative, distributed, scalable and low-cost platform based on microservices, containers, mobile devices and cloud services to solve compute-intensive tasks petrocelli, d.; de giusti, a. e.; naiouf, m. euro-par 2021 phd symposium (parallel and distributed processing), lisboa, portugal ">
+                <article class="pub-item" data-anio="2021" data-tipo="congreso"
+                    data-area="HPC y cloud" data-sede="Euro-Par" data-idioma="en"
+                    data-acceso="si"
+                    data-autores="Petrocelli, D.|De Giusti, A. E.|Naiouf, M."
+                    data-tags="microservicios|contenedores|dispositivos móviles|cómputo intensivo"
+                    data-titulo="collaborative, distributed, scalable and low-cost platform based on microservices, containers, mobile devices and cloud "
+                    data-buscar="collaborative, distributed, scalable and low-cost platform based on microservices, containers, mobile devices and cloud services to solve compute-intensive tasks petrocelli, d.; de giusti, a. e.; naiouf, m. euro-par 2021 phd symposium (parallel and distributed processing), lisboa, portugal hpc y cloud euro-par  microservicios contenedores dispositivos móviles cómputo intensivo">
                     <div class="pub-meta">
                         <span class="pub-fecha">2021</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">HPC y cloud</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Collaborative, distributed, scalable and low-cost platform based on microservices, containers, mobile devices and Cloud services to solve compute-intensive tasks</h3>
                         <p class="pub-autores">Petrocelli, D.; De Giusti, A. E.; Naiouf, M.</p>
                         <p class="pub-venue">Euro-Par 2021 PhD Symposium (Parallel and Distributed Processing), Lisboa, Portugal</p>
-                        <a class="pub-link" href="https://sedici.unlp.edu.ar/handle/10915/122360" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> SEDICI</a>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="microservicios">microservicios</button><button type="button" class="pub-tag" data-tag="contenedores">contenedores</button><button type="button" class="pub-tag" data-tag="dispositivos móviles">dispositivos móviles</button><button type="button" class="pub-tag" data-tag="cómputo intensivo">cómputo intensivo</button></div>
+                        <div class="pub-acciones"><a class="pub-link" href="https://sedici.unlp.edu.ar/handle/10915/122360" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> SEDICI</a><button type="button" class="pub-copiar" data-cita="Petrocelli, D.; De Giusti, A. E.; Naiouf, M. (2021). Collaborative, distributed, scalable and low-cost platform based on microservices, containers, mobile devices and Cloud services to solve compute-intensive tasks. Euro-Par 2021 PhD Symposium (Parallel and Distributed Processing), Lisboa, Portugal."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-            </section>
-            <section class="pub-anio" data-grupo="2020">
-                <h2 class="pub-anio-titulo">2020</h2>
-                <article class="pub-item" data-anio="2020" data-tipo="congreso" data-buscar="plataforma colaborativa, elástica, de bajo costo y consumo basada en recursos de la nube, contenedores y móviles para hpc petrocelli, d.; de giusti, a. e.; naiouf, m. 7.ª conferencia iberoamericana de computação aplicada, lisboa, portugal ">
+                <article class="pub-item" data-anio="2020" data-tipo="congreso"
+                    data-area="HPC y cloud" data-sede="CIbCA" data-idioma="es"
+                    data-acceso="no"
+                    data-autores="Petrocelli, D.|De Giusti, A. E.|Naiouf, M."
+                    data-tags="HPC|nube|contenedores|bajo consumo"
+                    data-titulo="plataforma colaborativa, elástica, de bajo costo y consumo basada en recursos de la nube, contenedores y móviles para hp"
+                    data-buscar="plataforma colaborativa, elástica, de bajo costo y consumo basada en recursos de la nube, contenedores y móviles para hpc petrocelli, d.; de giusti, a. e.; naiouf, m. 7.ª conferencia iberoamericana de computação aplicada, lisboa, portugal hpc y cloud cibca  hpc nube contenedores bajo consumo">
                     <div class="pub-meta">
                         <span class="pub-fecha">2020</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">HPC y cloud</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Plataforma colaborativa, elástica, de bajo costo y consumo basada en recursos de la Nube, contenedores y móviles para HPC</h3>
                         <p class="pub-autores">Petrocelli, D.; De Giusti, A. E.; Naiouf, M.</p>
                         <p class="pub-venue">7.ª Conferencia Iberoamericana de Computação Aplicada, Lisboa, Portugal</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="HPC">HPC</button><button type="button" class="pub-tag" data-tag="nube">nube</button><button type="button" class="pub-tag" data-tag="contenedores">contenedores</button><button type="button" class="pub-tag" data-tag="bajo consumo">bajo consumo</button></div>
+                        <div class="pub-acciones"><button type="button" class="pub-copiar" data-cita="Petrocelli, D.; De Giusti, A. E.; Naiouf, M. (2020). Plataforma colaborativa, elástica, de bajo costo y consumo basada en recursos de la Nube, contenedores y móviles para HPC. 7.ª Conferencia Iberoamericana de Computação Aplicada, Lisboa, Portugal."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2020" data-tipo="congreso" data-buscar="collaborative, distributed and scalable platform based on mobile, cloud, micro services and containers for intensive computing tasks petrocelli, d.; de giusti, a. e.; naiouf, m. short papers of the 8th conference on cloud computing, big data &amp;amp; emerging topics (jcc-bd&amp;amp;et 2020) ">
+                <article class="pub-item" data-anio="2020" data-tipo="congreso"
+                    data-area="HPC y cloud" data-sede="JCC-BD&amp;ET" data-idioma="en"
+                    data-acceso="no"
+                    data-autores="Petrocelli, D.|De Giusti, A. E.|Naiouf, M."
+                    data-tags="microservicios|contenedores|móviles|cómputo intensivo"
+                    data-titulo="collaborative, distributed and scalable platform based on mobile, cloud, micro services and containers for intensive com"
+                    data-buscar="collaborative, distributed and scalable platform based on mobile, cloud, micro services and containers for intensive computing tasks petrocelli, d.; de giusti, a. e.; naiouf, m. short papers of the 8th conference on cloud computing, big data &amp; emerging topics (jcc-bd&amp;et 2020) hpc y cloud jcc-bd&amp;et  microservicios contenedores móviles cómputo intensivo">
                     <div class="pub-meta">
                         <span class="pub-fecha">2020</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">HPC y cloud</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Collaborative, distributed and scalable platform based on mobile, cloud, micro services and containers for intensive computing tasks</h3>
                         <p class="pub-autores">Petrocelli, D.; De Giusti, A. E.; Naiouf, M.</p>
                         <p class="pub-venue">Short Papers of the 8th Conference on Cloud Computing, Big Data &amp; Emerging Topics (JCC-BD&amp;ET 2020)</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="microservicios">microservicios</button><button type="button" class="pub-tag" data-tag="contenedores">contenedores</button><button type="button" class="pub-tag" data-tag="móviles">móviles</button><button type="button" class="pub-tag" data-tag="cómputo intensivo">cómputo intensivo</button></div>
+                        <div class="pub-acciones"><button type="button" class="pub-copiar" data-cita="Petrocelli, D.; De Giusti, A. E.; Naiouf, M. (2020). Collaborative, distributed and scalable platform based on mobile, cloud, micro services and containers for intensive computing tasks. Short Papers of the 8th Conference on Cloud Computing, Big Data &amp; Emerging Topics (JCC-BD&amp;ET 2020)."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2020" data-tipo="revista" data-buscar="el rendimiento académico de los estudiantes en situación de discapacidad oloriz, m.; fernández, j. m. revista retos xxi, 4(1) ">
+                <article class="pub-item" data-anio="2020" data-tipo="revista"
+                    data-area="Educación superior" data-sede="RETOS XXI" data-idioma="es"
+                    data-acceso="no"
+                    data-autores="Oloriz, M.|Fernández, J. M."
+                    data-tags="rendimiento académico|discapacidad|inclusión"
+                    data-titulo="el rendimiento académico de los estudiantes en situación de discapacidad"
+                    data-buscar="el rendimiento académico de los estudiantes en situación de discapacidad oloriz, m.; fernández, j. m. revista retos xxi, 4(1) educación superior retos xxi  rendimiento académico discapacidad inclusión">
                     <div class="pub-meta">
                         <span class="pub-fecha">2020</span>
                         <span class="pub-badge pub-badge--revista">Revista</span>
+                        <span class="pub-area">Educación superior</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">El rendimiento académico de los estudiantes en situación de discapacidad</h3>
                         <p class="pub-autores">Oloriz, M.; Fernández, J. M.</p>
                         <p class="pub-venue">Revista RETOS XXI, 4(1)</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="rendimiento académico">rendimiento académico</button><button type="button" class="pub-tag" data-tag="discapacidad">discapacidad</button><button type="button" class="pub-tag" data-tag="inclusión">inclusión</button></div>
+                        <div class="pub-acciones"><button type="button" class="pub-copiar" data-cita="Oloriz, M.; Fernández, J. M. (2020). El rendimiento académico de los estudiantes en situación de discapacidad. Revista RETOS XXI, 4(1)."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2020" data-tipo="congreso" data-buscar="unconstrained text detection in manga: a new dataset and baseline del gobbo, j.; matuk herrera, r. advances in image manipulation (aim) workshop, eccv 2020 ">
+                <article class="pub-item" data-anio="2020" data-tipo="congreso"
+                    data-area="Visión por computadora" data-sede="ECCV" data-idioma="en"
+                    data-acceso="si"
+                    data-autores="Del Gobbo, J.|Matuk Herrera, R."
+                    data-tags="detección de texto|manga|segmentación|dataset"
+                    data-titulo="unconstrained text detection in manga: a new dataset and baseline"
+                    data-buscar="unconstrained text detection in manga: a new dataset and baseline del gobbo, j.; matuk herrera, r. advances in image manipulation (aim) workshop, eccv 2020 visión por computadora eccv  detección de texto manga segmentación dataset">
                     <div class="pub-meta">
                         <span class="pub-fecha">2020</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">Visión por computadora</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Unconstrained Text Detection in Manga: a New Dataset and Baseline</h3>
                         <p class="pub-autores">Del Gobbo, J.; Matuk Herrera, R.</p>
                         <p class="pub-venue">Advances in Image Manipulation (AIM) Workshop, ECCV 2020</p>
-                        <a class="pub-link" href="https://doi.org/10.1007/978-3-030-67070-2_38" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> DOI</a>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="detección de texto">detección de texto</button><button type="button" class="pub-tag" data-tag="manga">manga</button><button type="button" class="pub-tag" data-tag="segmentación">segmentación</button><button type="button" class="pub-tag" data-tag="dataset">dataset</button></div>
+                        <div class="pub-acciones"><a class="pub-link" href="https://doi.org/10.1007/978-3-030-67070-2_38" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> DOI</a><button type="button" class="pub-copiar" data-cita="Del Gobbo, J.; Matuk Herrera, R. (2020). Unconstrained Text Detection in Manga: a New Dataset and Baseline. Advances in Image Manipulation (AIM) Workshop, ECCV 2020."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-            </section>
-            <section class="pub-anio" data-grupo="2019">
-                <h2 class="pub-anio-titulo">2019</h2>
-                <article class="pub-item" data-anio="2019" data-tipo="congreso" data-buscar="hybrid elastic arm&amp;amp;cloud hpc collaborative platform for generic tasks petrocelli, d.; de giusti, a. e.; naiouf, m. vii conference cloud computing &amp;amp; big data, la plata. isbn 978-3-030-27713-0, pp. 16-27 ">
+                <article class="pub-item" data-anio="2019" data-tipo="congreso"
+                    data-area="HPC y cloud" data-sede="JCC-BD&amp;ET" data-idioma="en"
+                    data-acceso="si"
+                    data-autores="Petrocelli, D.|De Giusti, A. E.|Naiouf, M."
+                    data-tags="ARM|HPC|nube híbrida|elasticidad"
+                    data-titulo="hybrid elastic arm&amp;amp;cloud hpc collaborative platform for generic tasks"
+                    data-buscar="hybrid elastic arm&amp;amp;cloud hpc collaborative platform for generic tasks petrocelli, d.; de giusti, a. e.; naiouf, m. vii conference cloud computing &amp; big data, la plata. isbn 978-3-030-27713-0, pp. 16-27 hpc y cloud jcc-bd&amp;et  arm hpc nube híbrida elasticidad">
                     <div class="pub-meta">
                         <span class="pub-fecha">2019</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">HPC y cloud</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Hybrid Elastic ARM&amp;Cloud HPC Collaborative Platform for Generic Tasks</h3>
                         <p class="pub-autores">Petrocelli, D.; De Giusti, A. E.; Naiouf, M.</p>
                         <p class="pub-venue">VII Conference Cloud Computing &amp; Big Data, La Plata. ISBN 978-3-030-27713-0, pp. 16-27</p>
-                        <a class="pub-link" href="https://doi.org/10.1007/978-3-030-27713-0_2" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> DOI</a>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="ARM">ARM</button><button type="button" class="pub-tag" data-tag="HPC">HPC</button><button type="button" class="pub-tag" data-tag="nube híbrida">nube híbrida</button><button type="button" class="pub-tag" data-tag="elasticidad">elasticidad</button></div>
+                        <div class="pub-acciones"><a class="pub-link" href="https://doi.org/10.1007/978-3-030-27713-0_2" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> DOI</a><button type="button" class="pub-copiar" data-cita="Petrocelli, D.; De Giusti, A. E.; Naiouf, M. (2019). Hybrid Elastic ARM&amp;amp;Cloud HPC Collaborative Platform for Generic Tasks. VII Conference Cloud Computing &amp; Big Data, La Plata. ISBN 978-3-030-27713-0, pp. 16-27."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-            </section>
-            <section class="pub-anio" data-grupo="2018">
-                <h2 class="pub-anio-titulo">2018</h2>
-                <article class="pub-item" data-anio="2018" data-tipo="congreso" data-buscar="a tool for modeling computational maps of the visual cortex in pytorch (pylissom) barijhoff, h.; matuk herrera, r. machine learning open source software workshop, nips, montreal, canadá, 2018 ">
+                <article class="pub-item" data-anio="2018" data-tipo="congreso"
+                    data-area="Visión por computadora" data-sede="NeurIPS" data-idioma="en"
+                    data-acceso="si"
+                    data-autores="Barijhoff, H.|Matuk Herrera, R."
+                    data-tags="PyTorch|corteza visual|neurociencia computacional|software libre"
+                    data-titulo="a tool for modeling computational maps of the visual cortex in pytorch (pylissom)"
+                    data-buscar="a tool for modeling computational maps of the visual cortex in pytorch (pylissom) barijhoff, h.; matuk herrera, r. machine learning open source software workshop, nips, montreal, canadá, 2018 visión por computadora neurips  pytorch corteza visual neurociencia computacional software libre">
                     <div class="pub-meta">
                         <span class="pub-fecha">2018</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">Visión por computadora</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">A tool for modeling computational maps of the visual cortex in PyTorch (PyLissom)</h3>
                         <p class="pub-autores">Barijhoff, H.; Matuk Herrera, R.</p>
                         <p class="pub-venue">Machine Learning Open Source Software Workshop, NIPS, Montreal, Canadá, 2018</p>
-                        <a class="pub-link" href="https://openreview.net/forum?id=rJex9Mc0Y7" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> OpenReview</a>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="PyTorch">PyTorch</button><button type="button" class="pub-tag" data-tag="corteza visual">corteza visual</button><button type="button" class="pub-tag" data-tag="neurociencia computacional">neurociencia computacional</button><button type="button" class="pub-tag" data-tag="software libre">software libre</button></div>
+                        <div class="pub-acciones"><a class="pub-link" href="https://openreview.net/forum?id=rJex9Mc0Y7" target="_blank" rel="noopener"><i class="fas fa-up-right-from-square"></i> OpenReview</a><button type="button" class="pub-copiar" data-cita="Barijhoff, H.; Matuk Herrera, R. (2018). A tool for modeling computational maps of the visual cortex in PyTorch (PyLissom). Machine Learning Open Source Software Workshop, NIPS, Montreal, Canadá, 2018."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-            </section>
-            <section class="pub-anio" data-grupo="2017">
-                <h2 class="pub-anio-titulo">2017</h2>
-                <article class="pub-item" data-anio="2017" data-tipo="congreso" data-buscar="bioinspired self organizing neural networks for expression recognition barijhoff, h.; matuk herrera, r. women in machine learning workshop, nips, long beach, ee. uu., 2017 ">
+                <article class="pub-item" data-anio="2017" data-tipo="congreso"
+                    data-area="Visión por computadora" data-sede="NeurIPS" data-idioma="en"
+                    data-acceso="no"
+                    data-autores="Barijhoff, H.|Matuk Herrera, R."
+                    data-tags="redes autoorganizadas|reconocimiento de expresiones|bioinspiración"
+                    data-titulo="bioinspired self organizing neural networks for expression recognition"
+                    data-buscar="bioinspired self organizing neural networks for expression recognition barijhoff, h.; matuk herrera, r. women in machine learning workshop, nips, long beach, ee. uu., 2017 visión por computadora neurips  redes autoorganizadas reconocimiento de expresiones bioinspiración">
                     <div class="pub-meta">
                         <span class="pub-fecha">2017</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">Visión por computadora</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Bioinspired self organizing neural networks for expression recognition</h3>
                         <p class="pub-autores">Barijhoff, H.; Matuk Herrera, R.</p>
                         <p class="pub-venue">Women in Machine Learning Workshop, NIPS, Long Beach, EE. UU., 2017</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="redes autoorganizadas">redes autoorganizadas</button><button type="button" class="pub-tag" data-tag="reconocimiento de expresiones">reconocimiento de expresiones</button><button type="button" class="pub-tag" data-tag="bioinspiración">bioinspiración</button></div>
+                        <div class="pub-acciones"><button type="button" class="pub-copiar" data-cita="Barijhoff, H.; Matuk Herrera, R. (2017). Bioinspired self organizing neural networks for expression recognition. Women in Machine Learning Workshop, NIPS, Long Beach, EE. UU., 2017."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-                <article class="pub-item" data-anio="2017" data-tipo="congreso" data-buscar="procesamiento distribuido y paralelo de bajo costo basado en cloud &amp;amp; móvil petrocelli, d.; de giusti, a. e.; naiouf, m. cacic 2017 — xxiii congreso argentino de ciencias de la computación, xviii workshop de procesamiento distribuido y paralelo (wpdp), pp. 216-225 ">
+                <article class="pub-item" data-anio="2017" data-tipo="congreso"
+                    data-area="HPC y cloud" data-sede="CACIC" data-idioma="es"
+                    data-acceso="no"
+                    data-autores="Petrocelli, D.|De Giusti, A. E.|Naiouf, M."
+                    data-tags="procesamiento paralelo|nube|móviles|bajo costo"
+                    data-titulo="procesamiento distribuido y paralelo de bajo costo basado en cloud &amp;amp; móvil"
+                    data-buscar="procesamiento distribuido y paralelo de bajo costo basado en cloud &amp;amp; móvil petrocelli, d.; de giusti, a. e.; naiouf, m. cacic 2017 — xxiii congreso argentino de ciencias de la computación, xviii workshop de procesamiento distribuido y paralelo (wpdp), pp. 216-225 hpc y cloud cacic  procesamiento paralelo nube móviles bajo costo">
                     <div class="pub-meta">
                         <span class="pub-fecha">2017</span>
                         <span class="pub-badge pub-badge--congreso">Congreso</span>
+                        <span class="pub-area">HPC y cloud</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Procesamiento distribuido y paralelo de bajo costo basado en Cloud &amp; móvil</h3>
                         <p class="pub-autores">Petrocelli, D.; De Giusti, A. E.; Naiouf, M.</p>
                         <p class="pub-venue">CACIC 2017 — XXIII Congreso Argentino de Ciencias de la Computación, XVIII Workshop de Procesamiento Distribuido y Paralelo (WPDP), pp. 216-225</p>
+                        <div class="pub-tags"><button type="button" class="pub-tag" data-tag="procesamiento paralelo">procesamiento paralelo</button><button type="button" class="pub-tag" data-tag="nube">nube</button><button type="button" class="pub-tag" data-tag="móviles">móviles</button><button type="button" class="pub-tag" data-tag="bajo costo">bajo costo</button></div>
+                        <div class="pub-acciones"><button type="button" class="pub-copiar" data-cita="Petrocelli, D.; De Giusti, A. E.; Naiouf, M. (2017). Procesamiento distribuido y paralelo de bajo costo basado en Cloud &amp;amp; móvil. CACIC 2017 — XXIII Congreso Argentino de Ciencias de la Computación, XVIII Workshop de Procesamiento Distribuido y Paralelo (WPDP), pp. 216-225."><i class="fas fa-quote-right"></i> Copiar cita</button></div>
                     </div>
                 </article>
-            </section>
             </div>
-            <p class="pub-vacio" id="pubVacio" hidden>No hay publicaciones que coincidan con la búsqueda.</p>
+            <p class="pub-vacio" id="pubVacio" hidden>
+                No hay publicaciones que coincidan con los filtros aplicados.</p>
         </div>
     </section>
 
@@ -591,26 +1115,28 @@
                     <div class="pub-meta">
                         <span class="pub-fecha">En preparación</span>
                         <span class="pub-badge pub-badge--proxima">Sede y fecha a confirmar</span>
+                        <span class="pub-area">LLM y PLN</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Large Language Models actuales: arquitectura, limitaciones y perspectivas de evolución</h3>
                         <p class="pub-autores">Fernández, J. M.; Oloriz, M.</p>
                         <p class="pub-venue">Eje temático: Tecnologías emergentes</p>
                         <p class="pub-resumen">Revisión narrativa de la evolución arquitectónica de los LLM y sus perspectivas de desarrollo, desde las redes recurrentes y los modelos secuencia a secuencia con atención hasta el Transformer y los modelos autorregresivos contemporáneos. Examina los aportes de la autoatención al modelado contextual y al escalamiento, las restricciones de memoria, contexto y costo computacional, y las limitaciones para generar información veraz. Explora modelos de espacio de estados selectivos, arquitecturas híbridas, Transformers de profundidad recurrente, memorias neuronales actualizables en inferencia y enfoques de predicción en espacios latentes como JEPA.</p>
-                        <p class="pub-claves"><span>Palabras clave:</span> modelos de lenguaje a gran escala; Transformers; modelos recurrentes; inteligencia artificial generativa; arquitecturas de IA</p>
+                        <div class="pub-tags"><span class="pub-tag pub-tag--plano">Transformers</span><span class="pub-tag pub-tag--plano">modelos recurrentes</span><span class="pub-tag pub-tag--plano">IA generativa</span><span class="pub-tag pub-tag--plano">arquitecturas de IA</span></div>
                     </div>
                 </article>
                 <article class="pub-item pub-item--proxima">
                     <div class="pub-meta">
                         <span class="pub-fecha">En preparación</span>
                         <span class="pub-badge pub-badge--proxima">Sede y fecha a confirmar</span>
+                        <span class="pub-area">Ambiente y territorio</span>
                     </div>
                     <div class="pub-cuerpo">
                         <h3 class="pub-titulo">Modelos fundacionales geoespaciales: arquitectura y perspectivas de adaptación para el análisis de propiedades del suelo</h3>
                         <p class="pub-autores">Vazquez, J. M.; Fernández, J. M.</p>
                         <p class="pub-venue">Eje temático: IA en agricultura y sistemas agroalimentarios</p>
                         <p class="pub-resumen">Revisión técnica de los modelos fundacionales para observación de la Tierra y sus estrategias de adaptación, tomando como referencia Prithvi-EO-2.0 y TerraMind. Analiza objetivos de preentrenamiento, requisitos de entrada y alternativas de transferencia, con imágenes satelitales y perfiles edafológicos de fuentes públicas para estimar propiedades como pH, carbono orgánico y textura. Propone un esquema de evaluación que contempla la comparación con métodos convencionales, la validación espacial y los costos de adaptación.</p>
-                        <p class="pub-claves"><span>Palabras clave:</span> modelos fundacionales geoespaciales; observación de la Tierra; transferencia de aprendizaje; mapeo digital de suelos; adaptación de modelos</p>
+                        <div class="pub-tags"><span class="pub-tag pub-tag--plano">observación de la Tierra</span><span class="pub-tag pub-tag--plano">transferencia de aprendizaje</span><span class="pub-tag pub-tag--plano">suelos</span><span class="pub-tag pub-tag--plano">Prithvi</span><span class="pub-tag pub-tag--plano">TerraMind</span></div>
                     </div>
                 </article>
         </div>
@@ -640,43 +1166,232 @@
     <script src="../js/scripts.js"></script>
     <script>
         (function () {
-            var estado = { tipo: '', anio: '', texto: '' };
-            var items = Array.prototype.slice.call(document.querySelectorAll('.pub-item[data-anio]'));
-            var grupos = Array.prototype.slice.call(document.querySelectorAll('.pub-anio'));
+            var listado = document.getElementById('pubListado');
+            var items = Array.prototype.slice.call(listado.querySelectorAll('.pub-item'));
             var vacio = document.getElementById('pubVacio');
+            var contador = document.getElementById('pubContador');
+            var limpiar = document.getElementById('pubLimpiar');
+            var total = items.length;
 
-            function aplicar() {
+            var estado = {
+                texto: '', tipo: '', anio: '', idioma: '', acceso: '',
+                area: '', autor: '', sede: '', tag: '', orden: 'anio-desc'
+            };
+
+            // ---- orden -------------------------------------------------------
+            function clave(it, modo) {
+                if (modo === 'titulo-asc') return it.dataset.titulo;
+                if (modo === 'autor-asc') return (it.dataset.autores.split('|')[0] || '').toLowerCase();
+                return it.dataset.anio;
+            }
+
+            function ordenar() {
+                var modo = estado.orden;
+                var copia = items.slice().sort(function (a, b) {
+                    var ka = clave(a, modo), kb = clave(b, modo);
+                    if (ka === kb) return a.dataset.titulo < b.dataset.titulo ? -1 : 1;
+                    if (modo === 'anio-desc') return kb.localeCompare(ka);
+                    return ka.localeCompare(kb);
+                });
+                copia.forEach(function (it) { listado.appendChild(it); });
+            }
+
+            // ---- separadores por año ----------------------------------------
+            function separadores() {
+                listado.querySelectorAll('.pub-sep').forEach(function (s) { s.remove(); });
+                if (estado.orden.indexOf('anio') !== 0) return;
+                var ultimo = null;
+                items.forEach(function (it) {
+                    if (it.hidden) return;
+                    if (it.dataset.anio !== ultimo) {
+                        ultimo = it.dataset.anio;
+                        var sep = document.createElement('div');
+                        sep.className = 'pub-sep';
+                        sep.textContent = ultimo;
+                        listado.insertBefore(sep, it);
+                    }
+                });
+            }
+
+            // ---- filtrado ----------------------------------------------------
+            function pasa(it) {
+                if (estado.tipo && it.dataset.tipo !== estado.tipo) return false;
+                if (estado.anio && it.dataset.anio !== estado.anio) return false;
+                if (estado.idioma && it.dataset.idioma !== estado.idioma) return false;
+                if (estado.acceso && it.dataset.acceso !== estado.acceso) return false;
+                if (estado.area && it.dataset.area !== estado.area) return false;
+                if (estado.sede && it.dataset.sede !== estado.sede) return false;
+                if (estado.autor && it.dataset.autores.split('|').indexOf(estado.autor) === -1) return false;
+                if (estado.tag && it.dataset.tags.split('|').indexOf(estado.tag) === -1) return false;
+                if (estado.texto) {
+                    // todas las palabras tienen que aparecer, en cualquier orden
+                    var partes = estado.texto.split(/\s+/);
+                    for (var i = 0; i < partes.length; i++) {
+                        if (it.dataset.buscar.indexOf(partes[i]) === -1) return false;
+                    }
+                }
+                return true;
+            }
+
+            function hayFiltros() {
+                return estado.texto || estado.tipo || estado.anio || estado.idioma ||
+                       estado.acceso || estado.area || estado.autor || estado.sede || estado.tag;
+            }
+
+            function aplicar(guardarUrl) {
                 var visibles = 0;
                 items.forEach(function (it) {
-                    var ok = (!estado.tipo || it.dataset.tipo === estado.tipo) &&
-                             (!estado.anio || it.dataset.anio === estado.anio) &&
-                             (!estado.texto || it.dataset.buscar.indexOf(estado.texto) !== -1);
+                    var ok = pasa(it);
                     it.hidden = !ok;
                     if (ok) visibles++;
                 });
-                grupos.forEach(function (g) {
-                    var quedan = g.querySelectorAll('.pub-item:not([hidden])').length;
-                    g.hidden = quedan === 0;
-                });
+                ordenar();
+                separadores();
                 vacio.hidden = visibles !== 0;
+                contador.innerHTML = 'Mostrando <strong>' + visibles + '</strong> de ' + total + ' publicaciones';
+                limpiar.hidden = !hayFiltros();
+                if (guardarUrl !== false) sincronizarUrl();
             }
 
-            document.querySelectorAll('.pub-chip').forEach(function (chip) {
+            // ---- estado en la URL -------------------------------------------
+            function sincronizarUrl() {
+                var q = new URLSearchParams();
+                Object.keys(estado).forEach(function (k) {
+                    if (estado[k] && !(k === 'orden' && estado[k] === 'anio-desc')) q.set(k, estado[k]);
+                });
+                var s = q.toString();
+                history.replaceState(null, '', s ? '?' + s : location.pathname);
+            }
+
+            function leerUrl() {
+                var q = new URLSearchParams(location.search);
+                Object.keys(estado).forEach(function (k) {
+                    if (q.has(k)) estado[k] = q.get(k);
+                });
+            }
+
+            // ---- sincronizar controles con el estado -------------------------
+            function pintarControles() {
+                document.querySelectorAll('.pub-chip[data-filtro]').forEach(function (chip) {
+                    var f = chip.dataset.filtro;
+                    if (f === 'acceso') {
+                        chip.classList.toggle('activo', estado.acceso === chip.dataset.valor);
+                    } else {
+                        chip.classList.toggle('activo', estado[f] === chip.dataset.valor);
+                    }
+                });
+                document.querySelectorAll('select[data-filtro]').forEach(function (sel) {
+                    sel.value = estado[sel.dataset.filtro] || '';
+                });
+                document.getElementById('pubOrden').value = estado.orden;
+                document.getElementById('pubBuscar').value = estado.texto;
+            }
+
+            // ---- eventos -----------------------------------------------------
+            document.querySelectorAll('.pub-chip[data-filtro]').forEach(function (chip) {
                 chip.addEventListener('click', function () {
-                    var filtro = chip.dataset.filtro;
-                    estado[filtro] = chip.dataset.valor;
-                    var grupo = filtro === 'tipo' ? 'pubChipsTipo' : 'pubChipsAnio';
-                    document.querySelectorAll('#' + grupo + ' .pub-chip').forEach(function (c) {
-                        c.classList.toggle('activo', c === chip);
-                    });
+                    var f = chip.dataset.filtro;
+                    // el chip de acceso funciona como interruptor
+                    estado[f] = (f === 'acceso' && estado[f] === chip.dataset.valor) ? '' : chip.dataset.valor;
+                    pintarControles();
                     aplicar();
                 });
             });
 
-            document.getElementById('pubBuscar').addEventListener('input', function (e) {
-                estado.texto = e.target.value.trim().toLowerCase();
+            document.querySelectorAll('select[data-filtro]').forEach(function (sel) {
+                sel.addEventListener('change', function () {
+                    estado[sel.dataset.filtro] = sel.value;
+                    aplicar();
+                });
+            });
+
+            document.getElementById('pubOrden').addEventListener('change', function (e) {
+                estado.orden = e.target.value;
                 aplicar();
             });
+
+            var debounce;
+            document.getElementById('pubBuscar').addEventListener('input', function (e) {
+                clearTimeout(debounce);
+                var v = e.target.value.trim().toLowerCase();
+                debounce = setTimeout(function () { estado.texto = v; aplicar(); }, 140);
+            });
+
+            listado.addEventListener('click', function (e) {
+                var tag = e.target.closest('.pub-tag[data-tag]');
+                if (tag) {
+                    estado.tag = estado.tag === tag.dataset.tag ? '' : tag.dataset.tag;
+                    pintarControles();
+                    aplicar();
+                    document.getElementById('publicaciones').scrollIntoView({ behavior: 'smooth' });
+                    return;
+                }
+                var copiar = e.target.closest('.pub-copiar');
+                if (copiar) {
+                    var cita = copiar.dataset.cita;
+                    var listo = function () {
+                        var antes = copiar.innerHTML;
+                        copiar.innerHTML = '<i class="fas fa-check"></i> Copiada';
+                        setTimeout(function () { copiar.innerHTML = antes; }, 1600);
+                    };
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(cita).then(listo, function () {});
+                    } else {
+                        var ta = document.createElement('textarea');
+                        ta.value = cita; document.body.appendChild(ta); ta.select();
+                        try { document.execCommand('copy'); listo(); } catch (err) {}
+                        document.body.removeChild(ta);
+                    }
+                }
+            });
+
+            limpiar.addEventListener('click', function () {
+                Object.keys(estado).forEach(function (k) { if (k !== 'orden') estado[k] = ''; });
+                pintarControles();
+                aplicar();
+            });
+
+            // ---- exportar BibTeX de lo que esta a la vista --------------------
+            function bibtexClave(it) {
+                var autor = (it.dataset.autores.split('|')[0] || 'licdia').split(',')[0];
+                return autor.normalize('NFD').replace(/[^a-zA-Z]/g, '').toLowerCase() + it.dataset.anio;
+            }
+
+            document.getElementById('pubBibtex').addEventListener('click', function () {
+                var visibles = items.filter(function (it) { return !it.hidden; });
+                if (!visibles.length) return;
+                var usadas = {};
+                var texto = visibles.map(function (it) {
+                    var clave = bibtexClave(it);
+                    usadas[clave] = (usadas[clave] || 0) + 1;
+                    if (usadas[clave] > 1) clave += String.fromCharCode(96 + usadas[clave]);
+                    var titulo = it.querySelector('.pub-titulo').textContent.trim();
+                    var autores = it.dataset.autores.split('|').join(' and ');
+                    var venue = it.querySelector('.pub-venue').textContent.trim();
+                    var enlace = it.querySelector('.pub-link');
+                    var tipo = it.dataset.tipo === 'revista' ? 'article' :
+                               (it.dataset.tipo === 'libro' ? 'book' : 'inproceedings');
+                    var campo = it.dataset.tipo === 'revista' ? 'journal' : 'booktitle';
+                    var l = ['@' + tipo + '{' + clave + ',',
+                             '  title   = {' + titulo + '},',
+                             '  author  = {' + autores + '},',
+                             '  year    = {' + it.dataset.anio + '},',
+                             '  ' + campo + ' = {' + venue + '},'];
+                    if (enlace) l.push('  url     = {' + enlace.href + '},');
+                    l.push('}');
+                    return l.join('\n');
+                }).join('\n\n');
+                var blob = new Blob([texto], { type: 'application/x-bibtex;charset=utf-8' });
+                var a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = 'licdia-publicaciones.bib';
+                document.body.appendChild(a); a.click(); document.body.removeChild(a);
+                URL.revokeObjectURL(a.href);
+            });
+
+            leerUrl();
+            pintarControles();
+            aplicar(false);
         })();
     </script>
 </body>
