@@ -13,6 +13,16 @@ Versioning policy for this project:
 
 ## [Unreleased]
 
+### Added
+- Home: noticia del segundo lugar en los Poster Awards 2026 de la Second South American NLP School (Camilo, Fernández, Errecalde, "PEFT vs. GaLore"), con el póster en `assets/img/noticias/` y el PDF en `assets/`.
+- Home: 8 entradas 2026 en la timeline de publicaciones (CIICE 2026, 4× CACIC 2026, póster NLP School, 2× JCC-BD&ET 2026).
+
+### Fixed
+- Home: lista de autores completa en la entrada WICC 2025 (faltaban Zamudio y Cagnina).
+
+### Removed
+- Home: script del kit de Font Awesome (`kit.fontawesome.com/eb496ab1a0.js`), que respondía 403 y era redundante con `use.fontawesome.com` v6.3.0 y el CSS de cdnjs ya cargados.
+
 ## [1.0.0] - 2026-06-03
 
 First tagged release. Marks the site as stable after the multi-PR overhaul completed during May–June 2026 (PRs #1–#13 plus this cleanup batch).
