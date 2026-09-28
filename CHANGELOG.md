@@ -16,6 +16,7 @@ Versioning policy for this project:
 ### Added
 - Home: noticia del segundo lugar en los Poster Awards 2026 de la Second South American NLP School (Camilo, Fernández, Errecalde, "PEFT vs. GaLore"), con el póster en `assets/img/noticias/` y el PDF en `assets/`.
 - Home: 8 entradas 2026 en la timeline de publicaciones (CIICE 2026, 4× CACIC 2026, póster NLP School, 2× JCC-BD&ET 2026).
+- Home: Mario Oloriz y Hugo Delfino vuelven a la sección Equipo (UNLu), con sus fotos y descripciones previas a la baja de mayo de 2026. Las 15 fichas UNLu quedan en filas completas de a tres.
 
 ### Fixed
 - Home: lista de autores completa en la entrada WICC 2025 (faltaban Zamudio y Cagnina).
