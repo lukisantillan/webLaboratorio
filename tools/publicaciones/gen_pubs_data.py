@@ -21,10 +21,11 @@ PUBS = [
         anio=2026,
         fecha="Octubre 2026",
         tipo="congreso",
-        estado="Aceptado para publicación",
+        estado="Trabajo distinguido — CACIC 2026",
         titulo="Remembering the Flow: Retrieval with Dynamic Turn Representations for Conversational Memory",
         autores="Fernández, J. M.; Errecalde, M.; Burdisso, S.",
         venue="XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026), Concepción del Uruguay, 5 al 9 de octubre",
+        pdf="pdf/remembering-the-flow-cacic2026.pdf",
     ),
     dict(
         anio=2026,
@@ -34,6 +35,7 @@ PUBS = [
         titulo="Un RAG portable sobre SUDOCU: consulta conversacional de normativa universitaria mediante estados de diálogo con procedencia",
         autores="Fernández, J. M.; Tamasi, F.; Marchetti, S.; Oloriz, M.; Errecalde, M.",
         venue="XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026), Concepción del Uruguay",
+        pdf="pdf/rag-sudocu-cacic2026.pdf",
     ),
     dict(
         anio=2026,
@@ -43,6 +45,7 @@ PUBS = [
         titulo="Evidencia documental trazable con RAG: un asistente para auditorías GMP en la industria farmacéutica",
         autores="Pighin, M. E.; Fernández, J. M.",
         venue="XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026), Concepción del Uruguay",
+        pdf="pdf/rag-gmp-cacic2026.pdf",
     ),
     dict(
         anio=2026,
@@ -52,6 +55,7 @@ PUBS = [
         titulo="DM-AI: un director de juego multiagente basado en modelos de lenguaje para juegos de rol narrativos",
         autores="Baez, S.; Fernández, J. M.",
         venue="XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026), Concepción del Uruguay",
+        pdf="pdf/dm-ai-cacic2026.pdf",
     ),
     dict(
         anio=2026,
@@ -78,6 +82,7 @@ PUBS = [
         titulo="A Defense-in-Depth Architecture for Protecting AI Agent Intellectual Property in Multi-Tenant Cloud Environments",
         autores="Petrocelli, D.; Fernández, J. M.",
         venue="XIV Jornadas de Cloud Computing, Big Data &amp; Emerging Topics (JCC-BD&amp;ET 2026), La Plata",
+        pdf="pdf/defense-in-depth-jcc2026.pdf",
     ),
     dict(
         anio=2025,
@@ -102,6 +107,14 @@ PUBS = [
         titulo="Fine-tuning y adaptación de modelos de lenguaje abiertos en infraestructura HPC para aplicaciones de dominio específico",
         autores="Fernández, J. M.; Petrocelli, D. M.; Matuk, R.; Lanson, D.; Zamudio, E.; Cagnina, L. C.; Errecalde, M. L.",
         venue="XXVII Workshop de Investigadores en Ciencias de la Computación (WICC 2025), Mendoza, 10 y 11 de abril",
+    ),
+    dict(
+        anio=2024,
+        fecha="Abril 2024",
+        tipo="congreso",
+        titulo="Generación de herramientas de explotación de información ambiental desde bases de datos textuales a partir de técnicas de inteligencia artificial",
+        autores="Fernández, J. M.; Lanson, D.; Iglesias, A. N.; Cagnina, L. C.; Errecalde, M. L.",
+        venue="XXVI Workshop de Investigadores en Ciencias de la Computación (WICC 2024), Puerto Madryn, 18 y 19 de abril",
     ),
     dict(
         anio=2024,
@@ -151,6 +164,7 @@ PUBS = [
         titulo="Descubrimiento de patrones de comportamiento vinculados al abandono en la Universidad Nacional de Luján mediante la aplicación de técnicas de aprendizaje automático",
         autores="Oloriz, M.; Fernández, J. M.; Jara, C.; Martínez, C.; Baquel, R.; Bertoglio, S.; Delfino, H.",
         venue="XXV Workshop de Investigadores en Ciencias de la Computación, Universidad Nacional del Noroeste, abril de 2023",
+        pdf="pdf/abandono-unlu-wicc2023.pdf",
     ),
     dict(
         anio=2023,
@@ -183,14 +197,6 @@ PUBS = [
         titulo="Multi-class e-mail classification with a semi-supervised approach based on automatic feature selection and information retrieval",
         autores="Fernández, J. M.; Errecalde, M.",
         venue="Conference on Cloud Computing, Big Data &amp; Emerging Topics (pp. 75-90). Cham: Springer International Publishing",
-    ),
-    dict(
-        anio=2022,
-        fecha="Octubre 2022",
-        tipo="congreso",
-        titulo="Instance retrieval from non-labeled data as a strategy for automatic classification of imbalanced e-mail datasets",
-        autores="Fernández, J. M.; Errecalde, M.",
-        venue="EUDELAR 2022. ISBN 978-987-1364-31-2",
     ),
     dict(
         anio=2021,
@@ -314,6 +320,9 @@ LINKS = {
     "Clasificacion automatica de correos": ("https://doi.org/10.35537/10915/152375", "DOI"),
     "Fine-tuning y adaptacion de modelos": ("https://sedici.unlp.edu.ar/handle/10915/183892", "SEDICI"),
     "Agente basado en LLM para la ejecucion de comandos": ("https://sedici.unlp.edu.ar/handle/10915/191417", "SEDICI"),
+    "Sistema de generacion aumentada por recuperacion (RAG) para el acceso": ("https://sedici.unlp.edu.ar/handle/10915/191535", "SEDICI"),
+    "Generacion de herramientas de explotacion de informacion ambiental": ("https://sedici.unlp.edu.ar/handle/10915/176171", "SEDICI"),
+    "Productos y procesos de la extension universitaria": ("https://doi.org/10.19137/cuadex-2024-08-0201", "DOI"),
     "Computer Science": ("https://link.springer.com/book/10.1007/978-3-031-62245-8", "Springer"),
     "Efectos de la incorporacion de la bimodalidad": ("https://doi.org/10.21789/25007807.2015", "DOI"),
     "La automatizacion de la certificacion": ("https://doi.org/10.29393/ran8-12acmm40012", "DOI"),

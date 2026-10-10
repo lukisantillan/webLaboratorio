@@ -97,7 +97,7 @@ def card(p):
     if p.get("pdf"):
         acciones.append(
             f'<a class="pub-link" href="{p["pdf"]}" target="_blank" rel="noopener">'
-            f'<i class="fas fa-file-pdf"></i> Póster (PDF)</a>'
+            f'<i class="fas fa-file-pdf"></i> {"Póster" if p["tipo"] == "poster" else "Texto completo"} (PDF)</a>'
         )
     acciones.append(
         '<button type="button" class="pub-copiar" data-cita="'

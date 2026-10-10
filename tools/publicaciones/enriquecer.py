@@ -73,6 +73,12 @@ META = {
         "WICC",
         ["fine-tuning", "HPC", "dominio específico", "modelos abiertos"],
     ),
+    "Generación de herramientas de explotación de información ambiental": (
+        "LLM y PLN",
+        "es",
+        "WICC",
+        ["información ambiental", "minería de textos", "bases de datos textuales"],
+    ),
     "Efectos de la incorporación de la bimodalidad": (
         "Educación superior",
         "es",

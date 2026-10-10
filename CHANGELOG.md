@@ -18,8 +18,23 @@ Versioning policy for this project:
 - Home: 8 entradas 2026 en la timeline de publicaciones (CIICE 2026, 4× CACIC 2026, póster NLP School, 2× JCC-BD&ET 2026).
 - Home: Mario Oloriz y Hugo Delfino vuelven a la sección Equipo (UNLu), con sus fotos y descripciones previas a la baja de mayo de 2026. Las 15 fichas UNLu quedan en filas completas de a tres.
 - Home: Franco Chappe se suma a la sección Equipo (UNLu) como estudiante de la Lic. en Sistemas de Información y ayudante de la División Computación, con foto en `assets/img/team/chappe.{jpg,webp}`.
+- Publicaciones: entrada del WICC 2024 (Fernández, Lanson, Iglesias, Cagnina, Errecalde, "Generación de herramientas de explotación de información ambiental desde bases de datos textuales a partir de técnicas de inteligencia artificial"), que estaba en el CV del director y faltaba en el sitio. El banner pasa a contar 5 publicaciones en 2024.
+- Publicaciones: texto completo en PDF (versión de autor) para seis trabajos, en `publicaciones/pdf/`: los cuatro de CACIC 2026, el de JCC-BD&ET 2026 de Petrocelli y Fernández, y el de WICC 2023 sobre abandono en la UNLu. Se suman enlaces verificados para tres trabajos más: SEDICI para el de CACIC 2025 de Guerra, Monti y Fernández y para el de WICC 2024, y DOI para el artículo de Cuadernos de Extensión UNLPam 2024. El botón dice "Texto completo (PDF)", salvo en los pósters.
+- Home: enlace al texto completo en las entradas de la línea de tiempo que lo tienen, como píldora (`.timeline-pdf` en `css/styles.css`) debajo de la cita: PDF, SEDICI o Póster.
+
+### Changed
+- Home: las fotos del carrusel pasan de 4032 px de ancho a 1600 px (webp de 0,7–1,4 MB a 0,12–0,20 MB).
+- Home: las bajadas de sección y el subtítulo del hero pasan de Roboto Slab itálica a Montserrat, con ancho máximo para las bajadas y sombra en el subtítulo. "Más información" y el ítem activo del menú pasan del violeta al azul de la línea de tiempo (#1d13b9). Los estilos están acotados a la home (`body.home`).
+- Home: la línea de tiempo muestra solo 2025 y 2026. Las anteriores siguen en Publicaciones, a la que lleva el botón "Ver todas las publicaciones".
+- Home y Publicaciones: "Remembering the Flow" (Fernández, Errecalde, Burdisso) figura como trabajo distinguido del Workshop de Bases de Datos y Minería de Datos de CACIC 2026. En Publicaciones el cambio va en `tools/publicaciones/gen_pubs_data.py` y la página se regeneró.
 
 ### Fixed
+- Home: la tarjeta del curso de posgrado de UNTREF (2024) mostraba una imagen rota, porque la tomaba del sitio de UNTREF y ese archivo ya no existe. Ahora usa una placa propia, `assets/img/curso-untref-2024.{jpg,webp}`.
+- Home: grilla de Líneas de I+D sin el hueco de la segunda fila (se quitó una columna vacía y la fila se centra). En Proyectos, la última tarjeta usa una clase válida (`col-lg-15` pasa a `col-lg-4`) y queda centrada.
+- Home: al entrar desde el menú, la barra fija ya no tapa el título de la sección (`scroll-margin-top`).
+- Home: la sección de Clementina XXI repetía `id="portfolio"`. Pasa a `id="clementina"`.
+- Home: el enlace "Ver mapa ampliado" en Contacto ahora se lee sobre el fondo oscuro.
+- Publicaciones: se quita la entrada duplicada de "Instance retrieval from non-labeled data…" (EUDELAR 2022). Es el mismo trabajo que la entrada de CACIC, que ya enlaza a SEDICI. El banner pasa a contar 2 publicaciones en 2022.
 - Home: lista de autores completa en la entrada WICC 2025 (faltaban Zamudio y Cagnina).
 
 ### Removed
