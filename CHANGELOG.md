@@ -26,6 +26,7 @@ Versioning policy for this project:
 - Home: enlace al texto completo en las entradas de la línea de tiempo que lo tienen, como píldora (`.timeline-pdf` en `css/styles.css`) debajo de la cita: PDF, SEDICI o Póster.
 
 ### Changed
+- Maestría: el horario se presenta como pensado para quienes trabajan. La franja con foto dice "Diseñada para profesionales que trabajan a tiempo completo", la ficha suma el rótulo "Horario" y el subtítulo de Modalidad menciona la compatibilidad con un trabajo de tiempo completo. En todo el subsitio, "a partir de las 18 hs" pasa a "desde las 18 h" y "presenciales y/o virtuales" a "presenciales o virtuales". La foto de la franja va desenfocada para quitarle protagonismo.
 - Maestría: sin íconos decorativos ni emojis. Las cifras y los números de curso pasan a serif, las tarjetas llevan un filete bordó sobre el título y la línea de tiempo usa puntos simples. Se mantienen los íconos funcionales: menú, WhatsApp, flechas de navegación, copiar datos bancarios, enlaces de los perfiles docentes y avisos.
 - Maestría: la foto de Presentación es ahora una clase del Congreso Argentino de Estadística, del archivo de LICDIA, en lugar de la foto de Unsplash. En aranceles, "¿Necesitás factura?" pasa a "Facturación".
 - Maestría, las 21 páginas: tipografía Source Serif 4 para títulos grandes (encabezado, títulos de sección y franjas) y Source Sans 3 para el resto, en reemplazo de Poppins, Montserrat, Roboto Slab y DM Mono, con los micrositios de posgrado de Stanford y CMU como referencia. Encabezado más bajo, menú en una línea sin mayúsculas e ítem activo en bordó. Los estilos están en `css/mcd-visual.css`, que ahora enlazan todas las páginas del subsitio.
@@ -45,6 +46,7 @@ Versioning policy for this project:
 - Home y Publicaciones: "Remembering the Flow" (Fernández, Errecalde, Burdisso) figura como trabajo distinguido del Workshop de Bases de Datos y Minería de Datos de CACIC 2026. En Publicaciones el cambio va en `tools/publicaciones/gen_pubs_data.py` y la página se regeneró.
 
 ### Fixed
+- Aranceles: quedaba un emoji, escrito como entidad HTML, en el título "Cómo pagar".
 - Maestría: los íconos de Font Awesome en SVG de las tarjetas quedaban oscuros sobre el círculo bordó al pasar el mouse; ahora son bordó en reposo y blancos en hover.
 - Home: el póster de la NLP School cargaba en diferido sin alto reservado (pasaba de 0 a 791 px) y corría 767 px todo lo que estaba debajo, de modo que los enlaces del menú a Cursos, Equipo y Contacto terminaban en la sección anterior. La imagen declara ahora `width` y `height`.
 - Home: la tarjeta del curso de posgrado de UNTREF (2024) mostraba una imagen rota, porque la tomaba del sitio de UNTREF y ese archivo ya no existe. Ahora usa una placa propia, `assets/img/curso-untref-2024.{jpg,webp}`.

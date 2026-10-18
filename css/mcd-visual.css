@@ -226,7 +226,7 @@ html body header.backgroundAr.fondoMcd {
 }
 .mcd-banda-texto strong {
     display: block; font-weight: 600;
-    font-size: clamp(1.9rem, 5vw, 3.1rem); letter-spacing: .01em; margin-bottom: .25rem;
+    font-size: clamp(1.9rem, 5vw, 3.1rem); letter-spacing: .01em; margin-bottom: .6rem; line-height: 1.15;
 }
 
 /* ---------- 4b. Modalidad de cursada sobre foto ---------- */
@@ -337,4 +337,12 @@ html body #informacion .border h4::before {
 html body #informacion .border h4::before { margin-left: 0; }
 html body .destinatario-card .destinatario-title { display: block !important; }
 html body .bc-card { padding-top: 1.75rem; }
+
+/* ---------- 10. Franja con foto desenfocada ----------
+   La foto queda como textura: el desenfoque le quita protagonismo y mejora la lectura del texto. */
+html body .mcd-banda-foto .mcd-fondo img {
+    filter: blur(6px) saturate(.85);
+    transform: scale(1.12);
+    animation: none;
+}
 
