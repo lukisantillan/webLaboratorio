@@ -370,3 +370,88 @@ html body header .mcd-hero-programa {
     color: rgba(255, 255, 255, .78); margin-bottom: .5rem;
 }
 
+
+/* ---------- 11. Cursos en tarjetas que se dan vuelta ----------
+   Frente: número, horas y nombre. Dorso: contenidos mínimos textuales del Anexo III de la Res. HCS 789/23.
+   Las dos caras comparten la misma celda de grilla, así la tarjeta toma la altura de la cara más larga.
+   Se dan vuelta con un clic, un toque o el teclado (botón que cubre la tarjeta); el texto del dorso
+   está en el HTML desde el principio, de modo que lo leen los buscadores y los lectores de pantalla. */
+.mcd-flip { position: relative; perspective: 1600px; }
+.mcd-flip-inner {
+    display: grid; height: 100%;
+    transform-style: preserve-3d;
+    transition: transform .7s cubic-bezier(.2, .7, .2, 1);
+}
+.mcd-flip-inner > * {
+    grid-area: 1 / 1;
+    -webkit-backface-visibility: hidden; backface-visibility: hidden;
+}
+.mcd-flip .mcd-flip-frente {
+    transform: rotateY(0deg);
+    flex-direction: column; justify-content: space-between; gap: 1.2rem;
+}
+.mcd-flip .mcd-flip-frente .mcd-curso-cuerpo { flex: 1; display: flex; flex-direction: column; }
+/* Frente: el nombre del curso en serif, centrado en el alto libre de la tarjeta */
+html body .mcd-flip .mcd-flip-frente .mcd-curso-nombre {
+    font-family: var(--mcd-serif) !important; font-weight: 600 !important;
+    font-size: 1.35rem; line-height: 1.25; margin: auto 0;
+    padding: .6rem 0;
+}
+html body .mcd-flip--apilada .mcd-flip-frente .mcd-curso-nombre { margin: auto 0 .35rem; padding-bottom: 0; }
+html body .mcd-flip-sub { margin: 0 0 auto; font-size: .92rem; color: #5c5c5c; }
+.mcd-flip-dorso {
+    transform: rotateY(180deg);
+    display: flex; flex-direction: column;
+    border-radius: 14px; padding: 1.2rem 1.35rem 1.1rem;
+    background: linear-gradient(160deg, var(--mcd-bordo) 0%, var(--mcd-bordo-osc) 100%);
+    color: #fff;
+}
+.mcd-flip.is-flipped .mcd-flip-inner { transform: rotateY(180deg); }
+@media (hover: hover) {
+    .mcd-flip:hover:not(.is-flipped) .mcd-flip-inner { transform: rotateY(-7deg); }
+    .mcd-flip:hover:not(.is-flipped) .mcd-flip-frente { box-shadow: 0 14px 36px rgba(128, 0, 32, .14); }
+}
+.mcd-flip-btn {
+    position: absolute; inset: 0; z-index: 2;
+    width: 100%; height: 100%; padding: 0;
+    background: transparent; border: 0; border-radius: 14px;
+    cursor: pointer;
+}
+.mcd-flip-btn:focus-visible { outline: 3px solid var(--mcd-bordo); outline-offset: 3px; }
+html body .mcd-flip-pista {
+    margin: 0; font-size: .82rem; font-weight: 600; letter-spacing: .02em;
+    color: var(--mcd-bordo);
+}
+html body .mcd-flip-pista::after { content: ' \2192'; }
+html body .mcd-flip-dorso .mcd-flip-pista { color: rgba(255, 255, 255, .8); margin-top: auto; padding-top: .8rem; }
+html body .mcd-flip-dorso .mcd-flip-pista::after { content: none; }
+html body .mcd-flip-dorso .mcd-flip-pista::before { content: '\2190\00a0'; }
+html body .mcd-flip-eyebrow {
+    margin: 0 0 .45rem; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    color: rgba(255, 255, 255, .72);
+}
+html body .mcd-flip-texto { margin: 0; font-size: .9rem; line-height: 1.5; color: #fff; }
+html body .mcd-flip-lista {
+    margin: .7rem 0 0; padding-left: 1.1rem;
+    font-size: .84rem; line-height: 1.45; color: #fff;
+    columns: 2; column-gap: 2rem;
+}
+html body .mcd-flip-lista li { break-inside: avoid; margin-bottom: .2rem; color: #fff; }
+@media (min-width: 992px) { html body .mcd-flip-lista { columns: 3; } }
+@media (max-width: 575.98px) { html body .mcd-flip-lista { columns: 1; } }
+html body .mcd-flip-fuente { margin: 1rem 0 0; font-size: .8rem; color: #6c757d; text-align: center; }
+html body .mcd-optativas-lista { columns: 2; column-gap: 2rem; font-size: .92rem; }
+html body .mcd-optativas-lista li { break-inside: avoid; margin-bottom: .2rem; }
+@media (max-width: 575.98px) { html body .mcd-optativas-lista { columns: 1; } }
+/* Optativas en pantallas chicas: la lista de veinte cursos haría una tarjeta muy alta y vacía de frente,
+   así que se muestran las dos caras apiladas, sin giro */
+@media (max-width: 767.98px) {
+    .mcd-flip--apilada .mcd-flip-inner { display: block; transform: none !important; }
+    .mcd-flip--apilada .mcd-flip-btn, .mcd-flip--apilada .mcd-flip-pista { display: none; }
+    .mcd-flip--apilada .mcd-flip-frente { border-radius: 14px 14px 0 0; }
+    .mcd-flip--apilada .mcd-flip-dorso { transform: none; border-radius: 0 0 14px 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .mcd-flip-inner { transition: none; }
+    .mcd-flip:hover:not(.is-flipped) .mcd-flip-inner { transform: none; }
+}
