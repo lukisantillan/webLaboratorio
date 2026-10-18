@@ -14,6 +14,7 @@ Versioning policy for this project:
 ## [Unreleased]
 
 ### Added
+- Maestría: Mg. Diego Gasch se suma al cuerpo docente (ciencia de datos y aprendizaje automático aplicado, UNLu), con foto en `assets/img/mcd-docentes/diego-gasch.{jpg,webp}`.
 - Maestría: tres fotos ilustrativas de Unsplash (Unsplash License; Vitaly Gariev, Carlos Muza y Luke Chesser) en `assets/img/mcd-fotos/`, ubicadas en Información, ¿Por qué elegirnos? y Salida académica y profesional, con un zoom lento que se desactiva con `prefers-reduced-motion`. Logos oficiales de UADER y CONEAU en la banda de Acreditación, tomados de uader.edu.ar y coneau.gob.ar.
 - Maestría: perfil de Mario Oloriz (`maestria-ciencia-datos/docentes/oloriz/`), responsable propuesto de Aspectos Legales y Éticos, con su foto de la sección Equipo. Entrada en `sitemap.xml`.
 - Maestría: tarjetas de cursos optativos (2 × 48 hs, Optativa I: IA Generativa) y de cursos de nivelación (Cherencio, Jara, Croch) en el plan de estudios; etiqueta "En trámite" (`.tag-tramite`, inline en cada página) para estado, fechas y aranceles de la primera cohorte.
@@ -62,6 +63,7 @@ Versioning policy for this project:
 - Home: lista de autores completa en la entrada WICC 2025 (faltaban Zamudio y Cagnina).
 
 ### Removed
+- Maestría: los once perfiles individuales de docentes, que no tenían el aval de cada docente y contenían datos desactualizados. Cada URL queda como una página que redirige a la grilla de Cuerpo docente con `noindex`, y salen del `sitemap.xml`. La grilla conserva nombre, título, área e institución, sin el enlace "Ver perfil".
 - Maestría, aranceles: Pago Mis Cuentas (pago electrónico y por cajero), que la UNLu dejó de usar. El pago queda por transferencia bancaria.
 - Maestría: la mención al 40% de trabajo guiado (portada, FAQ y schema, plan de estudios, enfoque y por qué elegirnos).
 - Plan de estudios: bloque "¿Por qué este cronograma?".

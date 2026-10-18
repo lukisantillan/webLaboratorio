@@ -354,4 +354,7 @@ html body #informacion .row.g-3 { margin-top: 2rem; }
 /* Botón flotante de solicitud: la regla general de enlaces de mcd-style2 (bordó !important) lo dejaba
    con texto bordó sobre fondo bordó */
 html body #floatingCTA, html body #floatingCTA:hover, html body #floatingCTA:focus { color: #fff !important; }
+/* Cuerpo docente: las tarjetas ya no enlazan a perfiles, así que no se elevan al pasar el mouse */
+html body #team .docente-card:hover { transform: none; box-shadow: none; border-color: #f0e3e5; }
+html body #team .docente-card:hover img { border-color: #FBEAEC; box-shadow: 0 6px 20px rgba(128, 0, 32, .16); }
 
