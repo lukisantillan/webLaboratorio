@@ -76,6 +76,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <link href="../css/mcd-styles.css" rel="stylesheet" />
     <link href="../css/mcd-style2.css" rel="stylesheet" />
+    <link href="../css/mcd-visual.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&display=swap" rel="stylesheet">
     <style>
@@ -152,6 +153,48 @@
             </div>
         </div>
     </article>
+
+    <section class="mcd-cifras" aria-label="La maestría en cifras">
+        <div class="container">
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3 justify-content-center">
+                <div class="col" data-aos="fade-up" data-aos-delay="0">
+                    <div class="mcd-cifra">
+                        <span class="mcd-cifra-icono" aria-hidden="true"><i class="fas fa-clock"></i></span>
+                        <span class="mcd-cifra-num">776</span>
+                        <span class="mcd-cifra-lbl">horas</span>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="80">
+                    <div class="mcd-cifra">
+                        <span class="mcd-cifra-icono" aria-hidden="true"><i class="fas fa-layer-group"></i></span>
+                        <span class="mcd-cifra-num">10</span>
+                        <span class="mcd-cifra-lbl">cursos</span>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="160">
+                    <div class="mcd-cifra">
+                        <span class="mcd-cifra-icono" aria-hidden="true"><i class="fas fa-building-columns"></i></span>
+                        <span class="mcd-cifra-num">2</span>
+                        <span class="mcd-cifra-lbl">universidades</span>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="240">
+                    <div class="mcd-cifra">
+                        <span class="mcd-cifra-icono" aria-hidden="true"><i class="fas fa-hand-holding-heart"></i></span>
+                        <span class="mcd-cifra-num">50%</span>
+                        <span class="mcd-cifra-lbl">beca UNLu</span>
+                    </div>
+                </div>
+                <div class="col" data-aos="fade-up" data-aos-delay="320">
+                    <div class="mcd-cifra">
+                        <span class="mcd-cifra-icono" aria-hidden="true"><i class="fas fa-calendar-check"></i></span>
+                        <span class="mcd-cifra-num">2</span>
+                        <span class="mcd-cifra-lbl">años</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section class="container my-3" id="lic-ia">
         <div class="row g-4 justify-content-center">
@@ -322,167 +365,98 @@
                                     según los antecedentes de cada admitido. Los docentes de cada curso figuran en el
                                     <a href="plan-de-estudios/">plan de estudios</a>.</p>
 
-                                <div id="accordionPlan">
-                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="80">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#planC1" aria-expanded="true" aria-controls="planC1">
-                                                    <span class="plan-icon-wrap" aria-hidden="true">1</span>
-                                                    Técnicas de Análisis para Ciencia de Datos · 64 hs
-                                                </button>
-                                            </h2>
-                                            <div id="planC1" class="accordion-collapse collapse show">
-                                                <div class="accordion-body">
-                                                    <p>Fundamentos estadísticos y técnicas de análisis exploratorio y
-                                                        descriptivo de datos. Primer curso de la cohorte, desde mayo de 2027.</p>
-                                                </div>
+                                <div class="row row-cols-1 row-cols-md-2 g-3 mcd-plan-grid">
+                                    <div class="col" data-aos="fade-up" data-aos-delay="40">
+                                        <div class="mcd-curso h-100">
+                                            <span class="mcd-curso-icono" aria-hidden="true"><i class="fas fa-square-root-variable"></i></span>
+                                            <div class="mcd-curso-cuerpo">
+                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">1</span><span class="mcd-curso-hs">64 hs</span></div>
+                                                <h3 class="mcd-curso-nombre">Técnicas de Análisis para Ciencia de Datos</h3>
+                                                <p class="mcd-curso-desc">Fundamentos estadísticos y técnicas de análisis exploratorio y descriptivo de datos. Primer curso de la cohorte, desde mayo de 2027.</p>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="120">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#planC2" aria-expanded="false" aria-controls="planC2">
-                                                    <span class="plan-icon-wrap" aria-hidden="true">2</span>
-                                                    Fundamentos de Ciencia de Datos · 64 hs
-                                                </button>
-                                            </h2>
-                                            <div id="planC2" class="accordion-collapse collapse">
-                                                <div class="accordion-body">
-                                                    <p>Conceptos centrales, ciclo de vida del dato y metodología de
-                                                        proyectos de ciencia de datos.</p>
-                                                </div>
+                                    <div class="col" data-aos="fade-up" data-aos-delay="80">
+                                        <div class="mcd-curso h-100">
+                                            <span class="mcd-curso-icono" aria-hidden="true"><i class="fas fa-database"></i></span>
+                                            <div class="mcd-curso-cuerpo">
+                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">2</span><span class="mcd-curso-hs">64 hs</span></div>
+                                                <h3 class="mcd-curso-nombre">Fundamentos de Ciencia de Datos</h3>
+                                                <p class="mcd-curso-desc">Conceptos centrales, ciclo de vida del dato y metodología de proyectos de ciencia de datos.</p>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="160">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#planC3" aria-expanded="false" aria-controls="planC3">
-                                                    <span class="plan-icon-wrap" aria-hidden="true">3</span>
-                                                    Aprendizaje Automático · 96 hs
-                                                </button>
-                                            </h2>
-                                            <div id="planC3" class="accordion-collapse collapse">
-                                                <div class="accordion-body">
-                                                    <p>Modelos supervisados y no supervisados, evaluación y puesta en
-                                                        producción.</p>
-                                                </div>
+                                    <div class="col" data-aos="fade-up" data-aos-delay="40">
+                                        <div class="mcd-curso h-100">
+                                            <span class="mcd-curso-icono" aria-hidden="true"><i class="fas fa-brain"></i></span>
+                                            <div class="mcd-curso-cuerpo">
+                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">3</span><span class="mcd-curso-hs">96 hs</span></div>
+                                                <h3 class="mcd-curso-nombre">Aprendizaje Automático</h3>
+                                                <p class="mcd-curso-desc">Modelos supervisados y no supervisados, evaluación y puesta en producción.</p>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="200">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#planC4" aria-expanded="false" aria-controls="planC4">
-                                                    <span class="plan-icon-wrap" aria-hidden="true">4</span>
-                                                    Visualización de Información · 64 hs
-                                                </button>
-                                            </h2>
-                                            <div id="planC4" class="accordion-collapse collapse">
-                                                <div class="accordion-body">
-                                                    <p>Principios y técnicas de visualización para la comunicación
-                                                        efectiva de datos.</p>
-                                                </div>
+                                    <div class="col" data-aos="fade-up" data-aos-delay="80">
+                                        <div class="mcd-curso h-100">
+                                            <span class="mcd-curso-icono" aria-hidden="true"><i class="fas fa-chart-line"></i></span>
+                                            <div class="mcd-curso-cuerpo">
+                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">4</span><span class="mcd-curso-hs">64 hs</span></div>
+                                                <h3 class="mcd-curso-nombre">Visualización de Información</h3>
+                                                <p class="mcd-curso-desc">Principios y técnicas de visualización para la comunicación efectiva de datos.</p>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="240">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#planC5" aria-expanded="false" aria-controls="planC5">
-                                                    <span class="plan-icon-wrap" aria-hidden="true">5</span>
-                                                    Ciencia de Datos Aplicada I · 64 hs
-                                                </button>
-                                            </h2>
-                                            <div id="planC5" class="accordion-collapse collapse">
-                                                <div class="accordion-body">
-                                                    <p>Resolución de problemas reales con datos en dominios concretos.</p>
-                                                </div>
+                                    <div class="col" data-aos="fade-up" data-aos-delay="40">
+                                        <div class="mcd-curso h-100">
+                                            <span class="mcd-curso-icono" aria-hidden="true"><i class="fas fa-laptop-code"></i></span>
+                                            <div class="mcd-curso-cuerpo">
+                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">5</span><span class="mcd-curso-hs">64 hs</span></div>
+                                                <h3 class="mcd-curso-nombre">Ciencia de Datos Aplicada I</h3>
+                                                <p class="mcd-curso-desc">Resolución de problemas reales con datos en dominios concretos.</p>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="280">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#planC6" aria-expanded="false" aria-controls="planC6">
-                                                    <span class="plan-icon-wrap" aria-hidden="true">6</span>
-                                                    Ciencia de Datos Aplicada II · 64 hs
-                                                </button>
-                                            </h2>
-                                            <div id="planC6" class="accordion-collapse collapse">
-                                                <div class="accordion-body">
-                                                    <p>Profundización en proyectos aplicados de mayor complejidad.</p>
-                                                </div>
+                                    <div class="col" data-aos="fade-up" data-aos-delay="80">
+                                        <div class="mcd-curso h-100">
+                                            <span class="mcd-curso-icono" aria-hidden="true"><i class="fas fa-diagram-project"></i></span>
+                                            <div class="mcd-curso-cuerpo">
+                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">6</span><span class="mcd-curso-hs">64 hs</span></div>
+                                                <h3 class="mcd-curso-nombre">Ciencia de Datos Aplicada II</h3>
+                                                <p class="mcd-curso-desc">Profundización en proyectos aplicados de mayor complejidad.</p>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="320">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#planC7" aria-expanded="false" aria-controls="planC7">
-                                                    <span class="plan-icon-wrap" aria-hidden="true">7</span>
-                                                    Aspectos Legales y Éticos del Uso de la Información · 32 hs
-                                                </button>
-                                            </h2>
-                                            <div id="planC7" class="accordion-collapse collapse">
-                                                <div class="accordion-body">
-                                                    <p>Marco legal, ético y de protección de datos en proyectos de ciencia
-                                                        de datos.</p>
-                                                </div>
+                                    <div class="col" data-aos="fade-up" data-aos-delay="40">
+                                        <div class="mcd-curso h-100">
+                                            <span class="mcd-curso-icono" aria-hidden="true"><i class="fas fa-scale-balanced"></i></span>
+                                            <div class="mcd-curso-cuerpo">
+                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">7</span><span class="mcd-curso-hs">32 hs</span></div>
+                                                <h3 class="mcd-curso-nombre">Aspectos Legales y Éticos del Uso de la Información</h3>
+                                                <p class="mcd-curso-desc">Marco legal, ético y de protección de datos en proyectos de ciencia de datos.</p>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="360">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#planC8" aria-expanded="false" aria-controls="planC8">
-                                                    <span class="plan-icon-wrap" aria-hidden="true">8</span>
-                                                    Taller de Formulación de Tesis · 32 hs
-                                                </button>
-                                            </h2>
-                                            <div id="planC8" class="accordion-collapse collapse">
-                                                <div class="accordion-body">
-                                                    <p>Acompañamiento metodológico para la formulación del plan de tesis.</p>
-                                                </div>
+                                    <div class="col" data-aos="fade-up" data-aos-delay="80">
+                                        <div class="mcd-curso h-100">
+                                            <span class="mcd-curso-icono" aria-hidden="true"><i class="fas fa-file-signature"></i></span>
+                                            <div class="mcd-curso-cuerpo">
+                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">8</span><span class="mcd-curso-hs">32 hs</span></div>
+                                                <h3 class="mcd-curso-nombre">Taller de Formulación de Tesis</h3>
+                                                <p class="mcd-curso-desc">Acompañamiento metodológico para la formulación del plan de tesis.</p>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="plan-card" data-aos="fade-up" data-aos-delay="400">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#planC9" aria-expanded="false" aria-controls="planC9">
-                                                    <span class="plan-icon-wrap" aria-hidden="true">+</span>
-                                                    Cursos optativos · 2 × 48 hs
-                                                </button>
-                                            </h2>
-                                            <div id="planC9" class="accordion-collapse collapse">
-                                                <div class="accordion-body">
-                                                    <p>Dos cursos optativos de 48 hs que completan la formación técnica antes del
-                                                        Taller de Formulación de Tesis.</p>
-                                                </div>
+                                    <div class="col col-md-12" data-aos="fade-up" data-aos-delay="40">
+                                        <div class="mcd-curso mcd-curso--opt h-100">
+                                            <span class="mcd-curso-icono" aria-hidden="true"><i class="fas fa-puzzle-piece"></i></span>
+                                            <div class="mcd-curso-cuerpo">
+                                                <div class="mcd-curso-sup"><span class="mcd-curso-hs">2 × 48 hs</span></div>
+                                                <h3 class="mcd-curso-nombre">Cursos optativos</h3>
+                                                <p class="mcd-curso-desc">Dos cursos optativos de 48 hs que completan la formación técnica antes del Taller de Formulación de Tesis.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="text-center mt-4">
                                     <a href="plan-de-estudios/#cronograma" class="btn btn-outline-dark btn-lg px-4 py-2">
                                         <i class="far fa-calendar-alt me-2"></i>Ver cronograma de la primera cohorte
@@ -496,6 +470,17 @@
         </div>
     </article>
 
+    <section class="mcd-banda-foto" aria-label="Así se cursa">
+        <picture class="mcd-fondo">
+            <source srcset="../assets/img/curso-rosana.webp" type="image/webp">
+            <img src="../assets/img/curso-rosana.jpg" alt="" loading="lazy" decoding="async">
+        </picture>
+        <div class="mcd-velo"></div>
+        <div class="container mcd-banda-contenido" data-aos="fade-up">
+            <p class="mcd-banda-texto"><strong>Así se cursa:</strong> encuentros sincrónicos, presenciales y/o virtuales</p>
+        </div>
+    </section>
+
     <section class="page-section bg-light" id="team">
         <div class="container">
             <div class="text-center">
@@ -504,10 +489,10 @@
             </div>
             <hr>
             <div class="row g-4 justify-content-center">
-                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1200">
                     <a href="docentes/alvarez/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
                     <div class="docente-card">
-                        <img src="../assets/img/mcd-docentes/enrique-alvarez.jpg" alt="Lic. Enrique Álvarez" loading="lazy" >
+                        <picture><source srcset="../assets/img/mcd-docentes/enrique-alvarez.webp" type="image/webp"><img src="../assets/img/mcd-docentes/enrique-alvarez.jpg" alt="Lic. Enrique Álvarez" loading="lazy" ></picture>
                         <div class="docente-body">
                             <div class="docente-nombre">Lic. Enrique Álvarez</div>
                             <div class="docente-curso">Matemática aplicada y estadística</div>
@@ -517,10 +502,10 @@
                     </div>
                 </a>
                 </div>
-                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1200">
                     <a href="docentes/angelini/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
                     <div class="docente-card">
-                        <img src="../assets/img/mcd-docentes/marcos-angelini.jpg" alt="Dr. Marcos Angelini" loading="lazy" >
+                        <picture><source srcset="../assets/img/mcd-docentes/marcos-angelini.webp" type="image/webp"><img src="../assets/img/mcd-docentes/marcos-angelini.jpg" alt="Dr. Marcos Angelini" loading="lazy" ></picture>
                         <div class="docente-body">
                             <div class="docente-nombre">Dr. Marcos Angelini</div>
                             <div class="docente-curso">Modelado de datos y análisis geoespacial</div>
@@ -530,10 +515,10 @@
                     </div>
                 </a>
                 </div>
-                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1200">
                     <a href="docentes/banchero/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
                     <div class="docente-card">
-                        <img src="../assets/img/mcd-docentes/santiago-banchero.jpg" alt="Lic. Santiago Banchero" loading="lazy" >
+                        <picture><source srcset="../assets/img/mcd-docentes/santiago-banchero.webp" type="image/webp"><img src="../assets/img/mcd-docentes/santiago-banchero.jpg" alt="Lic. Santiago Banchero" loading="lazy" ></picture>
                         <div class="docente-body">
                             <div class="docente-nombre">Lic. Santiago Banchero</div>
                             <div class="docente-curso">Teledetección y ciencia de datos</div>
@@ -543,10 +528,10 @@
                     </div>
                 </a>
                 </div>
-                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1200">
                     <a href="docentes/bordignon/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
                     <div class="docente-card">
-                        <img src="../assets/img/mcd-docentes/fernando-bordignon.jpg" alt="Dr. Fernando Bordignon" loading="lazy" >
+                        <picture><source srcset="../assets/img/mcd-docentes/fernando-bordignon.webp" type="image/webp"><img src="../assets/img/mcd-docentes/fernando-bordignon.jpg" alt="Dr. Fernando Bordignon" loading="lazy" ></picture>
                         <div class="docente-body">
                             <div class="docente-nombre">Dr. Fernando Bordignon</div>
                             <div class="docente-curso">Tecnologías digitales y metodología</div>
@@ -556,10 +541,10 @@
                     </div>
                 </a>
                 </div>
-                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1200">
                     <a href="docentes/cherencio/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
                     <div class="docente-card">
-                        <img src="../assets/img/mcd-docentes/guillermo-cherencio.jpg" alt="Mg. Guillermo Cherencio" loading="lazy" >
+                        <picture><source srcset="../assets/img/mcd-docentes/guillermo-cherencio.webp" type="image/webp"><img src="../assets/img/mcd-docentes/guillermo-cherencio.jpg" alt="Mg. Guillermo Cherencio" loading="lazy" ></picture>
                         <div class="docente-body">
                             <div class="docente-nombre">Mg. Guillermo Cherencio</div>
                             <div class="docente-curso">Bases de datos e ingeniería de datos</div>
@@ -569,7 +554,7 @@
                     </div>
                 </a>
                 </div>
-                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1200">
                     <a href="docentes/fernandez/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
                     <div class="docente-card">
                         <picture><source srcset="../assets/img/mcd-docentes/juan-manuel-fernandez.webp" type="image/webp"><img src="../assets/img/mcd-docentes/juan-manuel-fernandez.jpg" alt="Mg. Juan Manuel Fernández" loading="lazy" ></picture>
@@ -582,10 +567,10 @@
                     </div>
                 </a>
                 </div>
-                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1200">
                     <a href="docentes/matuk/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
                     <div class="docente-card">
-                        <img src="../assets/img/mcd-docentes/rosana-matuk.jpg" alt="Dra. Rosana Matuk Herrera" loading="lazy" >
+                        <picture><source srcset="../assets/img/mcd-docentes/rosana-matuk.webp" type="image/webp"><img src="../assets/img/mcd-docentes/rosana-matuk.jpg" alt="Dra. Rosana Matuk Herrera" loading="lazy" ></picture>
                         <div class="docente-body">
                             <div class="docente-nombre">Dra. Rosana Matuk Herrera</div>
                             <div class="docente-curso">Redes neuronales y machine learning</div>
@@ -595,7 +580,7 @@
                     </div>
                 </a>
                 </div>
-                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1200">
                     <a href="docentes/oloriz/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
                     <div class="docente-card">
                         <picture><source srcset="../assets/img/team/7.webp" type="image/webp"><img src="../assets/img/team/7.jpg" alt="Mg. Mario Oloriz" loading="lazy" ></picture>
@@ -608,10 +593,10 @@
                     </div>
                 </a>
                 </div>
-                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1200">
                     <a href="docentes/petrocelli/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
                     <div class="docente-card">
-                        <img src="../assets/img/mcd-docentes/david-petrocelli.jpg" alt="Dr. David Petrocelli" loading="lazy" >
+                        <picture><source srcset="../assets/img/mcd-docentes/david-petrocelli.webp" type="image/webp"><img src="../assets/img/mcd-docentes/david-petrocelli.jpg" alt="Dr. David Petrocelli" loading="lazy" ></picture>
                         <div class="docente-body">
                             <div class="docente-nombre">Dr. David Petrocelli</div>
                             <div class="docente-curso">Cómputo de alto desempeño y arquitectura cloud</div>
@@ -621,10 +606,10 @@
                     </div>
                 </a>
                 </div>
-                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1200">
                     <a href="docentes/sione/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
                     <div class="docente-card">
-                        <img src="../assets/img/mcd-docentes/walter-sione.jpg" alt="Dr. Walter Sione" loading="lazy" >
+                        <picture><source srcset="../assets/img/mcd-docentes/walter-sione.webp" type="image/webp"><img src="../assets/img/mcd-docentes/walter-sione.jpg" alt="Dr. Walter Sione" loading="lazy" ></picture>
                         <div class="docente-body">
                             <div class="docente-nombre">Dr. Walter Sione</div>
                             <div class="docente-curso">Teledetección y datos ambientales</div>
@@ -634,10 +619,10 @@
                     </div>
                 </a>
                 </div>
-                <div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-duration="1200">
+                <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-duration="1200">
                     <a href="docentes/tolosa/" class="docente-link-wrap" style="color:inherit;display:block;height:100%;text-decoration:none;">
                     <div class="docente-card">
-                        <img src="../assets/img/mcd-docentes/gabriel-tolosa.jpg" alt="Dr. Gabriel Tolosa" loading="lazy" >
+                        <picture><source srcset="../assets/img/mcd-docentes/gabriel-tolosa.webp" type="image/webp"><img src="../assets/img/mcd-docentes/gabriel-tolosa.jpg" alt="Dr. Gabriel Tolosa" loading="lazy" ></picture>
                         <div class="docente-body">
                             <div class="docente-nombre">Dr. Gabriel Tolosa</div>
                             <div class="docente-curso">Recuperación de información y sistemas</div>
@@ -755,11 +740,30 @@
                     </div>
                 </div>
             </div>
+            <div class="mcd-logos" data-aos="fade-up">
+                <div class="mcd-logo">
+                    <picture><source srcset="../assets/img/mcd-logos/unlu.webp" type="image/webp"><img src="../assets/img/mcd-logos/unlu.png" alt="Escudo de la Universidad Nacional de Luján" width="84" height="84" loading="lazy"></picture>
+                    <span class="mcd-logo-nombre">Universidad Nacional de Luján</span>
+                </div>
+                <div class="mcd-logo">
+                    <span class="mcd-logo-sigla">UADER</span>
+                    <span class="mcd-logo-nombre">Universidad Autónoma de Entre Ríos</span>
+                </div>
+                <div class="mcd-logo">
+                    <span class="mcd-logo-sigla">CONEAU</span>
+                    <span class="mcd-logo-nombre">Comisión Nacional de Evaluación y Acreditación Universitaria</span>
+                </div>
+            </div>
             <p class="text-center text-muted mt-4 mb-0">El título de Magíster en Ciencia de Datos tiene validez en todo el territorio nacional y habilita para ejercer la disciplina en ámbito académico, profesional y de investigación.</p>
         </div>
     </section>
 
-    <section class="page-section bg-light" id="modalidad" data-aos="fade-up" data-aos-duration="1500">
+    <section class="page-section mcd-modalidad-foto" id="modalidad" data-aos="fade-up" data-aos-duration="1500">
+        <picture class="mcd-fondo">
+            <source srcset="../assets/img/fondo-cursos.webp" type="image/webp">
+            <img src="../assets/img/fondo-cursos.jpg" alt="" loading="lazy" decoding="async">
+        </picture>
+        <div class="mcd-velo"></div>
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Modalidad de cursada</h2>
@@ -789,8 +793,37 @@
                     </div>
                 </div>
             </div>
-            <p class="text-center text-muted mt-4 mb-0">Cursada prevista de mayo de 2027 a octubre de 2028, con cursos de nivelación en abril de 2027 <span class="tag-tramite">En trámite</span>
-                <br><a href="plan-de-estudios/#cronograma">Ver el cronograma de la primera cohorte</a></p>
+            <div class="mcd-tl-card" data-aos="fade-up">
+                <p class="mcd-tl-cab">Primera cohorte 2027 <span class="tag-tramite">En trámite</span></p>
+                <ol class="mcd-tl">
+                    <li class="mcd-tl-item" data-aos="fade-up" data-aos-delay="0">
+                        <span class="mcd-tl-punto" aria-hidden="true"><i class="fas fa-user-plus"></i></span>
+                        <span class="mcd-tl-titulo">Inscripción</span>
+                        <span class="mcd-tl-fecha">nov 2026 – abr 2027</span>
+                    </li>
+                    <li class="mcd-tl-item" data-aos="fade-up" data-aos-delay="60">
+                        <span class="mcd-tl-punto" aria-hidden="true"><i class="fas fa-book-open"></i></span>
+                        <span class="mcd-tl-titulo">Nivelación</span>
+                        <span class="mcd-tl-fecha">abr 2027</span>
+                    </li>
+                    <li class="mcd-tl-item" data-aos="fade-up" data-aos-delay="120">
+                        <span class="mcd-tl-punto" aria-hidden="true"><i class="fas fa-chalkboard-teacher"></i></span>
+                        <span class="mcd-tl-titulo">Primer año</span>
+                        <span class="mcd-tl-fecha">may – dic 2027</span>
+                    </li>
+                    <li class="mcd-tl-item" data-aos="fade-up" data-aos-delay="180">
+                        <span class="mcd-tl-punto" aria-hidden="true"><i class="fas fa-laptop-code"></i></span>
+                        <span class="mcd-tl-titulo">Segundo año</span>
+                        <span class="mcd-tl-fecha">feb – oct 2028</span>
+                    </li>
+                    <li class="mcd-tl-item" data-aos="fade-up" data-aos-delay="240">
+                        <span class="mcd-tl-punto" aria-hidden="true"><i class="fas fa-graduation-cap"></i></span>
+                        <span class="mcd-tl-titulo">Tesis</span>
+                        <span class="mcd-tl-fecha">desde nov 2028</span>
+                    </li>
+                </ol>
+                <p class="mcd-tl-pie"><a href="plan-de-estudios/#cronograma">Ver el cronograma de la primera cohorte</a></p>
+            </div>
         </div>
     </section>
 
