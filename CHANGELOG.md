@@ -14,6 +14,7 @@ Versioning policy for this project:
 ## [Unreleased]
 
 ### Added
+- Maestría: tres fotos ilustrativas de Unsplash (Unsplash License; Vitaly Gariev, Carlos Muza y Luke Chesser) en `assets/img/mcd-fotos/`, ubicadas en Información, ¿Por qué elegirnos? y Salida académica y profesional, con un zoom lento que se desactiva con `prefers-reduced-motion`. Logos oficiales de UADER y CONEAU en la banda de Acreditación, tomados de uader.edu.ar y coneau.gob.ar.
 - Maestría: perfil de Mario Oloriz (`maestria-ciencia-datos/docentes/oloriz/`), responsable propuesto de Aspectos Legales y Éticos, con su foto de la sección Equipo. Entrada en `sitemap.xml`.
 - Maestría: tarjetas de cursos optativos (2 × 48 hs, Optativa I: IA Generativa) y de cursos de nivelación (Cherencio, Jara, Croch) en el plan de estudios; etiqueta "En trámite" (`.tag-tramite`, inline en cada página) para estado, fechas y aranceles de la primera cohorte.
 - Home: noticia del segundo lugar en los Poster Awards 2026 de la Second South American NLP School (Camilo, Fernández, Errecalde, "PEFT vs. GaLore"), con el póster en `assets/img/noticias/` y el PDF en `assets/`.
@@ -25,6 +26,7 @@ Versioning policy for this project:
 - Home: enlace al texto completo en las entradas de la línea de tiempo que lo tienen, como píldora (`.timeline-pdf` en `css/styles.css`) debajo de la cita: PDF, SEDICI o Póster.
 
 ### Changed
+- Maestría: el horario de los encuentros figura como "a partir de las 18 hs" en la portada del subsitio (ficha, banda "Así se cursa", Modalidad con etiqueta propia, FAQ y schema), en plan de estudios, enfoque y por qué elegirnos.
 - Maestría (portada del subsitio): rediseño visual sin cambios de contenido, con estilos en `css/mcd-visual.css`, que solo cargan las páginas de la Maestría. Franja de cifras (776 hs, 10 cursos, 2 universidades, 50% de beca UNLu, 2 años); el plan de estudios pasa de acordeón a tarjetas en dos columnas con ícono, número, horas y el mismo texto de cada curso; banda con foto (`curso-rosana`) y velo bordó entre Plan de estudios y Cuerpo docente; Modalidad de cursada sobre `fondo-cursos` con velo oscuro; Cuerpo docente en tres columnas con fotos de 176 px y versión webp; banda de logos en Acreditación (escudo de la UNLu en `assets/img/mcd-logos/`, UADER y CONEAU con su nombre en texto).
 - Maestría: la línea de calendario de Modalidad pasa a una línea de tiempo de cinco hitos (Inscripción, Nivelación, Primer año, Segundo año, Tesis) con la etiqueta "En trámite"; la misma línea de tiempo se suma arriba de la tabla del cronograma en `plan-de-estudios/`.
 - Maestría: primera cohorte pasa de "segundo semestre 2026" a 2027 con apertura en trámite, en home del subsitio, plan de estudios, requisitos, inscripción, por qué elegirnos, destinatarios, enfoque y aranceles (texto, FAQ, schema FAQPage y Course). Calendario proyectado: inscripción 16/11/2026 a 1/4/2027 con admisión continua, nivelación 12/4 a 7/5/2027, cursada del 17/5/2027 al 27/10/2028, tesis desde noviembre de 2028.
@@ -39,6 +41,7 @@ Versioning policy for this project:
 - Home y Publicaciones: "Remembering the Flow" (Fernández, Errecalde, Burdisso) figura como trabajo distinguido del Workshop de Bases de Datos y Minería de Datos de CACIC 2026. En Publicaciones el cambio va en `tools/publicaciones/gen_pubs_data.py` y la página se regeneró.
 
 ### Fixed
+- Home: el póster de la NLP School cargaba en diferido sin alto reservado (pasaba de 0 a 791 px) y corría 767 px todo lo que estaba debajo, de modo que los enlaces del menú a Cursos, Equipo y Contacto terminaban en la sección anterior. La imagen declara ahora `width` y `height`.
 - Home: la tarjeta del curso de posgrado de UNTREF (2024) mostraba una imagen rota, porque la tomaba del sitio de UNTREF y ese archivo ya no existe. Ahora usa una placa propia, `assets/img/curso-untref-2024.{jpg,webp}`.
 - Home: grilla de Líneas de I+D sin el hueco de la segunda fila (se quitó una columna vacía y la fila se centra). En Proyectos, la última tarjeta usa una clase válida (`col-lg-15` pasa a `col-lg-4`) y queda centrada.
 - Home: al entrar desde el menú, la barra fija ya no tapa el título de la sección (`scroll-margin-top`).
@@ -48,6 +51,7 @@ Versioning policy for this project:
 - Home: lista de autores completa en la entrada WICC 2025 (faltaban Zamudio y Cagnina).
 
 ### Removed
+- Plan de estudios: bloque "¿Por qué este cronograma?".
 - Home: script del kit de Font Awesome (`kit.fontawesome.com/eb496ab1a0.js`), que respondía 403 y era redundante con `use.fontawesome.com` v6.3.0 y el CSS de cdnjs ya cargados.
 
 ## [1.0.0] - 2026-06-03
