@@ -26,6 +26,8 @@ Versioning policy for this project:
 - Home: enlace al texto completo en las entradas de la línea de tiempo que lo tienen, como píldora (`.timeline-pdf` en `css/styles.css`) debajo de la cita: PDF, SEDICI o Póster.
 
 ### Changed
+- Maestría, las 21 páginas: tipografía Source Serif 4 para títulos grandes (encabezado, títulos de sección y franjas) y Source Sans 3 para el resto, en reemplazo de Poppins, Montserrat, Roboto Slab y DM Mono, con los micrositios de posgrado de Stanford y CMU como referencia. Encabezado más bajo, menú en una línea sin mayúsculas e ítem activo en bordó. Los estilos están en `css/mcd-visual.css`, que ahora enlazan todas las páginas del subsitio.
+- Maestría: registro sobrio e impersonal, con encabezados nominales y llamados en infinitivo ("Solicitar información", "Primera cohorte 2027", "Fortalezas del programa", "Presentación", "Cursada vespertina", "Solicitud de información", "Enviar solicitud"). El menú dice "Fortalezas" y "Contacto". Las tarjetas de Modalidad pasan a "Régimen de cursada", "Carga horaria" y "Tesis de maestría". Se reescriben sin voseo los cierres de los perfiles docentes y los textos de destinatarios, aranceles, requisitos e inscripción, y las descripciones para redes dejan de empezar con "Conocé". Las páginas de agradecimiento conservan su tono.
 - Maestría: el horario de los encuentros figura como "a partir de las 18 hs" en la portada del subsitio (ficha, banda "Así se cursa", Modalidad con etiqueta propia, FAQ y schema), en plan de estudios, enfoque y por qué elegirnos.
 - Maestría (portada del subsitio): rediseño visual sin cambios de contenido, con estilos en `css/mcd-visual.css`, que solo cargan las páginas de la Maestría. Franja de cifras (776 hs, 10 cursos, 2 universidades, 50% de beca UNLu, 2 años); el plan de estudios pasa de acordeón a tarjetas en dos columnas con ícono, número, horas y el mismo texto de cada curso; banda con foto (`curso-rosana`) y velo bordó entre Plan de estudios y Cuerpo docente; Modalidad de cursada sobre `fondo-cursos` con velo oscuro; Cuerpo docente en tres columnas con fotos de 176 px y versión webp; banda de logos en Acreditación (escudo de la UNLu en `assets/img/mcd-logos/`, UADER y CONEAU con su nombre en texto).
 - Maestría: la línea de calendario de Modalidad pasa a una línea de tiempo de cinco hitos (Inscripción, Nivelación, Primer año, Segundo año, Tesis) con la etiqueta "En trámite"; la misma línea de tiempo se suma arriba de la tabla del cronograma en `plan-de-estudios/`.
@@ -41,6 +43,7 @@ Versioning policy for this project:
 - Home y Publicaciones: "Remembering the Flow" (Fernández, Errecalde, Burdisso) figura como trabajo distinguido del Workshop de Bases de Datos y Minería de Datos de CACIC 2026. En Publicaciones el cambio va en `tools/publicaciones/gen_pubs_data.py` y la página se regeneró.
 
 ### Fixed
+- Maestría: los íconos de Font Awesome en SVG de las tarjetas quedaban oscuros sobre el círculo bordó al pasar el mouse; ahora son bordó en reposo y blancos en hover.
 - Home: el póster de la NLP School cargaba en diferido sin alto reservado (pasaba de 0 a 791 px) y corría 767 px todo lo que estaba debajo, de modo que los enlaces del menú a Cursos, Equipo y Contacto terminaban en la sección anterior. La imagen declara ahora `width` y `height`.
 - Home: la tarjeta del curso de posgrado de UNTREF (2024) mostraba una imagen rota, porque la tomaba del sitio de UNTREF y ese archivo ya no existe. Ahora usa una placa propia, `assets/img/curso-untref-2024.{jpg,webp}`.
 - Home: grilla de Líneas de I+D sin el hueco de la segunda fila (se quitó una columna vacía y la fila se centra). En Proyectos, la última tarjeta usa una clase válida (`col-lg-15` pasa a `col-lg-4`) y queda centrada.
@@ -51,6 +54,7 @@ Versioning policy for this project:
 - Home: lista de autores completa en la entrada WICC 2025 (faltaban Zamudio y Cagnina).
 
 ### Removed
+- Maestría: la mención al 40% de trabajo guiado (portada, FAQ y schema, plan de estudios, enfoque y por qué elegirnos).
 - Plan de estudios: bloque "¿Por qué este cronograma?".
 - Home: script del kit de Font Awesome (`kit.fontawesome.com/eb496ab1a0.js`), que respondía 403 y era redundante con `use.fontawesome.com` v6.3.0 y el CSS de cdnjs ya cargados.
 
