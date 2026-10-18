@@ -21,7 +21,7 @@ html body { font-family: var(--mcd-sans); }
 html body :is(p, li, a, span, div, td, th, label, input, select, textarea, button, small, strong, em, b, blockquote, figcaption, dt, dd, h1, h2, h3, h4, h5, h6):not([class*="fa-"]):not(.fa):not(.fas):not(.far):not(.fab) {
     font-family: var(--mcd-sans) !important;
 }
-html body :is(h1.masthead-heading, div.masthead-heading, h2.section-heading, h2.card-t, #cta-inscripcion h2, .mcd-banda-texto strong, .cta-inscribite h3) {
+html body :is(h1.masthead-heading, div.masthead-heading, h2.section-heading, h2.card-t, #cta-inscripcion h2, .mcd-banda-texto strong, .cta-inscribite h3, .mcd-cifra-num, .mcd-curso-num) {
     font-family: var(--mcd-serif) !important;
     font-weight: 600 !important;
     letter-spacing: 0 !important;
@@ -296,3 +296,45 @@ body .bc-card:hover .bc-icon-wrap svg { color: #fff; }
     .mcd-curso, .mcd-logo, .mcd-tl-punto { transition: none; }
     .mcd-curso:hover, .mcd-logo:hover { transform: none; }
 }
+
+/* ---------- 9. Sin íconos decorativos: recursos tipográficos ----------
+   Los íconos en círculos y los emojis se reemplazan por números en serif, filetes bordó y puntos simples. */
+.mcd-cifras { padding: 2.5rem 0 2.6rem; }
+.mcd-cifra { padding: .35rem .5rem; }
+.mcd-cifra-num { font-size: clamp(2.3rem, 4.4vw, 3.1rem) !important; line-height: 1 !important; }
+.mcd-cifra-lbl { margin-top: .5rem; }
+@media (min-width: 992px) {
+    .mcd-cifras .row > .col + .col .mcd-cifra { border-left: 1px solid #e6c9cf; }
+}
+/* Cursos: el número reemplaza al ícono */
+.mcd-curso { padding: 1.2rem 1.3rem 1.2rem 1.45rem; }
+.mcd-curso-sup { gap: .7rem; margin-bottom: .1rem; align-items: baseline; }
+.mcd-curso-num {
+    background: none !important; color: var(--mcd-bordo) !important;
+    min-width: 0 !important; height: auto !important; padding: 0 !important; border-radius: 0 !important;
+    font-size: 1.85rem !important; line-height: 1 !important;
+}
+.mcd-curso--opt .mcd-curso-sup { margin-bottom: .25rem; }
+/* Línea de tiempo: puntos simples */
+.mcd-tl::before { top: 8px; }
+.mcd-tl-punto {
+    width: 18px; height: 18px; font-size: 0;
+    border: 3px solid #fff; box-shadow: 0 0 0 2px var(--mcd-bordo);
+}
+.mcd-tl-titulo { margin-top: .75rem; }
+@media (max-width: 767.98px) {
+    .mcd-tl::before { top: 8px; bottom: 8px; left: 8px; }
+    .mcd-tl-item { grid-template-columns: 18px 1fr; }
+    .mcd-tl-titulo { margin-top: 0; }
+}
+/* Filete bordó sobre los títulos de tarjetas, en lugar del círculo con ícono */
+html body .bc-card h4::before,
+html body .destinatario-card .destinatario-title::before,
+html body #informacion .border h4::before {
+    content: ''; display: block; width: 34px; height: 3px; border-radius: 2px;
+    background: var(--mcd-bordo); margin: 0 auto .85rem;
+}
+html body #informacion .border h4::before { margin-left: 0; }
+html body .destinatario-card .destinatario-title { display: block !important; }
+html body .bc-card { padding-top: 1.75rem; }
+
