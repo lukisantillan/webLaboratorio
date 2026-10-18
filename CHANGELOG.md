@@ -14,6 +14,8 @@ Versioning policy for this project:
 ## [Unreleased]
 
 ### Added
+- Maestría: perfil de Mario Oloriz (`maestria-ciencia-datos/docentes/oloriz/`), responsable propuesto de Aspectos Legales y Éticos, con su foto de la sección Equipo. Entrada en `sitemap.xml`.
+- Maestría: tarjetas de cursos optativos (2 × 48 hs, Optativa I: IA Generativa) y de cursos de nivelación (Cherencio, Jara, Croch) en el plan de estudios; etiqueta "En trámite" (`.tag-tramite`, inline en cada página) para estado, fechas y aranceles de la primera cohorte.
 - Home: noticia del segundo lugar en los Poster Awards 2026 de la Second South American NLP School (Camilo, Fernández, Errecalde, "PEFT vs. GaLore"), con el póster en `assets/img/noticias/` y el PDF en `assets/`.
 - Home: 8 entradas 2026 en la timeline de publicaciones (CIICE 2026, 4× CACIC 2026, póster NLP School, 2× JCC-BD&ET 2026).
 - Home: Mario Oloriz y Hugo Delfino vuelven a la sección Equipo (UNLu), con sus fotos y descripciones previas a la baja de mayo de 2026. Las 15 fichas UNLu quedan en filas completas de a tres.
@@ -23,6 +25,12 @@ Versioning policy for this project:
 - Home: enlace al texto completo en las entradas de la línea de tiempo que lo tienen, como píldora (`.timeline-pdf` en `css/styles.css`) debajo de la cita: PDF, SEDICI o Póster.
 
 ### Changed
+- Maestría: primera cohorte pasa de "segundo semestre 2026" a 2027 con apertura en trámite, en home del subsitio, plan de estudios, requisitos, inscripción, por qué elegirnos, destinatarios, enfoque y aranceles (texto, FAQ, schema FAQPage y Course). Calendario proyectado: inscripción 16/11/2026 a 1/4/2027 con admisión continua, nivelación 12/4 a 7/5/2027, cursada del 17/5/2027 al 27/10/2028, tesis desde noviembre de 2028.
+- Maestría: modalidad de cursada pasa de "2 clases de 4 hs, 75% presencial" a dos encuentros semanales sincrónicos de 3 hs, presenciales y/o virtuales (60% de la carga horaria), en bloques de 6 semanas (8 para Aprendizaje Automático).
+- Maestría: aranceles pasan a matrícula de $400.000, 16 cuotas mensuales de $400.000 en los meses con cursada, derecho de nivelación de $400.000 (solo quienes nivelan) y derecho de defensa de $400.000; total $7.200.000 ($3.600.000 con beca UNLu); revisión semestral por IPC; cursos individuales a 1,5 cuotas por curso.
+- Maestría: responsables propuestos para la primera cohorte: Técnicas de Análisis y Visualización a confirmar (FCyT-UADER), Aprendizaje Automático Rosana Matuk, Aspectos Legales Mario Oloriz; el subtítulo de Cuerpo docente ya no afirma que los responsables son los validados por CONEAU. "Comisión Académica" pasa a "Comité Académico".
+- Home: el enlace "Maestría en Ciencia de Datos" apunta al subsitio `maestria-ciencia-datos/` en lugar de la página de la UNLu.
+- `sitemap.xml`: lastmod 2026-10-17 en las páginas modificadas de la Maestría.
 - Home: las fotos del carrusel pasan de 4032 px de ancho a 1600 px (webp de 0,7–1,4 MB a 0,12–0,20 MB).
 - Home: las bajadas de sección y el subtítulo del hero pasan de Roboto Slab itálica a Montserrat, con ancho máximo para las bajadas y sombra en el subtítulo. "Más información" y el ítem activo del menú pasan del violeta al azul de la línea de tiempo (#1d13b9). Los estilos están acotados a la home (`body.home`).
 - Home: la línea de tiempo muestra solo 2025 y 2026. Las anteriores siguen en Publicaciones, a la que lleva el botón "Ver todas las publicaciones".
