@@ -26,6 +26,8 @@ Versioning policy for this project:
 - Home: enlace al texto completo en las entradas de la línea de tiempo que lo tienen, como píldora (`.timeline-pdf` en `css/styles.css`) debajo de la cita: PDF, SEDICI o Póster.
 
 ### Changed
+- Maestría: Presentación queda en un solo párrafo (carrera de posgrado UNLu y FCyT-UADER, acreditada por CONEAU, con título de validez nacional, y qué forma). Salen el detalle normativo, que está en Acreditación, la justificación de demanda, la afirmación sobre el corredor conurbano-litoral y el rótulo Objetivos; quedan las tarjetas Analizar, Modelar y Comunicar.
+- Maestría: el desenfoque pasa de la foto de la franja a la de Presentación, que lleva además un velo bordó para quitarle detalle; la franja vuelve a su foto nítida.
 - Maestría: el horario se presenta como pensado para quienes trabajan. La franja con foto dice "Diseñada para profesionales que trabajan a tiempo completo", la ficha suma el rótulo "Horario" y el subtítulo de Modalidad menciona la compatibilidad con un trabajo de tiempo completo. En todo el subsitio, "a partir de las 18 hs" pasa a "desde las 18 h" y "presenciales y/o virtuales" a "presenciales o virtuales". La foto de la franja va desenfocada para quitarle protagonismo.
 - Maestría: sin íconos decorativos ni emojis. Las cifras y los números de curso pasan a serif, las tarjetas llevan un filete bordó sobre el título y la línea de tiempo usa puntos simples. Se mantienen los íconos funcionales: menú, WhatsApp, flechas de navegación, copiar datos bancarios, enlaces de los perfiles docentes y avisos.
 - Maestría: la foto de Presentación es ahora una clase del Congreso Argentino de Estadística, del archivo de LICDIA, en lugar de la foto de Unsplash. En aranceles, "¿Necesitás factura?" pasa a "Facturación".
@@ -46,6 +48,8 @@ Versioning policy for this project:
 - Home y Publicaciones: "Remembering the Flow" (Fernández, Errecalde, Burdisso) figura como trabajo distinguido del Workshop de Bases de Datos y Minería de Datos de CACIC 2026. En Publicaciones el cambio va en `tools/publicaciones/gen_pubs_data.py` y la página se regeneró.
 
 ### Fixed
+- Maestría: títulos de Enrique Álvarez (Dr., figuraba como Lic.) y Santiago Banchero (Mg., figuraba como Lic.) en la grilla de docentes y en sus perfiles.
+- Maestría: el botón flotante "Solicitar información" tenía texto bordó sobre fondo bordó en móvil, porque la regla general de enlaces de `mcd-style2.css` (bordó con `!important`) le ganaba a su color blanco.
 - Aranceles: quedaba un emoji, escrito como entidad HTML, en el título "Cómo pagar".
 - Maestría: los íconos de Font Awesome en SVG de las tarjetas quedaban oscuros sobre el círculo bordó al pasar el mouse; ahora son bordó en reposo y blancos en hover.
 - Home: el póster de la NLP School cargaba en diferido sin alto reservado (pasaba de 0 a 791 px) y corría 767 px todo lo que estaba debajo, de modo que los enlaces del menú a Cursos, Equipo y Contacto terminaban en la sección anterior. La imagen declara ahora `width` y `height`.
@@ -58,6 +62,7 @@ Versioning policy for this project:
 - Home: lista de autores completa en la entrada WICC 2025 (faltaban Zamudio y Cagnina).
 
 ### Removed
+- Maestría, aranceles: Pago Mis Cuentas (pago electrónico y por cajero), que la UNLu dejó de usar. El pago queda por transferencia bancaria.
 - Maestría: la mención al 40% de trabajo guiado (portada, FAQ y schema, plan de estudios, enfoque y por qué elegirnos).
 - Plan de estudios: bloque "¿Por qué este cronograma?".
 - Home: script del kit de Font Awesome (`kit.fontawesome.com/eb496ab1a0.js`), que respondía 403 y era redundante con `use.fontawesome.com` v6.3.0 y el CSS de cdnjs ya cargados.

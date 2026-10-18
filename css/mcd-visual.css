@@ -338,11 +338,20 @@ html body #informacion .border h4::before { margin-left: 0; }
 html body .destinatario-card .destinatario-title { display: block !important; }
 html body .bc-card { padding-top: 1.75rem; }
 
-/* ---------- 10. Franja con foto desenfocada ----------
-   La foto queda como textura: el desenfoque le quita protagonismo y mejora la lectura del texto. */
-html body .mcd-banda-foto .mcd-fondo img {
-    filter: blur(6px) saturate(.85);
-    transform: scale(1.12);
+/* ---------- 10. Foto de Presentación desenfocada ----------
+   Como la franja, la foto queda como textura: desenfoque y velo bordó para quitarle detalle y protagonismo. */
+html body #informacion .mcd-foto img {
+    filter: blur(3px) saturate(.8);
+    transform: scale(1.06);
     animation: none;
 }
+html body #informacion .mcd-foto::after {
+    background: linear-gradient(110deg, rgba(128, 0, 32, .5) 0%, rgba(90, 0, 22, .3) 100%);
+}
+/* Presentación: un solo párrafo, un punto más grande, con aire antes de las tres tarjetas */
+html body #informacion .mcd-presentacion { font-size: 1.18rem; line-height: 1.65; margin-bottom: 0; }
+html body #informacion .row.g-3 { margin-top: 2rem; }
+/* Botón flotante de solicitud: la regla general de enlaces de mcd-style2 (bordó !important) lo dejaba
+   con texto bordó sobre fondo bordó */
+html body #floatingCTA, html body #floatingCTA:hover, html body #floatingCTA:focus { color: #fff !important; }
 
