@@ -1,0 +1,175 @@
+{
+ "fuente": "Resolución HCS 789/23 de la UNLu (RESHCS-LUJ:0000789-23, EXP-LUJ 1171/2023), Anexo III: contenidos mínimos por actividad académica. Texto literal, con los espacios normalizados.",
+ "obligatorios": [
+  {
+   "num": 1,
+   "nombre": "Técnicas de Análisis para Ciencia de Datos",
+   "horas": 64,
+   "contenidos_minimos": "Análisis exploratorio de datos y sus etapas. Revisión de modelos de probabilidad. Test de hipótesis e intervalos de confianza. Regresión: métodos lineales. Estimación puntual, máxima verosimilitud y optimización básica: ajuste de modelos estadísticos genéricos. Reducción de dimensionalidad: Análisis en componentes principales y análisis factorial de correspondencias y exploratorio. Explicación de la variabilidad."
+  },
+  {
+   "num": 2,
+   "nombre": "Fundamentos de Ciencia de Datos",
+   "horas": 64,
+   "contenidos_minimos": "Nociones básicas de ciencia de datos. Metodologías relacionadas con la generación de conocimiento a partir de datos. Conceptualización del problema y los objetivos de descubrimiento de conocimiento. Selección de técnicas de aprendizaje adecuadas. Adquisición (crawling, scraping, consultas). Preprocesamiento (limpieza, integración). Transformación (normalización, discretización, binning). Interpretación de las relaciones en el conjunto de datos resultante. Datos Faltantes."
+  },
+  {
+   "num": 3,
+   "nombre": "Aprendizaje Automático",
+   "horas": 96,
+   "contenidos_minimos": "Paradigmas de aprendizaje automático. Diseño de sistemas de aprendizaje. Aprendizaje Estadístico. Regresión lineal. Clasificación. Regresión logística. Cross-validation. Regularización. Métricas de performance y error. Árboles de decisión. División en entrenamiento y prueba. Métodos de combinación de modelos: Votación, Bagging y Boosting. Support Vector Machines. Aprendizaje no supervisado. Clustering jerárquico y por densidad. K-means, DBSCAN. Conceptos básicos de Redes Neuronales. Métodos para evaluar la incertidumbre. Análisis Discriminante Lineal."
+  },
+  {
+   "num": 4,
+   "nombre": "Visualización de Información",
+   "horas": 64,
+   "contenidos_minimos": "El proceso de visualización de datos: Objetivos y dinámica. Formulación de preguntas a responder con los datos. Representaciones de datos altamente dimensionales, temporales y geoespaciales. Transformación de datos. Marcas y canales: expresividad y efectividad. Análisis visual de grandes volúmenes de datos. Evaluación de la visualización: expresividad y efectividad."
+  },
+  {
+   "num": 5,
+   "nombre": "Ciencia de Datos Aplicada I",
+   "horas": 64,
+   "contenidos_minimos": "Procesamiento y análisis de flujos de datos. Algoritmos de aprendizaje para modelado de flujos. Casos de aplicación. Técnicas de manejo de datos no estructurados (imágenes, texto). Representaciones de datos textuales en espacios multidimensionales (matrices, embeddings). Introducción a la estadística geoespacial."
+  },
+  {
+   "num": 6,
+   "nombre": "Ciencia de Datos Aplicada II",
+   "horas": 64,
+   "contenidos_minimos": "Diseño de proyectos con un enfoque basado en datos (data-driven, data-informed). Análisis de objetivos, datos y modelos. Criterios para selección de herramientas. Conceptos sobre la generación de productos basados en datos."
+  },
+  {
+   "num": 7,
+   "nombre": "Aspectos Legales y Éticos del Uso de la Información",
+   "horas": 32,
+   "contenidos_minimos": "Conceptualización de datos personales. Legislación sobre la obtención, almacenamiento, distribución y explotación de datos personales. Cuestiones de propiedad de los datos y privacidad de los usuarios. Casos paradigmáticos. Aspectos éticos asociados a todo el proceso de manejo de datos."
+  },
+  {
+   "num": 8,
+   "nombre": "Taller de Formulación de Tesis",
+   "horas": 32,
+   "contenidos_minimos": "La asignatura brinda conocimientos y apoyo para la formulación del proyecto personal de tesis profesional. Durante su desarrollo, las/los estudiantes deberán atender los criterios y pautas metodológicas en relación a: definición del problema, objetivo de la investigación, marco teórico, estrategia metodológica, descripción y sistematización de las fuentes de información, análisis de los resultados y elaboración de conclusiones."
+  }
+ ],
+ "optativas": {
+  "contenidos_minimos": "Los cursos optativos podrán ir ofertándose a propuesta del Comité Académico de la Carrera en función de temáticas de interés. A su vez, se señalan una serie de cursos pre-existentes en ambas Universidades que podrían ofrecerse en el Marco de la Maestría en Ciencia de Datos.",
+  "cursos_previstos": [
+   {
+    "nombre": "Introducción general a la bioinformática",
+    "origen": "Especialización en Bioinformática - UNLu",
+    "contenidos_minimos": "Bases de datos biológicas. Introducción a la genómica. Búsquedas de secuencias. Análisis de resultados. Algoritmos de alineamiento de secuencias (exacto y aproximado). Costo computacional. Alineamientos de ADN, ARN y Proteínas. Genotipado. Estructura poblacional. Filogenias. Análisis de secuencias proteicas. Algoritmos de predicción de estructura y función de proteínas. Métodos de comparación. Análisis de la secuencia de ADN a nivel nucleótido. Análisis de señales."
+   },
+   {
+    "nombre": "Análisis y preprocesamiento de datos biológicos",
+    "origen": "Especialización en Bioinformática - UNLu",
+    "contenidos_minimos": "Transformaciones de variables. Preprocesamiento: normalización de variables, discretización, manejo de ruido, datos faltantes. Reducción de dimensionalidad (Análisis de componentes principales y Análisis Factorial). Estudio de relaciones entre variables. Búsqueda en bases de datos de secuencias expresadas. Tipos de bases de datos biológicas. Referencias cruzadas con otras bases de datos. Bases de datos de secuencias. Principales bases de datos."
+   },
+   {
+    "nombre": "Procesamiento masivo de datos",
+    "origen": "Especialización en Bioinformática - UNLu",
+    "contenidos_minimos": "Servidores, Clusters y Cloud. Introducción a Big data. Modelos de datos y modelos de procesamiento. Sistemas de almacenamiento para Big Data. Sistemas de archivos distribuidos. Flujos de trabajo utilizando contenedores de software. Procesamiento por lotes y stream. Análisis de problemas sobre grandes volúmenes de datos de diferentes clases (texto, señales, secuencias, grafos, imágenes) y su tratamiento con herramientas clásicas de Big Data."
+   },
+   {
+    "nombre": "Herramientas para la creación de empresas innovadoras",
+    "origen": "Especialización en Bioinformática - UNLu",
+    "contenidos_minimos": "La Innovación como fuente de competitividad y desarrollo. La creación de empresas innovadoras: Proceso Emprendedor. Gestación, formulación del proyecto, financiamiento y puesta en marcha de nuevas empresas. Ecosistema Emprendedor: infraestructuras institucionales de apoyo a la creación de empresas intensivas en conocimiento."
+   },
+   {
+    "nombre": "Métodos de análisis de secuencias",
+    "origen": "Especialización en Bioinformática - UNLu",
+    "contenidos_minimos": "Análisis de secuencias y genomas. Control de Calidad de secuencias y procesamiento de lecturas. Alineación de secuencias. Detección y modelado de genes. Herramientas para el análisis de genomas. Comparación de genomas, metagenómica y transcriptómica. Predicción de rutas metabólicas. Métodos para el análisis de datos masivos en genómica funcional y proteómica."
+   },
+   {
+    "nombre": "Análisis exploratorio de datos",
+    "origen": "Especialización en Matemática Aplicada - UNLu",
+    "contenidos_minimos": "Medidas de posición y dispersión. Gráficos: histogramas, boxplots y gráficos cuantil-cuantil. Transformaciones de variables. Estudio de relaciones entre variables: regresión lineal, regresión lineal robusta, regresión no-paramétrica y regresión logística. Aplicación de las técnicas a conjunto de datos reales y simulados mediante un software estadístico específico."
+   },
+   {
+    "nombre": "Optimización combinatoria e investigación operativa",
+    "origen": "Especialización en Matemática Aplicada - UNLu",
+    "contenidos_minimos": "Tipos de grafos. Coloreo. Algoritmos: Search, Kruskal, Dijkstra. El problema de máximo flujo. El problema de mínimo corte. Algoritmo de Ford – Fulkerson. Teorema fundamental de la programación lineal. Dualidad. Algoritmo simplex. Introducción a la programación lineal entera. El método de Branch and Bound. Aplicaciones de los distintos contenidos del curso (algoritmos, métodos y problemas)."
+   },
+   {
+    "nombre": "Bioestadística espacial",
+    "origen": "Especialización en Bioinformática - UNLu",
+    "contenidos_minimos": "Conceptos básicos de datos espaciales. Análisis exploratorio para datos espaciales. Visualización de datos, autocorrelación espacial, Variabilidad espacial. Semivariogramas Predicción por Interpolación espacial. Kriging. Predicción global y local. Mapas de variabilidad espacial. Evaluación de predicciones. Técnicas de clasificación y reducción de la dimensión. Análisis de cluster k- means y fuzzy k-means. Análisis de Componentes Principales Espacial (MULTISPATI-PCA). Clasificación KMsPC. Construcción de mapas de variabilidad espacial multivariados. Kriging Regresión."
+   },
+   {
+    "nombre": "Agrupamiento y clasificación de datos textuales",
+    "origen": "Especialización en Bioinformática - UNLu",
+    "contenidos_minimos": "Procesamiento de Lenguaje Natural (PLN). El Proceso de KDD a partir de textos. Recuperación de Información en la Web. Limpieza de textos. Tokenización. Filtrado. Palabras vacías. Normalización. Truncado (“stemming”) y lematización. Etiquetado. Modelos de representación de documentos. Características estáticas y dinámicas. Selección de términos. Agrupamiento y clasificación. Nociones de obtención de resúmenes, detección de tópicos y análisis de sentimientos."
+   },
+   {
+    "nombre": "Despliegue automatizado y procesamiento cloud",
+    "origen": "Especialización en Bioinformática - UNLu",
+    "contenidos_minimos": "Modelos de computación distribuida y paralela. Ejemplos de aplicaciones distribuidas. Características del Cloud Computing: tipos de nube, modelos de servicio. Cuestiones de diseño, performance, escalabilidad. Aplicaciones y servicios reales en la nube. Cultura y procesos DevOps. Despliegue de aplicaciones en el Cloud."
+   },
+   {
+    "nombre": "Procesamiento y análisis digital de imágenes satelitales",
+    "origen": "Especialización en Teledetección y Sistemas de Información Geográfica Aplicados al Estudio del Medio Ambiente - UNLu",
+    "contenidos_minimos": "Estructura de una imagen digital. Equipos de procesamiento de imágenes. Operaciones de utilidad general. Correcciones y mejoramiento de imágenes. Técnicas de fusión de datos. Extracción de información temática. Técnicas de análisis multitemporal."
+   },
+   {
+    "nombre": "Sistemas de información geográfica",
+    "origen": "Especialización en Teledetección y Sistemas de Información Geográfica Aplicados al Estudio del Medio Ambiente - UNLu",
+    "contenidos_minimos": "Concepto de Sistemas de Información Geográfica (SIG). Software para el tratamiento de bases de datos alfanuméricas y gráficas, procedimientos de cartografía digital. Estructuras básicas de representación espacial. Metodología de los SIC. Evaluación de sus capacidades. Ámbitos de implementación."
+   },
+   {
+    "nombre": "Aplicaciones teóricas y prácticas de la teledetección ambiental",
+    "origen": "Maestría en Geomática aplicada a la Gestión de Riesgos Ambientales - FCyT UADER",
+    "contenidos_minimos": "Estructura de una imagen digital. Equipos de procesamiento de imágenes. Operaciones de utilidad general. Correcciones y mejoramiento de imágenes. Técnicas de fusión de datos. Extracción de información temática. Técnicas de análisis multitemporal."
+   },
+   {
+    "nombre": "Generación de series temporales y su aplicación en estudios a macroescala",
+    "origen": "Maestría en Geomática aplicada a la Gestión de Riesgos Ambientales - FCyT UADER",
+    "contenidos_minimos": "Series temporales. Tipos de series. Resolución temporal del dato. Cadencia. Composición de los productos de Series Temporales. Preprocesamiento de series temporales. Análisis de la variabilidad de las Series temporales. Tendencias, variabilidad estacionalidad, intra e inter anual, fenología.- Correcciones para el análisis de series temporales. Tratamiento de datos atípicos y faltantes. Técnicas de interpolación. Autocorrelación temporal. Análisis de series temporales en el dominio frecuencia. Análisis del espectro de frecuencias. Métodos de descomposición basados en el dominio tiempo. Métodos autorregresivos y de media móvil."
+   },
+   {
+    "nombre": "Análisis espacial: técnicas cuantitativas aplicadas",
+    "origen": "Especialización en Teledetección y Sistemas de Información Geográfica Aplicados al Estudio del Medio Ambiente - UNLu",
+    "contenidos_minimos": "Concepto de análisis espacial cuantitativo. Modelos para el análisis de las estructuras territoriales. La clasificación espacial. Métodos de análisis estadísticos para el estudio de las relaciones entre variables y unidades espaciales. Clasificación y regionalización. Aplicación de metodologías de análisis espacial cuantitativa a una problemática definida."
+   },
+   {
+    "nombre": "Infraestructura de datos espaciales y mapas interactivos en línea",
+    "origen": "Maestría en Geomática Aplicada a la Gestión de Riesgos Ambientales - FCyT UADER",
+    "contenidos_minimos": "IDE en el ámbito Nacional y Provincial: Estándares, normativa. Nodos IDE, software específico, características. Sistemas de GBD y SIG. Servidores cartográficos, publicación Web de capas de información georeferenciada. Gestor de Metadatos. Compositores de Mapa. Fuentes y tipos de datos: Fuentes y tipos de datos espaciales, bases de datos, texto delimitado, vectores, rasters, formatos Tesis de MaestríaS, XYZ tiles y MVT (map vector tiles), características. Publicación de productos geográficos en el espacio web: Visualizadores e interoperatividad. Recomendaciones del OpenGIS Consortium. Servicios básicos: WMS, WCS y WFS. Interconexión entre servidores. Servicios en línea de provisión de datos espaciales."
+   },
+   {
+    "nombre": "Geoestadística",
+    "origen": "Maestría en Geomática Aplicada a la Gestión de Riesgos Ambientales - FCyT UADER",
+    "contenidos_minimos": "Conceptos de Geoestadística. Métodos determinísticos y geoestadísticos. Conceptos generales sobre los que se basa el análisis geoestadístico. El Semivariograma. - La interpolación de Kriging. Análisis exploratorio de datos. Distribución. Puntos anómalos. Tendencias. Autocorrelación espacial y variación direccional. Métodos determinísticos de interpolación espacial. Interpolación ponderada. Interpolación polinomial. Interpolación de base radial. Métodos geoestadísticos de interpolación espacial. Conceptos. Modelos basados en Kriging Ordinario, Simple, Universal, Indicativo. Probabilística. Disyuntivo. Co-Kriging - Optimización del análisis geoestadístico. Estructura espacial. Radios de búsqueda. Validación cruzada. Comparación de modelos. Corrección de sesgos. - Uso de capas geoestadísticas. Conceptos. Manejo de capas. Representación. Almacenamiento y exportación."
+   },
+   {
+    "nombre": "Introducción a la econometría",
+    "origen": null,
+    "contenidos_minimos": "Fundamentos de la Econometría. Diferenciación entre econometría y estadística. Revisión de álgebra matricial. El Modelo de Regresión Lineal Múltiple en el marco de los modelos económicos. Estimación mínimo cuadrática y propiedades de los estimadores. Omisión de Variables Explicativas e Inclusión de Irrelevantes. Tests de Restricciones Lineales. Problemas de Multicolinealidad, Heteroscedasticidad y Autocorrelación. Mínimos Cuadrados Generalizados. Criterios de Evaluación de Modelos Econométricos. Estabilidad de los parámetros. Inclusión de covariables dummies. Introducción a Máxima Verosimilitud. Endogeneidad y Variables Instrumentales (IV)."
+   },
+   {
+    "nombre": "Diseño y análisis de experimentos",
+    "origen": null,
+    "contenidos_minimos": "Diseño y análisis de experimentos. Modelos lineales. Estimación y distribución de los estimadores. Test para los parámetros del modelo. Regresión. Inferencia y predicción. Experimentos con un factor. Análisis de la varianza. Comparaciones múltiples. Validación del modelo. Modelos de efecto fijo y efecto aleatorio. Diseños con bloques. Diseño de experimentos multifactorial. Diseños mixtos. Diseños anidados. Datos no balanceados. Diseño factorial 2k. Confusión en el diseño factorial 2k. Diseños fraccionales. Superficie de respuesta. Análisis de gráficas de superficie y de contorno. Respuestas múltiples. Función deseabilidad. Optimización y Simulación de modelos."
+   },
+   {
+    "nombre": "Gestión de datos para modelados de distribución de especies en escenarios de cambio climático",
+    "origen": null,
+    "contenidos_minimos": "Ciencia de Datos y Biología como forma de explorar la organización y los procesos de la vida en amplias áreas del campo, desde moléculas y células hasta órganos y sistemas de órganos, poblaciones, ecosistemas y evolución. La ciencia de datos en Ecología. Importancia del concepto de escala. Tipos de distribución de acuerdo a los patrones espaciales de puntos. Estudio de la distribución espacial y abundancia, hábitat y ecosistema a diversas escalas de análisis. Análisis del paisaje y descripción de áreas en base a los tipos de coberturas, vecindario y estructura del paisaje. Elaboración de índices de fragmentación. Modelado de nicho y distribución de especies a partir de variables climáticas, de la elevación y de variables obtenidas a partir del uso de observaciones de sensores remotos satelitales. Cambio climático: contexto mundial, regional y local. Modelado climático. Escenarios de cambio climático. Forzantes climáticos. Manejo de Bases de datos climáticas. Vulnerabilidad de especies. ”Mapas de Esperanza\" como herramienta para diseñar acciones sobre la naturaleza, el clima y el desarrollo sostenible"
+   }
+  ]
+ },
+ "nivelacion": [
+  {
+   "nombre": "Estadística y Probabilidad",
+   "horas": 48,
+   "contenidos_minimos": "Estadística: estadística descriptiva, estadística frecuentista, correlación, análisis de normalidad, estadística bayesiana, test de hipótesis, regresión lineal simple. Probabilidad: teoría de probabilidad, probabilidad condicional, variables aleatorias y continuas. Distribuciones principales. Esperanza matemática. Teoremas del límite, cadenas de Markov."
+  },
+  {
+   "nombre": "Introducción a la Programación",
+   "horas": 48,
+   "contenidos_minimos": "Fundamentos de programación. Resolución de problemas y algoritmos en lenguaje de alto nivel. Estructuras de control: secuencial, alternativa e iterativa. Funciones. Estructuras de datos fundamentales. Algoritmos elementales: ordenamiento y búsqueda. Manejo de archivos secuenciales."
+  },
+  {
+   "nombre": "Bases de Datos",
+   "horas": 32,
+   "contenidos_minimos": "Tipos y fuentes de datos. El concepto de base de datos. Modelo Entidad/Relación. Modelo relacional. Lenguaje de consulta SQL. Conceptos sobre bases de datos no relacionales."
+  }
+ ]
+}

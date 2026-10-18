@@ -21,7 +21,7 @@ html body { font-family: var(--mcd-sans); }
 html body :is(p, li, a, span, div, td, th, label, input, select, textarea, button, small, strong, em, b, blockquote, figcaption, dt, dd, h1, h2, h3, h4, h5, h6):not([class*="fa-"]):not(.fa):not(.fas):not(.far):not(.fab) {
     font-family: var(--mcd-sans) !important;
 }
-html body :is(h1.masthead-heading, div.masthead-heading, h2.section-heading, h2.card-t, #cta-inscripcion h2, .mcd-banda-texto strong, .cta-inscribite h3, .mcd-cifra-num, .mcd-curso-num) {
+html body :is(h1.masthead-heading, div.masthead-heading, h2.section-heading, h2.card-t, #cta-inscripcion h2, .mcd-banda-texto strong, .cta-inscribite h3, .mcd-cifra-num, .mcd-curso-num, .mcd-terminos-titulo, .mcd-terminos-lista li, .mcd-t) {
     font-family: var(--mcd-serif) !important;
     font-weight: 600 !important;
     letter-spacing: 0 !important;
@@ -348,9 +348,8 @@ html body #informacion .mcd-foto img {
 html body #informacion .mcd-foto::after {
     background: linear-gradient(110deg, rgba(128, 0, 32, .5) 0%, rgba(90, 0, 22, .3) 100%);
 }
-/* Presentación: un solo párrafo, un punto más grande, con aire antes de las tres tarjetas */
+/* Presentación: un solo párrafo, un punto más grande */
 html body #informacion .mcd-presentacion { font-size: 1.18rem; line-height: 1.65; margin-bottom: 0; }
-html body #informacion .row.g-3 { margin-top: 2rem; }
 /* Botón flotante de solicitud: la regla general de enlaces de mcd-style2 (bordó !important) lo dejaba
    con texto bordó sobre fondo bordó */
 html body #floatingCTA, html body #floatingCTA:hover, html body #floatingCTA:focus { color: #fff !important; }
@@ -391,9 +390,8 @@ html body header .mcd-hero-programa {
     flex-direction: column; justify-content: space-between; gap: 1.2rem;
 }
 .mcd-flip .mcd-flip-frente .mcd-curso-cuerpo { flex: 1; display: flex; flex-direction: column; }
-/* Frente: el nombre del curso en serif, centrado en el alto libre de la tarjeta */
+/* Frente: el nombre del curso más grande, centrado en el alto libre de la tarjeta */
 html body .mcd-flip .mcd-flip-frente .mcd-curso-nombre {
-    font-family: var(--mcd-serif) !important; font-weight: 600 !important;
     font-size: 1.35rem; line-height: 1.25; margin: auto 0;
     padding: .6rem 0;
 }
@@ -454,4 +452,70 @@ html body .mcd-optativas-lista li { break-inside: avoid; margin-bottom: .2rem; }
 @media (prefers-reduced-motion: reduce) {
     .mcd-flip-inner { transition: none; }
     .mcd-flip:hover:not(.is-flipped) .mcd-flip-inner { transform: none; }
+}
+
+/* ---------- 12. La maestría en cuarenta términos ----------
+   Bloque generado por tools/maestria/terminos.py; js/mcd-terminos.js dibuja la nube a partir de la lista.
+   Tamaño lineal con el peso TF-IDF; color según el curso donde aparece el término (data-c, 0 = varios). */
+.mcd-terminos { margin-top: 2.6rem; padding-top: 2.1rem; border-top: 1px solid var(--mcd-borde); }
+html body .mcd-terminos-titulo { font-size: 1.55rem; color: var(--mcd-bordo-osc); margin: 0 0 1.1rem; text-align: center; }
+.mcd-terminos-panel {
+    --c0: #ffffff; --c1: #f2c46d; --c2: #7fdcc9; --c3: #ff9eb1; --c4: #bba8f7;
+    --c5: #8ec5ff; --c6: #a8e08f; --c7: #f7a77c; --c8: #d2c8ca;
+    position: relative; border-radius: 18px; padding: 1.7rem 1.4rem 1.1rem;
+    background: radial-gradient(ellipse 75% 65% at 50% 42%, #5c1026 0%, #340915 55%, #19040b 100%);
+    box-shadow: 0 18px 50px rgba(90, 0, 22, .22);
+}
+.mcd-terminos [data-c="0"] { --k: var(--c0); }
+.mcd-terminos [data-c="1"] { --k: var(--c1); }
+.mcd-terminos [data-c="2"] { --k: var(--c2); }
+.mcd-terminos [data-c="3"] { --k: var(--c3); }
+.mcd-terminos [data-c="4"] { --k: var(--c4); }
+.mcd-terminos [data-c="5"] { --k: var(--c5); }
+.mcd-terminos [data-c="6"] { --k: var(--c6); }
+.mcd-terminos [data-c="7"] { --k: var(--c7); }
+.mcd-terminos [data-c="8"] { --k: var(--c8); }
+/* Sin JS: la lista se ve como una fila de términos */
+.mcd-terminos-lista {
+    list-style: none; margin: 0; padding: 0;
+    display: flex; flex-wrap: wrap; justify-content: center; gap: .3rem 1rem;
+}
+html body .mcd-terminos-lista li { color: var(--k); font-size: 1.05rem; }
+/* Con la nube dibujada, la lista queda solo para lectores de pantalla */
+.mcd-terminos.con-nube .mcd-terminos-lista {
+    position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.mcd-terminos-nube { position: relative; }
+html body .mcd-t {
+    position: absolute; white-space: nowrap; line-height: 1; color: var(--k); cursor: default;
+    opacity: 0; transform: translate(-50%, -50%) rotate(var(--r)) scale(.5);
+    transition: opacity .7s ease, transform .8s cubic-bezier(.2, .7, .2, 1), text-shadow .25s ease;
+    transition-delay: calc(var(--i) * 35ms);
+}
+.mcd-terminos-nube.visible .mcd-t { opacity: .93; transform: translate(-50%, -50%) rotate(var(--r)) scale(1); }
+.mcd-terminos-nube.quieta .mcd-t { transition-delay: 0s; transition-duration: .25s; }
+.mcd-terminos-nube.enfocada .mcd-t { opacity: .18; }
+html body .mcd-terminos-nube.enfocada .mcd-t.activa { opacity: 1; text-shadow: 0 0 22px var(--k); }
+.mcd-terminos-tip {
+    position: absolute; z-index: 3; pointer-events: none; max-width: 280px;
+    padding: .55rem .8rem; border-radius: 10px; background: rgba(255, 255, 255, .97);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+    opacity: 0; transform: translate(-50%, calc(-100% - 10px)); transition: opacity .15s ease;
+}
+.mcd-terminos-tip.visible { opacity: 1; }
+html body .mcd-terminos-tip span { display: block; font-size: .78rem; line-height: 1.35; color: #4a3a3e; }
+html body .mcd-terminos-tip strong { display: block; font-size: .95rem; color: var(--mcd-bordo); margin-bottom: .15rem; }
+.mcd-terminos-leyenda {
+    list-style: none; margin: 1.1rem 0 0; padding: .9rem 0 0; border-top: 1px solid rgba(255, 255, 255, .12);
+    display: flex; flex-wrap: wrap; justify-content: center; gap: .35rem 1.15rem;
+}
+html body .mcd-terminos-leyenda li { font-size: .8rem; color: rgba(255, 255, 255, .78); cursor: default; }
+.mcd-terminos-leyenda li::before {
+    content: ''; display: inline-block; width: .6rem; height: .6rem; border-radius: 50%;
+    margin-right: .4rem; background: var(--k); vertical-align: .02rem;
+}
+html body .mcd-terminos-nota { max-width: 720px; margin: 1.1rem auto 0; font-size: .8rem; line-height: 1.5; color: #6c757d; text-align: center; }
+@media (prefers-reduced-motion: reduce) {
+    html body .mcd-t { transition: none; }
 }
