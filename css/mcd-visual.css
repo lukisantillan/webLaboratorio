@@ -357,4 +357,16 @@ html body #floatingCTA, html body #floatingCTA:hover, html body #floatingCTA:foc
 /* Cuerpo docente: las tarjetas ya no enlazan a perfiles, así que no se elevan al pasar el mouse */
 html body #team .docente-card:hover { transform: none; box-shadow: none; border-color: #f0e3e5; }
 html body #team .docente-card:hover img { border-color: #FBEAEC; box-shadow: 0 6px 20px rgba(128, 0, 32, .16); }
+/* Encabezado: estado de la primera cohorte, siempre visible */
+html body header .mcd-hero-cohorte {
+    display: inline-block; margin: .2rem 0 1.4rem;
+    padding: .3rem .9rem; border-radius: 999px;
+    background: rgba(255, 193, 7, .95); color: #3b2a00;
+    font-weight: 700; font-size: .85rem; letter-spacing: .02em;
+}
+/* Subpáginas: nombre del programa como antetítulo, al modo de los micrositios de Stanford */
+html body header .mcd-hero-programa {
+    font-size: .8rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    color: rgba(255, 255, 255, .78); margin-bottom: .5rem;
+}
 

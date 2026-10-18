@@ -33,7 +33,7 @@
       "@type": "FAQPage",
       "mainEntity": [
         {"@type":"Question","name":"¿Qué título otorga la Maestría?","acceptedAnswer":{"@type":"Answer","text":"El título de Magíster en Ciencia de Datos, con Reconocimiento Oficial y Validez Nacional otorgado mediante la Disposición SSPU N° 490/25. Es una propuesta interinstitucional entre la Universidad Nacional de Luján (UNLu) y la Facultad de Ciencia y Tecnología de la Universidad Autónoma de Entre Ríos (FCyT-UADER), acreditada favorablemente por CONEAU (Acta 621, 25/11/2024)."}},
-        {"@type":"Question","name":"¿Cuál es la modalidad y duración?","acceptedAnswer":{"@type":"Answer","text":"La Maestría es presencial, con régimen semestral y una duración de 2 años. La estructura es de 8 cursos obligatorios + 2 optativos + Tesis, con 776 horas totales. Los cursos se dictan de forma consecutiva, con dos encuentros semanales sincrónicos de tres horas, desde las 18 h, presenciales o virtuales, que cubren el 60% de la carga horaria."}},
+        {"@type":"Question","name":"¿Cuál es la modalidad y duración?","acceptedAnswer":{"@type":"Answer","text":"La cursada es sincrónica, con encuentros que pueden seguirse en forma remota o en el aula, en el marco de la modalidad presencial con la que la carrera está acreditada. Régimen semestral y duración de 2 años. La estructura es de 8 cursos obligatorios + 2 optativos + Tesis, con 776 horas totales. Los cursos se dictan de forma consecutiva, con dos encuentros semanales sincrónicos de tres horas, desde las 18 h, que pueden seguirse en forma remota o en el aula y cubren el 60% de la carga horaria."}},
         {"@type":"Question","name":"¿Cuándo abre la primera cohorte?","acceptedAnswer":{"@type":"Answer","text":"La primera cohorte está prevista para 2027 y su apertura se encuentra en trámite. Inscripción de noviembre de 2026 a abril de 2027 y cursada desde mayo de 2027."}},
         {"@type":"Question","name":"¿Cuáles son los requisitos de ingreso?","acceptedAnswer":{"@type":"Answer","text":"Se requiere título de grado universitario. El Comité Académico evalúa los antecedentes de cada aspirante con admisión continua durante el período de inscripción y asigna, cuando corresponde, cursos de nivelación. La apertura de la cohorte requiere un mínimo de 20 inscriptos."}},
         {"@type":"Question","name":"¿Cuánto cuesta? ¿Hay becas?","acceptedAnswer":{"@type":"Answer","text":"Estructura arancelaria (en trámite): matrícula de $400.000, 16 cuotas mensuales de $400.000 durante los meses con cursada y un derecho de defensa de tesis de $400.000, con un total de programa de $7.200.000. Quienes deban cursar nivelación abonan además un derecho de nivelación de $400.000. Existe una beca automática del 50% para docentes, nodocentes y graduados de la UNLu (total $3.600.000). Los valores se revisan semestralmente según el IPC."}},
@@ -49,7 +49,7 @@
       "@context": "https://schema.org",
       "@type": "Course",
       "name": "Maestría en Ciencia de Datos",
-      "description": "Posgrado interinstitucional UNLu-UADER en Ciencia de Datos. Magíster en Ciencia de Datos. 8 cursos obligatorios + 2 optativos + Tesis, 776 hs totales. Modalidad presencial. Primera cohorte 2027, apertura en trámite.",
+      "description": "Posgrado interinstitucional UNLu-UADER en Ciencia de Datos. Magíster en Ciencia de Datos. 8 cursos obligatorios + 2 optativos + Tesis, 776 h totales. Cursada sincrónica, en forma remota o en el aula. Primera cohorte 2027, apertura en trámite.",
       "provider": {
         "@type": "EducationalOrganization",
         "name": "Universidad Nacional de Luján",
@@ -57,12 +57,12 @@
       },
       "educationalLevel": "Posgrado - Maestría",
       "inLanguage": "es-AR",
-      "courseMode": "onsite",
+      "courseMode": "blended",
       "url": "https://licdia.unlu.edu.ar/maestria-ciencia-datos/",
       "image": "https://licdia.unlu.edu.ar/assets/img/og-mcd.svg",
       "hasCourseInstance": {
         "@type": "CourseInstance",
-        "courseMode": "onsite",
+        "courseMode": "blended",
         "startDate": "2027-05-17",
         "courseWorkload": "PT776H"
       }
@@ -101,7 +101,7 @@
                     <li class="nav-item"><a class="nav-link" href="#masthead">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link" href="#informacionPlan">Plan de estudios</a></li>
                     <li class="nav-item"><a class="nav-link" href="plan-de-estudios/#cronograma">Cronograma</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#team">Cuerpo docente</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#team">Equipo docente</a></li>
                     <li class="nav-item"><a class="nav-link" href="por-que-elegirnos/">Fortalezas</a></li>
                     <li class="nav-item"><a class="nav-link" href="aranceles/">Aranceles</a></li>
                     <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
@@ -116,7 +116,8 @@
         <div class="container">
             <h1 class="masthead-heading">Maestría en Ciencia de Datos</h1>
             <div class="masthead-subheading pb-3">
-                <div class="masthead-subheading pb-2">Universidad Nacional de Luján · FCyT — UADER</div>
+                <div class="masthead-subheading pb-2">Universidad Nacional de Luján · Universidad Autónoma de Entre Ríos</div>
+                <div class="mcd-hero-cohorte">Primera cohorte 2027 · apertura en trámite</div>
             </div>
             <a class="btn btn-primary btn-xl text-uppercase" href="#contact" id="buttonInfo">Solicitar información</a>
         </div>
@@ -126,13 +127,13 @@
         <div class="container">
             <div class="row align-items-start p-3 p-md-5 justify-content-center">
                 <div class="col-12 col-md-4">
-                    <p class="mb-2"><span class="fw-semibold text-uppercase">Modalidad:</span> Presencial, con encuentros presenciales o virtuales</p>
-                    <p class="mb-2"><span class="fw-semibold text-uppercase">Horario:</span> Dos encuentros semanales de tres horas, desde las 18 h, compatibles con un trabajo de tiempo completo</p>
+                    <p class="mb-2"><span class="fw-semibold text-uppercase">Modalidad:</span> Sincrónica, en forma remota o en el aula</p>
+                    <p class="mb-2"><span class="fw-semibold text-uppercase">Horario:</span> Dos veces por semana, de 18 a 21 h</p>
                     <p class="mb-0"><span class="fw-semibold text-uppercase">Estado:</span> Apertura de la primera cohorte 2027 <span class="tag-tramite">En trámite</span></p>
                 </div>
                 <div class="col-12 col-md-4">
-                    <p class="mb-2"><span class="fw-semibold text-uppercase">Inicio cursada:</span> Mayo de 2027 <span class="tag-tramite">En trámite</span></p>
-                    <p class="mb-0"><span class="fw-semibold text-uppercase">Duración:</span> 2 años (régimen semestral)</p>
+                    <p class="mb-2"><span class="fw-semibold text-uppercase">Inicio de cursada:</span> Mayo de 2027 <span class="tag-tramite">En trámite</span></p>
+                    <p class="mb-0"><span class="fw-semibold text-uppercase">Duración:</span> 2 años, en régimen semestral</p>
                 </div>
                 <div class="col-12 col-md-4 d-flex flex-column gap-2">
                     <div>
@@ -140,7 +141,7 @@
                         <div class="mb-2">
                             <a href="#contact" class="btn btn-dark px-3 py-2">Solicitar información</a>
                         </div>
-                        <p class="mb-0"><span class="fw-semibold text-uppercase">Tipo de título:</span> Magíster en Ciencia de Datos (validez nacional)</p>
+                        <p class="mb-0"><span class="fw-semibold text-uppercase">Título:</span> Magíster en Ciencia de Datos, con validez nacional</p>
                     </div>
                 </div>
             </div>
@@ -229,7 +230,7 @@
                 </div>
                 <div class="col-12 col-lg-6">
                     <p class="fw-semibold mb-3">
-                        La apertura de la inscripción a la primera cohorte se comunicará a quienes completen la solicitud de información.
+                        La inscripción está prevista desde noviembre de 2026. Quienes completen la solicitud de información reciben el aviso de apertura y los pasos del proceso de admisión.
                     </p>
                     <a href="#contact" rel="noopener" class="btn btn-primary px-4 py-2">Solicitar información</a>
                 </div>
@@ -245,10 +246,10 @@
                 <div class="row g-4 align-items-center">
                     <div class="col-lg-7">
                         <p class="mcd-presentacion">
-                            La <strong>Maestría en Ciencia de Datos</strong> es una carrera de posgrado de la
-                            <strong>Universidad Nacional de Luján</strong> y la <strong>Facultad de Ciencia y Tecnología de la UADER</strong>,
-                            acreditada por CONEAU y con título de validez nacional. Forma profesionales capaces de diseñar,
-                            ejecutar e interpretar soluciones basadas en datos, con criterio ético y legal sobre el uso de la información.
+                            La <strong>Maestría en Ciencia de Datos</strong> forma profesionales capaces de diseñar, implementar e
+                            interpretar soluciones basadas en datos, con criterio ético y legal sobre el uso de la información.
+                            Es una carrera de posgrado de la <strong>Universidad Nacional de Luján</strong> y la
+                            <strong>Facultad de Ciencia y Tecnología de la UADER</strong>, acreditada por CONEAU y con título de validez nacional.
                         </p>
                     </div>
                     <div class="col-lg-5">
@@ -260,22 +261,19 @@
                     <div class="col-12 col-md-4 flotar">
                         <div class="p-3 border rounded-3 h-100">
                             <h4 class="h6 mt-2">Analizar</h4>
-                            <p class="mb-0 small">Técnicas estadísticas y de análisis para extraer conocimiento de datos
-                                reales en contextos organizacionales.</p>
+                            <p class="mb-0 small">Estadística y análisis exploratorio para extraer conocimiento de datos reales.</p>
                         </div>
                     </div>
                     <div class="col-12 col-md-4 flotar">
                         <div class="p-3 border rounded-3 h-100">
                             <h4 class="h6 mt-2">Modelar</h4>
-                            <p class="mb-0 small">Aprendizaje automático aplicado: construcción, evaluación y puesta en
-                                producción de modelos predictivos.</p>
+                            <p class="mb-0 small">Aprendizaje automático aplicado, desde la construcción de un modelo hasta su puesta en producción.</p>
                         </div>
                     </div>
                     <div class="col-12 col-md-4 flotar">
                         <div class="p-3 border rounded-3 h-100">
                             <h4 class="h6 mt-2">Comunicar</h4>
-                            <p class="mb-0 small">Visualización de información y comunicación de resultados con criterio
-                                ético y legal sobre el uso de los datos.</p>
+                            <p class="mb-0 small">Visualización y comunicación de resultados para quienes toman decisiones.</p>
                         </div>
                     </div>
                 </div>
@@ -298,12 +296,12 @@
         <div class="container text-center">
             <div class="row">
                 <div class="col-6 col-md-3" data-aos="fade-right" data-aos-duration="1500">
-                    <h3 class="mt-4">Inicio cursada</h3>
+                    <h3 class="mt-4">Inicio de cursada</h3>
                     <p>Mayo de 2027</p>
                 </div>
                 <div class="col-6 col-md-3" data-aos="fade-up" data-aos-duration="1500">
                     <h3 class="mt-4">Modalidad</h3>
-                    <p>Presencial</p>
+                    <p>Sincrónica, en forma remota o en el aula</p>
                 </div>
                 <div class="col-6 col-md-3" data-aos="fade-down" data-aos-duration="1500">
                     <h3 class="mt-4">Título</h3>
@@ -311,7 +309,7 @@
                 </div>
                 <div class="col-6 col-md-3" data-aos="fade-left" data-aos-duration="1500">
                     <h3 class="mt-4">Duración</h3>
-                    <p>2 años · 776 hs</p>
+                    <p>2 años · 776 h</p>
                 </div>
             </div>
         </div>
@@ -323,25 +321,24 @@
         <div class="container mt-5 mb-5">
             <h2 class="card-t card-title">Plan de estudios</h2>
             <hr>
-            <p class="text-center text-muted mb-4">8 cursos obligatorios + 2 optativos + Tesis · 776 horas totales ·
-                Régimen semestral · Modalidad presencial</p>
+            <p class="text-center text-muted mb-4">8 cursos obligatorios, 2 optativos y tesis · 776 horas · Régimen semestral · Cursada sincrónica</p>
 
             <div class="full-bleed my-2">
                 <div class="row g-0 justify-content-center">
                     <div class="col-12 col-lg-10 px-0">
                         <div class="card border-0 rounded-0 shadow-sm">
                             <div class="card-body p-3 p-md-4">
-                                <p class="mb-4">El plan de estudios se organiza en <strong>8 cursos formales</strong>,
-                                    <strong>2 cursos optativos</strong> y la <strong>Tesis</strong>. Los cursos se dictan de forma
-                                    consecutiva, uno a la vez, precedidos por cursos de nivelación que el Comité Académico asigna
-                                    según los antecedentes de cada admitido. Los docentes de cada curso figuran en el
+                                <p class="mb-4">El plan se organiza en <strong>8 cursos obligatorios</strong>, <strong>2 optativos</strong> y la
+                                    <strong>tesis</strong>. Los cursos se dictan de a uno, en forma consecutiva, para concentrar el trabajo
+                                    en un tema por vez. Antes del primero, el Comité Académico puede asignar cursos de nivelación según los
+                                    antecedentes de cada admitido. Los contenidos de cada curso están en el
                                     <a href="plan-de-estudios/">plan de estudios</a>.</p>
 
                                 <div class="row row-cols-1 row-cols-md-2 g-3 mcd-plan-grid">
                                     <div class="col" data-aos="fade-up" data-aos-delay="40">
                                         <div class="mcd-curso h-100">
                                             <div class="mcd-curso-cuerpo">
-                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">1</span><span class="mcd-curso-hs">64 hs</span></div>
+                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">1</span><span class="mcd-curso-hs">64 h</span></div>
                                                 <h3 class="mcd-curso-nombre">Técnicas de Análisis para Ciencia de Datos</h3>
                                                 <p class="mcd-curso-desc">Fundamentos estadísticos y técnicas de análisis exploratorio y descriptivo de datos. Primer curso de la cohorte, desde mayo de 2027.</p>
                                             </div>
@@ -350,7 +347,7 @@
                                     <div class="col" data-aos="fade-up" data-aos-delay="80">
                                         <div class="mcd-curso h-100">
                                             <div class="mcd-curso-cuerpo">
-                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">2</span><span class="mcd-curso-hs">64 hs</span></div>
+                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">2</span><span class="mcd-curso-hs">64 h</span></div>
                                                 <h3 class="mcd-curso-nombre">Fundamentos de Ciencia de Datos</h3>
                                                 <p class="mcd-curso-desc">Conceptos centrales, ciclo de vida del dato y metodología de proyectos de ciencia de datos.</p>
                                             </div>
@@ -359,7 +356,7 @@
                                     <div class="col" data-aos="fade-up" data-aos-delay="40">
                                         <div class="mcd-curso h-100">
                                             <div class="mcd-curso-cuerpo">
-                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">3</span><span class="mcd-curso-hs">96 hs</span></div>
+                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">3</span><span class="mcd-curso-hs">96 h</span></div>
                                                 <h3 class="mcd-curso-nombre">Aprendizaje Automático</h3>
                                                 <p class="mcd-curso-desc">Modelos supervisados y no supervisados, evaluación y puesta en producción.</p>
                                             </div>
@@ -368,7 +365,7 @@
                                     <div class="col" data-aos="fade-up" data-aos-delay="80">
                                         <div class="mcd-curso h-100">
                                             <div class="mcd-curso-cuerpo">
-                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">4</span><span class="mcd-curso-hs">64 hs</span></div>
+                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">4</span><span class="mcd-curso-hs">64 h</span></div>
                                                 <h3 class="mcd-curso-nombre">Visualización de Información</h3>
                                                 <p class="mcd-curso-desc">Principios y técnicas de visualización para la comunicación efectiva de datos.</p>
                                             </div>
@@ -377,7 +374,7 @@
                                     <div class="col" data-aos="fade-up" data-aos-delay="40">
                                         <div class="mcd-curso h-100">
                                             <div class="mcd-curso-cuerpo">
-                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">5</span><span class="mcd-curso-hs">64 hs</span></div>
+                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">5</span><span class="mcd-curso-hs">64 h</span></div>
                                                 <h3 class="mcd-curso-nombre">Ciencia de Datos Aplicada I</h3>
                                                 <p class="mcd-curso-desc">Resolución de problemas reales con datos en dominios concretos.</p>
                                             </div>
@@ -386,7 +383,7 @@
                                     <div class="col" data-aos="fade-up" data-aos-delay="80">
                                         <div class="mcd-curso h-100">
                                             <div class="mcd-curso-cuerpo">
-                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">6</span><span class="mcd-curso-hs">64 hs</span></div>
+                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">6</span><span class="mcd-curso-hs">64 h</span></div>
                                                 <h3 class="mcd-curso-nombre">Ciencia de Datos Aplicada II</h3>
                                                 <p class="mcd-curso-desc">Profundización en proyectos aplicados de mayor complejidad.</p>
                                             </div>
@@ -395,7 +392,7 @@
                                     <div class="col" data-aos="fade-up" data-aos-delay="40">
                                         <div class="mcd-curso h-100">
                                             <div class="mcd-curso-cuerpo">
-                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">7</span><span class="mcd-curso-hs">32 hs</span></div>
+                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">7</span><span class="mcd-curso-hs">32 h</span></div>
                                                 <h3 class="mcd-curso-nombre">Aspectos Legales y Éticos del Uso de la Información</h3>
                                                 <p class="mcd-curso-desc">Marco legal, ético y de protección de datos en proyectos de ciencia de datos.</p>
                                             </div>
@@ -404,7 +401,7 @@
                                     <div class="col" data-aos="fade-up" data-aos-delay="80">
                                         <div class="mcd-curso h-100">
                                             <div class="mcd-curso-cuerpo">
-                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">8</span><span class="mcd-curso-hs">32 hs</span></div>
+                                                <div class="mcd-curso-sup"><span class="mcd-curso-num">8</span><span class="mcd-curso-hs">32 h</span></div>
                                                 <h3 class="mcd-curso-nombre">Taller de Formulación de Tesis</h3>
                                                 <p class="mcd-curso-desc">Acompañamiento metodológico para la formulación del plan de tesis.</p>
                                             </div>
@@ -413,16 +410,16 @@
                                     <div class="col col-md-12" data-aos="fade-up" data-aos-delay="40">
                                         <div class="mcd-curso mcd-curso--opt h-100">
                                             <div class="mcd-curso-cuerpo">
-                                                <div class="mcd-curso-sup"><span class="mcd-curso-hs">2 × 48 hs</span></div>
+                                                <div class="mcd-curso-sup"><span class="mcd-curso-hs">2 × 48 h</span></div>
                                                 <h3 class="mcd-curso-nombre">Cursos optativos</h3>
-                                                <p class="mcd-curso-desc">Dos cursos optativos de 48 hs que completan la formación técnica antes del Taller de Formulación de Tesis.</p>
+                                                <p class="mcd-curso-desc">Dos cursos optativos de 48 h que completan la formación técnica antes del Taller de Formulación de Tesis.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="text-center mt-4">
                                     <a href="plan-de-estudios/#cronograma" class="btn btn-outline-dark btn-lg px-4 py-2">
-                                        Ver cronograma de la primera cohorte
+                                        Ver el cronograma de la primera cohorte
                                     </a>
                                 </div>
                             </div>
@@ -440,15 +437,15 @@
         </picture>
         <div class="mcd-velo"></div>
         <div class="container mcd-banda-contenido" data-aos="fade-up">
-            <p class="mcd-banda-texto"><strong>Diseñada para profesionales que trabajan a tiempo completo</strong> Dos encuentros semanales de tres horas, desde las 18 h, presenciales o virtuales.</p>
+            <p class="mcd-banda-texto"><strong>Diseñada para profesionales que trabajan a tiempo completo</strong> Dos veces por semana, de 18 a 21 h, en forma remota o en el aula, sin necesidad de viajar.</p>
         </div>
     </section>
 
     <section class="page-section bg-light" id="team">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Cuerpo docente</h2>
-                <h3 class="section-subheading text-muted">Docentes e investigadores de UNLu y UADER</h3>
+                <h2 class="section-heading text-uppercase">Equipo docente</h2>
+                <h3 class="section-subheading text-muted">Docentes e investigadores de la UNLu y la UADER</h3>
             </div>
             <hr>
             <div class="row g-4 justify-content-center">
@@ -507,7 +504,7 @@
                         <picture><source srcset="../assets/img/mcd-docentes/juan-manuel-fernandez.webp" type="image/webp"><img src="../assets/img/mcd-docentes/juan-manuel-fernandez.jpg" alt="Mg. Juan Manuel Fernández" loading="lazy" ></picture>
                         <div class="docente-body">
                             <div class="docente-nombre">Mg. Juan Manuel Fernández</div>
-                            <div class="docente-curso">Big data, NLP y aprendizaje automático</div>
+                            <div class="docente-curso">Big data, procesamiento del lenguaje natural y aprendizaje automático</div>
                             <span class="docente-inst">UNLu</span>
                         </div>
                     </div>
@@ -527,7 +524,7 @@
                         <picture><source srcset="../assets/img/mcd-docentes/rosana-matuk.webp" type="image/webp"><img src="../assets/img/mcd-docentes/rosana-matuk.jpg" alt="Dra. Rosana Matuk Herrera" loading="lazy" ></picture>
                         <div class="docente-body">
                             <div class="docente-nombre">Dra. Rosana Matuk Herrera</div>
-                            <div class="docente-curso">Redes neuronales y machine learning</div>
+                            <div class="docente-curso">Redes neuronales y aprendizaje automático</div>
                             <span class="docente-inst">UNLu</span>
                         </div>
                     </div>
@@ -547,7 +544,7 @@
                         <picture><source srcset="../assets/img/mcd-docentes/david-petrocelli.webp" type="image/webp"><img src="../assets/img/mcd-docentes/david-petrocelli.jpg" alt="Dr. David Petrocelli" loading="lazy" ></picture>
                         <div class="docente-body">
                             <div class="docente-nombre">Dr. David Petrocelli</div>
-                            <div class="docente-curso">Cómputo de alto desempeño y arquitectura cloud</div>
+                            <div class="docente-curso">Cómputo de alto desempeño y arquitectura en la nube</div>
                             <span class="docente-inst">UNLu</span>
                         </div>
                     </div>
@@ -573,8 +570,7 @@
                     </div>
                 </div>
             </div>
-            <p class="text-center text-muted small mt-4 mb-0">Plantel validado en el proceso de acreditación ante
-                CONEAU. Los responsables de cada curso se confirman antes del inicio de la inscripción.</p>
+            <p class="text-center text-muted small mt-4 mb-0">La asignación de docentes a cada curso puede modificarse.</p>
         </div>
     </section>
 
@@ -598,36 +594,37 @@
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
                     <div class="bc-card text-center">
                         <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Propuesta interinstitucional</h4>
-                        <p class="mb-0 small text-muted">Doble respaldo académico de la UNLu y la Facultad de
-                            Ciencia y Tecnología de la UADER, con un plantel diverso y federal.</p>
+                        <p class="mb-0 small text-muted">Dos universidades nacionales respaldan la carrera, con docentes de la UNLu y de la Facultad de Ciencia y
+                            Tecnología de la UADER.</p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
                     <div class="bc-card text-center">
-                        <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Accesible y pública</h4>
-                        <p class="mb-0 small text-muted">Aranceles de gestión estatal, con 50&nbsp;% de descuento
-                            para docentes, nodocentes y graduados de la UNLu.</p>
+                        <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Cursada sincrónica y remota</h4>
+                        <p class="mb-0 small text-muted">Encuentros en vivo dos veces por semana, de 18 a 21 h, que pueden
+                            seguirse en forma remota o en el aula, sin necesidad de viajar.</p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="bc-card text-center">
                         <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Orientación aplicada</h4>
-                        <p class="mb-0 small text-muted">Fundamentos teóricos sólidos combinados con práctica real:
-                            análisis, aprendizaje automático y visualización de datos.</p>
+                        <p class="mb-0 small text-muted">Cada curso combina fundamentos con trabajo sobre datos reales, y dos cursos completos se dedican a
+                            proyectos aplicados.</p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="240">
                     <div class="bc-card text-center">
                         <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Plantel docente validado</h4>
-                        <p class="mb-0 small text-muted">Profesores e investigadores de UNLu y UADER, evaluados
+                        <p class="mb-0 small text-muted">Profesores e investigadores de la UNLu y la UADER, evaluados
                             durante el proceso de acreditación ante CONEAU.</p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="280">
                     <div class="bc-card text-center">
-                        <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Cursos individuales</h4>
-                        <p class="mb-0 small text-muted">Posibilidad de cursar materias sueltas como créditos para
-                            planes doctorales o maestrías semi-estructuradas.</p>
+                        <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Vínculo con la investigación</h4>
+                        <p class="mb-0 small text-muted">La maestría se articula con el LICDIA, laboratorio de la UNLu con
+                            proyectos en curso en aprendizaje automático, procesamiento del lenguaje natural y cómputo de
+                            alto desempeño.</p>
                     </div>
                 </div>
             </div>
@@ -638,12 +635,12 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Acreditación y validez oficial</h2>
-                <h3 class="section-subheading text-muted">Respaldo normativo completo: aprobación institucional, acreditación CONEAU y reconocimiento oficial</h3>
+                <h3 class="section-subheading text-muted">Aprobada por ambas universidades, acreditada por CONEAU y con reconocimiento oficial del título</h3>
             </div>
             <hr>
             <div class="alert text-center py-3 my-4" style="background: linear-gradient(to right, #800020, #5A0016); border: none; border-radius: 10px;">
                 <span class="text-white fw-bold fs-5">
-                    Magíster en Ciencia de Datos — Título con Reconocimiento Oficial y Validez Nacional
+                    Título de Magíster en Ciencia de Datos con reconocimiento oficial y validez nacional
                 </span>
             </div>
             <div class="row g-4 justify-content-center mt-2">
@@ -683,7 +680,7 @@
                     <img src="../assets/img/mcd-logos/coneau.svg" alt="Comisión Nacional de Evaluación y Acreditación Universitaria (CONEAU)" width="161" height="99" loading="lazy">
                 </div>
             </div>
-            <p class="text-center text-muted mt-4 mb-0">El título de Magíster en Ciencia de Datos tiene validez en todo el territorio nacional y habilita para ejercer la disciplina en ámbito académico, profesional y de investigación.</p>
+            <p class="text-center text-muted mt-4 mb-0">El título de Magíster en Ciencia de Datos tiene validez en todo el territorio nacional y habilita para ejercer la disciplina en los ámbitos académico, profesional y de investigación.</p>
         </div>
     </section>
 
@@ -696,15 +693,15 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Modalidad de cursada</h2>
-                <h3 class="section-subheading text-muted">Encuentros sincrónicos, presenciales o virtuales, compatibles con un trabajo de tiempo completo</h3>
+                <h3 class="section-subheading text-muted">Dos encuentros semanales sincrónicos, en forma remota o en el aula</h3>
             </div>
             <hr>
             <div class="row g-4 justify-content-center mt-2">
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
                     <div class="bc-card text-center h-100">
                         <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Régimen de cursada</h4>
-                        <span class="mcd-hora">Desde las 18 h</span>
-                        <p class="mb-0 small text-muted">Se dictan dos encuentros semanales sincrónicos de tres horas, presenciales o virtuales, en bloques de seis semanas por curso, ocho en el caso de Aprendizaje Automático, con una semana libre entre cursos.</p>
+                        <span class="mcd-hora">De 18 a 21 h</span>
+                        <p class="mb-0 small text-muted">Se dictan dos encuentros semanales sincrónicos de tres horas, que pueden seguirse en forma remota o en el aula, en bloques de seis semanas por curso, ocho en el caso de Aprendizaje Automático, con una semana libre entre cursos.</p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
@@ -716,7 +713,7 @@
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
                     <div class="bc-card text-center h-100">
                         <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Tesis de maestría</h4>
-                        <p class="mb-0 small text-muted">La cursada concluye con el Taller de Formulación de Tesis, a cargo de <strong>Fernando Bordignon</strong>, y el desarrollo de la tesis se inicia en noviembre de 2028.</p>
+                        <p class="mb-0 small text-muted">La cursada concluye con el Taller de Formulación de Tesis, que acompaña la elaboración del plan de tesis. El desarrollo de la tesis se inicia en noviembre de 2028.</p>
                     </div>
                 </div>
             </div>
@@ -758,7 +755,7 @@
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Salida académica y profesional</h2>
-                <h3 class="section-subheading text-muted">Un perfil con demanda creciente en organismos públicos, empresas y centros de investigación</h3>
+                <h3 class="section-subheading text-muted">Dónde se desempeñan quienes egresan: organismos públicos, empresas y centros de investigación</h3>
             </div>
             <hr>
             <!-- Foto: Luke Chesser, Unsplash License, https://unsplash.com/photos/JKUTrJ4vK00 -->
@@ -766,32 +763,32 @@
             <div class="row g-4 justify-content-center mt-2">
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
                     <div class="bc-card text-center h-100">
-                        <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Data Scientist</h4>
+                        <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Ciencia de datos</h4>
                         <p class="mb-0 small text-muted">Diseño y puesta en producción de modelos de aprendizaje automático en organizaciones públicas y privadas.</p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
                     <div class="bc-card text-center h-100">
-                        <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Analista de datos / BI</h4>
+                        <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Análisis e inteligencia de negocios</h4>
                         <p class="mb-0 small text-muted">Extracción, limpieza y análisis de datos para apoyar decisiones estratégicas.</p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
                     <div class="bc-card text-center h-100">
-                        <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Investigador/a en ciencia de datos</h4>
-                        <p class="mb-0 small text-muted">Continuación a doctorado, integración en grupos de investigación UNLu/UADER/CONICET.</p>
+                        <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Investigación</h4>
+                        <p class="mb-0 small text-muted">Continuidad en un doctorado o en grupos de investigación de la UNLu, la UADER y el CONICET.</p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="bc-card text-center h-100">
-                        <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Especialista en sector público</h4>
+                        <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Sector público</h4>
                         <p class="mb-0 small text-muted">Aplicación de ciencia de datos en organismos del Estado nacional, provincial y municipal.</p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="240">
                     <div class="bc-card text-center h-100">
                         <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Ingeniería de datos</h4>
-                        <p class="mb-0 small text-muted">Diseño de pipelines, gestión de bases masivas, infraestructura para análisis y modelado.</p>
+                        <p class="mb-0 small text-muted">Diseño de flujos de datos, gestión de grandes volúmenes e infraestructura para análisis y modelado.</p>
                     </div>
                 </div>
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="280">
@@ -801,14 +798,14 @@
                     </div>
                 </div>
             </div>
-            <p class="text-center text-muted mt-4 mb-0">El título habilita además como antecedente para programas doctorales en ciencias informáticas, estadística o áreas afines.</p>
+            <p class="text-center text-muted mt-4 mb-0">El título es además antecedente para doctorados en informática, estadística y áreas afines.</p>
         </div>
     </section>
 
     <section class="page-section" id="faq" data-aos="fade-up" data-aos-duration="1500">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Preguntas Frecuentes</h2>
+                <h2 class="section-heading text-uppercase">Preguntas frecuentes</h2>
             </div>
             <hr>
             <div class="row justify-content-center">
@@ -822,8 +819,7 @@
                             </h2>
                             <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">Título de <strong>Magíster en Ciencia de Datos</strong>, con
-                                    Reconocimiento Oficial y Validez Nacional (Disposición SSPU N° 490/25). Propuesta
-                                    interinstitucional UNLu — FCyT/UADER, acreditada favorablemente por CONEAU
+                                    Reconocimiento Oficial y Validez Nacional (Disposición SSPU N° 490/25). Propuesta interinstitucional de la UNLu y la FCyT-UADER, acreditada favorablemente por CONEAU
                                     (Acta 621, 25/11/2024).</div>
                             </div>
                         </div>
@@ -834,10 +830,9 @@
                                 </button>
                             </h2>
                             <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">Presencial, régimen semestral, 2 años de duración. Estructura:
-                                    8 cursos obligatorios + 2 optativos + Tesis (776 hs totales). Los cursos se dictan de forma
-                                    consecutiva, con 2 encuentros semanales sincrónicos de tres horas, desde las 18 h, presenciales o virtuales, que
-                                    cubren el 60% de la carga horaria.</div>
+                                <div class="accordion-body">Cursada sincrónica, con encuentros que pueden seguirse en forma remota o en el aula, en el marco de la modalidad presencial con la que la carrera está acreditada. Régimen semestral, 2 años de duración. Estructura:
+                                    8 cursos obligatorios, 2 optativos y tesis, con 776 horas en total. Los cursos se dictan de forma
+                                    consecutiva, con 2 encuentros semanales sincrónicos de tres horas, desde las 18 h, que pueden seguirse en forma remota o en el aula y cubren el 60% de la carga horaria.</div>
                             </div>
                         </div>
                         <div class="accordion-item">
