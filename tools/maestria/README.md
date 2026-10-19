@@ -7,6 +7,16 @@
 | `terminos.json` | Salida de `terminos.py`: N y df de cada termino candidato en el digesto, y los 40 elegidos con su peso. Permite volver a renderizar sin el digesto. |
 | `temas.py` | Arma el panel "Temas de la maestria" (entre `<!-- temas:inicio -->` y `<!-- temas:fin -->`): cada tema de los contenidos minimos de los 8 cursos obligatorios es un punto, ubicado por t-SNE sobre la distancia coseno entre embeddings BGE-M3. `js/mcd-temas.js` dibuja el mapa, con filtro por curso. |
 | `temas.json` | Salida de `temas.py`: los temas con su posicion y la fraccion de vecinos conservados. Permite volver a renderizar sin el modelo. |
+| `fotos/` | Fotos del equipo docente con fondo blanco y encuadre parejo. `recortar.swift` recorta el sujeto y detecta la cara con el framework Vision de macOS (como "Copiar sujeto" en Fotos); `componer.py` (Pillow) lo ubica sobre blanco en 480 x 480 con la cara al 32 % del alto (hasta 44 % si hay que agrandar para que el cuerpo llegue al borde) y funde los cortes de la foto original. Los originales quedan en `assets/img/mcd-docentes/_orig/`, fuera de git. |
+
+## Fotos del equipo docente
+
+    cd assets/img/mcd-docentes && mkdir -p /tmp/recorte
+    swift ../../../tools/maestria/fotos/recortar.swift /tmp/recorte _orig/*.jpg
+    python3 ../../../tools/maestria/fotos/componer.py /tmp/recorte .      # escribe <nombre>.jpg y <nombre>.webp
+
+Para sumar o reemplazar a alguien, poner la foto original en `_orig/` con el nombre del archivo final. Rinden mejor
+las fotos de medio cuerpo y de al menos 400 px; en las selfies muy cerradas el cuerpo no llega al borde y se funde.
 
 ## Metodo de `terminos.py`
 
