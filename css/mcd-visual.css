@@ -363,6 +363,8 @@ html body #floatingCTA, html body #floatingCTA:hover, html body #floatingCTA:foc
 /* Cuerpo docente: las tarjetas ya no enlazan a perfiles, así que no se elevan al pasar el mouse */
 html body #team .docente-card:hover { transform: none; box-shadow: none; border-color: #f0e3e5; }
 html body #team .docente-card:hover img { border-color: #FBEAEC; box-shadow: 0 6px 20px rgba(128, 0, 32, .16); }
+/* Cargo en la carrera, discreto, en la misma línea del nombre */
+html body #team .docente-rol { font-weight: 400 !important; font-size: .8rem; color: #6c757d; white-space: nowrap; }
 /* Encabezado: estado de la primera cohorte, siempre visible */
 html body header .mcd-hero-cohorte {
     display: inline-block; margin: .2rem 0 1.4rem;

@@ -31,6 +31,7 @@ Versioning policy for this project:
 - Home: enlace al texto completo en las entradas de la línea de tiempo que lo tienen, como píldora (`.timeline-pdf` en `css/styles.css`) debajo de la cita: PDF, SEDICI o Póster.
 
 ### Changed
+- Maestría, equipo docente: la tarjeta de Juan Manuel Fernández indica "(director)" junto al nombre, en letra chica y sin cambiar el orden alfabético.
 - Maestría, portada: la pregunta frecuente "¿Cuánto cuesta? ¿Hay becas?" aclara que los valores están en pesos de octubre de 2026 y que la cuota se revisa cada semestre según el IPC del INDEC, como dicen la página de Aranceles y los datos estructurados de la portada.
 - Maestría: en los contenidos mínimos del Taller de Formulación de Tesis (dorso de la tarjeta en la portada y acordeón del plan de estudios), "La asignatura brinda" pasa a "El curso brinda", como se nombra a los cursos en el resto del sitio. El dataset `tools/maestria/contenidos_minimos.json` conserva el texto literal de la Res. HCS 789/23.
 - Maestría: el texto de los encabezados queda centrado en el alto visible, debajo del menú fijo, en la portada y en las subpáginas; los rellenos descuentan el aire del interlineado del título. Se quitan los subtítulos vacíos de los encabezados de Aranceles e Inscripción, que agregaban espacio invisible abajo.
