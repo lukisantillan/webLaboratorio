@@ -459,22 +459,25 @@ html body .mcd-optativas-lista li { break-inside: avoid; margin-bottom: .2rem; }
    Tamaño lineal con el peso TF-IDF; color según el curso donde aparece el término (data-c, 0 = varios). */
 .mcd-terminos { margin-top: 2.6rem; padding-top: 2.1rem; border-top: 1px solid var(--mcd-borde); }
 html body .mcd-terminos-titulo { font-size: 1.55rem; color: var(--mcd-bordo-osc); margin: 0 0 1.1rem; text-align: center; }
-.mcd-terminos-panel {
+/* Paleta por curso, compartida con el gráfico del recorrido (sección 13) */
+.mcd-terminos-panel, .mcd-recorrido, .mcd-afinidad {
     --c0: #ffffff; --c1: #f2c46d; --c2: #7fdcc9; --c3: #ff9eb1; --c4: #bba8f7;
-    --c5: #8ec5ff; --c6: #a8e08f; --c7: #f7a77c; --c8: #d2c8ca;
+    --c5: #8ec5ff; --c6: #a8e08f; --c7: #f7a77c; --c8: #d2c8ca; --copt: #e6d3d8;
+}
+.mcd-terminos-panel {
     position: relative; border-radius: 18px; padding: 1.7rem 1.4rem 1.1rem;
     background: radial-gradient(ellipse 75% 65% at 50% 42%, #5c1026 0%, #340915 55%, #19040b 100%);
     box-shadow: 0 18px 50px rgba(90, 0, 22, .22);
 }
-.mcd-terminos [data-c="0"] { --k: var(--c0); }
-.mcd-terminos [data-c="1"] { --k: var(--c1); }
-.mcd-terminos [data-c="2"] { --k: var(--c2); }
-.mcd-terminos [data-c="3"] { --k: var(--c3); }
-.mcd-terminos [data-c="4"] { --k: var(--c4); }
-.mcd-terminos [data-c="5"] { --k: var(--c5); }
-.mcd-terminos [data-c="6"] { --k: var(--c6); }
-.mcd-terminos [data-c="7"] { --k: var(--c7); }
-.mcd-terminos [data-c="8"] { --k: var(--c8); }
+:is(.mcd-terminos, .mcd-recorrido, .mcd-afinidad) [data-c="0"] { --k: var(--c0); }
+:is(.mcd-terminos, .mcd-recorrido, .mcd-afinidad) [data-c="1"] { --k: var(--c1); }
+:is(.mcd-terminos, .mcd-recorrido, .mcd-afinidad) [data-c="2"] { --k: var(--c2); }
+:is(.mcd-terminos, .mcd-recorrido, .mcd-afinidad) [data-c="3"] { --k: var(--c3); }
+:is(.mcd-terminos, .mcd-recorrido, .mcd-afinidad) [data-c="4"] { --k: var(--c4); }
+:is(.mcd-terminos, .mcd-recorrido, .mcd-afinidad) [data-c="5"] { --k: var(--c5); }
+:is(.mcd-terminos, .mcd-recorrido, .mcd-afinidad) [data-c="6"] { --k: var(--c6); }
+:is(.mcd-terminos, .mcd-recorrido, .mcd-afinidad) [data-c="7"] { --k: var(--c7); }
+:is(.mcd-terminos, .mcd-recorrido, .mcd-afinidad) [data-c="8"] { --k: var(--c8); }
 /* Sin JS: la lista se ve como una fila de términos */
 .mcd-terminos-lista {
     list-style: none; margin: 0; padding: 0;
@@ -518,4 +521,130 @@ html body .mcd-terminos-leyenda li { font-size: .8rem; color: rgba(255, 255, 255
 html body .mcd-terminos-nota { max-width: 720px; margin: 1.1rem auto 0; font-size: .8rem; line-height: 1.5; color: #6c757d; text-align: center; }
 @media (prefers-reduced-motion: reduce) {
     html body .mcd-t { transition: none; }
+}
+
+/* ---------- 13. Recorrido de la cursada ----------
+   Tablero en el lugar de la foto de analítica de "Salida académica y profesional". js/mcd-recorrido.js lee la
+   tabla (horas y semanas por curso, en el orden del cronograma) y dibuja barras y la línea del avance acumulado. */
+.mcd-recorrido, .mcd-afinidad {
+    position: relative; margin: .5rem 0 .6rem; border-radius: 18px; padding: 1rem 1.1rem .9rem;
+    background: radial-gradient(ellipse 80% 70% at 30% 35%, #3a0a18 0%, #1d0710 55%, #0f0408 100%);
+    box-shadow: 0 18px 50px rgba(90, 0, 22, .22);
+}
+.mcd-recorrido [data-c="opt"] { --k: var(--copt); }
+html body .mcd-recorrido-cab {
+    display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    margin: 0 0 .3rem; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    color: rgba(255, 255, 255, .62);
+}
+html body .mcd-recorrido-cab span { color: rgba(255, 193, 7, .9); }
+/* Con el gráfico dibujado, la tabla queda solo para lectores de pantalla */
+.mcd-recorrido.con-grafico .mcd-recorrido-tabla {
+    position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.mcd-recorrido-tabla { width: 100%; color: #fff; font-size: .85rem; }
+.mcd-recorrido-tabla caption { caption-side: top; color: rgba(255, 255, 255, .7); }
+.mcd-recorrido-tabla th, .mcd-recorrido-tabla td { padding: .2rem .4rem; border-bottom: 1px solid rgba(255, 255, 255, .1); }
+.mcd-recorrido-grafico { position: relative; }
+.mcd-rec-svg { display: block; overflow: visible; font-family: var(--mcd-sans); }
+.mcd-rec-grilla { stroke: rgba(255, 255, 255, .08); }
+.mcd-rec-eje-h, .mcd-rec-corto { fill: rgba(255, 255, 255, .55); font-size: 11px; font-weight: 600; }
+.mcd-rec-eje-p { fill: #ffb3c4; font-size: 11px; font-weight: 600; }
+.mcd-rec-tramo { fill: none; stroke: rgba(255, 255, 255, .3); }
+.mcd-rec-anio { fill: rgba(255, 255, 255, .82); font-size: 12px; font-weight: 700; }
+.mcd-rec-anio-fecha { fill: rgba(255, 255, 255, .5); font-weight: 400; }
+.mcd-rec-barra {
+    fill: var(--k); opacity: .92;
+    transform-box: fill-box; transform-origin: 50% 100%; transform: scaleY(0);
+    transition: transform .8s cubic-bezier(.2, .7, .2, 1), opacity .2s ease;
+    transition-delay: calc(var(--i) * 70ms), 0s;
+}
+.mcd-rec-tesis { fill: url(#mcd-rec-trama); stroke: rgba(255, 255, 255, .25); stroke-dasharray: 4 4; opacity: 0; transition: opacity .8s ease .9s; }
+.mcd-rec-trama { stroke: rgba(255, 255, 255, .16); stroke-width: 2; }
+.mcd-rec-linea {
+    fill: none; stroke: #ffc9d6; stroke-width: 2.5; stroke-linejoin: round; stroke-linecap: round;
+    stroke-dasharray: var(--largo); stroke-dashoffset: var(--largo);
+    transition: stroke-dashoffset 1.8s ease .3s;
+    filter: drop-shadow(0 0 5px rgba(255, 150, 180, .55));
+}
+.mcd-rec-linea-tesis { fill: none; stroke: #ffc9d6; stroke-width: 2; stroke-dasharray: 5 5; opacity: 0; transition: opacity .6s ease 2s; }
+.mcd-rec-marca { stroke: rgba(255, 255, 255, .45); stroke-dasharray: 3 4; }
+.mcd-rec-marca-txt { fill: rgba(255, 255, 255, .7); font-size: 11px; font-weight: 600; }
+.mcd-rec-punto { fill: #1d0710; stroke: #ffc9d6; stroke-width: 2; opacity: 0; transition: opacity .3s ease 1.9s, r .15s ease; }
+.mcd-recorrido.visible .mcd-rec-barra { transform: scaleY(1); }
+.mcd-recorrido.visible :is(.mcd-rec-tesis, .mcd-rec-linea-tesis, .mcd-rec-punto) { opacity: 1; }
+.mcd-recorrido.visible .mcd-rec-linea { stroke-dashoffset: 0; }
+.mcd-recorrido.enfocado .mcd-rec-barra { opacity: .3; transition-delay: 0s; }
+.mcd-recorrido.enfocado .mcd-rec-curso.activo .mcd-rec-barra { opacity: 1; }
+.mcd-rec-punto.activo { r: 6; fill: #ffc9d6; transition-delay: 0s; }
+.mcd-rec-tip {
+    position: absolute; z-index: 3; pointer-events: none; min-width: 170px; max-width: 250px;
+    padding: .5rem .75rem .55rem; border-radius: 6px; background: #fff;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .45);
+    opacity: 0; transform: translate(-50%, calc(-100% - 14px)); transition: opacity .15s ease;
+}
+.mcd-rec-tip.visible { opacity: 1; }
+html body .mcd-rec-tip span { display: block; font-size: .74rem; line-height: 1.3; color: #6b5c60; }
+html body .mcd-rec-tip strong { display: block; font-size: 1.5rem; line-height: 1.15; color: #1d0710; margin: .1rem 0; }
+.mcd-recorrido-leyenda {
+    list-style: none; margin: .2rem 0 0; padding: 0;
+    display: flex; justify-content: center; flex-wrap: wrap; gap: .3rem 1.4rem;
+}
+html body .mcd-recorrido-leyenda li { font-size: .78rem; color: rgba(255, 255, 255, .72); }
+.mcd-recorrido-leyenda li::before { content: ''; display: inline-block; margin-right: .45rem; vertical-align: .15rem; }
+.mcd-ley-barra::before {
+    width: .7rem; height: .7rem; border-radius: 2px; vertical-align: -.05rem !important;
+    background: linear-gradient(90deg, var(--c1) 0 25%, var(--c3) 25% 50%, var(--c5) 50% 75%, var(--c7) 75%);
+}
+.mcd-ley-linea::before { width: 1.2rem; height: 2px; background: #ffc9d6; border-radius: 1px; }
+html body .mcd-recorrido-nota { max-width: 760px; margin: 0 auto 2rem; font-size: .8rem; line-height: 1.5; color: #6c757d; text-align: center; }
+@media (prefers-reduced-motion: reduce) {
+    .mcd-rec-barra, .mcd-rec-linea, .mcd-rec-linea-tesis, .mcd-rec-tesis, .mcd-rec-punto { transition: none; }
+}
+
+/* ---------- 14. Tablero de dos paneles y "Afinidad entre cursos" ----------
+   El dendrograma lo dibuja js/mcd-afinidad.js a partir de la lista que genera tools/maestria/afinidad.py. */
+.mcd-tablero { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 1.25rem; margin-top: .5rem; }
+/* En pantallas anchas, los dos paneles comparten la primera fila (misma altura) y las notas la segunda */
+@media (min-width: 992px) {
+    .mcd-tablero { grid-template-columns: minmax(0, 1.65fr) minmax(0, 1fr); }
+    .mcd-tablero-col { display: contents; }
+    .mcd-tablero :is(.mcd-recorrido, .mcd-afinidad) { grid-row: 1; }
+    .mcd-tablero .mcd-recorrido-nota { grid-row: 2; }
+    .mcd-afinidad { display: flex; flex-direction: column; }
+    .mcd-afinidad .mcd-afinidad-grafico { margin-top: auto; margin-bottom: auto; }
+}
+.mcd-afinidad.con-grafico :is(.mcd-afinidad-cursos, .mcd-afinidad-fusiones) {
+    position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden;
+    clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+html body :is(.mcd-afinidad-cursos, .mcd-afinidad-fusiones) li { color: rgba(255, 255, 255, .8); font-size: .85rem; }
+.mcd-afinidad-grafico { position: relative; margin-top: .4rem; }
+.mcd-afi-svg { display: block; overflow: visible; font-family: var(--mcd-sans); }
+.mcd-afi-grilla { stroke: rgba(255, 255, 255, .09); }
+.mcd-afi-grilla.menor { stroke: rgba(255, 255, 255, .04); }
+.mcd-afi-eje { fill: rgba(255, 255, 255, .55); font-size: 11px; font-weight: 600; }
+.mcd-afi-eje-titulo { fill: rgba(255, 255, 255, .45); font-size: 11px; }
+.mcd-afi-rama {
+    fill: none; stroke: #ffc9d6; stroke-width: 2; stroke-linejoin: round;
+    stroke-dasharray: var(--largo); stroke-dashoffset: var(--largo);
+    transition: stroke-dashoffset .7s ease, opacity .2s ease, stroke .2s ease;
+    transition-delay: calc(var(--k2) * 160ms + .2s), 0s, 0s;
+}
+.mcd-afi-tallo { --largo: 10; }
+.mcd-afinidad.visible .mcd-afi-rama { stroke-dashoffset: 0; }
+.mcd-afi-hoja { transition: opacity .2s ease; }
+.mcd-afi-hoja circle { fill: var(--k); }
+.mcd-afi-hoja text { fill: var(--k); font-size: 12.5px; font-weight: 600; }
+.mcd-afi-nodo { fill: #1d0710; stroke: #ffc9d6; stroke-width: 2; opacity: 0; transition: opacity .3s ease 1.5s, r .15s ease; }
+.mcd-afinidad.visible .mcd-afi-nodo { opacity: 1; }
+.mcd-afi-blanco { fill: transparent; cursor: pointer; }
+.mcd-afinidad.enfocado .mcd-afi-rama { opacity: .22; }
+.mcd-afinidad.enfocado .mcd-afi-rama.activa { opacity: 1; stroke: #fff; filter: drop-shadow(0 0 4px rgba(255, 200, 215, .75)); }
+.mcd-afinidad.enfocado .mcd-afi-hoja { opacity: .3; }
+.mcd-afinidad.enfocado .mcd-afi-hoja.activa { opacity: 1; }
+.mcd-afi-nodo.activo { fill: #ffc9d6; r: 6; transition-delay: 0s; }
+@media (prefers-reduced-motion: reduce) {
+    .mcd-afi-rama, .mcd-afi-nodo { transition: none; }
 }

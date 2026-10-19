@@ -915,8 +915,68 @@
                 <h3 class="section-subheading text-muted">Dónde se desempeñan quienes egresan: organismos públicos, empresas y centros de investigación</h3>
             </div>
             <hr>
-            <!-- Foto: Luke Chesser, Unsplash License, https://unsplash.com/photos/JKUTrJ4vK00 -->
-            <figure class="mcd-foto mcd-foto-franja" data-aos="zoom-in" data-aos-duration="900"><picture><source srcset="../assets/img/mcd-fotos/analitica-pantalla.webp" type="image/webp"><img src="../assets/img/mcd-fotos/analitica-pantalla.jpg" alt="Pantalla con gráficos de analítica de datos" width="1200" height="800" loading="lazy" decoding="async"></picture></figure>
+            <!-- Tablero: recorrido de la cursada y afinidad entre cursos -->
+            <div class="mcd-tablero">
+                <div class="mcd-tablero-col">
+        <!-- Recorrido de la cursada: la tabla tiene los datos; js/mcd-recorrido.js dibuja el gráfico a partir de ella -->
+                <div class="mcd-recorrido" data-aos="fade-up">
+                    <p class="mcd-recorrido-cab">Recorrido de la cursada <span>Primera cohorte · en trámite</span></p>
+                    <table class="mcd-recorrido-tabla">
+                        <caption>Recorrido de la cursada de la primera cohorte, en trámite: horas y semanas de cada curso y avance acumulado del plan de 776 horas</caption>
+                        <thead><tr><th scope="col">Curso</th><th scope="col">Horas</th><th scope="col">Semanas</th><th scope="col">Avance acumulado</th></tr></thead>
+                        <tbody>
+                        <tr data-c="1" data-anio="1" data-corto="1" data-horas="64" data-semanas="6" data-inst="FCyT, UADER"><th scope="row">Técnicas de Análisis para Ciencia de Datos</th><td>64</td><td>6</td><td>8,2 %</td></tr>
+                        <tr data-c="2" data-anio="1" data-corto="2" data-horas="64" data-semanas="6" data-inst="UNLu"><th scope="row">Fundamentos de Ciencia de Datos</th><td>64</td><td>6</td><td>16,5 %</td></tr>
+                        <tr data-c="3" data-anio="1" data-corto="3" data-horas="96" data-semanas="8" data-inst="UNLu"><th scope="row">Aprendizaje Automático</th><td>96</td><td>8</td><td>28,9 %</td></tr>
+                        <tr data-c="4" data-anio="1" data-corto="4" data-horas="64" data-semanas="6" data-inst="FCyT, UADER"><th scope="row">Visualización de Información</th><td>64</td><td>6</td><td>37,1 %</td></tr>
+                        <tr data-c="opt" data-anio="2" data-corto="Opt. I" data-horas="48" data-semanas="5" data-inst=""><th scope="row">Optativa I: Inteligencia Artificial Generativa</th><td>48</td><td>5</td><td>43,3 %</td></tr>
+                        <tr data-c="5" data-anio="2" data-corto="5" data-horas="64" data-semanas="6" data-inst="UNLu"><th scope="row">Ciencia de Datos Aplicada I</th><td>64</td><td>6</td><td>51,5 %</td></tr>
+                        <tr data-c="6" data-anio="2" data-corto="6" data-horas="64" data-semanas="6" data-inst="UNLu"><th scope="row">Ciencia de Datos Aplicada II</th><td>64</td><td>6</td><td>59,8 %</td></tr>
+                        <tr data-c="7" data-anio="2" data-corto="7" data-horas="32" data-semanas="4" data-inst="UNLu"><th scope="row">Aspectos Legales y Éticos del Uso de la Información</th><td>32</td><td>4</td><td>63,9 %</td></tr>
+                        <tr data-c="opt" data-anio="2" data-corto="Opt. II" data-horas="48" data-semanas="5" data-inst=""><th scope="row">Optativa II</th><td>48</td><td>5</td><td>70,1 %</td></tr>
+                        <tr data-c="8" data-anio="2" data-corto="8" data-horas="32" data-semanas="4" data-inst="UNLu"><th scope="row">Taller de Formulación de Tesis</th><td>32</td><td>4</td><td>74,2 %</td></tr>
+                        <tr data-c="tesis" data-anio="3" data-corto="Tesis" data-horas="200" data-semanas="" data-inst=""><th scope="row">Tesis</th><td>200</td><td>—</td><td>100 %</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="mcd-recorrido-grafico" aria-hidden="true"></div>
+                    <ul class="mcd-recorrido-leyenda" aria-hidden="true">
+                        <li class="mcd-ley-barra">Horas de cada curso, eje izquierdo</li>
+                        <li class="mcd-ley-linea">Avance acumulado del plan, eje derecho</li>
+                    </ul>
+                </div>
+                <p class="mcd-recorrido-nota">Horas según el plan de estudios (Res. HCS 789/23). Orden y semanas según el cronograma de la primera cohorte,
+                    en trámite: cursos de a uno, con una semana libre entre cursos; no se muestran los recesos.</p>
+                </div>
+                <div class="mcd-tablero-col">
+                <!-- afinidad:inicio (generado por tools/maestria/afinidad.py; no editar a mano) -->
+                <div class="mcd-afinidad mcd-panel-tablero" data-aos="fade-up">
+                    <p class="mcd-recorrido-cab">Afinidad entre cursos <span>Contenidos mínimos · BGE-M3</span></p>
+                    <ul class="mcd-afinidad-cursos" aria-label="Cursos obligatorios">
+                        <li data-c="1">Técnicas de análisis</li>
+                        <li data-c="2">Fundamentos</li>
+                        <li data-c="3">Aprendizaje automático</li>
+                        <li data-c="4">Visualización</li>
+                        <li data-c="5">Aplicada I</li>
+                        <li data-c="6">Aplicada II</li>
+                        <li data-c="7">Legales y éticos</li>
+                        <li data-c="8">Taller de tesis</li>
+                    </ul>
+                    <ol class="mcd-afinidad-fusiones" aria-label="Agrupamientos, del más cercano al más lejano">
+                        <li data-a="1" data-b="5" data-d="0.2733">Se agrupan Fundamentos con Aplicada II (distancia 0,27)</li>
+                        <li data-a="3" data-b="4" data-d="0.2817">Se agrupan Visualización con Aplicada I (distancia 0,28)</li>
+                        <li data-a="0" data-b="2" data-d="0.3017">Se agrupan Técnicas de análisis con Aprendizaje automático (distancia 0,30)</li>
+                        <li data-a="6" data-b="8" data-d="0.3234">Se agrupan Legales y éticos con Fundamentos y Aplicada II (distancia 0,32)</li>
+                        <li data-a="9" data-b="10" data-d="0.3272">Se agrupan Visualización y Aplicada I con Técnicas de análisis y Aprendizaje automático (distancia 0,33)</li>
+                        <li data-a="11" data-b="12" data-d="0.368">Se agrupan Legales y éticos, Fundamentos y Aplicada II con Visualización, Aplicada I, Técnicas de análisis y Aprendizaje automático (distancia 0,37)</li>
+                        <li data-a="7" data-b="13" data-d="0.4073">Se agrupan Taller de tesis con Legales y éticos, Fundamentos, Aplicada II, Visualización, Aplicada I, Técnicas de análisis y Aprendizaje automático (distancia 0,41)</li>
+                    </ol>
+                    <div class="mcd-afinidad-grafico" aria-hidden="true"></div>
+                </div>
+                <p class="mcd-recorrido-nota">Agrupamiento jerárquico de los contenidos mínimos de cada curso (Res. HCS 789/23):
+                    embeddings BGE-M3, distancia coseno y enlace promedio. Los primeros cinco agrupamientos se repiten con enlace completo y de Ward.</p>
+                <!-- afinidad:fin -->
+                </div>
+            </div>
             <div class="row g-4 justify-content-center mt-2">
                 <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
                     <div class="bc-card text-center h-100">
@@ -1224,6 +1284,8 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>AOS.init();</script>
     <script defer src="../js/mcd-terminos.js"></script>
+    <script defer src="../js/mcd-recorrido.js"></script>
+    <script defer src="../js/mcd-afinidad.js"></script>
     <script>
     /* Tarjetas de cursos: se dan vuelta con un clic, un toque o el teclado */
     document.querySelectorAll('.mcd-flip-btn').forEach(function (btn) {

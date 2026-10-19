@@ -81,6 +81,7 @@
             nube.appendChild(span);
         });
         bloque.classList.add('con-nube');
+        if (window.AOS && window.AOS.refresh) window.AOS.refresh();  // el bloque cambió de alto: AOS recalcula sus disparadores
     }
 
     // Detalle al pasar el puntero (o tocar): cursos donde aparece y documentos del digesto que lo usan
@@ -111,8 +112,14 @@
         enfocar(function (x) { return x === s; });
         mostrarTip(s);
     });
-    nube.addEventListener('pointerleave', soltar);
-    nube.addEventListener('pointerout', function (e) { if (!e.relatedTarget || !e.relatedTarget.closest('.mcd-t')) soltar(); });
+    // Con el dedo, el detalle queda hasta tocar otra cosa (al levantarlo el navegador emite pointerout/pointerleave)
+    nube.addEventListener('pointerleave', function (e) { if (e.pointerType !== 'touch') soltar(); });
+    nube.addEventListener('pointerout', function (e) {
+        if (e.pointerType !== 'touch' && (!e.relatedTarget || !e.relatedTarget.closest('.mcd-t'))) soltar();
+    });
+    document.addEventListener('pointerdown', function (e) {
+        if (e.pointerType === 'touch' && !e.target.closest('.mcd-t, .mcd-terminos-leyenda')) soltar();
+    });
     leyenda.addEventListener('pointerover', function (e) {
         var li = e.target.closest('li');
         if (!li) return;
