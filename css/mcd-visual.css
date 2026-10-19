@@ -63,11 +63,18 @@ html body header.backgroundhead.fondoMcd,
 html body header.backgroundAr.fondoMcd {
     height: auto !important; min-height: 0 !important;
     margin-top: 0 !important;
-    padding-top: 10.25rem !important; padding-bottom: 4rem !important;
+    /* Texto centrado en el alto visible, debajo del menú fijo (122 px en escritorio, 114 px en pantallas chicas);
+       el relleno superior descuenta el aire que deja el interlineado del título arriba de las letras */
+    padding-top: 10.65rem !important; padding-bottom: 3.6rem !important;
 }
 @media (max-width: 991.98px) {
     html body header.backgroundhead.fondoMcd,
-    html body header.backgroundAr.fondoMcd { padding-top: 8rem !important; padding-bottom: 2.75rem !important; }
+    html body header.backgroundAr.fondoMcd { padding-top: 9.05rem !important; padding-bottom: 2.25rem !important; }
+}
+/* Subpáginas: antetítulo y título, sin botón. Abajo suman el margen del título y el aire de su interlineado */
+html body header.backgroundAr.fondoMcd { padding-top: 11.65rem !important; padding-bottom: 2.55rem !important; }
+@media (max-width: 991.98px) {
+    html body header.backgroundAr.fondoMcd { padding-top: 9.8rem !important; padding-bottom: 1.5rem !important; }
 }
 
 /* ---------- 1. Franja de cifras ---------- */
