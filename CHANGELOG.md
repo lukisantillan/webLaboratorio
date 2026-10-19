@@ -32,6 +32,7 @@ Versioning policy for this project:
 - Home: enlace al texto completo en las entradas de la línea de tiempo que lo tienen, como píldora (`.timeline-pdf` en `css/styles.css`) debajo de la cita: PDF, SEDICI o Póster.
 
 ### Changed
+- Maestría: las optativas ya no se nombran. En el plan de estudios, la frase sobre la Optativa I y la Optativa II pasa a "La oferta de cursos optativos se renueva según los temas de mayor interés"; en el recorrido de la cursada de la portada, la Optativa I figura sin nombre.
 - Maestría, equipo docente: se quitan las tarjetas de Fernando Bordignon y Gabriel Tolosa.
 - Maestría, equipo docente: la tarjeta de Juan Manuel Fernández indica "(director)" junto al nombre, en letra chica y sin cambiar el orden alfabético.
 - Maestría, portada: la pregunta frecuente "¿Cuánto cuesta? ¿Hay becas?" aclara que los valores están en pesos de octubre de 2026 y que la cuota se revisa cada semestre según el IPC del INDEC, como dicen la página de Aranceles y los datos estructurados de la portada.
