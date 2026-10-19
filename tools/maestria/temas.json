@@ -1,0 +1,601 @@
+{
+ "modelo": "BAAI/bge-m3",
+ "vecinos_conservados": 0.586,
+ "temas": [
+  {
+   "tema": "Análisis exploratorio de datos y sus etapas",
+   "contexto": null,
+   "curso": 1,
+   "x": 0.548,
+   "y": 0.3844
+  },
+  {
+   "tema": "Revisión de modelos de probabilidad",
+   "contexto": null,
+   "curso": 1,
+   "x": 0.3455,
+   "y": 0.5837
+  },
+  {
+   "tema": "Test de hipótesis e intervalos de confianza",
+   "contexto": null,
+   "curso": 1,
+   "x": 0.3696,
+   "y": 0.6142
+  },
+  {
+   "tema": "Regresión: métodos lineales",
+   "contexto": null,
+   "curso": 1,
+   "x": 0.0092,
+   "y": 0.4894
+  },
+  {
+   "tema": "Estimación puntual",
+   "contexto": null,
+   "curso": 1,
+   "x": 0.1678,
+   "y": 0.696
+  },
+  {
+   "tema": "Máxima verosimilitud y optimización básica",
+   "contexto": null,
+   "curso": 1,
+   "x": 0.2232,
+   "y": 0.6531
+  },
+  {
+   "tema": "Ajuste de modelos estadísticos genéricos",
+   "contexto": "Estimación puntual, máxima verosimilitud y optimización básica",
+   "curso": 1,
+   "x": 0.1894,
+   "y": 0.6697
+  },
+  {
+   "tema": "Reducción de dimensionalidad",
+   "contexto": null,
+   "curso": 1,
+   "x": 0.0457,
+   "y": 0.6047
+  },
+  {
+   "tema": "Análisis en componentes principales y análisis factorial de correspondencias y exploratorio",
+   "contexto": "Reducción de dimensionalidad",
+   "curso": 1,
+   "x": 0.0256,
+   "y": 0.6206
+  },
+  {
+   "tema": "Explicación de la variabilidad",
+   "contexto": null,
+   "curso": 1,
+   "x": 0.5293,
+   "y": 0.6101
+  },
+  {
+   "tema": "Nociones básicas de ciencia de datos",
+   "contexto": null,
+   "curso": 2,
+   "x": 0.8717,
+   "y": 0.1981
+  },
+  {
+   "tema": "Metodologías relacionadas con la generación de conocimiento a partir de datos",
+   "contexto": null,
+   "curso": 2,
+   "x": 0.8039,
+   "y": 0.2673
+  },
+  {
+   "tema": "Conceptualización del problema y los objetivos de descubrimiento de conocimiento",
+   "contexto": null,
+   "curso": 2,
+   "x": 0.8428,
+   "y": 0.8437
+  },
+  {
+   "tema": "Selección de técnicas de aprendizaje adecuadas",
+   "contexto": null,
+   "curso": 2,
+   "x": 0.4537,
+   "y": 0.8609
+  },
+  {
+   "tema": "Adquisición",
+   "contexto": null,
+   "curso": 2,
+   "x": 0.151,
+   "y": 0.0236
+  },
+  {
+   "tema": "Crawling",
+   "contexto": "Adquisición",
+   "curso": 2,
+   "x": 0.1821,
+   "y": 0.0643
+  },
+  {
+   "tema": "Scraping",
+   "contexto": "Adquisición",
+   "curso": 2,
+   "x": 0.2056,
+   "y": 0.0526
+  },
+  {
+   "tema": "Consultas",
+   "contexto": "Adquisición",
+   "curso": 2,
+   "x": 0.189,
+   "y": 0.0
+  },
+  {
+   "tema": "Preprocesamiento",
+   "contexto": null,
+   "curso": 2,
+   "x": 0.0298,
+   "y": 0.2079
+  },
+  {
+   "tema": "Limpieza",
+   "contexto": "Preprocesamiento",
+   "curso": 2,
+   "x": 0.0433,
+   "y": 0.176
+  },
+  {
+   "tema": "Integración",
+   "contexto": "Preprocesamiento",
+   "curso": 2,
+   "x": 0.0686,
+   "y": 0.203
+  },
+  {
+   "tema": "Transformación",
+   "contexto": null,
+   "curso": 2,
+   "x": 0.2956,
+   "y": 0.2648
+  },
+  {
+   "tema": "Normalización",
+   "contexto": "Transformación",
+   "curso": 2,
+   "x": 0.2332,
+   "y": 0.2572
+  },
+  {
+   "tema": "Discretización",
+   "contexto": "Transformación",
+   "curso": 2,
+   "x": 0.2345,
+   "y": 0.2214
+  },
+  {
+   "tema": "Binning",
+   "contexto": "Transformación",
+   "curso": 2,
+   "x": 0.2854,
+   "y": 0.2069
+  },
+  {
+   "tema": "Interpretación de las relaciones en el conjunto de datos resultante",
+   "contexto": null,
+   "curso": 2,
+   "x": 0.6646,
+   "y": 0.4169
+  },
+  {
+   "tema": "Datos Faltantes",
+   "contexto": null,
+   "curso": 2,
+   "x": 0.3648,
+   "y": 0.346
+  },
+  {
+   "tema": "Paradigmas de aprendizaje automático",
+   "contexto": null,
+   "curso": 3,
+   "x": 0.3619,
+   "y": 0.7724
+  },
+  {
+   "tema": "Diseño de sistemas de aprendizaje",
+   "contexto": null,
+   "curso": 3,
+   "x": 0.417,
+   "y": 0.8108
+  },
+  {
+   "tema": "Aprendizaje Estadístico",
+   "contexto": null,
+   "curso": 3,
+   "x": 0.2901,
+   "y": 0.7647
+  },
+  {
+   "tema": "Regresión lineal",
+   "contexto": null,
+   "curso": 3,
+   "x": 0.0306,
+   "y": 0.4725
+  },
+  {
+   "tema": "Clasificación",
+   "contexto": null,
+   "curso": 3,
+   "x": 0.2035,
+   "y": 0.8002
+  },
+  {
+   "tema": "Regresión logística",
+   "contexto": null,
+   "curso": 3,
+   "x": 0.0,
+   "y": 0.4361
+  },
+  {
+   "tema": "Cross-validation",
+   "contexto": null,
+   "curso": 3,
+   "x": 0.4181,
+   "y": 0.5463
+  },
+  {
+   "tema": "Regularización",
+   "contexto": null,
+   "curso": 3,
+   "x": 0.1916,
+   "y": 0.2913
+  },
+  {
+   "tema": "Métricas de performance y error",
+   "contexto": null,
+   "curso": 3,
+   "x": 0.2835,
+   "y": 0.6331
+  },
+  {
+   "tema": "Árboles de decisión",
+   "contexto": null,
+   "curso": 3,
+   "x": 0.4793,
+   "y": 0.9372
+  },
+  {
+   "tema": "División en entrenamiento y prueba",
+   "contexto": null,
+   "curso": 3,
+   "x": 0.514,
+   "y": 0.7559
+  },
+  {
+   "tema": "Métodos de combinación de modelos",
+   "contexto": null,
+   "curso": 3,
+   "x": 0.307,
+   "y": 0.4991
+  },
+  {
+   "tema": "Votación",
+   "contexto": "Métodos de combinación de modelos",
+   "curso": 3,
+   "x": 0.2921,
+   "y": 0.4604
+  },
+  {
+   "tema": "Bagging y Boosting",
+   "contexto": "Métodos de combinación de modelos",
+   "curso": 3,
+   "x": 0.2621,
+   "y": 0.4727
+  },
+  {
+   "tema": "Support Vector Machines",
+   "contexto": null,
+   "curso": 3,
+   "x": 0.3628,
+   "y": 0.4866
+  },
+  {
+   "tema": "Aprendizaje no supervisado",
+   "contexto": null,
+   "curso": 3,
+   "x": 0.3635,
+   "y": 0.8342
+  },
+  {
+   "tema": "Clustering jerárquico y por densidad",
+   "contexto": null,
+   "curso": 3,
+   "x": 0.4506,
+   "y": 0.4745
+  },
+  {
+   "tema": "K-means, DBSCAN",
+   "contexto": null,
+   "curso": 3,
+   "x": 0.1681,
+   "y": 0.5418
+  },
+  {
+   "tema": "Conceptos básicos de Redes Neuronales",
+   "contexto": null,
+   "curso": 3,
+   "x": 0.8992,
+   "y": 0.1785
+  },
+  {
+   "tema": "Métodos para evaluar la incertidumbre",
+   "contexto": null,
+   "curso": 3,
+   "x": 0.4634,
+   "y": 0.6379
+  },
+  {
+   "tema": "Análisis Discriminante Lineal",
+   "contexto": null,
+   "curso": 3,
+   "x": 0.0906,
+   "y": 0.4904
+  },
+  {
+   "tema": "El proceso de visualización de datos",
+   "contexto": null,
+   "curso": 4,
+   "x": 0.5826,
+   "y": 0.4885
+  },
+  {
+   "tema": "Objetivos y dinámica",
+   "contexto": "El proceso de visualización de datos",
+   "curso": 4,
+   "x": 0.6138,
+   "y": 0.5022
+  },
+  {
+   "tema": "Formulación de preguntas a responder con los datos",
+   "contexto": null,
+   "curso": 4,
+   "x": 0.7175,
+   "y": 0.3216
+  },
+  {
+   "tema": "Representaciones de datos altamente dimensionales, temporales y geoespaciales",
+   "contexto": null,
+   "curso": 4,
+   "x": 0.7051,
+   "y": 0.5938
+  },
+  {
+   "tema": "Transformación de datos",
+   "contexto": null,
+   "curso": 4,
+   "x": 0.3321,
+   "y": 0.2929
+  },
+  {
+   "tema": "Marcas y canales",
+   "contexto": null,
+   "curso": 4,
+   "x": 1.0,
+   "y": 0.6241
+  },
+  {
+   "tema": "Expresividad y efectividad",
+   "contexto": "Marcas y canales",
+   "curso": 4,
+   "x": 0.9818,
+   "y": 0.6359
+  },
+  {
+   "tema": "Análisis visual de grandes volúmenes de datos",
+   "contexto": null,
+   "curso": 4,
+   "x": 0.5366,
+   "y": 0.475
+  },
+  {
+   "tema": "Evaluación de la visualización",
+   "contexto": null,
+   "curso": 4,
+   "x": 0.5535,
+   "y": 0.5427
+  },
+  {
+   "tema": "Procesamiento y análisis de flujos de datos",
+   "contexto": null,
+   "curso": 5,
+   "x": 0.5047,
+   "y": 0.4129
+  },
+  {
+   "tema": "Algoritmos de aprendizaje para modelado de flujos",
+   "contexto": null,
+   "curso": 5,
+   "x": 0.3939,
+   "y": 0.7474
+  },
+  {
+   "tema": "Casos de aplicación",
+   "contexto": null,
+   "curso": 5,
+   "x": 0.2637,
+   "y": 0.9471
+  },
+  {
+   "tema": "Técnicas de manejo de datos no estructurados",
+   "contexto": null,
+   "curso": 5,
+   "x": 0.5464,
+   "y": 0.2964
+  },
+  {
+   "tema": "Imágenes",
+   "contexto": "Técnicas de manejo de datos no estructurados",
+   "curso": 5,
+   "x": 0.5548,
+   "y": 0.2574
+  },
+  {
+   "tema": "Texto",
+   "contexto": "Técnicas de manejo de datos no estructurados",
+   "curso": 5,
+   "x": 0.5218,
+   "y": 0.2718
+  },
+  {
+   "tema": "Representaciones de datos textuales en espacios multidimensionales",
+   "contexto": null,
+   "curso": 5,
+   "x": 0.7325,
+   "y": 0.5562
+  },
+  {
+   "tema": "Matrices",
+   "contexto": "Representaciones de datos textuales en espacios multidimensionales",
+   "curso": 5,
+   "x": 0.7715,
+   "y": 0.5417
+  },
+  {
+   "tema": "Embeddings",
+   "contexto": "Representaciones de datos textuales en espacios multidimensionales",
+   "curso": 5,
+   "x": 0.7738,
+   "y": 0.5737
+  },
+  {
+   "tema": "Introducción a la estadística geoespacial",
+   "contexto": null,
+   "curso": 5,
+   "x": 0.6821,
+   "y": 0.6597
+  },
+  {
+   "tema": "Diseño de proyectos con un enfoque basado en datos",
+   "contexto": null,
+   "curso": 6,
+   "x": 0.7227,
+   "y": 0.2147
+  },
+  {
+   "tema": "Data-driven",
+   "contexto": "Diseño de proyectos con un enfoque basado en datos",
+   "curso": 6,
+   "x": 0.6892,
+   "y": 0.1816
+  },
+  {
+   "tema": "Data-informed",
+   "contexto": "Diseño de proyectos con un enfoque basado en datos",
+   "curso": 6,
+   "x": 0.7159,
+   "y": 0.1666
+  },
+  {
+   "tema": "Análisis de objetivos, datos y modelos",
+   "contexto": null,
+   "curso": 6,
+   "x": 0.2858,
+   "y": 0.5805
+  },
+  {
+   "tema": "Criterios para selección de herramientas",
+   "contexto": null,
+   "curso": 6,
+   "x": 0.4782,
+   "y": 0.8934
+  },
+  {
+   "tema": "Conceptos sobre la generación de productos basados en datos",
+   "contexto": null,
+   "curso": 6,
+   "x": 0.7733,
+   "y": 0.2646
+  },
+  {
+   "tema": "Conceptualización de datos personales",
+   "contexto": null,
+   "curso": 7,
+   "x": 0.7898,
+   "y": 0.3876
+  },
+  {
+   "tema": "Legislación sobre la obtención, almacenamiento, distribución y explotación de datos personales",
+   "contexto": null,
+   "curso": 7,
+   "x": 0.8336,
+   "y": 0.4299
+  },
+  {
+   "tema": "Cuestiones de propiedad de los datos y privacidad de los usuarios",
+   "contexto": null,
+   "curso": 7,
+   "x": 0.8609,
+   "y": 0.3851
+  },
+  {
+   "tema": "Casos paradigmáticos",
+   "contexto": null,
+   "curso": 7,
+   "x": 0.2717,
+   "y": 0.9664
+  },
+  {
+   "tema": "Aspectos éticos asociados a todo el proceso de manejo de datos",
+   "contexto": null,
+   "curso": 7,
+   "x": 0.8716,
+   "y": 0.3346
+  },
+  {
+   "tema": "Formulación del proyecto personal de tesis profesional",
+   "contexto": null,
+   "curso": 8,
+   "x": 0.9768,
+   "y": 0.9121
+  },
+  {
+   "tema": "Definición del problema",
+   "contexto": "pautas metodológicas de la tesis",
+   "curso": 8,
+   "x": 0.8777,
+   "y": 0.906
+  },
+  {
+   "tema": "Objetivo de la investigación",
+   "contexto": "pautas metodológicas de la tesis",
+   "curso": 8,
+   "x": 0.8489,
+   "y": 0.9446
+  },
+  {
+   "tema": "Marco teórico",
+   "contexto": "pautas metodológicas de la tesis",
+   "curso": 8,
+   "x": 0.9196,
+   "y": 0.9407
+  },
+  {
+   "tema": "Estrategia metodológica",
+   "contexto": "pautas metodológicas de la tesis",
+   "curso": 8,
+   "x": 0.8543,
+   "y": 0.9904
+  },
+  {
+   "tema": "Descripción y sistematización de las fuentes de información",
+   "contexto": "pautas metodológicas de la tesis",
+   "curso": 8,
+   "x": 0.9164,
+   "y": 1.0
+  },
+  {
+   "tema": "Análisis de los resultados y elaboración de conclusiones",
+   "contexto": "pautas metodológicas de la tesis",
+   "curso": 8,
+   "x": 0.8895,
+   "y": 0.9666
+  }
+ ]
+}
