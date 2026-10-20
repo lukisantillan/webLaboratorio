@@ -33,6 +33,7 @@ Versioning policy for this project:
 - Home: enlace al texto completo en las entradas de la línea de tiempo que lo tienen, como píldora (`.timeline-pdf` en `css/styles.css`) debajo de la cita: PDF, SEDICI o Póster.
 
 ### Changed
+- Maestría, portada: la fila de enlaces a las subpáginas (Plan de estudios, Destinatarios, Requisitos, Enfoque, Aranceles, Inscripción) queda pegada a la franja de cifras; tenía 144 px de relleno arriba y abajo heredados de la plantilla.
 - Maestría, portada: el texto del encabezado baja 16 px en escritorio y 8 px en pantallas chicas, con la misma altura total: el título en serif y el fondo animado cargaban la parte de arriba y el bloque se percibía alto.
 - Maestría: el sitio deja de afirmar que el equipo docente actual fue evaluado por CONEAU, porque se suman docentes que no estaban en el plantel evaluado. La evaluación se atribuye a la carrera ("acreditada por CONEAU, con evaluación del plan, el plantel y la propuesta institucional"). Cambios en los datos estructurados de "¿Quiénes dictan la Maestría?" de la portada (que además dejan de mencionar responsables de curso y de limitar el plantel a la UNLu y la UADER), Enfoque, Plan de estudios y Fortalezas (introducción, metadescripciones, tarjeta "Equipo docente con trayectoria en investigación y en la industria" y nota del marco normativo).
 - Maestría: se quita la nota "La asignación de docentes a cada curso puede modificarse" (equipo docente de la portada y marco normativo de Fortalezas), porque el sitio no publica qué docente dicta cada curso.
@@ -75,6 +76,7 @@ Versioning policy for this project:
 - Home y Publicaciones: "Remembering the Flow" (Fernández, Errecalde, Burdisso) figura como trabajo distinguido del Workshop de Bases de Datos y Minería de Datos de CACIC 2026. En Publicaciones el cambio va en `tools/publicaciones/gen_pubs_data.py` y la página se regeneró.
 
 ### Fixed
+- Maestría: entre 992 y 1199 px de ancho el menú en una línea no entraba y los últimos ítems (Contacto, LICDIA) quedaban fuera de la pantalla; en ese rango se achican los logos, la letra y los rellenos del menú.
 - Maestría, nube de términos: en pantallas táctiles el detalle de cada término desaparecía al levantar el dedo; ahora queda hasta tocar otra cosa.
 - Maestría: títulos de Enrique Álvarez (Dr., figuraba como Lic.) y Santiago Banchero (Mg., figuraba como Lic.) en la grilla de docentes y en sus perfiles.
 - Maestría: el botón flotante "Solicitar información" tenía texto bordó sobre fondo bordó en móvil, porque la regla general de enlaces de `mcd-style2.css` (bordó con `!important`) le ganaba a su color blanco.

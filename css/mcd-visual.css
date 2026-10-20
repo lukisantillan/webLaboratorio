@@ -50,6 +50,14 @@ html body #mainNav .nav-link {
 @media (min-width: 992px) {
     html body #mainNav .nav-link { white-space: nowrap; padding-left: .55rem !important; padding-right: .55rem !important; }
 }
+/* Entre 992 y 1199 px el menú en una línea no entraba y los últimos ítems quedaban fuera de la pantalla:
+   en ese rango se achican los logos, la letra y los rellenos */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    html body #mainNav .navbar-brand { margin-right: .6rem !important; }
+    html body #mainNav .navbar-brand img { height: 46px !important; width: auto !important; }
+    html body #mainNav .nav-item { margin-left: 0 !important; margin-right: 0 !important; }
+    html body #mainNav .nav-link { font-size: .88rem !important; padding-left: .4rem !important; padding-right: .4rem !important; }
+}
 /* Ítem activo y hover del menú en bordó (la plantilla los dejaba en violeta) */
 html body #mainNav .navbar-nav .nav-item .nav-link.active,
 html body #mainNav .navbar-nav .nav-item .nav-link:hover { color: var(--mcd-bordo) !important; }
@@ -730,4 +738,13 @@ html body header#masthead > .container { position: relative; z-index: 1; }
 }
 @media (prefers-reduced-motion: reduce) {
     .mcd-hero-halo { animation: none; }
+}
+
+/* ---------- 17. Portada: fila de enlaces a las subpáginas ----------
+   La plantilla le da 144 px de relleno arriba y abajo a toda <section>; acá la fila queda pegada a la franja de cifras. */
+html body section#lic-ia { padding-top: 2.25rem; padding-bottom: 2.75rem; }
+/* Entre 992 y 1199 px el menú queda 18 px más bajo (sección 0): los encabezados descuentan esa diferencia para
+   seguir centrados. Va al final para ganarle a las reglas de los encabezados, que tienen la misma especificidad. */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    html body header.backgroundhead.fondoMcd, html body header.backgroundAr.fondoMcd { padding-top: 10.525rem !important; }
 }
