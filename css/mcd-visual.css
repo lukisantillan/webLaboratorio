@@ -64,12 +64,13 @@ html body header.backgroundAr.fondoMcd {
     height: auto !important; min-height: 0 !important;
     margin-top: 0 !important;
     /* Texto centrado en el alto visible, debajo del menú fijo (122 px en escritorio, 114 px en pantallas chicas);
-       el relleno superior descuenta el aire que deja el interlineado del título arriba de las letras */
-    padding-top: 10.65rem !important; padding-bottom: 3.6rem !important;
+       el relleno superior descuenta el aire que deja el interlineado del título arriba de las letras, y el bloque
+       baja 1 rem más porque el título en serif y el fondo animado cargan la parte de arriba */
+    padding-top: 11.65rem !important; padding-bottom: 2.6rem !important;
 }
 @media (max-width: 991.98px) {
     html body header.backgroundhead.fondoMcd,
-    html body header.backgroundAr.fondoMcd { padding-top: 9.05rem !important; padding-bottom: 2.25rem !important; }
+    html body header.backgroundAr.fondoMcd { padding-top: 9.55rem !important; padding-bottom: 1.75rem !important; }
 }
 /* Subpáginas: antetítulo y título, sin botón. Abajo suman el margen del título y el aire de su interlineado */
 html body header.backgroundAr.fondoMcd { padding-top: 11.65rem !important; padding-bottom: 2.55rem !important; }
