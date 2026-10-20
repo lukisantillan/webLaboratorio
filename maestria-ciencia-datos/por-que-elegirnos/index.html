@@ -63,158 +63,7 @@
     </script>
 
     <style>
-        :root {
-            --brand: #800020;
-            --brand-dark: #5A0016;
-            --brand-soft: #f6e6ea;
-        }
-
-        /* ── QA Cards (numbered questions) ────────────────────────────── */
-        .qa-card {
-            background: #fff;
-            border-left: 5px solid var(--brand);
-            border-radius: 8px;
-            padding: 1.75rem 2rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 10px rgba(128, 0, 32, 0.07);
-            transition: box-shadow 0.25s ease, transform 0.25s ease;
-        }
-        .qa-card:hover {
-            box-shadow: 0 8px 24px rgba(128, 0, 32, 0.14);
-            transform: translateY(-2px);
-        }
-        .qa-card h3 {
-            color: var(--brand);
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-        }
-        .qa-num {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            background: var(--brand);
-            color: #fff;
-            border-radius: 50%;
-            font-weight: 900;
-            font-size: 1rem;
-            flex-shrink: 0;
-        }
-
-        /* ── Hook / intro card ────────────────────────────────────────── */
-        .hook-card {
-            background: var(--brand-soft);
-            border-radius: 12px;
-            padding: 1.5rem 2rem;
-            border-left: 4px solid var(--brand);
-        }
-        .hook-card p {
-            margin-bottom: 0;
-            color: #2c2c2c;
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-        .hook-card p + p {
-            margin-top: 1rem;
-        }
-
-        /* ── Section label ────────────────────────────────────────────── */
-        .section-label {
-            display: inline-block;
-            background: var(--brand-soft);
-            color: var(--brand);
-            font-weight: 700;
-            font-size: 0.78rem;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            padding: 0.3rem 0.85rem;
-            border-radius: 999px;
-            margin-bottom: 0.75rem;
-        }
-
-        /* ── Norm table ───────────────────────────────────────────────── */
-        .table-norm {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-            background: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(128, 0, 32, 0.06);
-        }
-        .table-norm thead {
-            background: var(--brand);
-            color: #fff;
-        }
-        .table-norm th,
-        .table-norm td {
-            padding: 0.85rem 1rem;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-            font-size: 0.95rem;
-            vertical-align: top;
-        }
-        .table-norm tbody tr:last-child td {
-            border-bottom: none;
-        }
-        .table-norm tbody tr:hover {
-            background: #fbf4f6;
-        }
-
-        /* ── CTA gradient block ────────────────────────────────────────── */
-        .cta-inscribite {
-            background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
-            color: white;
-            border-radius: 16px;
-            padding: 2.5rem 1.5rem;
-            text-align: center;
-            margin-top: 2.5rem;
-            box-shadow: 0 12px 30px rgba(128, 0, 32, 0.25);
-        }
-        .cta-inscribite h3 {
-            color: white;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-        }
-        .cta-inscribite p {
-            opacity: 0.95;
-            margin-bottom: 1.5rem;
-        }
-        .cta-inscribite .btn-cta {
-            background: #fff;
-            color: var(--brand-dark);
-            font-weight: 700;
-            padding: 0.85rem 2.5rem;
-            border-radius: 999px;
-            border: none;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            display: inline-block;
-            text-decoration: none;
-        }
-        .cta-inscribite .btn-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            color: var(--brand-dark);
-        }
-
-        /* ── Disclaimer ────────────────────────────────────────────────── */
-        .page-disclaimer {
-            color: #6c757d;
-            font-style: italic;
-            border-top: 1px dashed #d9c6cc;
-            padding-top: 1.25rem;
-            margin-top: 2rem;
-            font-size: 0.92rem;
-        }
         .tag-tramite { display:inline-block; background:#ffc107; color:#3b2a00; font-weight:700; font-size:.72rem; letter-spacing:.04em; text-transform:uppercase; padding:.2rem .6rem; border-radius:999px; vertical-align:middle; margin-left:.35rem; white-space:nowrap; }
-        /* Íconos de Font Awesome en SVG: bordó en reposo, blancos sobre el círculo bordó en hover */
-        body .bc-icon-wrap svg { color: #800020; font-size: 1.6rem; transition: color .25s ease; }
-        body .bc-card:hover .bc-icon-wrap svg { color: #fff; }
     </style>
 </head>
 
@@ -237,7 +86,7 @@
                     <li class="nav-item"><a class="nav-link" href="../#informacionPlan">Plan de estudios</a></li>
                     <li class="nav-item"><a class="nav-link" href="../plan-de-estudios/#cronograma">Cronograma</a></li>
                     <li class="nav-item"><a class="nav-link" href="../#team">Equipo docente</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../#por-que-elegirnos">Fortalezas</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../por-que-elegirnos/" aria-current="page">Fortalezas</a></li>
                     <li class="nav-item"><a class="nav-link" href="../aranceles/">Aranceles</a></li>
                     <li class="nav-item"><a class="nav-link" href="../#faq">FAQ</a></li>
                     <li class="nav-item"><a class="nav-link" href="../#contact">Contacto</a></li>
@@ -248,7 +97,7 @@
     </nav>
 
     <!-- ── Hero ─────────────────────────────────────────────────────────── -->
-    <header class="backgroundAr fondoMcd" data-aos="flip-up" data-aos-delay="100" data-aos-duration="1500">
+    <header class="backgroundAr fondoMcd mcd-hero-oscuro" data-aos="flip-up" data-aos-delay="100" data-aos-duration="1500">
         <div class="container">
             <div class="mcd-hero-programa">Maestría en Ciencia de Datos · UNLu-UADER</div>
             <div class="masthead-heading">Fortalezas del programa</div>
@@ -258,280 +107,309 @@
         </div>
     </header>
 
-    <!-- ── Main content ─────────────────────────────────────────────────── -->
+    <!-- ── Contenido, con la misma estética que Aranceles ── -->
     <main>
-        <div class="container mt-5 mb-5">
+        <div class="container mt-5 mb-4" id="informacionFort">
             <div class="row justify-content-center">
                 <div class="col-md-10">
-
-                    <!-- Breadcrumb -->
-                    <nav aria-label="breadcrumb" style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);">
+                    <nav aria-label="breadcrumb" class="mb-3">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="../">Maestría en Ciencia de Datos</a></li>
+                            <li class="breadcrumb-item"><a href="../">Inicio</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Fortalezas del programa</li>
                         </ol>
                     </nav>
 
-                    <!-- ── Section A: Intro / ¿Qué nos diferencia? ──────────────── -->
-                    <section aria-labelledby="diferencia-heading" class="mb-5" data-aos="fade-up">
-                        <h2 id="diferencia-heading" class="card-t card-title">Aspectos distintivos</h2>
-                        <hr>
-                        <div class="hook-card mt-3">
-                            <p>
-                                La <strong>Maestría en Ciencia de Datos</strong> forma profesionales capaces de diseñar, implementar e
-                                interpretar soluciones basadas en datos, con criterio ético y legal sobre el uso de la información.
-                            </p>
-                            <p>
-                                Es una carrera con <strong>doble respaldo institucional</strong>, la Universidad Nacional
-                                de Luján (UNLu) y la Facultad de Ciencia y Tecnología de la Universidad Autónoma de
-                                Entre Ríos (FCyT–UADER). Cuenta con <strong>acreditación favorable de CONEAU</strong>
-                                (Acta 621, 25/11/2024) y <strong>Reconocimiento Oficial y Validez Nacional</strong> del
-                                título mediante la Disposición SSPU N° 490/25.
-                            </p>
-                            <p>
-                                Su equipo docente, evaluado durante el proceso de acreditación ante
-                                CONEAU, combina trayectoria académica e investigación aplicada en estadística,
-                                aprendizaje automático, visualización de información y aspectos legales y éticos del
-                                uso de la información. La cursada es <strong>sincrónica</strong>, con régimen semestral
-                                y una duración de dos años, articulada con un Taller de Formulación de Tesis y la
-                                defensa del trabajo final.
-                            </p>
-                        </div>
-                    </section>
-
-                    <!-- ── Section C: Diferenciales (6 cards) ──────────────────── -->
-                    <section aria-labelledby="diferenciales-heading" class="mb-5">
-                        <span class="section-label">Características</span>
-                        <h2 id="diferenciales-heading" class="card-t card-title">Características principales</h2>
-                        <hr>
-
-                        <div class="row g-4 justify-content-center mt-2">
-                            <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
-                                <div class="bc-card text-center h-100">
-                                    <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Título oficial con validez nacional</h4>
-                                    <p class="mb-0 small text-muted">
-                                        Magíster en Ciencia de Datos con Reconocimiento Oficial otorgado por la
-                                        <strong>Disposición SSPU N° 490/25</strong>.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="120">
-                                <div class="bc-card text-center h-100">
-                                    <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Acreditación CONEAU favorable</h4>
-                                    <p class="mb-0 small text-muted">
-                                        Acreditada mediante <strong>Acta CONEAU 621</strong> del 25 de noviembre de 2024,
-                                        con evaluación integral del plan, el plantel y la propuesta institucional.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
-                                <div class="bc-card text-center h-100">
-                                    <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Propuesta interinstitucional</h4>
-                                    <p class="mb-0 small text-muted">
-                                        Respaldo académico de la <strong>UNLu</strong> y la
-                                        <strong>FCyT–UADER</strong>, con docentes e investigadores de ambas instituciones.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                                <div class="bc-card text-center h-100">
-                                    <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Equipo docente evaluado por CONEAU</h4>
-                                    <p class="mb-0 small text-muted">
-                                        Doctores y magísteres de la UNLu y la UADER, con trayectoria
-                                        en estadística, aprendizaje automático, ingeniería de datos y áreas afines.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="240">
-                                <div class="bc-card text-center h-100">
-                                    <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Cursada sincrónica y remota</h4>
-                                    <p class="mb-0 small text-muted">
-                                        Encuentros en vivo dos veces por semana, de 18 a 21 h, que pueden seguirse
-                                        <strong>en forma remota o en el aula</strong>, sin necesidad de viajar.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="280">
-                                <div class="bc-card text-center h-100">
-                                    <h4 class="h5 fw-bold mb-2" style="color:#5A0016;">Vínculo con la investigación</h4>
-                                    <p class="mb-0 small text-muted">
-                                        La maestría se articula con el <strong>LICDIA</strong>, laboratorio de la UNLu con
-                                        proyectos en curso en aprendizaje automático, procesamiento del lenguaje natural y
-                                        cómputo de alto desempeño.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- ── Section D: Preguntas frecuentes (acordeón académico) ── -->
-                    <section aria-labelledby="preguntas-heading" class="mb-5">
-                        <span class="section-label">Preguntas habituales</span>
-                        <h2 id="preguntas-heading" class="card-t card-title">Preguntas frecuentes</h2>
-                        <hr>
-
-                        <!-- Q1 -->
-                        <div class="qa-card" data-aos="fade-up" data-aos-delay="100">
-                            <h3><span class="qa-num">1</span>¿Qué respaldo tiene el título?</h3>
-                            <p class="mb-0">
-                                Es una maestría de <strong>gestión estatal</strong>, dictada en forma conjunta por dos
-                                universidades nacionales. El título de <strong>Magíster en Ciencia de
-                                Datos</strong> cuenta con <strong>acreditación CONEAU</strong> (Acta 621, 25/11/2024)
-                                y <strong>Reconocimiento Oficial y Validez Nacional</strong> mediante la Disposición
-                                SSPU N° 490/25.
-                            </p>
-                        </div>
-
-                        <!-- Q2 -->
-                        <div class="qa-card" data-aos="fade-up" data-aos-delay="150">
-                            <h3><span class="qa-num">2</span>¿Para qué perfil profesional está pensada?</h3>
-                            <p class="mb-2">
-                                La Maestría se dirige a <strong>profesionales con título de grado universitario</strong>
-                                interesados en formarse en ciencia de datos con fundamentos y trabajo aplicado.
-                            </p>
-                            <p class="mb-0">
-                                Resulta especialmente adecuada para perfiles provenientes de <strong>sistemas e
-                                informática, estadística, ingeniería, ciencias económicas y administrativas,
-                                ciencias exactas y naturales</strong>, así como para investigadores y docentes que
-                                buscan incorporar herramientas avanzadas de análisis y modelado de datos a su práctica.
-                                El Comité Académico evalúa los requisitos de ingreso durante el período de admisión.
-                            </p>
-                        </div>
-
-                        <!-- Q3 -->
-                        <div class="qa-card" data-aos="fade-up" data-aos-delay="200">
-                            <h3><span class="qa-num">3</span>¿Cómo se cursa?</h3>
-                            <p class="mb-2">
-                                La cursada es <strong>sincrónica</strong>, con régimen semestral y una duración
-                                total de <strong>dos años</strong>. Comprende 8 cursos obligatorios, 2 optativos y la tesis, con un total de <strong>776 horas</strong>.
-                            </p>
-                            <p class="mb-0">
-                                Los cursos se dictan de forma consecutiva, en bloques de seis semanas, con
-                                <strong>dos encuentros semanales sincrónicos de 18 a 21 h</strong>, que pueden seguirse en forma remota o en el aula y cubren el <strong>60% de la carga horaria</strong>. La evaluación
-                                es continua y combina trabajos prácticos, proyectos integradores por curso y la
-                                elaboración progresiva del plan de tesis.
-                            </p>
-                        </div>
-
-                        <!-- Q4 -->
-                        <div class="qa-card" data-aos="fade-up" data-aos-delay="250">
-                            <h3><span class="qa-num">4</span>¿Cuándo abre la primera cohorte?</h3>
-                            <p class="mb-2">
-                                La primera cohorte está prevista para <strong>2027</strong> y su apertura se encuentra
-                                en trámite <span class="tag-tramite">En trámite</span>. Inscripción de noviembre de 2026 a abril de 2027, con
-                                admisión continua, y cursada desde mayo de 2027 hasta octubre de 2028. La apertura requiere un
-                                mínimo de <strong>20 inscriptos</strong>.
-                            </p>
-                            <p class="mb-0"><a href="../plan-de-estudios/#cronograma">Ver el cronograma de la primera cohorte</a>.</p>
-                        </div>
-
-                        <!-- Q5 -->
-                        <div class="qa-card" data-aos="fade-up" data-aos-delay="300">
-                            <h3><span class="qa-num">5</span>¿Qué pasa con la tesis?</h3>
-                            <p class="mb-2">
-                                La elaboración de la tesis se acompaña institucionalmente desde el plan de estudios.
-                                Al cierre de la cursada se dicta el <strong>Taller de Formulación de Tesis</strong>
-                                (32 h), que provee el
-                                marco metodológico para definir el problema, el estado del arte y el diseño de la
-                                investigación.
-                            </p>
-                            <p class="mb-0">
-                                La <strong>defensa de la tesis</strong> se realiza al final del recorrido formativo,
-                                ante un jurado evaluador conformado según la normativa vigente de los posgrados de
-                                la UNLu y UADER. La aprobación de la defensa habilita la emisión del título de
-                                Magíster en Ciencia de Datos.
-                            </p>
-                        </div>
-                    </section>
-
-                    <!-- ── Section E: Acreditación y respaldo normativo ──────── -->
-                    <section aria-labelledby="normativa-heading" class="mb-5">
-                        <span class="section-label">Marco normativo</span>
-                        <h2 id="normativa-heading" class="card-t card-title">Acreditación y respaldo normativo</h2>
-                        <hr>
-
-                        <p class="mt-3">
-                            La Maestría cuenta con todos los avales institucionales y regulatorios que la habilitan
-                            como posgrado de gestión pública con validez nacional:
-                        </p>
-
-                        <div class="table-responsive">
-                            <table class="table-norm" data-aos="fade-up" data-aos-delay="100">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Instrumento</th>
-                                        <th scope="col">Número / Fecha</th>
-                                        <th scope="col">Alcance</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Resolución HCS UNLu</td>
-                                        <td>789/23</td>
-                                        <td>Aprobación del plan de estudios 80.01 y su reglamento.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Resolución CS UADER</td>
-                                        <td>1487/23</td>
-                                        <td>Aprobación institucional por parte de UADER.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Dictamen CONEAU</td>
-                                        <td>Acta 621, 25/11/2024</td>
-                                        <td>Acreditación favorable de la carrera.</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Disposición SSPU</td>
-                                        <td>N° 490/25</td>
-                                        <td>Reconocimiento Oficial y Validez Nacional del título de
-                                            Magíster en Ciencia de Datos.</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-
-                        <p class="text-muted small mt-3 mb-0">
-                            <i class="fas fa-info-circle me-1"></i>
-                            El plantel docente fue evaluado y validado durante el proceso de acreditación ante CONEAU.
-                            La asignación de docentes a cada curso puede modificarse.
-                        </p>
-                    </section>
-
-                    <!-- ── Section G: CTA ──────────────────────────────────────── -->
-                    <div class="cta-inscribite" data-aos="fade-up" data-aos-delay="100">
-                        <h3>Primera cohorte 2027</h3>
+                    <div class="mcd-titulo-linea">
+                        <h2 class="h4 fw-bold mb-0">Aspectos distintivos</h2>
+                        <div class="mcd-linea"></div>
+                    </div>
+                    <div class="mcd-det-texto" data-aos="fade-up" data-aos-duration="500">
                         <p>
-                            La inscripción está prevista desde noviembre de 2026. Quienes completen la solicitud de información reciben el aviso de apertura y los pasos del proceso de admisión.
+                            La <strong>Maestría en Ciencia de Datos</strong> forma profesionales capaces de diseñar, implementar e
+                            interpretar soluciones basadas en datos, con criterio ético y legal sobre el uso de la información.
                         </p>
-                        <a href="../#contact" class="btn-cta">
-                            Solicitar información
-                        </a>
+                        <p>
+                            Es una carrera con <strong>doble respaldo institucional</strong>, la Universidad Nacional
+                            de Luján (UNLu) y la Facultad de Ciencia y Tecnología de la Universidad Autónoma de
+                            Entre Ríos (FCyT–UADER). Cuenta con <strong>acreditación favorable de CONEAU</strong>
+                            (Acta 621, 25/11/2024) y <strong>Reconocimiento Oficial y Validez Nacional</strong> del
+                            título mediante la Disposición SSPU N° 490/25.
+                        </p>
+                        <p class="mb-0">
+                            Su equipo docente, evaluado durante el proceso de acreditación ante
+                            CONEAU, combina trayectoria académica e investigación aplicada en estadística,
+                            aprendizaje automático, visualización de información y aspectos legales y éticos del
+                            uso de la información. La cursada es <strong>sincrónica</strong>, con régimen semestral
+                            y una duración de dos años, articulada con un Taller de Formulación de Tesis y la
+                            defensa del trabajo final.
+                        </p>
                     </div>
 
-                    <!-- Disclaimer -->
-                    <p class="page-disclaimer text-center mb-0">
-                        <i class="fas fa-info-circle me-1"></i>
-                        Propuesta académica conjunta de la Universidad Nacional de Luján (UNLu) y la Facultad de
-                        Ciencia y Tecnología de la Universidad Autónoma de Entre Ríos (FCyT–UADER), bajo el marco
-                        normativo y los procesos de acreditación detallados en esta página.
-                    </p>
+                    <!-- Resumen, como el panel de importes de Aranceles -->
+                    <div class="mcd-resumen" data-aos="fade-up" data-aos-duration="700">
+                        <div class="row g-3 align-items-center text-center">
+                            <div class="col-12 col-md-4">
+                                <div class="mcd-resumen-item">
+                                    <div class="mcd-resumen-etq">Título oficial</div>
+                                    <div class="mcd-resumen-valor">Validez nacional</div>
+                                    <div class="mcd-resumen-sub">Disposición SSPU N° 490/25</div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4">
+                                <div class="mcd-resumen-item">
+                                    <div class="mcd-resumen-etq">Acreditación</div>
+                                    <div class="mcd-resumen-valor">CONEAU</div>
+                                    <div class="mcd-resumen-sub">Dictamen favorable, Acta 621 del 25/11/2024</div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center">
+                                <div class="mcd-resumen-etq">Duración</div>
+                                <div class="mcd-resumen-pildora">2 años · 776 h</div>
+                                <div class="mcd-resumen-sub mt-1">8 cursos obligatorios, 2 optativos y tesis</div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div class="mcd-titulo-linea">
+                        <h2 class="h5 fw-bold mb-0">Características principales</h2>
+                        <div class="mcd-linea"></div>
+                    </div>
+                    <div class="row g-3 mb-4 mcd-det-grid">
+                        <div class="col-md-6" data-aos="fade-up" data-aos-duration="500">
+                            <div class="mcd-det-card">
+                                <h3>Título oficial con validez nacional</h3>
+                                <p>Magíster en Ciencia de Datos con Reconocimiento Oficial otorgado por la
+                                    <strong>Disposición SSPU N° 490/25</strong>.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="60">
+                            <div class="mcd-det-card">
+                                <h3>Acreditación CONEAU favorable</h3>
+                                <p>Acreditada mediante <strong>Acta CONEAU 621</strong> del 25 de noviembre de 2024,
+                                    con evaluación integral del plan, el plantel y la propuesta institucional.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-duration="500">
+                            <div class="mcd-det-card">
+                                <h3>Propuesta interinstitucional</h3>
+                                <p>Respaldo académico de la <strong>UNLu</strong> y la
+                                    <strong>FCyT–UADER</strong>, con docentes e investigadores de ambas instituciones.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="60">
+                            <div class="mcd-det-card">
+                                <h3>Equipo docente evaluado por CONEAU</h3>
+                                <p>Doctores y magísteres de la UNLu y la UADER, con trayectoria
+                                    en estadística, aprendizaje automático, ingeniería de datos y áreas afines.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-duration="500">
+                            <div class="mcd-det-card">
+                                <h3>Cursada sincrónica y remota</h3>
+                                <p>Encuentros en vivo dos veces por semana, de 18 a 21 h, que pueden seguirse
+                                    <strong>en forma remota o en el aula</strong>, sin necesidad de viajar.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up" data-aos-duration="500" data-aos-delay="60">
+                            <div class="mcd-det-card">
+                                <h3>Vínculo con la investigación</h3>
+                                <p>La maestría se articula con el <strong>LICDIA</strong>, laboratorio de la UNLu con
+                                    proyectos en curso en aprendizaje automático, procesamiento del lenguaje natural y
+                                    cómputo de alto desempeño.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mcd-titulo-linea">
+                        <h2 class="h5 fw-bold mb-0">Preguntas frecuentes</h2>
+                        <div class="mcd-linea"></div>
+                    </div>
+                    <div class="accordion mcd-det-acordeon mb-2" id="faqFort" data-aos="fade-up" data-aos-duration="600">
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#fort1" aria-expanded="true" aria-controls="fort1">
+                                    <span class="mcd-det-num">1</span>¿Qué respaldo tiene el título?
+                                </button>
+                            </h3>
+                            <div id="fort1" class="accordion-collapse collapse show" data-bs-parent="#faqFort">
+                                <div class="accordion-body">
+                                    Es una maestría de <strong>gestión estatal</strong>, dictada en forma conjunta por dos
+                                    universidades nacionales. El título de <strong>Magíster en Ciencia de
+                                    Datos</strong> cuenta con <strong>acreditación CONEAU</strong> (Acta 621, 25/11/2024)
+                                    y <strong>Reconocimiento Oficial y Validez Nacional</strong> mediante la Disposición
+                                    SSPU N° 490/25.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fort2" aria-expanded="false" aria-controls="fort2">
+                                    <span class="mcd-det-num">2</span>¿Para qué perfil profesional está pensada?
+                                </button>
+                            </h3>
+                            <div id="fort2" class="accordion-collapse collapse" data-bs-parent="#faqFort">
+                                <div class="accordion-body">
+                                    <p class="mb-2">
+                                        La Maestría se dirige a <strong>profesionales con título de grado universitario</strong>
+                                        interesados en formarse en ciencia de datos con fundamentos y trabajo aplicado.
+                                    </p>
+                                    <p class="mb-0">
+                                        Resulta especialmente adecuada para perfiles provenientes de <strong>sistemas e
+                                        informática, estadística, ingeniería, ciencias económicas y administrativas,
+                                        ciencias exactas y naturales</strong>, así como para investigadores y docentes que
+                                        buscan incorporar herramientas avanzadas de análisis y modelado de datos a su práctica.
+                                        El Comité Académico evalúa los requisitos de ingreso durante el período de admisión.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fort3" aria-expanded="false" aria-controls="fort3">
+                                    <span class="mcd-det-num">3</span>¿Cómo se cursa?
+                                </button>
+                            </h3>
+                            <div id="fort3" class="accordion-collapse collapse" data-bs-parent="#faqFort">
+                                <div class="accordion-body">
+                                    <p class="mb-2">
+                                        La cursada es <strong>sincrónica</strong>, con régimen semestral y una duración
+                                        total de <strong>dos años</strong>. Comprende 8 cursos obligatorios, 2 optativos y la tesis, con un total de <strong>776 horas</strong>.
+                                    </p>
+                                    <p class="mb-0">
+                                        Los cursos se dictan de forma consecutiva, en bloques de seis semanas, con
+                                        <strong>dos encuentros semanales sincrónicos de 18 a 21 h</strong>, que pueden seguirse en forma remota o en el aula y cubren el <strong>60% de la carga horaria</strong>. La evaluación
+                                        es continua y combina trabajos prácticos, proyectos integradores por curso y la
+                                        elaboración progresiva del plan de tesis.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fort4" aria-expanded="false" aria-controls="fort4">
+                                    <span class="mcd-det-num">4</span>¿Cuándo abre la primera cohorte?
+                                </button>
+                            </h3>
+                            <div id="fort4" class="accordion-collapse collapse" data-bs-parent="#faqFort">
+                                <div class="accordion-body">
+                                    <p class="mb-2">
+                                        La primera cohorte está prevista para <strong>2027</strong> y su apertura se encuentra
+                                        en trámite <span class="tag-tramite">En trámite</span>. Inscripción de noviembre de 2026 a abril de 2027, con
+                                        admisión continua, y cursada desde mayo de 2027 hasta octubre de 2028. La apertura requiere un
+                                        mínimo de <strong>20 inscriptos</strong>.
+                                    </p>
+                                    <p class="mb-0"><a href="../plan-de-estudios/#cronograma">Ver el cronograma de la primera cohorte</a>.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#fort5" aria-expanded="false" aria-controls="fort5">
+                                    <span class="mcd-det-num">5</span>¿Qué pasa con la tesis?
+                                </button>
+                            </h3>
+                            <div id="fort5" class="accordion-collapse collapse" data-bs-parent="#faqFort">
+                                <div class="accordion-body">
+                                    <p class="mb-2">
+                                        La elaboración de la tesis se acompaña institucionalmente desde el plan de estudios.
+                                        Al cierre de la cursada se dicta el <strong>Taller de Formulación de Tesis</strong>
+                                        (32 h), que provee el
+                                        marco metodológico para definir el problema, el estado del arte y el diseño de la
+                                        investigación.
+                                    </p>
+                                    <p class="mb-0">
+                                        La <strong>defensa de la tesis</strong> se realiza al final del recorrido formativo,
+                                        ante un jurado evaluador conformado según la normativa vigente de los posgrados de
+                                        la UNLu y UADER. La aprobación de la defensa habilita la emisión del título de
+                                        Magíster en Ciencia de Datos.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <!-- Marco normativo, en una banda bordó como "Cómo pagar" de Aranceles -->
+        <section class="mcd-banda-bordo py-5" aria-labelledby="normativa-heading">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <div class="mcd-titulo-linea">
+                            <h2 class="h4 fw-bold mb-0" id="normativa-heading">Acreditación y respaldo normativo</h2>
+                            <div class="mcd-linea"></div>
+                        </div>
+                        <p class="mb-4 mcd-banda-texto-claro" data-aos="fade-up" data-aos-duration="600">
+                            La Maestría cuenta con todos los avales institucionales y regulatorios que la habilitan
+                            como posgrado de gestión pública con validez nacional.
+                        </p>
+                        <div class="mcd-banda-card mb-4" data-aos="fade-up" data-aos-duration="600" data-aos-delay="150">
+                            <div class="table-responsive">
+                                <table class="table table-bordered mcd-tabla-bordo align-middle mb-0 bg-white">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Instrumento</th>
+                                            <th scope="col">Número / Fecha</th>
+                                            <th scope="col">Alcance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Resolución HCS UNLu</strong></td>
+                                            <td>789/23</td>
+                                            <td>Aprobación del plan de estudios 80.01 y su reglamento.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Resolución CS UADER</strong></td>
+                                            <td>1487/23</td>
+                                            <td>Aprobación institucional por parte de UADER.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Dictamen CONEAU</strong></td>
+                                            <td>Acta 621, 25/11/2024</td>
+                                            <td>Acreditación favorable de la carrera.</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Disposición SSPU</strong></td>
+                                            <td>N° 490/25</td>
+                                            <td>Reconocimiento Oficial y Validez Nacional del título de
+                                                Magíster en Ciencia de Datos.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="text-muted small mt-3 mb-0">
+                                El plantel docente fue evaluado y validado durante el proceso de acreditación ante CONEAU.
+                                La asignación de docentes a cada curso puede modificarse.
+                            </p>
+                        </div>
+                        <p class="small mb-0 mcd-banda-texto-claro">
+                            Propuesta académica conjunta de la Universidad Nacional de Luján (UNLu) y la Facultad de
+                            Ciencia y Tecnología de la Universidad Autónoma de Entre Ríos (FCyT–UADER), bajo el marco
+                            normativo y los procesos de acreditación detallados en esta página.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- ── Back button ───────────────────────────────────────────────────── -->
     <div class="container text-center my-4">
         <a href="../" class="btn btn-outline-dark btn-lg px-4 py-2">
-            <i class="fas fa-arrow-left me-2"></i>Volver al inicio
+            <i class="fas fa-arrow-left me-2"></i>Volver
         </a>
     </div>
+
+    <section class="py-5 bg-white text-center" data-aos="fade-up" data-aos-duration="1500">
+        <div class="container">
+            <h2 class="h3 fw-bold mb-3">Primera cohorte 2027 <span class="tag-tramite">En trámite</span></h2>
+            <p class="text-muted mb-4">La inscripción está prevista desde noviembre de 2026. Quienes completen la solicitud de información reciben el aviso de apertura y los pasos del proceso de admisión.</p>
+            <a href="../#contact" class="btn btn-primary btn-lg px-5 py-2">
+                Solicitar información
+            </a>
+        </div>
+    </section>
 
     <!-- ── Footer ───────────────────────────────────────────────────────── -->
     <footer class="footer bg-dark text-white py-4 mt-2">
