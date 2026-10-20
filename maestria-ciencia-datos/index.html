@@ -113,6 +113,10 @@
     </nav>
 
     <header class="backgroundhead fondoMcd" id="masthead" data-aos="flip-up" data-aos-duration="1500" onces="true">
+        <!-- Fondo en movimiento: un halo que flota y puntos que se agrupan y se dispersan (js/mcd-hero-fondo.js) -->
+        <div class="mcd-hero-fondo" aria-hidden="true">
+            <span class="mcd-hero-halo"></span>
+        </div>
         <div class="container">
             <h1 class="masthead-heading">Maestría en Ciencia de Datos</h1>
             <div class="masthead-subheading pb-3">
@@ -1290,6 +1294,7 @@
     </script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>AOS.init();</script>
+    <script defer src="../js/mcd-hero-fondo.js"></script>
     <script defer src="../js/mcd-terminos.js"></script>
     <script defer src="../js/mcd-recorrido.js"></script>
     <script defer src="../js/mcd-temas.js"></script>

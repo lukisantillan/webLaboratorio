@@ -711,3 +711,22 @@ html body .mcd-tabla-bordo td { font-size: .92rem; }
     .mcd-resumen { padding: 1.25rem; }
     html body .mcd-resumen-valor { font-size: 1.45rem; }
 }
+
+/* ---------- 16. Encabezado de la portada en movimiento ----------
+   Un halo difuso que flota (CSS) y, encima, el canvas de js/mcd-hero-fondo.js: puntos que se agrupan como en un
+   k-medias y se vuelven a dispersar. Quieto para quien pide reducir el movimiento. */
+html body header#masthead > .container { position: relative; z-index: 1; }
+.mcd-hero-fondo { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.mcd-hero-canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.mcd-hero-halo {
+    position: absolute; top: -150px; right: -110px; width: 440px; height: 440px; border-radius: 50%;
+    background: rgba(255, 179, 193, .22); filter: blur(70px);
+    animation: mcd-flotar 7s ease-in-out infinite;
+}
+@keyframes mcd-flotar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .mcd-hero-halo { animation: none; }
+}
