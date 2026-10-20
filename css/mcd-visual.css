@@ -743,6 +743,24 @@ html body header#masthead > .container { position: relative; z-index: 1; }
 /* ---------- 17. Portada: fila de enlaces a las subpáginas ----------
    La plantilla le da 144 px de relleno arriba y abajo a toda <section>; acá la fila queda pegada a la franja de cifras. */
 html body section#lic-ia { padding-top: 2.25rem; padding-bottom: 2.75rem; }
+/* ---------- 18. Ritmo vertical ----------
+   Las secciones van con 64 px arriba y abajo (4rem de la plantilla); estos ajustes corrigen los que se salían. */
+@media (min-width: 769px) {
+    /* Plan de estudios de la portada: tenía 100 px, como ninguna otra sección */
+    html body #informacionPlan { padding-top: 4rem; padding-bottom: 4rem; }
+}
+/* En pantallas chicas, la regla de 1,5 rem de mcd-style2.css quedaba pisada por la de 100 px (que viene después):
+   el título del plan se apretaba en 166 px y arriba quedaban 100 px de rosa vacío */
+@media (max-width: 768px) {
+    html body #informacionPlan { padding: 3rem 1rem; }
+}
+/* Cronograma de la página del plan: la tarjeta del plan, justo arriba, ya lo separa */
+html body section#cronograma { padding-top: 1rem; }
+/* En el celular, 64 + 64 px entre secciones son casi dos pantallas de pulgar en blanco */
+@media (max-width: 767.98px) {
+    html body section.page-section { padding-top: 3rem; padding-bottom: 3rem; }
+}
+
 /* Entre 992 y 1199 px el menú queda 18 px más bajo (sección 0): los encabezados descuentan esa diferencia para
    seguir centrados. Va al final para ganarle a las reglas de los encabezados, que tienen la misma especificidad. */
 @media (min-width: 992px) and (max-width: 1199.98px) {
