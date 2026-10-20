@@ -34,6 +34,7 @@ Versioning policy for this project:
 - Home: enlace al texto completo en las entradas de la línea de tiempo que lo tienen, como píldora (`.timeline-pdf` en `css/styles.css`) debajo de la cita: PDF, SEDICI o Póster.
 
 ### Changed
+- Maestría, equipo docente: nueva foto del Mg. Mario Oloriz, propia de la maestría, en `assets/img/mcd-docentes/mario-oloriz.{jpg,webp}`. La tarjeta usaba `assets/img/team/7.jpg`, que sigue sin cambios en la página Equipo de LICDIA.
 - Maestría, ritmo vertical (sección 18 de `css/mcd-visual.css`): la sección del plan de la portada pasa de 100 a 64 px de relleno en escritorio, como las demás, y en pantallas chicas a 48 px arriba y abajo y 16 a los costados (tenía 100 px en los cuatro lados, que apretaban el título a 166 px de ancho); el cronograma de la página del plan arranca más cerca de la tarjeta del plan (188 → 140 px); en el celular las secciones pasan de 64 a 48 px de relleno (96 px entre secciones en lugar de 128).
 - Maestría, portada: la fila de enlaces a las subpáginas (Plan de estudios, Destinatarios, Requisitos, Enfoque, Aranceles, Inscripción) queda pegada a la franja de cifras; tenía 144 px de relleno arriba y abajo heredados de la plantilla.
 - Maestría, portada: el texto del encabezado baja 16 px en escritorio y 8 px en pantallas chicas, con la misma altura total: el título en serif y el fondo animado cargaban la parte de arriba y el bloque se percibía alto.
