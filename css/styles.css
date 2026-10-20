@@ -13697,3 +13697,189 @@ hr {
     color: #cfe0ff;
     text-decoration: underline;
 }
+
+/* Home, Carreras: tarjetas de las diplomaturas del laboratorio y de las otras carreras */
+.home .carreras-rotulo {
+    margin: 2.25rem 0 1.25rem;
+    text-align: center;
+    color: rgba(255, 255, 255, .8);
+    font-family: Montserrat, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.home .diplo-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 14px;
+    background: #fff;
+    color: #212529;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 20, .35);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.home .diplo-card:hover,
+.home .diplo-card:focus-visible {
+    color: #212529;
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 20, .45);
+}
+
+.home .diplo-card-img {
+    position: relative;
+    aspect-ratio: 2 / 1;
+    overflow: hidden;
+    background: #0b0b2a;
+}
+
+.home .diplo-card-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .6s ease;
+}
+
+.home .diplo-card:hover .diplo-card-img img {
+    transform: scale(1.04);
+}
+
+.home .diplo-card-tag {
+    position: absolute;
+    left: 14px;
+    bottom: 12px;
+    padding: .3rem .7rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .93);
+    color: #1d13b9;
+    font-family: Montserrat, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .03em;
+}
+
+.home .diplo-card-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 1.4rem 1.5rem 1.5rem;
+    text-align: left;
+}
+
+.home .diplo-card-titulo {
+    margin: 0 0 .6rem;
+    color: #14124a;
+    font-family: Montserrat, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.35;
+    text-transform: none;
+}
+
+.home .diplo-card-texto {
+    margin: 0 0 1rem;
+    color: #5a6270;
+    font-size: .95rem;
+    line-height: 1.55;
+}
+
+.home .diplo-card-datos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem 1.2rem;
+    margin: auto 0 1.1rem;
+    padding: 0;
+    list-style: none;
+    color: #3b4250;
+    font-family: Montserrat, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.home .diplo-card-datos :is(i, svg) {
+    margin-right: .3rem;
+    color: #1d13b9;
+}
+
+.home .diplo-card-cta {
+    color: #1d13b9;
+    font-family: Montserrat, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: .9rem;
+    font-weight: 700;
+}
+
+.home .diplo-card-cta :is(i, svg) {
+    margin-left: .35rem;
+    transition: transform .25s ease;
+}
+
+.home .diplo-card:hover .diplo-card-cta :is(i, svg) {
+    transform: translateX(4px);
+}
+
+.home .carrera-mini {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: .35rem;
+    height: 100%;
+    padding: 1.1rem 1.2rem 1.2rem;
+    border: 1px solid rgba(255, 255, 255, .22);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .08);
+    color: #fff;
+    text-align: left;
+    text-decoration: none;
+    backdrop-filter: blur(4px);
+    transition: background .25s ease, border-color .25s ease, transform .25s ease;
+}
+
+.home .carrera-mini:hover,
+.home .carrera-mini:focus-visible {
+    border-color: rgba(255, 255, 255, .5);
+    background: rgba(255, 255, 255, .16);
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.home .carrera-mini-icono {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    margin-bottom: .25rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .15);
+    font-size: 1rem;
+}
+
+.home .carrera-mini-nivel {
+    color: rgba(255, 255, 255, .75);
+    font-family: Montserrat, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.home .carrera-mini-titulo {
+    font-family: Montserrat, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .home .diplo-card,
+    .home .diplo-card-img img,
+    .home .diplo-card-cta :is(i, svg),
+    .home .carrera-mini {
+        transition: none;
+    }
+}

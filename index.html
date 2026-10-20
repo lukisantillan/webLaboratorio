@@ -24,7 +24,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css?v=2026-10-10b" rel="stylesheet" />
+    <link href="css/styles.css?v=2026-10-20" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="/js/web-vitals-tracker.js" defer></script>
 </head>
@@ -314,6 +314,42 @@
     <hr>
     <!-- Noticias - Actualidad -->
     <section class="page-section" id="noticias">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Trabajo distinguido en CACIC 2026</h2>
+                <h3 class="section-subheading text-muted white">
+                    El trabajo "Remembering the Flow: Retrieval with Dynamic Turn Representations for Conversational
+                    Memory", de Juan Manuel Fernández (LICDIA) junto a Marcelo Errecalde (LIDIC, UNSL) y Sergio Burdisso
+                    (Idiap Research Institute, Suiza), fue seleccionado como Trabajo Distinguido del Workshop de Bases de
+                    Datos y Minería de Datos del XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026,
+                    Concepción del Uruguay, 5 al 9 de octubre). El estudio analiza cómo un sistema conversacional puede
+                    recuperar situaciones similares de conversaciones anteriores al representar cada turno junto con la
+                    historia del diálogo, con experimentos sobre más de un millón de turnos. En el congreso, el
+                    laboratorio presentó además otros tres trabajos: un RAG portable sobre SUDOCU para consultar
+                    normativa universitaria, un asistente con RAG para auditorías GMP en la industria farmacéutica y
+                    DM-AI, un director de juego multiagente basado en modelos de lenguaje. <br>
+                    <a href="https://www.prensa.unlu.edu.ar/?q=node/11657">
+                        Más información
+                    </a>
+                </h3>
+                <picture>
+                    <source srcset="assets/img/noticias/cacic-2026-licdia.webp" type="image/webp">
+                    <img src="assets/img/noticias/cacic-2026-licdia.jpg"
+                        alt="Integrantes del LICDIA junto al banner del XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026)"
+                        width="1600" height="1200" loading="lazy"
+                        style="max-width: 720px; width: 100%; height: auto; box-shadow: 0 4px 16px rgba(0, 0, 0, .25);">
+                </picture>
+                <p style="margin-top: 12px;">
+                    <a href="publicaciones/pdf/remembering-the-flow-cacic2026.pdf" target="_blank" rel="noopener">
+                        Ver el trabajo completo (PDF)
+                    </a>
+                </p>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <!-- Noticias - Poster Awards NLP School -->
+    <section class="page-section" id="poster-nlp-school">
         <div class="container">
             <div class="text-center">
                 <h2 class="section-heading text-uppercase">Segundo lugar en los Poster Awards de la Second South
@@ -717,71 +753,83 @@
                         Nacional de
                         Luján vinculadas a sus líneas de I+D :</h3>
                 </div>
-                <!-- Diplomaturas destacadas -->
-                <div class="row justify-content-center mb-3">
-                    <div class="col-lg-4 col-sm-6 mb-4 imagen-zoom">
-                        <div class="portfolio-item">
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Diplomatura de Posgrado en Desarrollo de
-                                    Soluciones de Inteligencia Artificial Generativa en la Nube</div>
-                                <div class="portfolio-caption-subheading text-muted">Diplomatura de Posgrado · UNLu
-                                </div>
+                <!-- Diplomaturas del laboratorio -->
+                <p class="carreras-rotulo">Diplomaturas de posgrado del laboratorio</p>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-5 col-md-6">
+                        <a class="diplo-card" href="dev-ia/">
+                            <div class="diplo-card-img">
+                                <picture><source srcset="assets/img/carreras/dev-ia.webp" type="image/webp"><img
+                                    src="assets/img/carreras/dev-ia.jpg" alt="" width="1200" height="600" loading="lazy"></picture>
+                                <span class="diplo-card-tag">Diplomatura de posgrado · UNLu</span>
                             </div>
-                            <a class="portfolio-link" href="https://licdia.unlu.edu.ar/dev-ia" target="_blank">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-external-link-alt fa-2x"></i>
-                                    </div>
-                                </div>
-                                <picture><source srcset="assets/img/diplo-ia-hero.webp" type="image/webp"><img class="img-fluid" src="assets/img/diplo-ia-hero.png"
-                                    alt="Diplomatura de Posgrado en Desarrollo de Soluciones de Inteligencia Artificial Generativa en la Nube" loading="lazy"></picture>
-                            </a>
-                        </div>
+                            <div class="diplo-card-body">
+                                <h4 class="diplo-card-titulo">Desarrollo de Soluciones de Inteligencia Artificial Generativa en la Nube</h4>
+                                <p class="diplo-card-texto">Machine learning, deep learning, procesamiento del lenguaje natural y despliegue de
+                                    modelos en la nube.</p>
+                                <ul class="diplo-card-datos">
+                                    <li><i class="fas fa-laptop"></i> 100 % virtual</li>
+                                    <li><i class="far fa-clock"></i> 4 meses · 160 h</li>
+                                </ul>
+                                <span class="diplo-card-cta">Conocer la diplomatura <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </a>
                     </div>
-                    <div class="col-lg-4 col-sm-6 mb-4 imagen-zoom">
-                        <div class="portfolio-item">
-                            <div class="portfolio-caption">
-                                <div class="portfolio-caption-heading">Diplomatura de Posgrado en Innovación y
-                                    Desarrollo de Aplicaciones basadas en Blockchain</div>
-                                <div class="portfolio-caption-subheading text-muted">Diplomatura de Posgrado · UNLu
-                                </div>
+                    <div class="col-lg-5 col-md-6">
+                        <a class="diplo-card" href="blockchain-dev/">
+                            <div class="diplo-card-img">
+                                <picture><source srcset="assets/img/carreras/blockchain-dev.webp" type="image/webp"><img
+                                    src="assets/img/carreras/blockchain-dev.jpg" alt="" width="1200" height="600" loading="lazy"></picture>
+                                <span class="diplo-card-tag">Diplomatura de posgrado · UNLu</span>
                             </div>
-                            <a class="portfolio-link" href="https://licdia.unlu.edu.ar/blockchain-dev" target="_blank">
-                                <div class="portfolio-hover">
-                                    <div class="portfolio-hover-content"><i class="fas fa-external-link-alt fa-2x"></i>
-                                    </div>
-                                </div>
-                                <picture><source srcset="assets/img/blockchain-hero.webp" type="image/webp"><img class="img-fluid" src="assets/img/blockchain-hero.jpg"
-                                    alt="Diplomatura de Posgrado en Innovación y Desarrollo de Aplicaciones basadas en Blockchain" loading="lazy"></picture>
-                            </a>
-                        </div>
+                            <div class="diplo-card-body">
+                                <h4 class="diplo-card-titulo">Innovación y Desarrollo de Aplicaciones basadas en Blockchain</h4>
+                                <p class="diplo-card-texto">Desarrollo Web3, aplicaciones descentralizadas, finanzas descentralizadas, contratos
+                                    inteligentes y arquitectura en la nube para blockchain.</p>
+                                <ul class="diplo-card-datos">
+                                    <li><i class="fas fa-laptop"></i> 100 % virtual</li>
+                                    <li><i class="far fa-clock"></i> 4 meses · 160 h</li>
+                                </ul>
+                                <span class="diplo-card-cta">Conocer la diplomatura <i class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <!-- Otras carreras -->
-                <div class="row text-center">
-                    <div class="col-md-3">
-                        <h3 class="section-subheading white">
-                            <a class="section-subheading white" href="maestria-ciencia-datos/">- Maestría en Ciencia de Datos</a>
-                        </h3>
+                <p class="carreras-rotulo">Otras carreras en las que participamos</p>
+                <div class="row justify-content-center">
+                <div class="col-lg-10">
+                <div class="row g-3">
+                    <div class="col-lg-3 col-sm-6">
+                        <a class="carrera-mini" href="maestria-ciencia-datos/">
+                            <span class="carrera-mini-icono"><i class="fas fa-chart-line"></i></span>
+                            <span class="carrera-mini-nivel">Posgrado · UNLu y UADER</span>
+                            <span class="carrera-mini-titulo">Maestría en Ciencia de Datos</span>
+                        </a>
                     </div>
-                    <div class="col-md-3">
-                        <h3 class="section-subheading white">
-                            <a class="section-subheading white" href="https://www.unlu.edu.ar/carp-bioinformatica.html"
-                                target="_blank">- Especialización en Bioinformática</a>
-                        </h3>
+                    <div class="col-lg-3 col-sm-6">
+                        <a class="carrera-mini" href="https://www.unlu.edu.ar/carp-bioinformatica.html" target="_blank" rel="noopener">
+                            <span class="carrera-mini-icono"><i class="fas fa-dna"></i></span>
+                            <span class="carrera-mini-nivel">Posgrado · UNLu</span>
+                            <span class="carrera-mini-titulo">Especialización en Bioinformática</span>
+                        </a>
                     </div>
-                    <div class="col-md-3">
-                        <h3 class="section-subheading white">
-                            <a class="section-subheading white" href="https://www.sistemas.unlu.edu.ar/"
-                                target="_blank">- Licenciatura en Sistemas de Información</a>
-                        </h3>
+                    <div class="col-lg-3 col-sm-6">
+                        <a class="carrera-mini" href="https://www.sistemas.unlu.edu.ar/" target="_blank" rel="noopener">
+                            <span class="carrera-mini-icono"><i class="fas fa-laptop-code"></i></span>
+                            <span class="carrera-mini-nivel">Grado · UNLu</span>
+                            <span class="carrera-mini-titulo">Licenciatura en Sistemas de Información</span>
+                        </a>
                     </div>
-                    <div class="col-md-3">
-                        <h3 class="section-subheading white">
-                            <a class="section-subheading white"
-                                href="https://www.unlu.edu.ar/carpre-analistaciedatos.html" target="_blank">- Analista
-                                Universitario en Ciencias de Datos</a>
-                        </h3>
+                    <div class="col-lg-3 col-sm-6">
+                        <a class="carrera-mini" href="https://www.unlu.edu.ar/carpre-analistaciedatos.html" target="_blank" rel="noopener">
+                            <span class="carrera-mini-icono"><i class="fas fa-database"></i></span>
+                            <span class="carrera-mini-nivel">Pregrado · UNLu</span>
+                            <span class="carrera-mini-titulo">Analista Universitario en Ciencias de Datos</span>
+                        </a>
                     </div>
+                </div>
+                </div>
                 </div>
             </div>
             <hr>
