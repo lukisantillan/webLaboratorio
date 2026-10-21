@@ -141,6 +141,7 @@
         botonDentro.addEventListener('click', function () {
             var ab = !dentro.classList.contains('abierto');
             dentro.classList.toggle('abierto', ab);
+            capa.classList.toggle('con-dentro', ab);
             botonDentro.setAttribute('aria-pressed', ab ? 'true' : 'false');
             ubicarEscena();
         });

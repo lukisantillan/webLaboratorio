@@ -160,7 +160,7 @@ html.da-on, html.da-on body { overflow: hidden; }
     transform: translateX(-50%);
     text-align: center;
     pointer-events: none;
-    transition: opacity .5s ease, transform .6s ease;
+    transition: opacity .5s ease, transform .6s ease, left .55s cubic-bezier(.2, .8, .2, 1), width .55s cubic-bezier(.2, .8, .2, 1);
 }
 .da.charlando .da-saludo { opacity: 0; transform: translate(-50%, -20px); }
 .da-saludo h1 {
@@ -373,6 +373,12 @@ html.da-on, html.da-on body { overflow: hidden; }
 }
 .da-sugerencias button:hover { border-color: rgba(77, 226, 255, .6); background: rgba(77, 226, 255, .1); transform: translateY(-2px); }
 .da-aviso { margin: 0; text-align: center; color: rgba(205, 222, 255, .42); font-size: .68rem; line-height: 1.5; }
+
+/* Con el panel "por dentro" abierto antes de la primera pregunta, saludo y entrada se centran en el espacio libre */
+@media (min-width: 992px) {
+    .da.con-dentro:not(.charlando) .da-saludo { left: calc(50% + 210px); width: min(760px, calc(100vw - 480px)); }
+    .da.con-dentro:not(.charlando) .da-charla { left: calc(50% + 210px); width: min(720px, calc(100vw - 480px)); }
+}
 
 /* Panel "por dentro" */
 .da-dentro {
