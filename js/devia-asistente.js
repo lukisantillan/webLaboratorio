@@ -35,6 +35,15 @@
         MAPA = m;
         m.secciones.forEach(function (s) { porId[s.id] = s; });
         construir();
+        raiz.classList.add('da-disponible');
+        document.addEventListener('click', function (e) {
+            var a = e.target.closest('[data-da-abrir]');
+            if (!a) return;
+            e.preventDefault();
+            var menu = document.getElementById('navbarResponsive');
+            if (menu && menu.classList.contains('show') && window.bootstrap) window.bootstrap.Collapse.getOrCreateInstance(menu).hide();
+            abrir(true);
+        });
         if (pideSitio) { volver.classList.add('visible'); } else { abrir(false); }
         clearTimeout(limite);
         raiz.classList.remove('da-cargando');
@@ -50,7 +59,7 @@
         capa.innerHTML =
             '<canvas class="da-lienzo" aria-hidden="true"></canvas>' +
             '<div class="da-barra">' +
-            '  <div class="da-marca"><span class="da-marca-orbe" aria-hidden="true"></span><span class="da-marca-txt">' +
+            '  <div class="da-marca"><span class="da-logo" aria-hidden="true"><i class="da-logo-anillo"></i><i class="da-logo-centro"></i></span><span class="da-marca-txt">' +
             '    <strong>Diplomatura en IA Generativa en la Nube</strong><span>Asistente · LICDIA · UNLu</span></span></div>' +
             '  <div class="da-acciones">' +
             '    <button type="button" class="da-boton-dentro" aria-pressed="false"><span class="da-ojo"></span><span class="da-dentro-txt">Ver por dentro</span></button>' +
@@ -149,7 +158,7 @@
         volver = document.createElement('button');
         volver.type = 'button';
         volver.className = 'da-volver';
-        volver.innerHTML = '<span class="da-marca-orbe" aria-hidden="true"></span>Preguntale al asistente';
+        volver.innerHTML = '<span class="da-logo" aria-hidden="true"><i class="da-logo-anillo"></i><i class="da-logo-centro"></i></span>Volver al asistente';
         volver.addEventListener('click', function () { abrir(true); });
         document.body.appendChild(volver);
 
@@ -163,7 +172,11 @@
     }
 
     function dato(c, v) { var el = capa.querySelector('[data-c="' + c + '"]'); if (el) el.textContent = v; }
-    function ajustarAlto() { texto.style.height = 'auto'; texto.style.height = Math.min(texto.scrollHeight, 140) + 'px'; }
+    function ajustarAlto() {
+        texto.style.height = 'auto';
+        texto.style.height = Math.min(texto.scrollHeight, 140) + 'px';
+        texto.style.overflowY = texto.scrollHeight > 140 ? 'auto' : 'hidden';
+    }
 
     function abrir(porUsuario) {
         capa.hidden = false;
@@ -220,7 +233,11 @@
         }, reducir ? 0 : 700);
         var k = 0;
         texto.placeholder = 'Escribí tu pregunta…';
-        setInterval(function () { if (!texto.value && !charlando) texto.placeholder = 'Por ejemplo: ' + SUGERENCIAS[k++ % SUGERENCIAS.length]; }, 3500);
+        setInterval(function () {
+            if (texto.value || charlando) return;
+            var q = SUGERENCIAS[k++ % SUGERENCIAS.length];
+            texto.placeholder = W < 560 ? q : 'Por ejemplo: ' + q;
+        }, 3500);
     }
 
     // ---------- Conversación ----------
@@ -267,7 +284,7 @@
                     sims = d.todas;
                     top = d.top.map(function (x) { return x.id; });
                     t_sec = performance.now();
-                    pintarTabla(d.top);
+                    pintarTabla(d.top, d.todas);
                     estadoMsj(m, 'Generando la respuesta con ' + d.top.length + ' secciones del sitio…');
                     marcarPaso('gen');
                 } else if (ev === 'texto') {
@@ -404,11 +421,13 @@
         });
         capa.querySelector('.da-vector-num').textContent = '[' + v.slice(0, 24).map(function (x) { return x.toFixed(3); }).join(', ') + ', … ]';
     }
-    function pintarTabla(lista) {
+    // Las barras van del mínimo al máximo de la similitud contra todas las secciones (cada modelo tiene su escala)
+    function pintarTabla(lista, todas) {
+        var lo = Math.min.apply(null, todas), hi = Math.max.apply(null, todas);
         capa.querySelector('.da-tabla').innerHTML = lista.map(function (x) {
             var s = porId[x.id], g = GRUPOS[s.pagina] || GRUPOS['dev-ia'];
             return '<tr><td>' + x.id + '</td><td><span style="color:rgb(' + g[1] + ')">●</span> ' + esc(corto(s.titulo, 34)) +
-                '</td><td>' + x.sim.toFixed(3) + '</td><td><div class="da-barra-sim"><i style="width:' + Math.max(4, Math.round((x.sim - 0.3) / 0.5 * 100)) + '%"></i></div></td></tr>';
+                '</td><td>' + x.sim.toFixed(3) + '</td><td><div class="da-barra-sim"><i style="width:' + Math.max(4, Math.round((x.sim - lo) / Math.max(1e-6, hi - lo) * 100)) + '%"></i></div></td></tr>';
         }).join('');
     }
 
@@ -470,11 +489,12 @@
         var ancho = W >= 992, panel = dentro && dentro.classList.contains('abierto') ? Math.min(380, W - 24) + 30 : 0;
         if (!charlando) {
             esc3.cxO = ancho ? (panel + W) / 2 : W / 2; esc3.cyO = H * (ancho ? 0.31 : 0.23); esc3.kO = ancho ? 1 : 0.85;
+            if (!ancho && H < 520) { esc3.cyO = H * 0.17; esc3.kO = 0.42; }
         } else if (ancho) {
             var izqCharla = W - Math.min(600, W * 0.44) - Math.max(16, Math.min(56, W * 0.04));
             esc3.cxO = (panel + izqCharla) / 2; esc3.cyO = H * 0.53; esc3.kO = panel ? 0.85 : 1.08;
         } else {
-            esc3.cxO = W / 2; esc3.cyO = H * 0.2; esc3.kO = 0.55;
+            esc3.cxO = W / 2; esc3.cyO = H * 0.2; esc3.kO = H < 520 ? 0.4 : 0.55;
         }
         if (inmediato) { esc3.cx = esc3.cxO; esc3.cy = esc3.cyO; esc3.k = esc3.kO; }
     }

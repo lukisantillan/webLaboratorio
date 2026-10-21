@@ -83,6 +83,29 @@ html.da-on, html.da-on body { overflow: hidden; }
     box-shadow: 0 0 18px rgba(77, 226, 255, .6);
     animation: da-latido 3.2s ease-in-out infinite;
 }
+/* Logo del laboratorio como ícono del asistente: el anillo de dígitos gira, el cerebro queda fijo */
+.da-logo {
+    position: relative;
+    display: inline-block;
+    flex: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    box-shadow: 0 0 14px rgba(77, 226, 255, .5);
+    animation: da-brillo 3.2s ease-in-out infinite;
+}
+.da-logo i { position: absolute; inset: 0; border-radius: 50%; background: url(../assets/img/licdia-logo-circulo.webp) center / cover no-repeat; }
+.da-logo-anillo {
+    -webkit-mask-image: radial-gradient(circle closest-side, transparent 0 78%, #000 80%);
+    mask-image: radial-gradient(circle closest-side, transparent 0 78%, #000 80%);
+    animation: da-rotar 22s linear infinite;
+}
+.da-logo-centro {
+    -webkit-mask-image: radial-gradient(circle closest-side, #000 0 79%, transparent 80%);
+    mask-image: radial-gradient(circle closest-side, #000 0 79%, transparent 80%);
+}
+@keyframes da-rotar { to { transform: rotate(360deg); } }
+@keyframes da-brillo { 0%, 100% { box-shadow: 0 0 12px rgba(77, 226, 255, .45); } 50% { box-shadow: 0 0 24px rgba(138, 125, 255, .75), 0 0 6px rgba(77, 226, 255, .8); } }
 .da-marca-txt { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
 .da-marca-txt strong { font-family: var(--da-titulo); font-weight: 500; font-size: .95rem; letter-spacing: .01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .da-marca-txt span { font-family: var(--da-mono); font-size: .68rem; color: var(--da-tenue); letter-spacing: .08em; text-transform: uppercase; }
@@ -314,8 +337,10 @@ html.da-on, html.da-on body { overflow: hidden; }
     background: transparent;
     color: #fff;
     font: 400 1rem/1.5 var(--da-texto);
+    overflow-y: hidden;        /* la barra aparece solo si el texto supera el alto máximo (js) */
+    scrollbar-width: thin;
 }
-.da-entrada textarea::placeholder { color: rgba(205, 222, 255, .45); }
+.da-entrada textarea::placeholder { color: rgba(205, 222, 255, .45); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .da-enviar {
     flex: none;
     width: 42px;
@@ -413,7 +438,7 @@ html.da-on, html.da-on body { overflow: hidden; }
     cursor: pointer;
 }
 .da-volver.visible { display: inline-flex; }
-.da-volver .da-marca-orbe { width: 24px; height: 24px; }
+.da-volver .da-logo { width: 28px; height: 28px; }
 
 /* Resaltado de la sección a la que lleva una cita */
 .da-resaltada { animation: da-resaltar 2.4s ease; }
@@ -435,7 +460,16 @@ html.da-on, html.da-on body { overflow: hidden; }
     .da-barra { flex-wrap: wrap; }
 }
 
+/* Celular apaisado y pantallas bajas: menos texto en el inicio para que nada se pise */
+@media (max-height: 520px) and (max-width: 991.98px) {
+    .da-saludo { top: 30%; }
+    .da-saludo h1 { font-size: 1.35rem; margin-bottom: 0; }
+    .da-saludo p, .da-aviso { display: none; }
+    .da-sugerencias button:nth-child(n+4) { display: none; }
+    .da.charlando .da-charla { top: 42vh; }
+}
+
 @media (prefers-reduced-motion: reduce) {
     .da, .da-charla, .da-saludo, .da-dentro, .da-msj { transition: none; animation: none; }
-    .da-entrada::before, .da-marca-orbe, .da-cursor, .da-estado i { animation: none; }
+    .da-entrada::before, .da-marca-orbe, .da-cursor, .da-estado i, .da-logo, .da-logo-anillo { animation: none; }
 }

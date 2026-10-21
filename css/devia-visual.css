@@ -1,0 +1,208 @@
+/* Diplomatura en IA Generativa: estética del sitio convencional alineada con el asistente (css/devia-asistente.css).
+   Encabezado con la escena de números de embedding (js/devia-hero.js), Space Grotesk en títulos, Montserrat en el
+   texto y DM Mono en rótulos, paleta azul noche con acentos cian y violeta. Va con html body.dev-ia-theme porque
+   style2.css y un <style> de la página se cargan después. */
+
+html body.dev-ia-theme {
+    --dv-noche: #050b1f;
+    --dv-noche-2: #0b1a3d;
+    --dv-cian: #4de2ff;
+    --dv-violeta: #8a7dff;
+    --dv-magenta: #ff5bd8;
+    --dv-acento: #4b46e0;            /* violeta azulado legible sobre fondo claro */
+    --dv-tinta: #0d1530;
+    font-family: Montserrat, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ---------- Tipografía ---------- */
+html body.dev-ia-theme p,
+html body.dev-ia-theme li,
+html body.dev-ia-theme td,
+html body.dev-ia-theme th,
+html body.dev-ia-theme .section-subheading,
+html body.dev-ia-theme .accordion-body,
+html body.dev-ia-theme .accordion-button,
+html body.dev-ia-theme .card,
+html body.dev-ia-theme .lead {
+    font-family: Montserrat, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-style: normal;
+}
+html body.dev-ia-theme h1.masthead-heading,
+html body.dev-ia-theme h2.section-heading,
+html body.dev-ia-theme h2.card-t,
+html body.dev-ia-theme .display-6 {
+    font-family: "Space Grotesk", Montserrat, sans-serif !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    letter-spacing: -.01em !important;
+}
+html body.dev-ia-theme h2.section-heading { color: var(--dv-tinta); }
+html body.dev-ia-theme h3, html body.dev-ia-theme h4, html body.dev-ia-theme h5 {
+    font-family: "Space Grotesk", Montserrat, sans-serif;
+    letter-spacing: -.005em;
+}
+
+/* ---------- Encabezado: la escena del asistente ---------- */
+html body.dev-ia-theme header#masthead.fondoDiplomatura {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(1100px 620px at 50% 40%, rgba(30, 60, 140, .55), transparent 62%),
+        radial-gradient(800px 500px at 88% 100%, rgba(138, 125, 255, .18), transparent 60%),
+        radial-gradient(700px 480px at 8% 95%, rgba(77, 226, 255, .1), transparent 60%),
+        var(--dv-noche) !important;
+    background-image: none;
+}
+html body.dev-ia-theme header#masthead.fondoDiplomatura::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(120, 160, 255, .05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(120, 160, 255, .05) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: radial-gradient(ellipse at 50% 45%, #000 15%, transparent 72%);
+    mask-image: radial-gradient(ellipse at 50% 45%, #000 15%, transparent 72%);
+    pointer-events: none;
+}
+.dv-hero-fondo { position: absolute; inset: 0; pointer-events: none; }
+.dv-hero-fondo canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+html body.dev-ia-theme header#masthead > .container { position: relative; z-index: 1; }
+.dv-hero-rotulo {
+    margin: 0 0 1.1rem;
+    color: rgba(160, 225, 255, .85) !important;
+    font-family: "DM Mono", ui-monospace, Menlo, monospace !important;
+    font-size: .78rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+html body.dev-ia-theme header#masthead h1.masthead-heading {
+    max-width: 980px;
+    margin: 0 auto 1.9rem;
+    font-size: clamp(1.9rem, 4.2vw, 3.3rem) !important;
+    line-height: 1.12 !important;
+    background: linear-gradient(90deg, #fff, #d6e9ff 45%, var(--dv-cian) 78%, var(--dv-violeta));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    text-shadow: none !important;
+}
+.dv-hero-acciones { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; }
+
+/* Botones */
+.dv-boton {
+    display: inline-flex;
+    align-items: center;
+    gap: .6rem;
+    padding: .78rem 1.35rem;
+    border-radius: 999px;
+    font: 600 .95rem Montserrat, -apple-system, "Segoe UI", sans-serif;
+    text-decoration: none !important;
+    transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+.dv-boton:hover { transform: translateY(-2px); }
+.dv-boton-asistente {
+    background: linear-gradient(135deg, var(--dv-cian), var(--dv-violeta));
+    color: #04101f !important;
+    box-shadow: 0 0 28px rgba(77, 226, 255, .45);
+}
+.dv-boton-asistente:hover { box-shadow: 0 0 40px rgba(77, 226, 255, .65); }
+.dv-boton-borde {
+    border: 1px solid rgba(160, 200, 255, .45);
+    background: rgba(10, 18, 40, .45);
+    color: #e8f1ff !important;
+    backdrop-filter: blur(8px);
+}
+.dv-boton-borde:hover { border-color: var(--dv-cian); background: rgba(77, 226, 255, .1); }
+.dv-orbe {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    flex: none;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #fff, var(--dv-cian) 32%, var(--dv-violeta) 72%, transparent 74%);
+    box-shadow: 0 0 12px rgba(77, 226, 255, .7);
+}
+.dv-boton-asistente .dv-orbe { background: radial-gradient(circle at 35% 30%, #fff, #bff3ff 35%, #2a2470 80%); }
+
+/* Los accesos al asistente solo se ven si el asistente está disponible */
+html:not(.da-disponible) [data-da-abrir],
+html:not(.da-disponible) .dv-nav-asistente { display: none !important; }
+
+/* Ítem del menú */
+html body.dev-ia-theme #mainNav .dv-nav-asistente .nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+    margin-left: .4rem;
+    padding: .38rem .9rem !important;
+    border: 1px solid rgba(77, 226, 255, .55);
+    border-radius: 999px;
+    background: linear-gradient(135deg, rgba(77, 226, 255, .14), rgba(138, 125, 255, .18));
+    color: var(--dv-acento) !important;
+    font-weight: 700;
+}
+html body.dev-ia-theme #mainNav .dv-nav-asistente .nav-link:hover { box-shadow: 0 0 18px rgba(77, 226, 255, .45); }
+html body.dev-ia-theme #mainNav .dv-nav-asistente .da-logo { width: 22px; height: 22px; }
+.dv-boton-asistente .da-logo { width: 24px; height: 24px; }
+
+/* ---------- Bandas oscuras con la paleta del asistente ---------- */
+html body.dev-ia-theme .container-fluid[style*="#1C2E54"],
+html body.dev-ia-theme section#experiencia-2025 {
+    background:
+        radial-gradient(900px 300px at 50% 0%, rgba(77, 226, 255, .12), transparent 70%),
+        linear-gradient(135deg, var(--dv-noche) 0%, var(--dv-noche-2) 60%, #1b1f5e 100%) !important;
+}
+html body.dev-ia-theme .container-fluid[style*="#1C2E54"] p { font-family: "DM Mono", ui-monospace, monospace; font-size: 1rem !important; letter-spacing: .02em; }
+html body.dev-ia-theme .container-fluid[style*="#1C2E54"] i { color: var(--dv-cian); }
+html body.dev-ia-theme section#experiencia-2025 .display-4 { font-family: "Space Grotesk", sans-serif; color: var(--dv-cian) !important; }
+
+/* Acentos sobre fondo claro */
+html body.dev-ia-theme .accordion-button:not(.collapsed) {
+    background: linear-gradient(90deg, rgba(77, 226, 255, .1), rgba(138, 125, 255, .12));
+    color: var(--dv-tinta);
+    box-shadow: inset 3px 0 0 var(--dv-acento);
+}
+html body.dev-ia-theme .accordion-button:focus { box-shadow: 0 0 0 .2rem rgba(75, 70, 224, .25); }
+
+/* ---------- Botón flotante para volver al asistente ---------- */
+html body .da-volver {
+    right: 100px;
+    bottom: 30px;
+    padding: .7rem 1.25rem .7rem .75rem;
+    border: 0;
+    background: linear-gradient(var(--dv-noche, #050b1f), var(--dv-noche, #050b1f)) padding-box,
+        linear-gradient(135deg, #4de2ff, #8a7dff, #ff5bd8) border-box;
+    border: 1.5px solid transparent;
+    font-size: .9rem;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .35), 0 0 30px rgba(77, 226, 255, .35);
+    animation: dv-llamar 3s ease-in-out infinite;
+}
+html body .da-volver .da-logo { width: 30px; height: 30px; }
+@keyframes dv-llamar { 0%, 100% { box-shadow: 0 10px 30px rgba(0, 0, 0, .35), 0 0 22px rgba(77, 226, 255, .3); } 50% { box-shadow: 0 10px 30px rgba(0, 0, 0, .35), 0 0 38px rgba(138, 125, 255, .55); } }
+
+@media (max-width: 991.98px) {
+    html body.dev-ia-theme #mainNav .dv-nav-asistente .nav-link { margin: .4rem 0 0; }
+}
+/* Menú en una línea entre 992 y 1399 px (antes LICDIA y el selector de tema quedaban fuera de la pantalla) */
+@media (min-width: 992px) and (max-width: 1399.98px) {
+    html body.dev-ia-theme #mainNav .navbar-brand { margin-right: .35rem; }
+    html body.dev-ia-theme #mainNav .navbar-brand img { height: 40px !important; width: auto; }
+    html body.dev-ia-theme #mainNav .navbar-nav .nav-item { margin: 0 !important; }
+    html body.dev-ia-theme #mainNav .navbar-nav .nav-item .nav-link { padding: .4rem .42rem !important; font-size: .74rem !important; letter-spacing: .02em; white-space: nowrap; }
+    html body.dev-ia-theme #mainNav .dv-nav-asistente .nav-link { margin-left: .2rem; padding: .32rem .7rem !important; }
+}
+@media (min-width: 992px) and (max-width: 1099.98px) {
+    html body.dev-ia-theme #mainNav .navbar-brand img { height: 34px !important; }
+    html body.dev-ia-theme #mainNav .navbar-nav .nav-item .nav-link { padding: .4rem .3rem !important; font-size: .7rem !important; }
+}
+@media (max-width: 576px) {
+    html body .da-volver { right: 84px; bottom: 26px; padding: .55rem .9rem .55rem .55rem; font-size: .82rem; }
+    .dv-hero-rotulo { font-size: .68rem; letter-spacing: .1em; }
+    .dv-boton { padding: .68rem 1.1rem; font-size: .88rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    html body .da-volver { animation: none; }
+    .dv-boton { transition: none; }
+}

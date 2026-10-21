@@ -685,9 +685,11 @@
                 document.documentElement.classList.add('da-cargando');
         } catch (e) { }
     </script>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Montserrat:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="../css/devia-asistente.css" rel="stylesheet" />
+    <link href="../css/devia-visual.css" rel="stylesheet" />
     <script src="../js/devia-asistente.js" defer></script>
+    <script src="../js/devia-hero.js" defer></script>
 
 
 </head>
@@ -714,6 +716,7 @@
                     <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                     <li class="nav-item"><a class="nav-link" href="/dev-ia/blog/">Blog</a></li>
                     <li class="nav-item"><a class="nav-link" href="../">LICDIA</a></li>
+                    <li class="nav-item dv-nav-asistente"><a class="nav-link" href="#" data-da-abrir><span class="da-logo" aria-hidden="true"><i class="da-logo-anillo"></i><i class="da-logo-centro"></i></span>Asistente</a></li>
                 </ul>
             </div>
         </div>
@@ -722,13 +725,15 @@
     <!--Cuerpo de la pagina -->
     <header class="backgroundhead fondoDiplomatura" id="masthead" data-aos="flip-up" data-aos-duration="1500"
         onces="true">
+        <div class="dv-hero-fondo" aria-hidden="true"></div>
         <div class="container">
+            <p class="dv-hero-rotulo">Diplomatura de posgrado · LICDIA · UNLu</p>
             <h1 class="masthead-heading"> Diplomatura de Posgrado en Desarrollo de Soluciones de
                 Inteligencia Artificial Generativa en la Nube
             </h1>
-            <div class="masthead-subheading pb-3">
-                <div class="masthead-subheading pb-2">
-                </div>
+            <div class="dv-hero-acciones">
+                <a class="dv-boton dv-boton-asistente" href="#" data-da-abrir><span class="da-logo" aria-hidden="true"><i class="da-logo-anillo"></i><i class="da-logo-centro"></i></span>Preguntale al asistente</a>
+                <a class="dv-boton dv-boton-borde" href="#informacionPlan">Ver el plan de estudios</a>
             </div>
         </div>
     </header>
