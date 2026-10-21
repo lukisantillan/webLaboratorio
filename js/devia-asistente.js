@@ -77,11 +77,11 @@
             '    <div><span class="da-dato" data-c="emb-modelo"></span> · <span class="da-dato" data-c="dims"></span> dimensiones · <span class="da-dato" data-c="emb-ms">–</span> ms</div>' +
             '    <div class="da-vector"></div><div class="da-vector-num">Hacé una pregunta para ver su vector.</div></div>' +
             '  <div class="da-paso" data-n="2" data-paso="rec"><h3>Recuperación</h3>' +
-            '    <div>Similitud coseno contra las <span class="da-dato" data-c="n-sec"></span> secciones del sitio; pasan las <span class="da-dato" data-c="k"></span> más cercanas.</div>' +
+            '    <div>Similitud coseno contra las <span class="da-dato" data-c="n-sec"></span> secciones del sitio; pasan las <span class="da-dato" data-c="k"></span> más cercanas, junto con una ficha fija de datos clave (modalidad, horarios, duración, aranceles y contacto).</div>' +
             '    <table class="da-tabla"></table><div class="da-leyenda"></div></div>' +
             '  <div class="da-paso" data-n="3" data-paso="gen"><h3>Generación</h3>' +
             '    <div>Modelo <span class="da-dato" data-c="llm"></span></div>' +
-            '    <div>Prompt: reglas + secciones + conversación · <span class="da-dato" data-c="tok-in">–</span> tokens</div>' +
+            '    <div>Prompt: reglas + ficha + secciones + conversación · <span class="da-dato" data-c="tok-in">–</span> tokens</div>' +
             '    <div>Primer token <span class="da-dato" data-c="ttft">–</span> ms · respuesta <span class="da-dato" data-c="tok-out">–</span> tokens · <span class="da-dato" data-c="tps">–</span> tokens/s</div></div>' +
             '  <div class="da-paso" data-n="4" data-paso="cit"><h3>Citas</h3>' +
             '    <div>Cada afirmación lleva el número de la sección de la que sale. Al tocarlo vas a esa parte del sitio.</div></div>' +

@@ -1,0 +1,12 @@
+{
+ "_nota": "Secciones que van SIEMPRE en el contexto del modelo, además de las recuperadas: los datos que casi toda pregunta necesita. Se identifican por ancla, por parte del título o por el comienzo del texto.",
+ "secciones": [
+  {"ancla": "containerInfo"},
+  {"titulo": "Inicio · Cursado"},
+  {"ancla": "faq2"},
+  {"ancla": "faq12"},
+  {"titulo": "Estructura de aranceles"},
+  {"ancla": "ctas-home"},
+  {"texto": "Diplomatura oficial de la Universidad Nacional de Luján"}
+ ]
+}

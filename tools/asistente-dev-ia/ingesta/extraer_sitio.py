@@ -48,8 +48,8 @@ def texto_de(el):
     return "\n".join(x for x in lineas if x)
 
 
-def titulo_de(el):
-    for h in el.find_all(["h1", "h2", "h3", "h4"], limit=3):
+def titulo_de(el, solo_principales=False):
+    for h in el.find_all(["h1", "h2"] if solo_principales else ["h1", "h2", "h3", "h4"], limit=3):
         t = limpio(h.get_text(" "))
         if len(t) > 2:
             return t
@@ -89,11 +89,17 @@ def portada(html, secciones):
     for q in sopa.find_all(QUITAR):
         q.decompose()
     url = BASE_URL
-    for bloque in sopa.find_all(["section", "article", "header"]):
+    # Además de section/article/header, los div sueltos del cuerpo: ahí está, por ejemplo, la fila "Inicio · Cursado ·
+    # Días y horarios · Duración", que antes no entraba al índice.
+    bloques = [b for b in sopa.find_all(["section", "article", "header", "div"])
+               if b.name != "div" or b.parent is sopa.body]
+    for bloque in bloques:
         bid = bloque.get("id", "")
         if bid in OMITIR_IDS or bloque.find_parent(["section", "article"]):
             continue
-        titulo = titulo_de(bloque) or "Diplomatura de Posgrado en IA Generativa en la Nube"
+        titulo = titulo_de(bloque, solo_principales=True) or " · ".join(
+            limpio(h.get_text(" ")) for h in bloque.find_all(["h3", "h4"], limit=4)) or \
+            "Diplomatura de Posgrado en IA Generativa en la Nube"
         # Acordeones: cada ítem es una sección propia (preguntas frecuentes y módulos del plan)
         for item in bloque.select(".accordion-item"):
             boton = item.select_one(".accordion-button")

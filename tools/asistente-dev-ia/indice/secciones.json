@@ -11,10 +11,18 @@
   {
    "titulo": "Diplomatura de Posgrado en IA Generativa en la Nube",
    "url": "/dev-ia/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "Primera cohorte 2025 finalizada con 25 estudiantes\n|\n2da cohorte 2026 con el cupo completo",
+   "id": "S2"
+  },
+  {
+   "titulo": "Diplomatura de Posgrado en IA Generativa en la Nube",
+   "url": "/dev-ia/",
    "ancla": "containerInfo",
    "tipo": "texto",
    "texto": "Modalidad: Virtual\nCharla informativa (2026): Ver video abajo.\nCharla informativa (2025): Ver video abajo.\nInicio: Septiembre 2026\nFinalización: Diciembre 2026\nInscripción 2026: Cerrada — cupo de 30 lugares completo.\nTipo de título: Diplomatura de Posgrado Universitario",
-   "id": "S2"
+   "id": "S3"
   },
   {
    "titulo": "Cohorte 2027",
@@ -22,7 +30,15 @@
    "ancla": "ctas-home",
    "tipo": "texto",
    "texto": "Cohorte 2027\nLa inscripción 2026 está cerrada · Dejanos tus datos y te escribimos el año que viene\nInscripción 2026\nCerrada\nCupo 2026\n30 lugares completos\nPróxima cohorte\n2027\nConsultas: licdia@unlu.edu.ar\n· WhatsApp",
-   "id": "S3"
+   "id": "S4"
+  },
+  {
+   "titulo": "Diplomatura de Posgrado en IA Generativa en la Nube",
+   "url": "/dev-ia/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "Inscripción 2026 — Cerrada\nEl cupo está completo y no estamos recibiendo nuevas inscripciones.\nCualquier duda, contactá al equipo por\nmail\no\nWhatsApp.",
+   "id": "S5"
   },
   {
    "titulo": "Charlas informativas",
@@ -30,7 +46,7 @@
    "ancla": "video-charla",
    "tipo": "texto",
    "texto": "Charlas informativas\nMirá las grabaciones de las charlas informativas con presentación del programa, plan de estudios y respuestas a preguntas frecuentes.\nCharla informativa 2026\nCharla informativa 2025",
-   "id": "S4"
+   "id": "S6"
   },
   {
    "titulo": "Proceso de inscripción",
@@ -38,15 +54,31 @@
    "ancla": "proceso-inscripcion",
    "tipo": "texto",
    "texto": "Proceso de inscripción\nAsí fue el proceso de la cohorte 2026, cuya inscripción ya está cerrada.\nVa a ser el mismo cuando se abra la próxima cohorte.\n1\nAprox. hasta 31/07/26\nReserva de cupo + documentación\nCompletás el formulario online y subís tus papeles. Reservás tu lugar en la cohorte 2026.\n2\nAprox. 01–15/08/26\nEvaluación académica del perfil\nLa dirección académica revisa tu título y experiencia. Te confirmamos por email.\n3\nAprox. 16–22/08/26\nConfirmación formal del cupo\nRecibís el OK definitivo y los datos para abonar la matrícula.\n4\nAprox. 23/08 – Sept'26\nPago de matrícula + 1er módulo\nAbonás matrícula y primera cuota. Arrancás la cursada en septiembre 2026.",
-   "id": "S5"
+   "id": "S7"
   },
   {
-   "titulo": "Plan de estudios",
+   "titulo": "Plan de estudios · Destinatarios · Requisitos · Enfoque",
    "url": "/dev-ia/",
    "ancla": "lic-ia",
    "tipo": "texto",
    "texto": "Plan de estudios\nDestinatarios\nRequisitos\nEnfoque\nPor qué elegirnos\nAranceles\n¿Cómo me inscribo?",
-   "id": "S6"
+   "id": "S8"
+  },
+  {
+   "titulo": "Información",
+   "url": "/dev-ia/",
+   "ancla": "informacion",
+   "tipo": "texto",
+   "texto": "Información\nLa Inteligencia Artificial Generativa se ha convertido en un eje central de innovación\ntecnológica, impulsada por modelos como GPT, Google Gemini y Claude AI. Su capacidad para\ncrear contenido, tomar decisiones autónomas y potenciar la creatividad está transformando\nindustrias como el arte, el diseño, el entretenimiento, el marketing y la educación. Ante\nesta realidad, el LICDIA (Laboratorio de Investigación en Ciencia de Datos e Inteligencia\nArtificial) de la Universidad Nacional de Luján (UNLu) lanza la Diplomatura de Posgrado en\nDesarrollo de Soluciones de Inteligencia Artificial Generativa en la Nube.\nObjetivos\nFormar profesionales que se conviertan en verdaderos \"arquitectos de mundos digitales\":\ncapaces de desarrollar, entrenar e implementar soluciones de IA generativa en la nube,\nintegrando modelos, datos y servicios en diferentes sectores del conocimiento.\nLa meta es que no solo entiendan la tecnología, sino que puedan dominarla como un poder,\ndesplegando soluciones reales que generen impacto, innovación y transformación.\n🧩\nDesarrollar\nDiseño y construcción de soluciones de IA generativa.\n🚀\nImplementar\nIntegración y despliegue en productos y procesos.\n🌐\nImpactar\nAplicación transversal en sectores y disciplinas.\nDestinatarios\nPersonas interesadas en tecnología con alguno de los siguientes perfiles:\nTítulo de grado o pregrado vinculado a las ciencias de la computación expedido por\nUniversidades en carreras de al menos 2 años de duración o 4 años en el caso de",
+   "id": "S9"
+  },
+  {
+   "titulo": "Información (2)",
+   "url": "/dev-ia/",
+   "ancla": "informacion",
+   "tipo": "texto",
+   "texto": "Institutos no universitarios.\nAdemás, en caso que no poseas título, podrás ser admitido siempre que demuestres, a\ntravés de las evaluaciones y entrevista con la Dirección de la Diplomatura, poseer\npreparación y experiencia laboral acorde, así como competencias y conocimientos\nsuficientes.\nPrerrequisito obligatorio:\nPara sacar el mayor provecho de la diplomatura, necesitás manejarte con Python:\nestructuras de datos, funciones e importar librerías.\nNo hace falta que seas experto: con esa base, todo lo demás lo iremos construyendo\njuntos.",
+   "id": "S10"
   },
   {
    "titulo": "¿Para quién va dirigido?",
@@ -54,7 +86,15 @@
    "ancla": "para-quien",
    "tipo": "texto",
    "texto": "¿Para quién va dirigido?\nLa diplomatura está pensada para profesionales y graduados que quieran dominar la IA generativa en contextos reales.\nDesarrolladores e Ingenieros IT\nQue quieran incorporar IA generativa y LLMs a sus proyectos y productos.\nData Scientists y Analistas\nCon experiencia en datos que buscan dar el salto a modelos generativos y despliegue en cloud.\nDevOps y profesionales Cloud\nQue quieran especializarse en infraestructura para desplegar modelos de IA a escala.\nEmprendedores e Innovadores\nQue buscan integrar IA generativa en sus productos, procesos o modelos de negocio.\nGraduados que buscan especialización\nCon título universitario o terciario que quieran una formación de posgrado aplicada y reconocida.",
-   "id": "S7"
+   "id": "S11"
+  },
+  {
+   "titulo": "Inicio · Cursado · Dias y Horarios · Duración",
+   "url": "/dev-ia/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "Inicio\nSeptiembre 2026\nCursado\nA distancia\nDias y Horarios\nMartes y Jueves de 19 a 21 hs\nDuración\n4 meses",
+   "id": "S12"
   },
   {
    "titulo": "Plan de estudios: 1 Introducción a la Inteligencia Artificial",
@@ -62,7 +102,7 @@
    "ancla": "panelsStayOpen-collapseOne",
    "tipo": "texto",
    "texto": "1 Introducción a la Inteligencia Artificial\nFundamentos de la IA y sus aplicaciones en diversos sectores.\nAprendizaje automático (Machine Learning) y sus algoritmos básicos.\nVisión general de técnicas avanzadas como el procesamiento del\nlenguaje natural (NLP) y visión por computadora.\nAspectos éticos y responsabilidad en el desarrollo y uso de sistemas\nde IA.\n📌Lente estratégica: selección de paradigma — cuándo conviene ML clásico, cuándo deep learning, cuándo LLM, según el problema y los datos disponibles.\nAccede al programa",
-   "id": "S8"
+   "id": "S13"
   },
   {
    "titulo": "Plan de estudios: 2 Infraestructura Tecnológica para Inteligencia Artificial",
@@ -70,7 +110,7 @@
    "ancla": "panelsStayOpen-collapseTwo",
    "tipo": "texto",
    "texto": "2 Infraestructura Tecnológica para Inteligencia Artificial\nConceptos básicos de la nube y sus servicios para IA\n(almacenamiento, cómputo, bases de datos). Infraestructura como\ncódigo (IaC) y canalizaciones CI/CD, para despliegue de modelos\nde IA en entornos cloud multinube. Arquitectura y orquestadores\nde contenedores como plataformas escalables y especializadas en\nIA en la nube. Despliegue e implementación de soluciones de\ninteligencia artificial.\n📌Lente estratégica: trade-offs cloud para IA — managed services vs self-hosted, GPU vs CPU, costo de training vs costo de inference, cuándo serverless conviene.\nAccede al programa",
-   "id": "S9"
+   "id": "S14"
   },
   {
    "titulo": "Plan de estudios: 3 Aprendizaje Profundo y Redes Neuronales",
@@ -78,7 +118,7 @@
    "ancla": "panelsStayOpen-collapseThree",
    "tipo": "texto",
    "texto": "3 Aprendizaje Profundo y Redes Neuronales\nIntroducción al aprendizaje profundo. Arquitecturas básicas de\nredes neuronales. Funciones de activación y regularización.\nRedes neuronales convolucionales (CNN), recurrentes (RNN) y LSTM.\nTransferencia de aprendizaje y fine-tuning. Optimización de\nhiperparámetros. Técnicas de interpretación de modelos.\nAplicaciones en visión por computadora y PLN. Modelos avanzados.\n📌Lente estratégica: elección de arquitectura — CNN / RNN / Transformer / VAE según naturaleza del dato (imagen, secuencia, texto) y métricas de éxito.\nAccede al programa",
-   "id": "S10"
+   "id": "S15"
   },
   {
    "titulo": "Plan de estudios: 4 Inteligencia Artificial Generativa",
@@ -86,7 +126,7 @@
    "ancla": "panelsStayOpen-collapseFour",
    "tipo": "texto",
    "texto": "4 Inteligencia Artificial Generativa\nIntroducción al modelado generativo aplicado a la generación de\ntexto e imágenes. Modelos básicos de generación de contenidos.\nRedes neuronales para generación de secuencias. Mecanismos de\natención. Modelos de lenguaje condicionados y no condicionados.\nDiferentes modelos y frameworks de generación de modelos y\ncontenidos. Evaluación automática de la calidad y coherencia.\nTransferencia de estilo en la generación de contenido.\n📌Lente estratégica: RAG vs fine-tuning vs prompt engineering — cuándo cada estrategia es la correcta, costos comparativos y lock-in con proveedores.\nAccede al programa",
-   "id": "S11"
+   "id": "S16"
   },
   {
    "titulo": "Plan de estudios",
@@ -94,7 +134,7 @@
    "ancla": "informacionPlan",
    "tipo": "texto",
    "texto": "Plan de estudios\n¿Y la estrategia?\nEstá distribuida en los 4 módulos, no aislada en una capa para directivos. La selección de paradigma vive en los fundamentos, los trade-offs de infra en el módulo 2, la elección de arquitectura en el de Deep Learning, la decisión RAG/fine-tuning/prompt en el de IA Generativa. Lo que en otros programas son slides, acá son decisiones que el alumno toma mientras construye.\nVer cronograma clase por clase",
-   "id": "S12"
+   "id": "S17"
   },
   {
    "titulo": "Enfoque y Metodología",
@@ -102,7 +142,7 @@
    "ancla": "enfoque",
    "tipo": "texto",
    "texto": "Enfoque y Metodología\nEl carácter de esta Diplomatura es esencialmente práctico.\nSi bien se abordarán los fundamentos teóricos y los modelos fundacionales de la\ninteligencia artificial generativa, el foco estará puesto en la\naplicación real y progresiva de los conocimientos.\nLa metodología se basa en un recorrido módulo tras módulo, donde cada instancia combina:\n📚\nAnálisis conceptual\nMarcos teóricos, modelos y técnicas actuales de IA generativa.\n🔍\nCasos reales\nEstudio crítico para entender desafíos y oportunidades en distintos\nsectores.\n🛠️\nEjercicios prácticos\nActividades incrementales para adquirir experiencia de forma guiada.\n🚀\nProyectos de aplicación\nIntegración de aprendizajes y diseño de soluciones con impacto real.\nEste enfoque garantiza que los participantes no solo comprendan los fundamentos,\nsino que desarrollen habilidades directamente aplicables en un entorno profesional,\nen un contexto global cambiante y desafiante.\nDe esta manera, la Diplomatura agrega un valor diferencial al desarrollo profesional,\nformando egresados con capacidad de resolver problemas concretos,\nliderar proyectos de innovación y adaptarse al ritmo\nacelerado de la evolución tecnológica.\nCondiciones de admisión\nPoseer título de grado o pregrado vinculado a las ciencias de la computación expedido por:\n⁠Universidades: Carreras cuya duración no sea inferior a 2 años.\n⁠Institutos de Educación Superior: Carreras de 4 años de duración mínima.\nAdemás de quienes cumplimenten los requisitos previos, podrán ser admitidas personas siempre que\ndemuestren poseer preparación. y experiencia laboral acordes a la Diplomatura.",
-   "id": "S13"
+   "id": "S18"
   },
   {
    "titulo": "Stack tecnologico",
@@ -110,7 +150,7 @@
    "ancla": "stack-tech",
    "tipo": "texto",
    "texto": "Stack tecnologico\nLas herramientas con las que vas a trabajar desde el primer modulo\nPython\nLenguaje base\nPyTorch\nDeep Learning\nHugging Face\nModelos pre-entrenados\nLangChain\nOrquestación LLMs\nAWS Bedrock\nModelos managed\nAmazon SageMaker\nTraining / serving\nDocker\nContainers\nTerraform\nIaC cloud\nGoogle Colab\nNotebooks\nOpenAI API\nGPT-4 / DALL-E\nChroma / Pinecone\nVector DB\nGitHub Actions\nCI/CD",
-   "id": "S14"
+   "id": "S19"
   },
   {
    "titulo": "Lo que vas a construir",
@@ -118,7 +158,7 @@
    "ancla": "proyectos",
    "tipo": "texto",
    "texto": "Lo que vas a construir\nCuatro proyectos integradores que entregás durante la diplomatura — uno por curso, encadenados para que al final tengas un sistema completo de IA en producción.\nTu primer clasificador en producción\nModelo de ML clásico entrenado sobre dataset real con scikit-learn, evaluado con métricas honestas y servido como API. La base de cómo se piensa un proyecto IA end-to-end.\nStack:\nPython\nscikit-learn\npandas\nFastAPI\nTu andamio cloud-native para IA\nPlataforma GCP completa con contenedores GPU, IaC en Terraform, GKE con autoescalado, CI/CD y observabilidad de modelos — el chasis sobre el que corren tus modelos en los Cursos 3 y 4.\nStack:\nGCP\nTerraform\nGKE\nDocker\nTu modelo Deep Learning explicable\nCNN o LSTM entrenado en GPU cloud con transfer learning sobre un caso real. Hyperparameter tuning con Optuna e interpretabilidad con SHAP y Grad-CAM — no es una caja negra.\nStack:\nPyTorch\nOptuna\nSHAP\nVertex AI\nTu sistema GenAI con RAG y agentes\nAplicación LLM productiva con RAG sobre corpus propio, agentes con tool use y MCP, sobre LLM gestionado u open-source en GPU cloud. Tu pieza de portfolio y trabajo final.\nStack:\nLangChain\nRAG\nMCP\nOllama\nLos cuatro proyectos se encadenan: el andamio del Curso 2 hostea el modelo del Curso 3, y el sistema GenAI del Curso 4 corre sobre ambos. Cierran como un único Proyecto Integrador Final.",
-   "id": "S15"
+   "id": "S20"
   },
   {
    "titulo": "¿Para qué te prepara?",
@@ -126,7 +166,7 @@
    "ancla": "roles-laborales",
    "tipo": "texto",
    "texto": "¿Para qué te prepara?\nRoles concretos del mercado IA en 2026 a los que vas a poder aplicar al terminar — la mayoría con modalidad remota internacional y pago en USD.\nAI / ML Engineer\nDiseñá, entrená y desplegá modelos en producción. Pipelines de datos, training en GPU, serving y monitoreo de drift — el rol más demandado del sector.\nUSD 4.500–9.000/mes remoto\nGenAI Solutions Architect\nArquitecturas LLM end-to-end: RAG, agentes, vendor selection, control de costos y latencia. Traduce problemas de negocio en sistemas GenAI productivos.\nUSD 7.000–13.000/mes remoto\nMLOps / AI Platform Engineer\nInfra GPU, pipelines de training y serving, CI/CD para modelos, observabilidad y FinOps. Es la base del andamio que armás en el Curso 2.\nUSD 5.500–11.000/mes remoto\nAI Product Manager\nDefiní producto con LLMs: discovery, métricas de evaluación, roadmap y go-to-market. Perfil clave para personas con background mixto producto/tech.\nUSD 5.000–10.000/mes remoto\nPrompt Engineer / AI Developer\nIntegrá LLMs en apps existentes vía API. Prompt design, evals, agentes con tool use y MCP. La puerta de entrada más rápida al sector GenAI.\nUSD 3.500–7.000/mes remoto\nResearch / Applied Scientist\nFine-tuning, experimentación con arquitecturas, evaluación rigurosa y papers aplicados. Perfil para quien quiera profundizar en investigación industrial.\nUSD 6.000–12.000/mes remoto\nRangos orientativos del mercado IA LATAM/internacional remoto a 2026. Variable según experiencia, stack y empresa. Fuente: relevamiento de ofertas en LinkedIn, Workana, Toptal y reportes salariales (Stack Overflow, Brookfield, Sysarmy).",
-   "id": "S16"
+   "id": "S21"
   },
   {
    "titulo": "Cuerpo docente:",
@@ -134,7 +174,7 @@
    "ancla": "team",
    "tipo": "texto",
    "texto": "Cuerpo docente:\nMg. Juan M. Fernández\n(Director)\nDirector de LICDIA-UNLu.\nMagister en Inteligencia de datos orientada a Big Data (UNLP).\nProfesor en UNLu, ITBA y UNTREF.\nEspecialista en Large Language Models.\nVer perfil →\nDr. David Petrocelli\n(Coordinador Academico)\nDr. en Ciencias Informáticas (UNLP).\nSenior Cloud Architect en Caylent Inc. (USA).\nDocente e investigador en UNLu.\nEspecialista en despliegue de soluciones de IA en AWS.\nVer perfil →\nDra. Rosana Matuk\nDra. en Ciencias de la Computación\nProfesora en UNLu y UNSaM.\nEspecialista en Redes Neuronales.\nCoordinadora de la Carrera de Analista Universitario en Ciencias de Datos (UNLu)\nVer perfil →\nMg. Diego Gasch\nMagister en Data Science\n(Universidad Austral).\nDocente en UNLu e ITBA.\nData Science Technical Leader\n(Mercado Libre).\nVer perfil →",
-   "id": "S17"
+   "id": "S22"
   },
   {
    "titulo": "1ra Cohorte 2025 — Finalizada",
@@ -142,7 +182,7 @@
    "ancla": "experiencia-2025",
    "tipo": "texto",
    "texto": "Cohorte 2025 · Finalizada\n1ra Cohorte 2025 — Finalizada\nLa primera cohorte finalizó la diplomatura con 25 estudiantes. La 2da cohorte 2026 está en curso, con sus 30 lugares completos.\n25\nEstudiantes\nen la 1ra cohorte\n12\nEgresados\nde la 1ra cohorte\n160 hs\nCarga horaria\n4 cursos × 40 hs\nUNLu\nTítulo oficial\nposgrado universitario\n4 cursos completos cursados\nAlumnos en toda Latinoamérica\nNotebooks y repos entregados\n2da cohorte 2026 completa\nLo que dicen los alumnos\nVoces de la 1ra cohorte 2025 durante la cursada\nLa diplomatura me dio las herramientas para implementar soluciones de IA en mi empresa. La calidad docente es excelente y el acompañamiento permanente.\nAlumno/a · Cohorte 2025\nBackend Developer\nPasé de usar IA como usuario a construir mis propios agentes y pipelines en cloud. Un salto enorme en mi perfil profesional.\nAlumno/a · Cohorte 2025\nData Analyst\nEl nivel práctico es muy alto. Cada módulo termina con un proyecto real. Aprendí más en 4 meses que en años de cursos online.\nAlumno/a · Cohorte 2025\nCloud Engineer\nLa 2da cohorte arranca en septiembre 2026 con el cupo completo. La próxima es la cohorte 2027.",
-   "id": "S18"
+   "id": "S23"
   },
   {
    "titulo": "Diplomatura de Posgrado en IA Generativa en la Nube",
@@ -150,7 +190,7 @@
    "ancla": "",
    "tipo": "texto",
    "texto": "Diplomatura oficial de la Universidad Nacional de Luján\nDictada por el Laboratorio de Investigación en Ciencia de Datos e Inteligencia Artificial (LICDIA)",
-   "id": "S19"
+   "id": "S24"
   },
   {
    "titulo": "¿Por qué elegir LICDIA?",
@@ -158,7 +198,7 @@
    "ancla": "por-que-licdia",
    "tipo": "texto",
    "texto": "¿Por qué elegir LICDIA?\nRespaldo de la Universidad Nacional de Luján (universidad pública).\nLaboratorio de investigación activo en Ciencia de Datos e Inteligencia Artificial.\nEnseñanza orientada a la aplicación práctica y profesional.\nContenidos actualizados: GPT, Gemini, Claude AI y modelos de última generación.\nEnfoque hands-on con casos reales y desarrollo de proyectos.\nPrimera cohorte 2025 exitosa con 25 estudiantes.\nDocentes con trayectoria profesional en la industria y en investigación.\nInfraestructura tecnológica cloud de primer nivel.",
-   "id": "S20"
+   "id": "S25"
   },
   {
    "titulo": "Valores y Competencias",
@@ -166,7 +206,7 @@
    "ancla": "valores",
    "tipo": "texto",
    "texto": "Valores y Competencias\nTrabajo en Equipo\nInnovación\nLiderazgo\nProactividad\nFlexibilidad\nResponsabilidad Social\nCreación de Valor\nGestión del Cambio\nActualización\nToma de Decisiones\nEmprendedurismo",
-   "id": "S21"
+   "id": "S26"
   },
   {
    "titulo": "¿Qué beneficios ofrece este Programa?",
@@ -174,7 +214,7 @@
    "ancla": "beneficios",
    "tipo": "texto",
    "texto": "¿Qué beneficios ofrece este Programa?\nMejorar el perfil profesional incorporando IA generativa y cloud.\nObtener herramientas para alcanzar el siguiente nivel en la organización.\nSuperarse personal y laboralmente en un campo de altísima demanda.\nApalancar el crecimiento profesional con modelos de lenguaje y deep learning.\nAlcanzar nuevos desafíos, proyectos y responsabilidades.\nDesarrollar el potencial creativo e innovador con herramientas de IA.",
-   "id": "S22"
+   "id": "S27"
   },
   {
    "titulo": "Condiciones de Evaluación y Certificación",
@@ -182,7 +222,7 @@
    "ancla": "condiciones",
    "tipo": "texto",
    "texto": "Condiciones de Evaluación y Certificación\nCertificado de Participación\nQuienes cumplan con el 75% de asistencia al programa recibirán su certificado de Participación.\nCertificado de Aprobación\nQuienes además aprueben un Trabajo Integrador Final, recibirán un certificado de Aprobación.",
-   "id": "S23"
+   "id": "S28"
   },
   {
    "titulo": "¿En qué se diferencia esta Diplomatura?",
@@ -190,7 +230,7 @@
    "ancla": "comparativa",
    "tipo": "texto",
    "texto": "¿En qué se diferencia esta Diplomatura?\nUna mirada honesta sobre el mercado de formación en IA en Argentina y por qué elegimos hacer las cosas distinto.\nDiplomatura UNLu\n(Esta propuesta)\nBootcamp privado\nCurso online\n(Coursera / Udemy)\nPosgrado tradicional\nPrecio total\n$1.000.000 ARS\nUSD 2.000–5.000\nUSD 20–200\nUSD 3.000+\nAval universitario oficial\nUNLu\nModalidad 100% virtual: encuentros sincrónicos y actividades asincrónicas\nsuelen ser sincrónicos\nPráctica con stack real\n(PyTorch, AWS Bedrock, LangChain)\ndepende del curso\nTutor / acompañamiento docente\nProyecto integrador final\nvariable\nDuración total\n4 meses\n3–6 meses\nVariable\n12–24 meses\nCupos limitados (calidad)\n25 estudiantes\n50–100\nIlimitado\n30–50\nAnálisis de mercado a mayo 2026 — los precios privados pueden variar",
-   "id": "S24"
+   "id": "S29"
   },
   {
    "titulo": "¿Cumplís con los pre-requisitos?",
@@ -198,7 +238,7 @@
    "ancla": "prerequisitos",
    "tipo": "texto",
    "texto": "¿Cumplís con los pre-requisitos?\nSi marcás los 5, estás listo para empezar\nTítulo universitario o pregrado\no experiencia laboral equivalente acreditable\nPython básico\nestructuras de datos, funciones, importar librerías. No esperamos PyTorch ni LangChain; los enseñamos.\nComputadora con 8 GB RAM mínimo y conexión estable\nel cómputo pesado corre en cloud; cualquier laptop moderna alcanza\n8–12 hs semanales de dedicación durante 4 meses\nencuentros sincrónicos grabados y actividades asincrónicas: manejan sus tiempos\nInglés técnico de lectura\nla documentación de OpenAI, AWS y PyTorch está en inglés; las clases son en español\n¿Tenés dudas sobre si cumplís el perfil? Escribínos por WhatsApp y lo conversamos.\nConsultar por WhatsApp",
-   "id": "S25"
+   "id": "S30"
   },
   {
    "titulo": "Preguntas Frecuentes: ¿Necesito conocimientos previos en IA? ¿Hace falta saber Python?",
@@ -206,7 +246,7 @@
    "ancla": "faq1",
    "tipo": "texto",
    "texto": "¿Necesito conocimientos previos en IA? ¿Hace falta saber Python?\nNo hace falta saber IA — la diplomatura arranca desde cero: qué es machine learning, cómo funcionan las redes neuronales, qué es un LLM y qué problema resuelve cada técnica.\nLo que sí recomendamos es manejo básico de Python (estructuras de datos, funciones, importar librerías como pandas/numpy) y comodidad para trabajar con notebooks Jupyter/Colab — no esperamos que sepas PyTorch o LangChain, te lo enseñamos.\nSi venís de áreas no-técnicas pero con bases sólidas de programación, vas a poder seguir el contenido. Los módulos prácticos (Curso 3 de Deep Learning y Curso 4 de Gen AI) requieren más esfuerzo pero la curva es manejable con dedicación.",
-   "id": "S26"
+   "id": "S31"
   },
   {
    "titulo": "Preguntas Frecuentes: ¿La cursada es 100% virtual?",
@@ -214,7 +254,7 @@
    "ancla": "faq2",
    "tipo": "texto",
    "texto": "¿La cursada es 100% virtual?\nSí. Las clases son en vivo por videoconferencia los martes y jueves de 19 a 21 hs (ARG).\nCada clase queda grabada y disponible de forma permanente en el aula virtual para que la revises cuando quieras — útil si trabajás full-time o estás en otra zona horaria.\nAdemás contás con un canal de consulta permanente con docentes y pares para resolver dudas entre clases — no estás solo entre clase y clase.",
-   "id": "S27"
+   "id": "S32"
   },
   {
    "titulo": "Preguntas Frecuentes: ¿Qué título otorga?",
@@ -222,7 +262,7 @@
    "ancla": "faq3",
    "tipo": "texto",
    "texto": "¿Qué título otorga?\nLa Diplomatura de Posgrado Universitario en Desarrollo de Soluciones de Inteligencia Artificial Generativa en la Nube, emitida por la Universidad Nacional de Luján — universidad pública nacional con validez oficial en todo el país.\nNo es una certificación privada de plataforma: es un título universitario que podés mostrar en tu CV y LinkedIn, y que sirve como antecedente formal para futuras maestrías o doctorados.\nCada uno de los 4 cursos aprobados otorga además un certificado individual de posgrado universitario.",
-   "id": "S28"
+   "id": "S33"
   },
   {
    "titulo": "Preguntas Frecuentes: ¿Puedo cursar módulos sueltos?",
@@ -230,7 +270,7 @@
    "ancla": "faq4",
    "tipo": "texto",
    "texto": "¿Puedo cursar módulos sueltos?\nSí. La diplomatura está compuesta por 4 cursos de posgrado de 40 hs cada uno que pueden cursarse de forma independiente:\nIntroducción a la Inteligencia Artificial\nInfraestructura Tecnológica para Inteligencia Artificial\nAprendizaje Profundo y Redes Neuronales\nInteligencia Artificial Generativa\nCada curso individual otorga su propio certificado de posgrado universitario. Si completás los 4, obtenés el título de Diplomatura completo, que incluye el proyecto integrador end-to-end.\nSi recién arrancás, podés empezar por el Curso 1 (Introducción a la IA) y decidir después si seguís con los demás — los cursos están diseñados en secuencia pero cada uno cierra por sí solo.",
-   "id": "S29"
+   "id": "S34"
   },
   {
    "titulo": "Preguntas Frecuentes: ¿Cuáles son las formas de pago?",
@@ -238,7 +278,7 @@
    "ancla": "faq5",
    "tipo": "texto",
    "texto": "¿Cuáles son las formas de pago?\nTres opciones, todas a través de la UNLu:\nPago electrónico 24 hs vía Pago Mis Cuentas (con DNI y clave).\nCajero automático — Pago Mis Cuentas → Establecimientos Educativos → \"Universidad Nac. Luján\".\nTransferencia bancaria directa con CUIT/CBU de la universidad.\nEstructura: matrícula de $200.000 + 4 cuotas de $200.000 (una por cada curso). Vencimiento día 15 de cada mes.\nPara datos bancarios, comprobante y resolución oficial, consultá la sección de Aranceles.",
-   "id": "S30"
+   "id": "S35"
   },
   {
    "titulo": "Preguntas Frecuentes: ¿Cómo me inscribo?",
@@ -246,7 +286,7 @@
    "ancla": "faq6",
    "tipo": "texto",
    "texto": "¿Cómo me inscribo?\nLa inscripción 2026 ya está cerrada: el cupo de 30 alumnos se completó.\nPor ahora no estamos recibiendo nuevas inscripciones. La próxima es la cohorte 2027: si querés que te avisemos cuando abra, escribinos por mail o WhatsApp.\nSi querés ver cómo funcionaron las cohortes anteriores, podés mirar los videos de las charlas informativas 2026 y 2025.\nCualquier duda, escribinos a licdia@unlu.edu.ar o por WhatsApp y te respondemos sin compromiso.",
-   "id": "S31"
+   "id": "S36"
   },
   {
    "titulo": "Preguntas Frecuentes: ¿Cuándo empieza la cursada?",
@@ -254,7 +294,7 @@
    "ancla": "faq7",
    "tipo": "texto",
    "texto": "¿Cuándo empieza la cursada?\nLa 2da cohorte arranca en septiembre de 2026 y finaliza en diciembre de 2026, con la inscripción ya cerrada y sus 30 lugares completos.\nLa próxima cohorte todavía no tiene fecha de inscripción abierta. Para consultas, escribinos a licdia@unlu.edu.ar.",
-   "id": "S32"
+   "id": "S37"
   },
   {
    "titulo": "Preguntas Frecuentes: ¿Hay límite de cupos?",
@@ -262,7 +302,7 @@
    "ancla": "faq8",
    "tipo": "texto",
    "texto": "¿Hay límite de cupos?\nSí. Trabajamos con cohortes de máximo 30 alumnos para mantener una relación cercana entre docentes y estudiantes — los docentes pueden dar feedback real al código, a los notebooks y al proyecto integrador de cada alumno, no solo dictar clase magistral.\nLos lugares se asignan por orden de inscripción una vez completada la matrícula. Justamente por eso la cohorte 2026 ya tiene sus 30 lugares completos y la inscripción está cerrada.\nCuando se abra la inscripción de la próxima cohorte lo vamos a anunciar acá. Para consultas, escribinos a licdia@unlu.edu.ar.",
-   "id": "S33"
+   "id": "S38"
   },
   {
    "titulo": "Preguntas Frecuentes: ¿Necesito una computadora especial? ¿GPU?",
@@ -270,7 +310,7 @@
    "ancla": "faq9",
    "tipo": "texto",
    "texto": "¿Necesito una computadora especial? ¿GPU?\nNo, una notebook común alcanza — i5/Ryzen 5 o superior, 8 GB de RAM y conexión estable a internet. No necesitás GPU local.\nTrabajamos con herramientas open source y servicios cloud free tier:\nPython, Jupyter, Google Colab — Colab da GPU gratuita para entrenar modelos.\nPyTorch, scikit-learn, Hugging Face Transformers — frameworks estándar de la industria.\nAWS Free Tier + créditos para estudiantes — para SageMaker, Bedrock y EC2 con GPU.\nOpenAI / Anthropic API — el alumno usa créditos free o de bajo costo.\nLangChain, LlamaIndex, Pinecone, Chroma — frameworks para RAG y agentes.\nDocker, Terraform, GitHub Actions — para Curso 2 (infraestructura).\nTodo el software es gratuito y multiplataforma (Linux, macOS, Windows). Para entrenamientos pesados usamos GPU cloud — no necesitás nada en tu máquina.",
-   "id": "S34"
+   "id": "S39"
   },
   {
    "titulo": "Preguntas Frecuentes: ¿Quiénes son los docentes?",
@@ -278,7 +318,7 @@
    "ancla": "faq10",
    "tipo": "texto",
    "texto": "¿Quiénes son los docentes?\nUn equipo con trayectoria activa en industria, academia y producción a escala latinoamericana.\nLa dirección está a cargo del Mg. Juan Manuel Fernández (Director de LICDIA-UNLu, Magister en Inteligencia de Datos UNLP, profesor en UNLu, ITBA y UNTREF, especialista en LLMs) y la coordinación académica del Dr. David Petrocelli (Senior Cloud Architect en Caylent USA, doctor en Ciencias Informáticas UNLP, especialista en MLOps y AWS).\nCompletan el cuerpo docente la Dra. Rosana Matuk (especialista en redes neuronales, profesora UNLu y UNSaM, coordinadora de la Carrera de Analista en Ciencias de Datos UNLu) y el Mg. Diego Gasch (Magister en Data Science Universidad Austral, Data Science Technical Leader en Mercado Libre, especialista en LLMs y RAG en producción).\nHacé click en cada nombre para ver el perfil completo, o mirá la sección Cuerpo docente más arriba.",
-   "id": "S35"
+   "id": "S40"
   },
   {
    "titulo": "Preguntas Frecuentes: ¿Qué salida laboral tiene?",
@@ -286,7 +326,7 @@
    "ancla": "faq11",
    "tipo": "texto",
    "texto": "¿Qué salida laboral tiene?\nEl sector IA en Argentina y Latinoamérica está entre los de mayor demanda y mejor remuneración del mercado tech.\nEmpresas como Mercado Libre, Globant, Despegar, Auravant, Ualá, Modo, Faraday y muchísimas startups locales tienen equipos dedicados a IA Generativa, y muchísimos profesionales argentinos trabajan en remoto para empresas internacionales (OpenAI, Anthropic, Hugging Face, Cohere, AWS, Google) cobrando en USD.\nTu proyecto integrador es la pieza concreta que te diferencia en una entrevista.\nRoles típicos para egresados de la diplomatura:\nAI / ML Engineer — diseño y deploy de modelos en producción.\nLLM / Generative AI Engineer — RAG, fine-tuning, agentes con tool use.\nMLOps Engineer — infra cloud, CI/CD para modelos, monitoreo.\nData Scientist con foco en IA Generativa.\nAI Product Manager — perfil técnico que diseña features con IA.\nAI Consultant — implementación de IA en empresas tradicionales.\nFounder / Builder de productos basados en IA.\nLos rangos salariales del sector son significativamente superiores al promedio del tech tradicional, especialmente en modalidad remota internacional con pago en USD.",
-   "id": "S36"
+   "id": "S41"
   },
   {
    "titulo": "Preguntas Frecuentes: ¿Cuál es la carga horaria total?",
@@ -294,7 +334,7 @@
    "ancla": "faq12",
    "tipo": "texto",
    "texto": "¿Cuál es la carga horaria total?\nLa diplomatura tiene una carga horaria total de 160 horas distribuidas en 4 meses (4 cursos de 40 hs cada uno).\nLas clases en vivo son los martes y jueves de 19 a 21 hs (4 hs semanales en clase). El resto se distribuye en notebooks prácticos, lecturas, ejercicios entregables y desarrollo del proyecto integrador.\nEsperá dedicarle entre 8 y 12 hs semanales en total — un compromiso pensado para que puedas mantener tu trabajo full-time mientras cursás.",
-   "id": "S37"
+   "id": "S42"
   },
   {
    "titulo": "Preguntas Frecuentes: ¿Hay un trabajo final o proyecto integrador?",
@@ -302,7 +342,7 @@
    "ancla": "faq13",
    "tipo": "texto",
    "texto": "¿Hay un trabajo final o proyecto integrador?\nSí, y es uno de los pilares de la diplomatura.\nLa cursada cierra con un proyecto integrador propio aplicado a un caso real: construís una solución end-to-end con modelos entrenados, sistema RAG o agente desplegado en cloud, infraestructura levantada con IaC, evaluación rigurosa de métricas y documentación técnica completa.\nLo defendés frente a docentes y compañeros al final, y queda como pieza de portfolio que podés mostrar a empleadores o usar como base de tu propio emprendimiento.\nMirá el cronograma clase por clase para ver el tipo de entregables que vas a producir.",
-   "id": "S38"
+   "id": "S43"
   },
   {
    "titulo": "Preguntas Frecuentes: ¿Cómo es la evaluación?",
@@ -310,7 +350,7 @@
    "ancla": "faq14",
    "tipo": "texto",
    "texto": "¿Cómo es la evaluación?\nLa evaluación es continua y práctica — no se basa en exámenes finales memorísticos.\nCada curso tiene entregables concretos: notebooks reproducibles, modelos entrenados, sistemas RAG funcionando, dashboards de monitoreo, defensa de decisiones técnicas. El criterio es el mismo que usa la industria: si lo podés ejecutar y defender, lo aprobás.\nLa cursada cierra con la defensa del proyecto integrador frente al cuerpo docente.\nMirá el cronograma clase por clase para ver el tipo de entregables.",
-   "id": "S39"
+   "id": "S44"
   },
   {
    "titulo": "Preguntas Frecuentes: ¿Es necesario un examen de admisión?",
@@ -318,7 +358,7 @@
    "ancla": "faq15",
    "tipo": "texto",
    "texto": "¿Es necesario un examen de admisión?\nNo, no hay examen de admisión. Para inscribirte solo necesitás cumplir con los requisitos formales de admisión a un posgrado universitario:\nTítulo de grado de cualquier orientación, o\nEquivalencia por experiencia profesional (analizada caso por caso por la dirección académica para perfiles con trayectoria comprobable sin título de grado).\nEl proceso es: registro → charla informativa → inscripción formal → pago de matrícula → arranque en septiembre.\nDetalles completos en la sección Requisitos.",
-   "id": "S40"
+   "id": "S45"
   },
   {
    "titulo": "Preguntas Frecuentes: ¿El título tiene validez nacional? Vivo en otra provincia / quiero usarlo para una maestría.",
@@ -326,7 +366,7 @@
    "ancla": "faq16",
    "tipo": "texto",
    "texto": "¿El título tiene validez nacional? Vivo en otra provincia / quiero usarlo para una maestría.\nSí. Es un posgrado de la Universidad Nacional de Luján, una universidad pública nacional: su validez es de alcance nacional y no requiere ninguna convalidación provincial — sirve igual vivas donde vivas en el país.\nUna aclaración honesta que nos consultan seguido: las diplomaturas y cursos de posgrado no llevan el sello de \"validez ministerial\" — esa figura corresponde únicamente a las carreras de especialización, maestría y doctorado. Los cursos y diplomaturas de posgrado los acredita la propia universidad según su normativa, y funciona así en todas las universidades del país (públicas y privadas).\nAdemás, los 4 cursos están diseñados para servirte como antecedente y créditos académicos si más adelante querés cursar una maestría o un doctorado.",
-   "id": "S41"
+   "id": "S46"
   },
   {
    "titulo": "Preguntas Frecuentes: ¿Sirve si no vengo de sistemas / no soy programador?",
@@ -334,7 +374,7 @@
    "ancla": "faq17",
    "tipo": "texto",
    "texto": "¿Sirve si no vengo de sistemas / no soy programador?\nSí. Es una diplomatura pensada para perfiles diversos: en la primera cohorte convivieron personas que venían de sistemas con profesionales de otras disciplinas que querían sumar IA a su campo.\nLo que sí necesitás es afinidad con la tecnología y una base de Python — vas a escribir código y trabajar con notebooks, no solo usar herramientas ya hechas. Si tu Python está flojo, te pasamos material de nivelación para ponerte a punto antes de arrancar.\nSi tenés dudas sobre si tu perfil encaja, escribinos por WhatsApp o mirá los videos de las charlas informativas y lo vemos juntos.",
-   "id": "S42"
+   "id": "S47"
   },
   {
    "titulo": "Plan de estudios: 1 Introducción a la Inteligencia Artificial",
@@ -342,7 +382,7 @@
    "ancla": "accordionPlan",
    "tipo": "texto",
    "texto": "Fundamentos de la IA y sus aplicaciones en diversos sectores.\nAprendizaje automático (Machine Learning) y sus algoritmos básicos.\nVisión general de técnicas avanzadas como el procesamiento del\nlenguaje natural (NLP) y visión por computadora.\nAspectos éticos y responsabilidad en el desarrollo y uso de sistemas\nde IA.\n📌 Lente estratégica: selección de paradigma — cuándo conviene ML clásico, cuándo deep learning, cuándo LLMs según el problema, los datos disponibles y el costo computacional aceptable.\nAccede al programa",
-   "id": "S43"
+   "id": "S48"
   },
   {
    "titulo": "Plan de estudios: 2 Infraestructura Tecnológica para Inteligencia Artificial",
@@ -350,7 +390,7 @@
    "ancla": "accordionPlan",
    "tipo": "texto",
    "texto": "Conceptos básicos de la nube y sus servicios para IA\n(almacenamiento, cómputo, bases de datos). Infraestructura como\ncódigo (IaC) y canalizaciones CI/CD, para despliegue de modelos de\nIA en entornos cloud multinube. Arquitectura y orquestadores de\ncontenedores como plataformas escalables y especializadas en IA en\nla nube. Despliegue e implementación de soluciones de inteligencia\nartificial. Curso de cursada conjunta con el Curso 3 de la\nDiplomatura en Blockchain: las clases 1 a 6 son compartidas\nentre ambas cohortes y las clases 7 y 8 son específicas de la\norientación Inteligencia Artificial.\n📌 Lente estratégica: trade-offs cloud para IA — managed vs self-hosted, GPU vs CPU, training vs inference cost, cuándo serverless y cuándo K8s para servir modelos.\nAccede al programa",
-   "id": "S44"
+   "id": "S49"
   },
   {
    "titulo": "Plan de estudios: 3 Aprendizaje Profundo y Redes Neuronales",
@@ -358,7 +398,7 @@
    "ancla": "accordionPlan",
    "tipo": "texto",
    "texto": "Introducción al aprendizaje profundo. Arquitecturas básicas de redes\nneuronales. Funciones de activación y regularización. Redes\nneuronales convolucionales (CNN), recurrentes (RNN) y LSTM.\nTransferencia de aprendizaje y fine-tuning. Optimización de\nhiperparámetros. Técnicas de interpretación de modelos.\nAplicaciones en visión por computadora y PLN. Modelos avanzados.\n📌 Lente estratégica: elección de arquitectura — CNN / RNN / Transformer / VAE según la naturaleza del dato (imagen, secuencia, texto, audio) y el objetivo (clasificación, generación, predicción).\nAccede al programa",
-   "id": "S45"
+   "id": "S50"
   },
   {
    "titulo": "Plan de estudios: 4 Inteligencia Artificial Generativa",
@@ -366,7 +406,7 @@
    "ancla": "accordionPlan",
    "tipo": "texto",
    "texto": "Introducción al modelado generativo aplicado a la generación de\ntexto e imágenes. Modelos básicos de generación de contenidos.\nRedes neuronales para generación de secuencias. Mecanismos de\natención. Modelos de lenguaje condicionados y no condicionados.\nDiferentes modelos y frameworks de generación de modelos y\ncontenidos. Evaluación automática de la calidad y coherencia.\nTransferencia de estilo en la generación de contenido.\n📌 Lente estratégica: RAG vs fine-tuning vs prompt engineering — cuándo cada estrategia, costos comparativos y criterios para combinar las tres en sistemas de producción.\nAccede al programa\n¿Y la estrategia?\nEstá distribuida en los 4 módulos, no aislada en una capa para directivos. La selección de paradigma vive en los fundamentos, los trade-offs cloud para IA en infraestructura, la elección de arquitectura en deep learning, y la decisión RAG vs fine-tuning vs prompt engineering en IA generativa. Lo que en otros programas son slides, acá son decisiones que el alumno toma mientras construye.\nEl camino del alumno\nCuatro cursos, cuatro evoluciones. Empezás entrenando tu primer modelo y terminás con un sistema GenAI con RAG y agentes desplegado en GPU.\n1\nFundamentos\nSeptiembre\n\"Naciste data scientist\"\nTus primeros modelos vivos: clasificás, regresionás y entrenás tu MLP desde cero en Python.\n2\nInfra cloud-native\nOctubre\n\"Volás con infra propia\"",
-   "id": "S46"
+   "id": "S51"
   },
   {
    "titulo": "Plan de estudios: 4 Inteligencia Artificial Generativa (2)",
@@ -374,7 +414,7 @@
    "ancla": "accordionPlan",
    "tipo": "texto",
    "texto": "Dockerizás tu modelo, lo servís con FastAPI y lo desplegás en GKE con pipeline CI/CD propio sobre GCP.\n3\nDeep Learning\nNoviembre\n\"Evolucionaste a redes neuronales\"\nDiseñás y entrenás CNNs y LSTMs sobre tus datos, aplicás transfer learning y explicás qué aprende el modelo con SHAP y Grad-CAM.\n4\nGenAI en producción\nDiciembre\n\"Forma final regional: tu IA en producción\"\nTu sistema GenAI con RAG, agentes y MCP, sobre LLM propio en GPU cloud. Live.",
-   "id": "S47"
+   "id": "S52"
   },
   {
    "titulo": "Plan de estudios: Cronograma clase por clase",
@@ -382,7 +422,7 @@
    "ancla": "cronograma",
    "tipo": "texto",
    "texto": "Cohorte septiembre – diciembre 2026 — Martes y jueves de 19:00 a 21:00 hs (ARG). 32 clases en vivo distribuidas en 4 cursos consecutivos. Cada clase tiene tema y actividad práctica concreta.\nCronograma de referencia — sujeto a ajustes menores antes del inicio de cohorte.\n1\nCurso 1 — Introducción a la Inteligencia Artificial\nSeptiembre 2026 · Docente Responsable: Mg. Juan Manuel Fernández\n🎯 Resultado del TP del curso: tu primer modelo de Machine Learning entrenado y evaluado sobre un dataset abierto elegido por vos, con métricas, análisis de sesgos y la definición del caso de estudio que vas a evolucionar durante los próximos 3 cursos.\nClase\nTema\nActividad práctica\n1\nPresentación del curso (objetivos, modalidad, metodología y trabajo final). Fundamentos de IA: enfoques simbólico, estadístico y conexionista. Tipos de aprendizaje (supervisado, no supervisado, refuerzo) y aplicaciones por sector\nRecorrido en vivo por un clasificador kNN sobre Iris con análisis de la matriz de confusión\n2\nAprendizaje supervisado: train/validation/test, métricas (accuracy, precision, recall, F1) y preprocesamiento de datos\nPipeline de preprocesamiento sobre dataset tabular abierto con cross-validation\n3\nAlgoritmos clásicos: regresión lineal y logística, árboles de decisión, k-NN\nComparativa de modelos supervisados sobre dataset propio, con métricas y matriz de confusión\n4\nMétodos de ensamble: random forest y gradient boosting; regularización y overfitting",
-   "id": "S48"
+   "id": "S53"
   },
   {
    "titulo": "Plan de estudios: Cronograma clase por clase (2)",
@@ -390,7 +430,7 @@
    "ancla": "cronograma",
    "tipo": "texto",
    "texto": "Benchmark de ensambles sobre el dataset del curso con curvas de aprendizaje\n5\nAprendizaje no supervisado: clustering (k-means, jerárquico) y métricas de desempeño\nTaller de Machine Learning: agrupamiento sobre un caso real con visualización de clusters\n6\nRedes neuronales: perceptrón, feed-forward, funciones de activación y backpropagation conceptual\nTaller de redes neuronales: entrenamiento de un MLP sobre dataset propio\n7\nNLP y visión por computadora introductorios: bag-of-words, TF-IDF, embeddings y clasificación de imágenes\nClasificador de sentimiento sobre texto en español + reconocimiento de imágenes con modelo base\n8\nCierre: ética y responsabilidad en IA (sesgos algorítmicos, casos COMPAS y reconocimiento facial) + presentación del caso de estudio integrador\nCaso de estudio preliminar del TP final: dataset, objetivo, modelo y métricas, con discusión de sesgos potenciales\n📌 Lente estratégica del curso: selección de paradigma — del primer clasificador kNN al diseño end-to-end de un proyecto IA, decidiendo cuándo ML clásico, cuándo deep learning y cuándo LLM según problema, datos y costo.\n2\nCurso 2 — Infraestructura Tecnológica para Inteligencia Artificial\nOctubre 2026 (inicio: jueves 8/10) · Docente Responsable: Dr. David Petrocelli\n🤝 Cursada conjunta: este curso se dicta junto con el Curso 3 de la Diplomatura en Blockchain (orientación Blockchain/Web3). Las clases 1 a 6 son compartidas entre ambas cohortes; las clases 7 y 8 son específicas de cada orientación.",
-   "id": "S49"
+   "id": "S54"
   },
   {
    "titulo": "Plan de estudios: Cronograma clase por clase (3)",
@@ -398,7 +438,7 @@
    "ancla": "cronograma",
    "tipo": "texto",
    "texto": "🎯 Resultado del TP del curso: el \"andamio cloud-native\" completo que va a sostener tus modelos de Deep Learning (Curso 3) y tus apps de IA Generativa (Curso 4) en producción — contenedores con GPU, IaC con Terraform, GKE con autoescalado, observabilidad de modelos y pipelines CI/CD. La diferencia entre \"un notebook que entrena\" y \"un sistema de IA que sirve\".\nClase\nTema\nActividad práctica\n1\nPresentación del curso (objetivos, modalidad, metodología y trabajo final). Arquitectura híbrida en la nube: qué corre en GCP y qué no — cargas de IA entre GPU y CPU, y sistemas Web3 entre on-chain y off-chain. Despliegue de cargas sobre Compute Engine. Presentación del repo template provisto por la cátedra (se opera en paralelo durante el curso)\nDespliegue en vivo de una carga de IA sobre Compute Engine y deploy del repo template en una segunda instancia para operarla como infra propia\n2\nIaC con Terraform sobre GCP: VPC, Compute Engine, Persistent Disk, IAM y Secret Manager para workloads stateful\nConstrucción guiada de un módulo Terraform reutilizable para un training job sobre GCP, con tfvars dev/prod y plan validado en clase\n3\nTerraform avanzado en GCP: módulos reutilizables, workspaces (dev/staging/prod) y patrones multi-environment",
-   "id": "S50"
+   "id": "S55"
   },
   {
    "titulo": "Plan de estudios: Cronograma clase por clase (4)",
@@ -406,7 +446,7 @@
    "ancla": "cronograma",
    "tipo": "texto",
    "texto": "Armado en vivo de un módulo Terraform que aprovisiona un pipeline de training en Vertex AI con backend remoto en GCS y secretos gestionados\n4\nCI/CD con GitHub Actions: build, test, deploy y promoción dev→prod con OIDC\nArmado en clase de un pipeline GitHub Actions que entrena un modelo en cada push, lo registra en MLflow y promueve la imagen a Artifact Registry\n5\nKubernetes con GKE (Google Kubernetes Engine): Helm charts, persistent volumes y StatefulSets para workloads stateful\nDespliegue guiado de un Helm chart para servir un modelo Hugging Face en GKE con autoescalado, Service e Ingress público\n6\nObservabilidad con Cloud Monitoring, Prometheus, Grafana y Loki: métricas, logs y alertas de las cargas en producción\nConstrucción en vivo de un dashboard Grafana con métricas clave del modelo en producción y alertas configuradas sobre drift y latencia\n7\nInferencia gestionada en GCP: Vertex AI Endpoints y Cloud Run con GPU; comparativa cold start vs costo y patrones de serving\nDespliegue del mismo modelo en Vertex AI Endpoint y en Cloud Run con GPU, midiendo y comparando cold start, latencia y costo\n8",
-   "id": "S51"
+   "id": "S56"
   },
   {
    "titulo": "Plan de estudios: Cronograma clase por clase (5)",
@@ -414,7 +454,7 @@
    "ancla": "cronograma",
    "tipo": "texto",
    "texto": "Cierre: FinOps ML y revisión por pilares de buena arquitectura cloud (Google Cloud Architecture Framework, con guiños comparativos a AWS Well-Architected ML Lens y Azure Well-Architected). Handoff a Curso 3: el andamio queda listo para hostear los modelos de Deep Learning\nRevisión en clase del andamio cloud-native desplegado bajo los pilares del Google Cloud Architecture Framework, con priorización colaborativa de remediaciones antes del handoff al Curso 3\n📌 Lente estratégica del curso: qué necesitás de la nube para que tu IA funcione en producción — Compute Engine con GPU, contenedores, IaC con Terraform, GKE y observabilidad de modelos. La diferencia entre \"un notebook que entrena\" y \"un sistema de IA que sirve\".\n3\nCurso 3 — Aprendizaje Profundo y Redes Neuronales\nNoviembre 2026 · Docente Responsable: Dra. Rosana Matuk\n🎯 Resultado del TP del curso: tu modelo de Deep Learning propio (CNN o LSTM) entrenado en GPU cloud sobre dataset real, con transfer learning desde una red preentrenada, métricas validadas e interpretabilidad explicada con SHAP y Grad-CAM. La base sobre la que el Curso 4 va a construir tu sistema de IA Generativa.\nClase\nTema\nActividad práctica\n1\nPresentación del curso (objetivos, modalidad, metodología y trabajo final). Redes feedforward y backpropagation: gradiente, activaciones (ReLU, GELU), optimizadores (SGD, Adam, AdamW) y schedulers",
-   "id": "S52"
+   "id": "S57"
   },
   {
    "titulo": "Plan de estudios: Cronograma clase por clase (6)",
@@ -422,7 +462,7 @@
    "ancla": "cronograma",
    "tipo": "texto",
    "texto": "MLP en PyTorch entrenado sobre MNIST, con comparación de optimizadores y curvas de loss/accuracy analizadas en clase\n2\nRegularización y control de sobreajuste: dropout, BatchNorm, weight decay, early stopping y validación cruzada\nAblation study guiado de las técnicas de regularización sobre un MLP, midiendo el impacto de cada una en validación\n3\nRedes convolucionales: convolución, pooling, arquitecturas (LeNet, VGG, ResNet) y data augmentation\nCNN desde cero sobre CIFAR-10 y comparación contra una ResNet preentrenada con transfer learning\n4\nTransfer learning y fine-tuning: feature extraction vs full fine-tune, congelado de capas e ImageNet como base\nResNet-18 fine-tuned sobre dataset propio de pocas clases, con matriz de confusión y análisis de errores\n5\nRedes recurrentes: RNN, LSTM y GRU; vanishing gradient, teacher forcing y secuencias largas\nLSTM para predicción sobre serie temporal pública (demanda eléctrica o similar) con backtesting\n6\nOptimización de hiperparámetros: grid search, random search, búsqueda bayesiana con Optuna\nOptimización con Optuna del modelo de la clase anterior, con reporte de la mejor configuración hallada\n7\nInterpretabilidad de modelos: SHAP, LIME, Grad-CAM y visualización de activaciones intermedias\nAnálisis SHAP sobre la LSTM de clase 5 y Grad-CAM sobre la CNN de clase 3, con comentarios técnicos discutidos en clase\n8\nCierre: modelos avanzados (introducción a Transformers como puente al Curso 4) y arquitecturas híbridas",
-   "id": "S53"
+   "id": "S58"
   },
   {
    "titulo": "Plan de estudios: Cronograma clase por clase (7)",
@@ -430,7 +470,7 @@
    "ancla": "cronograma",
    "tipo": "texto",
    "texto": "Caso de estudio preliminar del TP integrador: dataset elegido, arquitectura propuesta, estrategia de entrenamiento y plan de evaluación, presentado en clase\n📌 Lente estratégica del curso: elección de arquitectura — CNN para imágenes, LSTM para secuencias, transfer learning para acelerar; entrenamiento real en GPU cloud, hyperparameter tuning con Optuna e interpretabilidad con SHAP y Grad-CAM antes de saltar a Transformers en el Curso 4.\n4\nCurso 4 — Inteligencia Artificial Generativa\nDiciembre 2026 · Docente Responsable: Mg. Diego Gasch\n🎯 Resultado del TP del curso: tu sistema GenAI propio — con RAG sobre corpus propio, agentes con tool use y MCP, montado sobre LLM gestionado (OpenAI/Google/Anthropic) o LLM open-source desplegado en GPU cloud (Vertex AI / Vast.ai), corriendo sobre el andamio del Curso 2. Listo para la defensa del Proyecto Integrador Final.\nClase\nTema\nActividad práctica\n1\nPresentación del curso (objetivos, modalidad, metodología y trabajo final). Modelos de gestión de LLM: local, pipeline, API gestionada y web. Del Transformer del Curso 3 al LLM productivo: continuidad técnica\nSetup del entorno + definición del caso de estudio del TP Integrador Final (template), tomando como base el modelo del Curso 3\n2\nProgramación con LLMs vía API: OpenAI, Anthropic, Google GenAI, Hugging Face. Prompt engineering avanzado (zero/few-shot, chain-of-thought, ReAct)",
-   "id": "S54"
+   "id": "S59"
   },
   {
    "titulo": "Plan de estudios: Cronograma clase por clase (8)",
@@ -438,7 +478,7 @@
    "ancla": "cronograma",
    "tipo": "texto",
    "texto": "Notebook comparando 4 técnicas de prompting sobre el mismo problema, con métricas de calidad y latencia\n3\nModelos generativos multimodales: difusión (Stable Diffusion), generación de imágenes y audio (TTS con Coqui/HF)\nGeneración multimodal con openai , google-genai , transformers y diffusers integrados en un único notebook\n4\nDespliegue de LLMs open-source en cloud: Ollama y vLLM sobre GCP, Vast.ai para GPU on-demand y Vertex AI managed\nOllama en Compute Engine CPU + Vast.ai con GPU + Vertex AI Endpoint, con comparativa de costos, latencia y throughput\n5\nFastAPI + Docker + GKE para LLMs: GPU scheduling en Kubernetes, testing con pytest y despliegue sobre el andamio del Curso 2\nAPI FastAPI con Ollama containerizada, tests automatizados y deploy en GKE con GPU\n6\nAgentes IA y automatización low-code: n8n, function calling, patrones de orquestación y memoria\nPipeline n8n integrando un LLM con tres herramientas externas para resolver una tarea de extremo a extremo\n7\nProtocolo MCP (Model Context Protocol) y RAG con LangChain, LangGraph y LlamaIndex: embeddings, chunking, reranking y vector DBs\nRAG sobre corpus propio + agente MCP en GCP con observabilidad básica (logs y métricas)\n8\nCierre e integración del sistema GenAI: pulido del RAG, mejora de prompts, observabilidad del agente y completar documentación del repo",
-   "id": "S55"
+   "id": "S60"
   },
   {
    "titulo": "Plan de estudios: Cronograma clase por clase (9)",
@@ -446,7 +486,7 @@
    "ancla": "cronograma",
    "tipo": "texto",
    "texto": "Pulido final en clase del sistema GenAI propio (RAG + agente MCP + LLM en GPU) y entrega del repo público completo para la defensa posterior del PIF\n📌 Lente estratégica del curso: RAG vs fine-tuning vs prompt engineering — cuándo cada estrategia, costos comparativos y construcción de un sistema GenAI real combinando las tres con LangChain, agentes y MCP, todo desplegado sobre el andamio cloud-native del Curso 2.\n¿Y la estrategia? — Versión cronograma\nCada clase entrega un artefacto reproducible : notebook, repo público, modelo registrado en MLflow, dashboard Grafana, informe técnico. Las 32 clases construyen el Proyecto Integrador Final desde la primera semana — la última clase no es \"el cierre del programa\", es la defensa de algo que se vino construyendo en cada entregable. El alumno egresa con repos públicos, modelos propios entrenados y un sistema IA desplegado con documentación completa.\nVolver",
-   "id": "S56"
+   "id": "S61"
   },
   {
    "titulo": "Aranceles",
@@ -454,7 +494,7 @@
    "ancla": "",
    "tipo": "texto",
    "texto": "Información de Aranceles 2026 — Diplomatura en Desarrollo de Soluciones de\nInteligencia Artificial Generativa en la Nube",
-   "id": "S57"
+   "id": "S62"
   },
   {
    "titulo": "Aranceles: 💰 Estructura de aranceles",
@@ -462,7 +502,7 @@
    "ancla": "informacionAran",
    "tipo": "texto",
    "texto": "Matrícula inicial\n$200.000\npesos argentinos\n4 cuotas mensuales\n$200.000\nc/u — una por módulo\nMódulo 1\nMódulo 2\nMódulo 3\nMódulo 4\nTotal\n$1.000.000\nmatrícula + 4 cuotas\n¿Necesitás factura?\nSolicitala por mail a arancelesposgrado@mail.unlu.edu.ar con los siguientes datos:\nNombre y Apellido\nCUIT / CUIL\nCondición IVA\nDirección\nLa factura se emite una vez registrado el pago.",
-   "id": "S58"
+   "id": "S63"
   },
   {
    "titulo": "Aranceles: 💳 Cómo pagar",
@@ -470,7 +510,7 @@
    "ancla": "pagos",
    "tipo": "texto",
    "texto": "Vence el día 15 de cada mes\nVer resolución\n1\nPago electrónico 24 hs vía\nPago Mis Cuentas .\nIngresá con tu DNI y clave.\n2\nCajero automático (PMC): Pago Mis Cuentas →\nEstablecimientos Educativos → \"Universidad Nac. Luján\".\n3\nTransferencia bancaria con los datos que aparecen a continuación.\nDatos para transferencia\nUNIVERSIDAD NACIONAL DE LUJÁN\nCTA CTE 3227770/64 – Banco Nación Sucursal N.º 2300\nCUIT\n30-58676240-7\nCBU\n0110032720003227770644\nImportante: enviá el comprobante a\narancelesposgrado@mail.unlu.edu.ar\nindicando nombre, apellido, N.º de documento y carrera/curso .\nVolver",
-   "id": "S59"
+   "id": "S64"
   },
   {
    "titulo": "Aranceles: ¿Querés cursar en 2027?",
@@ -478,7 +518,7 @@
    "ancla": "",
    "tipo": "texto",
    "texto": "La inscripción 2026 está cerrada y el cupo completo. Dejanos tus datos y te escribimos cuando abra la cohorte 2027.\nConsultas: licdia@unlu.edu.ar · WhatsApp",
-   "id": "S60"
+   "id": "S65"
   },
   {
    "titulo": "Requisitos: Requisitos de admisión",
@@ -486,7 +526,7 @@
    "ancla": "",
    "tipo": "texto",
    "texto": "Requisitos formales\nDos caminos válidos para entrar\nTítulo universitario de grado (cualquier orientación) O equivalencia por experiencia profesional.\nTítulo universitario\nTítulo de grado o pregrado de cualquier orientación (carreras de al menos 2 años en universidades o 4 años en institutos no universitarios). Las orientaciones afines (computación, ingeniería, estadística, matemática, ciencias de datos) facilitan el ingreso pero no son excluyentes.\nEquivalencia por experiencia profesional Sin título\nSi no tenés título universitario, podés ingresar igual demostrando experiencia laboral y conocimientos suficientes en una entrevista con la Dirección de la Diplomatura.\nMarco normativo: Artículo 4° de la Resolución HCS 081/23 — los postulantes fuera de los términos formales podrán ser admitidos siempre que demuestren, a través de las evaluaciones y la entrevista con la Dirección, poseer preparación y experiencia laboral acorde con la diplomatura, así como competencias y conocimientos suficientes.\nConocimientos técnicos esperados\nLa diplomatura aborda Machine Learning, Deep Learning, LLMs, RAG, agentes y deploy en cloud. Para aprovechar al máximo el programa, es importante contar con las siguientes bases:\nPython intermedio\nManejo práctico de Python: estructuras de datos, OOP básico, virtualenv/poetry, lectura y escritura de archivos. Familiaridad con pandas y numpy para manipulación de datos.\nÁlgebra lineal y cálculo básico",
-   "id": "S61"
+   "id": "S66"
   },
   {
    "titulo": "Requisitos: Requisitos de admisión (2)",
@@ -494,7 +534,7 @@
    "ancla": "",
    "tipo": "texto",
    "texto": "Vectores, matrices, multiplicación matricial, derivadas y noción intuitiva de gradiente. Son la base para entender qué hacen las redes neuronales por dentro.\nEstadística descriptiva y probabilidad\nMedia y varianza, distribuciones comunes (normal, binomial), nociones de Bayes. Necesarias para interpretar métricas, evaluar modelos y entender la lógica probabilística de los LLMs.\nGit y línea de comandos\nManejo básico de Git (clone, commit, push, pull) y soltura en terminal/línea de comandos para instalar dependencias, ejecutar scripts y trabajar con notebooks.\nNociones de ML clásico (no excluyente — recomendado)\nIdea general de qué es un modelo supervisado, división train/test, métricas básicas (accuracy, precision/recall). No es bloqueante, pero acelera la curva de aprendizaje.\nRecomendados (no excluyentes)\nCuentas en plataformas de IA\nCuenta de OpenAI, Anthropic y/o Hugging Face para acceder a APIs y modelos. Las usamos en prácticas a lo largo del programa.\nCuenta AWS Free Tier\nPara los módulos de cloud y deploy: SageMaker, Bedrock, Lambda. Acompañamos en el setup; no se requiere experiencia previa en AWS.\nFamiliaridad con Jupyter / Colab\nHaber trabajado al menos una vez con notebooks. La cursada usa intensivamente Colab y JupyterHub con GPU.\n¿No cumplís con todos los conocimientos técnicos?\nNo te quedes afuera. Ofrecemos material de nivelación previo al inicio de la diplomatura y acompañamiento personalizado. Contactanos para que evaluemos tu perfil y te orientemos.\nRegistro charla informativa\nVolver",
-   "id": "S62"
+   "id": "S67"
   },
   {
    "titulo": "Destinatarios: ¿A quién va dirigida?",
@@ -502,7 +542,7 @@
    "ancla": "",
    "tipo": "texto",
    "texto": "Esta diplomatura es para perfiles que quieren construir sistemas con IA Generativa , no solo usar ChatGPT. En particular:\nData Scientists\nQue quieren dar el salto del ML clásico a Gen AI: LLMs, embeddings, RAG y arquitecturas modernas con foundation models.\nSoftware Engineers / Backend devs\nQue quieren incorporar IA a productos existentes: integración de APIs (OpenAI, Anthropic, Bedrock), orquestación de agentes y deploy en cloud.\nML Engineers\nQue buscan especializarse en LLMs y llevar modelos a producción: fine-tuning, evaluación, observabilidad y MLOps moderno.\nProduct Managers / PMs técnicos\nQue trabajan en empresas con iniciativas de IA y necesitan vocabulario técnico real para tomar decisiones de arquitectura, costo y trade-offs.\nInvestigadores académicos\nDe CS, Estadística, Lingüística Computacional o áreas afines que quieren incorporar herramientas modernas de Gen AI a su línea de investigación.\nProfesionales en reconversión\nÁreas no-técnicas con bases de programación (analistas de negocio, consultores, especialistas en producto) que buscan reconvertirse hacia roles de IA.\nSi solo querés usar herramientas de IA como usuario final, sin construir nada, esta diplomatura no es la opción adecuada.\n¿Te encaja alguno de estos perfiles?\nLa 2da cohorte 2026 ya cerró con el cupo completo. Reservá tu lugar en la cohorte 2027.\nVer requisitos de admisión\nVolver",
-   "id": "S63"
+   "id": "S68"
   },
   {
    "titulo": "Enfoque: Enfoque y Metodología",
@@ -510,7 +550,7 @@
    "ancla": "",
    "tipo": "texto",
    "texto": "El carácter de esta Diplomatura es esencialmente práctico y aplicado .\nSi bien se abordan los fundamentos de Machine Learning, Deep Learning y LLMs,\nel foco está puesto en la construcción real de sistemas con IA Generativa :\nnotebooks reproducibles, proyectos integradores end-to-end y defensa técnica de cada decisión.\nLa metodología se basa en un recorrido módulo tras módulo, donde cada instancia combina:\n📚\nAnálisis conceptual\nFundamentos sólidos de ML, deep learning y LLMs: no se enseña a \"promptear\" sin entender qué hay debajo.\n💻\nPráctica con notebooks reproducibles\nEntornos Colab y JupyterHub con GPU, código versionado y pipelines que cualquier alumno puede correr y modificar.\n🧪\nProyectos integrados\nDesde clasificadores tradicionales hasta sistemas RAG y agentes en producción. La cursada cierra con un integrador end-to-end.\n🤝\nDefensa de decisiones técnicas\nEl alumno justifica arquitectura, dataset y métricas. No alcanza con que \"el código corra\": hay que sostener el porqué.\nEste programa no solo forma a los participantes con capacidades técnicas avanzadas en IA Generativa,\nsino que también los prepara para tomar decisiones de arquitectura responsables :\nelegir modelos, evaluar trade-offs de costo y latencia, medir calidad y abordar consideraciones\néticas, de privacidad y de sesgo en los sistemas que construyen.\nAl combinar teoría con práctica aplicada, esta Diplomatura habilita a los profesionales para",
-   "id": "S64"
+   "id": "S69"
   },
   {
    "titulo": "Enfoque: Enfoque y Metodología (2)",
@@ -518,7 +558,7 @@
    "ancla": "",
    "tipo": "texto",
    "texto": "implementar soluciones de IA Generativa de manera efectiva y ética en\ncontextos reales — empresariales, académicos y de investigación — potenciando la\ninnovación y la transformación digital en sus áreas de acción.\nCohorte 2025 finalizada con 25 estudiantes,\nmodalidad 100% virtual , con encuentros sincrónicos y actividades asincrónicas. Validamos el formato y la\nmetodología en producción real — y la 2da cohorte 2026 está en curso con sus 30 lugares completos.\nVolver",
-   "id": "S65"
+   "id": "S70"
   },
   {
    "titulo": "Por qué elegirnos: ¿Qué nos diferencia?",
@@ -526,7 +566,7 @@
    "ancla": "intro-heading",
    "tipo": "texto",
    "texto": "La IA Generativa pasó de demo a infraestructura productiva en menos de tres años.\nToda empresa que toma decisiones técnicas hoy necesita perfiles que entiendan LLMs, RAG, agentes\ny deploy en cloud — no solo prompts. Esta página explica qué hace distinta a esta diplomatura\ny por qué importa elegir el formato correcto.\nLas cuatro preguntas",
-   "id": "S66"
+   "id": "S71"
   },
   {
    "titulo": "Por qué elegirnos: Lo que todo el mundo pregunta",
@@ -534,7 +574,7 @@
    "ancla": "preguntas-heading",
    "tipo": "texto",
    "texto": "1 ¿Por qué IA Generativa, ahora?\nLa Gen AI dejó de ser un experimento: hoy es producto, infraestructura y operación. Empresas grandes\ny pymes están integrando LLMs en flujos críticos — atención al cliente, generación de contenido,\ncopilotos internos, búsqueda semántica, automatización. La demanda de perfiles capaces de\ndiseñar, construir y operar esas soluciones supera ampliamente la oferta.\nFormarse ahora es entrar al mercado en la curva temprana, con criterio para\nelegir modelos, evaluar costos y sostener decisiones técnicas — no como early-adopter sin base teórica.\n2 ¿Qué se lleva alguien que la termina?\nCapacidad real para construir, evaluar y desplegar sistemas con IA Generativa.\nEsto incluye fundamentos de ML y deep learning, manejo práctico de LLMs (OpenAI, Anthropic, modelos\nopen-source), arquitecturas RAG, evaluación de modelos, agentes y deploy en cloud.\nQuien termina la cursada se lleva un proyecto integrador propio , criterio\nprofesional para tomar decisiones de arquitectura, dataset y métricas — y un título universitario\nnacional que lo respalda.\n3 ¿Para quién es?\nPara perfiles que quieren construir con IA , no solo usarla:\nData scientists que dan el salto a Gen AI; software engineers / backend devs que incorporan IA a productos.\nML engineers que se especializan en LLMs y producción; PMs técnicos que necesitan vocabulario real.\nInvestigadores académicos y profesionales en reconversión con bases de programación.",
-   "id": "S67"
+   "id": "S72"
   },
   {
    "titulo": "Por qué elegirnos: Lo que todo el mundo pregunta (2)",
@@ -542,7 +582,7 @@
    "ancla": "preguntas-heading",
    "tipo": "texto",
    "texto": "Si solo querés \"saber prompts\" sin entender qué hay debajo, esta diplomatura no es la opción adecuada.\n4 ¿Qué la hace distinta de otras propuestas?\nCuatro diferencias concretas frente al resto de la oferta:\nFoco específico en Gen AI / LLMs: no es un curso de ML general con un módulo de IA.\nEl programa está diseñado de punta a punta para construir sistemas con foundation models.\nAval universitario nacional: título de posgrado emitido por la Universidad\nNacional de Luján (UNLu), universidad pública nacional — no una certificación privada.\n100% virtual: encuentros sincrónicos y actividades asincrónicas; la cohorte 2025 (25 estudiantes) ya validó el formato.\nCompatible con trabajo full-time, husos horarios distintos y residentes fuera de Argentina.\nCostos en pesos accesibles: matrícula y cuotas en moneda local, sin la barrera\neconómica de los másters internacionales — manteniendo profundidad técnica equivalente.\nComparativa honesta",
-   "id": "S68"
+   "id": "S73"
   },
   {
    "titulo": "Por qué elegirnos: LICDIA vs. otras alternativas",
@@ -550,7 +590,7 @@
    "ancla": "compare-heading",
    "tipo": "texto",
    "texto": "Comparación contra las tres alternativas más comunes hoy en el mercado de formación en IA Generativa para perfiles técnicos en LATAM.\nCriterio\nLICDIA Dev-IA (UNLu)\nBootcamp / curso corto comercial\nMOOC (Coursera, edX, etc.)\nMáster internacional\nAval universitario\nSí — UNLu, universidad pública nacional\nNo — certificación privada\nParcial — certificado de plataforma, sin título\nSí — universidad extranjera\nCosto total\nAccesible — matrícula + cuotas en pesos argentinos\nMedio-alto — USD o equivalente, sin aval\nBajo — pero sin acompañamiento real\nMuy alto — USD 15.000 a 60.000+\nProfundidad técnica\nAlta — ML, DL, LLMs, RAG, agentes y deploy\nMedia — superficial en fundamentos\nVariable — depende de cada curso, sin integración\nAlta — pero generalmente en inglés\nFoco en Gen AI vs ML general\nFoco específico en Gen AI / LLMs\nVariable — algunos solo prompts\nMayoría son cursos de ML clásico con módulo de IA\nML general; Gen AI suele ser electiva\nContacto con docentes\nDirecto — encuentros en vivo y respuestas individuales\nLimitado — mentor compartido por cohorte grande\nCasi nulo — foros automáticos\nVariable según institución\nProyecto integrador real\nSí — proyecto end-to-end con defensa técnica\nA veces — capstone superficial\nNo — ejercicios autoevaluados\nSí — tesis o capstone\nComunidad LATAM\nSí — cohorte hispanohablante, casos regionales\nVariable — depende del bootcamp",
-   "id": "S69"
+   "id": "S74"
   },
   {
    "titulo": "Por qué elegirnos: LICDIA vs. otras alternativas (2)",
@@ -558,7 +598,7 @@
    "ancla": "compare-heading",
    "tipo": "texto",
    "texto": "No — comunidad global pero anónima\nNo — comunidad fragmentada\nFormato 100% virtual (sincrónico y asincrónico)\nSí — compatible con trabajo full-time\nMixto — muchos requieren clases en vivo\nSí — pero sin estructura\nVariable — muchos son presenciales o híbridos\nIdioma de cursada\nEspañol — material y clases en castellano\nVariable\nMayoritariamente inglés\nMayoritariamente inglés\nComparación basada en la oferta más común al 2026. No representa una crítica a alternativas válidas, sino una guía honesta para encontrar el formato adecuado a tu perfil.\nNuestros diferenciales",
-   "id": "S70"
+   "id": "S75"
   },
   {
    "titulo": "Por qué elegirnos: Lo que nos hace distintos",
@@ -566,7 +606,7 @@
    "ancla": "distintos-heading",
    "tipo": "texto",
    "texto": "Foco en IA Generativa real\nNo es un curso de ML clásico con un módulo de \"intro a LLMs\". Todo el programa está\nconstruido alrededor de foundation models, RAG, agentes y deploy en cloud.\nAval universitario nacional\nTítulo de posgrado emitido por la Universidad Nacional de Luján (UNLu), universidad\npública nacional argentina — respaldo institucional, no certificación privada.\n100% virtual: sincrónico y asincrónico\nCompatible con trabajo full-time, husos horarios distintos y residentes fuera de Argentina.\nLa cohorte 2025 (25 estudiantes) ya validó el formato.\nHands-on desde la primera unidad\nNotebooks reproducibles, evaluación real de modelos, deploy en cloud. La cursada cierra\ncon un proyecto integrador end-to-end con defensa técnica.\n¿Listo para construir con IA?\nLa 2da cohorte 2026 ya tiene sus 30 lugares completos. La próxima es la cohorte 2027.\nPropuesta académica sujeta a las resoluciones del Laboratorio de Investigación en Ciencia de Datos e Inteligencia Artificial (LICDIA), Universidad Nacional de Luján.",
-   "id": "S71"
+   "id": "S76"
   },
   {
    "titulo": "Inscripción",
@@ -574,7 +614,7 @@
    "ancla": "",
    "tipo": "texto",
    "texto": "Información de Inscripción - Diplomatura en Desarrollo de soluciones de\ninteligencia artificial generativa en la nube",
-   "id": "S72"
+   "id": "S77"
   },
   {
    "titulo": "Inscripción: Información de inscripción",
@@ -582,7 +622,7 @@
    "ancla": "informacionInsc",
    "tipo": "texto",
    "texto": "Inscripción 2026 — Cerrada\nEl cupo de 30 lugares está completo y no estamos recibiendo nuevas inscripciones .\nCualquier duda, contactá al equipo por\nmail\no\nWhatsApp .",
-   "id": "S73"
+   "id": "S78"
   },
   {
    "titulo": "Inscripción: 📝 Cómo inscribirse a la Diplomatura",
@@ -590,7 +630,7 @@
    "ancla": "como-inscribirse",
    "tipo": "texto",
    "texto": "Descargar y completar el Formulario de Ingreso\nIngresá al enlace disponible en esta página y descargá el archivo en formato DOCX.\nCompletalo con tus datos personales y académicos, asegurándote de que toda la\ninformación esté correcta.\nReunir la documentación obligatoria\n• Fotografía tipo 4x4 (reciente, fondo claro).\n• Currículum vitae (en formato PDF o DOCX).\n• Imagen del título (excepto si ingresás por experiencia laboral o formación no\nuniversitaria).\n• DNI o documento equivalente (frente y reverso).\nDocumentación adicional (según corresponda)\n• Certificado analítico (si lo tenés disponible).\n• Otros títulos o certificaciones que quieras adjuntar.\nSeleccionar la forma de ingreso\n• Título de grado universitario.\n• Título de pregrado universitario.\n• Título de instituto superior no universitario.\n• Experiencia laboral / formación no universitaria.\nCargar toda la información en el Formulario de Inscripción en línea\nAdjuntá el Formulario de Ingreso completo (DOCX) y subí los archivos requeridos en los\ncampos correspondientes.\nCompletá tus datos de contacto.\nEnviar la inscripción\nRevisá que todos los campos estén completos y que los archivos se hayan cargado\ncorrectamente.\nPresioná el botón “Enviar inscripción” . Recibirás una confirmación en tu correo\nelectrónico.\n✅ Importante: Todos los campos marcados con * son obligatorios. Verificá\nque los archivos sean legibles\ny estén en los formatos indicados (PDF, DOCX o imagen). El equipo de la Diplomatura se",
-   "id": "S74"
+   "id": "S79"
   },
   {
    "titulo": "Inscripción: 📝 Cómo inscribirse a la Diplomatura (2)",
@@ -598,7 +638,7 @@
    "ancla": "como-inscribirse",
    "tipo": "texto",
    "texto": "pondrá en contacto contigo para\nconfirmar la recepción y los pasos siguientes.\nInscripción cerrada\nLa inscripción 2026 está cerrada y no estamos recibiendo nuevas solicitudes.\nCuando se abra la inscripción de la próxima cohorte lo vamos a anunciar en esta página.\nConsultas: licdia@unlu.edu.ar · WhatsApp\nFormulario de inscripción a la Diplomatura\nCompletá tus datos y el equipo de la Diplomatura se pondrá en contacto para confirmar la recepción y los pasos siguientes.\n¡Inscripción enviada! Te contactaremos pronto.\nVolver",
-   "id": "S75"
+   "id": "S80"
   }
  ],
  "videos": [
