@@ -419,6 +419,19 @@ html.da-on, html.da-on body { overflow: hidden; }
 .da-leyenda span { display: inline-flex; align-items: center; gap: .35rem; }
 .da-leyenda i { width: 8px; height: 8px; border-radius: 50%; }
 
+/* Barras de scroll finas y translúcidas en el panel, la conversación y la entrada (las nativas desentonan) */
+.da-dentro, .da-mensajes, .da-entrada textarea {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(140, 180, 255, .28) transparent;
+}
+.da-dentro::-webkit-scrollbar, .da-mensajes::-webkit-scrollbar, .da-entrada textarea::-webkit-scrollbar { width: 6px; }
+.da-dentro::-webkit-scrollbar-track, .da-mensajes::-webkit-scrollbar-track, .da-entrada textarea::-webkit-scrollbar-track { background: transparent; }
+.da-dentro::-webkit-scrollbar-thumb, .da-mensajes::-webkit-scrollbar-thumb, .da-entrada textarea::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: rgba(140, 180, 255, .28);
+}
+.da-dentro::-webkit-scrollbar-thumb:hover, .da-mensajes::-webkit-scrollbar-thumb:hover { background: rgba(77, 226, 255, .55); }
+
 /* Botón flotante para volver al asistente desde el sitio convencional */
 .da-volver {
     position: fixed;

@@ -85,6 +85,7 @@ Versioning policy for this project:
 - Home y Publicaciones: "Remembering the Flow" (Fernández, Errecalde, Burdisso) figura como trabajo distinguido del Workshop de Bases de Datos y Minería de Datos de CACIC 2026. En Publicaciones el cambio va en `tools/publicaciones/gen_pubs_data.py` y la página se regeneró.
 
 ### Fixed
+- Diplomatura en IA Generativa, asistente: el panel "Ver por dentro", la conversación y la entrada usan barras de scroll finas y translúcidas en lugar de las nativas.
 - Diplomatura en IA Generativa: entre 992 y 1399 px el menú no entraba y LICDIA y el selector de tema quedaban fuera de la pantalla; en ese rango se achican los logos, la letra y los rellenos del menú.
 - Maestría: entre 992 y 1199 px de ancho el menú en una línea no entraba y los últimos ítems (Contacto, LICDIA) quedaban fuera de la pantalla; en ese rango se achican los logos, la letra y los rellenos del menú.
 - Maestría, nube de términos: en pantallas táctiles el detalle de cada término desaparecía al levantar el dedo; ahora queda hasta tocar otra cosa.
