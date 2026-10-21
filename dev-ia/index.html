@@ -678,6 +678,16 @@
     <link href="../css/enhancements.css" rel="stylesheet" />
     <script src="../js/enhancements.js" defer></script>
     <script src="/js/web-vitals-tracker.js" defer></script>
+    <!-- Asistente inmersivo (vista por defecto; el sitio convencional se elige arriba a la derecha) -->
+    <script>
+        try {
+            if (!/[?&]vista=sitio/.test(location.search) && location.hash.length < 2 && localStorage.getItem('devia-vista') !== 'sitio')
+                document.documentElement.classList.add('da-cargando');
+        } catch (e) { }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="../css/devia-asistente.css" rel="stylesheet" />
+    <script src="../js/devia-asistente.js" defer></script>
 
 
 </head>
@@ -1884,15 +1894,15 @@
     </section>
 <!-- terminacion de cuerpo -->
 
-<!-- EXPERIENCIA 2025 (item 30) — Cohorte en tramo final -->
+<!-- EXPERIENCIA 2025 (item 30) — Cohorte finalizada -->
     <section class="py-5" id="experiencia-2025" style="background: linear-gradient(135deg, #1C2E54 0%, #193d76 60%, #1a63c0 100%); color:#fff;" data-aos="fade-up" data-aos-duration="1000">
         <div class="container">
             <div class="text-center mb-5">
                 <span class="d-inline-block mb-3" style="background:#ffffff; color:#1C2E54; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; font-size:0.78rem; padding:0.4rem 1rem; border-radius:999px;">
-                    <i class="fas fa-hourglass-half me-1"></i>Cohorte 2025 · En el tramo final
+                    <i class="fas fa-check-circle me-1"></i>Cohorte 2025 · Finalizada
                 </span>
-                <h2 class="section-heading text-uppercase" style="color:#fff;">1ra Cohorte 2025 — En curso</h2>
-                <p class="lead" style="color:#a8c5e0; max-width:720px; margin:0 auto;">La primera cohorte está terminando la diplomatura. <strong style="color:#fff;">12 alumnos</strong> ya están preparando la defensa de su proyecto integrador final. Mientras tanto, la 2da cohorte 2026 ya cubrió sus 30 lugares.</p>
+                <h2 class="section-heading text-uppercase" style="color:#fff;">1ra Cohorte 2025 — Finalizada</h2>
+                <p class="lead" style="color:#a8c5e0; max-width:720px; margin:0 auto;">La primera cohorte finalizó la diplomatura con 25 estudiantes. La 2da cohorte 2026 está en curso, con sus 30 lugares completos.</p>
             </div>
 
             <!-- Stats con ícono y mejor jerarquía -->
@@ -2276,7 +2286,7 @@
                                     <td class="text-center"><i class="fas fa-check-circle text-success"></i></td>
                                 </tr>
                                 <tr>
-                                    <td>Modalidad 100% virtual y asincr&oacute;nica</td>
+                                    <td>Modalidad 100% virtual: encuentros sincr&oacute;nicos y actividades asincr&oacute;nicas</td>
                                     <td class="col-destacada text-center"><i class="fas fa-check-circle text-success"></i></td>
                                     <td class="text-center"><i class="fas fa-times-circle text-danger"></i> <small class="text-muted d-block">suelen ser sincrónicos</small></td>
                                     <td class="text-center"><i class="fas fa-check-circle text-success"></i></td>
@@ -2373,7 +2383,7 @@
                             <i class="fas fa-check-circle prereq-check" aria-hidden="true"></i>
                             <div>
                                 <p class="prereq-title">8&ndash;12 hs semanales de dedicaci&oacute;n durante 4 meses</p>
-                                <p class="prereq-sub">modalidad asincr&oacute;nica: manejan sus tiempos</p>
+                                <p class="prereq-sub">encuentros sincr&oacute;nicos grabados y actividades asincr&oacute;nicas: manejan sus tiempos</p>
                             </div>
                         </div>
 
@@ -2588,7 +2598,7 @@
                             <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
                                     <p class="mb-3">La inscripción 2026 <strong>ya está cerrada</strong>: el cupo de 30 alumnos se completó.</p>
-                                    <p class="mb-3">Por ahora <strong>no estamos recibiendo nuevas inscripciones</strong> ni tomando datos por la web. Cuando se defina la próxima cohorte lo vamos a anunciar en esta misma página.</p>
+                                    <p class="mb-3">Por ahora <strong>no estamos recibiendo nuevas inscripciones</strong>. La próxima es la cohorte 2027: si querés que te avisemos cuando abra, escribinos por mail o WhatsApp.</p>
                                     <p class="mb-3">Si querés ver cómo funcionaron las cohortes anteriores, podés mirar los <a href="#video-charla">videos de las charlas informativas 2026 y 2025</a>.</p>
                                     <p class="mb-0">Cualquier duda, escribinos a <a href="mailto:licdia@unlu.edu.ar">licdia@unlu.edu.ar</a> o por WhatsApp y te respondemos sin compromiso.</p>
                                 </div>
