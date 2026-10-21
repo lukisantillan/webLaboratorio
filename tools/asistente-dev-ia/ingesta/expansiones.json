@@ -1,0 +1,5 @@
+{
+ "_nota": "Sinónimos que se suman SOLO al texto con el que se calcula el embedding de una sección (expansión de documentos). El modelo de lenguaje recibe el texto original del sitio. Se aplica a las secciones cuyo título contiene la clave.",
+ "Estructura de aranceles": "Precio y costo de la diplomatura: cuánto cuesta, cuánto sale, valor total, matrícula y cuotas mensuales.",
+ "Cómo pagar": "Formas y medios de pago: cómo se paga, cómo abonar las cuotas, transferencia bancaria, Pago Mis Cuentas, vencimientos."
+}

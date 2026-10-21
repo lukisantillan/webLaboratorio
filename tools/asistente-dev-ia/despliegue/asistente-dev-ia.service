@@ -1,0 +1,45 @@
+# /etc/systemd/system/asistente-dev-ia.service
+[Unit]
+Description=Asistente de la Diplomatura en IA Generativa (dev-ia)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+# Usuario de sistema dedicado, sin intérprete de comandos ni permisos de administración (como rag-unlu).
+User=asistente
+Group=asistente
+WorkingDirectory=/opt/asistente-dev-ia
+
+Environment=OMP_NUM_THREADS=2
+# El modelo de embeddings está en la caché local; sin conexión a Hugging Face al arrancar.
+Environment=HF_HOME=/opt/asistente-dev-ia/.cache/huggingface
+Environment=HF_HUB_OFFLINE=1
+Environment=TRANSFORMERS_OFFLINE=1
+# La UNLu sale a Internet por el proxy institucional (API del modelo de lenguaje).
+Environment=HTTPS_PROXY=http://proxy.unlu.edu.ar:8080
+Environment=HTTP_PROXY=http://proxy.unlu.edu.ar:8080
+Environment=NO_PROXY=localhost,127.0.0.1
+
+ExecStart=/opt/asistente-dev-ia/.venv/bin/python -m uvicorn backend.app:app \
+          --host 127.0.0.1 --port 8030 --log-level warning
+Restart=on-failure
+RestartSec=5
+
+# --- Endurecimiento ---
+# Todo de solo lectura salvo la caché del modelo (crea archivos de bloqueo aun sin conexión).
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/opt/asistente-dev-ia/.cache
+ProtectHome=true
+PrivateTmp=true
+PrivateDevices=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+LockPersonality=true
+# Tope de memoria: si el proceso crece de más se reinicia él, no los otros servicios de la VM.
+MemoryMax=2G
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,8 @@
+# torch se instala aparte, la variante de CPU (ver despliegue/instalar.sh)
+fastapi==0.157.0
+uvicorn[standard]==0.54.0
+openai==3.36.0
+sentence-transformers==6.2.0
+transformers==5.20.2
+numpy==2.5.4
+beautifulsoup4==4.15.0
