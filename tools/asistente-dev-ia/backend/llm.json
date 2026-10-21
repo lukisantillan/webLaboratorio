@@ -1,0 +1,5 @@
+{
+ "_nota": "Proveedor y modelo de lenguaje (API compatible con OpenAI). Va en el repo para poder cambiarlo con un despliegue común; la clave queda en .env. Una variable de entorno LLM_MODEL o LLM_BASE_URL del proceso tiene prioridad (sirve para probar otro modelo en local). Elegido Sonnet 5.5 el 21/10/2026: en 9 respuestas de prueba, mejor criterio y completitud que Haiku 5.5, con ~0,5 s más hasta el primer token.",
+ "base_url": "https://api.anthropic.com/v1/",
+ "modelo": "claude-sonnet-5-5"
+}

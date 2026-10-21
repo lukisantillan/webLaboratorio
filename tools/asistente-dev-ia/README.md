@@ -21,7 +21,8 @@ No se guardan conversaciones.
 
 ## Configuración
 
-`.env` (ver `.env.example`): `LLM_BASE_URL`, `LLM_MODEL`, `LLM_API_KEY`.
+Proveedor y modelo de lenguaje en `backend/llm.json` (en el repo: se cambia con un despliegue común). La clave va
+en `.env` (`LLM_API_KEY`, ver `.env.example`), que no se versiona ni se copia en las actualizaciones.
 
 ## Desarrollo
 

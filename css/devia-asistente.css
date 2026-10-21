@@ -108,7 +108,7 @@ html.da-on, html.da-on body { overflow: hidden; }
 @keyframes da-brillo { 0%, 100% { box-shadow: 0 0 12px rgba(77, 226, 255, .45); } 50% { box-shadow: 0 0 24px rgba(138, 125, 255, .75), 0 0 6px rgba(77, 226, 255, .8); } }
 .da-marca-txt { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
 .da-marca-txt strong { font-family: var(--da-titulo); font-weight: 500; font-size: .95rem; letter-spacing: .01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.da-marca-txt span { font-family: var(--da-mono); font-size: .68rem; color: var(--da-tenue); letter-spacing: .08em; text-transform: uppercase; }
+.da-marca-txt span { margin-top: .28rem; font-family: var(--da-mono); font-size: .68rem; color: var(--da-tenue); letter-spacing: .08em; text-transform: uppercase; }
 .da-acciones { display: flex; align-items: center; gap: .6rem; flex: none; }
 
 .da-selector {

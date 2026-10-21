@@ -5,7 +5,8 @@ y le pide la respuesta a un modelo de lenguaje por una API compatible con OpenAI
 (Server-Sent Events) con las etapas que la interfaz muestra: embedding, secciones recuperadas, texto y uso.
 No guarda conversaciones.
 
-Configuración en ../.env: LLM_BASE_URL, LLM_MODEL y LLM_API_KEY. El modelo de embeddings y sus prefijos salen de
+Configuración: backend/llm.json (proveedor y modelo, en el repo) y ../.env (LLM_API_KEY). Una variable de entorno
+LLM_MODEL o LLM_BASE_URL del proceso tiene prioridad sobre llm.json. El modelo de embeddings y sus prefijos salen de
 indice/modelo.json, que escribe ingesta/indexar.py. SITIO_DIR solo en desarrollo: sirve el sitio estático en la misma
 dirección que la API.
 """
@@ -27,19 +28,23 @@ from pydantic import BaseModel, Field
 RAIZ = pathlib.Path(__file__).resolve().parents[1]
 
 
-def cargar_env():
-    f = RAIZ / ".env"
-    if not f.exists():
-        return
-    for linea in f.read_text(encoding="utf-8").splitlines():
-        linea = linea.strip()
-        if linea and not linea.startswith("#") and "=" in linea:
-            k, v = linea.split("=", 1)
-            os.environ.setdefault(k.strip(), v.strip())
+def leer_env():
+    """Variables de ../.env sin volcarlas al entorno: de ahí solo se usa la clave."""
+    f, salida = RAIZ / ".env", {}
+    if f.exists():
+        for linea in f.read_text(encoding="utf-8").splitlines():
+            linea = linea.strip()
+            if linea and not linea.startswith("#") and "=" in linea:
+                k, v = linea.split("=", 1)
+                salida[k.strip()] = v.strip()
+    return salida
 
 
-cargar_env()
-LLM_MODEL = os.environ.get("LLM_MODEL", "")
+ENV = leer_env()
+LLM_CONF = json.loads((RAIZ / "backend" / "llm.json").read_text(encoding="utf-8"))
+LLM_MODEL = os.environ.get("LLM_MODEL") or LLM_CONF["modelo"]
+LLM_BASE_URL = os.environ.get("LLM_BASE_URL") or LLM_CONF["base_url"]
+LLM_API_KEY = os.environ.get("LLM_API_KEY") or ENV.get("LLM_API_KEY") or "sin-clave"
 EMB_CONF = json.loads((RAIZ / "indice" / "modelo.json").read_text(encoding="utf-8"))
 EMB_MODEL = EMB_CONF["modelo"]
 K = 6                      # secciones que recibe el modelo
@@ -57,7 +62,7 @@ from sentence_transformers import SentenceTransformer  # noqa: E402  (después d
 
 EMB = SentenceTransformer(EMB_MODEL, device="cpu")
 EMB.encode(["calentamiento"], normalize_embeddings=True)   # la primera consulta no paga el arranque en frío
-CLIENTE = OpenAI(base_url=os.environ.get("LLM_BASE_URL") or None, api_key=os.environ.get("LLM_API_KEY") or "sin-clave")
+CLIENTE = OpenAI(base_url=LLM_BASE_URL or None, api_key=LLM_API_KEY)
 
 REGLAS = """Sos parte del equipo de la Diplomatura de Posgrado en Desarrollo de Soluciones de Inteligencia Artificial \
 Generativa en la Nube, del Laboratorio de Investigación en Ciencia de Datos e IA (LICDIA) de la Universidad Nacional \

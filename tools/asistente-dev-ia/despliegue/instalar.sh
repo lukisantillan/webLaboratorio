@@ -25,7 +25,7 @@ echo "== 3. Clave de la API"
 if [ ! -f "$DEST/.env" ]; then
     read -rsp "Clave de la API de Claude (platform.claude.com): " K
     echo
-    printf 'LLM_BASE_URL=https://api.anthropic.com/v1/\nLLM_MODEL=claude-haiku-5-5\nLLM_API_KEY=%s\n' "$K" > "$DEST/.env"
+    printf 'LLM_API_KEY=%s\n' "$K" > "$DEST/.env"      # proveedor y modelo: backend/llm.json
     unset K
 else
     echo "   ya existe $DEST/.env, no se toca"
