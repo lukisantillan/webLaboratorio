@@ -151,18 +151,14 @@ html.da-on, html.da-on body { overflow: hidden; }
 .da-boton-dentro .da-ojo { width: 8px; height: 8px; border-radius: 50%; background: var(--da-cian); box-shadow: 0 0 8px var(--da-cian); }
 
 /* Saludo inicial */
+/* El saludo va en la misma columna que la entrada, justo arriba: nunca se pisan. La escena se ubica en el espacio
+   libre de arriba (js: ubicarEscena). */
 .da-saludo {
-    position: absolute;
-    left: 50%;
-    top: 51%;
-    z-index: 2;
-    width: min(980px, 92vw);
-    transform: translateX(-50%);
+    margin-bottom: .5rem;
     text-align: center;
     pointer-events: none;
-    transition: opacity .5s ease, transform .6s ease, left .55s cubic-bezier(.2, .8, .2, 1), width .55s cubic-bezier(.2, .8, .2, 1);
 }
-.da.charlando .da-saludo { opacity: 0; transform: translate(-50%, -20px); }
+.da.charlando .da-saludo { display: none; }
 .da-saludo h1 {
     margin: 0 0 .6rem;
     font-family: var(--da-titulo);
@@ -210,8 +206,12 @@ html.da-on, html.da-on body { overflow: hidden; }
 @media (max-width: 991.98px) {
     .da.charlando .da-charla { top: 38vh; }
     .da.charlando .da-mensajes { flex: 1; }
-    .da-saludo { top: 39%; }
 }
+/* Antes de la primera pregunta la columna es más ancha para que el saludo respire; la entrada sigue en 720 px */
+.da:not(.charlando) .da-charla { width: min(980px, calc(100vw - 28px)); }
+.da:not(.charlando) .da-entrada,
+.da:not(.charlando) .da-sugerencias,
+.da:not(.charlando) .da-aviso { width: 100%; max-width: 720px; align-self: center; }
 
 .da-msj { max-width: 100%; animation: da-entrar .5s ease both; }
 .da-msj-usuario {
@@ -431,8 +431,7 @@ html.da-on, html.da-on body { overflow: hidden; }
 
 /* Con el panel "por dentro" abierto antes de la primera pregunta, saludo y entrada se centran en el espacio libre */
 @media (min-width: 992px) {
-    .da.con-dentro:not(.charlando) .da-saludo { left: calc(50% + 210px); width: min(760px, calc(100vw - 480px)); }
-    .da.con-dentro:not(.charlando) .da-charla { left: calc(50% + 210px); width: min(720px, calc(100vw - 480px)); }
+    .da.con-dentro:not(.charlando) .da-charla { left: calc(50% + 210px); width: min(760px, calc(100vw - 480px)); }
 }
 
 /* Panel "por dentro" */
@@ -536,7 +535,6 @@ html.da-on, html.da-on body { overflow: hidden; }
 
 /* Celular apaisado y pantallas bajas: menos texto en el inicio para que nada se pise */
 @media (max-height: 520px) and (max-width: 991.98px) {
-    .da-saludo { top: 30%; }
     .da-saludo h1 { font-size: 1.35rem; margin-bottom: 0; }
     .da-saludo p, .da-aviso { display: none; }
     .da-sugerencias button:nth-child(n+4) { display: none; }
@@ -544,6 +542,6 @@ html.da-on, html.da-on body { overflow: hidden; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .da, .da-charla, .da-saludo, .da-dentro, .da-msj { transition: none; animation: none; }
+    .da, .da-charla, .da-dentro, .da-msj { transition: none; animation: none; }
     .da-entrada::before, .da-marca-orbe, .da-cursor, .da-estado i, .da-logo, .da-logo-anillo { animation: none; }
 }

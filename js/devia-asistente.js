@@ -68,7 +68,6 @@
             '      <button type="button" data-v="sitio" aria-pressed="false">Sitio convencional</button></div>' +
             '  </div>' +
             '</div>' +
-            '<div class="da-saludo"><h1></h1><p></p></div>' +
             '<aside class="da-dentro" aria-label="Cómo responde el asistente">' +
             '  <h2>Cómo responde</h2>' +
             '  <p>Es un RAG (generación aumentada por recuperación), el tipo de sistema que se construye en la diplomatura. ' +
@@ -87,6 +86,7 @@
             '    <div>Cada afirmación lleva el número de la sección de la que sale. Al tocarlo vas a esa parte del sitio.</div></div>' +
             '</aside>' +
             '<div class="da-charla">' +
+            '  <div class="da-saludo"><h1></h1><p></p></div>' +
             '  <div class="da-mensajes" aria-live="polite"></div>' +
             '  <form class="da-entrada"><textarea rows="1" aria-label="Escribí tu pregunta" maxlength="600"></textarea>' +
             '    <button class="da-enviar" type="submit" aria-label="Enviar">&#8594;</button></form>' +
@@ -561,7 +561,7 @@
     var W = 0, H = 0, dpr = 1, U = 1;
     var esc3 = { cx: 0, cy: 0, k: 1, cxO: 0, cyO: 0, kO: 1 };
     var raton = { x: 0, y: 0, sx: 0, sy: 0 };
-    var estado = 'reposo', pulso = 0, corriendo = false, t_prev = 0, giro = 0;
+    var estado = 'reposo', pulso = 0, corriendo = false, t_prev = 0, giro = 0, cuadros = 0;
     var ORBE = [], NODOS = [], ARISTAS = [], NUMS = [], vuelos = [], chispas = [];
     var pregunta = null, sims = null, top = [], t_sec = 0, origen = null, resaltado = null;
 
@@ -614,8 +614,13 @@
     function ubicarEscena(inmediato) {
         var ancho = W >= 992, panel = dentro && dentro.classList.contains('abierto') ? Math.min(380, W - 24) + 30 : 0;
         if (!charlando) {
-            esc3.cxO = ancho ? (panel + W) / 2 : W / 2; esc3.cyO = H * (ancho ? 0.31 : 0.23); esc3.kO = ancho ? 1 : 0.85;
-            if (!ancho && H < 520) { esc3.cyO = H * 0.17; esc3.kO = 0.42; }
+            // Centrada en el espacio libre entre la barra superior y el saludo; se achica si ese espacio es bajo
+            var arriba = 64, abajo = H * 0.55;
+            if (saludo) abajo = saludo.getBoundingClientRect().top - capa.getBoundingClientRect().top - 14;
+            var alto = Math.max(90, abajo - arriba);
+            esc3.cxO = ancho ? (panel + W) / 2 : W / 2;
+            esc3.cyO = arriba + alto / 2;
+            esc3.kO = Math.min(ancho ? 1 : 0.85, (alto * 0.5) / (U * 0.34));
         } else if (ancho) {
             var izqCharla = W - Math.min(600, W * 0.44) - Math.max(16, Math.min(56, W * 0.04));
             esc3.cxO = (panel + izqCharla) / 2; esc3.cyO = H * 0.53; esc3.kO = panel ? 0.85 : 1.08;
@@ -657,6 +662,7 @@
         var dt = Math.min(50, ahora - t_prev);
         t_prev = ahora;
         var t = ahora / 1000;
+        if (!charlando && ++cuadros % 12 === 0) ubicarEscena();   // el saludo cambia de alto mientras se escribe
         esc3.cx += (esc3.cxO - esc3.cx) * 0.06;
         esc3.cy += (esc3.cyO - esc3.cy) * 0.06;
         esc3.k += (esc3.kO - esc3.k) * 0.06;

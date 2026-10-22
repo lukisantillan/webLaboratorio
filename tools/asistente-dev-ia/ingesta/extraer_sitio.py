@@ -118,6 +118,14 @@ def subpagina(nombre, html, secciones):
         q.decompose()
     url = f"{BASE_URL}{nombre}/"
     cuerpo = sopa.find("main") or sopa.body
+    # Resumen de cursos, meses y docentes (las líneas "curso-meta" del cronograma): sueltas quedan perdidas dentro de
+    # tramos largos de clases y el modelo no las recibía ante "¿quién da tal curso?"
+    metas = []
+    for meta in cuerpo.select("p.curso-meta"):
+        h = meta.find_previous(["h4", "h3"])
+        metas.append(f"{limpio(h.get_text(' ')) if h else ''}: {limpio(meta.get_text(' '))}")
+    if metas:
+        agregar(secciones, f"{SUBPAGINAS[nombre]}: cursos, meses y docentes", url, "cronograma", "\n".join(metas))
     pagina = SUBPAGINAS[nombre]
     # Partir por h2: cada h2 abre una sección hasta el siguiente h2. Se recorre todo el texto en orden
     # (los precios y datos sueltos suelen estar en div y span, no en párrafos).

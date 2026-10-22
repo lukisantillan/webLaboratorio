@@ -95,6 +95,7 @@ Versioning policy for this project:
 
 ### Fixed
 - Diplomatura en IA Generativa: se quita de la tarjeta del Dr. David Petrocelli y de su perfil la mención a la dirección de la 1ra cohorte 2025 (los roles quedan solo junto a los nombres: director y coordinador académico). La cifra de la cohorte 2025 decía "20 Inscriptos": son 25 estudiantes, como en el resto del sitio. La tarjeta "12 · En trabajo final, preparando defensa" pasa a "12 · Egresados de la 1ra cohorte".
+- Diplomatura en IA Generativa, asistente: en ventanas bajas el párrafo del saludo quedaba debajo de la entrada. El saludo pasa a la misma columna que la entrada, justo arriba, y la escena (orbe y constelación) se ubica y escala en el espacio libre entre la barra superior y el saludo, medido en vivo.
 - Diplomatura en IA Generativa, asistente: más aire entre el nombre de la diplomatura y la línea "Asistente · LICDIA · UNLU" de la barra superior.
 - Diplomatura en IA Generativa, asistente: el panel "Ver por dentro", la conversación y la entrada usan barras de scroll finas y translúcidas en lugar de las nativas.
 - Diplomatura en IA Generativa, asistente: con el panel "Ver por dentro" abierto antes de la primera pregunta, el saludo y la entrada quedaban debajo del panel; en escritorio ahora se centran en el espacio libre.
