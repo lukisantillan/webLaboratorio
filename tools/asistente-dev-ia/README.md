@@ -15,16 +15,18 @@ No se guardan conversaciones.
   subpáginas) a `indice/secciones.json`.
 - `ingesta/indexar.py`: embeddings de las secciones (`intfloat/multilingual-e5-base`), `indice/modelo.json` y la
   proyección 3D por PCA que dibuja la interfaz.
-- `backend/app.py`: FastAPI con `/dev-ia/api/mapa` y `/dev-ia/api/chat`. El modelo de lenguaje se llama por una API
-  compatible con OpenAI: el proveedor se cambia en `.env` sin tocar código.
+- `backend/app.py`: FastAPI con `/dev-ia/api/mapa` y `/dev-ia/api/chat`. Llama a Claude con el SDK oficial de
+  Anthropic, con prompt caching sobre la parte fija del prompt (reglas + ficha de datos clave); la fecha y las secciones
+  de cada consulta van en un bloque aparte, después del punto de caché.
 - `backend/recuperacion.py`: la recuperación (cupos por parte en preguntas compuestas, casi duplicados). La usan el
   backend y `ingesta/evaluar.py`, así la evaluación mide lo mismo que corre en producción.
 - `despliegue/`: servicio de systemd, snippet y zonas de nginx, e `instalar.sh` para la VM.
 
 ## Configuración
 
-Proveedor y modelo de lenguaje en `backend/llm.json` (en el repo: se cambia con un despliegue común). La clave va
-en `.env` (`LLM_API_KEY`, ver `.env.example`), que no se versiona ni se copia en las actualizaciones.
+Modelo, modo de pensamiento y precios en `backend/llm.json` (en el repo: se cambia con un despliegue común; si se
+cambia de modelo, actualizar los precios). La clave va en `.env` (`LLM_API_KEY`, ver
+`.env.example`), que no se versiona ni se copia en las actualizaciones.
 
 ## Desarrollo
 
@@ -46,7 +48,7 @@ y volver a desplegar (`indice/` viaja con el código).
 
 ## Despliegue en la VM
 
-Primera instalación, o cambios de dependencias o de la unidad de systemd: copiar el proyecto (sin `.venv`, `.env` ni
+Primera instalación, o cambios de dependencias o de la unidad de systemd (por ejemplo, el paso al SDK de Anthropic): copiar el proyecto (sin `.venv`, `.env` ni
 cachés) a `~/asistente-dev-ia` en la VM y correr `sudo bash ~/asistente-dev-ia/despliegue/instalar.sh`. Código e
 índice, sin sudo: `bash despliegue/actualizar.sh` desde la Mac con la VPN conectada. El servicio queda en `/opt/asistente-dev-ia` con usuario
 propio, en el puerto 8030 local, detrás de nginx en `/dev-ia/api/`, con límite de tasa y tope de memoria de 2 GB.
