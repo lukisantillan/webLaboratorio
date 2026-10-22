@@ -50,3 +50,13 @@ def test_marca_cuando_deriva_al_contacto(reg, tmp_path):
     db = sqlite3.connect(tmp_path / "a.sqlite3")
     assert db.execute("SELECT deriva FROM preguntas ORDER BY id").fetchall() == [(1,), (0,)]
 
+
+def test_opinion_se_liga_a_la_pregunta_y_limpia_el_comentario(reg, tmp_path):
+    reg.anotar("¿Hay becas?", 1, [], respuesta="No lo tengo a mano.", clave="clave-de-prueba")
+    assert reg.opinar("clave-de-prueba", -1, "faltaba lo de becas, llamame al 1123456789")
+    assert reg.opinar("clave-de-prueba", 1)                  # se puede cambiar de opinión
+    assert not reg.opinar("otra-clave-cualquiera", 1)
+    reg.opinar("clave-de-prueba", -1, "faltaba lo de becas, llamame al 1123456789")
+    db = sqlite3.connect(tmp_path / "a.sqlite3")
+    voto, comentario = db.execute("SELECT voto, comentario FROM preguntas").fetchone()
+    assert (voto, comentario) == (-1, "faltaba lo de becas, llamame al [número]")

@@ -5,9 +5,9 @@ Uso, en la VM (o en local, con la base de ../datos/):
     .venv/bin/python -m backend.consultas --csv > preguntas.csv
 Desde la Mac, con la VPN: bash despliegue/preguntas.sh [--dias 30] [--csv]
 
-Muestra, por día, preguntas, bloqueos por tope, errores, gasto y aprovechamiento de la caché; las preguntas en las que
-el asistente derivó al contacto (indicio de que el sitio no tenía el dato), las secciones más usadas y las últimas
-preguntas. Abre la base en solo lectura.
+Muestra, por día, preguntas, bloqueos por tope, errores, gasto y aprovechamiento de la caché; las opiniones (las
+respuestas que no sirvieron, con su comentario); las preguntas en las que el asistente derivó al contacto (indicio de
+que el sitio no tenía el dato), las secciones más usadas y las últimas preguntas. Abre la base en solo lectura.
 """
 
 import argparse
@@ -51,6 +51,13 @@ def main():
         print(f"{dia:<11}{len(fs):>6}{sum(bool(f['bloqueo']) for f in fs):>6}{sum(bool(f['error']) for f in fs):>6}"
               f"{sum(f['deriva'] or 0 for f in fs):>7}{sum(f['usd'] or 0 for f in fs):>8.3f}"
               f"{cache / (entrada + cache) if entrada + cache else 0:>7.0%}")
+
+    votos = [f for f in filas if f["voto"]]
+    if votos:
+        utiles = sum(f["voto"] > 0 for f in votos)
+        print(f"\nOpiniones: {utiles} útiles, {len(votos) - utiles} no sirvieron")
+        for f in [f for f in votos if f["voto"] < 0][-25:]:
+            print(f"  👎 {f['momento']}  {f['pregunta']}" + (f"  → {f['comentario']}" if f["comentario"] else ""))
 
     derivadas = collections.Counter(f["pregunta"].strip().lower() for f in filas if f["deriva"])
     if derivadas:

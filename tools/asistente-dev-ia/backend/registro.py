@@ -5,10 +5,11 @@ asistente. Al llegar a cualquiera de los dos la pregunta no llega al modelo y la
 el tope global además deja un aviso en el registro del servicio (journalctl) una vez por día.
 
 Registro: cada pregunta queda con la fecha, las secciones recuperadas, si la respuesta derivó al contacto (el indicio
-de que el sitio no tenía el dato), tokens, costo y tiempos. No se guarda la dirección de origen ni nada que identifique
-a quien pregunta: el contador por dirección usa un hash con una sal que cambia cada día, y los correos y números de
-teléfono o documento que alguien escriba en la pregunta se reemplazan antes de guardarla. Las filas más viejas que
-dias_registro se borran solas.
+de que el sitio no tenía el dato), tokens, costo y tiempos, y la opinión de la persona si la da (útil / no me sirvió y
+un comentario opcional, ligados a la pregunta por una clave al azar que solo conoce esa página). No se guarda la
+dirección de origen ni nada que identifique a quien pregunta: el contador por dirección usa un hash con una sal que
+cambia cada día, y los correos y números de teléfono o documento que alguien escriba en la pregunta o el comentario se
+reemplazan antes de guardarlos. Las filas más viejas que dias_registro se borran solas.
 
 La base va en STATE_DIRECTORY (systemd la crea en /var/lib/asistente-dev-ia) o, en desarrollo, en ../datos/.
 """
@@ -35,7 +36,8 @@ CREATE TABLE IF NOT EXISTS preguntas (
     id INTEGER PRIMARY KEY, momento TEXT NOT NULL, pregunta TEXT NOT NULL, turno INTEGER NOT NULL,
     secciones TEXT NOT NULL, deriva INTEGER, bloqueo TEXT, error TEXT, modelo TEXT,
     tokens_entrada INTEGER, tokens_cache_lectura INTEGER, tokens_cache_escritura INTEGER, tokens_salida INTEGER,
-    usd REAL, ms_primer_token INTEGER, ms_total INTEGER);
+    usd REAL, ms_primer_token INTEGER, ms_total INTEGER, clave TEXT, voto INTEGER, comentario TEXT);
+CREATE INDEX IF NOT EXISTS preguntas_clave ON preguntas (clave);
 """
 
 # Datos personales que alguien puede escribir en la pregunta: no se guardan
@@ -108,7 +110,7 @@ class Registro:
 
     def anotar(self, pregunta: str, turno: int, secciones: list[str], respuesta: str = "", bloqueo: str | None = None,
                error: str | None = None, modelo: str | None = None, uso: dict | None = None,
-               ms_primer_token: int | None = None, ms_total: int | None = None):
+               ms_primer_token: int | None = None, ms_total: int | None = None, clave: str | None = None):
         """Guarda la pregunta (sin datos personales) y suma su costo al gasto del día."""
         uso = uso or {}
         dia = hoy()
@@ -116,12 +118,19 @@ class Registro:
             self.db.execute(
                 "INSERT INTO preguntas (momento, pregunta, turno, secciones, deriva, bloqueo, error, modelo, "
                 "tokens_entrada, tokens_cache_lectura, tokens_cache_escritura, tokens_salida, usd, ms_primer_token, "
-                "ms_total) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                "ms_total, clave) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 (time.strftime("%Y-%m-%d %H:%M"), limpiar(pregunta), turno, json.dumps(secciones),
                  int(bool(DERIVA.search(respuesta))) if respuesta else None, bloqueo, error, modelo,
                  uso.get("entrada"), uso.get("cache_lectura"), uso.get("cache_escritura"), uso.get("salida"),
-                 uso.get("usd"), ms_primer_token, ms_total))
+                 uso.get("usd"), ms_primer_token, ms_total, clave))
             if uso.get("usd"):
                 self.db.execute("INSERT INTO uso (dia, clave, usd) VALUES (?, 'global', ?) ON CONFLICT (dia, clave) "
                                 "DO UPDATE SET usd = usd + excluded.usd", (dia, uso["usd"]))
 
+    def opinar(self, clave: str, voto: int, comentario: str = "") -> bool:
+        """Útil (1) o no (-1) y comentario opcional sobre una respuesta de las últimas 24 horas. Se puede cambiar."""
+        with self.cerrojo:
+            c = self.db.execute("UPDATE preguntas SET voto = ?, comentario = ? WHERE clave = ? "
+                                "AND momento >= strftime('%Y-%m-%d %H:%M', 'now', 'localtime', '-1 day')",
+                                (voto, limpiar(comentario)[:500] or None, clave))
+            return c.rowcount > 0

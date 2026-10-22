@@ -36,6 +36,8 @@ cambia de modelo, actualizar los precios, que alimentan el tope de gasto). La cl
 - Tope por persona: `preguntas_por_persona_por_dia` por dirección de origen (la que pasa nginx en `X-Real-IP`).
 - Tope global: `usd_por_dia` de gasto en el modelo, calculado con el uso que informa la API. Al llegar, el servicio deja
   una línea `AVISO:` en `journalctl -u asistente-dev-ia` y hasta el día siguiente responde con el contacto.
+- Opiniones: debajo de cada respuesta hay 👍 / 👎 y, con 👎, un comentario opcional. Llegan a `/dev-ia/api/opinion`
+  con una clave al azar que el backend manda en el evento `fin` y quedan en la misma fila de la pregunta.
 - Registro: cada pregunta con fecha, secciones recuperadas, si la respuesta derivó al contacto (indicio de un dato que
   falta en el sitio), tokens, costo y tiempos. Sin la dirección de origen (el contador usa un hash con sal diaria) y
   con correos y números de 7 dígitos o más reemplazados. Se borra a los `dias_registro` días. En la VM está en
