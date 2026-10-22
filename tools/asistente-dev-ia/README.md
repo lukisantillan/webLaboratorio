@@ -57,6 +57,22 @@ SITIO_DIR=../.. .venv/bin/python -m uvicorn backend.app:app --port 8020
 
 Con `SITIO_DIR` el backend sirve también el sitio estático: la portada queda en http://localhost:8020/dev-ia/.
 
+## Evaluación
+
+- `ingesta/evaluar.py`: recuperación. Si las secciones esperadas quedan entre las K de cada pregunta de prueba. No
+  llama al modelo.
+- `ingesta/evaluar_respuestas.py`: respuestas, con el backend corriendo. Chequeos deterministas sobre 25 preguntas:
+  citas solo a secciones recibidas, montos, porcentajes, horas y fechas que aparecen tal cual en la sección citada,
+  respuestas con datos que citan, derivación al contacto cuando el sitio no tiene el dato, y consultas ajenas o
+  intentos de cambiar las reglas que vuelven al tema. Llama al modelo de verdad (unos USD 0,20 por corrida).
+
+```
+.venv/bin/python ingesta/evaluar.py
+.venv/bin/python ingesta/evaluar_respuestas.py -v      # -v muestra cada respuesta
+```
+
+Correr las dos antes de desplegar un cambio de prompt, de modelo o del índice.
+
 ## Cuando cambia el contenido del sitio
 
 ```
