@@ -1,20 +1,21 @@
 """Evaluación de la recuperación: para cada pregunta de prueba, si las secciones esperadas quedan entre las K que
-recibe el modelo (con la misma lógica del backend: casi duplicados y cupos por parte en preguntas compuestas).
+recibe el modelo, con la lógica del backend importada de backend/recuperacion.py (casi duplicados y cupos por parte
+en preguntas compuestas).
 
 Uso: .venv/bin/python ingesta/evaluar.py
 """
 
 import json
 import pathlib
-import re
+import sys
 
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
 RAIZ = pathlib.Path(__file__).resolve().parents[1]
-K, POR_PARTE, CASI_IGUAL = 6, 2, 0.92
-COMPUESTA = re.compile(r"\s+y\s+(?=(?:c[oó]mo|cu[aá]nto|cu[aá]ndo|d[oó]nde|qu[eé]|qui[eé]n|cu[aá]l|hay|puedo|necesito|se)\b)",
-                       re.IGNORECASE)
+sys.path.insert(0, str(RAIZ))
+from backend.recuperacion import K, consultas_de, recuperar  # noqa: E402  (la misma lógica que el backend)
+
 # (pregunta, requisitos): cada requisito es una lista de alternativas de título; tienen que cumplirse todos
 PRUEBAS = [
     ("¿Cuánto cuesta?", [["Estructura de aranceles"]]),
@@ -54,28 +55,13 @@ def main():
     conf = json.loads((RAIZ / "indice" / "modelo.json").read_text(encoding="utf-8"))
     m = SentenceTransformer(conf["modelo"], device="cpu")
 
-    def recuperar(q):
-        partes = [x.strip(" ¿?") for x in COMPUESTA.split(q) if len(x.strip(" ¿?").split()) >= 2]
-        cs = [q] + (partes if len(partes) > 1 else [])
-        Sm = E @ m.encode([conf["prefijo_consulta"] + c for c in cs], normalize_embeddings=True).T
-        top = []
-
-        def sumar(orden, cupo):
-            n = 0
-            for i in orden:
-                if len(top) >= K or n >= cupo:
-                    return
-                if all(float(E[i] @ E[j]) < CASI_IGUAL for j in top):
-                    top.append(int(i))
-                    n += 1
-        for c in range(1, Sm.shape[1]):
-            sumar(np.argsort(-Sm[:, c]), POR_PARTE)
-        sumar(np.argsort(-Sm[:, 0]), K)
-        return top
+    def top_de(q):
+        cs = consultas_de(q)
+        return recuperar(E, m.encode([conf["prefijo_consulta"] + c for c in cs], normalize_embeddings=True))[0]
 
     fallos = []
     for q, reqs in PRUEBAS:
-        titulos = [S[i]["titulo"] for i in recuperar(q)]
+        titulos = [S[i]["titulo"] for i in top_de(q)]
         if not all(any(any(a in t for a in alt) for t in titulos) for alt in reqs):
             fallos.append((q, [t[:34] for t in titulos]))
     print(f"{len(PRUEBAS) - len(fallos)}/{len(PRUEBAS)} preguntas con todas sus secciones entre las {K} recuperadas")

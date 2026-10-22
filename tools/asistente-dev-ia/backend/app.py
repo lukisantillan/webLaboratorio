@@ -11,10 +11,11 @@ indice/modelo.json, que escribe ingesta/indexar.py. SITIO_DIR solo en desarrollo
 dirección que la API.
 """
 
+import collections
 import json
 import os
 import pathlib
-import re
+import threading
 import time
 from typing import Literal
 
@@ -24,6 +25,8 @@ from fastapi.responses import StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from openai import OpenAI
 from pydantic import BaseModel, Field
+
+from backend.recuperacion import K, consultas_de, recuperar
 
 RAIZ = pathlib.Path(__file__).resolve().parents[1]
 
@@ -47,9 +50,6 @@ LLM_BASE_URL = os.environ.get("LLM_BASE_URL") or LLM_CONF["base_url"]
 LLM_API_KEY = os.environ.get("LLM_API_KEY") or ENV.get("LLM_API_KEY") or "sin-clave"
 EMB_CONF = json.loads((RAIZ / "indice" / "modelo.json").read_text(encoding="utf-8"))
 EMB_MODEL = EMB_CONF["modelo"]
-K = 6                      # secciones que recibe el modelo
-CASI_IGUAL = 0.92          # dos secciones más parecidas que esto entre sí cuentan como una (portada y subpágina)
-POR_PARTE = 2              # lugares garantizados para cada parte de una pregunta compuesta
 MAX_HISTORIA = 6           # mensajes previos que se reenvían
 
 DATOS = json.loads((RAIZ / "indice" / "secciones.json").read_text(encoding="utf-8"))
@@ -126,10 +126,27 @@ def proyectar(v):
 MAPA = [{"id": s["id"], "titulo": s["titulo"], "url": s["url"], "ancla": s["ancla"],
          "pagina": s["url"].strip("/").split("/")[-1], "xyz": proyectar(E[i])} for i, s in enumerate(SECCIONES)]
 
+# Embeddings de consultas ya calculadas: la pregunta anterior de una conversación se busca de nuevo en el turno
+# siguiente (continuidad), y las preguntas frecuentes se repiten entre visitantes.
+EMB_CACHE: collections.OrderedDict[str, np.ndarray] = collections.OrderedDict()
+EMB_CERROJO = threading.Lock()
+EMB_MAX = 2048
 
-# " y " seguido de otra pregunta: "… y cómo …", "… y cuándo …", "… y hay …"
-COMPUESTA = re.compile(r"\s+y\s+(?=(?:c[oó]mo|cu[aá]nto|cu[aá]ndo|d[oó]nde|qu[eé]|qui[eé]n|cu[aá]l|hay|puedo|necesito|se)\b)",
-                       re.IGNORECASE)
+
+def embeber(textos: list[str]) -> np.ndarray:
+    with EMB_CERROJO:
+        hallados = {t: EMB_CACHE[t] for t in textos if t in EMB_CACHE}
+        for t in hallados:
+            EMB_CACHE.move_to_end(t)
+    faltan = [t for t in dict.fromkeys(textos) if t not in hallados]
+    if faltan:
+        V = EMB.encode([EMB_CONF["prefijo_consulta"] + t for t in faltan], normalize_embeddings=True)
+        hallados.update(zip(faltan, V))
+        with EMB_CERROJO:
+            EMB_CACHE.update(zip(faltan, V))
+            while len(EMB_CACHE) > EMB_MAX:
+                EMB_CACHE.popitem(last=False)
+    return np.stack([hallados[t] for t in textos])
 
 
 class Mensaje(BaseModel):
@@ -166,41 +183,25 @@ def chat(p: Pedido):
     pregunta = usuario[-1][:600]
     # Para repreguntas cortas ("¿y cuánto sale?") se suma la pregunta anterior a la búsqueda
     consulta = pregunta if len(usuario) < 2 or len(pregunta.split()) > 8 else usuario[-2][:300] + " " + pregunta
+    # Preguntas compuestas: además de la pregunta entera se busca cada parte (backend/recuperacion.py). El vector que
+    # muestra la interfaz es el de la pregunta entera.
+    consultas = consultas_de(consulta)
 
-    # Preguntas compuestas ("¿cuánto cuesta y cómo se paga?"): además de la pregunta entera se busca cada parte, y
-    # cada parte tiene sus mejores secciones garantizadas (con 26 preguntas de prueba, quedarse con la similitud máxima
-    # o fusionar rankings dejaba afuera la segunda parte). El vector que muestra la interfaz es el de la pregunta entera.
-    partes = [x.strip(" ¿?") for x in COMPUESTA.split(consulta) if len(x.strip(" ¿?").split()) >= 2]
-    consultas = [consulta] + (partes if len(partes) > 1 else [])
 
     def eventos():
         t0 = time.perf_counter()
-        V = EMB.encode([EMB_CONF["prefijo_consulta"] + c for c in consultas], normalize_embeddings=True)
+        V = embeber(consultas)
         v = V[0]
         yield sse("embedding", {"dimensiones": int(v.shape[0]), "valores": [round(float(x), 4) for x in v[:128]],
                                 "xyz": proyectar(v), "modelo": EMB_MODEL,
                                 "ms": round((time.perf_counter() - t0) * 1000)})
-        Sm = E @ V.T                      # similitud de cada sección con cada consulta
-        sims = Sm.max(axis=1)
-        top = []
-
-        def sumar(orden, cupo):
-            n = 0
-            for i in orden:
-                if len(top) >= K or n >= cupo:
-                    return
-                if all(float(E[i] @ E[j]) < CASI_IGUAL for j in top):
-                    top.append(int(i))
-                    n += 1
-
-        for c in range(1, Sm.shape[1]):   # cada parte de una pregunta compuesta tiene lugares garantizados
-            sumar(np.argsort(-Sm[:, c]), POR_PARTE)
-        sumar(np.argsort(-Sm[:, 0]), K)   # el resto, por la pregunta entera
+        top, sims = recuperar(E, V)
         # Continuidad: las secciones más cercanas a la pregunta anterior siguen en el contexto, así el modelo no se
-        # desdice de lo que ya respondió cuando la consulta nueva trae otras secciones.
+        # desdice de lo que ya respondió cuando la consulta nueva trae otras secciones. Su embedding suele estar ya
+        # calculado del turno anterior.
         previas = []
         if len(usuario) >= 2:
-            vp = EMB.encode([EMB_CONF["prefijo_consulta"] + usuario[-2][:600]], normalize_embeddings=True)[0]
+            vp = embeber([usuario[-2][:600]])[0]
             previas = [int(i) for i in np.argsort(-(E @ vp))[:PREVIAS] if int(i) not in top and int(i) not in FICHA]
         yield sse("secciones", {"top": [{"id": SECCIONES[i]["id"], "sim": round(float(sims[i]), 4)} for i in top],
                                 "todas": [round(float(x), 4) for x in sims],

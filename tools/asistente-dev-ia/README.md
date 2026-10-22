@@ -17,6 +17,8 @@ No se guardan conversaciones.
   proyección 3D por PCA que dibuja la interfaz.
 - `backend/app.py`: FastAPI con `/dev-ia/api/mapa` y `/dev-ia/api/chat`. El modelo de lenguaje se llama por una API
   compatible con OpenAI: el proveedor se cambia en `.env` sin tocar código.
+- `backend/recuperacion.py`: la recuperación (cupos por parte en preguntas compuestas, casi duplicados). La usan el
+  backend y `ingesta/evaluar.py`, así la evaluación mide lo mismo que corre en producción.
 - `despliegue/`: servicio de systemd, snippet y zonas de nginx, e `instalar.sh` para la VM.
 
 ## Configuración
