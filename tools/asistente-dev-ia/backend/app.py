@@ -18,6 +18,7 @@ import collections
 import json
 import os
 import pathlib
+import secrets
 import threading
 import time
 from typing import Literal
@@ -179,6 +180,12 @@ class Pedido(BaseModel):
     mensajes: list[Mensaje] = Field(min_length=1, max_length=60)
 
 
+class Opinion(BaseModel):
+    clave: str = Field(min_length=8, max_length=32)
+    voto: Literal[1, -1]
+    comentario: str = Field(default="", max_length=500)
+
+
 app = FastAPI(title="Asistente Dev-IA", docs_url=None, redoc_url=None, openapi_url=None)
 
 
@@ -220,6 +227,8 @@ def chat(p: Pedido, request: Request):
     # muestra la interfaz es el de la pregunta entera.
     consultas = consultas_de(consulta)
 
+    clave = secrets.token_urlsafe(12)       # liga la opinión de la persona con esta pregunta en el registro
+
     def eventos():
         t0 = time.perf_counter()
         V = embeber(consultas)
@@ -252,7 +261,7 @@ def chat(p: Pedido, request: Request):
             historia.pop(0)
 
         t1 = time.perf_counter()
-        primero, respuesta, mensaje, error, n_trozos = None, "", None, None, 0
+        primero, respuesta, mensaje, error, n_trozos, anotado = None, "", None, None, 0, False
         try:
             with CLIENTE.messages.stream(model=LLM_MODEL, max_tokens=900, system=sistema, messages=historia,
                                          thinking={"type": LLM_CONF["pensamiento"]}) as flujo:
@@ -275,7 +284,12 @@ def chat(p: Pedido, request: Request):
                 yield sse("error", {"mensaje": "No puedo responder esa consulta. " + CONTACTO})
                 return
             uso = costo(mensaje.usage)
-            yield sse("fin", {"modelo": LLM_MODEL,
+            # Se anota antes de avisar el fin, así la opinión que llegue después ya encuentra la fila
+            REGISTRO.anotar(pregunta, len(usuario), ids, respuesta=respuesta, modelo=LLM_MODEL, uso=uso,
+                            ms_primer_token=round(primero * 1000) if primero else None,
+                            ms_total=round((time.perf_counter() - t0) * 1000), clave=clave)
+            anotado = True
+            yield sse("fin", {"modelo": LLM_MODEL, "clave": clave,
                               "tokens_entrada": uso["entrada"] + uso["cache_lectura"] + uso["cache_escritura"],
                               "tokens_cache": uso["cache_lectura"],
                               "tokens_salida": uso["salida"],
@@ -289,12 +303,18 @@ def chat(p: Pedido, request: Request):
             print("error del modelo:", error, str(e)[:300], flush=True)
             yield sse("error", {"mensaje": "El asistente no está disponible en este momento."})
         finally:
-            REGISTRO.anotar(pregunta, len(usuario), ids, respuesta=respuesta, error=error, modelo=LLM_MODEL,
-                            uso=costo(mensaje.usage) if mensaje is not None else None,
-                            ms_primer_token=round(primero * 1000) if primero else None,
-                            ms_total=round((time.perf_counter() - t0) * 1000))
+            if not anotado:
+                REGISTRO.anotar(pregunta, len(usuario), ids, respuesta=respuesta, error=error, modelo=LLM_MODEL,
+                                uso=costo(mensaje.usage) if mensaje is not None else None,
+                                ms_primer_token=round(primero * 1000) if primero else None,
+                                ms_total=round((time.perf_counter() - t0) * 1000))
 
     return flujo_sse(eventos())
+
+
+@app.post("/dev-ia/api/opinion")
+def opinion(o: Opinion):
+    return {"ok": REGISTRO.opinar(o.clave, o.voto, o.comentario.strip())}
 
 
 # En desarrollo se sirve el sitio estático en la misma dirección (en producción lo sirve nginx)

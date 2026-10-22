@@ -307,7 +307,7 @@
             if (!acumulado) throw new Error('vacío');
             m.firstChild.innerHTML = formatear(acumulado, citas, false);
             m.appendChild(fuentes(citas));
-            m.appendChild(pie(q, acumulado, top.slice(), sims));
+            m.appendChild(pie(q, acumulado, fin && fin.clave, top.slice(), sims));
             historia.push({ rol: 'asistente', texto: acumulado });
             if (fin) {
                 dato('tok-in', fin.tokens_entrada != null ? fin.tokens_entrada.toLocaleString('es-AR') : '—');
@@ -405,7 +405,7 @@
         return d;
     }
 
-    // ---------- Debajo de cada respuesta: copiar, WhatsApp, accesos y repreguntas ----------
+    // ---------- Debajo de cada respuesta: opinión, copiar, WhatsApp, accesos y repreguntas ----------
     // Accesos según el tema: se buscan en la pregunta y en las tres secciones más cercanas
     var ACCESOS = [
         { re: /arancel|cuota|pago|pagar|precio|costo|cuesta|sale\b/i, pagina: 'aranceles', txt: 'Ver aranceles', url: '/dev-ia/aranceles/' },
@@ -414,7 +414,7 @@
         { re: /requisito|conocimientos previos|admisi[oó]n|programar/i, pagina: 'requisitos', txt: 'Ver requisitos', url: '/dev-ia/requisitos/' }
     ];
     function sinMarcas(txt) { return txt.replace(/\s*\[(?:S\d+[\s,;]*)+\]/g, '').replace(/\*\*/g, '').trim(); }
-    function pie(q, respuesta, ids, simsResp) {
+    function pie(q, respuesta, clave, ids, simsResp) {
         var limpia = sinMarcas(respuesta);
         var d = document.createElement('div');
         d.className = 'da-pie-resp';
@@ -425,18 +425,40 @@
         var wa = 'Hola, estuve consultando al asistente de la Diplomatura en IA Generativa.\n\nPregunté: «' + q + '»\n\nMe respondió: «' +
             resumen + '»\n\nQuería seguir la consulta con ustedes.';
         barra.innerHTML =
+            (clave ? '<button type="button" class="da-voto" data-voto="1" aria-label="Me sirvió" title="Me sirvió">👍</button>' +
+                     '<button type="button" class="da-voto" data-voto="-1" aria-label="No me sirvió" title="No me sirvió">👎</button><i class="da-pie-sep"></i>' : '') +
             '<button type="button" data-accion="copiar">Copiar</button>' +
             (navigator.share ? '<button type="button" data-accion="compartir">Compartir</button>' : '') +
             '<a class="da-pie-wa" href="https://api.whatsapp.com/send?phone=%2B541123953895&text=' + encodeURIComponent(wa) +
             '" target="_blank" rel="noopener">Seguir por WhatsApp</a>';
         d.appendChild(barra);
 
+        var comentario = document.createElement('form');
+        comentario.className = 'da-comentario';
+        comentario.hidden = true;
+        comentario.innerHTML = '<input type="text" maxlength="500" aria-label="Qué faltó o estuvo mal" placeholder="¿Qué faltó o estuvo mal? (opcional)">' +
+            '<button type="submit">Enviar</button>';
+        d.appendChild(comentario);
+
         var compartible = 'Pregunta: ' + q + '\n\n' + limpia + '\n\nAsistente de la Diplomatura en IA Generativa en la Nube (LICDIA, UNLu): ' +
             location.origin + '/dev-ia/';
+        function opinar(voto, txt) {
+            return fetch(API + '/opinion', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ clave: clave, voto: voto, comentario: txt || '' })
+            }).catch(function () { /* la opinión es opcional: si falla, la charla sigue igual */ });
+        }
         barra.addEventListener('click', function (e) {
             var b = e.target.closest('button');
             if (!b) return;
-            if (b.getAttribute('data-accion') === 'copiar') {
+            if (b.hasAttribute('data-voto')) {
+                var voto = +b.getAttribute('data-voto');
+                barra.querySelectorAll('.da-voto').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+                opinar(voto);
+                comentario.hidden = voto !== -1;
+                if (voto === -1) comentario.querySelector('input').focus();
+            } else if (b.getAttribute('data-accion') === 'copiar') {
                 var original = b.textContent;
                 (navigator.clipboard ? navigator.clipboard.writeText(compartible) : Promise.reject())
                     .then(function () { b.textContent = 'Copiado'; }, function () { b.textContent = 'No se pudo copiar'; })
@@ -444,6 +466,11 @@
             } else if (b.getAttribute('data-accion') === 'compartir') {
                 navigator.share({ title: 'Diplomatura en IA Generativa en la Nube', text: compartible }).catch(function () { /* cancelado */ });
             }
+        });
+        comentario.addEventListener('submit', function (e) {
+            e.preventDefault();
+            opinar(-1, comentario.querySelector('input').value.trim());
+            comentario.innerHTML = '<span>Gracias, lo vamos a revisar.</span>';
         });
 
         // Accesos: hasta dos, por la pregunta y las tres secciones más cercanas

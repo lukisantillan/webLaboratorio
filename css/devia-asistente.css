@@ -291,7 +291,7 @@ html.da-on, html.da-on body { overflow: hidden; }
 }
 .da-fuente b { font: 600 .66rem var(--da-mono); color: var(--da-cian); }
 .da-fuente:hover { border-color: rgba(77, 226, 255, .6); background: rgba(77, 226, 255, .1); color: #fff; }
-/* Debajo de la respuesta: copiar, WhatsApp, accesos y repreguntas */
+/* Debajo de la respuesta: opinión, copiar, WhatsApp, accesos y repreguntas */
 .da-pie { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem; margin-top: .65rem; }
 .da-pie button, .da-pie a {
     border: 1px solid transparent;
@@ -305,7 +305,22 @@ html.da-on, html.da-on body { overflow: hidden; }
     transition: border-color .2s, background .2s, color .2s;
 }
 .da-pie button:hover, .da-pie a:hover { border-color: var(--da-borde); background: rgba(255, 255, 255, .05); color: var(--da-tinta); }
+.da-pie .da-voto { padding: .22rem .45rem; filter: grayscale(1); opacity: .75; }
+.da-pie .da-voto[aria-pressed="true"] { filter: none; opacity: 1; border-color: rgba(77, 226, 255, .5); background: rgba(77, 226, 255, .12); }
+.da-pie-sep { width: 1px; height: 1rem; margin: 0 .2rem; background: var(--da-borde); }
 .da-pie .da-pie-wa { color: #7ef0b4; }
+.da-comentario { display: flex; gap: .4rem; margin-top: .45rem; font-size: .76rem; color: var(--da-tenue); }
+.da-comentario input {
+    flex: 1;
+    min-width: 0;
+    border: 1px solid var(--da-borde);
+    border-radius: 999px;
+    padding: .3rem .75rem;
+    background: rgba(255, 255, 255, .04);
+    color: var(--da-tinta);
+    font: 400 .76rem var(--da-texto);
+}
+.da-comentario button { border: 1px solid rgba(77, 226, 255, .45); border-radius: 999px; padding: .3rem .8rem; background: transparent; color: var(--da-cian); font-size: .76rem; cursor: pointer; }
 .da-accesos { display: flex; flex-wrap: wrap; gap: .45rem; margin-top: .7rem; }
 .da-accesos a {
     padding: .4rem .85rem;
