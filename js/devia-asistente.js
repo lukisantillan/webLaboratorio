@@ -81,7 +81,7 @@
             '    <table class="da-tabla"></table><div class="da-leyenda"></div></div>' +
             '  <div class="da-paso" data-n="3" data-paso="gen"><h3>Generación</h3>' +
             '    <div>Modelo <span class="da-dato" data-c="llm"></span></div>' +
-            '    <div>Prompt: reglas + ficha + secciones + conversación · <span class="da-dato" data-c="tok-in">–</span> tokens</div>' +
+            '    <div>Prompt: reglas + ficha + secciones + conversación · <span class="da-dato" data-c="tok-in">–</span> tokens, <span class="da-dato" data-c="tok-cache">–</span> desde la caché</div>' +
             '    <div>Primer token <span class="da-dato" data-c="ttft">–</span> ms · respuesta <span class="da-dato" data-c="tok-out">–</span> tokens · <span class="da-dato" data-c="tps">–</span> tokens/s</div></div>' +
             '  <div class="da-paso" data-n="4" data-paso="cit"><h3>Citas</h3>' +
             '    <div>Cada afirmación lleva el número de la sección de la que sale. Al tocarlo vas a esa parte del sitio.</div></div>' +
@@ -91,7 +91,7 @@
             '  <form class="da-entrada"><textarea rows="1" aria-label="Escribí tu pregunta" maxlength="600"></textarea>' +
             '    <button class="da-enviar" type="submit" aria-label="Enviar">&#8594;</button></form>' +
             '  <div class="da-sugerencias"></div>' +
-            '  <p class="da-aviso">Respuestas generadas con IA a partir del contenido de este sitio. Pueden tener errores: verificá en la sección citada. Las preguntas no se guardan.</p>' +
+            '  <p class="da-aviso">Respuestas generadas con IA a partir del contenido de este sitio. Pueden tener errores: verificá en la sección citada. Guardamos las preguntas, sin datos de quién las hace, para mejorar el sitio.</p>' +
             '</div>';
         document.body.appendChild(capa);
 
@@ -247,6 +247,7 @@
         if (!q || ocupado) return;
         if (!charlando) { charlando = true; capa.classList.add('charlando'); ubicarEscena(); }
         ocupado = true;
+        mensajes.querySelectorAll('.da-repreguntas').forEach(function (x) { x.remove(); });   // solo valen para la última
         enviarBtn.disabled = true;
         var u = document.createElement('div');
         u.className = 'da-msj da-msj-usuario';
@@ -297,16 +298,20 @@
                 } else if (ev === 'fin') {
                     fin = d;
                 } else if (ev === 'error') {
-                    throw new Error('modelo');
+                    var e = new Error('modelo');
+                    e.mensaje = d.mensaje;          // por ejemplo, el tope diario de preguntas
+                    throw e;
                 }
             });
         }).then(function () {
             if (!acumulado) throw new Error('vacío');
             m.firstChild.innerHTML = formatear(acumulado, citas, false);
             m.appendChild(fuentes(citas));
+            m.appendChild(pie(q, acumulado, fin && fin.clave, top.slice(), sims));
             historia.push({ rol: 'asistente', texto: acumulado });
             if (fin) {
                 dato('tok-in', fin.tokens_entrada != null ? fin.tokens_entrada.toLocaleString('es-AR') : '—');
+                dato('tok-cache', fin.tokens_cache != null ? fin.tokens_cache.toLocaleString('es-AR') : '—');
                 dato('tok-out', fin.tokens_salida != null ? fin.tokens_salida : '—');
                 dato('ttft', fin.ms_primer_token != null ? fin.ms_primer_token : '—');
                 var seg = (fin.ms_generacion - (fin.ms_primer_token || 0)) / 1000;
@@ -314,9 +319,10 @@
             }
             marcarPaso('cit');
             seguir();
-        }).catch(function () {
+        }).catch(function (err) {
             historia.pop();
-            m.innerHTML = '<div class="da-error">No pude responder en este momento.<br><button type="button">Ver el sitio convencional</button></div>';
+            m.innerHTML = '<div class="da-error">' + (err && err.mensaje ? enlazar(esc(err.mensaje)) : 'No pude responder en este momento.') +
+                '<br><button type="button">Ver el sitio convencional</button></div>';
             m.querySelector('button').addEventListener('click', function () { cerrar(false); });
         }).then(function () {
             ocupado = false;
@@ -361,9 +367,15 @@
         if (!citas.num[id]) { citas.orden.push(id); citas.num[id] = citas.orden.length; }
         return citas.num[id];
     }
+    // Correos y WhatsApp como enlaces. Recibe texto ya escapado; va antes de las citas para no tocar sus atributos.
+    var WHATSAPP = 'https://api.whatsapp.com/send?phone=%2B541123953895&text=Hola,%20queria%20informaci%C3%B3n%20sobre%20la%20diplomatura%20en%20IA%20Generativa';
+    function enlazar(h) {
+        return h.replace(/[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g, function (c) { return '<a href="mailto:' + c + '">' + c + '</a>'; })
+            .replace(/\bWhats ?App\b/gi, function (w) { return '<a href="' + WHATSAPP + '" target="_blank" rel="noopener">' + w + '</a>'; });
+    }
     function formatear(txt, citas, enCurso) {
         if (enCurso) txt = txt.replace(/\[[^\]]{0,12}$/, '');   // una cita que todavía no terminó de llegar
-        var h = esc(txt).replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+        var h = enlazar(esc(txt).replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>'));
         h = h.replace(/\[((?:S\d+[\s,;]*)+)\]/g, function (_, g) {
             return g.split(/[\s,;]+/).filter(Boolean).map(function (id) {
                 var n = numero(citas, id);
@@ -392,6 +404,119 @@
         }).join('');
         return d;
     }
+
+    // ---------- Debajo de cada respuesta: opinión, copiar, WhatsApp, accesos y repreguntas ----------
+    // Accesos según el tema: se buscan en la pregunta y en las tres secciones más cercanas
+    var ACCESOS = [
+        { re: /arancel|cuota|pago|pagar|precio|costo|cuesta|sale\b/i, pagina: 'aranceles', txt: 'Ver aranceles', url: '/dev-ia/aranceles/' },
+        { re: /inscrib|inscripci|cupo|cohorte|empieza/i, pagina: 'inscripcion-dev-ia', txt: 'Inscribirme', url: '/dev-ia/inscripcion-dev-ia/' },
+        { re: /plan de estudios|cronograma|m[oó]dulo|contenidos/i, pagina: 'plan-de-estudios', txt: 'Ver el plan de estudios', url: '/dev-ia/plan-de-estudios/' },
+        { re: /requisito|conocimientos previos|admisi[oó]n|programar/i, pagina: 'requisitos', txt: 'Ver requisitos', url: '/dev-ia/requisitos/' }
+    ];
+    function sinMarcas(txt) { return txt.replace(/\s*\[(?:S\d+[\s,;]*)+\]/g, '').replace(/\*\*/g, '').trim(); }
+    function pie(q, respuesta, clave, ids, simsResp) {
+        var limpia = sinMarcas(respuesta);
+        var d = document.createElement('div');
+        d.className = 'da-pie-resp';
+
+        var barra = document.createElement('div');
+        barra.className = 'da-pie';
+        var resumen = limpia.length > 400 ? limpia.slice(0, 400).replace(/\s+\S*$/, '') + '…' : limpia;
+        var wa = 'Hola, estuve consultando al asistente de la Diplomatura en IA Generativa.\n\nPregunté: «' + q + '»\n\nMe respondió: «' +
+            resumen + '»\n\nQuería seguir la consulta con ustedes.';
+        barra.innerHTML =
+            (clave ? '<button type="button" class="da-voto" data-voto="1" aria-label="Me sirvió" title="Me sirvió">👍</button>' +
+                     '<button type="button" class="da-voto" data-voto="-1" aria-label="No me sirvió" title="No me sirvió">👎</button><i class="da-pie-sep"></i>' : '') +
+            '<button type="button" data-accion="copiar">Copiar</button>' +
+            (navigator.share ? '<button type="button" data-accion="compartir">Compartir</button>' : '') +
+            '<a class="da-pie-wa" href="https://api.whatsapp.com/send?phone=%2B541123953895&text=' + encodeURIComponent(wa) +
+            '" target="_blank" rel="noopener">Seguir por WhatsApp</a>';
+        d.appendChild(barra);
+
+        var comentario = document.createElement('form');
+        comentario.className = 'da-comentario';
+        comentario.hidden = true;
+        comentario.innerHTML = '<input type="text" maxlength="500" aria-label="Qué faltó o estuvo mal" placeholder="¿Qué faltó o estuvo mal? (opcional)">' +
+            '<button type="submit">Enviar</button>';
+        d.appendChild(comentario);
+
+        var compartible = 'Pregunta: ' + q + '\n\n' + limpia + '\n\nAsistente de la Diplomatura en IA Generativa en la Nube (LICDIA, UNLu): ' +
+            location.origin + '/dev-ia/';
+        function opinar(voto, txt) {
+            return fetch(API + '/opinion', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ clave: clave, voto: voto, comentario: txt || '' })
+            }).catch(function () { /* la opinión es opcional: si falla, la charla sigue igual */ });
+        }
+        barra.addEventListener('click', function (e) {
+            var b = e.target.closest('button');
+            if (!b) return;
+            if (b.hasAttribute('data-voto')) {
+                var voto = +b.getAttribute('data-voto');
+                barra.querySelectorAll('.da-voto').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+                opinar(voto);
+                comentario.hidden = voto !== -1;
+                if (voto === -1) comentario.querySelector('input').focus();
+            } else if (b.getAttribute('data-accion') === 'copiar') {
+                var original = b.textContent;
+                (navigator.clipboard ? navigator.clipboard.writeText(compartible) : Promise.reject())
+                    .then(function () { b.textContent = 'Copiado'; }, function () { b.textContent = 'No se pudo copiar'; })
+                    .then(function () { setTimeout(function () { b.textContent = original; }, 1800); });
+            } else if (b.getAttribute('data-accion') === 'compartir') {
+                navigator.share({ title: 'Diplomatura en IA Generativa en la Nube', text: compartible }).catch(function () { /* cancelado */ });
+            }
+        });
+        comentario.addEventListener('submit', function (e) {
+            e.preventDefault();
+            opinar(-1, comentario.querySelector('input').value.trim());
+            comentario.innerHTML = '<span>Gracias, lo vamos a revisar.</span>';
+        });
+
+        // Accesos: hasta dos, por la pregunta y las tres secciones más cercanas
+        var tema = q + ' ' + ids.slice(0, 3).map(function (id) { return porId[id] ? porId[id].titulo : ''; }).join(' ');
+        var paginas = ids.slice(0, 3).map(function (id) { return porId[id] ? porId[id].pagina : ''; });
+        var accesos = ACCESOS.filter(function (a) { return a.re.test(tema) || paginas.indexOf(a.pagina) >= 0; }).slice(0, 2);
+        if (accesos.length) {
+            var ac = document.createElement('div');
+            ac.className = 'da-accesos';
+            ac.innerHTML = accesos.map(function (a) { return '<a href="' + a.url + '">' + a.txt + ' <span aria-hidden="true">→</span></a>'; }).join('');
+            d.appendChild(ac);
+        }
+
+        // Repreguntas: las preguntas frecuentes más cercanas que no se usaron para esta respuesta ni se hicieron ya
+        var hechas = historia.filter(function (h) { return h.rol === 'usuario'; }).map(function (h) { return normal(h.texto); });
+        var vistas = {}, chips = [];
+        if (simsResp) {
+            MAPA.secciones.map(function (s, i) { return { s: s, sim: simsResp[i] }; })
+                .filter(function (x) { return ids.indexOf(x.s.id) < 0; })
+                .sort(function (a, b) { return b.sim - a.sim; })
+                .forEach(function (x) {
+                    var p = preguntaDe(x.s.titulo), n = p && normal(p);
+                    if (chips.length < 3 && p && !vistas[n] && hechas.indexOf(n) < 0) { vistas[n] = 1; chips.push(p); }
+                });
+        }
+        if (chips.length) {
+            var rp = document.createElement('div');
+            rp.className = 'da-repreguntas';
+            chips.forEach(function (p) {
+                var b = document.createElement('button');
+                b.type = 'button';
+                b.textContent = p;
+                b.addEventListener('click', function () { enviar(p); });
+                rp.appendChild(b);
+            });
+            d.appendChild(rp);
+        }
+        return d;
+    }
+    // Una pregunta de la persona a partir del título de una sección ("Preguntas Frecuentes: ¿Qué título otorga?").
+    // Deja afuera las que le hablan a quien lee ("¿Querés cursar…?", "¿Cumplís…?").
+    function preguntaDe(t) {
+        var m = t.replace(/^[^¿]*?: /, '').match(/^¿[^?]{3,70}\?/);
+        return m && !/^¿\S+(?:ás|és|ís)\b/.test(m[0]) ? m[0] : null;
+    }
+    function normal(s) { return s.toLowerCase().replace(/[¿?¡!.,\s]+/g, ' ').trim(); }
     function corto(s, n) { s = s.replace(/^Preguntas Frecuentes: /, ''); return s.length > n ? s.slice(0, n - 1) + '…' : s; }
     function destino(s) { return s.url + (s.ancla ? '#' + s.ancla : ''); }
     function estaEnPortada(s) { return s.url === '/dev-ia/' && /\/dev-ia\/(index\.html)?$/.test(location.pathname); }

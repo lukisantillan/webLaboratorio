@@ -26,10 +26,15 @@ Restart=on-failure
 RestartSec=5
 
 # --- Endurecimiento ---
-# Todo de solo lectura salvo la caché del modelo (crea archivos de bloqueo aun sin conexión).
+# Todo de solo lectura salvo la caché del modelo (crea archivos de bloqueo aun sin conexión) y la carpeta de datos.
 NoNewPrivileges=true
 ProtectSystem=strict
 ReadWritePaths=/opt/asistente-dev-ia/.cache
+# Topes de uso y registro anónimo de preguntas (backend/registro.py): /var/lib/asistente-dev-ia, legible por el grupo
+# del servicio (administrador lo consulta con despliegue/preguntas.sh) y por nadie más.
+StateDirectory=asistente-dev-ia
+StateDirectoryMode=0750
+UMask=0027
 ProtectHome=true
 PrivateTmp=true
 PrivateDevices=true

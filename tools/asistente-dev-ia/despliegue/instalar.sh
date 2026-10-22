@@ -19,7 +19,7 @@ id asistente >/dev/null 2>&1 || useradd --system --home-dir "$DEST" --shell /usr
 
 echo "== 2. Código e índice"
 mkdir -p "$DEST"
-rsync -a --exclude .venv --exclude .cache --exclude .env --exclude __pycache__ "$ORIGEN"/ "$DEST"/
+rsync -a --exclude .venv --exclude .cache --exclude .env --exclude datos --exclude __pycache__ "$ORIGEN"/ "$DEST"/
 
 echo "== 3. Clave de la API"
 if [ ! -f "$DEST/.env" ]; then
