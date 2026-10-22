@@ -7,6 +7,6 @@
 set -euo pipefail
 RAIZ="$(cd "$(dirname "$0")/.." && pwd)"
 rsync -rlt \
-    --exclude .venv --exclude .env --exclude .cache --exclude __pycache__ --exclude .DS_Store \
+    --exclude .venv --exclude .env --exclude .cache --exclude datos --exclude __pycache__ --exclude .DS_Store \
     "$RAIZ"/ licdia:/opt/asistente-dev-ia/
 ssh licdia 'sudo -n /usr/bin/systemctl restart asistente-dev-ia && for _ in $(seq 1 60); do curl -sf -o /dev/null http://127.0.0.1:8030/dev-ia/api/mapa && break; sleep 2; done; curl -s -o /dev/null -w "servicio: %{http_code}\n" http://127.0.0.1:8030/dev-ia/api/mapa'

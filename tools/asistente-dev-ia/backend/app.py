@@ -6,9 +6,9 @@ etapas que la interfaz muestra: embedding, secciones recuperadas, texto y uso.
 
 El prompt de sistema va en dos bloques: reglas + ficha de datos clave (fijo, con prompt caching: a partir de la
 segunda pregunta en cinco minutos se cobra al 10 % y llega antes) y la fecha + secciones de cada consulta (variable,
-después del punto de caché para no invalidarlo).
+después del punto de caché para no invalidarlo). Topes de uso y registro anónimo de preguntas: backend/registro.py.
 
-Configuración: backend/llm.json (modelo y precios, en el repo) y ../.env (LLM_API_KEY). Una
+Configuración: backend/llm.json (modelo y precios, en el repo), backend/topes.json y ../.env (LLM_API_KEY). Una
 variable de entorno LLM_MODEL del proceso tiene prioridad sobre llm.json. El modelo de embeddings y sus prefijos salen
 de indice/modelo.json, que escribe ingesta/indexar.py. SITIO_DIR solo en desarrollo: sirve el sitio estático en la
 misma dirección que la API.
@@ -24,12 +24,13 @@ from typing import Literal
 
 import anthropic
 import numpy as np
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.responses import StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 
 from backend.recuperacion import K, consultas_de, recuperar
+from backend.registro import Registro
 
 RAIZ = pathlib.Path(__file__).resolve().parents[1]
 
@@ -67,6 +68,7 @@ from sentence_transformers import SentenceTransformer  # noqa: E402  (después d
 EMB = SentenceTransformer(EMB_MODEL, device="cpu")
 EMB.encode(["calentamiento"], normalize_embeddings=True)   # la primera consulta no paga el arranque en frío
 CLIENTE = anthropic.Anthropic(api_key=LLM_API_KEY)
+REGISTRO = Registro()
 
 REGLAS = """Sos parte del equipo de la Diplomatura de Posgrado en Desarrollo de Soluciones de Inteligencia Artificial \
 Generativa en la Nube, del Laboratorio de Investigación en Ciencia de Datos e IA (LICDIA) de la Universidad Nacional \
@@ -91,6 +93,8 @@ comunicarse o inscribirse; no lo agregues al final de cada respuesta.
 """
 
 CONTACTO = "Escribinos a licdia@unlu.edu.ar o por WhatsApp y te respondemos."
+TOPES = {"persona": "Por hoy llegaste al máximo de preguntas al asistente. " + CONTACTO,
+         "global": "El asistente ya respondió todas las preguntas que puede por hoy. " + CONTACTO}
 
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre",
          "noviembre", "diciembre"]
@@ -198,11 +202,17 @@ def flujo_sse(eventos):
 
 
 @app.post("/dev-ia/api/chat")
-def chat(p: Pedido):
+def chat(p: Pedido, request: Request):
     usuario = [m.texto for m in p.mensajes if m.rol == "usuario"]
     if not usuario:
         return flujo_sse(iter([sse("error", {"mensaje": "Escribí una pregunta."})]))
     pregunta = usuario[-1][:600]
+    # nginx pasa la dirección real en X-Real-IP; el servicio solo escucha en 127.0.0.1
+    origen = request.headers.get("x-real-ip") or (request.client.host if request.client else "")
+    tope = REGISTRO.admitir(origen)
+    if tope:
+        REGISTRO.anotar(pregunta, len(usuario), [], bloqueo=tope)
+        return flujo_sse(iter([sse("error", {"mensaje": TOPES[tope], "tope": tope})]))
 
     # Para repreguntas cortas ("¿y cuánto sale?") se suma la pregunta anterior a la búsqueda
     consulta = pregunta if len(usuario) < 2 or len(pregunta.split()) > 8 else usuario[-2][:300] + " " + pregunta
@@ -225,6 +235,7 @@ def chat(p: Pedido):
         if len(usuario) >= 2:
             vp = embeber([usuario[-2][:600]])[0]
             previas = [int(i) for i in np.argsort(-(E @ vp))[:PREVIAS] if int(i) not in top and int(i) not in FICHA]
+        ids = [SECCIONES[i]["id"] for i in top]
         yield sse("secciones", {"top": [{"id": SECCIONES[i]["id"], "sim": round(float(sims[i]), 4)} for i in top],
                                 "todas": [round(float(x), 4) for x in sims],
                                 "ficha": [SECCIONES[i]["id"] for i in FICHA],
@@ -277,6 +288,11 @@ def chat(p: Pedido):
             error = type(e).__name__
             print("error del modelo:", error, str(e)[:300], flush=True)
             yield sse("error", {"mensaje": "El asistente no está disponible en este momento."})
+        finally:
+            REGISTRO.anotar(pregunta, len(usuario), ids, respuesta=respuesta, error=error, modelo=LLM_MODEL,
+                            uso=costo(mensaje.usage) if mensaje is not None else None,
+                            ms_primer_token=round(primero * 1000) if primero else None,
+                            ms_total=round((time.perf_counter() - t0) * 1000))
 
     return flujo_sse(eventos())
 

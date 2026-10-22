@@ -91,7 +91,7 @@
             '  <form class="da-entrada"><textarea rows="1" aria-label="Escribí tu pregunta" maxlength="600"></textarea>' +
             '    <button class="da-enviar" type="submit" aria-label="Enviar">&#8594;</button></form>' +
             '  <div class="da-sugerencias"></div>' +
-            '  <p class="da-aviso">Respuestas generadas con IA a partir del contenido de este sitio. Pueden tener errores: verificá en la sección citada. Las preguntas no se guardan.</p>' +
+            '  <p class="da-aviso">Respuestas generadas con IA a partir del contenido de este sitio. Pueden tener errores: verificá en la sección citada. Guardamos las preguntas, sin datos de quién las hace, para mejorar el sitio.</p>' +
             '</div>';
         document.body.appendChild(capa);
 
@@ -297,7 +297,9 @@
                 } else if (ev === 'fin') {
                     fin = d;
                 } else if (ev === 'error') {
-                    throw new Error('modelo');
+                    var e = new Error('modelo');
+                    e.mensaje = d.mensaje;          // por ejemplo, el tope diario de preguntas
+                    throw e;
                 }
             });
         }).then(function () {
@@ -315,9 +317,10 @@
             }
             marcarPaso('cit');
             seguir();
-        }).catch(function () {
+        }).catch(function (err) {
             historia.pop();
-            m.innerHTML = '<div class="da-error">No pude responder en este momento.<br><button type="button">Ver el sitio convencional</button></div>';
+            m.innerHTML = '<div class="da-error">' + (err && err.mensaje ? esc(err.mensaje) : 'No pude responder en este momento.') +
+                '<br><button type="button">Ver el sitio convencional</button></div>';
             m.querySelector('button').addEventListener('click', function () { cerrar(false); });
         }).then(function () {
             ocupado = false;
