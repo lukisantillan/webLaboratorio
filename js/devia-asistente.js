@@ -81,7 +81,7 @@
             '    <table class="da-tabla"></table><div class="da-leyenda"></div></div>' +
             '  <div class="da-paso" data-n="3" data-paso="gen"><h3>Generación</h3>' +
             '    <div>Modelo <span class="da-dato" data-c="llm"></span></div>' +
-            '    <div>Prompt: reglas + ficha + secciones + conversación · <span class="da-dato" data-c="tok-in">–</span> tokens</div>' +
+            '    <div>Prompt: reglas + ficha + secciones + conversación · <span class="da-dato" data-c="tok-in">–</span> tokens, <span class="da-dato" data-c="tok-cache">–</span> desde la caché</div>' +
             '    <div>Primer token <span class="da-dato" data-c="ttft">–</span> ms · respuesta <span class="da-dato" data-c="tok-out">–</span> tokens · <span class="da-dato" data-c="tps">–</span> tokens/s</div></div>' +
             '  <div class="da-paso" data-n="4" data-paso="cit"><h3>Citas</h3>' +
             '    <div>Cada afirmación lleva el número de la sección de la que sale. Al tocarlo vas a esa parte del sitio.</div></div>' +
@@ -307,6 +307,7 @@
             historia.push({ rol: 'asistente', texto: acumulado });
             if (fin) {
                 dato('tok-in', fin.tokens_entrada != null ? fin.tokens_entrada.toLocaleString('es-AR') : '—');
+                dato('tok-cache', fin.tokens_cache != null ? fin.tokens_cache.toLocaleString('es-AR') : '—');
                 dato('tok-out', fin.tokens_salida != null ? fin.tokens_salida : '—');
                 dato('ttft', fin.ms_primer_token != null ? fin.ms_primer_token : '—');
                 var seg = (fin.ms_generacion - (fin.ms_primer_token || 0)) / 1000;
