@@ -60,7 +60,7 @@
     var cv = document.createElement('canvas');
     capa.appendChild(cv);
     var ctx = cv.getContext('2d'), W = 0, H = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
-    var activo = null, visible = true, corriendo = false;
+    var activo = null, brillo = 0, visible = true, corriendo = false;   // brillo: encendido gradual del nodo activo
     var nodos = entradas.map(function (e, i) {
         var b = function (k) { return parseInt(e.h.slice(k * 2, k * 2 + 2), 16) / 255; };
         return { e: e, x: 0.08 + 0.84 * b(0), y: 0.12 + 0.76 * b(1), f: b(2) * 6.283, r: 2.6 + 3 * b(3), c: COLORES[e.cat] || COLORES.novedades };
@@ -78,6 +78,7 @@
     function velo(x) { return Math.min(1, 0.25 + 0.75 * Math.max(0, (x / W - 0.25) / 0.5)); }
     function cuadro(ahora) {
         var t = (ahora || 0) / 1000;
+        brillo += ((activo ? 1 : 0) - brillo) * (reducir ? 1 : 0.12);
         ctx.clearRect(0, 0, W, H);
         polvo.forEach(function (d) {
             var x = d.x * W, a = (0.18 + 0.12 * Math.sin(t * 0.6 + d.f)) * velo(x);
@@ -91,24 +92,24 @@
         for (var i = 0; i < P.length; i++) {
             for (var j = i + 1; j < P.length; j++) {
                 if (P[i].n.e.tema !== P[j].n.e.tema) continue;
-                var enc = activo && (P[i].n.e.slug === activo || P[j].n.e.slug === activo);
-                ctx.strokeStyle = 'rgba(140,200,255,' + (enc ? 0.35 : 0.07) * velo((P[i].x + P[j].x) / 2) + ')';
-                ctx.lineWidth = enc ? 1.2 : 0.8;
+                var enc = activo && (P[i].n.e.slug === activo || P[j].n.e.slug === activo) ? brillo : 0;
+                ctx.strokeStyle = 'rgba(140,200,255,' + (0.07 + 0.28 * enc) * velo((P[i].x + P[j].x) / 2) + ')';
+                ctx.lineWidth = 0.8 + 0.4 * enc;
                 ctx.beginPath(); ctx.moveTo(P[i].x, P[i].y); ctx.lineTo(P[j].x, P[j].y); ctx.stroke();
             }
         }
         P.forEach(function (p) {
-            var on = p.n.e.slug === activo, a = velo(p.x);
-            var r = p.n.r * (on ? 1.8 : 1);
+            var on = p.n.e.slug === activo ? brillo : 0, a = velo(p.x);
+            var r = p.n.r * (1 + 0.8 * on);
             var g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r * 5);
-            g.addColorStop(0, 'rgba(' + p.n.c + ',' + (on ? 0.5 : 0.22) * a + ')');
+            g.addColorStop(0, 'rgba(' + p.n.c + ',' + (0.22 + 0.28 * on) * a + ')');
             g.addColorStop(1, 'rgba(' + p.n.c + ',0)');
             ctx.fillStyle = g; ctx.beginPath(); ctx.arc(p.x, p.y, r * 5, 0, 6.283); ctx.fill();
-            ctx.fillStyle = 'rgba(' + p.n.c + ',' + (on ? 1 : 0.75 * a) + ')';
+            ctx.fillStyle = 'rgba(' + p.n.c + ',' + (0.75 * a + (1 - 0.75 * a) * on) + ')';
             ctx.beginPath(); ctx.arc(p.x, p.y, r, 0, 6.283); ctx.fill();
-            if (on) {
+            if (on > 0.05) {
                 ctx.font = '500 11px "DM Mono", ui-monospace, monospace';
-                ctx.fillStyle = 'rgba(220,235,255,.85)';
+                ctx.fillStyle = 'rgba(220,235,255,' + (0.85 * on).toFixed(3) + ')';
                 ctx.textAlign = p.x > W * 0.7 ? 'right' : 'left';
                 ctx.fillText('0x' + p.n.e.h.slice(0, 8), p.x + (p.x > W * 0.7 ? -12 : 12), p.y - 10);
             }
@@ -117,10 +118,16 @@
     }
     function arrancar() { if (!corriendo) { corriendo = true; requestAnimationFrame(cuadro); } }
     medir();
+    // El nodo queda encendido al pasar de una tarjeta a otra (entre tarjetas hay espacio) y se apaga al salir de la grilla
     tarjetas.forEach(function (t) {
         t.addEventListener('mouseenter', function () { activo = t.getAttribute('data-slug'); if (reducir) cuadro(); });
-        t.addEventListener('mouseleave', function () { activo = null; if (reducir) cuadro(); });
     });
+    var grilla = tarjetas.length && tarjetas[0].parentElement;
+    if (grilla) grilla.addEventListener('mouseleave', function () { activo = null; if (reducir) cuadro(); });
+    // El encabezado cambia de alto cuando cargan las tipografías: el lienzo se vuelve a medir para no quedar estirado
+    if ('ResizeObserver' in window) {
+        new ResizeObserver(function () { if (cabecera.offsetHeight !== H || cabecera.offsetWidth !== W) { medir(); if (reducir) cuadro(); else arrancar(); } }).observe(cabecera);
+    }
     if ('IntersectionObserver' in window) {
         new IntersectionObserver(function (es) { visible = es[0].isIntersecting; if (visible) arrancar(); }).observe(cabecera);
     }
