@@ -1,170 +1,164 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>Blog — LICDIA UNLu</title>
-    <meta name="description" content="Practical articles on Blockchain, Generative AI and Data Science from the LICDIA UNLu faculty." />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog del LICDIA — UNLu</title>
+    <meta name="description" content="Novedades, publicaciones, tesis y artículos técnicos del Laboratorio de Investigación en Ciencia de Datos e Inteligencia Artificial de la Universidad Nacional de Luján." />
     <link rel="canonical" href="https://licdia.unlu.edu.ar/blog/" />
-    <link rel="alternate" type="application/rss+xml" title="LICDIA Blog RSS" href="/blog/feed.xml" />
-
-    <meta property="og:title" content="Blog — LICDIA UNLu" />
-    <meta property="og:description" content="Practical articles on Blockchain, Generative AI and Data Science from the LICDIA UNLu faculty." />
+    <link rel="alternate" type="application/rss+xml" title="Blog del LICDIA" href="/blog/feed.xml" />
     <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blog del LICDIA" />
+    <meta property="og:description" content="Novedades, publicaciones, tesis y artículos técnicos del laboratorio." />
     <meta property="og:url" content="https://licdia.unlu.edu.ar/blog/" />
-
-    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <meta property="og:image" content="https://licdia.unlu.edu.ar/assets/img/licdia-logo-circulo.webp" />
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('licdia-theme');
+                if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+                if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+            } catch (e) { }
+        })();
+    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-    <!-- LICDIA-ENHANCEMENTS-V1 -->
-    <script>
-      (function(){
-        try {
-          var t = localStorage.getItem('licdia-theme');
-          if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
-          if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
-        } catch(e){}
-      })();
-    </script>
-    <link href="../css/enhancements.css" rel="stylesheet" />
-    <script src="../js/enhancements.js" defer></script>
-
-    <style>
-      body { font-family: 'Inter', system-ui, sans-serif; color: #1e293b; background: #fff; line-height: 1.6; }
-      .navbar { padding: 1rem 0; border-bottom: 1px solid #e2e8f0; background: #fff; }
-      .navbar-brand { font-weight: 800; color: #4C1C7F; font-size: 1.15rem; }
-      .navbar .nav-link { color: #475569; font-weight: 500; }
-
-      .page-header { padding: 4rem 0 2.5rem; background: linear-gradient(180deg, #faf5ff 0%, #fff 100%); }
-      .page-header h1 { font-size: 2.5rem; font-weight: 800; color: #1e293b; margin-bottom: 0.5rem; }
-      .page-header p { font-size: 1.15rem; color: #64748b; margin-bottom: 0; }
-      .page-header .rss-link { display: inline-flex; align-items: center; gap: 0.4rem; margin-top: 1rem; color: #8B5CF6; text-decoration: none; font-weight: 600; font-size: 0.95rem; }
-      .page-header .rss-link:hover { text-decoration: underline; }
-
-      .posts-grid { padding: 2.5rem 0 5rem; }
-      .post-card { border: 1px solid #e2e8f0; border-radius: 14px; padding: 1.75rem; height: 100%; display: flex; flex-direction: column; transition: transform 0.15s ease, box-shadow 0.15s ease; background: #fff; }
-      .post-card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(76, 28, 127, 0.10); border-color: #c4b5fd; }
-      .post-card .tag { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 999px; font-size: 0.72rem; font-weight: 600; margin-bottom: 0.9rem; align-self: flex-start; }
-      .tag-bc { background: #ede9fe; color: #5b21b6; }
-      .tag-ia { background: #dbeafe; color: #1e40af; }
-      .post-card h2 { font-size: 1.2rem; font-weight: 700; color: #1e293b; margin-bottom: 0.6rem; line-height: 1.35; }
-      .post-card p { font-size: 0.95rem; color: #64748b; flex-grow: 1; margin-bottom: 1.1rem; }
-      .post-card .read-link { color: #4C1C7F; font-weight: 600; text-decoration: none; font-size: 0.92rem; }
-      .post-card .read-link:hover { text-decoration: underline; }
-      .post-card .meta { font-size: 0.8rem; color: #94a3b8; margin-bottom: 0.6rem; }
-
-      footer { background: #0f172a; color: #94a3b8; padding: 2.5rem 0; text-align: center; }
-      footer a { color: #c9d1d9; text-decoration: none; }
-      footer a:hover { color: #fff; }
-
-      /* Dark mode support via data-theme */
-      [data-theme="dark"] body { background: #0f172a; color: #e2e8f0; }
-      [data-theme="dark"] .navbar { background: #1e293b; border-bottom-color: #334155; }
-      [data-theme="dark"] .navbar-brand { color: #c4b5fd; }
-      [data-theme="dark"] .navbar .nav-link { color: #cbd5e1; }
-      [data-theme="dark"] .page-header { background: linear-gradient(180deg, #1e1b4b 0%, #0f172a 100%); }
-      [data-theme="dark"] .page-header h1 { color: #f1f5f9; }
-      [data-theme="dark"] .page-header p { color: #94a3b8; }
-      [data-theme="dark"] .post-card { background: #1e293b; border-color: #334155; }
-      [data-theme="dark"] .post-card:hover { border-color: #8B5CF6; }
-      [data-theme="dark"] .post-card h2 { color: #f1f5f9; }
-      [data-theme="dark"] .post-card p { color: #cbd5e1; }
-      [data-theme="dark"] .post-card .read-link { color: #c4b5fd; }
-      [data-theme="dark"] .tag-bc { background: #4c1d95; color: #ede9fe; }
-      [data-theme="dark"] .tag-ia { background: #1e3a8a; color: #dbeafe; }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Montserrat:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/css/enhancements.css" rel="stylesheet" />
+    <link href="/css/blog.css" rel="stylesheet" />
+    <script src="/js/enhancements.min.js" defer></script>
+    <script src="/js/blog.js" defer></script>
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand" href="/">LICDIA <span style="color:#8B5CF6">UNLu</span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="nav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="/blockchain-dev/">Blockchain Dev</a></li>
-            <li class="nav-item"><a class="nav-link" href="/dev-ia/">IA Generativa</a></li>
-            <li class="nav-item"><a class="nav-link active" href="/blog/">Blog</a></li>
-          </ul>
+<body class="blog">
+    <nav class="navbar navbar-expand-lg navbar-dark bl-nav" lang="es">
+        <div class="container">
+            <a class="navbar-brand" href="/"><span class="bl-logo" aria-hidden="true"><i class="bl-logo-anillo"></i><i class="bl-logo-centro"></i></span>LICDIA<small>UNLu</small></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navBlog" aria-controls="navBlog" aria-expanded="false" aria-label="Abrir el menú">Menú</button>
+            <div class="collapse navbar-collapse" id="navBlog">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/publicaciones/">Publicaciones</a></li>
+                    <li class="nav-item"><a class="nav-link activo" href="/blog/">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/dev-ia/">IA Generativa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/blockchain-dev/">Blockchain</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/maestria-ciencia-datos/">Maestría</a></li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
-    <header class="page-header">
-      <div class="container">
-        <h1>LICDIA Blog</h1>
-        <p>Practical articles on Blockchain, Generative AI and Data Science — written by the LICDIA UNLu faculty.</p>
-        <a class="rss-link" href="/blog/feed.xml"><i class="fas fa-rss"></i> Subscribe via RSS</a>
-      </div>
+
+    <header class="bl-cabecera bl-cabecera-indice">
+        <div class="bl-mapa" aria-hidden="true"></div>
+        <div class="container">
+            <p class="bl-rotulo">LICDIA · Universidad Nacional de Luján</p>
+            <h1>Blog del laboratorio</h1>
+            <p class="bl-bajada">Novedades, trabajos publicados, tesis y artículos técnicos del equipo.</p>
+            <div class="bl-filtros" role="group" aria-label="Filtrar por categoría">
+<button type="button" class="bl-filtro" data-tipo="cat" data-valor="" aria-pressed="true">Todo<span class="bl-n">7</span></button>
+<button type="button" class="bl-filtro" data-tipo="cat" data-valor="novedades" data-cat="novedades" aria-pressed="false">Novedades<span class="bl-n">3</span></button>
+<button type="button" class="bl-filtro" data-tipo="cat" data-valor="tecnicos" data-cat="tecnicos" aria-pressed="false">Artículos técnicos<span class="bl-n">4</span></button>
+<button type="button" class="bl-filtro bl-filtro-tema" data-tipo="tema" data-valor="" data-ia="Inteligencia artificial" data-blockchain="Blockchain" data-datos="Ciencia de datos" aria-pressed="false" title="Quitar el filtro de tema">Tema: <span class="bl-tema-nombre"></span> ✕</button>
+            </div>
+            <a class="bl-rss" href="/blog/feed.xml">RSS · suscribirse</a>
+        </div>
     </header>
 
-    <section class="posts-grid">
-      <div class="container">
-        <div class="row g-4">
-
-          <div class="col-md-6 col-lg-4">
-            <a href="/blog/ethereum-mainnet-vs-l2-when-to-use-each-in-2026/" class="text-decoration-none">
-              <article class="post-card">
-                <span class="tag tag-bc">Blockchain</span>
-                <div class="meta">2026-05-27 · David Petrocelli</div>
-                <h2>Ethereum Mainnet vs L2: When to Use Each in 2026</h2>
-                <p>A no-nonsense framework to decide between L1 and L2 based on what your contract actually does.</p>
-                <span class="read-link">Read article <i class="fas fa-arrow-right ms-1"></i></span>
-              </article>
-            </a>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <a href="/blog/your-first-smart-contract-with-solidity/" class="text-decoration-none">
-              <article class="post-card">
-                <span class="tag tag-bc">Blockchain</span>
-                <div class="meta">2026-05-27 · David Petrocelli</div>
-                <h2>Your First Smart Contract with Solidity: From Zero to Deployed in 30 Minutes</h2>
-                <p>A practical walkthrough from zero to a deployed ERC-20 token on a testnet.</p>
-                <span class="read-link">Read article <i class="fas fa-arrow-right ms-1"></i></span>
-              </article>
-            </a>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <a href="/blog/real-costs-of-serving-an-llm-in-production/" class="text-decoration-none">
-              <article class="post-card">
-                <span class="tag tag-ia">Generative AI</span>
-                <div class="meta">2026-05-27 · David Petrocelli</div>
-                <h2>The Real Costs of Serving an LLM in Production (2026 Edition)</h2>
-                <p>What you actually pay per million tokens — broken down by API providers, self-hosted, and the hidden costs nobody mentions.</p>
-                <span class="read-link">Read article <i class="fas fa-arrow-right ms-1"></i></span>
-              </article>
-            </a>
-          </div>
-
-          <div class="col-md-6 col-lg-4">
-            <a href="/blog/rag-vs-fine-tuning-when-to-use-each/" class="text-decoration-none">
-              <article class="post-card">
-                <span class="tag tag-ia">Generative AI</span>
-                <div class="meta">2026-05-27 · David Petrocelli</div>
-                <h2>RAG vs Fine-Tuning: When to Use Each (and When Not To)</h2>
-                <p>A decision framework based on what you actually want the model to do, not what's trending.</p>
-                <span class="read-link">Read article <i class="fas fa-arrow-right ms-1"></i></span>
-              </article>
-            </a>
-          </div>
-
+    <main class="bl-lista">
+        <div class="container">
+            <div class="row g-4">
+<div class="col-md-6 col-lg-4 bl-item" data-cat="novedades" data-tema="ia" data-slug="trabajo-distinguido-cacic-2026">
+                <a class="bl-tarjeta" href="/blog/trabajo-distinguido-cacic-2026/" data-cat="novedades">
+                    <div class="bl-tarjeta-visual"><img src="/assets/img/noticias/cacic-2026-licdia.jpg" alt="" loading="lazy"></div>
+                    <div class="bl-tarjeta-cuerpo">
+                        <div class="bl-tarjeta-meta"><span class="bl-chip">Novedades</span><span>2026-10-13</span></div>
+                        <h2>Trabajo distinguido en CACIC 2026</h2>
+                        <p>&quot;Remembering the Flow&quot;, de Juan Manuel Fernández con Marcelo Errecalde y Sergio Burdisso, fue seleccionado como Trabajo Distinguido del Workshop de Bases de Datos y Minería de Datos.</p>
+                        <div class="bl-tarjeta-pie">LICDIA · 1 min</div>
+                    </div>
+                </a>
+            </div>
+<div class="col-md-6 col-lg-4 bl-item" data-cat="novedades" data-tema="ia" data-slug="poster-awards-nlp-school-2026">
+                <a class="bl-tarjeta" href="/blog/poster-awards-nlp-school-2026/" data-cat="novedades">
+                    <div class="bl-tarjeta-visual"><img src="/assets/img/noticias/poster-peft-vs-galore-2026.jpg" alt="" loading="lazy"></div>
+                    <div class="bl-tarjeta-cuerpo">
+                        <div class="bl-tarjeta-meta"><span class="bl-chip">Novedades</span><span>2026-09-04</span></div>
+                        <h2>Segundo lugar en los Poster Awards de la Second South American NLP School</h2>
+                        <p>&quot;Parameter Efficiency or Efficient Full Fine-Tuning? PEFT vs. GaLore&quot;, de Malek Camilo, Juan Manuel Fernández y Marcelo Errecalde, obtuvo el segundo lugar en los Poster Awards 2026.</p>
+                        <div class="bl-tarjeta-pie">LICDIA · 1 min</div>
+                    </div>
+                </a>
+            </div>
+<div class="col-md-6 col-lg-4 bl-item" data-cat="tecnicos" data-tema="blockchain" data-slug="your-first-smart-contract-with-solidity">
+                <a class="bl-tarjeta" href="/blog/your-first-smart-contract-with-solidity/" data-cat="tecnicos">
+                    <div class="bl-tarjeta-visual"><div class="bl-huella"><svg viewBox="0 0 158 38" fill="currentColor" aria-hidden="true"><rect x="0" y="0" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="10" y="0" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="20" y="0" width="8" height="8" rx="2" fill-opacity="0.76"/><rect x="30" y="0" width="8" height="8" rx="2" fill-opacity="0.76"/><rect x="40" y="0" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="50" y="0" width="8" height="8" rx="2" fill-opacity="0.82"/><rect x="60" y="0" width="8" height="8" rx="2" fill-opacity="0.40"/><rect x="70" y="0" width="8" height="8" rx="2" fill-opacity="0.40"/><rect x="80" y="0" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="90" y="0" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="100" y="0" width="8" height="8" rx="2" fill-opacity="0.28"/><rect x="110" y="0" width="8" height="8" rx="2" fill-opacity="0.94"/><rect x="120" y="0" width="8" height="8" rx="2" fill-opacity="0.22"/><rect x="130" y="0" width="8" height="8" rx="2" fill-opacity="0.28"/><rect x="140" y="0" width="8" height="8" rx="2" fill-opacity="0.76"/><rect x="150" y="0" width="8" height="8" rx="2" fill-opacity="0.40"/><rect x="0" y="10" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="10" y="10" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="20" y="10" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="30" y="10" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="40" y="10" width="8" height="8" rx="2" fill-opacity="0.58"/><rect x="50" y="10" width="8" height="8" rx="2" fill-opacity="0.28"/><rect x="60" y="10" width="8" height="8" rx="2" fill-opacity="0.46"/><rect x="70" y="10" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="80" y="10" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="90" y="10" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="100" y="10" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="110" y="10" width="8" height="8" rx="2" fill-opacity="0.40"/><rect x="120" y="10" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="130" y="10" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="140" y="10" width="8" height="8" rx="2" fill-opacity="0.76"/><rect x="150" y="10" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="0" y="20" width="8" height="8" rx="2" fill-opacity="0.82"/><rect x="10" y="20" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="20" y="20" width="8" height="8" rx="2" fill-opacity="0.82"/><rect x="30" y="20" width="8" height="8" rx="2" fill-opacity="0.46"/><rect x="40" y="20" width="8" height="8" rx="2" fill-opacity="0.94"/><rect x="50" y="20" width="8" height="8" rx="2" fill-opacity="0.82"/><rect x="60" y="20" width="8" height="8" rx="2" fill-opacity="0.94"/><rect x="70" y="20" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="80" y="20" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="90" y="20" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="100" y="20" width="8" height="8" rx="2" fill-opacity="0.94"/><rect x="110" y="20" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="120" y="20" width="8" height="8" rx="2" fill-opacity="0.94"/><rect x="130" y="20" width="8" height="8" rx="2" fill-opacity="0.22"/><rect x="140" y="20" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="150" y="20" width="8" height="8" rx="2" fill-opacity="0.82"/><rect x="0" y="30" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="10" y="30" width="8" height="8" rx="2" fill-opacity="0.76"/><rect x="20" y="30" width="8" height="8" rx="2" fill-opacity="0.16"/><rect x="30" y="30" width="8" height="8" rx="2" fill-opacity="0.46"/><rect x="40" y="30" width="8" height="8" rx="2" fill-opacity="0.82"/><rect x="50" y="30" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="60" y="30" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="70" y="30" width="8" height="8" rx="2" fill-opacity="0.28"/><rect x="80" y="30" width="8" height="8" rx="2" fill-opacity="0.46"/><rect x="90" y="30" width="8" height="8" rx="2" fill-opacity="0.16"/><rect x="100" y="30" width="8" height="8" rx="2" fill-opacity="0.10"/><rect x="110" y="30" width="8" height="8" rx="2" fill-opacity="0.10"/><rect x="120" y="30" width="8" height="8" rx="2" fill-opacity="0.82"/><rect x="130" y="30" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="140" y="30" width="8" height="8" rx="2" fill-opacity="0.22"/><rect x="150" y="30" width="8" height="8" rx="2" fill-opacity="0.22"/></svg></div></div>
+                    <div class="bl-tarjeta-cuerpo">
+                        <div class="bl-tarjeta-meta"><span class="bl-chip">Artículos técnicos</span><span class="bl-idioma" title="Artículo en inglés">EN</span><span>2026-05-27</span></div>
+                        <h2>Your First Smart Contract with Solidity: From Zero to Deployed in 30 Minutes</h2>
+                        <p>A practical walkthrough from zero to a deployed ERC-20 token on a testnet</p>
+                        <div class="bl-tarjeta-pie">David Petrocelli · 3 min</div>
+                    </div>
+                </a>
+            </div>
+<div class="col-md-6 col-lg-4 bl-item" data-cat="tecnicos" data-tema="ia" data-slug="real-costs-of-serving-an-llm-in-production">
+                <a class="bl-tarjeta" href="/blog/real-costs-of-serving-an-llm-in-production/" data-cat="tecnicos">
+                    <div class="bl-tarjeta-visual"><div class="bl-huella"><svg viewBox="0 0 158 38" fill="currentColor" aria-hidden="true"><rect x="0" y="0" width="8" height="8" rx="2" fill-opacity="0.46"/><rect x="10" y="0" width="8" height="8" rx="2" fill-opacity="0.76"/><rect x="20" y="0" width="8" height="8" rx="2" fill-opacity="0.58"/><rect x="30" y="0" width="8" height="8" rx="2" fill-opacity="0.82"/><rect x="40" y="0" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="50" y="0" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="60" y="0" width="8" height="8" rx="2" fill-opacity="0.46"/><rect x="70" y="0" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="80" y="0" width="8" height="8" rx="2" fill-opacity="0.28"/><rect x="90" y="0" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="100" y="0" width="8" height="8" rx="2" fill-opacity="0.22"/><rect x="110" y="0" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="120" y="0" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="130" y="0" width="8" height="8" rx="2" fill-opacity="0.94"/><rect x="140" y="0" width="8" height="8" rx="2" fill-opacity="0.58"/><rect x="150" y="0" width="8" height="8" rx="2" fill-opacity="0.28"/><rect x="0" y="10" width="8" height="8" rx="2" fill-opacity="0.28"/><rect x="10" y="10" width="8" height="8" rx="2" fill-opacity="0.22"/><rect x="20" y="10" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="30" y="10" width="8" height="8" rx="2" fill-opacity="0.94"/><rect x="40" y="10" width="8" height="8" rx="2" fill-opacity="0.16"/><rect x="50" y="10" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="60" y="10" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="70" y="10" width="8" height="8" rx="2" fill-opacity="0.16"/><rect x="80" y="10" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="90" y="10" width="8" height="8" rx="2" fill-opacity="0.94"/><rect x="100" y="10" width="8" height="8" rx="2" fill-opacity="0.58"/><rect x="110" y="10" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="120" y="10" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="130" y="10" width="8" height="8" rx="2" fill-opacity="0.40"/><rect x="140" y="10" width="8" height="8" rx="2" fill-opacity="0.82"/><rect x="150" y="10" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="0" y="20" width="8" height="8" rx="2" fill-opacity="0.58"/><rect x="10" y="20" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="20" y="20" width="8" height="8" rx="2" fill-opacity="0.76"/><rect x="30" y="20" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="40" y="20" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="50" y="20" width="8" height="8" rx="2" fill-opacity="0.22"/><rect x="60" y="20" width="8" height="8" rx="2" fill-opacity="0.22"/><rect x="70" y="20" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="80" y="20" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="90" y="20" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="100" y="20" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="110" y="20" width="8" height="8" rx="2" fill-opacity="0.46"/><rect x="120" y="20" width="8" height="8" rx="2" fill-opacity="0.40"/><rect x="130" y="20" width="8" height="8" rx="2" fill-opacity="0.76"/><rect x="140" y="20" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="150" y="20" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="0" y="30" width="8" height="8" rx="2" fill-opacity="0.28"/><rect x="10" y="30" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="20" y="30" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="30" y="30" width="8" height="8" rx="2" fill-opacity="0.28"/><rect x="40" y="30" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="50" y="30" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="60" y="30" width="8" height="8" rx="2" fill-opacity="0.22"/><rect x="70" y="30" width="8" height="8" rx="2" fill-opacity="0.28"/><rect x="80" y="30" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="90" y="30" width="8" height="8" rx="2" fill-opacity="0.82"/><rect x="100" y="30" width="8" height="8" rx="2" fill-opacity="0.22"/><rect x="110" y="30" width="8" height="8" rx="2" fill-opacity="0.58"/><rect x="120" y="30" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="130" y="30" width="8" height="8" rx="2" fill-opacity="0.82"/><rect x="140" y="30" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="150" y="30" width="8" height="8" rx="2" fill-opacity="0.16"/></svg></div></div>
+                    <div class="bl-tarjeta-cuerpo">
+                        <div class="bl-tarjeta-meta"><span class="bl-chip">Artículos técnicos</span><span class="bl-idioma" title="Artículo en inglés">EN</span><span>2026-05-27</span></div>
+                        <h2>The Real Costs of Serving an LLM in Production (2026 Edition)</h2>
+                        <p>What you actually pay per million tokens — broken down by API providers, self-hosted, and the hidden costs nobody mentions</p>
+                        <div class="bl-tarjeta-pie">David Petrocelli · 4 min</div>
+                    </div>
+                </a>
+            </div>
+<div class="col-md-6 col-lg-4 bl-item" data-cat="tecnicos" data-tema="ia" data-slug="rag-vs-fine-tuning-when-to-use-each">
+                <a class="bl-tarjeta" href="/blog/rag-vs-fine-tuning-when-to-use-each/" data-cat="tecnicos">
+                    <div class="bl-tarjeta-visual"><div class="bl-huella"><svg viewBox="0 0 158 38" fill="currentColor" aria-hidden="true"><rect x="0" y="0" width="8" height="8" rx="2" fill-opacity="0.10"/><rect x="10" y="0" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="20" y="0" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="30" y="0" width="8" height="8" rx="2" fill-opacity="0.40"/><rect x="40" y="0" width="8" height="8" rx="2" fill-opacity="0.10"/><rect x="50" y="0" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="60" y="0" width="8" height="8" rx="2" fill-opacity="0.40"/><rect x="70" y="0" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="80" y="0" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="90" y="0" width="8" height="8" rx="2" fill-opacity="0.46"/><rect x="100" y="0" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="110" y="0" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="120" y="0" width="8" height="8" rx="2" fill-opacity="0.58"/><rect x="130" y="0" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="140" y="0" width="8" height="8" rx="2" fill-opacity="0.16"/><rect x="150" y="0" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="0" y="10" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="10" y="10" width="8" height="8" rx="2" fill-opacity="0.10"/><rect x="20" y="10" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="30" y="10" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="40" y="10" width="8" height="8" rx="2" fill-opacity="0.28"/><rect x="50" y="10" width="8" height="8" rx="2" fill-opacity="0.58"/><rect x="60" y="10" width="8" height="8" rx="2" fill-opacity="0.16"/><rect x="70" y="10" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="80" y="10" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="90" y="10" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="100" y="10" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="110" y="10" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="120" y="10" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="130" y="10" width="8" height="8" rx="2" fill-opacity="0.28"/><rect x="140" y="10" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="150" y="10" width="8" height="8" rx="2" fill-opacity="0.16"/><rect x="0" y="20" width="8" height="8" rx="2" fill-opacity="0.76"/><rect x="10" y="20" width="8" height="8" rx="2" fill-opacity="0.76"/><rect x="20" y="20" width="8" height="8" rx="2" fill-opacity="0.28"/><rect x="30" y="20" width="8" height="8" rx="2" fill-opacity="0.22"/><rect x="40" y="20" width="8" height="8" rx="2" fill-opacity="0.16"/><rect x="50" y="20" width="8" height="8" rx="2" fill-opacity="0.76"/><rect x="60" y="20" width="8" height="8" rx="2" fill-opacity="0.82"/><rect x="70" y="20" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="80" y="20" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="90" y="20" width="8" height="8" rx="2" fill-opacity="0.58"/><rect x="100" y="20" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="110" y="20" width="8" height="8" rx="2" fill-opacity="0.58"/><rect x="120" y="20" width="8" height="8" rx="2" fill-opacity="0.58"/><rect x="130" y="20" width="8" height="8" rx="2" fill-opacity="0.40"/><rect x="140" y="20" width="8" height="8" rx="2" fill-opacity="0.10"/><rect x="150" y="20" width="8" height="8" rx="2" fill-opacity="0.82"/><rect x="0" y="30" width="8" height="8" rx="2" fill-opacity="0.10"/><rect x="10" y="30" width="8" height="8" rx="2" fill-opacity="0.94"/><rect x="20" y="30" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="30" y="30" width="8" height="8" rx="2" fill-opacity="0.46"/><rect x="40" y="30" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="50" y="30" width="8" height="8" rx="2" fill-opacity="0.76"/><rect x="60" y="30" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="70" y="30" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="80" y="30" width="8" height="8" rx="2" fill-opacity="0.76"/><rect x="90" y="30" width="8" height="8" rx="2" fill-opacity="0.28"/><rect x="100" y="30" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="110" y="30" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="120" y="30" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="130" y="30" width="8" height="8" rx="2" fill-opacity="0.58"/><rect x="140" y="30" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="150" y="30" width="8" height="8" rx="2" fill-opacity="0.10"/></svg></div></div>
+                    <div class="bl-tarjeta-cuerpo">
+                        <div class="bl-tarjeta-meta"><span class="bl-chip">Artículos técnicos</span><span class="bl-idioma" title="Artículo en inglés">EN</span><span>2026-05-27</span></div>
+                        <h2>RAG vs Fine-Tuning: When to Use Each (and When Not To)</h2>
+                        <p>A decision framework based on what you actually want the model to do, not what&#x27;s trending</p>
+                        <div class="bl-tarjeta-pie">David Petrocelli · 4 min</div>
+                    </div>
+                </a>
+            </div>
+<div class="col-md-6 col-lg-4 bl-item" data-cat="tecnicos" data-tema="blockchain" data-slug="ethereum-mainnet-vs-l2-when-to-use-each-in-2026">
+                <a class="bl-tarjeta" href="/blog/ethereum-mainnet-vs-l2-when-to-use-each-in-2026/" data-cat="tecnicos">
+                    <div class="bl-tarjeta-visual"><div class="bl-huella"><svg viewBox="0 0 158 38" fill="currentColor" aria-hidden="true"><rect x="0" y="0" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="10" y="0" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="20" y="0" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="30" y="0" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="40" y="0" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="50" y="0" width="8" height="8" rx="2" fill-opacity="0.40"/><rect x="60" y="0" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="70" y="0" width="8" height="8" rx="2" fill-opacity="0.10"/><rect x="80" y="0" width="8" height="8" rx="2" fill-opacity="0.40"/><rect x="90" y="0" width="8" height="8" rx="2" fill-opacity="0.46"/><rect x="100" y="0" width="8" height="8" rx="2" fill-opacity="0.28"/><rect x="110" y="0" width="8" height="8" rx="2" fill-opacity="0.94"/><rect x="120" y="0" width="8" height="8" rx="2" fill-opacity="0.40"/><rect x="130" y="0" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="140" y="0" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="150" y="0" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="0" y="10" width="8" height="8" rx="2" fill-opacity="0.16"/><rect x="10" y="10" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="20" y="10" width="8" height="8" rx="2" fill-opacity="0.16"/><rect x="30" y="10" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="40" y="10" width="8" height="8" rx="2" fill-opacity="0.22"/><rect x="50" y="10" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="60" y="10" width="8" height="8" rx="2" fill-opacity="0.76"/><rect x="70" y="10" width="8" height="8" rx="2" fill-opacity="0.22"/><rect x="80" y="10" width="8" height="8" rx="2" fill-opacity="0.58"/><rect x="90" y="10" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="100" y="10" width="8" height="8" rx="2" fill-opacity="0.94"/><rect x="110" y="10" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="120" y="10" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="130" y="10" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="140" y="10" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="150" y="10" width="8" height="8" rx="2" fill-opacity="0.94"/><rect x="0" y="20" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="10" y="20" width="8" height="8" rx="2" fill-opacity="0.16"/><rect x="20" y="20" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="30" y="20" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="40" y="20" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="50" y="20" width="8" height="8" rx="2" fill-opacity="0.10"/><rect x="60" y="20" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="70" y="20" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="80" y="20" width="8" height="8" rx="2" fill-opacity="0.58"/><rect x="90" y="20" width="8" height="8" rx="2" fill-opacity="0.76"/><rect x="100" y="20" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="110" y="20" width="8" height="8" rx="2" fill-opacity="0.82"/><rect x="120" y="20" width="8" height="8" rx="2" fill-opacity="0.46"/><rect x="130" y="20" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="140" y="20" width="8" height="8" rx="2" fill-opacity="0.94"/><rect x="150" y="20" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="0" y="30" width="8" height="8" rx="2" fill-opacity="0.10"/><rect x="10" y="30" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="20" y="30" width="8" height="8" rx="2" fill-opacity="0.28"/><rect x="30" y="30" width="8" height="8" rx="2" fill-opacity="0.40"/><rect x="40" y="30" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="50" y="30" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="60" y="30" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="70" y="30" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="80" y="30" width="8" height="8" rx="2" fill-opacity="0.10"/><rect x="90" y="30" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="100" y="30" width="8" height="8" rx="2" fill-opacity="0.40"/><rect x="110" y="30" width="8" height="8" rx="2" fill-opacity="0.16"/><rect x="120" y="30" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="130" y="30" width="8" height="8" rx="2" fill-opacity="0.28"/><rect x="140" y="30" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="150" y="30" width="8" height="8" rx="2" fill-opacity="0.46"/></svg></div></div>
+                    <div class="bl-tarjeta-cuerpo">
+                        <div class="bl-tarjeta-meta"><span class="bl-chip">Artículos técnicos</span><span class="bl-idioma" title="Artículo en inglés">EN</span><span>2026-05-27</span></div>
+                        <h2>Ethereum Mainnet vs L2: When to Use Each in 2026</h2>
+                        <p>A no-nonsense framework to decide between L1 and L2 based on what your contract actually does</p>
+                        <div class="bl-tarjeta-pie">David Petrocelli · 3 min</div>
+                    </div>
+                </a>
+            </div>
+<div class="col-md-6 col-lg-4 bl-item" data-cat="novedades" data-tema="ia" data-slug="supercomputadora-clementina-xxi">
+                <a class="bl-tarjeta" href="/blog/supercomputadora-clementina-xxi/" data-cat="novedades">
+                    <div class="bl-tarjeta-visual"><div class="bl-huella"><svg viewBox="0 0 158 38" fill="currentColor" aria-hidden="true"><rect x="0" y="0" width="8" height="8" rx="2" fill-opacity="0.10"/><rect x="10" y="0" width="8" height="8" rx="2" fill-opacity="0.10"/><rect x="20" y="0" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="30" y="0" width="8" height="8" rx="2" fill-opacity="0.40"/><rect x="40" y="0" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="50" y="0" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="60" y="0" width="8" height="8" rx="2" fill-opacity="0.28"/><rect x="70" y="0" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="80" y="0" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="90" y="0" width="8" height="8" rx="2" fill-opacity="0.10"/><rect x="100" y="0" width="8" height="8" rx="2" fill-opacity="0.58"/><rect x="110" y="0" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="120" y="0" width="8" height="8" rx="2" fill-opacity="0.16"/><rect x="130" y="0" width="8" height="8" rx="2" fill-opacity="0.82"/><rect x="140" y="0" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="150" y="0" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="0" y="10" width="8" height="8" rx="2" fill-opacity="0.46"/><rect x="10" y="10" width="8" height="8" rx="2" fill-opacity="0.28"/><rect x="20" y="10" width="8" height="8" rx="2" fill-opacity="0.10"/><rect x="30" y="10" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="40" y="10" width="8" height="8" rx="2" fill-opacity="0.82"/><rect x="50" y="10" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="60" y="10" width="8" height="8" rx="2" fill-opacity="0.10"/><rect x="70" y="10" width="8" height="8" rx="2" fill-opacity="0.40"/><rect x="80" y="10" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="90" y="10" width="8" height="8" rx="2" fill-opacity="0.28"/><rect x="100" y="10" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="110" y="10" width="8" height="8" rx="2" fill-opacity="0.58"/><rect x="120" y="10" width="8" height="8" rx="2" fill-opacity="0.46"/><rect x="130" y="10" width="8" height="8" rx="2" fill-opacity="0.40"/><rect x="140" y="10" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="150" y="10" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="0" y="20" width="8" height="8" rx="2" fill-opacity="0.76"/><rect x="10" y="20" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="20" y="20" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="30" y="20" width="8" height="8" rx="2" fill-opacity="0.58"/><rect x="40" y="20" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="50" y="20" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="60" y="20" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="70" y="20" width="8" height="8" rx="2" fill-opacity="0.10"/><rect x="80" y="20" width="8" height="8" rx="2" fill-opacity="0.76"/><rect x="90" y="20" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="100" y="20" width="8" height="8" rx="2" fill-opacity="0.94"/><rect x="110" y="20" width="8" height="8" rx="2" fill-opacity="0.94"/><rect x="120" y="20" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="130" y="20" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="140" y="20" width="8" height="8" rx="2" fill-opacity="0.16"/><rect x="150" y="20" width="8" height="8" rx="2" fill-opacity="0.10"/><rect x="0" y="30" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="10" y="30" width="8" height="8" rx="2" fill-opacity="0.40"/><rect x="20" y="30" width="8" height="8" rx="2" fill-opacity="0.70"/><rect x="30" y="30" width="8" height="8" rx="2" fill-opacity="0.58"/><rect x="40" y="30" width="8" height="8" rx="2" fill-opacity="0.52"/><rect x="50" y="30" width="8" height="8" rx="2" fill-opacity="0.64"/><rect x="60" y="30" width="8" height="8" rx="2" fill-opacity="0.82"/><rect x="70" y="30" width="8" height="8" rx="2" fill-opacity="0.22"/><rect x="80" y="30" width="8" height="8" rx="2" fill-opacity="0.82"/><rect x="90" y="30" width="8" height="8" rx="2" fill-opacity="1.00"/><rect x="100" y="30" width="8" height="8" rx="2" fill-opacity="0.88"/><rect x="110" y="30" width="8" height="8" rx="2" fill-opacity="0.46"/><rect x="120" y="30" width="8" height="8" rx="2" fill-opacity="0.94"/><rect x="130" y="30" width="8" height="8" rx="2" fill-opacity="0.34"/><rect x="140" y="30" width="8" height="8" rx="2" fill-opacity="0.82"/><rect x="150" y="30" width="8" height="8" rx="2" fill-opacity="0.76"/></svg></div></div>
+                    <div class="bl-tarjeta-cuerpo">
+                        <div class="bl-tarjeta-meta"><span class="bl-chip">Novedades</span><span>2025-06-18</span></div>
+                        <h2>Supercomputadora Clementina XXI</h2>
+                        <p>Un proyecto de la UNLu dirigido por Juan Manuel Fernández fue seleccionado en la convocatoria IPAC para usar la supercomputadora Clementina XXI.</p>
+                        <div class="bl-tarjeta-pie">LICDIA · 1 min</div>
+                    </div>
+                </a>
+            </div>
+            </div>
+            <p class="bl-vacio">No hay entradas con ese filtro todavía.</p>
         </div>
-      </div>
-    </section>
+    </main>
 
-    <footer>
-      <div class="container">
-        <p class="mb-1">LICDIA · Universidad Nacional de Luj&aacute;n</p>
-        <p class="mb-0"><a href="/">Home</a> · <a href="/blockchain-dev/">Blockchain Dev</a> · <a href="/dev-ia/">IA Generativa</a> · <a href="/blog/feed.xml">RSS</a></p>
-      </div>
+    <footer class="bl-pie" lang="es">
+        <div class="container text-center">
+            <p>LICDIA · Laboratorio de Investigación en Ciencia de Datos e Inteligencia Artificial</p>
+            <p>Departamento de Ciencias Básicas · Universidad Nacional de Luján</p>
+            <p class="mt-3 mb-0"><a href="/">Inicio</a> · <a href="/publicaciones/">Publicaciones</a> · <a href="/blog/">Blog</a> · <a href="/blog/feed.xml">RSS</a></p>
+        </div>
     </footer>
 
+    <script id="bl-datos" type="application/json">[{"slug": "trabajo-distinguido-cacic-2026", "cat": "novedades", "tema": "ia", "h": "401c744cbbbb9e58"}, {"slug": "poster-awards-nlp-school-2026", "cat": "novedades", "tema": "ia", "h": "c9b24f2227fb7128"}, {"slug": "your-first-smart-contract-with-solidity", "cat": "tecnicos", "tema": "blockchain", "h": "f4bbdc55af3e23b5"}, {"slug": "real-costs-of-serving-an-llm-in-production", "cat": "tecnicos", "tema": "ia", "h": "6b8cff6f3727fe83"}, {"slug": "rag-vs-fine-tuning-when-to-use-each", "cat": "tecnicos", "tema": "ia", "h": "07d50d5d76f98917"}, {"slug": "ethereum-mainnet-vs-l2-when-to-use-each-in-2026", "cat": "tecnicos", "tema": "blockchain", "h": "da7df570563e579a"}, {"slug": "supercomputadora-clementina-xxi", "cat": "novedades", "tema": "ia", "h": "00a5473790891ca9"}]</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

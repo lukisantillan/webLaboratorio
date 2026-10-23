@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="$idioma">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>$titulo — Blog del LICDIA</title>
+    <meta name="description" content="$resumen" />
+    <link rel="canonical" href="$url" />
+    <link rel="alternate" type="application/rss+xml" title="Blog del LICDIA" href="/blog/feed.xml" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="$titulo" />
+    <meta property="og:description" content="$resumen" />
+    <meta property="og:url" content="$url" />
+    <meta property="og:image" content="$og_imagen" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+$jsonld
+    </script>
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('licdia-theme');
+                if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+                if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+            } catch (e) { }
+        })();
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Montserrat:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/css/enhancements.css" rel="stylesheet" />
+    <link href="/css/blog.css" rel="stylesheet" />
+    $codigo_css
+    <script src="/js/enhancements.min.js" defer></script>
+</head>
+<body class="blog">
+    $nav
+
+    <article>
+        <header class="bl-cabecera bl-cabecera-entrada" data-cat="$cat">
+            <div class="container bl-angosto">
+                <a class="bl-volver" href="/blog/">← $volver</a>
+                <p class="bl-rotulo"><span class="bl-chip">$cat_nombre</span>$idioma_marca<span>$tema</span></p>
+                <h1>$titulo</h1>
+                <p class="bl-bajada">$resumen</p>
+                <p class="bl-meta">$meta</p>
+                <div class="bl-huella" title="SHA-256: $hash_corto…">$huella</div>
+                <p class="bl-huella-nota">$huella_nota</p>
+            </div>
+        </header>
+
+        <main class="bl-entrada" data-cat="$cat">
+            <div class="container bl-angosto">
+                $figura
+                <div class="bl-texto">
+$cuerpo
+                </div>
+                $relacionadas
+            </div>
+        </main>
+    </article>
+
+    $pie
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    $codigo_js
+</body>
+</html>

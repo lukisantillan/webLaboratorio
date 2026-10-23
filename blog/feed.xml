@@ -1,52 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>LICDIA UNLu Blog</title>
-    <link>https://licdia.unlu.edu.ar/blog/</link>
-    <description>Practical articles on Blockchain, Generative AI and Data Science from the LICDIA UNLu faculty.</description>
-    <language>en</language>
-    <lastBuildDate>Wed, 27 May 2026 12:00:00 -0300</lastBuildDate>
-    <atom:link href="https://licdia.unlu.edu.ar/blog/feed.xml" rel="self" type="application/rss+xml" />
-
-    <item>
-      <title>Ethereum Mainnet vs L2: When to Use Each in 2026</title>
-      <link>https://licdia.unlu.edu.ar/blog/ethereum-mainnet-vs-l2-when-to-use-each-in-2026/</link>
-      <guid isPermaLink="true">https://licdia.unlu.edu.ar/blog/ethereum-mainnet-vs-l2-when-to-use-each-in-2026/</guid>
-      <description>A no-nonsense framework to decide between L1 and L2 based on what your contract actually does.</description>
-      <category>Blockchain</category>
-      <author>noreply@licdia.unlu.edu.ar (David Petrocelli)</author>
-      <pubDate>Wed, 27 May 2026 12:00:00 -0300</pubDate>
-    </item>
-
-    <item>
-      <title>Your First Smart Contract with Solidity: From Zero to Deployed in 30 Minutes</title>
-      <link>https://licdia.unlu.edu.ar/blog/your-first-smart-contract-with-solidity/</link>
-      <guid isPermaLink="true">https://licdia.unlu.edu.ar/blog/your-first-smart-contract-with-solidity/</guid>
-      <description>A practical walkthrough from zero to a deployed ERC-20 token on a testnet.</description>
-      <category>Blockchain</category>
-      <author>noreply@licdia.unlu.edu.ar (David Petrocelli)</author>
-      <pubDate>Wed, 27 May 2026 12:00:00 -0300</pubDate>
-    </item>
-
-    <item>
-      <title>The Real Costs of Serving an LLM in Production (2026 Edition)</title>
-      <link>https://licdia.unlu.edu.ar/blog/real-costs-of-serving-an-llm-in-production/</link>
-      <guid isPermaLink="true">https://licdia.unlu.edu.ar/blog/real-costs-of-serving-an-llm-in-production/</guid>
-      <description>What you actually pay per million tokens — broken down by API providers, self-hosted, and the hidden costs nobody mentions.</description>
-      <category>Generative AI</category>
-      <author>noreply@licdia.unlu.edu.ar (David Petrocelli)</author>
-      <pubDate>Wed, 27 May 2026 12:00:00 -0300</pubDate>
-    </item>
-
-    <item>
-      <title>RAG vs Fine-Tuning: When to Use Each (and When Not To)</title>
-      <link>https://licdia.unlu.edu.ar/blog/rag-vs-fine-tuning-when-to-use-each/</link>
-      <guid isPermaLink="true">https://licdia.unlu.edu.ar/blog/rag-vs-fine-tuning-when-to-use-each/</guid>
-      <description>A decision framework based on what you actually want the model to do, not what's trending.</description>
-      <category>Generative AI</category>
-      <author>noreply@licdia.unlu.edu.ar (David Petrocelli)</author>
-      <pubDate>Wed, 27 May 2026 12:00:00 -0300</pubDate>
-    </item>
-
-  </channel>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+  <title>Blog del LICDIA</title>
+  <link>https://licdia.unlu.edu.ar/blog/</link>
+  <atom:link href="https://licdia.unlu.edu.ar/blog/feed.xml" rel="self" type="application/rss+xml"/>
+  <description>Novedades, publicaciones, tesis y artículos técnicos del Laboratorio de Investigación en Ciencia de Datos e Inteligencia Artificial (UNLu).</description>
+  <language>es-ar</language>
+  <item>
+    <title>Trabajo distinguido en CACIC 2026</title>
+    <link>https://licdia.unlu.edu.ar/blog/trabajo-distinguido-cacic-2026/</link>
+    <guid isPermaLink="true">https://licdia.unlu.edu.ar/blog/trabajo-distinguido-cacic-2026/</guid>
+    <pubDate>Tue, 13 Oct 2026 12:00:00 -0300</pubDate>
+    <dc:creator>LICDIA</dc:creator>
+    <category>Novedades</category>
+    <description>&quot;Remembering the Flow&quot;, de Juan Manuel Fernández con Marcelo Errecalde y Sergio Burdisso, fue seleccionado como Trabajo Distinguido del Workshop de Bases de Datos y Minería de Datos.</description>
+  </item>
+  <item>
+    <title>Segundo lugar en los Poster Awards de la Second South American NLP School</title>
+    <link>https://licdia.unlu.edu.ar/blog/poster-awards-nlp-school-2026/</link>
+    <guid isPermaLink="true">https://licdia.unlu.edu.ar/blog/poster-awards-nlp-school-2026/</guid>
+    <pubDate>Fri, 04 Sep 2026 12:00:00 -0300</pubDate>
+    <dc:creator>LICDIA</dc:creator>
+    <category>Novedades</category>
+    <description>&quot;Parameter Efficiency or Efficient Full Fine-Tuning? PEFT vs. GaLore&quot;, de Malek Camilo, Juan Manuel Fernández y Marcelo Errecalde, obtuvo el segundo lugar en los Poster Awards 2026.</description>
+  </item>
+  <item>
+    <title>Your First Smart Contract with Solidity: From Zero to Deployed in 30 Minutes</title>
+    <link>https://licdia.unlu.edu.ar/blog/your-first-smart-contract-with-solidity/</link>
+    <guid isPermaLink="true">https://licdia.unlu.edu.ar/blog/your-first-smart-contract-with-solidity/</guid>
+    <pubDate>Wed, 27 May 2026 12:00:00 -0300</pubDate>
+    <dc:creator>David Petrocelli</dc:creator>
+    <category>Artículos técnicos</category>
+    <description>A practical walkthrough from zero to a deployed ERC-20 token on a testnet</description>
+  </item>
+  <item>
+    <title>The Real Costs of Serving an LLM in Production (2026 Edition)</title>
+    <link>https://licdia.unlu.edu.ar/blog/real-costs-of-serving-an-llm-in-production/</link>
+    <guid isPermaLink="true">https://licdia.unlu.edu.ar/blog/real-costs-of-serving-an-llm-in-production/</guid>
+    <pubDate>Wed, 27 May 2026 12:00:00 -0300</pubDate>
+    <dc:creator>David Petrocelli</dc:creator>
+    <category>Artículos técnicos</category>
+    <description>What you actually pay per million tokens — broken down by API providers, self-hosted, and the hidden costs nobody mentions</description>
+  </item>
+  <item>
+    <title>RAG vs Fine-Tuning: When to Use Each (and When Not To)</title>
+    <link>https://licdia.unlu.edu.ar/blog/rag-vs-fine-tuning-when-to-use-each/</link>
+    <guid isPermaLink="true">https://licdia.unlu.edu.ar/blog/rag-vs-fine-tuning-when-to-use-each/</guid>
+    <pubDate>Wed, 27 May 2026 12:00:00 -0300</pubDate>
+    <dc:creator>David Petrocelli</dc:creator>
+    <category>Artículos técnicos</category>
+    <description>A decision framework based on what you actually want the model to do, not what&#x27;s trending</description>
+  </item>
+  <item>
+    <title>Ethereum Mainnet vs L2: When to Use Each in 2026</title>
+    <link>https://licdia.unlu.edu.ar/blog/ethereum-mainnet-vs-l2-when-to-use-each-in-2026/</link>
+    <guid isPermaLink="true">https://licdia.unlu.edu.ar/blog/ethereum-mainnet-vs-l2-when-to-use-each-in-2026/</guid>
+    <pubDate>Wed, 27 May 2026 12:00:00 -0300</pubDate>
+    <dc:creator>David Petrocelli</dc:creator>
+    <category>Artículos técnicos</category>
+    <description>A no-nonsense framework to decide between L1 and L2 based on what your contract actually does</description>
+  </item>
+  <item>
+    <title>Supercomputadora Clementina XXI</title>
+    <link>https://licdia.unlu.edu.ar/blog/supercomputadora-clementina-xxi/</link>
+    <guid isPermaLink="true">https://licdia.unlu.edu.ar/blog/supercomputadora-clementina-xxi/</guid>
+    <pubDate>Wed, 18 Jun 2025 12:00:00 -0300</pubDate>
+    <dc:creator>LICDIA</dc:creator>
+    <category>Novedades</category>
+    <description>Un proyecto de la UNLu dirigido por Juan Manuel Fernández fue seleccionado en la convocatoria IPAC para usar la supercomputadora Clementina XXI.</description>
+  </item>
+</channel>
 </rss>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Blog del LICDIA — UNLu</title>
+    <meta name="description" content="Novedades, publicaciones, tesis y artículos técnicos del Laboratorio de Investigación en Ciencia de Datos e Inteligencia Artificial de la Universidad Nacional de Luján." />
+    <link rel="canonical" href="https://licdia.unlu.edu.ar/blog/" />
+    <link rel="alternate" type="application/rss+xml" title="Blog del LICDIA" href="/blog/feed.xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blog del LICDIA" />
+    <meta property="og:description" content="Novedades, publicaciones, tesis y artículos técnicos del laboratorio." />
+    <meta property="og:url" content="https://licdia.unlu.edu.ar/blog/" />
+    <meta property="og:image" content="https://licdia.unlu.edu.ar/assets/img/licdia-logo-circulo.webp" />
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('licdia-theme');
+                if (!t && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) t = 'dark';
+                if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+            } catch (e) { }
+        })();
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Montserrat:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="/css/enhancements.css" rel="stylesheet" />
+    <link href="/css/blog.css" rel="stylesheet" />
+    <script src="/js/enhancements.min.js" defer></script>
+    <script src="/js/blog.js" defer></script>
+</head>
+<body class="blog">
+    $nav
+
+    <header class="bl-cabecera bl-cabecera-indice">
+        <div class="bl-mapa" aria-hidden="true"></div>
+        <div class="container">
+            <p class="bl-rotulo">LICDIA · Universidad Nacional de Luján</p>
+            <h1>Blog del laboratorio</h1>
+            <p class="bl-bajada">Novedades, trabajos publicados, tesis y artículos técnicos del equipo.</p>
+            <div class="bl-filtros" role="group" aria-label="Filtrar por categoría">
+$filtros
+            </div>
+            <a class="bl-rss" href="/blog/feed.xml">RSS · suscribirse</a>
+        </div>
+    </header>
+
+    <main class="bl-lista">
+        <div class="container">
+            <div class="row g-4">
+$tarjetas
+            </div>
+            <p class="bl-vacio">No hay entradas con ese filtro todavía.</p>
+        </div>
+    </main>
+
+    $pie
+    <script id="bl-datos" type="application/json">$datos</script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

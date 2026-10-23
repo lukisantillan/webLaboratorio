@@ -24,7 +24,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css?v=2026-10-20" rel="stylesheet" />
+    <link href="css/styles.css?v=2026-10-23" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="/js/web-vitals-tracker.js" defer></script>
 </head>
@@ -45,6 +45,7 @@
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                     <li class="nav-item"><a class="nav-link" href="#portfolio">¿QUÉ HACEMOS?</a></li>
                     <li class="nav-item"><a class="nav-link" href="/publicaciones/">PUBLICACIONES</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/blog/">BLOG</a></li>
                     <li class="nav-item"><a class="nav-link" href="#cursosYcarreras"> Cursos & Carreras </a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Equipo y colaboradores</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
@@ -312,105 +313,33 @@
         </div>
     </section>
     <hr>
-    <!-- Noticias - Actualidad -->
-    <section class="page-section" id="noticias">
+    <!-- BLOG:INICIO (lo escribe tools/blog/generar.py) -->
+    <section class="page-section bl-novedades" id="noticias">
         <div class="container">
             <div class="text-center">
-                <h2 class="section-heading text-uppercase">Trabajo distinguido en CACIC 2026</h2>
-                <h3 class="section-subheading text-muted white">
-                    El trabajo "Remembering the Flow: Retrieval with Dynamic Turn Representations for Conversational
-                    Memory", de Juan Manuel Fernández (LICDIA) junto a Marcelo Errecalde (LIDIC, UNSL) y Sergio Burdisso
-                    (Idiap Research Institute, Suiza), fue seleccionado como Trabajo Distinguido del Workshop de Bases de
-                    Datos y Minería de Datos del XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026,
-                    Concepción del Uruguay, 5 al 9 de octubre). El estudio analiza cómo un sistema conversacional puede
-                    recuperar situaciones similares de conversaciones anteriores al representar cada turno junto con la
-                    historia del diálogo, con experimentos sobre más de un millón de turnos. En el congreso, el
-                    laboratorio presentó además otros tres trabajos: un RAG portable sobre SUDOCU para consultar
-                    normativa universitaria, un asistente con RAG para auditorías GMP en la industria farmacéutica y
-                    DM-AI, un director de juego multiagente basado en modelos de lenguaje. <br>
-                    <a href="https://www.prensa.unlu.edu.ar/?q=node/11657">
-                        Más información
-                    </a>
-                </h3>
-                <picture>
-                    <source srcset="assets/img/noticias/cacic-2026-licdia.webp" type="image/webp">
-                    <img src="assets/img/noticias/cacic-2026-licdia.jpg"
-                        alt="Integrantes del LICDIA junto al banner del XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026)"
-                        width="1600" height="1200" loading="lazy"
-                        style="max-width: 720px; width: 100%; height: auto; box-shadow: 0 4px 16px rgba(0, 0, 0, .25);">
-                </picture>
-                <p style="margin-top: 12px;">
-                    <a href="publicaciones/pdf/remembering-the-flow-cacic2026.pdf" target="_blank" rel="noopener">
-                        Ver el trabajo completo (PDF)
-                    </a>
-                </p>
+                <h2 class="section-heading text-uppercase">Novedades</h2>
             </div>
-        </div>
-    </section>
-    <hr>
-    <!-- Noticias - Poster Awards NLP School -->
-    <section class="page-section" id="poster-nlp-school">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase">Segundo lugar en los Poster Awards de la Second South
-                    American NLP School</h2>
-                <h3 class="section-subheading text-muted white">
-                    El trabajo "Parameter Efficiency or Efficient Full Fine-Tuning? PEFT vs. GaLore", de Malek Camilo y
-                    Juan Manuel Fernández (LICDIA) junto a Marcelo Errecalde (LIDIC, UNSL), obtuvo el segundo lugar en
-                    los Poster Awards 2026 de la Second South American NLP School (UBA, 3 y 4 de agosto). El estudio
-                    compara ajuste fino completo y técnicas de adaptación eficiente de LLaMA 3.1 8B para clasificar
-                    documentos académicos en español, con todos los experimentos ejecutados en la supercomputadora
-                    Clementina XXI. <br>
-                    <a href="https://www.prensa.unlu.edu.ar/?q=node/11566">
-                        Más información
-                    </a>
-                </h3>
-                <a href="assets/poster-peft-vs-galore-nlp-school-2026.pdf" target="_blank" rel="noopener"
-                    title="Ver el póster completo (PDF)">
-                    <picture>
-                        <source srcset="assets/img/noticias/poster-peft-vs-galore-2026.webp" type="image/webp">
-                        <img src="assets/img/noticias/poster-peft-vs-galore-2026.jpg"
-                            alt="Póster PEFT vs. GaLore presentado en la Second South American NLP School 2026"
-                            width="991" height="1400" loading="lazy"
-                            style="max-width: 560px; width: 100%; height: auto; box-shadow: 0 4px 16px rgba(0, 0, 0, .25);">
-                    </picture>
+            <div class="bl-nov-grilla">
+                <a class="bl-nov" href="/blog/trabajo-distinguido-cacic-2026/">
+                    <span class="bl-nov-meta">Novedades · 13 de octubre de 2026</span>
+                    <span class="bl-nov-titulo">Trabajo distinguido en CACIC 2026</span>
+                    <span class="bl-nov-resumen">&quot;Remembering the Flow&quot;, de Juan Manuel Fernández con Marcelo Errecalde y Sergio Burdisso, fue seleccionado como Trabajo Distinguido del Workshop de Bases de Datos y Minería de Datos.</span>
                 </a>
-                <p style="margin-top: 12px;">
-                    <a href="assets/poster-peft-vs-galore-nlp-school-2026.pdf" target="_blank" rel="noopener">
-                        Ver el póster completo (PDF)
-                    </a>
-                </p>
+                <a class="bl-nov" href="/blog/poster-awards-nlp-school-2026/">
+                    <span class="bl-nov-meta">Novedades · 4 de septiembre de 2026</span>
+                    <span class="bl-nov-titulo">Segundo lugar en los Poster Awards de la Second South American NLP School</span>
+                    <span class="bl-nov-resumen">&quot;Parameter Efficiency or Efficient Full Fine-Tuning? PEFT vs. GaLore&quot;, de Malek Camilo, Juan Manuel Fernández y Marcelo Errecalde, obtuvo el segundo lugar en los Poster Awards 2026.</span>
+                </a>
+                <a class="bl-nov" href="/blog/supercomputadora-clementina-xxi/">
+                    <span class="bl-nov-meta">Novedades · 18 de junio de 2025</span>
+                    <span class="bl-nov-titulo">Supercomputadora Clementina XXI</span>
+                    <span class="bl-nov-resumen">Un proyecto de la UNLu dirigido por Juan Manuel Fernández fue seleccionado en la convocatoria IPAC para usar la supercomputadora Clementina XXI.</span>
+                </a>
             </div>
+            <p class="text-center mt-4 mb-0"><a class="bl-nov-todas" href="/blog/">Ver todas las entradas del blog →</a></p>
         </div>
     </section>
-    <hr>
-    <!-- Noticias - Clementina XXI -->
-    <section class="page-section" id="clementina">
-        <div class="container">
-            <div class="text-center">
-                <h2 class="section-heading text-uppercase"> Super computadora Clementina XXI</h2>
-                <h3 class="section-subheading text-muted white">
-                    Un proyecto de la UNLu, dirigido por Juan Manuel Fernández, fue seleccionado para usar la
-                    supercomputadora Clementina XXI. La propuesta busca aplicar ajuste fino a modelos de lenguaje en
-                    entornos de cómputo de alto rendimiento. Participan también investigadores de la UNSL y la UNaM. El
-                    proyecto accederá a recursos computacionales gracias a la convocatoria IPAC. Esta iniciativa
-                    promueve el acceso federal al supercómputo y el avance científico-tecnológico. <br>
-                    <a href="https://www.prensa.unlu.edu.ar/?q=node/10679">
-                        Más información
-                    </a>
-                </h3>
-                <div class="iframe-video">
-                    <div class="contenedor-video">
-                        <iframe src="https://www.youtube.com/embed/0Vck-kjF7xk" title="YouTube video player"
-                            frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- BLOG:FIN -->
     <hr>
 
     </section>
