@@ -1,0 +1,725 @@
+{
+ "secciones": [
+  {
+   "titulo": "¿Qué hace el laboratorio?",
+   "url": "/",
+   "ancla": "portfolio",
+   "tipo": "texto",
+   "texto": "El Laboratorio de Investigación en Ciencia de Datos & Inteligencia Artificial del Departamento de Ciencias Básicas de la UNLu se enfoca en la investigación aplicada, desarrollando soluciones innovadoras en inteligencia artificial y ciencia de datos para resolver problemas reales y complejos.",
+   "id": "S1"
+  },
+  {
+   "titulo": "Línea de I+D: LLM (Lenguajes de Modelos de Escala)",
+   "url": "/",
+   "ancla": "investigacion1",
+   "tipo": "texto",
+   "texto": "LLM (Lenguajes de Modelos de Escala)\nExploramos y entrenamos modelos de lenguaje a gran escala, para soluciones vinculadas a asistentes virtuales y sistemas de generación de texto, para mejorar la comprensión y producción automática de lenguaje natural",
+   "id": "S2"
+  },
+  {
+   "titulo": "Línea de I+D: Soluciones de IA",
+   "url": "/",
+   "ancla": "investigacion2",
+   "tipo": "texto",
+   "texto": "Soluciones de IA\nAplicamos diferentes técnicas de IA para mejorar la toma de decisiones y automatizar procesos.",
+   "id": "S3"
+  },
+  {
+   "titulo": "Línea de I+D: Ciencia de Datos",
+   "url": "/",
+   "ancla": "investigacion3",
+   "tipo": "texto",
+   "texto": "Ciencia de Datos\nAnálisis avanzado de datos para descubrir patrones, tendencias y soluciones en grandes volúmenes de información",
+   "id": "S4"
+  },
+  {
+   "titulo": "Línea de I+D: Patrones de comportamiento poblacional",
+   "url": "/",
+   "ancla": "investigacion11",
+   "tipo": "texto",
+   "texto": "Patrones de comportamiento poblacional\nAplicamos técnicas de aprendizaje automático para el estudio de patrones de comportamiento vinculados al rendimiento académico y abandono en los estudios en el nivel universitario.",
+   "id": "S5"
+  },
+  {
+   "titulo": "Línea de I+D: Problematicas especificas",
+   "url": "/",
+   "ancla": "investigacion4",
+   "tipo": "texto",
+   "texto": "Problematicas especificas\nTrabajamos en el análisis y procesamiento de datos ambientales y biológicos para la resolución de diferentes problemáticas regionales.",
+   "id": "S6"
+  },
+  {
+   "titulo": "Proyecto: Proyecto de Investigación Multidisciplinario e Interdepartamental de la Universidad Nacional de Luján",
+   "url": "/",
+   "ancla": "investigacion5",
+   "tipo": "texto",
+   "texto": "Proyecto de Investigación Multidisciplinario e Interdepartamental de la Universidad Nacional de Luján\nUniversidad Nacional de Luján (UNLu) - Universidad Nacional de San Luis (UNSL)\n\"Generación de herramientas de extracción de información ambiental mediante técnicas de aprendizaje automático, a partir de bases de datos textuales. Su aplicación al caso del Municipio de Luján (provincia de Buenos Aires)\". 2024-2026. Mg. Juan Manuel Fernández (Director), Dr. Daniel Lanson (Co-director), Dr. Marcelo Errecalde (UNSL), Dra. Leticia Cagnina (UNSL)",
+   "id": "S7"
+  },
+  {
+   "titulo": "Proyecto: Proyecto de Investigación PI^2+ A",
+   "url": "/",
+   "ancla": "investigacion6",
+   "tipo": "texto",
+   "texto": "Proyecto de Investigación PI^2+ A\n2023-2025\n“Descubrimiento de patrones de comportamiento vinculados al abandono en la Universidad Nacional de Luján mediante la aplicación de técnicas de aprendizaje automático”. Disposición PCDD- CBLUJ: 0000027-23. Universidad Nacional de Luján. Vigencia: 2023-2025. Mg. Mario Oloriz (director), Lic. Hugo Delfino (co-director), Mg. Ruben Baquel, Lic. Sebastián Bertoglio, Lic. Carla Martinez, Mg. Juan Manuel Fernández.",
+   "id": "S8"
+  },
+  {
+   "titulo": "Proyecto: Proyecto de vinculación tecnológica",
+   "url": "/",
+   "ancla": "investigacion7",
+   "tipo": "texto",
+   "texto": "Proyecto de vinculación tecnológica\nProyecto presentado para la Convocatoria Edición 2023 de la Línea Soluciones Innovadoras para desafíos de software del Ministerio de Ciencia, Tecnología e Innovación de la Nación junto con la Fundación Dr. Manuel Sadosky: “Desarrollo de un sistema para la obtención automática de datos para el Índice de Precios al Consumidor de la Provincia de Buenos Aires”. 2023-2024. Director: Dr. Marcelo Errecalde (director), Mg. Juan Manuel Fernández, Dra. Leticia Cagnina.",
+   "id": "S9"
+  },
+  {
+   "titulo": "Proyecto: Proyecto de Extensión",
+   "url": "/",
+   "ancla": "investigacion10",
+   "tipo": "texto",
+   "texto": "Proyecto de Extensión\n“Sistemas de Información Ambiental Integrada para la gestión pública del Partido de Luján. 2da parte: integración con una base de datos espaciales.”. Departamento de Ciencias Sociales. Avalado por Disposición CDD-CS N°149/2023. Universidad Nacional de Luján. Resolución HCS N°752/23. Vigencia: Octubre 2023 – Octubre 2026. Dr. Daniel Lanson (director), Mg. Juan Manuel Fernández (co-director).",
+   "id": "S10"
+  },
+  {
+   "titulo": "Cursos, charlas, webinars y participaciones del laboratorio",
+   "url": "/",
+   "ancla": "cursosYcarreras",
+   "tipo": "texto",
+   "texto": "Ciencia de datos: Tópicos de captura, análisis y visualización de información Curso de Posgrado. 2024. Mg. Juan Manuel Fernández.\nUna introducción al desarrollo de aplicaciones de IA generativa Ciclo de Webinars 2024 del Departamento de Ciencias Básicas. Mg. Juan Manuel Fernández.\nAprendizaje Automático con datos textuales en Python Coloquio Argentino de Estadística organizado por la Sociedad Argentina de Estadística y la Universidad Nacional de Luján. Mg. Juan Manuel Fernández\nEl Abandono Temprano en la UNLu Ciclo de Webinars 2023 del Departamento de Ciencias Básicas. Mg. Mario Oloriz & Mg. Juan Manuel Fernández.\nSistemas de información Territorial Curso. Congreso Argentino de Ciencias de la Computación (CACIC) 2023. Dr. Daniel Lanson\nRedes Neuronales con Python Curso. Congreso Argentino de Ciencias de la Computación (CACIC) 2023. Dra. Rosana Matuk",
+   "id": "S11"
+  },
+  {
+   "titulo": "Carrera: Desarrollo de Soluciones de Inteligencia Artificial Generativa en la Nube",
+   "url": "/",
+   "ancla": "cursosYcarreras",
+   "tipo": "texto",
+   "texto": "Diplomatura de posgrado del laboratorio. Diplomatura de posgrado · UNLu\nDesarrollo de Soluciones de Inteligencia Artificial Generativa en la Nube\nMachine learning, deep learning, procesamiento del lenguaje natural y despliegue de modelos en la nube.\n100 % virtual\n4 meses · 160 h Conocer la diplomatura\nSitio: dev-ia/",
+   "id": "S12"
+  },
+  {
+   "titulo": "Carrera: Innovación y Desarrollo de Aplicaciones basadas en Blockchain",
+   "url": "/",
+   "ancla": "cursosYcarreras",
+   "tipo": "texto",
+   "texto": "Diplomatura de posgrado del laboratorio. Diplomatura de posgrado · UNLu\nInnovación y Desarrollo de Aplicaciones basadas en Blockchain\nDesarrollo Web3, aplicaciones descentralizadas, finanzas descentralizadas, contratos inteligentes y arquitectura en la nube para blockchain.\n100 % virtual\n4 meses · 160 h Conocer la diplomatura\nSitio: blockchain-dev/",
+   "id": "S13"
+  },
+  {
+   "titulo": "Otras carreras en las que participa el laboratorio",
+   "url": "/",
+   "ancla": "cursosYcarreras",
+   "tipo": "texto",
+   "texto": "Posgrado · UNLu y UADER Maestría en Ciencia de Datos (maestria-ciencia-datos/)\nPosgrado · UNLu Especialización en Bioinformática (https://www.unlu.edu.ar/carp-bioinformatica.html)\nGrado · UNLu Licenciatura en Sistemas de Información (https://www.sistemas.unlu.edu.ar/)\nPregrado · UNLu Analista Universitario en Ciencias de Datos (https://www.unlu.edu.ar/carpre-analistaciedatos.html)",
+   "id": "S14"
+  },
+  {
+   "titulo": "Equipo: Integrantes del laboratorio (UNLu)",
+   "url": "/",
+   "ancla": "team",
+   "tipo": "texto",
+   "texto": "Mg. Juan M. Fernández · (Director) · Magister en Inteligencia de datos orientada a Big Data (UNLP) · Profesor Adjunto de la División de Computación (UNLu)\nDra. Rosana Matuk · Doctora en Ciencias de Computación (UBA) · Profesora Adjunta de la División de Computación (UNLu)\nDr. David Petrocelli · Doctor en Ciencias Informáticas (UNLP) · Profesor Adjunto de la División Computación (UNLu)\nDr. Alberto Penas Steinhardt · Doctor en el área de Farmacia y Bioquímica (UBA) · Profesor Adjunto de la División Computación (UNLu)\nDr. Daniel Lanson · Doctor en Ciencias Sociales y Humanas (UNLu) · Profesor Adjunto de la División Geografía (UNLu)\nDr. Enrique Álvarez · Doctor en Estadística (Universidad de Michigan) · Profesor Titular de la División Estadística (UNLu)\nMg. Mario Oloriz · Magister en Gestión Universitaria (UNMdP) · Profesor Titular de la División Computación (UNLu)\nDr. Nicolás Capitelli · Doctor en el área Ciencias Matemáticas (UBA) · Profesor Adjunto de la División Matemática (UNLu)\nLic. Hugo Delfino · Estadístico y Programador superior (UNR) · Profesor Asociado de la División Estadística (UNLu)\nLic. Efraim Wainerman · Licenciado en Sistemas de Información (UNLu) · Profesor Adjunto de la División Computación (UNLu)\nAlejandro Romero · Administrador de Bases de Datos · Banco Central de la República Argentina",
+   "id": "S15"
+  },
+  {
+   "titulo": "Equipo: Integrantes del laboratorio (UNLu) (2)",
+   "url": "/",
+   "ancla": "team",
+   "tipo": "texto",
+   "texto": "Mg. Diego Gasch · Magister en Ciencia de Datos (Universidad Austral) · JTP de la División Computación (UNLu)\nIng. Tomas Elsesser · Ingeniero Ferroviario (UTN) · JTP de la División Computación (UNLu)\nAPU. Jose Racker · Analista Programador Universitario (UNLu) · JTP Departamento de Tecnología (UNLU)\nLucas Santillán · Estudiante Lic. En Sistemas de Información (UNLU) · Estudiante Lic. en Administración de Empresas y Sistemas (UP)\nFranco Chappe · Estudiante Lic. en Sistemas de Información (UNLu) · Ayudante de la División Computación (UNLu)",
+   "id": "S16"
+  },
+  {
+   "titulo": "Equipo: Colaboradores externos del laboratorio",
+   "url": "/",
+   "ancla": "team",
+   "tipo": "texto",
+   "texto": "Dr. Marcelo Errecalde · Doctor en Ciencias de la Computación (UNS) · Profesor Asociado (UNSL)\nDra. Leticia Cagnina · Doctora en Ciencias de la Computación (UNSL) · Profesora Adjunta (UNSL)",
+   "id": "S17"
+  },
+  {
+   "titulo": "Equipo: Tesistas actuales del laboratorio",
+   "url": "/",
+   "ancla": "team",
+   "tipo": "texto",
+   "texto": "Angel Gallozo · “Aplicación de técnicas de aprendizaje automático para el análisis del abandono estudiantil en la Universidad Nacional de Luján” · Director: Mg. Juan Manuel Fernandez · Carrera: Licenciatura en Sistemas de Información (UNLu)\nMalek Camilo · \"Estrategias de adaptación eficiente para modelos de lenguaje abiertos\" · Director: Mg. Juan Manuel Fernandez · Carrera: Maestría en Inteligencia de Datos Orientada a Big Data (UNLP)\nPaul David Torena · \"Gestión de Documentación de Calidad Automatizada Basada en IA para organizaciones certificadas ISO, utilizando Modelos de Lenguaje de Escala\" · Director: Mg. Juan Manuel Fernandez · Carrera: Maestría en Calidad Industrial (UNSAM)\nNicolas Rossello · \"Técnicas de aprendizaje automático para predecir valores de acciones.\" · Director: Dra. Rosana Matuk · Carrera: Licenciatura en Sistemas de Información (UNLu)\nLucía Dominguez · \"Detección de patologías en células de la retina mediante redes neuronales artificiales.\" · Director: Dra. Rosana Matuk · Carrera: Especialización en Bioinformática (UNLu)\nChristian Toledo · \"Fundamentos Matemáticos de las Redes Neuronales\" · Director: Mg. Juan Manuel Fernandez · Carrera: Especializacion en Matemáticas Aplicadas (UNLu) · (Terminada)\nVictor Villarreal · “Propuesta de mejoras de procesos de servicios bio-analíticos, médicos y farmacológicos de un laboratorio. Un enfoque basado en modelado y simulación” · Director: Mg. Juan Manuel Fernandez · Carrera: Licenciatura en Sistemas de Información (UNLu)",
+   "id": "S18"
+  },
+  {
+   "titulo": "Equipo: Tesistas actuales del laboratorio (2)",
+   "url": "/",
+   "ancla": "team",
+   "tipo": "texto",
+   "texto": "Franco Meretta · Automatización de la generación de información contable para el análisis del negocio y la toma de decisiones en PyMEs de San Andrés de Giles (Buenos Aires) mediante inteligencia artificial. · Director: Mg. Juan Manuel Fernandez · Carrera: Maestria en Gestión Empresarial (UNLu)\nMario Perello · Impacto de los sistemas automáticos para la toma de reclamos en las Distribuidoras Eléctricas · Director: Mg. Juan Manuel Fernandez · Carrera: Especialización en Gestión de la Tecnología y la Innovación (UNLu)\nThiago Puyelli · “Análisis del uso de WebAssembly para el desarrollo de sistemas IoT y embebidos” · Director: Dr. David Petrocelli · Carrera: Licenciatura en Sistemas de Información (UNLu)\nSebastían Juárez · \"Verificación formal con TLA+ de sagas orquestadas en arquitecturas de microservicios\" · Director: Dr. David Petrocelli · Carrera: Licenciatura en Sistemas de Información (UNLu)\nLucas Latessa · \"Migración de infraestructura on-premise a la nube: marco metodológico de escalabilidad elástica\" · Director: Dr. David Petrocelli · Carrera: Licenciatura en Sistemas de Información (UNLu)\nFacundo Otero · \"Optimización de prompts en modelos de lenguaje para tareas de extracción de información: un estudio experimental comparativo\" · Director: Mg. Juan Manuel Fernandez · Carrera: Licenciatura en Sistemas de Información (UNLu)",
+   "id": "S19"
+  },
+  {
+   "titulo": "Equipo: Tesistas actuales del laboratorio (3)",
+   "url": "/",
+   "ancla": "team",
+   "tipo": "texto",
+   "texto": "Leonardo Duville · “Certificación de logros académicos con blockchain: Diseño de un prototipo descentralizado basado en NFTs” · Director: Dr. David Petrocelli · Carrera: Licenciatura en Sistemas de Información (UNLu)\nLeonardo Marina · \"Estudio comparativo de Redes Generativas Adversarias y Modelos de Difusión aplicados a la síntesis de rostros de animales\"\" · Director: Mg. Juan Manuel Fernandez · Carrera: Licenciatura en Sistemas de Información (UNLu)",
+   "id": "S20"
+  },
+  {
+   "titulo": "Equipo: Pasantes del laboratorio",
+   "url": "/",
+   "ancla": "team",
+   "tipo": "texto",
+   "texto": "Ana Paula Romero · Proyecto de Extensión: “Enseñanza de programación en escuelas secundarias de la zona de influencia de la Universidad Nacional de Luján”\nSebastián Marchetti · Proyecto de Extensión: “Sistemas de Información Ambiental Integrada para la gestión pública del Partido de Luján. 2da parte: integración con una base de datos espaciales.”. Universidad Nacional de Luján.\nFrancisco Tamasi · Proyecto de Investigación : \"Generación de herramientas de extracción de información ambiental mediante técnicas de aprendizaje automático, a partir de bases de datos textuales. Su aplicación al caso del Municipio de Luján (provincia de Buenos Aires)\"\nLucas Sebastián Santillán · Proyecto de Extensión: “Enseñanza de programación en escuelas secundarias de la zona de influencia de la Universidad Nacional de Luján”(2024 - 2025)\nÁngel Gallozo · Proyecto de Investigación: \"Generación de herramientas de extracción de información ambiental mediante técnicas de aprendizaje automático, a partir de bases de datos textuales. Su aplicación al caso del Municipio de Luján (provincia de Buenos Aires)\" (2024-2025)",
+   "id": "S21"
+  },
+  {
+   "titulo": "Contacto y ubicación del laboratorio",
+   "url": "/",
+   "ancla": "contact",
+   "tipo": "texto",
+   "texto": "Contactanos\nDIRECCIÓN:\nEl Laboratorio se encuentra en la Sede Luján de la Universidad Nacional de Luján, en el Pabellón de Laboratorios de Informática.\nEMAIL:\nlicdia@unlu.edu.ar\nSeguinos en redes sociales:\nVer mapa ampliado",
+   "id": "S22"
+  },
+  {
+   "titulo": "Publicación: Contabilidad Digital: propuesta y validación de un modelo metodológico para integrar automatización, analítica de datos e inteligencia artificial en PyMEs",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "Noviembre 2026. Congreso. Comunicación aceptada\nAutores: Meretta, F.; Fernández, J. M.\nPresentado en: VI Congreso Internacional de Investigación en Contabilidad y Empresa (CIICE 2026), Barcelona, España, 2 al 4 de noviembre\nÁrea: IA aplicada. Palabras clave: automatización, analítica de datos, PyMEs, contabilidad.",
+   "id": "S23"
+  },
+  {
+   "titulo": "Publicación: Remembering the Flow: Retrieval with Dynamic Turn Representations for Conversational Memory",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "Octubre 2026. Congreso. Trabajo distinguido — CACIC 2026\nAutores: Fernández, J. M.; Errecalde, M.; Burdisso, S.\nPresentado en: XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026), Concepción del Uruguay, 5 al 9 de octubre\nÁrea: LLM y PLN. Palabras clave: memoria conversacional, recuperación de información, diálogo.",
+   "id": "S24"
+  },
+  {
+   "titulo": "Publicación: Un RAG portable sobre SUDOCU: consulta conversacional de normativa universitaria mediante estados de diálogo con procedencia",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "Octubre 2026. Congreso. Aceptado para publicación\nAutores: Fernández, J. M.; Tamasi, F.; Marchetti, S.; Oloriz, M.; Errecalde, M.\nPresentado en: XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026), Concepción del Uruguay\nÁrea: LLM y PLN. Palabras clave: RAG, normativa universitaria, estados de diálogo, procedencia.",
+   "id": "S25"
+  },
+  {
+   "titulo": "Publicación: Evidencia documental trazable con RAG: un asistente para auditorías GMP en la industria farmacéutica",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "Octubre 2026. Congreso. Aceptado para publicación\nAutores: Pighin, M. E.; Fernández, J. M.\nPresentado en: XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026), Concepción del Uruguay\nÁrea: LLM y PLN. Palabras clave: RAG, auditoría, industria farmacéutica, trazabilidad, GMP.",
+   "id": "S26"
+  },
+  {
+   "titulo": "Publicación: DM-AI: un director de juego multiagente basado en modelos de lenguaje para juegos de rol narrativos",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "Octubre 2026. Congreso. Aceptado para publicación\nAutores: Baez, S.; Fernández, J. M.\nPresentado en: XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026), Concepción del Uruguay\nÁrea: LLM y PLN. Palabras clave: sistemas multiagente, generación narrativa, juegos de rol.",
+   "id": "S27"
+  },
+  {
+   "titulo": "Publicación: Parameter Efficiency or Efficient Full Fine-Tuning? PEFT vs. GaLore",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "Agosto 2026. Poster. Segundo lugar — Poster Awards 2026\nAutores: Camilo, M.; Fernández, J. M.; Errecalde, M.\nPresentado en: Second South American NLP School, Buenos Aires, 3 y 4 de agosto\nÁrea: LLM y PLN. Palabras clave: PEFT, GaLore, fine-tuning, eficiencia, LLaMA.",
+   "id": "S28"
+  },
+  {
+   "titulo": "Publicación: Performance vs. Efficiency in Domain-Specific LLM Adaptation: A Comparative Study of Full Fine-Tuning and LoRA on Real-World Data",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "Junio 2026. Congreso\nAutores: Camilo, M.; Fernández, J. M.; Errecalde, M.\nPresentado en: XIV Jornadas de Cloud Computing, Big Data &amp; Emerging Topics (JCC-BD&amp;ET 2026), La Plata\nÁrea: LLM y PLN. Palabras clave: fine-tuning, LoRA, adaptación de dominio.",
+   "id": "S29"
+  },
+  {
+   "titulo": "Publicación: A Defense-in-Depth Architecture for Protecting AI Agent Intellectual Property in Multi-Tenant Cloud Environments",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "Junio 2026. Congreso\nAutores: Petrocelli, D.; Fernández, J. M.\nPresentado en: XIV Jornadas de Cloud Computing, Big Data &amp; Emerging Topics (JCC-BD&amp;ET 2026), La Plata\nÁrea: Seguridad. Palabras clave: agentes de IA, propiedad intelectual, multi-tenant, cloud.",
+   "id": "S30"
+  },
+  {
+   "titulo": "Publicación: Agente basado en LLM para la ejecución de comandos CLI a partir de lenguaje natural: caso de estudio con Docker",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "2025. Congreso\nAutores: Robles, R.; Fernández, J. M.\nPresentado en: XXXI Congreso Argentino de Ciencias de la Computación (CACIC 2025)\nÁrea: LLM y PLN. Palabras clave: agentes, CLI, Docker, lenguaje natural.",
+   "id": "S31"
+  },
+  {
+   "titulo": "Publicación: Sistema de generación aumentada por recuperación (RAG) para el acceso a información académica",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "2025. Congreso\nAutores: Guerra, F.; Monti, K.; Fernández, J. M.\nPresentado en: XXXI Congreso Argentino de Ciencias de la Computación (CACIC 2025)\nÁrea: LLM y PLN. Palabras clave: RAG, información académica, recuperación de información.",
+   "id": "S32"
+  },
+  {
+   "titulo": "Publicación: Fine-tuning y adaptación de modelos de lenguaje abiertos en infraestructura HPC para aplicaciones de dominio específico",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "Abril 2025. Congreso\nAutores: Fernández, J. M.; Petrocelli, D. M.; Matuk, R.; Lanson, D.; Zamudio, E.; Cagnina, L. C.; Errecalde, M. L.\nPresentado en: XXVII Workshop de Investigadores en Ciencias de la Computación (WICC 2025), Mendoza, 10 y 11 de abril\nÁrea: LLM y PLN. Palabras clave: fine-tuning, HPC, dominio específico, modelos abiertos.",
+   "id": "S33"
+  },
+  {
+   "titulo": "Publicación: Generación de herramientas de explotación de información ambiental desde bases de datos textuales a partir de técnicas de inteligencia artificial",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "Abril 2024. Congreso\nAutores: Fernández, J. M.; Lanson, D.; Iglesias, A. N.; Cagnina, L. C.; Errecalde, M. L.\nPresentado en: XXVI Workshop de Investigadores en Ciencias de la Computación (WICC 2024), Puerto Madryn, 18 y 19 de abril\nÁrea: LLM y PLN. Palabras clave: información ambiental, minería de textos, bases de datos textuales.",
+   "id": "S34"
+  },
+  {
+   "titulo": "Publicación: Efectos de la incorporación de la bimodalidad en estudiantes que se declaran en situación de discapacidad en una universidad argentina",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "2024. Revista\nAutores: Fernández, J. M.; Oloriz, M. G.\nPresentado en: Razón Crítica, (17), 1-18\nÁrea: Educación superior. Palabras clave: bimodalidad, discapacidad, inclusión, cohortes.",
+   "id": "S35"
+  },
+  {
+   "titulo": "Publicación: Computer Science — CACIC 2023 (libro de actas del XXIX Congreso Argentino de Ciencias de la Computación)",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "2024. Libro\nAutores: Pesado, P.; Fernández, J. M.; Panessi, W. (eds.)\nPresentado en: Cham: Springer, 2024. ISBN 978-3-031-62245-8\nÁrea: Edición científica. Palabras clave: actas, edición, congreso.",
+   "id": "S36"
+  },
+  {
+   "titulo": "Publicación: Sistemas de Información Ambiental como herramientas para la gestión pública de escala local: el caso del Sistema de Información Ambiental Integral (SIAI) del Partido de Luján, Provincia de Buenos Aires",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "2024. Revista\nAutores: Lanson, D. E.; Iglesias, A. N.; Fernández, J. M.; Rosenfeld, A.\nPresentado en: Anuario de la División Geografía, (18), 1-10\nÁrea: Ambiente y territorio. Palabras clave: SIAI, gestión pública, información ambiental, escala local.",
+   "id": "S37"
+  },
+  {
+   "titulo": "Publicación: Productos y procesos de la extensión universitaria en el campo de la gestión ambiental. El Sistema de Información Ambiental Integrada (SIAI) del partido de Luján, Provincia de Buenos Aires",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "2024. Revista\nAutores: Lanson, D.; Iglesias, A. N.; Fernández, J. M.\nPresentado en: Cuadernos de Extensión Universitaria de la UNLPam, Vol. 8, N.º 2, julio-diciembre 2024, Dossier. ISSN 2451-5930, e-ISSN 2718-7500\nÁrea: Ambiente y territorio. Palabras clave: SIAI, extensión universitaria, gestión ambiental.",
+   "id": "S38"
+  },
+  {
+   "titulo": "Publicación: Instance retrieval from non-labeled data as a strategy for automatic classification of imbalanced e-mail datasets",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "2023. Congreso\nAutores: Fernández, J. M.; Errecalde, M. L.\nPresentado en: XXVIII Congreso Argentino de Ciencias de la Computación (CACIC 2022)\nÁrea: LLM y PLN. Palabras clave: clasificación de texto, desbalanceo, correo electrónico, recuperación de instancias.",
+   "id": "S39"
+  },
+  {
+   "titulo": "Publicación: Descubrimiento de patrones de comportamiento vinculados al abandono en la Universidad Nacional de Luján mediante la aplicación de técnicas de aprendizaje automático",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "Abril 2023. Congreso\nAutores: Oloriz, M.; Fernández, J. M.; Jara, C.; Martínez, C.; Baquel, R.; Bertoglio, S.; Delfino, H.\nPresentado en: XXV Workshop de Investigadores en Ciencias de la Computación, Universidad Nacional del Noroeste, abril de 2023\nÁrea: Educación superior. Palabras clave: abandono, aprendizaje automático, minería de datos.",
+   "id": "S40"
+  },
+  {
+   "titulo": "Publicación: Agrupamiento de Universidades Nacionales en función de sus características",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "2023. Congreso\nAutores: Martínez, C.; Delfino, H.; Bertoglio, S.; Oloriz, M.; Fernández, J. M.\nPresentado en: L Coloquio Argentino de Estadística 2023, Argentina\nÁrea: Educación superior. Palabras clave: clustering, estadística, universidades.",
+   "id": "S41"
+  },
+  {
+   "titulo": "Publicación: Herramientas de gestión ambiental sustentable y ordenamiento territorial del ámbito transicional ciudad-campo en gobiernos locales. El caso del Sistema de Información Ambiental Integrada del Municipio-Partido de Luján, Provincia de Buenos Aires, Argentina",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "2023. Congreso\nAutores: Iglesias, A. N.; Lanson, D.; Fernández, J. M.; Martínez, A.\nPresentado en: 4th Polish-Colombian International Symposium\nÁrea: Ambiente y territorio. Palabras clave: ordenamiento territorial, gestión ambiental, gobiernos locales.",
+   "id": "S42"
+  },
+  {
+   "titulo": "Publicación: La automatización de la certificación de títulos universitarios en Argentina como garantía del derecho al acceso a la información pública y la mejora en el uso de recursos",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "2022. Revista\nAutores: Oloriz, M.; Rissi, M.; Fernández, J. M.; Masón, M. R.\nPresentado en: RAN — Revista Academia &amp; Negocios, 8(2)\nÁrea: Educación superior. Palabras clave: certificación de títulos, gestión pública, acceso a la información.",
+   "id": "S43"
+  },
+  {
+   "titulo": "Publicación: Multi-class e-mail classification with a semi-supervised approach based on automatic feature selection and information retrieval",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "Junio 2022. Congreso\nAutores: Fernández, J. M.; Errecalde, M.\nPresentado en: Conference on Cloud Computing, Big Data &amp; Emerging Topics (pp. 75-90). Cham: Springer International Publishing\nÁrea: LLM y PLN. Palabras clave: clasificación de texto, semi-supervisado, selección de atributos, correo electrónico.",
+   "id": "S44"
+  },
+  {
+   "titulo": "Publicación: Clasificación automática de correos electrónicos",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "Abril 2021. Congreso\nAutores: Fernández, J. M.; Cavasín, N.; Rodríguez, A.; Errecalde, M.\nPresentado en: XXIII Workshop de Investigadores en Ciencias de la Computación, Universidad Nacional de Chilecito, abril de 2021. ISBN 978-987-24611-3-3\nÁrea: LLM y PLN. Palabras clave: clasificación de texto, correo electrónico.",
+   "id": "S45"
+  },
+  {
+   "titulo": "Publicación: Classic and recent (neural) approaches to automatic text classification: a comparative study with e-mails in the Spanish language",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "2021. Congreso\nAutores: Fernández, J. M.; Cavasin, N.; Errecalde, M.\nPresentado en: Short Papers of the 9th Conference on Cloud Computing, Big Data &amp; Emerging Topics (p. 20). Facultad de Informática (UNLP). ISBN 978-950-34-2016-4\nÁrea: LLM y PLN. Palabras clave: clasificación de texto, redes neuronales, español.",
+   "id": "S46"
+  },
+  {
+   "titulo": "Publicación: Collaborative, distributed, scalable and low-cost platform based on microservices, containers, mobile devices and Cloud services to solve compute-intensive tasks",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "2021. Congreso\nAutores: Petrocelli, D.; De Giusti, A. E.; Naiouf, M.\nPresentado en: Euro-Par 2021 PhD Symposium (Parallel and Distributed Processing), Lisboa, Portugal\nÁrea: HPC y cloud. Palabras clave: microservicios, contenedores, dispositivos móviles, cómputo intensivo.",
+   "id": "S47"
+  },
+  {
+   "titulo": "Publicación: Plataforma colaborativa, elástica, de bajo costo y consumo basada en recursos de la Nube, contenedores y móviles para HPC",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "2020. Congreso\nAutores: Petrocelli, D.; De Giusti, A. E.; Naiouf, M.\nPresentado en: 7.ª Conferencia Iberoamericana de Computação Aplicada, Lisboa, Portugal\nÁrea: HPC y cloud. Palabras clave: HPC, nube, contenedores, bajo consumo.",
+   "id": "S48"
+  },
+  {
+   "titulo": "Publicación: Collaborative, distributed and scalable platform based on mobile, cloud, micro services and containers for intensive computing tasks",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "2020. Congreso\nAutores: Petrocelli, D.; De Giusti, A. E.; Naiouf, M.\nPresentado en: Short Papers of the 8th Conference on Cloud Computing, Big Data &amp; Emerging Topics (JCC-BD&amp;ET 2020)\nÁrea: HPC y cloud. Palabras clave: microservicios, contenedores, móviles, cómputo intensivo.",
+   "id": "S49"
+  },
+  {
+   "titulo": "Publicación: El rendimiento académico de los estudiantes en situación de discapacidad",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "2020. Revista\nAutores: Oloriz, M.; Fernández, J. M.\nPresentado en: Revista RETOS XXI, 4(1)\nÁrea: Educación superior. Palabras clave: rendimiento académico, discapacidad, inclusión.",
+   "id": "S50"
+  },
+  {
+   "titulo": "Publicación: Unconstrained Text Detection in Manga: a New Dataset and Baseline",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "2020. Congreso\nAutores: Del Gobbo, J.; Matuk Herrera, R.\nPresentado en: Advances in Image Manipulation (AIM) Workshop, ECCV 2020\nÁrea: Visión por computadora. Palabras clave: detección de texto, manga, segmentación, dataset.",
+   "id": "S51"
+  },
+  {
+   "titulo": "Publicación: Hybrid Elastic ARM&amp;Cloud HPC Collaborative Platform for Generic Tasks",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "2019. Congreso\nAutores: Petrocelli, D.; De Giusti, A. E.; Naiouf, M.\nPresentado en: VII Conference Cloud Computing &amp; Big Data, La Plata. ISBN 978-3-030-27713-0, pp. 16-27\nÁrea: HPC y cloud. Palabras clave: ARM, HPC, nube híbrida, elasticidad.",
+   "id": "S52"
+  },
+  {
+   "titulo": "Publicación: A tool for modeling computational maps of the visual cortex in PyTorch (PyLissom)",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "2018. Congreso\nAutores: Barijhoff, H.; Matuk Herrera, R.\nPresentado en: Machine Learning Open Source Software Workshop, NIPS, Montreal, Canadá, 2018\nÁrea: Visión por computadora. Palabras clave: PyTorch, corteza visual, neurociencia computacional, software libre.",
+   "id": "S53"
+  },
+  {
+   "titulo": "Publicación: Bioinspired self organizing neural networks for expression recognition",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "2017. Congreso\nAutores: Barijhoff, H.; Matuk Herrera, R.\nPresentado en: Women in Machine Learning Workshop, NIPS, Long Beach, EE. UU., 2017\nÁrea: Visión por computadora. Palabras clave: redes autoorganizadas, reconocimiento de expresiones, bioinspiración.",
+   "id": "S54"
+  },
+  {
+   "titulo": "Publicación: Procesamiento distribuido y paralelo de bajo costo basado en Cloud &amp; móvil",
+   "url": "/publicaciones/",
+   "ancla": "publicaciones",
+   "tipo": "texto",
+   "texto": "2017. Congreso\nAutores: Petrocelli, D.; De Giusti, A. E.; Naiouf, M.\nPresentado en: CACIC 2017 — XXIII Congreso Argentino de Ciencias de la Computación, XVIII Workshop de Procesamiento Distribuido y Paralelo (WPDP), pp. 216-225\nÁrea: HPC y cloud. Palabras clave: procesamiento paralelo, nube, móviles, bajo costo.",
+   "id": "S55"
+  },
+  {
+   "titulo": "Blog: Trabajo distinguido en CACIC 2026",
+   "url": "/blog/trabajo-distinguido-cacic-2026/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "2026-10-13 · LICDIA. \"Remembering the Flow\", de Juan Manuel Fernández con Marcelo Errecalde y Sergio Burdisso, fue seleccionado como Trabajo Distinguido del Workshop de Bases de Datos y Minería de Datos.\nEl trabajo \"Remembering the Flow: Retrieval with Dynamic Turn Representations for Conversational Memory\", de Juan Manuel Fernández (LICDIA) junto a Marcelo Errecalde (LIDIC, UNSL) y Sergio Burdisso (Idiap Research Institute, Suiza), fue seleccionado como Trabajo Distinguido del Workshop de Bases de Datos y Minería de Datos del XXXII Congreso Argentino de Ciencias de la Computación (CACIC 2026), realizado en Concepción del Uruguay del 5 al 9 de octubre. El estudio analiza cómo un sistema conversacional puede recuperar situaciones similares de conversaciones anteriores al representar cada turno junto con la historia del diálogo, con experimentos sobre más de un millón de turnos. En el congreso, el laboratorio presentó además otros tres trabajos: un RAG portable sobre SUDOCU para consultar normativa universitaria, un asistente con RAG para auditorías GMP en la industria farmacéutica y DM-AI, un director de juego multiagente basado en modelos de lenguaje. - Trabajo completo (PDF) - Nota de prensa de la UNLu",
+   "id": "S56"
+  },
+  {
+   "titulo": "Blog: Segundo lugar en los Poster Awards de la Second South American NLP School",
+   "url": "/blog/poster-awards-nlp-school-2026/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "2026-09-04 · LICDIA. \"Parameter Efficiency or Efficient Full Fine-Tuning? PEFT vs. GaLore\", de Malek Camilo, Juan Manuel Fernández y Marcelo Errecalde, obtuvo el segundo lugar en los Poster Awards 2026.\nEl trabajo \"Parameter Efficiency or Efficient Full Fine-Tuning? PEFT vs. GaLore\", de Malek Camilo y Juan Manuel Fernández (LICDIA) junto a Marcelo Errecalde (LIDIC, UNSL), obtuvo el segundo lugar en los Poster Awards 2026 de la Second South American NLP School, realizada en la UBA el 3 y 4 de agosto. El estudio compara el ajuste fino completo con técnicas de adaptación eficiente de LLaMA 3.1 8B para clasificar documentos académicos en español. Todos los experimentos se ejecutaron en la supercomputadora Clementina XXI. - Póster completo (PDF) - Nota de prensa de la UNLu",
+   "id": "S57"
+  },
+  {
+   "titulo": "Blog: Your First Smart Contract with Solidity: From Zero to Deployed in 30 Minutes",
+   "url": "/blog/your-first-smart-contract-with-solidity/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "2026-05-27 · David Petrocelli. A practical walkthrough from zero to a deployed ERC-20 token on a testnet\nIf you've ever wondered what writing a smart contract actually feels like — beyond the hype — this is the most direct path I can give you. No wallets to fund with real money, no theory upfront. We're deploying a real ERC-20 token to Sepolia testnet, end to end, in about half an hour.\nWhat you'll need\nNode.js 20+ installed\nA MetaMask wallet (free, browser extension)\nSome Sepolia ETH from a faucet (free, takes 2 minutes)\nThat's it. No paid services, no credit card.\nStep 1: Set up the project mkdir my-first-token && cd my-first-token npm init -y npm install --save-dev hardhat @nomicfoundation/hardhat-toolbox npx hardhat init\nPick \"Create a JavaScript project\" when Hardhat asks. It scaffolds a working repo with sample contracts.\nStep 2: Write the contract\nReplace contracts/Lock.sol with this: // SPDX-License-Identifier: MIT pragma solidity ^0.8.20; import \"@openzeppelin/contracts/token/ERC20/ERC20.sol\"; contract MyToken is ERC20 { constructor() ERC20(\"MyToken\", \"MTK\") { _mint(msg.sender, 1000 * 10 ** decimals()); } }\nInstall the OpenZeppelin contracts: npm install @openzeppelin/contracts\nThat's the entire contract. 8 lines. It creates a token called \"MyToken\" with the symbol \"MTK\", and mints 1000 of them to whoever deploys it.\nStep 3: Why OpenZeppelin matters",
+   "id": "S58"
+  },
+  {
+   "titulo": "Blog: Your First Smart Contract with Solidity: From Zero to Deployed in 30 Minutes (2)",
+   "url": "/blog/your-first-smart-contract-with-solidity/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "You could write the ERC-20 standard yourself. But the OpenZeppelin implementation has been audited dozens of times, used in billions of dollars of contracts, and battle-tested for edge cases (integer overflows, reentrancy patterns around transfers, etc.) that you wouldn't catch on a first pass.\nRule of thumb in production: never reimplement a standard that has a reference library. The risk-to-reward is terrible.\nStep 4: Configure the network\nCreate a .env file (and add it to .gitignore immediately): SEPOLIA_RPC_URL=https://ethereum-sepolia-rpc.publicnode.com PRIVATE_KEY=<your_metamask_private_key>\nTo get your private key from MetaMask: account menu → Account details → Show private key. Never use a wallet that holds real funds for testing. Create a fresh one.\nEdit hardhat.config.js: require(\"@nomicfoundation/hardhat-toolbox\"); require(\"dotenv\").config(); module.exports = { solidity: \"0.8.20\", networks: { sepolia: { url: process.env.SEPOLIA_RPC_URL, accounts: [process.env.PRIVATE_KEY], }, }, };\nInstall dotenv: npm install dotenv\nStep 5: Get Sepolia ETH\nGo to any of these faucets and paste your MetaMask address:\nhttps://sepoliafaucet.com\nhttps://www.alchemy.com/faucets/ethereum-sepolia\nYou need about 0.05 ETH. It arrives in under a minute.\nStep 6: Deploy\nCreate scripts/deploy.js: const hre = require(\"hardhat\"); async function main() { const Token = await hre.ethers.getContractFactory(\"MyToken\"); const token = await Token.deploy(); await token.waitForDeployment(); console.log(\"MyToken deployed to:\", await token.getAddress()); } main().catch((error) => { console.error(error); process.exitCode = 1; });\nRun it: npx hardhat run scripts/deploy.js --network sepolia\nOutput: MyToken deployed to: 0x4f3e1b...c2a9",
+   "id": "S59"
+  },
+  {
+   "titulo": "Blog: Your First Smart Contract with Solidity: From Zero to Deployed in 30 Minutes (3)",
+   "url": "/blog/your-first-smart-contract-with-solidity/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "That address is now a real ERC-20 contract on Sepolia. Anyone in the world can read from it.\nStep 7: Verify it exists\nOpen https://sepolia.etherscan.io and paste the address. You'll see:\nThe contract was deployed by your wallet\nYour wallet now holds 1000 MTK\nThe transaction is permanent and public\nWhat you actually learned\nThe 30 minutes you just spent contain most of the mental model you need for Web3 development:\nContracts are deterministic functions deployed to a public computer. They don't run on your machine.\nState changes cost gas. Reads are free. Writes cost ETH.\nYou don't write standards from scratch. You import audited ones.\nTestnets are free playgrounds. Mainnet is identical, with real money attached.\nNext steps that actually teach you something\nAdd a transfer test using Hardhat's testing framework\nTry minting on a transfer (you'll quickly understand why _mint is internal)\nDeploy the same contract to Base Sepolia (a Layer 2) and compare gas costs\nIf you go down that rabbit hole, you'll find yourself asking: \"When should I use Ethereum directly vs an L2?\" That's exactly the topic of the next article.\nWant to go deeper?",
+   "id": "S60"
+  },
+  {
+   "titulo": "Blog: Your First Smart Contract with Solidity: From Zero to Deployed in 30 Minutes (4)",
+   "url": "/blog/your-first-smart-contract-with-solidity/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "This article is a small slice of what we teach in the Blockchain Development Diploma at UNLu. The full program covers EVM internals, Solidity security patterns, DeFi, L2 deployments, and a complete USDC payment gateway as the capstone. Explore the Blockchain Diploma",
+   "id": "S61"
+  },
+  {
+   "titulo": "Blog: The Real Costs of Serving an LLM in Production (2026 Edition)",
+   "url": "/blog/real-costs-of-serving-an-llm-in-production/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "2026-05-27 · David Petrocelli. What you actually pay per million tokens — broken down by API providers, self-hosted, and the hidden costs nobody mentions\nLLM pricing pages list \"$X per million tokens\" and let you draw your own conclusions. In production, that number is a fraction of what you actually spend. Here's the breakdown nobody publishes.\nThe headline numbers (December 2025)\nPer million tokens, input/output, frontier models:\nModel Input Output\nGPT-4.1 $2.50 $10.00\nGPT-4.1-mini $0.15 $0.60\nClaude Opus 4.7 $15.00 $75.00\nClaude Sonnet 4.6 $3.00 $15.00\nClaude Haiku 4.5 $0.80 $4.00\nGemini 2.5 Pro $1.25 $5.00\nLlama 3.3 70B (self-hosted on AWS g5.12xlarge) ~$0.30 ~$0.30\nThese are sticker prices. Your actual cost per query depends on factors that matter much more.\nThe 4 multipliers that actually determine cost\n1. Output:input ratio\nA query with 200 input tokens and 1.500 output tokens on Claude Sonnet costs $0.023 — and 95% of that is output. Engineers optimize prompts (input) when they should be optimizing response length (output).\nLesson: cap max_tokens. Use structured outputs that force concision. Bullet points instead of paragraphs in agent responses.\n2. Retry rate\nIf your structured outputs fail JSON parsing 8% of the time and you retry, that's effectively a 1.08x multiplier on your bill. Some systems I've audited had 30%+ retry rates because of brittle prompts.",
+   "id": "S62"
+  },
+  {
+   "titulo": "Blog: The Real Costs of Serving an LLM in Production (2026 Edition) (2)",
+   "url": "/blog/real-costs-of-serving-an-llm-in-production/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "Lesson: invest in robust output parsing with auto-repair logic before throwing more compute at it.\n3. Context bloat\nEvery long-running conversation adds history to the prompt. A chat that's been going for 40 turns might be sending 15.000 tokens of context with every new message — and you pay for all of it, every time.\nLesson: summarize old context aggressively. Use semantic memory (not raw history). Truncate or compress conversations >20 turns.\n4. Embedding storage and re-embedding\nA 10-million-chunk vector DB on Pinecone Standard is ~$280/month. On pgvector + RDS, ~$120/month. Self-hosted on a single beefy box, ~$30/month plus your time.\nAdd the cost of re-embedding when you change the embedding model (it happens twice a year on average), and the operational cost of the vector DB often exceeds the inference cost for read-heavy RAG systems.\nWorked example: a customer support agent\nLet's price a real workload.\nAssumptions: - 100.000 conversations per month - Average conversation: 4 turns - Each turn: 800 input tokens (system prompt + history + retrieved chunks) + 250 output tokens - 70% handled by Claude Haiku, 30% escalated to Sonnet - RAG over 50.000 chunks, embedded with text-embedding-3-small\nInference cost:\nComponent Calculation Monthly\nHaiku tokens: 70k convs × 4 turns × (800 in + 250 out) 280M in, 70M out @ Haiku rates $504",
+   "id": "S63"
+  },
+  {
+   "titulo": "Blog: The Real Costs of Serving an LLM in Production (2026 Edition) (3)",
+   "url": "/blog/real-costs-of-serving-an-llm-in-production/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "Sonnet tokens: 30k convs × 4 turns × (800 in + 250 out) 96M in, 30M out @ Sonnet rates $738\nInference total $1.242\nInfrastructure cost:\nComponent Monthly\nPinecone Standard (5M vectors) $140\nEmbedding generation (50k chunks × $0.02/M tokens, avg 400 tokens each) $0.40\nRe-embedding on query (400k embed calls × ~30 tokens) $0.24\nBackend infra (1 small ECS service + RDS Postgres) $180\nLogging & monitoring (Langfuse self-hosted) $40\nInfra total\nHidden costs:\nComponent Monthly\nEngineer time on retry/error handling (~3hrs/week × $100/hr) $1.200\nEvaluation runs (weekly regression test on 500 queries) $80\nFailed experiments / A/B tests $200\nHidden total\nGrand total: $3.082/month for 100k conversations = $0.031 per conversation.\nThe inference is 40% of the bill. Infra is 12%. Engineering time and operations are 48% — which is the part vendor pricing pages never mention.\nWhere teams overspend\nPatterns I see consistently:\nUsing Opus/GPT-4.1 for everything. Most queries don't need it. Routing 80% to a cheaper model usually cuts costs 5-10x.\nNot caching. Identical queries hit the LLM. Even a 15% cache hit rate is a 15% bill reduction.\nStreaming as a default. Streaming has UX value but adds overhead. For batch jobs, disable it.\nForgetting about embedding re-runs. If you change models or chunking strategy, you pay to re-embed everything.",
+   "id": "S64"
+  },
+  {
+   "titulo": "Blog: The Real Costs of Serving an LLM in Production (2026 Edition) (4)",
+   "url": "/blog/real-costs-of-serving-an-llm-in-production/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "Storing context in the prompt instead of the retrieval layer. Long prompts feel productive but compound costs across every turn.\nWhere to self-host\nSelf-hosting an open model (Llama 3.3 70B on AWS g5.12xlarge) hits cost parity with frontier APIs at roughly 5M output tokens per day, sustained. Below that, you're paying for idle GPU. Above that, self-hosting can be 60-80% cheaper.\nWhat people forget: - Self-hosting needs ML/SRE skills. Budget 0.5 FTE just for the inference stack. - vLLM, TGI, and llama.cpp have very different throughput profiles. Benchmark for your actual workload. - Open models lag frontier by 6-12 months on the hardest reasoning tasks. Match the model to the job.\nThe cheap-but-correct stack for 2026\nIf you're building a new LLM product today and want to keep costs sane:\nDefault model: Claude Haiku 4.5 or GPT-4.1-mini (cheap, fast, good enough for 80% of queries)\nEscalation model: Claude Sonnet 4.6 (smart, reasonable cost)\nEmbeddings: OpenAI text-embedding-3-small or Cohere embed-multilingual-v3\nVector DB: pgvector if you have <2M chunks, Qdrant or Weaviate for larger\nObservability: Langfuse (open source, self-hostable)\nOrchestration: simple Python or LangGraph (avoid frameworks that hide the cost of every call)\nThis stack runs production workloads at $0.005-0.05 per query for most use cases.\nThe number that actually matters",
+   "id": "S65"
+  },
+  {
+   "titulo": "Blog: The Real Costs of Serving an LLM in Production (2026 Edition) (5)",
+   "url": "/blog/real-costs-of-serving-an-llm-in-production/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "Forget cost per million tokens. The number to optimize is cost per successful task completion. A $0.10 query that solves a problem is cheaper than a $0.005 query that requires three retries and a human escalation.\nThat's the metric we teach our students to track. It's the only one that maps directly to whether your LLM product is profitable.\nWant to go deeper?\nThis article is a small slice of what we teach in the Generative AI Development Diploma at UNLu. The full program covers RAG architectures, fine-tuning, evaluation frameworks, MLOps for LLMs, and production deployment. Explore the IA Diploma",
+   "id": "S66"
+  },
+  {
+   "titulo": "Blog: RAG vs Fine-Tuning: When to Use Each (and When Not To)",
+   "url": "/blog/rag-vs-fine-tuning-when-to-use-each/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "2026-05-27 · David Petrocelli. A decision framework based on what you actually want the model to do, not what's trending\nIf you're building anything with LLMs in production, this question shows up in week one and never really goes away. The internet has a lot of bad takes on it. Here's what actually matters.\nThe 30-second answer\nRAG = \"give the model fresh information at inference time\"\nFine-tuning = \"change how the model behaves or speaks\"\nThey solve different problems. Most teams need RAG. A few teams need fine-tuning. A small minority need both.\nWhen you need RAG\nUse RAG when the bottleneck is knowledge the model doesn't have.\nExamples: - A customer support bot that needs to know your product docs (which update weekly) - A legal assistant searching internal contracts - A coding agent that needs to read the current state of a repo - Any chatbot that should never confidently make up facts\nThe pattern is always the same: user query ↓ embed query ↓ search vector DB (top 5-20 chunks) ↓ inject chunks into prompt ↓ LLM generates answer grounded in chunks\nThe model itself doesn't change. You're just feeding it the right context at the right time.",
+   "id": "S67"
+  },
+  {
+   "titulo": "Blog: RAG vs Fine-Tuning: When to Use Each (and When Not To) (2)",
+   "url": "/blog/rag-vs-fine-tuning-when-to-use-each/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "Cost reality: a well-tuned RAG pipeline with gpt-4.1-mini or claude-haiku-4-5 runs ~$0.001-0.005 per query at scale. The infrastructure (vector DB, embeddings, orchestration) is the real engineering work.\nWhen you need fine-tuning\nUse fine-tuning when the bottleneck is how the model behaves.\nExamples: - You need it to always answer in a specific JSON schema (and prompt engineering keeps failing on edge cases) - You need it to mimic a specific writing style across thousands of generations - You need it to handle a specialized vocabulary (medical, legal, internal jargon) without constantly explaining terms - You need a smaller, cheaper model to behave like a bigger one for a narrow task (distillation)\nThe pattern: collect 500-5.000 high-quality examples of (input, ideal output) ↓ fine-tune base model on those examples ↓ deploy the new model ↓ serve it like any other model\nCost reality: fine-tuning an open model (Llama 3.3, Mistral) costs $50-500 in compute. Hosting it costs ~$0.50-3/hour depending on size and provider. Fine-tuning a frontier closed model (OpenAI, Anthropic) is more expensive but the operational simplicity is worth it for small teams.\nWhen you absolutely don't need either\nBe honest: a lot of \"AI projects\" are just prompt engineering problems wearing a costume.\nBefore reaching for RAG or fine-tuning, try:\nA better system prompt with explicit examples",
+   "id": "S68"
+  },
+  {
+   "titulo": "Blog: RAG vs Fine-Tuning: When to Use Each (and When Not To) (3)",
+   "url": "/blog/rag-vs-fine-tuning-when-to-use-each/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "Tool use (function calling) instead of forcing the model to know everything\nA smaller model with a cleaner prompt instead of a bigger one with a sloppy one\nIf GPT-4.1 with a 200-word system prompt does the job, that is the production answer. Adding RAG or fine-tuning to feel sophisticated is technical debt with extra steps.\nThe decision matrix\nSymptom First try If that fails\n\"It hallucinates facts about our domain\" RAG Fine-tune for grounding\n\"It doesn't follow our output format\" Better prompt + examples Fine-tune for format\n\"It's too expensive at scale\" Smaller model + RAG Distill via fine-tuning\n\"It doesn't know about events after its cutoff\" RAG with web search (Don't fine-tune for facts. Ever.)\n\"It writes in the wrong tone\" System prompt with style guide Fine-tune on tone examples\n\"It can't reason about long documents\" RAG with hierarchical chunking Long-context model\nThe combined pattern (real production systems)\nThe mature setup in most production LLM stacks looks like:\nFine-tuned smaller model as the \"router\" (cheap, fast, specialized)\nRAG pipeline for any domain-specific knowledge\nFrontier model for the hard cases the router escalates",
+   "id": "S69"
+  },
+  {
+   "titulo": "Blog: RAG vs Fine-Tuning: When to Use Each (and When Not To) (4)",
+   "url": "/blog/rag-vs-fine-tuning-when-to-use-each/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "Example: a customer support agent might use a fine-tuned Llama 3.3 8B for 80% of queries (template responses, simple lookups), with a Claude or GPT-4.1 fallback for the 20% that need real reasoning. RAG over the docs feeds both.\nThis is overkill for an MVP. It's the right architecture once you're handling 100k+ queries/month and need to control costs.\nWhat I tell teams starting out\nBuild the dumbest thing that works first. Track where it fails. Let the failures tell you whether you need RAG (model doesn't know things) or fine-tuning (model doesn't behave correctly) or just a better prompt.\nMost teams reach for fine-tuning when RAG would have solved it. RAG is reversible, debuggable, and your data stays in your control. Fine-tuning bakes assumptions into a model — it's harder to roll back.\nOne more thing: evaluation matters more than the technique\nWhatever you choose, you need a regression test suite of 50-200 representative queries with expected behaviors. Without that, you can't tell if a change made things better or worse. This single discipline separates production-grade LLM systems from demos that work on Tuesday and break on Wednesday.\nWe dedicate an entire module of the curriculum to evaluation methodology because it's the unsexy skill that determines whether anything else you build is actually working.\nWant to go deeper?\nThis article is a small slice of what we teach in the Generative AI Development Diploma at UNLu. The full program covers RAG architectures, fine-tuning, evaluation frameworks, MLOps for LLMs, and production deployment. Explore the IA Diploma",
+   "id": "S70"
+  },
+  {
+   "titulo": "Blog: Ethereum Mainnet vs L2: When to Use Each in 2026",
+   "url": "/blog/ethereum-mainnet-vs-l2-when-to-use-each-in-2026/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "2026-05-27 · David Petrocelli. A no-nonsense framework to decide between L1 and L2 based on what your contract actually does\nThe \"L1 vs L2\" decision used to be theoretical. In 2026, with mainnet gas fluctuating between $5 and $80 per simple transfer and L2s settling transactions for fractions of a cent, the choice has real product consequences.\nThis is the framework I use when advising teams.\nThe 3 questions that decide it\nBefore any benchmark or whitepaper, answer these:\n1. How much money does a single transaction move?\nTransaction size Where it belongs\nUnder $100 L2 (Base, Arbitrum, Optimism)\n$100 – $10.000 Either, calculate friction\nOver $10.000 Mainnet (L1) almost always\nA user paying $20 on Ethereum mainnet with $15 in gas is a churned user. The same user on Base pays $0.003 and never notices.\nA protocol settling $50.000 of collateral can afford $40 of gas for the certainty of L1 finality.\n2. Who needs to read this contract?\nL1 has universal composability. Every wallet, every protocol, every aggregator already speaks to it.\nL2s have ecosystem composability. Aave is on Arbitrum. Uniswap is on Base. But if your contract needs to interact with every DeFi primitive without bridges, you stay on L1.\n3. What's your security model?\nProperty L1 L2 (Optimistic) L2 (ZK)",
+   "id": "S71"
+  },
+  {
+   "titulo": "Blog: Ethereum Mainnet vs L2: When to Use Each in 2026 (2)",
+   "url": "/blog/ethereum-mainnet-vs-l2-when-to-use-each-in-2026/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "Settlement finality ~13 min 7 days ~1 hour\nSecurity inheritance Full Full (after challenge) Full (after proof)\nBridge risk None Yes Yes\nFor most apps the 7-day challenge window is invisible. For a treasury moving 8-figure positions, it's a dealbreaker.\nReal cost comparison (December 2025 data)\nSame operation: deploying an ERC-20 + minting + 100 transfers.\nNetwork Deploy Mint 100 transfers Total\nEthereum mainnet $180 $2.10 $145 $327\nArbitrum One $0.18 $0.001 $0.43 $0.61\nBase $0.09 $0.0006 $0.21 $0.30\nOptimism $0.14 $0.001 $0.38 $0.52\nL2s are 500-1000x cheaper. That's not an optimization — it's a different product category.\nThe 4 archetypes I see in practice\nArchetype A: High-value, low-frequency (DeFi treasury, governance)\nUse L1. Costs are dwarfed by transaction size. Settlement guarantees matter. Composability with the full DeFi stack is non-negotiable.\nExamples: MakerDAO governance, Curve voting, large lending protocols.\nArchetype B: Consumer apps with frequent micro-interactions (gaming, social, NFTs)\nUse an L2. Probably Base if your audience leans Coinbase, Arbitrum if you need the largest DeFi ecosystem.\nExamples: Friend.tech-style social, on-chain games, mass NFT mints.\nArchetype C: Payments and remittances\nUse an L2 with stablecoin support. Base for USDC, Polygon for global reach. Mainnet only if regulatory clarity in a specific jurisdiction requires it.\nThis is exactly the use case we cover in the diploma's USDC payment gateway project.",
+   "id": "S72"
+  },
+  {
+   "titulo": "Blog: Ethereum Mainnet vs L2: When to Use Each in 2026 (3)",
+   "url": "/blog/ethereum-mainnet-vs-l2-when-to-use-each-in-2026/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "Archetype D: Cross-chain protocols\nUse L1 as the source of truth, L2s as execution venues. Lock state on Ethereum, settle activity on multiple L2s, reconcile via canonical bridges.\nExamples: Across Protocol, LayerZero apps.\nWhat about alt-L1s? (Solana, Avalanche, Sui)\nDifferent security models and a different DX. They're not Ethereum L2s and shouldn't be evaluated on the same axis.\nQuick take: - Solana: best for ultra-high-frequency apps where Ethereum's mempool model is the wrong abstraction. Worst for: anyone needing the existing EVM tooling, libraries, and audit expertise. - Avalanche subnets: best for permissioned enterprise chains. Niche. - Sui / Aptos: interesting for novel object-oriented contract models but ecosystem is small.\nFor a developer optimizing for career employability in 2026, EVM + a strong L2 (Base or Arbitrum) is still the dominant skill stack. That's why our curriculum is EVM-first.\nA practical heuristic\nStop deciding the chain first. Build the contract on a local Hardhat fork. Make it work. Then ask:\n\"If 10.000 users do this once a week, is the gas cost a problem for them?\"\nIf yes → L2. If no, and value is high → L1.\nThat's it. Everything else is detail.\nWhat this means if you're learning",
+   "id": "S73"
+  },
+  {
+   "titulo": "Blog: Ethereum Mainnet vs L2: When to Use Each in 2026 (4)",
+   "url": "/blog/ethereum-mainnet-vs-l2-when-to-use-each-in-2026/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "Don't fragment your attention across 5 chains. Master EVM Solidity first. Once you can ship on Sepolia and reason about gas, jumping to Base or Arbitrum is a deployment config change, not a new skill set.\nThe teams hiring in 2026 are looking for \"deep on EVM, comfortable on any L2\", not \"shallow on 6 chains\".\nWant to go deeper?\nThis article is a small slice of what we teach in the Blockchain Development Diploma at UNLu. The full program covers EVM internals, Solidity security patterns, DeFi, L2 deployments, and a complete USDC payment gateway as the capstone. Explore the Blockchain Diploma",
+   "id": "S74"
+  },
+  {
+   "titulo": "Blog: Supercomputadora Clementina XXI",
+   "url": "/blog/supercomputadora-clementina-xxi/",
+   "ancla": "",
+   "tipo": "texto",
+   "texto": "2025-06-18 · LICDIA. Un proyecto de la UNLu dirigido por Juan Manuel Fernández fue seleccionado en la convocatoria IPAC para usar la supercomputadora Clementina XXI.\nUn proyecto de la UNLu, dirigido por Juan Manuel Fernández, fue seleccionado para usar la supercomputadora Clementina XXI. La propuesta busca aplicar ajuste fino a modelos de lenguaje en entornos de cómputo de alto rendimiento. Participan también investigadores de la UNSL y la UNaM. El proyecto accederá a recursos computacionales gracias a la convocatoria IPAC, una iniciativa que promueve el acceso federal al supercómputo y el avance científico-tecnológico. - Nota de prensa de la UNLu",
+   "id": "S75"
+  },
+  {
+   "titulo": "Despliegue de LLM en la nube para soluciones de IA generativa: ¿De que trata el proyecto?",
+   "url": "/LLM/",
+   "ancla": "portfolio",
+   "tipo": "texto",
+   "texto": "¿De que trata el proyecto?\nEn el presente proyecto se pretende avanzar en el conocimiento de estos grandes modelos de lenguajes, implementar soluciones a través del re-entrenamiento o ajuste fino de los mismos y, mediante la computación en la nube, obtener modelos de IAG robustos y eficientes en un tiempo considerable; siendo esta una contribución relevante e importante. Adicionalmente, se espera obtener publicaciones con la evaluación de los modelos que se desarrollen, documentación alusiva a los mismos, un repositorio de código abierto con scripts y herramientas útiles que permitan el uso y adaptación de los modelos obtenidos y, finalmente, documentación específica sobre la infraestructura necesaria para el entrenamiento y puesta en producción de aplicaciones de IAG en entornos de computación en la nube. Con todo lo anteriormente dicho, se deriva la importancia del tema y la utilidad en un buen número de tareas en diferentes dominios que, si bien no se listan específicamente en los objetivos, se dejan entrever en el apartado del significado de la investigación.",
+   "id": "S76"
+  },
+  {
+   "titulo": "Despliegue de LLM en la nube para soluciones de IA generativa: Miembros del Laboratorio involucrados:",
+   "url": "/LLM/",
+   "ancla": "team",
+   "tipo": "texto",
+   "texto": "Miembros del Laboratorio involucrados:\nMg. Juan M. Fernández\nMagister en Inteligencia de datos orientada a Big Data (UNLP)\nProfesor Adjunto de la División de Computación (UNLu)\nDra. Rosana Matuk\nDoctora en Ciencias de Computación (UBA)\nProfesora Adjunta de la División de Computación (UNLu)\nDr. David Petrocelli\nDoctor en Ciencias Informáticas (UNLP)\nProfesor Adjunto de la División Computación (UNLu)",
+   "id": "S77"
+  },
+  {
+   "titulo": "Sistema para la obtención automática de datos para el IPC: ¿De que trata el proyecto?",
+   "url": "/ipc/",
+   "ancla": "portfolio",
+   "tipo": "texto",
+   "texto": "¿De que trata el proyecto?\nDesarrollo de un sistema para la obtención automática de datos para el Índice de Precios al Consumidor de la Provincia de Buenos Aires.\nUtilidad del sistema\n¿Por qué es importante el IPC?",
+   "id": "S78"
+  },
+  {
+   "titulo": "Sistema para la obtención automática de datos para el IPC: ¿De que trata el proyecto? (2)",
+   "url": "/ipc/",
+   "ancla": "portfolio",
+   "tipo": "texto",
+   "texto": "El Índice de Precios al Consumidor (IPC) mide la variación en el tiempo de los precios de bienes y servicios representativos del gasto de consumo de los hogares de una zona determinada, en comparación con los precios vigentes en el año base. De esta forma, la variación de este índice entre dos momentos en el tiempo constituye el índice de inflación para el territorio analizado. Esto es de suma importancia ya que permite analizar aspectos sociales relevantes que terminan impactando en la estabilidad económica del país, por ejemplo, el índice de pobreza o el nivel de poder adquisitivo. Las estadísticas que se obtienen del IPC contribuyen a la detección rápida y sencilla de las variaciones en los costos de productos y servicios. Además, es de gran ayuda para estimar el consumo y la calidad de vida de los ciudadanos. Por medio del IPC se logran realizar mediciones geográficas sobre las zonas del país/provincia/ciudad más y menos costosas. También aporta información valiosa para revisar las cláusulas salariales y así asegurar una vida digna a todos los ciudadanos. El objetivo general de este proyecto consistió en desarrollar una herramienta de software que permite obtener, mediante técnicas de web scraping, más y mejores datos a partir del relevamiento automático de los precios de la canasta seleccionada publicados en internet a efectos de contar con valores actualizados en todo momento para el cálculo del Índice de Precios al Consumidor de la Provincia de Buenos Aires.\nVista desde dentro del sistema",
+   "id": "S79"
+  },
+  {
+   "titulo": "Sistema para la obtención automática de datos para el IPC: Equipo involucrado:",
+   "url": "/ipc/",
+   "ancla": "team",
+   "tipo": "texto",
+   "texto": "Equipo involucrado:\nDr. Marcelo Errecalde\nDoctor en Ciencias de la Computación (UNS)\nProfesor Asociado (UNSL)\nDra. Leticia Cagnina\nDoctora en Ciencias de la Computación (UNSL)\nProfesora Adjunta (UNSL)\nMg. Juan M. Fernández\nMagister en Inteligencia de datos orientada a Big Data (UNLP)\nProfesor Adjunto de la División de Computación (UNLu)",
+   "id": "S80"
+  },
+  {
+   "titulo": "Base de datos espaciales del Municipio de Luján: ¿De que trata el proyecto?",
+   "url": "/fitba-13c/",
+   "ancla": "portfolio",
+   "tipo": "texto",
+   "texto": "¿De que trata el proyecto?\nDiseño e implementación de una Base de datos espaciales con PostgreSQL + PostGIS para el soporte a la operatoria en diferentes áreas del Municipio de Luján y un visor de mapas con Geoserver + Leaflet para el despliegue y visualización interactiva de la información.",
+   "id": "S81"
+  },
+  {
+   "titulo": "Base de datos espaciales del Municipio de Luján: Miembros del Laboratorio involucrados:",
+   "url": "/fitba-13c/",
+   "ancla": "team",
+   "tipo": "texto",
+   "texto": "Miembros del Laboratorio involucrados:\nDr. Daniel Lanson\nDoctor en Ciencias Sociales y Humanas (UNLu)\nProfesor Adjunto de la División Geografía (UNLu)\nMg. Juan M. Fernández\nMagister en Inteligencia de datos orientada a Big Data (UNLP)\nProfesor Adjunto de la División de Computación (UNLu)\nAngel Gallozo\n“Aplicación de técnicas de aprendizaje automático para el análisis del abandono estudiantil en la Universidad Nacional de Luján”",
+   "id": "S82"
+  },
+  {
+   "titulo": "Enseñanza de programación en escuelas secundarias: ¿De que trata el proyecto?",
+   "url": "/proyecto-enseñanza/",
+   "ancla": "portfolio",
+   "tipo": "texto",
+   "texto": "¿De que trata el proyecto?\nProyeto de extensión de la Universidad De Luján, cuyo objetivo es la enseñanza de programación en escuelas secundarias de la zona de influencia de la Universidad Nacional de Luján, para lograr estó, se presentaron los siguientes cursos.\nCURSOS\nIntroducción a la Inteligencia Artificial para el reconocimiento de imágenes\n> Más información\nPrimeros pasos en programación Web: Formación para estudiantes\n> Más información\nIntroducción a la programación de videojuegos\n> Más información",
+   "id": "S83"
+  },
+  {
+   "titulo": "Enseñanza de programación en escuelas secundarias: Cursos",
+   "url": "/proyecto-enseñanza/",
+   "ancla": "portfolio",
+   "tipo": "texto",
+   "texto": "CURSOS\nIntroducción a la Inteligencia Artificial para el reconocimiento de imágenes\n> Más información\nPrimeros pasos en programación Web: Formación para estudiantes\n> Más información\nIntroducción a la programación de videojuegos\n> Más información",
+   "id": "S84"
+  },
+  {
+   "titulo": "Introducción a la Inteligencia Artificial para el reconocimiento de imágenes: Objetivo del curso",
+   "url": "/proyecto-enseñanza/ia/",
+   "ancla": "portfolio",
+   "tipo": "texto",
+   "texto": "Objetivo del curso\nEl objetivo general consiste en que los inscriptos adquieran conocimientos básicos para desarrollar y aplicar modelos de inteligencia artificial en el procesamiento y reconocimiento de imágenes, entendiendo los principales conceptos de Python y las herramientas clave como OpenCV y YOLO.",
+   "id": "S85"
+  },
+  {
+   "titulo": "Introducción a la Inteligencia Artificial para el reconocimiento de imágenes: Involucrados:",
+   "url": "/proyecto-enseñanza/ia/",
+   "ancla": "team",
+   "tipo": "texto",
+   "texto": "Involucrados:\nMg. Juan M. Fernández\nMagister en Inteligencia de datos orientada a Big Data (UNLP)\nProfesor Adjunto de la División de Computación (UNLu)\nDra. Rosana Matuk\nDoctora en Ciencias de Computación (UBA)\nProfesora Adjunta de la División de Computación (UNLu)\nLucas Sebastián Santillán\nProyecto de Extensión: “Enseñanza de programación en escuelas secundarias de la zona de influencia de la Universidad Nacional de Luján”\nSimón Terrizano\nAnalista Universitario en Ciencias de Datos [Estudiante]\nAna Paula Romero\nLicenciatura en Sistemas de Información [Estudiante]\nFederico Claros\nLicenciatura en Sistemas de Información [Estudiante]\nMicaela Perez\nLicenciatura en Sistemas de Información [Estudiante]",
+   "id": "S86"
+  },
+  {
+   "titulo": "Introducción a la programación de videojuegos: Objetivo del curso",
+   "url": "/proyecto-enseñanza/juego/",
+   "ancla": "portfolio",
+   "tipo": "texto",
+   "texto": "Objetivo del curso\nEl objetivo general consiste en que los inscriptos adquieran los conocimientos iniciales para desarrollar, diseñar y poner en funcionamiento un juego básico, entendiendo los principales componentes y herramientas necesarias en el desarrollo del mismo.",
+   "id": "S87"
+  },
+  {
+   "titulo": "Introducción a la programación de videojuegos: Involucrados:",
+   "url": "/proyecto-enseñanza/juego/",
+   "ancla": "team",
+   "tipo": "texto",
+   "texto": "Involucrados:\nGustavo Croch\nAnalista Programador Universitario (UNLU)\nMg. Juan M. Fernández\nMagister en Inteligencia de datos orientada a Big Data (UNLP)\nProfesor Adjunto de la División de Computación (UNLu)\nDra. Rosana Matuk\nDoctora en Ciencias de Computación (UBA)\nProfesora Adjunta de la División de Computación (UNLu)\nLucas Sebastián Santillán\nProyecto de Extensión: “Enseñanza de programación en escuelas secundarias de la zona de influencia de la Universidad Nacional de Luján”\nAna Paula Romero\nLicenciatura en Sistemas de Información [Estudiante]\nNahir Ledesma\nAnalista universitario en Ciencia de datos [Estudiante]\nBenjamín Egea\nLicenciatura en Sistemas de Información [Estudiante]",
+   "id": "S88"
+  },
+  {
+   "titulo": "Primeros pasos en programación Web: Formación para estudiantes: Objetivo del curso",
+   "url": "/proyecto-enseñanza/web/",
+   "ancla": "portfolio",
+   "tipo": "texto",
+   "texto": "Objetivo del curso\nEl objetivo general consiste en que los inscriptos adquieran los conocimientos fundamentales para construir, diseñar y hostear sitios web básicos, entendiendo los principales componentes y herramientas necesarias en el desarrollo web.",
+   "id": "S89"
+  },
+  {
+   "titulo": "Primeros pasos en programación Web: Formación para estudiantes: Involucrados:",
+   "url": "/proyecto-enseñanza/web/",
+   "ancla": "team",
+   "tipo": "texto",
+   "texto": "Involucrados:\nMg. Juan M. Fernández\nMagister en Inteligencia de datos orientada a Big Data (UNLP)\nProfesor Adjunto de la División de Computación (UNLu)\nGustavo Croch\nAnalista Programador Universitario\nDra. Rosana Matuk\nDoctora en Ciencias de Computación (UBA)\nProfesora Adjunta de la División de Computación (UNLu)\nCampagnon Constanza\nAnalista Programador Universitario\nLucas Sebastián Santillán\nProyecto de Extensión: “Enseñanza de programación en escuelas secundarias de la zona de influencia de la Universidad Nacional de Luján”\nAgustín Rodriguez\nAnalista Programador Universitario\nFederico Rizzo\nLicenciatura en Sistemas de Información [Estudiante]\nRomina Ortiz\nLicenciatura en Sistemas de Información [Estudiante]\nSimón Terrizano\nAnalista Universitario en Ciencias de Datos [Estudiante]\nAndres Saavedra\nLicenciatura en Sistemas de Información [Estudiante]",
+   "id": "S90"
+  }
+ ],
+ "videos": []
+}

@@ -93,8 +93,12 @@ def plantilla(nombre, **vals):
 
 def tarjeta(e, nivel="h2"):
     cat_es = CATEGORIAS[e["categoria"]][0]
-    visual = (f'<img src="{esc(e["imagen"])}" alt="" loading="lazy">' if e.get("imagen")
-              else f'<div class="bl-huella">{huella(e)}</div>')
+    if e.get("imagen"):
+        webp = re.sub(r"\.(jpe?g|png)$", ".webp", e["imagen"])
+        fuente = f'<source srcset="{esc(webp)}" type="image/webp">' if (RAIZ / webp.lstrip("/")).exists() else ""
+        visual = f'<picture>{fuente}<img src="{esc(e["imagen"])}" alt="" loading="lazy"></picture>'
+    else:
+        visual = f'<div class="bl-huella">{huella(e)}</div>'
     idioma = '<span class="bl-idioma" title="Artículo en inglés">EN</span>' if e["idioma"] == "en" else ""
     return f"""<div class="col-md-6 col-lg-4 bl-item" data-cat="{e['categoria']}" data-tema="{e['tema']}" data-slug="{e['slug']}">
                 <a class="bl-tarjeta" href="/blog/{e['slug']}/" data-cat="{e['categoria']}">
@@ -114,13 +118,14 @@ def pagina_entrada(e, todas):
     cat = CATEGORIAS[e["categoria"]][1 if en else 0]
     tema = TEMAS[e["tema"]][1 if en else 0]
     figura = ""
-    if e.get("imagen"):
+    # con video, la entrada muestra el video y la imagen queda para la tarjeta y para compartir
+    if e.get("imagen") and not e.get("video"):
         webp = re.sub(r"\.(jpe?g|png)$", ".webp", e["imagen"])
         fuente = f'<source srcset="{esc(webp)}" type="image/webp">' if (RAIZ / webp.lstrip("/")).exists() else ""
         clase = ' vertical' if e.get("imagen_vertical") == "si" else ""
         figura = (f'<figure class="bl-figura{clase}"><picture>{fuente}<img src="{esc(e["imagen"])}" '
                   f'alt="{esc(e.get("imagen_alt", ""))}"></picture></figure>')
-    elif e.get("video"):
+    if e.get("video"):
         figura = (f'<div class="bl-video"><iframe src="https://www.youtube-nocookie.com/embed/{esc(e["video"])}" '
                   f'title="{esc(e["titulo"])}" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; '
                   f'gyroscope; picture-in-picture" allowfullscreen></iframe></div>')
@@ -198,6 +203,7 @@ def feed(todas):
 def portada(todas):
     elegidas = [e for e in todas if e["categoria"] != "tecnicos"][:EN_PORTADA]
     tarjetas = "\n".join(f"""                <a class="bl-nov" href="/blog/{e['slug']}/">
+                    <span class="bl-nov-huella" title="Huella de la entrada: el SHA-256 de su texto">{huella(e)}</span>
                     <span class="bl-nov-meta">{esc(CATEGORIAS[e['categoria']][0])} · {fecha_larga(e)}</span>
                     <span class="bl-nov-titulo">{esc(e['titulo'])}</span>
                     <span class="bl-nov-resumen">{esc(e['resumen'])}</span>

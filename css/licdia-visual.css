@@ -50,7 +50,25 @@ html body.home h3.section-subheading {
     text-transform: none;
 }
 html body.home h3, html body.home h4, html body.home .portfolio-caption-heading { font-family: var(--lv-titulo); letter-spacing: -.005em; }
-html body.home .lv-eyebrow { margin: 0 0 .6rem; color: var(--lv-acento); font: 500 .74rem var(--lv-mono); letter-spacing: .14em; text-transform: uppercase; }
+/* Rótulo de cada sección con datos de la página (js/licdia-secciones.js) y un nodo de la red del encabezado */
+html body.home .lv-eyebrow { display: flex; align-items: center; justify-content: center; gap: .55rem; margin: 0 0 .7rem; color: var(--lv-acento); font: 500 .74rem var(--lv-mono); letter-spacing: .12em; text-transform: uppercase; }
+.lv-nodo { position: relative; display: inline-block; width: 8px; height: 8px; flex: none; border-radius: 50%; background: var(--lv-cian); box-shadow: 0 0 10px rgba(63, 210, 242, .8); }
+.lv-nodo::before { content: ""; position: absolute; top: 50%; right: 100%; width: 22px; height: 1px; margin-right: 4px; background: linear-gradient(90deg, transparent, rgba(63, 210, 242, .7)); }
+html body.home #cursosYcarreras .lv-eyebrow, html body.home #contact .lv-eyebrow { color: var(--lv-cian); }
+/* La cuadrícula del encabezado, tenue, arriba de las secciones claras */
+html body.home #portfolio, html body.home #noticias, html body.home #acercaDe, html body.home #team { position: relative; }
+html body.home #portfolio::before, html body.home #noticias::before, html body.home #acercaDe::before, html body.home #team::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto;
+    height: 420px;
+    background-image: linear-gradient(rgba(11, 127, 153, .06) 1px, transparent 1px), linear-gradient(90deg, rgba(11, 127, 153, .06) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: radial-gradient(ellipse 60% 100% at 50% 0%, #000 10%, transparent 75%);
+    mask-image: radial-gradient(ellipse 60% 100% at 50% 0%, #000 10%, transparent 75%);
+    pointer-events: none;
+}
+html body.home #portfolio > .container, html body.home #noticias > .container, html body.home #acercaDe > .container, html body.home #team > .container { position: relative; z-index: 1; }
 
 /* ---------- Menú: el blanco con los tres logos ---------- */
 html body.home #mainNav .nav-link { font-family: var(--lv-cuerpo); font-weight: 600; letter-spacing: .04em; }
@@ -174,7 +192,14 @@ html body.home #portfolio .portfolio-caption-subheading a { color: var(--lv-acen
 html body.home #portfolio #labCarousel { overflow: hidden; border-radius: 18px; box-shadow: 0 14px 40px rgba(14, 22, 38, .14); }
 
 /* ---------- Publicaciones: la línea de tiempo ---------- */
-html body.home #acercaDe .timeline::before { background: linear-gradient(180deg, rgba(63, 210, 242, .15), rgba(63, 210, 242, .6), rgba(138, 109, 255, .3)); }
+/* la línea de tiempo como un flujo: pulsos que bajan sobre la línea */
+html body.home #acercaDe .timeline::before {
+    background:
+        linear-gradient(180deg, transparent 0, rgba(63, 210, 242, .95) 30px, transparent 60px) 0 0 / 100% 320px repeat-y,
+        linear-gradient(180deg, rgba(63, 210, 242, .15), rgba(63, 210, 242, .5), rgba(138, 109, 255, .3));
+    animation: lv-flujo 5s linear infinite;
+}
+@keyframes lv-flujo { to { background-position: 0 320px, 0 0; } }
 html body.home #acercaDe .timeline > li .timeline-image {
     border: 3px solid rgba(63, 210, 242, .55) !important;
     background: linear-gradient(135deg, var(--lv-noche), #1a2a5e) !important;
@@ -233,6 +258,6 @@ html[data-theme="dark"] body.home #portfolio .portfolio-item { background: #0f18
     .lv-carrera { font-size: .8rem; }
 }
 @media (prefers-reduced-motion: reduce) {
-    .lv-logo, .lv-logo-anillo { animation: none; }
+    .lv-logo, .lv-logo-anillo, html body.home #acercaDe .timeline::before { animation: none; }
     .lv-carrera, html body.home #portfolio .portfolio-item { transition: none; }
 }
