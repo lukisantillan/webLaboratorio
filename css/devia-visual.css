@@ -43,7 +43,7 @@ html body.dev-ia-theme h3, html body.dev-ia-theme h4, html body.dev-ia-theme h5 
 }
 
 /* ---------- Encabezado: la escena del asistente ---------- */
-html body.dev-ia-theme header#masthead.fondoDiplomatura {
+html body.dev-ia-theme header.fondoDiplomatura {
     position: relative;
     overflow: hidden;
     background:
@@ -53,7 +53,7 @@ html body.dev-ia-theme header#masthead.fondoDiplomatura {
         var(--dv-noche) !important;
     background-image: none;
 }
-html body.dev-ia-theme header#masthead.fondoDiplomatura::before {
+html body.dev-ia-theme header.fondoDiplomatura::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -67,7 +67,7 @@ html body.dev-ia-theme header#masthead.fondoDiplomatura::before {
 }
 .dv-hero-fondo { position: absolute; inset: 0; pointer-events: none; }
 .dv-hero-fondo canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-html body.dev-ia-theme header#masthead > .container { position: relative; z-index: 1; }
+html body.dev-ia-theme header.fondoDiplomatura > .container { position: relative; z-index: 1; }
 .dv-hero-rotulo {
     margin: 0 0 1.1rem;
     color: rgba(160, 225, 255, .85) !important;
@@ -88,6 +88,43 @@ html body.dev-ia-theme header#masthead h1.masthead-heading {
     text-shadow: none !important;
 }
 .dv-hero-acciones { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; }
+
+/* Subpáginas: la misma escena en un encabezado más bajo (el rótulo lo agrega js/devia-hero.js) */
+html body.dev-ia-theme header.backgroundAr.fondoDiplomatura {
+    height: auto;
+    min-height: 0;
+    padding: 9.8rem 0 3.4rem;
+    text-align: center !important;
+    box-shadow: none !important;      /* aranceles, beca e inscripción traen sombra y foto propias (style2.css, por id) */
+}
+html body.dev-ia-theme header.backgroundAr.fondoDiplomatura::before {
+    background-image:
+        linear-gradient(rgba(120, 160, 255, .05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(120, 160, 255, .05) 1px, transparent 1px) !important;
+    background-color: transparent !important;
+    background-repeat: repeat !important;
+    background-position: 0 0 !important;
+    background-size: 56px 56px !important;
+    animation: none !important;
+    z-index: 0 !important;
+}
+html body.dev-ia-theme header.backgroundAr.fondoDiplomatura .masthead-heading {
+    display: inline-block;
+    max-width: 920px;
+    margin: 0 auto;
+    font-family: "Space Grotesk", Montserrat, sans-serif !important;
+    font-weight: 600 !important;
+    font-size: clamp(1.45rem, 3vw, 2.35rem) !important;
+    line-height: 1.18 !important;
+    letter-spacing: -.01em;
+    text-transform: none !important;
+    background: linear-gradient(90deg, #fff, #d6e9ff 45%, var(--dv-cian) 78%, var(--dv-violeta));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+}
+html body.dev-ia-theme header.backgroundAr.fondoDiplomatura .masthead-subheading { padding: 0 !important; margin: 0; }
+html body.dev-ia-theme .section-title-line h2 { font-family: "Space Grotesk", Montserrat, sans-serif; letter-spacing: -.01em; }
 
 /* Botones */
 .dv-boton {
@@ -193,9 +230,17 @@ html body .da-volver .da-logo { width: 30px; height: 30px; }
     html body.dev-ia-theme #mainNav .navbar-nav .nav-item .nav-link { padding: .4rem .42rem !important; font-size: .74rem !important; letter-spacing: .02em; white-space: nowrap; }
     html body.dev-ia-theme #mainNav .dv-nav-asistente .nav-link { margin-left: .2rem; padding: .32rem .7rem !important; }
 }
+/* desde 1400 px cada ítem se partía en dos renglones */
+@media (min-width: 1400px) {
+    html body.dev-ia-theme #mainNav .navbar-nav .nav-item { margin: 0 !important; }
+    html body.dev-ia-theme #mainNav .navbar-nav .nav-item .nav-link { padding: .4rem .55rem !important; font-size: .8rem !important; letter-spacing: .03em; white-space: nowrap; }
+}
 @media (min-width: 992px) and (max-width: 1099.98px) {
     html body.dev-ia-theme #mainNav .navbar-brand img { height: 34px !important; }
     html body.dev-ia-theme #mainNav .navbar-nav .nav-item .nav-link { padding: .4rem .3rem !important; font-size: .7rem !important; }
+}
+@media (max-width: 767.98px) {
+    html body.dev-ia-theme header.backgroundAr.fondoDiplomatura { padding: 7rem 0 2.4rem; }
 }
 @media (max-width: 576px) {
     html body .da-volver { right: 84px; bottom: 26px; padding: .55rem .9rem .55rem .55rem; font-size: .82rem; }

@@ -3,9 +3,22 @@
    (BGE-M3, muestreados por asistente-dev-ia/ingesta), una constelación tenue y un orbe que respira detrás del título.
    Canvas liviano: se pausa fuera de pantalla y queda quieto con "reducir movimiento". */
 (function () {
-    var header = document.querySelector('#masthead');
-    var capa = header && header.querySelector('.dv-hero-fondo');
-    if (!capa) return;
+    var header = document.querySelector('header.fondoDiplomatura');
+    if (!header) return;
+    var capa = header.querySelector('.dv-hero-fondo');
+    if (!capa) {   // subpáginas: el encabezado no trae la capa
+        capa = document.createElement('div');
+        capa.className = 'dv-hero-fondo';
+        capa.setAttribute('aria-hidden', 'true');
+        header.insertBefore(capa, header.firstChild);
+    }
+    var cont = header.querySelector('.container');
+    if (cont && !header.querySelector('.dv-hero-rotulo')) {
+        var rotulo = document.createElement('p');
+        rotulo.className = 'dv-hero-rotulo';
+        rotulo.textContent = 'Diplomatura de posgrado · LICDIA · UNLu';
+        cont.insertBefore(rotulo, cont.firstChild);
+    }
     var VALORES = [0.0136, -0.0154, 0.0496, -0.035, -0.0207, 0.0115, -0.0155, 0.005, -0.0036, 0.035, 0.0348, -0.0195, 0.0083, -0.0066, 0.0105, -0.0159, -0.014, -0.0488, 0.004, -0.0549, 0.0104, -0.0051, -0.0572, 0.0262, 0.2591, -0.0097, -0.0188, 0.0053, -0.0491, -0.034, -0.0244, -0.0315, 0.0029, 0.0179, 0.027, -0.0197, 0.0189, 0.0266, -0.0046, -0.0136, 0.0016, -0.0083, -0.0151, 0.0188, 0.041, -0.0039, -0.0053, -0.0796, 0.0154, 0.0494, 0.0384, -0.0503, -0.0282, 0.0255, -0.0305, -0.0138, -0.0157, 0.032, -0.0309, 0.001, -0.0012, 0.007, 0.0013, -0.0263, -0.0255, 0.0114, -0.0375, 0.0469, -0.0169, 0.0289, 0.0102, -0.0346, 0.0056, 0.0181, 0.0376, 0.0129, 0.0251, 0.0205, -0.008, -0.0115, 0.0367, 0.0823, 0.0176, -0.014, -0.0204, 0.0197, -0.0238, 0.0146, 0.0005, 0.0178, -0.0357, 0.0075, -0.0129, 0.0154, -0.0442, 0.0451, 0.0191, -0.0199, 0.0473, -0.0388, 0.0372, -0.0354, 0.0263, -0.0311, 0.0118, 0.0116, 0.0082, -0.0198, -0.0367, 0.0002, 0.0061, -0.0421, 0.0206, -0.0827, -0.0105, -0.0131, -0.006, -0.0333, -0.0303, -0.028, -0.014, -0.0027, 0.0392, -0.0005, -0.0256, -0.0079, 0.0405, -0.0213, -0.0416, -0.0433, 0.0498, 0.0033, 0.0094, -0.024, 0.0148, 0.0056, 0.0115, 0.0268, -0.0057, 0.0171];
     var cv = document.createElement('canvas');
     capa.appendChild(cv);

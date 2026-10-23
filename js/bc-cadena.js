@@ -3,12 +3,13 @@
    página; el bloque guarda el hash SHA-256 de ese contenido y el hash del bloque anterior, y se mina en vivo en el
    navegador: prueba de trabajo real hasta encontrar un nonce con el que el hash del encabezado empiece con DIFICULTAD.
    El fondo muestra hashes SHA-256 reales de las secciones de esta página; los bloques minados se suman.
-   Se mina en tramos de pocos milisegundos por cuadro para no trabar la página. */
+   Se mina en tramos de pocos milisegundos por cuadro para no trabar la página.
+   En las subpáginas no hay cadena: quedan el fondo de hashes y los rótulos encadenados de las secciones. */
 (function () {
     'use strict';
-    var header = document.querySelector('#masthead');
-    var lienzoCadena = header && header.querySelector('.bc-cadena');
-    if (!lienzoCadena) return;
+    var header = document.querySelector('header.fondoBlockchain');
+    if (!header) return;
+    var lienzoCadena = header.querySelector('.bc-cadena');
     var DIFICULTAD = '0000';
     var reducir = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var enc = new TextEncoder();
@@ -73,15 +74,14 @@
         bloques.push({ n: k + 1, ancla: cuerpo.id, titulo: titulo, corto: CORTOS[k] || titulo,
                        datos: sha256Texto('Curso ' + (k + 1) + ' — ' + titulo + '\n' + texto) });
     });
-    if (!bloques.length) return;
 
     // ---------- La cadena sigue hacia abajo ----------
-    // Cada sección con título lleva un rótulo con el SHA-256 de su contenido encadenado con el de la anterior; la
-    // numeración sigue la de los cursos del encabezado (la primera sección es el bloque 05).
+    // Cada sección con título lleva un rótulo con el SHA-256 de su contenido encadenado con el de la anterior; en la
+    // portada la numeración sigue la de los cursos del encabezado (la primera sección es el bloque 05).
     (function eslabones() {
-        var previo = '0'.repeat(64), n = bloques.length;
-        Array.prototype.forEach.call(document.querySelectorAll('body > section, body > article'), function (sec) {
-            var h2 = sec.querySelector('h2.section-heading, h2.card-t');
+        var previo = '0'.repeat(64), n = lienzoCadena ? bloques.length : 0;
+        Array.prototype.forEach.call(document.querySelectorAll('body > section, body > article, body > div.container'), function (sec) {
+            var h2 = sec.querySelector('h2.section-heading, h2.card-t, .section-title-line h2');
             if (!h2) return;
             var h = sha256Texto(previo + sec.textContent.replace(/\s+/g, ' ').trim());
             previo = h;
@@ -90,11 +90,14 @@
             p.className = 'bc-eslabon';
             p.title = 'SHA-256 del contenido de esta sección, encadenado con el de la sección anterior';
             p.innerHTML = 'bloque ' + String(n).padStart(2, '0') + ' <b>·</b> 0x' + h.slice(0, 6) + '…' + h.slice(-4);
-            h2.parentNode.insertBefore(p, h2);
+            // en las subpáginas el título va en una línea con raya (.section-title-line): el rótulo va arriba, alineado a la izquierda
+            var ancla = h2.parentNode.classList.contains('section-title-line') ? h2.parentNode : h2;
+            if (ancla !== h2) p.classList.add('bc-eslabon-izq');
+            ancla.parentNode.insertBefore(p, ancla);
         });
     })();
     // En el plan de estudios, cada módulo muestra el mismo hash de datos que su bloque del encabezado
-    bloques.forEach(function (b) {
+    if (lienzoCadena) bloques.forEach(function (b) {
         var boton = document.querySelector('[data-bs-target="#' + b.ancla + '"]');
         if (!boton) return;
         var t = document.createElement('span');
@@ -104,6 +107,21 @@
         boton.appendChild(t);
     });
 
+    var capa = header.querySelector('.bc-fondo');
+    if (!capa) {
+        capa = document.createElement('div');
+        capa.className = 'bc-fondo';
+        capa.setAttribute('aria-hidden', 'true');
+        header.insertBefore(capa, header.firstChild);
+    }
+    var cont = header.querySelector('.container');
+    if (cont && !header.querySelector('.bc-rotulo')) {
+        var rotulo = document.createElement('p');
+        rotulo.className = 'bc-rotulo';
+        rotulo.textContent = 'Diplomatura de posgrado · LICDIA · UNLu';
+        cont.insertBefore(rotulo, cont.firstChild);
+    }
+    function cadena() {
     // Tarjetas
     lienzoCadena.innerHTML = bloques.map(function (b) {
         return '<button type="button" class="bc-bloque" data-ancla="' + b.ancla + '" aria-label="Curso ' + b.n + ': ' + b.titulo + '. Ver en el plan de estudios">' +
@@ -183,17 +201,34 @@
         new IntersectionObserver(function (es) { if (es[0].isIntersecting) quizasArrancar(); }).observe(lienzoCadena);
     } else { quizasArrancar(); }
 
+    // Para verificar desde la consola: window.bcCadena.verificar() recalcula cada hash
+    window.bcCadena = {
+        bloques: bloques,
+        verificar: function () {
+            var p = '0'.repeat(64);
+            return bloques.every(function (b) {
+                if (b.hash == null) return false;
+                var h = sha256Texto('curso:' + b.n + '|anterior:' + p + '|datos:' + b.datos + '|nonce:' + b.nonce);
+                var ok = h === b.hash && h.indexOf(DIFICULTAD) === 0;
+                p = h;
+                return ok;
+            });
+        }
+    };
+    }
+
     // ---------- Fondo: hashes SHA-256 reales de las secciones de esta página ----------
-    var capa = header.querySelector('.bc-fondo');
-    var cv = document.createElement('canvas');
-    capa.appendChild(cv);
-    var ctx = cv.getContext('2d'), Wd = 0, Hd = 0, dpr = Math.min(window.devicePixelRatio || 1, 2);
-    var flotantes = [], visible = true, corriendo = false, semilla = 5;
+    var flotantes = [], semilla = 5, Wd = 0, Hd = 0;
     function azar() { semilla = (semilla * 16807) % 2147483647; return (semilla - 1) / 2147483646; }
     function sumarAlFondo(h, nuevo) {
         flotantes.push({ t: '0x' + h.slice(0, 6) + '…' + h.slice(-4), x: azar() * Wd, y: nuevo ? Hd * (0.3 + 0.5 * azar()) : azar() * Hd,
                          z: nuevo ? 1 : azar(), vy: -(0.06 + azar() * 0.18), vx: (azar() - 0.5) * 0.06, nuevo: nuevo ? 1 : 0 });
     }
+    function fondo() {
+    var cv = document.createElement('canvas');
+    capa.appendChild(cv);
+    var ctx = cv.getContext('2d'), dpr = Math.min(window.devicePixelRatio || 1, 2);
+    var visible = true, corriendo = false;
     function medir() {
         Wd = header.offsetWidth; Hd = header.offsetHeight;
         cv.width = Math.round(Wd * dpr); cv.height = Math.round(Hd * dpr);
@@ -231,19 +266,8 @@
     var espera;
     window.addEventListener('resize', function () { clearTimeout(espera); espera = setTimeout(function () { medir(); if (reducir) cuadro(); }, 200); });
     if (reducir) cuadro(); else arrancarFondo();
+    }
 
-    // Para verificar desde la consola: window.bcCadena.verificar() recalcula cada hash
-    window.bcCadena = {
-        bloques: bloques,
-        verificar: function () {
-            var p = '0'.repeat(64);
-            return bloques.every(function (b) {
-                if (b.hash == null) return false;
-                var h = sha256Texto('curso:' + b.n + '|anterior:' + p + '|datos:' + b.datos + '|nonce:' + b.nonce);
-                var ok = h === b.hash && h.indexOf(DIFICULTAD) === 0;
-                p = h;
-                return ok;
-            });
-        }
-    };
+    fondo();
+    if (lienzoCadena && bloques.length) cadena();
 })();
