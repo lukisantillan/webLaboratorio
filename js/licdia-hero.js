@@ -1,11 +1,17 @@
-/* LICDIA, portada: la red de nodos del fondo de Contacto (el sitio original de Lucas Santillán), animada en el encabezado.
+/* LICDIA, portada y demás páginas del laboratorio: la red de nodos del fondo de Contacto (el sitio original de Lucas Santillán), animada en el encabezado.
    Los nodos con nombre son las líneas de trabajo de "¿Qué hacemos?", leídas de la misma página; el resto es la red que
    las une. Canvas liviano: se pausa fuera de pantalla y queda quieto con "reducir movimiento". */
 (function () {
     'use strict';
     var header = document.querySelector('header.masthead');
-    var capa = header && header.querySelector('.lv-red');
-    if (!capa) return;
+    if (!header) return;
+    var capa = header.querySelector('.lv-red');
+    if (!capa) {   // las demás páginas del laboratorio no traen la capa en el HTML
+        capa = document.createElement('div');
+        capa.className = 'lv-red';
+        capa.setAttribute('aria-hidden', 'true');
+        header.insertBefore(capa, header.firstChild);
+    }
     var reducir = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var cv = document.createElement('canvas');
     capa.appendChild(cv);
