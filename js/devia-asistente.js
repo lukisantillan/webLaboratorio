@@ -59,8 +59,8 @@
         capa.innerHTML =
             '<canvas class="da-lienzo" aria-hidden="true"></canvas>' +
             '<div class="da-barra">' +
-            '  <div class="da-marca"><span class="da-logo" aria-hidden="true"><i class="da-logo-anillo"></i><i class="da-logo-centro"></i></span><span class="da-marca-txt">' +
-            '    <strong>Diplomatura en IA Generativa en la Nube</strong><span>Asistente · LICDIA · UNLu</span></span></div>' +
+            '  <div class="da-marca"><a class="da-logo" href="/" title="Ir al sitio de LICDIA" aria-label="Ir al sitio de LICDIA"><i class="da-logo-anillo"></i><i class="da-logo-centro"></i></a><span class="da-marca-txt">' +
+            '    <strong>Diplomatura en IA Generativa en la Nube</strong><span>Asistente · <a class="da-marca-labo" href="/" title="Ir al sitio de LICDIA">LICDIA</a> · UNLu</span></span></div>' +
             '  <div class="da-acciones">' +
             '    <button type="button" class="da-boton-dentro" aria-pressed="false"><span class="da-ojo"></span><span class="da-dentro-txt">Ver por dentro</span></button>' +
             '    <div class="da-selector" role="group" aria-label="Vista de la página">' +

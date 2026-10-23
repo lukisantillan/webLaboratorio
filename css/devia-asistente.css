@@ -109,6 +109,12 @@ html.da-on, html.da-on body { overflow: hidden; }
 .da-marca-txt { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
 .da-marca-txt strong { font-family: var(--da-titulo); font-weight: 500; font-size: .95rem; letter-spacing: .01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .da-marca-txt span { margin-top: .28rem; font-family: var(--da-mono); font-size: .68rem; color: var(--da-tenue); letter-spacing: .08em; text-transform: uppercase; }
+/* el logo y "LICDIA" llevan al sitio del laboratorio */
+a.da-logo { transition: transform .2s ease; }
+a.da-logo:hover { transform: scale(1.08); }
+a.da-logo:focus-visible, a.da-marca-labo:focus-visible { outline: 2px solid var(--da-cian); outline-offset: 3px; }
+a.da-marca-labo, a.da-marca-labo:visited { color: inherit !important; text-decoration: none !important; border-bottom: 1px dotted rgba(255, 255, 255, .25); }
+a.da-marca-labo:hover { color: var(--da-cian) !important; border-bottom-color: currentColor; }
 .da-acciones { display: flex; align-items: center; gap: .6rem; flex: none; }
 
 .da-selector {
