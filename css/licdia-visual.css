@@ -1,0 +1,238 @@
+/* LICDIA, sitio principal: la identidad del laboratorio, de la familia de las carreras (dev-ia, blockchain-dev, maestría)
+   y del blog. Azul noche con el cian del anillo del logo y el violeta del encabezado original; Space Grotesk en títulos,
+   Montserrat en el texto y DM Mono en rótulos. Conserva la estructura y los rasgos del sitio de Lucas Santillán: el menú
+   blanco con los tres logos, la línea de tiempo de publicaciones, el equipo agrupado con rótulos enmarcados, el fondo en
+   movimiento de los cursos y la red de nodos de Contacto, que en el encabezado pasa a estar animada (js/licdia-hero.js).
+   Va con html body.home porque styles.css y style2.css se cargan antes y usan selectores largos. */
+
+html body.home {
+    --lv-noche: #060b18;
+    --lv-noche-2: #0c1730;
+    --lv-cian: #3fd2f2;
+    --lv-violeta: #8a6dff;
+    --lv-acento: #0b7f99;            /* cian oscuro, legible sobre fondo claro */
+    --lv-tinta: #0e1626;
+    --lv-texto: #3a475c;
+    --lv-tenue: #66758a;
+    --lv-borde: #e3e8ef;
+    --lv-mono: "DM Mono", ui-monospace, Menlo, Consolas, monospace;
+    --lv-titulo: "Space Grotesk", Montserrat, sans-serif;
+    --lv-cuerpo: Montserrat, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-family: var(--lv-cuerpo);
+}
+
+/* ---------- Tipografía ---------- */
+html body.home p,
+html body.home li,
+html body.home .section-subheading,
+html body.home .portfolio-caption-subheading,
+html body.home .timeline-body p,
+html body.home .team-member p,
+html body.home .modal-body {
+    font-family: var(--lv-cuerpo);
+    font-style: normal;
+}
+html body.home h2.section-heading {
+    font-family: var(--lv-titulo) !important;
+    font-weight: 600 !important;
+    font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+    text-transform: none !important;
+    letter-spacing: -.015em !important;
+    color: var(--lv-tinta);
+}
+html body.home h3.section-subheading {
+    max-width: 820px;
+    margin: .9rem auto 3rem;
+    color: var(--lv-tenue) !important;
+    font-size: 1.02rem !important;
+    font-weight: 400 !important;
+    line-height: 1.7;
+    text-transform: none;
+}
+html body.home h3, html body.home h4, html body.home .portfolio-caption-heading { font-family: var(--lv-titulo); letter-spacing: -.005em; }
+html body.home .lv-eyebrow { margin: 0 0 .6rem; color: var(--lv-acento); font: 500 .74rem var(--lv-mono); letter-spacing: .14em; text-transform: uppercase; }
+
+/* ---------- Menú: el blanco con los tres logos ---------- */
+html body.home #mainNav .nav-link { font-family: var(--lv-cuerpo); font-weight: 600; letter-spacing: .04em; }
+html body.home #mainNav .nav-link:hover, html body.home #mainNav .nav-link.active { color: var(--lv-acento) !important; }
+@media (min-width: 992px) {
+    html body.home #mainNav .navbar-nav .nav-item .nav-link { padding: .4rem .6rem !important; font-size: .8rem !important; white-space: nowrap; }
+}
+
+/* ---------- Encabezado: la red de Contacto, animada, con el logo ---------- */
+html body.home header.masthead {
+    position: relative;
+    overflow: hidden;
+    min-height: 92vh;
+    padding: 9.5rem 0 4rem;
+    display: flex;
+    align-items: center;
+    background:
+        radial-gradient(1000px 560px at 50% 35%, rgba(70, 50, 200, .35), transparent 64%),
+        radial-gradient(800px 500px at 88% 100%, rgba(63, 210, 242, .14), transparent 60%),
+        radial-gradient(700px 480px at 6% 90%, rgba(138, 109, 255, .2), transparent 60%),
+        linear-gradient(180deg, var(--lv-noche), var(--lv-noche-2)) !important;
+}
+html body.home header.masthead::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(120, 180, 255, .05) 1px, transparent 1px), linear-gradient(90deg, rgba(120, 180, 255, .05) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: radial-gradient(ellipse at 50% 45%, #000 15%, transparent 72%);
+    mask-image: radial-gradient(ellipse at 50% 45%, #000 15%, transparent 72%);
+    pointer-events: none;
+}
+.lv-red { position: absolute; inset: 0; pointer-events: none; }
+.lv-red canvas { display: block; width: 100%; height: 100%; }
+html body.home header.masthead > .container { position: relative; z-index: 1; }
+.lv-logo { position: relative; display: inline-block; width: 92px; height: 92px; margin-bottom: 1.3rem; border-radius: 50%; box-shadow: 0 0 34px rgba(63, 210, 242, .45); animation: lv-brillo 3.4s ease-in-out infinite; }
+.lv-logo i { position: absolute; inset: 0; border-radius: 50%; background: url(../assets/img/licdia-logo-circulo.webp) center / cover no-repeat; }
+.lv-logo-anillo { -webkit-mask-image: radial-gradient(circle closest-side, transparent 0 78%, #000 80%); mask-image: radial-gradient(circle closest-side, transparent 0 78%, #000 80%); animation: lv-rotar 24s linear infinite; }
+.lv-logo-centro { -webkit-mask-image: radial-gradient(circle closest-side, #000 0 79%, transparent 80%); mask-image: radial-gradient(circle closest-side, #000 0 79%, transparent 80%); }
+@keyframes lv-rotar { to { transform: rotate(360deg); } }
+@keyframes lv-brillo { 0%, 100% { box-shadow: 0 0 22px rgba(63, 210, 242, .4); } 50% { box-shadow: 0 0 44px rgba(138, 109, 255, .6), 0 0 10px rgba(63, 210, 242, .8); } }
+.lv-rotulo { margin: 0 0 1rem; color: rgba(160, 225, 255, .85); font: 500 .8rem var(--lv-mono); letter-spacing: .16em; text-transform: uppercase; }
+html body.home header.masthead .masthead-heading {
+    max-width: 1000px;
+    margin: 0 auto 1.1rem !important;
+    font-family: var(--lv-titulo) !important;
+    font-weight: 600 !important;
+    font-size: clamp(2rem, 4.6vw, 3.6rem) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -.02em !important;
+    text-transform: none !important;
+    background: linear-gradient(90deg, #fff, #dcecff 45%, var(--lv-cian) 78%, var(--lv-violeta));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+}
+html body.home header.masthead .masthead-subheading {
+    margin: 0 auto 2.2rem !important;
+    color: rgba(214, 228, 248, .8) !important;
+    font: 400 1.08rem/1.5 var(--lv-cuerpo) !important;
+}
+.lv-acciones { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .75rem; }
+html body.home header.masthead .lv-acciones .btn-primary {
+    margin: 0;
+    padding: .8rem 1.5rem;
+    border: 0;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--lv-cian), var(--lv-violeta));
+    color: #04101f !important;
+    font: 700 .92rem var(--lv-cuerpo);
+    letter-spacing: .03em;
+    box-shadow: 0 0 28px rgba(63, 210, 242, .4);
+}
+.lv-boton-borde {
+    display: inline-flex;
+    align-items: center;
+    padding: .78rem 1.35rem;
+    border: 1px solid rgba(160, 200, 255, .42);
+    border-radius: 999px;
+    background: rgba(10, 18, 40, .45);
+    color: #e8f1ff !important;
+    font: 600 .92rem var(--lv-cuerpo);
+    text-decoration: none !important;
+    backdrop-filter: blur(8px);
+}
+.lv-boton-borde:hover { border-color: var(--lv-cian); background: rgba(63, 210, 242, .1); }
+/* Las carreras vinculadas al laboratorio, cada una con su color */
+.lv-carreras { margin-top: 2.6rem; }
+.lv-carreras-titulo { margin: 0 0 .8rem; color: rgba(200, 220, 245, .6); font: 500 .72rem var(--lv-mono); letter-spacing: .14em; text-transform: uppercase; }
+.lv-carreras-lista { display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem; }
+.lv-carrera {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    padding: .55rem 1rem;
+    border: 1px solid rgba(255, 255, 255, .14);
+    border-radius: 12px;
+    background: rgba(8, 14, 30, .55);
+    color: #e8f1ff !important;
+    font: 600 .86rem var(--lv-cuerpo);
+    text-decoration: none !important;
+    backdrop-filter: blur(8px);
+    transition: transform .2s ease, border-color .2s ease;
+}
+.lv-carrera:hover { transform: translateY(-2px); border-color: var(--lv-c1); }
+.lv-carrera i { width: 10px; height: 10px; flex: none; border-radius: 50%; background: linear-gradient(135deg, var(--lv-c1), var(--lv-c2)); box-shadow: 0 0 10px var(--lv-c1); }
+.lv-carrera small { color: rgba(200, 220, 245, .55); font: 500 .68rem var(--lv-mono); letter-spacing: .06em; }
+.lv-carrera-ia { --lv-c1: #4de2ff; --lv-c2: #8a7dff; }
+.lv-carrera-bc { --lv-c1: #c4a5ff; --lv-c2: #f5b942; }
+.lv-carrera-mcd { --lv-c1: #ff7a93; --lv-c2: #b0002c; }
+
+/* ---------- ¿Qué hacemos? ---------- */
+html body.home #portfolio .portfolio-item { overflow: hidden; border: 1px solid var(--lv-borde); border-radius: 16px; background: #fff; box-shadow: 0 6px 20px rgba(14, 22, 38, .06); transition: transform .2s ease, box-shadow .2s ease; }
+html body.home #portfolio .portfolio-item:hover { transform: translateY(-3px); box-shadow: 0 16px 34px rgba(14, 22, 38, .12); }
+html body.home #portfolio .portfolio-item .portfolio-link .portfolio-hover { background: linear-gradient(135deg, rgba(6, 11, 24, .82), rgba(70, 50, 200, .7)); }
+html body.home #portfolio .portfolio-caption { padding: 1.1rem 1.2rem 1.2rem !important; border: 0 !important; background: transparent !important; text-align: left; }
+html body.home #portfolio .portfolio-caption-heading,
+html body.home #portfolio .portfolio-caption .difSize { color: var(--lv-tinta); font-family: var(--lv-titulo); font-size: 1.05rem !important; font-weight: 600 !important; line-height: 1.35; margin-bottom: .35rem; }
+html body.home #portfolio .portfolio-caption-subheading { font-size: .85rem !important; }
+html body.home #portfolio .portfolio-caption-subheading a { color: var(--lv-acento) !important; font-weight: 600; text-decoration: none; }
+html body.home #portfolio #labCarousel { overflow: hidden; border-radius: 18px; box-shadow: 0 14px 40px rgba(14, 22, 38, .14); }
+
+/* ---------- Publicaciones: la línea de tiempo ---------- */
+html body.home #acercaDe .timeline::before { background: linear-gradient(180deg, rgba(63, 210, 242, .15), rgba(63, 210, 242, .6), rgba(138, 109, 255, .3)); }
+html body.home #acercaDe .timeline > li .timeline-image {
+    border: 3px solid rgba(63, 210, 242, .55) !important;
+    background: linear-gradient(135deg, var(--lv-noche), #1a2a5e) !important;
+    box-shadow: 0 0 20px rgba(63, 210, 242, .25);
+}
+html body.home #acercaDe .timeline > li .timeline-image h4 { color: #dbeeff !important; font-family: var(--lv-mono) !important; font-weight: 500 !important; letter-spacing: .04em; }
+html body.home #acercaDe .timeline-panel .subheading { color: var(--lv-tinta); font-family: var(--lv-titulo) !important; font-weight: 600 !important; text-transform: none !important; line-height: 1.35; }
+html body.home #acercaDe .timeline-body p { color: var(--lv-tenue) !important; }
+html body.home #acercaDe .timeline-pdf { color: var(--lv-acento) !important; font: 600 .82rem var(--lv-mono); }
+
+/* ---------- Cursos y carreras: el fondo en movimiento, con la paleta del labo ---------- */
+html body.home .fondo-movimiento { background-image: linear-gradient(rgba(6, 11, 24, .82), rgba(12, 23, 48, .78)), url("../assets/img/fondo-cursos.jpg"); }
+html body.home .fondo-movimiento h2.section-heading { color: #fff !important; }
+html body.home #cursosYcarreras .portfolio-caption-heading { font-family: var(--lv-titulo) !important; font-weight: 600 !important; }
+html body.home #cursosYcarreras .portfolio-caption-subheading { font-family: var(--lv-cuerpo) !important; font-style: normal !important; }
+
+/* ---------- Equipo: grupos con rótulo enmarcado y fotos redondas ---------- */
+html body.home #team h3.low-tittle {
+    margin: 2.4rem 0 1.6rem;
+    padding: .5rem 1rem;
+    border: 1px solid rgba(11, 127, 153, .45);
+    border-radius: 10px;
+    background: rgba(63, 210, 242, .06);
+    color: var(--lv-acento);
+    font: 500 .8rem var(--lv-mono) !important;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+html body.home #team .team-member img { border: 3px solid #fff !important; box-shadow: 0 0 0 2px rgba(63, 210, 242, .45), 0 8px 22px rgba(14, 22, 38, .12) !important; }
+html body.home #team .team-member h4 { color: var(--lv-tinta); font-weight: 600; }
+html body.home #team .team-member p { color: var(--lv-tenue) !important; }
+
+/* ---------- Contacto: la red de nodos original, con la paleta del labo ---------- */
+html body.home section#contact { background-image: linear-gradient(rgba(6, 11, 24, .72), rgba(12, 23, 48, .82)), url("../assets/img/fondo-contacto2.jpg"); background-size: cover; }
+html body.home section#contact h3.section-heading { font-family: var(--lv-mono) !important; font-size: .9rem !important; font-weight: 500 !important; letter-spacing: .14em !important; color: var(--lv-cian) !important; }
+
+/* ---------- Pie ---------- */
+html body.home footer.footer { margin-top: 0 !important; background: var(--lv-noche) !important; color: rgba(200, 215, 240, .7); }
+html body.home footer.footer a.text-info { color: var(--lv-cian) !important; }
+
+/* ---------- Ritmo vertical ---------- */
+html body.home section.page-section { padding-top: 5rem !important; padding-bottom: 5rem !important; }
+html body.home > hr { display: none; }
+
+/* ---------- Modo oscuro: enhancements.css fuerza con !important el color de títulos, párrafos y span ---------- */
+html[data-theme="dark"] body.home header.masthead .masthead-heading { color: transparent !important; }
+html[data-theme="dark"] body.home header.masthead .masthead-subheading { color: rgba(214, 228, 248, .8) !important; }
+html[data-theme="dark"] body.home .lv-carrera small { color: rgba(200, 220, 245, .55) !important; }
+html[data-theme="dark"] body.home #team h3.low-tittle { color: var(--lv-cian) !important; border-color: rgba(63, 210, 242, .4); }
+html[data-theme="dark"] body.home #portfolio .portfolio-item { background: #0f1829; border-color: #1d2a40; }
+
+@media (max-width: 767.98px) {
+    html body.home header.masthead { min-height: 0; padding: 7.5rem 0 3rem; }
+    .lv-logo { width: 72px; height: 72px; }
+    html body.home section.page-section { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
+    .lv-carrera { font-size: .8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .lv-logo, .lv-logo-anillo { animation: none; }
+    .lv-carrera, html body.home #portfolio .portfolio-item { transition: none; }
+}

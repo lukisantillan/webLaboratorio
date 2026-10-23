@@ -25,6 +25,9 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="css/styles.css?v=2026-10-23" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Montserrat:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="css/licdia-visual.css" rel="stylesheet" />
+    <script src="js/licdia-hero.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="/js/web-vitals-tracker.js" defer></script>
 </head>
@@ -55,12 +58,28 @@
     </nav>
     <!-- Masthead-->
     <header class="masthead efect">
+        <!-- La red de nodos de Contacto, animada; los nodos con nombre son las líneas de "¿Qué hacemos?" (js/licdia-hero.js) -->
+        <div class="lv-red" aria-hidden="true"></div>
         <div class="container">
+            <span class="lv-logo" aria-hidden="true"><i class="lv-logo-anillo"></i><i class="lv-logo-centro"></i></span>
+            <p class="lv-rotulo">LICDIA · UNLu</p>
             <h1 class="masthead-heading text-uppercase flotar">Laboratorio de Investigación en Ciencia de Datos &
                 Inteligencia Artificial</h1>
             <div class="masthead-subheading flotar"> Departamento de Ciencias Básicas - Universidad Nacional de Luján
                 (UNLu) </div>
-            <a class="btn btn-primary btn-xl text-uppercase efect flotar" href="#portfolio"> Proyectos de I+D </a>
+            <div class="lv-acciones flotar">
+                <a class="btn btn-primary btn-xl text-uppercase efect" href="#portfolio"> Proyectos de I+D </a>
+                <a class="lv-boton-borde" href="/publicaciones/">Publicaciones</a>
+                <a class="lv-boton-borde" href="/blog/">Blog</a>
+            </div>
+            <div class="lv-carreras">
+                <p class="lv-carreras-titulo">Carreras vinculadas al laboratorio</p>
+                <div class="lv-carreras-lista">
+                    <a class="lv-carrera lv-carrera-ia" href="/dev-ia/"><i></i>IA Generativa en la Nube <small>diplomatura</small></a>
+                    <a class="lv-carrera lv-carrera-bc" href="/blockchain-dev/"><i></i>Blockchain <small>diplomatura</small></a>
+                    <a class="lv-carrera lv-carrera-mcd" href="/maestria-ciencia-datos/"><i></i>Ciencia de Datos <small>maestría</small></a>
+                </div>
+            </div>
         </div>
     </header>
     <!-- Investigaciones -->
@@ -676,7 +695,7 @@
             <hr>
             <div class="container">
                 <div class="text-center">
-                    <h2 class="section-heading text-uppercase white"> CARRERAS </h2>
+                    <h2 class="section-heading text-uppercase white"> Carreras </h2>
                     <h3 class="section-subheading white">Los integrantes del laboratorio participan e impulsan una
                         serie de propuestas académicas que forman parte de la Oferta Académica de la Universidad
                         Nacional de
