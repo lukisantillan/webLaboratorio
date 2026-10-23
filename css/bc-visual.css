@@ -1,0 +1,306 @@
+/* Diplomatura en Blockchain: encabezado con la diplomatura como cadena de bloques (js/bc-cadena.js).
+   Misma familia tipográfica que el laboratorio (Space Grotesk, Montserrat, DM Mono) y el violeta de la diplomatura
+   (el de la campaña): lila para lo confirmado y ámbar solo para el minado en curso. Va con html body.blockchain-theme porque style2.css se carga después. */
+
+html body.blockchain-theme {
+    --bc-noche: #0d0820;
+    --bc-ambar: #f5b942;
+    --bc-lila: #c4a5ff;
+    --bc-tinta: #efe9fb;
+    --bc-tenue: rgba(226, 216, 247, .64);
+    --bc-mono: "DM Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+
+html body.blockchain-theme header#masthead.fondoBlockchain {
+    position: relative;
+    height: auto;
+    min-height: 92vh;
+    padding: 9.5rem 0 3.2rem;
+    overflow: hidden;
+    background:
+        radial-gradient(900px 560px at 50% 28%, rgba(124, 58, 237, .32), transparent 64%),
+        radial-gradient(800px 500px at 85% 100%, rgba(76, 28, 127, .55), transparent 62%),
+        radial-gradient(600px 400px at 8% 90%, rgba(245, 185, 66, .07), transparent 60%),
+        var(--bc-noche) !important;
+}
+html body.blockchain-theme header#masthead.fondoBlockchain::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(196, 165, 255, .07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(196, 165, 255, .07) 1px, transparent 1px);
+    background-size: 48px 48px;
+    -webkit-mask-image: radial-gradient(ellipse at 50% 45%, #000 15%, transparent 72%);
+    mask-image: radial-gradient(ellipse at 50% 45%, #000 15%, transparent 72%);
+    pointer-events: none;
+}
+.bc-fondo { position: absolute; inset: 0; pointer-events: none; }
+.bc-fondo canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+html body.blockchain-theme header#masthead > .container { position: relative; z-index: 1; }
+
+.bc-rotulo {
+    margin: 0 0 1rem;
+    color: rgba(196, 165, 255, .85) !important;
+    font-family: var(--bc-mono) !important;
+    font-size: .78rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    text-align: center;
+}
+html body.blockchain-theme header#masthead h1.masthead-heading {
+    max-width: 1000px;
+    margin: 0 auto 2.2rem;
+    font-family: "Space Grotesk", Montserrat, sans-serif !important;
+    font-weight: 600 !important;
+    font-size: clamp(1.8rem, 4vw, 3.1rem) !important;
+    line-height: 1.12 !important;
+    letter-spacing: -.01em !important;
+    text-transform: none !important;
+    background: linear-gradient(90deg, #fff, #e6d9ff 40%, var(--bc-lila) 72%, #9d6bff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent !important;
+    text-shadow: none !important;
+}
+
+/* La cadena */
+.bc-cadena {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2.2rem;
+    max-width: 1180px;
+    margin: 0 auto;
+}
+.bc-bloque {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .42rem;
+    padding: .95rem 1rem 1rem;
+    border: 1px solid rgba(196, 165, 255, .24);
+    border-radius: 12px;
+    background: rgba(20, 11, 42, .78);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: var(--bc-tinta);
+    text-align: left;
+    font: 400 .82rem Montserrat, -apple-system, "Segoe UI", sans-serif;
+    cursor: pointer;
+    opacity: .55;
+    transition: opacity .4s ease, border-color .4s ease, box-shadow .4s ease, transform .25s ease;
+}
+.bc-bloque:hover { transform: translateY(-3px); }
+.bc-bloque.minando { opacity: 1; border-color: rgba(245, 185, 66, .7); box-shadow: 0 0 26px rgba(245, 185, 66, .25); }
+.bc-bloque.minado { opacity: 1; border-color: rgba(196, 165, 255, .55); box-shadow: 0 0 22px rgba(196, 165, 255, .16); }
+/* enlace al bloque siguiente: el hash anterior que guarda cada bloque */
+.bc-bloque:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -2.2rem;
+    width: 2.2rem;
+    height: 2px;
+    background: rgba(196, 165, 255, .16);
+    transition: background .5s ease, box-shadow .5s ease;
+}
+.bc-bloque.minado:not(:last-child)::after {
+    background: linear-gradient(90deg, var(--bc-lila), rgba(196, 165, 255, .4));
+    box-shadow: 0 0 10px rgba(196, 165, 255, .6);
+}
+.bc-bloque-cab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font: 600 .7rem var(--bc-mono);
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--bc-ambar);
+}
+.bc-bloque.minado .bc-bloque-cab { color: var(--bc-lila); }
+.bc-bloque-estado { font-weight: 500; letter-spacing: .04em; color: var(--bc-tenue); }
+.bc-bloque.minando .bc-bloque-estado { color: var(--bc-ambar); animation: bc-latido 1s ease-in-out infinite; }
+.bc-bloque.minado .bc-bloque-estado { color: var(--bc-lila); }
+.bc-bloque-titulo {
+    margin-bottom: .2rem;
+    font: 600 1rem/1.3 "Space Grotesk", Montserrat, sans-serif;
+    color: #fff;
+}
+.bc-campo { display: flex; justify-content: space-between; gap: .6rem; font-size: .7rem; color: var(--bc-tenue); }
+.bc-campo > span { font-family: var(--bc-mono); text-transform: uppercase; letter-spacing: .06em; }
+.bc-campo code {
+    overflow: hidden;
+    color: #ddd0f7;
+    background: none;
+    font: 400 .72rem var(--bc-mono);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.bc-campo-hash code b { color: var(--bc-lila); font-weight: 600; }
+.bc-bloque.minando .bc-hash, .bc-bloque.minando .bc-nonce { color: var(--bc-ambar); }
+
+.bc-estado {
+    min-height: 1.4em;
+    margin: 1.6rem auto 1.5rem;
+    color: var(--bc-tenue) !important;
+    font: 400 .76rem var(--bc-mono) !important;
+    letter-spacing: .03em;
+    text-align: center;
+}
+.bc-acciones { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; }
+html body.blockchain-theme header#masthead #buttonPreinscripcion {
+    border: 0;
+    border-radius: 999px;
+    padding: .8rem 1.4rem;
+    background: linear-gradient(135deg, var(--bc-ambar), #ffd77e);
+    color: #1a1204;
+    font: 700 .92rem Montserrat, sans-serif;
+    letter-spacing: .02em;
+    text-transform: none !important;
+    box-shadow: 0 0 26px rgba(245, 185, 66, .35);
+}
+html body.blockchain-theme header#masthead a.bc-boton-borde { color: var(--bc-tinta) !important; }
+.bc-boton-borde {
+    display: inline-flex;
+    align-items: center;
+    padding: .78rem 1.35rem;
+    border: 1px solid rgba(196, 165, 255, .45);
+    border-radius: 999px;
+    background: rgba(20, 11, 42, .5);
+    color: var(--bc-tinta) !important;
+    font: 600 .92rem Montserrat, sans-serif;
+    text-decoration: none !important;
+}
+.bc-boton-borde:hover { border-color: var(--bc-lila); background: rgba(196, 165, 255, .08); }
+
+@keyframes bc-latido { 50% { opacity: .45; } }
+
+@media (max-width: 991.98px) {
+    html body.blockchain-theme header#masthead.fondoBlockchain { padding-top: 8rem; min-height: 0; }
+    .bc-cadena { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.4rem 2rem; max-width: 640px; }
+    .bc-bloque:nth-child(2n)::after { display: none; }
+    .bc-bloque:not(:last-child)::after { right: -2rem; width: 2rem; }
+}
+@media (max-width: 575.98px) {
+    .bc-cadena { grid-template-columns: 1fr; gap: 1.4rem; max-width: 380px; }
+    .bc-bloque::after { display: block !important; top: auto; bottom: -1.4rem; right: auto; left: 50%; width: 2px !important; height: 1.4rem; }
+    .bc-bloque:last-child::after { display: none !important; }
+    .bc-bloque.minado:not(:last-child)::after { background: linear-gradient(180deg, var(--bc-lila), rgba(196, 165, 255, .4)); }
+    .bc-rotulo { font-size: .66rem; letter-spacing: .1em; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .bc-bloque, .bc-bloque::after { transition: none; }
+    .bc-bloque.minando .bc-bloque-estado { animation: none; }
+}
+
+/* ---------- Resto de la portada: la estética del encabezado hacia abajo ----------
+   Colores: el violeta del sitio (style2.css y estilos en línea) queda como está. Desde acá van la tipografía, la
+   franja oscura de información, los rótulos con hash y el ritmo vertical, sin tocar el HTML ni las subpáginas. */
+html body.blockchain-theme {
+    --bc-violeta: #4C1C7F;
+    --bc-violeta-osc: #261951;
+    font-family: Montserrat, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+}
+html body.blockchain-theme p,
+html body.blockchain-theme li,
+html body.blockchain-theme td,
+html body.blockchain-theme th,
+html body.blockchain-theme .section-subheading,
+html body.blockchain-theme .accordion-body,
+html body.blockchain-theme .accordion-button,
+html body.blockchain-theme .card,
+html body.blockchain-theme .lead {
+    font-family: Montserrat, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-style: normal;
+}
+html body.blockchain-theme h2.section-heading,
+html body.blockchain-theme h2.card-t,
+html body.blockchain-theme #cta-inscripcion h2 {
+    font-family: "Space Grotesk", Montserrat, sans-serif !important;
+    font-weight: 600 !important;
+    text-transform: none !important;
+    letter-spacing: -.01em !important;
+}
+html body.blockchain-theme h3, html body.blockchain-theme h4, html body.blockchain-theme h5 {
+    font-family: "Space Grotesk", Montserrat, sans-serif;
+}
+html body.blockchain-theme .accordion-button:not(.collapsed) { box-shadow: inset 3px 0 0 var(--bc-violeta); }
+
+/* La franja de información continúa el encabezado: datos del bloque sobre fondo oscuro */
+html body.blockchain-theme #containerInfo {
+    border: 0 !important;
+    background: linear-gradient(180deg, #110a26, #170d33) !important;
+    color: #e6def6;
+}
+html body.blockchain-theme #containerInfo p { color: #d4c9ea; }
+html body.blockchain-theme #containerInfo .fw-semibold,
+html body.blockchain-theme #containerInfo strong {
+    color: var(--bc-lila) !important;
+    font-family: var(--bc-mono);
+    font-weight: 500 !important;
+    letter-spacing: .06em;
+}
+html body.blockchain-theme #containerInfo a:not(.btn) { color: var(--bc-lila) !important; }
+
+/* Rótulo de cada sección: su hash, encadenado con el de la anterior (js/bc-cadena.js) */
+.bc-eslabon {
+    margin: 0 0 .5rem;
+    color: var(--bc-violeta);
+    font: 500 .72rem var(--bc-mono);
+    letter-spacing: .08em;
+    text-align: center;
+    text-transform: lowercase;
+    white-space: nowrap;
+    opacity: .85;
+}
+.bc-eslabon b { font-weight: 500; opacity: .5; }
+section.bg-dark .bc-eslabon, [style*="#261951"] .bc-eslabon { color: var(--bc-lila); }
+/* en el plan, cada módulo muestra el mismo hash de datos que su bloque del encabezado */
+.bc-tag {
+    margin-left: auto;
+    padding-left: 1rem;
+    color: var(--bc-violeta);
+    font: 500 .68rem var(--bc-mono);
+    letter-spacing: .04em;
+    white-space: nowrap;
+}
+
+/* Ritmo vertical: todos los bloques con el mismo aire (antes había huecos de 270 a 510 px) */
+html body.blockchain-theme > section:not(#contact),
+html body.blockchain-theme > article#cta-inscripcion,
+html body.blockchain-theme > article#informacionPlan {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+html body.blockchain-theme > div.container { margin-top: 2.5rem !important; margin-bottom: 2.5rem !important; }
+@media (max-width: 767.98px) {
+    html body.blockchain-theme > section:not(#contact),
+    html body.blockchain-theme > article#cta-inscripcion,
+    html body.blockchain-theme > article#informacionPlan { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+    .bc-tag { display: none; }
+    .bc-eslabon { font-size: .66rem; letter-spacing: .04em; }
+}
+
+/* Menú en una línea entre 992 y 1399 px, como en dev-ia */
+@media (min-width: 992px) and (max-width: 1399.98px) {
+    html body.blockchain-theme #mainNav .navbar-brand { margin-right: .35rem; }
+    html body.blockchain-theme #mainNav .navbar-brand img { height: 40px !important; width: auto; }
+    html body.blockchain-theme #mainNav .navbar-nav .nav-item { margin: 0 !important; }
+    html body.blockchain-theme #mainNav .navbar-nav .nav-item .nav-link { padding: .4rem .42rem !important; font-size: .74rem !important; letter-spacing: .02em; white-space: nowrap; }
+}
+@media (min-width: 992px) and (max-width: 1099.98px) {
+    html body.blockchain-theme #mainNav .navbar-brand img { height: 34px !important; }
+    html body.blockchain-theme #mainNav .navbar-nav .nav-item .nav-link { padding: .4rem .3rem !important; font-size: .7rem !important; }
+}
+/* desde 1400 px el menú partía cada ítem en dos renglones */
+@media (min-width: 1400px) {
+    html body.blockchain-theme #mainNav .navbar-nav .nav-item { margin: 0 !important; }
+    html body.blockchain-theme #mainNav .navbar-nav .nav-item .nav-link { padding: .4rem .55rem !important; font-size: .8rem !important; letter-spacing: .03em; white-space: nowrap; }
+}
+/* la flecha del acordeón no compite con la etiqueta por el espacio libre */
+html body.blockchain-theme #informacionPlan .accordion-button::after { margin-left: .8rem; }
+/* en modo oscuro los rótulos con hash van en lila (el violeta no se lee sobre fondo oscuro) */
+html[data-theme="dark"] body.blockchain-theme .bc-eslabon,
+html[data-theme="dark"] body.blockchain-theme .bc-tag { color: var(--bc-lila) !important; }
