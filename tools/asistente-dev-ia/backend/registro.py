@@ -65,6 +65,9 @@ class Registro:
             ruta = carpeta / "asistente.sqlite3"
         self.db = sqlite3.connect(ruta, check_same_thread=False, isolation_level=None)
         self.db.executescript(ESQUEMA)
+        # De qué sitio vino la pregunta (diplomatura o laboratorio); las bases anteriores no tenían la columna
+        if "sitio" not in [c[1] for c in self.db.execute("PRAGMA table_info(preguntas)")]:
+            self.db.execute("ALTER TABLE preguntas ADD COLUMN sitio TEXT")
         self.cerrojo = threading.Lock()
         self.purgado = ""
 
@@ -110,7 +113,8 @@ class Registro:
 
     def anotar(self, pregunta: str, turno: int, secciones: list[str], respuesta: str = "", bloqueo: str | None = None,
                error: str | None = None, modelo: str | None = None, uso: dict | None = None,
-               ms_primer_token: int | None = None, ms_total: int | None = None, clave: str | None = None):
+               ms_primer_token: int | None = None, ms_total: int | None = None, clave: str | None = None,
+               sitio: str | None = None):
         """Guarda la pregunta (sin datos personales) y suma su costo al gasto del día."""
         uso = uso or {}
         dia = hoy()
@@ -118,11 +122,11 @@ class Registro:
             self.db.execute(
                 "INSERT INTO preguntas (momento, pregunta, turno, secciones, deriva, bloqueo, error, modelo, "
                 "tokens_entrada, tokens_cache_lectura, tokens_cache_escritura, tokens_salida, usd, ms_primer_token, "
-                "ms_total, clave) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
+                "ms_total, clave, sitio) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
                 (time.strftime("%Y-%m-%d %H:%M"), limpiar(pregunta), turno, json.dumps(secciones),
                  int(bool(DERIVA.search(respuesta))) if respuesta else None, bloqueo, error, modelo,
                  uso.get("entrada"), uso.get("cache_lectura"), uso.get("cache_escritura"), uso.get("salida"),
-                 uso.get("usd"), ms_primer_token, ms_total, clave))
+                 uso.get("usd"), ms_primer_token, ms_total, clave, sitio))
             if uso.get("usd"):
                 self.db.execute("INSERT INTO uso (dia, clave, usd) VALUES (?, 'global', ?) ON CONFLICT (dia, clave) "
                                 "DO UPDATE SET usd = usd + excluded.usd", (dia, uso["usd"]))

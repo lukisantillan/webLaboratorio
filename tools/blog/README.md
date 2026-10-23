@@ -6,7 +6,7 @@ Las páginas del blog no se editan a mano: se generan desde las entradas de `ent
 |---|---|
 | `entradas/AAAA-MM-DD-slug.md` | Una entrada: encabezado entre dos líneas `---` y el texto en Markdown (admite HTML). |
 | `plantillas/` | HTML de la entrada, el índice, la barra superior, el pie y las redirecciones (variables `$nombre`). |
-| `generar.py` | Escribe `blog/<slug>/index.html`, `blog/index.html`, `blog/feed.xml`, el bloque de novedades de la portada (`index.html`), las URL del blog en `sitemap.xml` y las redirecciones de `/dev-ia/blog/` y `/blockchain-dev/blog/`. |
+| `generar.py` | Escribe `blog/<slug>/index.html`, `blog/index.html`, `blog/feed.xml`, el bloque de novedades de la portada (`index.html`), las URL del blog en `sitemap.xml` y las redirecciones de `/dev-ia/blog/` y `/blockchain-dev/blog/` al blog. |
 
 Los estilos están en `css/blog.css` y los filtros y el mapa del encabezado en `js/blog.js`; esos sí se publican.
 

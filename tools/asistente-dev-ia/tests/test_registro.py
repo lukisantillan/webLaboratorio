@@ -60,3 +60,15 @@ def test_opinion_se_liga_a_la_pregunta_y_limpia_el_comentario(reg, tmp_path):
     db = sqlite3.connect(tmp_path / "a.sqlite3")
     voto, comentario = db.execute("SELECT voto, comentario FROM preguntas").fetchone()
     assert (voto, comentario) == (-1, "faltaba lo de becas, llamame al [número]")
+
+
+def test_sitio_en_base_anterior(tmp_path):
+    # Una base creada antes de que hubiera dos asistentes no tiene la columna sitio: se agrega al abrirla
+    ruta = tmp_path / "vieja.sqlite3"
+    db = sqlite3.connect(ruta)
+    db.executescript(registro.ESQUEMA)
+    db.close()
+    r = Registro(ruta)
+    r.anotar("¿Quién dirige el laboratorio?", 1, ["S2"], respuesta="Lo dirige [S2].", sitio="licdia")
+    r.anotar("¿Cuánto cuesta?", 1, ["S1"], respuesta="Cuesta X [S1].")
+    assert [f[0] for f in r.db.execute("SELECT sitio FROM preguntas ORDER BY id")] == ["licdia", None]

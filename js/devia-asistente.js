@@ -4,26 +4,50 @@
    Al preguntar, el backend (asistente-dev-ia) calcula el embedding de la pregunta, recupera las secciones más
    parecidas y genera la respuesta en streaming; la escena muestra cada etapa y el panel "Ver por dentro" sus datos.
    Arriba a la derecha se pasa al sitio convencional, que sigue en el HTML. Si el backend no responde, la página
-   queda como siempre. */
+   queda como siempre.
+   Otro sitio puede usar la misma interfaz definiendo window.ASISTENTE antes de cargar este archivo (el del laboratorio
+   lo hace en la portada): sitio, textos, sugerencias, grupos de colores, accesos, si abre al cargar la página, etc.
+   Sin esa configuración, todo queda como en la diplomatura. */
 (function () {
     'use strict';
-    var API = '/dev-ia/api';
-    var CLAVE = 'devia-vista';
+    var C = window.ASISTENTE || {};
+    var API = C.api || '/dev-ia/api';
+    var SITIO = C.sitio || '';                       // vacío: la diplomatura
+    var CLAVE = C.clave || 'devia-vista';
+    var PORTADA = C.portada || '/dev-ia/';
+    var ABRIR_AL_INICIO = C.abrirAlInicio !== false;
+    var BOTON_VOLVER = C.botonVolver !== false;
     var raiz = document.documentElement;
     var reducir = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var SUGERENCIAS = ['¿Necesito saber programar?', '¿Qué voy a construir?', '¿Cuánto cuesta?',
+    var SUGERENCIAS = C.sugerencias || ['¿Necesito saber programar?', '¿Qué voy a construir?', '¿Cuánto cuesta?',
         '¿Cuándo empieza la próxima cohorte?', '¿Quiénes son los docentes?', '¿Qué título otorga?'];
-    var GRUPOS = {
+    var GRUPOS = C.grupos || {
         'dev-ia': ['Portada', '77,226,255'], 'plan-de-estudios': ['Plan de estudios', '138,125,255'],
         'aranceles': ['Aranceles', '255,196,92'], 'requisitos': ['Requisitos', '110,231,160'],
         'destinatarios': ['Destinatarios', '110,231,160'], 'enfoque': ['Enfoque', '255,140,200'],
         'por-que-elegirnos': ['Por qué elegirnos', '255,91,216'], 'inscripcion-dev-ia': ['Inscripción', '120,170,255']
     };
+    var GRUPO_BASE = Object.keys(GRUPOS)[0];
+    function grupo(s) { var g = C.grupoDe ? C.grupoDe(s) : s.pagina; return GRUPOS[g] ? g : GRUPO_BASE; }
+    var T = {
+        titulo: 'Diplomatura en IA Generativa en la Nube', region: 'Asistente de la diplomatura',
+        vistaSitio: 'Sitio convencional', verSitio: 'Ver el sitio convencional',
+        rag: 'el tipo de sistema que se construye en la diplomatura',
+        ficha: 'una ficha fija de datos clave (modalidad, horarios, duración, aranceles y contacto)',
+        saludo: 'Hola. Soy el asistente de la diplomatura.',
+        bajada: 'Preguntame lo que quieras sobre la cursada, los contenidos o la inscripción. Respondo con la información de este sitio y te muestro cómo lo hago.',
+        compartir: 'Asistente de la Diplomatura en IA Generativa en la Nube (LICDIA, UNLu)',
+        compartirTitulo: 'Diplomatura en IA Generativa en la Nube',
+        wa: 'Hola, estuve consultando al asistente de la Diplomatura en IA Generativa.',
+        waInicio: 'Hola,%20queria%20informaci%C3%B3n%20sobre%20la%20diplomatura%20en%20IA%20Generativa'
+    };
+    Object.keys(C.textos || {}).forEach(function (k) { T[k] = C.textos[k]; });
+    var TELEFONO = C.telefono || '%2B541123953895';
 
     function leerPref() { try { return localStorage.getItem(CLAVE); } catch (e) { return null; } }
     function guardarPref(v) { try { localStorage.setItem(CLAVE, v); } catch (e) { /* sin almacenamiento */ } }
     function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
-    var pideSitio = /[?&]vista=sitio/.test(location.search) || location.hash.length > 1 || leerPref() === 'sitio';
+    var pideSitio = !ABRIR_AL_INICIO || /[?&]vista=sitio/.test(location.search) || location.hash.length > 1 || leerPref() === 'sitio';
 
     var MAPA = null, porId = {};
     var capa, lienzo, ctx, saludo, mensajes, entrada, texto, enviarBtn, dentro, volver, selector, botonDentro;
@@ -31,7 +55,7 @@
 
     // ---------- Arranque: el asistente solo aparece si el backend responde ----------
     var limite = setTimeout(function () { raiz.classList.remove('da-cargando'); }, 5000);
-    fetch(API + '/mapa').then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (m) {
+    fetch(API + '/mapa' + (SITIO ? '?sitio=' + SITIO : '')).then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); }).then(function (m) {
         MAPA = m;
         m.secciones.forEach(function (s) { porId[s.id] = s; });
         construir();
@@ -44,7 +68,16 @@
             if (menu && menu.classList.contains('show') && window.bootstrap) window.bootstrap.Collapse.getOrCreateInstance(menu).hide();
             abrir(true);
         });
-        if (pideSitio) { volver.classList.add('visible'); } else { abrir(false); }
+        // Una caja de pregunta en la página (data-da-preguntar): abre el asistente y manda lo escrito
+        document.addEventListener('submit', function (e) {
+            var f = e.target.closest('[data-da-preguntar]');
+            if (!f) return;
+            e.preventDefault();
+            var campo = f.querySelector('input, textarea'), q = campo ? campo.value.trim() : '';
+            abrir(true);
+            if (q) { campo.value = ''; setTimeout(function () { enviar(q); }, reducir ? 0 : 380); }
+        });
+        if (pideSitio) { if (BOTON_VOLVER) volver.classList.add('visible'); } else { abrir(false); }
         clearTimeout(limite);
         raiz.classList.remove('da-cargando');
     }).catch(function () { clearTimeout(limite); raiz.classList.remove('da-cargando'); });
@@ -55,28 +88,28 @@
         capa.className = 'da';
         capa.hidden = true;
         capa.setAttribute('role', 'region');
-        capa.setAttribute('aria-label', 'Asistente de la diplomatura');
+        capa.setAttribute('aria-label', T.region);
         capa.innerHTML =
             '<canvas class="da-lienzo" aria-hidden="true"></canvas>' +
             '<div class="da-barra">' +
             '  <div class="da-marca"><a class="da-logo" href="/" title="Ir al sitio de LICDIA" aria-label="Ir al sitio de LICDIA"><i class="da-logo-anillo"></i><i class="da-logo-centro"></i></a><span class="da-marca-txt">' +
-            '    <strong>Diplomatura en IA Generativa en la Nube</strong><span>Asistente · <a class="da-marca-labo" href="/" title="Ir al sitio de LICDIA">LICDIA</a> · UNLu</span></span></div>' +
+            '    <strong>' + esc(T.titulo) + '</strong><span>Asistente · <a class="da-marca-labo" href="/" title="Ir al sitio de LICDIA">LICDIA</a> · UNLu</span></span></div>' +
             '  <div class="da-acciones">' +
             '    <button type="button" class="da-boton-dentro" aria-pressed="false"><span class="da-ojo"></span><span class="da-dentro-txt">Ver por dentro</span></button>' +
             '    <div class="da-selector" role="group" aria-label="Vista de la página">' +
             '      <button type="button" data-v="asistente" aria-pressed="true">Asistente</button>' +
-            '      <button type="button" data-v="sitio" aria-pressed="false">Sitio convencional</button></div>' +
+            '      <button type="button" data-v="sitio" aria-pressed="false">' + esc(T.vistaSitio) + '</button></div>' +
             '  </div>' +
             '</div>' +
             '<aside class="da-dentro" aria-label="Cómo responde el asistente">' +
             '  <h2>Cómo responde</h2>' +
-            '  <p>Es un RAG (generación aumentada por recuperación), el tipo de sistema que se construye en la diplomatura. ' +
+            '  <p>Es un RAG (generación aumentada por recuperación), ' + esc(T.rag) + '. ' +
             '     Cada paso se actualiza con tu pregunta.</p>' +
             '  <div class="da-paso" data-n="1" data-paso="emb"><h3>Embedding de la pregunta</h3>' +
             '    <div><span class="da-dato" data-c="emb-modelo"></span> · <span class="da-dato" data-c="dims"></span> dimensiones · <span class="da-dato" data-c="emb-ms">–</span> ms</div>' +
             '    <div class="da-vector"></div><div class="da-vector-num">Hacé una pregunta para ver su vector.</div></div>' +
             '  <div class="da-paso" data-n="2" data-paso="rec"><h3>Recuperación</h3>' +
-            '    <div>Similitud coseno contra las <span class="da-dato" data-c="n-sec"></span> secciones del sitio; pasan las <span class="da-dato" data-c="k"></span> más cercanas, junto con una ficha fija de datos clave (modalidad, horarios, duración, aranceles y contacto).</div>' +
+            '    <div>Similitud coseno contra las <span class="da-dato" data-c="n-sec"></span> secciones del sitio; pasan las <span class="da-dato" data-c="k"></span> más cercanas, junto con ' + esc(T.ficha) + '.</div>' +
             '    <table class="da-tabla"></table><div class="da-leyenda"></div></div>' +
             '  <div class="da-paso" data-n="3" data-paso="gen"><h3>Generación</h3>' +
             '    <div>Modelo <span class="da-dato" data-c="llm"></span></div>' +
@@ -114,7 +147,7 @@
         var vec = capa.querySelector('.da-vector');
         for (var i = 0; i < 128; i++) vec.appendChild(document.createElement('span'));
         var usados = {};
-        MAPA.secciones.forEach(function (s) { usados[s.pagina] = 1; });
+        MAPA.secciones.forEach(function (s) { usados[grupo(s)] = 1; });
         capa.querySelector('.da-leyenda').innerHTML = Object.keys(GRUPOS).filter(function (g) { return usados[g]; }).map(function (g) {
             return '<span><i style="background:rgb(' + GRUPOS[g][1] + ')"></i>' + GRUPOS[g][0] + '</span>';
         }).join('');
@@ -198,7 +231,7 @@
         abierta = false;
         if (porUsuario) guardarPref('sitio');
         setTimeout(function () { if (!abierta) { capa.hidden = true; raiz.classList.remove('da-on'); } }, reducir ? 0 : 450);
-        volver.classList.add('visible');
+        if (BOTON_VOLVER) volver.classList.add('visible');
     }
 
     // Saludo escrito token a token (trozos de 2 a 5 letras, como los de un tokenizador)
@@ -228,8 +261,8 @@
     function saludar() {
         var h = saludo.querySelector('h1'), p = saludo.querySelector('p');
         setTimeout(function () {
-            escribir(h, 'Hola. Soy el asistente de la diplomatura.', 45, function () {
-                escribir(p, 'Preguntame lo que quieras sobre la cursada, los contenidos o la inscripción. Respondo con la información de este sitio y te muestro cómo lo hago.', 22);
+            escribir(h, T.saludo, 45, function () {
+                escribir(p, T.bajada, 22);
             });
         }, reducir ? 0 : 700);
         var k = 0;
@@ -271,7 +304,7 @@
         fetch(API + '/chat', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ mensajes: historia.slice(-9) })
+            body: JSON.stringify(SITIO ? { mensajes: historia.slice(-9), sitio: SITIO } : { mensajes: historia.slice(-9) })
         }).then(function (res) {
             if (!res.ok || !res.body) throw new Error(res.status);
             return leerSSE(res.body, function (ev, d) {
@@ -322,7 +355,7 @@
         }).catch(function (err) {
             historia.pop();
             m.innerHTML = '<div class="da-error">' + (err && err.mensaje ? enlazar(esc(err.mensaje)) : 'No pude responder en este momento.') +
-                '<br><button type="button">Ver el sitio convencional</button></div>';
+                '<br><button type="button">' + esc(T.verSitio) + '</button></div>';
             m.querySelector('button').addEventListener('click', function () { cerrar(false); });
         }).then(function () {
             ocupado = false;
@@ -367,10 +400,12 @@
         if (!citas.num[id]) { citas.orden.push(id); citas.num[id] = citas.orden.length; }
         return citas.num[id];
     }
-    // Correos y WhatsApp como enlaces. Recibe texto ya escapado; va antes de las citas para no tocar sus atributos.
-    var WHATSAPP = 'https://api.whatsapp.com/send?phone=%2B541123953895&text=Hola,%20queria%20informaci%C3%B3n%20sobre%20la%20diplomatura%20en%20IA%20Generativa';
+    // Correos, rutas del sitio (/dev-ia/) y WhatsApp como enlaces. Recibe texto ya escapado; va antes de las citas para
+    // no tocar sus atributos.
+    var WHATSAPP = 'https://api.whatsapp.com/send?phone=' + TELEFONO + '&text=' + T.waInicio;
     function enlazar(h) {
         return h.replace(/[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g, function (c) { return '<a href="mailto:' + c + '">' + c + '</a>'; })
+            .replace(/(^|[\s(])(\/[a-z0-9-]+\/)(?=[\s).,;:]|$)/g, function (_, a, r) { return a + '<a href="' + r + '">' + r + '</a>'; })
             .replace(/\bWhats ?App\b/gi, function (w) { return '<a href="' + WHATSAPP + '" target="_blank" rel="noopener">' + w + '</a>'; });
     }
     function formatear(txt, citas, enCurso) {
@@ -407,7 +442,7 @@
 
     // ---------- Debajo de cada respuesta: opinión, copiar, WhatsApp, accesos y repreguntas ----------
     // Accesos según el tema: se buscan en la pregunta y en las tres secciones más cercanas
-    var ACCESOS = [
+    var ACCESOS = C.accesos || [
         { re: /arancel|cuota|pago|pagar|precio|costo|cuesta|sale\b/i, pagina: 'aranceles', txt: 'Ver aranceles', url: '/dev-ia/aranceles/' },
         { re: /inscrib|inscripci|cupo|cohorte|empieza/i, pagina: 'inscripcion-dev-ia', txt: 'Inscribirme', url: '/dev-ia/inscripcion-dev-ia/' },
         { re: /plan de estudios|cronograma|m[oó]dulo|contenidos/i, pagina: 'plan-de-estudios', txt: 'Ver el plan de estudios', url: '/dev-ia/plan-de-estudios/' },
@@ -422,14 +457,14 @@
         var barra = document.createElement('div');
         barra.className = 'da-pie';
         var resumen = limpia.length > 400 ? limpia.slice(0, 400).replace(/\s+\S*$/, '') + '…' : limpia;
-        var wa = 'Hola, estuve consultando al asistente de la Diplomatura en IA Generativa.\n\nPregunté: «' + q + '»\n\nMe respondió: «' +
+        var wa = T.wa + '\n\nPregunté: «' + q + '»\n\nMe respondió: «' +
             resumen + '»\n\nQuería seguir la consulta con ustedes.';
         barra.innerHTML =
             (clave ? '<button type="button" class="da-voto" data-voto="1" aria-label="Me sirvió" title="Me sirvió">👍</button>' +
                      '<button type="button" class="da-voto" data-voto="-1" aria-label="No me sirvió" title="No me sirvió">👎</button><i class="da-pie-sep"></i>' : '') +
             '<button type="button" data-accion="copiar">Copiar</button>' +
             (navigator.share ? '<button type="button" data-accion="compartir">Compartir</button>' : '') +
-            '<a class="da-pie-wa" href="https://api.whatsapp.com/send?phone=%2B541123953895&text=' + encodeURIComponent(wa) +
+            '<a class="da-pie-wa" href="https://api.whatsapp.com/send?phone=' + TELEFONO + '&text=' + encodeURIComponent(wa) +
             '" target="_blank" rel="noopener">Seguir por WhatsApp</a>';
         d.appendChild(barra);
 
@@ -440,8 +475,7 @@
             '<button type="submit">Enviar</button>';
         d.appendChild(comentario);
 
-        var compartible = 'Pregunta: ' + q + '\n\n' + limpia + '\n\nAsistente de la Diplomatura en IA Generativa en la Nube (LICDIA, UNLu): ' +
-            location.origin + '/dev-ia/';
+        var compartible = 'Pregunta: ' + q + '\n\n' + limpia + '\n\n' + T.compartir + ': ' + location.origin + PORTADA;
         function opinar(voto, txt) {
             return fetch(API + '/opinion', {
                 method: 'POST',
@@ -464,7 +498,7 @@
                     .then(function () { b.textContent = 'Copiado'; }, function () { b.textContent = 'No se pudo copiar'; })
                     .then(function () { setTimeout(function () { b.textContent = original; }, 1800); });
             } else if (b.getAttribute('data-accion') === 'compartir') {
-                navigator.share({ title: 'Diplomatura en IA Generativa en la Nube', text: compartible }).catch(function () { /* cancelado */ });
+                navigator.share({ title: T.compartirTitulo, text: compartible }).catch(function () { /* cancelado */ });
             }
         });
         comentario.addEventListener('submit', function (e) {
@@ -475,7 +509,7 @@
 
         // Accesos: hasta dos, por la pregunta y las tres secciones más cercanas
         var tema = q + ' ' + ids.slice(0, 3).map(function (id) { return porId[id] ? porId[id].titulo : ''; }).join(' ');
-        var paginas = ids.slice(0, 3).map(function (id) { return porId[id] ? porId[id].pagina : ''; });
+        var paginas = ids.slice(0, 3).map(function (id) { return porId[id] ? grupo(porId[id]) : ''; });
         var accesos = ACCESOS.filter(function (a) { return a.re.test(tema) || paginas.indexOf(a.pagina) >= 0; }).slice(0, 2);
         if (accesos.length) {
             var ac = document.createElement('div');
@@ -519,7 +553,7 @@
     function normal(s) { return s.toLowerCase().replace(/[¿?¡!.,\s]+/g, ' ').trim(); }
     function corto(s, n) { s = s.replace(/^Preguntas Frecuentes: /, ''); return s.length > n ? s.slice(0, n - 1) + '…' : s; }
     function destino(s) { return s.url + (s.ancla ? '#' + s.ancla : ''); }
-    function estaEnPortada(s) { return s.url === '/dev-ia/' && /\/dev-ia\/(index\.html)?$/.test(location.pathname); }
+    function estaEnPortada(s) { return s.url === PORTADA && (location.pathname === PORTADA || location.pathname === PORTADA + 'index.html'); }
 
     // Ir a la sección citada: en la portada se pasa al sitio convencional y se resalta; si no, se navega
     function ir(id) {
@@ -529,6 +563,8 @@
         cerrar(false);
         var el = s.ancla && document.getElementById(s.ancla);
         if (!el) return;
+        // una ventana (las líneas y proyectos del laboratorio): se abre
+        if (el.classList.contains('modal') && window.bootstrap) { setTimeout(function () { window.bootstrap.Modal.getOrCreateInstance(el).show(); }, reducir ? 0 : 480); return; }
         if (el.classList.contains('collapse') && window.bootstrap) window.bootstrap.Collapse.getOrCreateInstance(el, { toggle: false }).show();
         var blanco = el.closest('.accordion-item') || el;
         setTimeout(function () {
@@ -551,7 +587,7 @@
     function pintarTabla(lista, todas) {
         var lo = Math.min.apply(null, todas), hi = Math.max.apply(null, todas);
         capa.querySelector('.da-tabla').innerHTML = lista.map(function (x) {
-            var s = porId[x.id], g = GRUPOS[s.pagina] || GRUPOS['dev-ia'];
+            var s = porId[x.id], g = GRUPOS[grupo(s)];
             return '<tr><td>' + x.id + '</td><td><span style="color:rgb(' + g[1] + ')">●</span> ' + esc(corto(s.titulo, 34)) +
                 '</td><td>' + x.sim.toFixed(3) + '</td><td><div class="da-barra-sim"><i style="width:' + Math.max(4, Math.round((x.sim - lo) / Math.max(1e-6, hi - lo) * 100)) + '%"></i></div></td></tr>';
         }).join('');
@@ -573,7 +609,7 @@
         }
         NODOS = MAPA.secciones.map(function (s) {
             var e = empujar(s.xyz);
-            return { id: s.id, x: e.x, y: e.y, z: e.z, col: (GRUPOS[s.pagina] || GRUPOS['dev-ia'])[1], titulo: s.titulo };
+            return { id: s.id, x: e.x, y: e.y, z: e.z, col: GRUPOS[grupo(s)][1], titulo: s.titulo };
         });
         var vistos = {};
         NODOS.forEach(function (a, i) {

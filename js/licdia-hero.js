@@ -29,11 +29,11 @@
             nodos.push({ x: azar() * W, y: azar() * H, vx: (azar() - 0.5) * 0.25, vy: (azar() - 0.5) * 0.25,
                          r: 1 + azar() * 1.6, c: azar() < 0.6 ? '63,210,242' : '138,109,255', nombre: null });
         }
-        // las líneas de trabajo, repartidas por los bordes para no tapar el título
+        // las líneas de trabajo, a los costados (alternando izquierda y derecha) para no tapar el título ni las carreras
         lineas.forEach(function (t, k) {
-            var a = (k / Math.max(lineas.length, 1)) * 6.283 + 0.4, rx = W * (0.36 + azar() * 0.1), ry = H * (0.34 + azar() * 0.1);
-            nodos.push({ x: Math.min(W * 0.86, Math.max(W * 0.14, W / 2 + Math.cos(a) * rx)), y: Math.min(H * 0.88, Math.max(H * 0.26, H * 0.55 + Math.sin(a) * ry)), vx: (azar() - 0.5) * 0.12, vy: (azar() - 0.5) * 0.12,
-                         r: 2.6, c: '63,210,242', nombre: t });
+            var izq = k % 2 === 0, x0 = izq ? 0.02 : 0.9, y = 0.26 + 0.44 * ((Math.floor(k / 2) + 0.5) / Math.ceil(lineas.length / 2));
+            nodos.push({ x: W * (x0 + azar() * 0.08), y: H * (y + (azar() - 0.5) * 0.06), vx: (azar() - 0.5) * 0.12,
+                         vy: (azar() - 0.5) * 0.1, r: 2.6, c: '63,210,242', nombre: t, izq: izq });
         });
     }
     // más tenue detrás del texto central
@@ -48,7 +48,8 @@
             nodos.forEach(function (n) {
                 n.x += n.vx; n.y += n.vy;
                 // los nodos con nombre no salen de la zona visible (arriba está el menú)
-                var x0 = n.nombre ? W * 0.12 : -20, x1 = n.nombre ? W * 0.88 : W + 20, y0 = n.nombre ? H * 0.24 : -20, y1 = n.nombre ? H * 0.9 : H + 20;
+                var x0 = n.nombre ? W * (n.izq ? 0.02 : 0.9) : -20, x1 = n.nombre ? W * (n.izq ? 0.1 : 0.98) : W + 20;
+                var y0 = n.nombre ? H * 0.24 : -20, y1 = n.nombre ? H * 0.72 : H + 20;     // arriba de la fila de carreras
                 if (n.x < x0 || n.x > x1) n.vx *= -1;
                 if (n.y < y0 || n.y > y1) n.vy *= -1;
             });
@@ -70,8 +71,9 @@
             ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, 6.283); ctx.fill();
             if (n.nombre && W > 760) {
                 ctx.fillStyle = 'rgba(200,230,255,' + (0.5 * v).toFixed(3) + ')';
-                ctx.textAlign = n.x > W / 2 ? 'left' : 'right';
-                ctx.fillText(n.nombre, n.x + (n.x > W / 2 ? 9 : -9), n.y + 4);
+                // en los márgenes: el nombre se escribe hacia adentro
+                ctx.textAlign = n.izq ? 'left' : 'right';
+                ctx.fillText(n.nombre, n.x + (n.izq ? 9 : -9), n.y + 4);
             }
         });
         if (visible && !reducir) requestAnimationFrame(cuadro); else corriendo = false;

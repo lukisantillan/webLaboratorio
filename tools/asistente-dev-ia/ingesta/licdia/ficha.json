@@ -1,0 +1,32 @@
+{
+ "_nota": "Secciones del índice del laboratorio que van siempre en el contexto del asistente (por título o por ancla). Ver ingesta/ficha.json, el de la diplomatura.",
+ "secciones": [
+  {
+   "titulo": "¿Qué hace el laboratorio?"
+  },
+  {
+   "ancla": "investigacion1"
+  },
+  {
+   "ancla": "investigacion2"
+  },
+  {
+   "ancla": "investigacion3"
+  },
+  {
+   "ancla": "investigacion11"
+  },
+  {
+   "ancla": "investigacion4"
+  },
+  {
+   "titulo": "Equipo: Integrantes del laboratorio (UNLu)"
+  },
+  {
+   "titulo": "Otras carreras en las que participa el laboratorio"
+  },
+  {
+   "titulo": "Contacto y ubicación del laboratorio"
+  }
+ ]
+}

@@ -151,7 +151,8 @@ def paginas_proyecto(sitio, salida):
         bloques = s.find_all(["section", "article"]) or [s.body]
         for b in bloques:
             h = b.find(["h2", "h3"])
-            sub = limpio(h.get_text(" ")) if h else ""
+            # sin signos de pregunta: "¿De qué trata el proyecto?" sin el nombre del proyecto no sirve de repregunta
+            sub = limpio(h.get_text(" ")).strip("¿? ") if h else ""
             agregar(salida, titulo + (": " + sub.capitalize() if sub.isupper() else ": " + sub if sub else ""),
                     texto_de(b), f"/{carpeta}/", b.get("id", "") if b.name else "")
 

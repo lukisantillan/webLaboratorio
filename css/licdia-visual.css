@@ -155,6 +155,30 @@ html body.home header.masthead .lv-acciones .btn-primary {
     backdrop-filter: blur(8px);
 }
 .lv-boton-borde:hover { border-color: var(--lv-cian); background: rgba(63, 210, 242, .1); }
+/* La pregunta al asistente del laboratorio (abre la interfaz de js/devia-asistente.js) */
+.lv-pregunta {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    width: min(620px, 100%);
+    margin: 1.8rem auto 0;
+    padding: .45rem .45rem .45rem 1rem;
+    border: 1px solid rgba(63, 210, 242, .45);
+    border-radius: 999px;
+    background: rgba(8, 14, 30, .62);
+    box-shadow: 0 0 34px rgba(63, 210, 242, .16), inset 0 0 18px rgba(138, 109, 255, .08);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+.lv-pregunta:focus-within { border-color: var(--lv-cian); box-shadow: 0 0 44px rgba(63, 210, 242, .3); }
+.lv-pregunta-orbe { width: 18px; height: 18px; flex: none; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff, var(--lv-cian) 32%, var(--lv-violeta) 72%, transparent 74%); box-shadow: 0 0 12px rgba(63, 210, 242, .7); animation: lv-brillo 3.4s ease-in-out infinite; }
+.lv-pregunta input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: #eef5ff; font: 500 .98rem var(--lv-cuerpo); }
+.lv-pregunta input::placeholder { color: rgba(200, 220, 245, .55); }
+.lv-pregunta button { width: 40px; height: 40px; flex: none; border: 0; border-radius: 50%; background: linear-gradient(135deg, var(--lv-cian), var(--lv-violeta)); color: #04101f; font-size: 1.1rem; font-weight: 700; }
+html:not(.da-disponible) .lv-pregunta, html:not(.da-disponible) .lv-nav-asistente { display: none !important; }
+html body.home #mainNav .lv-nav-asistente .nav-link { display: inline-flex; align-items: center; gap: .4rem; margin-left: .3rem; padding: .32rem .8rem !important; border: 1px solid rgba(11, 127, 153, .45); border-radius: 999px; color: var(--lv-acento) !important; }
+html body.home #mainNav .lv-nav-asistente .da-logo { width: 20px; height: 20px; }
+
 /* Las carreras vinculadas al laboratorio, cada una con su color */
 .lv-carreras { margin-top: 2.6rem; }
 .lv-carreras-titulo { margin: 0 0 .8rem; color: rgba(200, 220, 245, .6); font: 500 .72rem var(--lv-mono); letter-spacing: .14em; text-transform: uppercase; }
@@ -213,8 +237,28 @@ html body.home #acercaDe .timeline-pdf { color: var(--lv-acento) !important; fon
 /* ---------- Cursos y carreras: el fondo en movimiento, con la paleta del labo ---------- */
 html body.home .fondo-movimiento { background-image: linear-gradient(rgba(6, 11, 24, .82), rgba(12, 23, 48, .78)), url("../assets/img/fondo-cursos.jpg"); }
 html body.home .fondo-movimiento h2.section-heading { color: #fff !important; }
-html body.home #cursosYcarreras .portfolio-caption-heading { font-family: var(--lv-titulo) !important; font-weight: 600 !important; }
-html body.home #cursosYcarreras .portfolio-caption-subheading { font-family: var(--lv-cuerpo) !important; font-style: normal !important; }
+/* Tarjetas de cursos: imagen arriba (16:9), esquinas redondeadas, misma altura; el zoom del sitio original queda en la imagen */
+html body.home #cursosYcarreras .row > div:has(> .portfolio-item) { display: flex; }
+html body.home #cursosYcarreras .imagen-zoom:hover { transform: none; }
+html body.home #cursosYcarreras .portfolio-item {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid rgba(160, 200, 255, .14);
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .28);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+html body.home #cursosYcarreras .portfolio-item:hover { transform: translateY(-4px); box-shadow: 0 18px 40px rgba(0, 0, 0, .36), 0 0 0 1px rgba(63, 210, 242, .4); }
+html body.home #cursosYcarreras .portfolio-item .portfolio-link { order: -1; width: 100%; overflow: hidden; }
+html body.home #cursosYcarreras .portfolio-item .portfolio-link img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; transition: transform .45s ease; }
+html body.home #cursosYcarreras .portfolio-item:hover .portfolio-link img { transform: scale(1.05); }
+html body.home #cursosYcarreras .portfolio-item .portfolio-caption { flex: 1; padding: 1.1rem 1.25rem 1.3rem !important; text-align: left; }
+html body.home #cursosYcarreras .portfolio-item .portfolio-caption .portfolio-caption-heading { margin-bottom: .45rem; color: var(--lv-tinta); font: 600 1.02rem/1.35 var(--lv-titulo) !important; }
+html body.home #cursosYcarreras .portfolio-item .portfolio-caption .portfolio-caption-subheading { color: var(--lv-tenue) !important; font: 400 .84rem/1.55 var(--lv-cuerpo) !important; font-style: normal !important; }
 
 /* ---------- Equipo: grupos con rótulo enmarcado y fotos redondas ---------- */
 html body.home #team h3.low-tittle {
@@ -259,5 +303,6 @@ html[data-theme="dark"] body.home #portfolio .portfolio-item { background: #0f18
 }
 @media (prefers-reduced-motion: reduce) {
     .lv-logo, .lv-logo-anillo, html body.home #acercaDe .timeline::before { animation: none; }
-    .lv-carrera, html body.home #portfolio .portfolio-item { transition: none; }
+    .lv-carrera, html body.home #portfolio .portfolio-item, html body.home #cursosYcarreras .portfolio-item,
+    html body.home #cursosYcarreras .portfolio-item .portfolio-link img { transition: none; }
 }

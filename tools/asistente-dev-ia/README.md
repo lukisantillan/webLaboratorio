@@ -1,7 +1,14 @@
-# Asistente de la Diplomatura en IA Generativa (dev-ia)
+# Asistentes del LICDIA: la Diplomatura en IA Generativa (dev-ia) y el laboratorio
 
-Backend del asistente conversacional de la portada de https://licdia.unlu.edu.ar/dev-ia/. Vive en `tools/` del
-repositorio del sitio, que no se publica; la interfaz es `js/devia-asistente.js` y `css/devia-asistente.css`.
+Backend de los asistentes conversacionales de https://licdia.unlu.edu.ar/dev-ia/ (abre por defecto en la portada) y
+de https://licdia.unlu.edu.ar/ (se abre desde la pregunta del encabezado o el ítem "Asistente" del menú). Vive en
+`tools/` del repositorio del sitio, que no se publica; la interfaz de los dos es `js/devia-asistente.js` y
+`css/devia-asistente.css` (el laboratorio la configura con `window.ASISTENTE` en `index.html`).
+
+Un solo servicio sirve a los dos sitios: cada uno tiene su índice (`indice/` y `indice-licdia/`), su ficha y sus
+reglas, y comparten el modelo de embeddings (cargado una vez), los topes y el registro, que anota de qué sitio vino
+cada pregunta. Las rutas son las de la diplomatura, que nginx ya publica: el laboratorio usa `?sitio=licdia` en el mapa
+y `"sitio": "licdia"` en el pedido.
 
 Es un RAG chico de punta a punta: el texto del sitio estático se parte en secciones citables, cada sección tiene su
 embedding, y ante cada pregunta se calcula el embedding de la pregunta, se recuperan las 6 secciones más parecidas
@@ -13,7 +20,10 @@ No se guardan conversaciones: solo cada pregunta suelta, anónima (ver "Topes y 
 
 - `ingesta/extraer_sitio.py`: extrae las secciones del sitio (portada, preguntas frecuentes, módulos del plan y
   subpáginas) a `indice/secciones.json`.
-- `ingesta/indexar.py`: embeddings de las secciones (`intfloat/multilingual-e5-base`), `indice/modelo.json` y la
+- `ingesta/licdia/extraer.py`: lo mismo para el laboratorio (portada con las ventanas de líneas y proyectos, equipo,
+  carreras y contacto; las publicaciones desde `tools/publicaciones`; las entradas de `tools/blog`; las páginas de
+  proyectos) a `indice-licdia/secciones.json`. Su ficha, expansiones y preguntas de prueba están en `ingesta/licdia/`.
+- `ingesta/indexar.py [carpeta]`: embeddings de las secciones (`intfloat/multilingual-e5-base`), `modelo.json` y la
   proyección 3D por PCA que dibuja la interfaz.
 - `backend/app.py`: FastAPI con `/dev-ia/api/mapa` y `/dev-ia/api/chat`. Llama a Claude con el SDK oficial de
   Anthropic, con prompt caching sobre la parte fija del prompt (reglas + ficha de datos clave); la fecha y las secciones
@@ -78,9 +88,18 @@ Correr las dos antes de desplegar un cambio de prompt, de modelo o del índice.
 ```
 .venv/bin/python ingesta/extraer_sitio.py ../../dev-ia
 .venv/bin/python ingesta/indexar.py
+.venv/bin/python ingesta/evaluar.py
 ```
 
-y volver a desplegar (`indice/` viaja con el código).
+Para el laboratorio (también cuando hay una entrada nueva en el blog o una publicación nueva):
+
+```
+.venv/bin/python ingesta/licdia/extraer.py ../..
+.venv/bin/python ingesta/indexar.py indice-licdia
+.venv/bin/python ingesta/evaluar.py indice-licdia
+```
+
+y volver a desplegar (`indice/` e `indice-licdia/` viajan con el código).
 
 ## Despliegue en la VM
 

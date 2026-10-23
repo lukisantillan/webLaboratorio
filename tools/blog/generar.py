@@ -6,7 +6,7 @@ Cada entrada es Markdown (admite HTML) con un encabezado entre dos líneas '---'
   y, si hacen falta: imagen, imagen_alt, imagen_vertical (si), video (id de YouTube), etiqueta, slug, codigo (si).
 Escribe blog/<slug>/index.html, blog/index.html y blog/feed.xml; el bloque de novedades de la portada y las URL del blog
 en sitemap.xml (entre <!-- BLOG:INICIO --> y <!-- BLOG:FIN -->); y las redirecciones de /dev-ia/blog/ y
-/blockchain-dev/blog/ al blog filtrado por tema.
+/blockchain-dev/blog/ al blog.
 Uso: tools/blog/.venv/bin/python tools/blog/generar.py
 """
 
@@ -35,7 +35,7 @@ TEMAS = {"ia": ("Inteligencia artificial", "Artificial intelligence"), "blockcha
          "datos": ("Ciencia de datos", "Data science")}
 MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre",
          "diciembre"]
-REDIRECCIONES = {"dev-ia/blog": "ia", "blockchain-dev/blog": "blockchain"}
+REDIRECCIONES = ["dev-ia/blog", "blockchain-dev/blog"]
 EN_PORTADA = 3   # entradas en el bloque de novedades de la portada (sin los artículos técnicos, que están en inglés)
 
 
@@ -248,8 +248,8 @@ def main():
              for e in todas]
     reemplazar_bloque(RAIZ / "sitemap.xml", "  <!-- BLOG:INICIO (lo escribe tools/blog/generar.py) -->\n" + "\n".join(urls)
                       + "\n  <!-- BLOG:FIN -->")
-    for carpeta, tema in REDIRECCIONES.items():
-        (RAIZ / carpeta / "index.html").write_text(plantilla("redireccion.html", tema=tema), encoding="utf-8")
+    for carpeta in REDIRECCIONES:
+        (RAIZ / carpeta / "index.html").write_text(plantilla("redireccion.html"), encoding="utf-8")
     print(f"{len(todas)} entradas: " + ", ".join(f"{c} {sum(1 for e in todas if e['categoria'] == c)}" for c in CATEGORIAS))
 
 

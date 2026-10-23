@@ -2,7 +2,7 @@
 recibe el modelo, con la lógica del backend importada de backend/recuperacion.py (casi duplicados y cupos por parte
 en preguntas compuestas).
 
-Uso: .venv/bin/python ingesta/evaluar.py
+Uso: .venv/bin/python ingesta/evaluar.py [carpeta]   (indice, por defecto; indice-licdia usa ingesta/licdia/pruebas.json)
 """
 
 import json
@@ -50,9 +50,13 @@ PRUEBAS = [
 
 
 def main():
-    S = json.loads((RAIZ / "indice" / "secciones.json").read_text(encoding="utf-8"))["secciones"]
-    E = np.load(RAIZ / "indice" / "embeddings.npy")
-    conf = json.loads((RAIZ / "indice" / "modelo.json").read_text(encoding="utf-8"))
+    indice = RAIZ / (sys.argv[1] if len(sys.argv) > 1 else "indice")
+    pruebas = PRUEBAS
+    if indice.name == "indice-licdia":
+        pruebas = json.loads((RAIZ / "ingesta" / "licdia" / "pruebas.json").read_text(encoding="utf-8"))["pruebas"]
+    S = json.loads((indice / "secciones.json").read_text(encoding="utf-8"))["secciones"]
+    E = np.load(indice / "embeddings.npy")
+    conf = json.loads((indice / "modelo.json").read_text(encoding="utf-8"))
     m = SentenceTransformer(conf["modelo"], device="cpu")
 
     def top_de(q):
@@ -60,11 +64,11 @@ def main():
         return recuperar(E, m.encode([conf["prefijo_consulta"] + c for c in cs], normalize_embeddings=True))[0]
 
     fallos = []
-    for q, reqs in PRUEBAS:
+    for q, reqs in pruebas:
         titulos = [S[i]["titulo"] for i in top_de(q)]
         if not all(any(any(a in t for a in alt) for t in titulos) for alt in reqs):
             fallos.append((q, [t[:34] for t in titulos]))
-    print(f"{len(PRUEBAS) - len(fallos)}/{len(PRUEBAS)} preguntas con todas sus secciones entre las {K} recuperadas")
+    print(f"{len(pruebas) - len(fallos)}/{len(pruebas)} preguntas con todas sus secciones entre las {K} recuperadas")
     for f in fallos:
         print("  falla:", f)
 

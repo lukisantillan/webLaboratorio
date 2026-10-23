@@ -29,6 +29,48 @@
     <link href="css/licdia-visual.css" rel="stylesheet" />
     <script src="js/licdia-hero.js" defer></script>
     <script src="js/licdia-secciones.js" defer></script>
+    <!-- Asistente del laboratorio: la misma interfaz que el de la diplomatura en IA Generativa, con el índice del labo -->
+    <link href="css/devia-asistente.css" rel="stylesheet" />
+    <script>
+        window.ASISTENTE = {
+            sitio: 'licdia', clave: 'licdia-vista', portada: '/', abrirAlInicio: false, botonVolver: false,
+            telefono: '%2B542323521032',
+            sugerencias: ['¿En qué temas investigan?', '¿Quién dirige el laboratorio?', '¿Qué publicaron sobre RAG?',
+                '¿Qué tesis están en curso?', '¿Qué carreras tienen?', '¿Cómo los contacto?'],
+            grupos: {
+                inicio: ['El laboratorio', '63,210,242'], investigacion: ['Líneas y proyectos', '138,125,255'],
+                publicaciones: ['Publicaciones', '255,196,92'], blog: ['Blog', '110,231,160'],
+                equipo: ['Equipo', '255,140,200'], carreras: ['Carreras y cursos', '120,170,255']
+            },
+            grupoDe: function (s) {
+                if (s.url.indexOf('/publicaciones/') === 0) return 'publicaciones';
+                if (s.url.indexOf('/blog/') === 0) return 'blog';
+                if (s.url !== '/') return 'investigacion';
+                if (/^Equipo/.test(s.titulo)) return 'equipo';
+                if (/^(Carrera|Otras carreras|Cursos)/.test(s.titulo)) return 'carreras';
+                if (/^(Línea|Proyecto)/.test(s.titulo)) return 'investigacion';
+                return 'inicio';
+            },
+            accesos: [
+                { re: /publica|paper|congreso|art[ií]culo/i, pagina: 'publicaciones', txt: 'Ver todas las publicaciones', url: '/publicaciones/' },
+                { re: /blog|novedad|noticia|premio|distin/i, pagina: 'blog', txt: 'Ir al blog', url: '/blog/' },
+                { re: /tesis|tesista|director|equipo|integrante/i, pagina: 'equipo', txt: 'Ver el equipo', url: '/#team' },
+                { re: /ia generativa|inteligencia artificial generativa/i, pagina: '-', txt: 'Diplomatura en IA Generativa', url: '/dev-ia/' },
+                { re: /blockchain/i, pagina: '-', txt: 'Diplomatura en Blockchain', url: '/blockchain-dev/' }
+            ],
+            textos: {
+                titulo: 'Laboratorio de Ciencia de Datos e IA', region: 'Asistente del laboratorio',
+                vistaSitio: 'Volver al sitio', verSitio: 'Volver al sitio',
+                rag: 'una de las técnicas con las que trabaja el laboratorio',
+                ficha: 'una ficha fija de datos clave (qué hace el laboratorio, equipo, carreras y contacto)',
+                saludo: 'Hola. Soy el asistente del laboratorio.',
+                bajada: 'Preguntame por nuestras líneas de investigación, proyectos, publicaciones, tesis o carreras. Respondo con la información de este sitio y te muestro cómo lo hago.',
+                compartir: 'Asistente del LICDIA (UNLu)', compartirTitulo: 'LICDIA · Laboratorio de Ciencia de Datos e IA',
+                wa: 'Hola, estuve consultando al asistente del LICDIA.', waInicio: 'Hola,%20queria%20contactar%20al%20LICDIA'
+            }
+        };
+    </script>
+    <script src="js/devia-asistente.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="/js/web-vitals-tracker.js" defer></script>
 </head>
@@ -53,6 +95,7 @@
                     <li class="nav-item"><a class="nav-link" href="#cursosYcarreras"> Cursos & Carreras </a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Equipo y colaboradores</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                    <li class="nav-item lv-nav-asistente"><a class="nav-link" href="#" data-da-abrir><span class="da-logo" aria-hidden="true"><i class="da-logo-anillo"></i><i class="da-logo-centro"></i></span>Asistente</a></li>
                 </ul>
             </div>
         </div>
@@ -73,6 +116,13 @@
                 <a class="lv-boton-borde" href="/publicaciones/">Publicaciones</a>
                 <a class="lv-boton-borde" href="/blog/">Blog</a>
             </div>
+            <!-- Abre el asistente del laboratorio con la pregunta escrita (js/devia-asistente.js); sin backend no se muestra -->
+            <form class="lv-pregunta" data-da-preguntar>
+                <span class="lv-pregunta-orbe" aria-hidden="true"></span>
+                <input type="text" maxlength="600" placeholder="Preguntale al laboratorio: ¿en qué temas investigan?"
+                    aria-label="Preguntale al asistente del laboratorio">
+                <button type="submit" aria-label="Preguntar">&#8594;</button>
+            </form>
             <div class="lv-carreras">
                 <p class="lv-carreras-titulo">Carreras vinculadas al laboratorio</p>
                 <div class="lv-carreras-lista">

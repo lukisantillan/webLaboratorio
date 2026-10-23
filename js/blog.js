@@ -32,11 +32,11 @@
         if (vacio) vacio.style.display = n ? 'none' : 'block';
     }
     if (botones.length) {
-        // por defecto, solo Novedades (los artículos técnicos son otra cosa); desde una diplomatura (?tema=) se ve todo el tema
+        // por defecto, solo Novedades (los artículos técnicos son otra cosa), se llegue de donde se llegue
         var q = new URLSearchParams(location.search);
         filtro.tema = q.get('tema') || '';
         var c = q.get('categoria');
-        filtro.cat = c === 'todo' ? '' : (c || (filtro.tema ? '' : 'novedades'));
+        filtro.cat = c === 'todo' ? '' : (c || 'novedades');
         botones.forEach(function (b) {
             b.addEventListener('click', function () {
                 var tipo = b.getAttribute('data-tipo'), v = b.getAttribute('data-valor');
